@@ -1,0 +1,78 @@
+{
+  "date": "2026-11-21",
+  "total_scanned": 2926,
+  "total_unique": 16,
+  "window_count": 114,
+  "window_hours": 48,
+  "cutoff": "2026-11-19T14:45:46.449500+00:00",
+  "window_end": "2026-11-21T14:45:46.449500+00:00",
+  "scored_count": 16,
+  "qualified_count": 1,
+  "mode": "api",
+  "items": [
+    {
+      "title": "美敦力Hugo手术机器人准备扩大手术规模",
+      "summary": "美敦力预计，到本财年结束时，Hugo手术系统全球累计手术量将超过5万例。",
+      "lede": "美敦力Hugo手术机器人累计手术量有望在本财年突破5万例，显示这套系统正进入更大规模的临床使用。",
+      "tags": [
+        "手术机器人",
+        "美敦力",
+        "医疗科技"
+      ],
+      "analysis": [
+        "美敦力正在推进Hugo手术机器人的商业化，公司预计本财年结束时全球累计手术量将突破5万例。",
+        "手术量增长意味着这套系统正从早期试用走向更常规的临床使用，可能为更多医院提供达芬奇之外的机器人手术选择。",
+        "目前公开信息只给出累计手术量目标，尚未披露各地区的具体使用情况、与竞品的价格对比以及长期临床效果数据。"
+      ],
+      "i18n": {
+        "zh": {
+          "title": "美敦力Hugo手术机器人准备扩大手术规模",
+          "summary": "美敦力预计，到本财年结束时，Hugo手术系统全球累计手术量将超过5万例。",
+          "lede": "美敦力Hugo手术机器人累计手术量有望在本财年突破5万例，显示这套系统正进入更大规模的临床使用。",
+          "tags": [
+            "手术机器人",
+            "美敦力",
+            "医疗科技"
+          ],
+          "analysis": [
+            "美敦力正在推进Hugo手术机器人的商业化，公司预计本财年结束时全球累计手术量将突破5万例。",
+            "手术量增长意味着这套系统正从早期试用走向更常规的临床使用，可能为更多医院提供达芬奇之外的机器人手术选择。",
+            "目前公开信息只给出累计手术量目标，尚未披露各地区的具体使用情况、与竞品的价格对比以及长期临床效果数据。"
+          ]
+        },
+        "en": {
+          "title": "Medtronic's Hugo surgical robot prepares for larger-scale operations",
+          "summary": "Medtronic expects its Hugo surgical system to surpass 50,000 cumulative procedures worldwide by the end of its fiscal year.",
+          "lede": "Medtronic's Hugo surgical robot is on track to pass 50,000 cumulative procedures this fiscal year, a sign the system is entering broader clinical use.",
+          "tags": [
+            "surgical robots",
+            "Medtronic",
+            "medical technology"
+          ],
+          "analysis": [
+            "Medtronic is pushing ahead with commercialization of its Hugo surgical robot, expecting cumulative global procedures to exceed 50,000 by the end of the fiscal year.",
+            "The growing procedure count suggests the system is moving from early trials toward more routine clinical use, potentially giving hospitals another robotic surgery option beyond Intuitive's da Vinci.",
+            "Public information so far covers only the cumulative procedure target; regional usage details, pricing against competitors and long-term clinical outcome data have not been disclosed."
+          ]
+        }
+      },
+      "id": "6f609c18282a74b6425dea77",
+      "original_title": "Medtronic’s Hugo surgical robot ready for bigger operation",
+      "original_summary": "Globally, the Hugo surgical system is on track to surpass 50,000 cumulative procedures by the end of Medtronic's fiscal year.",
+      "url": "https://www.therobotreport.com/medtronics-hugo-surgical-robot-ready-for-bigger-operation",
+      "source": "The Robot Report",
+      "published": "2026-11-21T00:55:45+00:00",
+      "authors": [],
+      "score": 3,
+      "category": "robotics",
+      "image": {
+        "path": "./data/2026-11-21/news_images/6f609c18282a74b6425dea77.webp",
+        "width": 1200,
+        "height": 779,
+        "source_url": "https://www.therobotreport.com/medtronics-hugo-surgical-robot-ready-for-bigger-operation/",
+        "image_url": "https://www.therobotreport.com/wp-content/uploads/2026/11/Medtronic-Hugo-RAS-System-FDA-clearance-featured.jpg",
+        "alt": "The Medtronic Hugo surgical robot. "
+      }
+    }
+  ]
+}

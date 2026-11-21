@@ -2,33 +2,47 @@
 <rss version="2.0">
   <channel>
     <title>机器人研究日报</title>
-    <link>./</link>
+    <link>https://jdreamflying.github.io/robo-daily-digest/</link>
     <description>机器人行业资讯与 arXiv 论文精选</description>
     <language>zh-CN</language>
     <item>
+      <title>2026-11-21 机器人资讯 | 美敦力Hugo手术机器人准备扩大手术规模</title>
+      <link>https://jdreamflying.github.io/robo-daily-digest/news.html?date=2026-11-21</link>
+      <guid isPermaLink="false">robo-daily-digest:2026-11-21:news</guid>
+      <pubDate>Sat, 21 Nov 2026 00:00:00 GMT</pubDate>
+      <description>从 114 条来源中精选 1 条。</description>
+    </item>
+    <item>
+      <title>2026-11-21 机器人论文 | ReLoco：通过行为条件运动先验统一人形机器人行走与跌倒恢复</title>
+      <link>https://jdreamflying.github.io/robo-daily-digest/index.html?date=2026-11-21</link>
+      <guid isPermaLink="false">robo-daily-digest:2026-11-21:papers</guid>
+      <pubDate>Sat, 21 Nov 2026 00:00:00 GMT</pubDate>
+      <description>从 105 条来源中精选 8 条。</description>
+    </item>
+    <item>
       <title>2026-11-20 机器人资讯 | MIT 团队造出可自主飞行的轻量机器人，自带传感器和计算机</title>
-      <link>./news.html?date=2026-11-20</link>
+      <link>https://jdreamflying.github.io/robo-daily-digest/news.html?date=2026-11-20</link>
       <guid isPermaLink="false">robo-daily-digest:2026-11-20:news</guid>
       <pubDate>Fri, 20 Nov 2026 00:00:00 GMT</pubDate>
       <description>从 160 条来源中精选 4 条。</description>
     </item>
     <item>
       <title>2026-11-20 机器人论文 | Magflow：工业级六自由度磁悬浮的可微仿真</title>
-      <link>./index.html?date=2026-11-20</link>
+      <link>https://jdreamflying.github.io/robo-daily-digest/index.html?date=2026-11-20</link>
       <guid isPermaLink="false">robo-daily-digest:2026-11-20:papers</guid>
       <pubDate>Fri, 20 Nov 2026 00:00:00 GMT</pubDate>
       <description>从 89 条来源中精选 8 条。</description>
     </item>
     <item>
       <title>2026-11-19 机器人资讯 | From Commercial Scale to Embodied Intelligence: The Next Challenge for Robotics</title>
-      <link>./news.html?date=2026-11-19</link>
+      <link>https://jdreamflying.github.io/robo-daily-digest/news.html?date=2026-11-19</link>
       <guid isPermaLink="false">robo-daily-digest:2026-11-19:news</guid>
       <pubDate>Thu, 19 Nov 2026 00:00:00 GMT</pubDate>
       <description>从 15 条来源中精选 15 条。</description>
     </item>
     <item>
       <title>2026-11-19 机器人论文 | BiCAT: Bimanual Coordination Action Tokenization</title>
-      <link>./index.html?date=2026-11-19</link>
+      <link>https://jdreamflying.github.io/robo-daily-digest/index.html?date=2026-11-19</link>
       <guid isPermaLink="false">robo-daily-digest:2026-11-19:papers</guid>
       <pubDate>Thu, 19 Nov 2026 00:00:00 GMT</pubDate>
       <description>从 140 条来源中精选 8 条。</description>

@@ -1,0 +1,612 @@
+{
+  "date": "2026-11-21",
+  "total_scanned": 105,
+  "total_new": 105,
+  "total_unique": 105,
+  "paper_target_date": "2026-11-18",
+  "paper_source_date": "2026-11-18",
+  "paper_category": "cs.RO",
+  "scored_count": 105,
+  "qualified_count": 105,
+  "mode": "api",
+  "items": [
+    {
+      "title": "ReLoco：通过行为条件运动先验统一人形机器人行走与跌倒恢复",
+      "summary": "ReLoco 提出一种行为条件对抗运动先验框架，在单一本体感觉策略中学习行走、从任意跌倒姿态起身并恢复指令跟踪。在共同训练迭代下，完整策略实现 96.80% 独立起身成功率和 96.96% 推倒恢复成功率，躯干平面速度均方根误差为 0.1266 m/s，比条件单输出变体低 14.7%。在 64.5 kg 的天工 3.0 人形机器人上部署，无需控制器切换或在线微调，即可完成行走、跑步、起身及跌倒后恢复运动。",
+      "lede": "ReLoco 用行为条件对抗运动先验，让单一本体感觉策略同时学会行走、起身和跌倒后恢复指令跟踪，并在天工 3.0 上实现零切换部署。",
+      "tags": [
+        "人形机器人",
+        "跌倒恢复",
+        "运动先验"
+      ],
+      "sections": {
+        "background": "人形机器人需要从跌倒中恢复并继续执行指令运动，才能维持持续行走。将直立运动与地面接触恢复统一到一个策略中学习，需要同时监督这两类行为，而现有方法往往难以兼顾。",
+        "conclusion": "在共同训练迭代下，完整策略实现 96.80% 的独立起身成功率和 96.96% 的推倒恢复成功率（含指令恢复）。躯干平面速度均方根误差为 0.1266 m/s，比条件单输出变体低 14.7%，动态时间规整测得的关节角差异相近。在 64.5 kg 的天工 3.0 人形机器人上部署，单一本体感觉执行器即可完成行走、跑步、起身及跌倒后恢复运动，无需控制器切换或机器人端策略微调。",
+        "method": "ReLoco 使用行为条件对抗运动先验：训练时根据机器人姿态选择专家池，并条件化一个共享判别器，使其产生两个行为特定输出。任务奖励与共享正则化支持指令跟踪和恢复，临时辅助促进探索。基于仿真的细化阶段提供机器人执行的运动参考用于监督。消融实验在匹配设置下考察条件监督、输出分离和参考质量的影响。",
+        "takeaways": "该工作表明，通过行为条件运动先验，可以在单一本体感觉策略中统一行走与跌倒恢复，避免控制器切换和在线微调。其局限可能在于依赖仿真细化提供的参考质量，以及行为条件设计对专家池和判别器结构的敏感性，适用范围需进一步在更多真实场景中验证。"
+      },
+      "i18n": {
+        "zh": {
+          "title": "ReLoco：通过行为条件运动先验统一人形机器人行走与跌倒恢复",
+          "summary": "ReLoco 提出一种行为条件对抗运动先验框架，在单一本体感觉策略中学习行走、从任意跌倒姿态起身并恢复指令跟踪。在共同训练迭代下，完整策略实现 96.80% 独立起身成功率和 96.96% 推倒恢复成功率，躯干平面速度均方根误差为 0.1266 m/s，比条件单输出变体低 14.7%。在 64.5 kg 的天工 3.0 人形机器人上部署，无需控制器切换或在线微调，即可完成行走、跑步、起身及跌倒后恢复运动。",
+          "lede": "ReLoco 用行为条件对抗运动先验，让单一本体感觉策略同时学会行走、起身和跌倒后恢复指令跟踪，并在天工 3.0 上实现零切换部署。",
+          "tags": [
+            "人形机器人",
+            "跌倒恢复",
+            "运动先验"
+          ],
+          "sections": {
+            "background": "人形机器人需要从跌倒中恢复并继续执行指令运动，才能维持持续行走。将直立运动与地面接触恢复统一到一个策略中学习，需要同时监督这两类行为，而现有方法往往难以兼顾。",
+            "conclusion": "在共同训练迭代下，完整策略实现 96.80% 的独立起身成功率和 96.96% 的推倒恢复成功率（含指令恢复）。躯干平面速度均方根误差为 0.1266 m/s，比条件单输出变体低 14.7%，动态时间规整测得的关节角差异相近。在 64.5 kg 的天工 3.0 人形机器人上部署，单一本体感觉执行器即可完成行走、跑步、起身及跌倒后恢复运动，无需控制器切换或机器人端策略微调。",
+            "method": "ReLoco 使用行为条件对抗运动先验：训练时根据机器人姿态选择专家池，并条件化一个共享判别器，使其产生两个行为特定输出。任务奖励与共享正则化支持指令跟踪和恢复，临时辅助促进探索。基于仿真的细化阶段提供机器人执行的运动参考用于监督。消融实验在匹配设置下考察条件监督、输出分离和参考质量的影响。",
+            "takeaways": "该工作表明，通过行为条件运动先验，可以在单一本体感觉策略中统一行走与跌倒恢复，避免控制器切换和在线微调。其局限可能在于依赖仿真细化提供的参考质量，以及行为条件设计对专家池和判别器结构的敏感性，适用范围需进一步在更多真实场景中验证。"
+          }
+        },
+        "en": {
+          "title": "ReLoco: Unified Humanoid Locomotion and Fall Recovery via Behavior-Conditioned Motion Priors",
+          "summary": "ReLoco presents a behavior-conditioned adversarial motion prior framework that learns walking, get-up from arbitrary fallen postures, and command resumption within a single proprioceptive policy. At a common training iteration, the full policy achieves 96.80% independent get-up success and 96.96% push-recovery success, with torso planar velocity root-mean-square error of 0.1266 m/s, 14.7% lower than the conditional single-output variant. Deployed on the 64.5-kg Tiangong 3.0 humanoid, it performs walking, running, get-up, and locomotion resumption after falls using one proprioceptive actor, without controller switching or on-robot policy fine-tuning.",
+          "lede": "ReLoco uses behavior-conditioned adversarial motion priors to let a single proprioceptive policy learn walking, get-up, and command resumption after falls, deployed on Tiangong 3.0 without controller switching.",
+          "tags": [
+            "humanoid robots",
+            "fall recovery",
+            "motion priors"
+          ],
+          "sections": {
+            "background": "Humanoid robots must recover from falls and resume commanded motion to sustain locomotion. Learning these behaviors in one policy requires supervision that accommodates both upright movement and ground-contact recovery, which existing methods often struggle to balance.",
+            "conclusion": "At a common training iteration, the full policy achieves 96.80% independent get-up success and 96.96% push-recovery success, including command resumption. Its torso planar velocity root-mean-square error is 0.1266 m/s, 14.7% lower than the conditional single-output variant, with similar joint-angle discrepancy measured by dynamic time warping. Deployment on the 64.5-kg Tiangong 3.0 humanoid demonstrates walking, running, get-up, and locomotion resumption after falls using one proprioceptive actor, without controller switching or on-robot policy fine-tuning.",
+            "method": "ReLoco uses behavior-conditioned adversarial motion priors: during training, robot posture selects the expert pool and conditions a shared discriminator with two behavior-specific outputs. Task rewards and shared regularization support command tracking and recovery, while temporary assistance facilitates exploration. A simulation-based refinement stage supplies robot-executed motion references for this supervision. Ablations examine conditional supervision, output separation, and reference quality under matched settings.",
+            "takeaways": "This work shows that behavior-conditioned motion priors can unify locomotion and fall recovery in a single proprioceptive policy, avoiding controller switching and online fine-tuning. Limitations may include dependence on the quality of references from simulation refinement and sensitivity of the behavior-conditioning design to expert pools and discriminator structure, with scope requiring further validation in more real-world scenarios."
+          }
+        }
+      },
+      "id": "2611.23916",
+      "original_title": "ReLoco: Unified Humanoid Locomotion and Fall Recovery via Behavior-Conditioned Motion Priors",
+      "original_summary": "Humanoid robots must recover from falls and resume commanded motion to sustain locomotion. Learning these behaviors in one policy requires supervision that accommodates both upright movement and ground-contact recovery. We present ReLoco, a framework that uses behavior-conditioned adversarial motion priors to learn locomotion, get-up from arbitrary fallen postures, and command resumption within one proprioceptive policy. During training, robot posture selects the expert pool and conditions a shared discriminator with two behavior-specific outputs. Task rewards and shared regularization support command tracking and recovery, while temporary assistance facilitates exploration. A simulation-based refinement stage supplies robot-executed motion references for this supervision. Ablations examine conditional supervision, output separation, and reference quality under matched settings. At a common training iteration, the full policy achieves $96.80\\%$ independent get-up success and $96.96\\%$ push-recovery success, including command resumption. Its torso planar velocity root-mean-square error is $0.1266$~m/s, $14.7\\%$ lower than the conditional single-output variant, with similar joint-angle discrepancy measured by dynamic time warping. Deployment on the 64.5-kg Tiangong~3.0 humanoid demonstrates walking, running, get-up, and locomotion resumption after falls using one proprioceptive actor, without controller switching or on-robot policy fine-tuning.",
+      "url": "https://arxiv.org/abs/2611.23916v1",
+      "source": "arXiv cs.RO",
+      "published": "2026-11-18T06:06:24+00:00",
+      "authors": [
+        "Lequn Fu",
+        "Yufeng Hu",
+        "Yijun Zhong",
+        "Jie Zhang",
+        "Xiao Li",
+        "Lingxiang Ji",
+        "Zhiyuan Xu",
+        "Jian Tang",
+        "Shiqi Li"
+      ],
+      "score": 5,
+      "versioned_id": "2611.23916v1",
+      "figure": {
+        "path": "./data/2026-11-21/figures/2611.23916.webp",
+        "caption": "Fig. 6: Real-world balance recovery after manual disturbances without a complete ground-level fall. (a) and (b) Responses on approximately level grassy terrain. (c) Response to a push on an inclined grassy surface, showing postural adjustment and restoration of an upright stance. The slope sequence is a qualitative demonstration outside the 20 level-ground locomotion trials."
+      },
+      "code_url": null,
+      "project_url": "https://lequn-f.github.io/ReLoco",
+      "pdf_url": "https://arxiv.org/pdf/2611.23916"
+    },
+    {
+      "title": "WEVO：世界模型驱动的VLA优化，用于全身移动操作",
+      "summary": "WEVO 是一个无需遥操作的框架，在动作条件视频世界模型中后训练全身人形视觉-语言-动作（VLA）策略。它先用仿真操作与移动的“游玩”数据提升世界模型对接触动力学和视角变化的预测，再用合成示范训练的 VLA 在真实机器人上每任务采集 20 次自主 rollout 对齐世界模型；随后 VLA、全身控制器（WBC）与视频世界模型构成闭环强化学习环境，并提供稠密进度奖励。三个真实机器人任务上，游玩数据提升了所有评估的世界模型指标和下游策略成功率；视频世界模型强化学习把平均成功率从 23.3% 提升到 75.0%，而真实机器人强化学习为 48.3%。",
+      "lede": "WEVO 用动作条件视频世界模型替代不安全的人形真机探索，把全身 VLA 的平均成功率从 23.3% 提升到 75.0%。",
+      "tags": [
+        "视觉-语言-动作模型",
+        "世界模型",
+        "人形机器人全身移动操作"
+      ],
+      "sections": {
+        "background": "强化学习可让 VLA 策略超越模仿学习，但人形机器人在真实环境中探索不安全，仿真器强化学习又可能利用残余的仿真到现实差距，导致策略在部署时失效。",
+        "conclusion": "在三个真实机器人任务上，加入仿真游玩数据后，所有评估的世界模型指标和下游策略成功率均有提升。视频世界模型强化学习将平均成功率从 23.3% 提高到 75.0%，真实机器人强化学习为 48.3%。结论表明仿真提供策略初始化与广泛覆盖，视频世界模型提供与部署对齐的策略改进环境，二者互补。",
+        "method": "WEVO 先用仿真操作与移动游玩数据训练动作条件视频世界模型，提升接触动力学与视角变化预测；再用合成示范训练 VLA，并在真实机器人上每任务采集 20 次自主 rollout 对齐世界模型。之后将 VLA、全身控制器（WBC）和视频世界模型组成闭环强化学习环境，以稠密进度奖励优化策略，全程无需遥操作。",
+        "takeaways": "该工作说明视频世界模型可作为与真实部署对齐的安全强化学习环境，减少人形机器人真机探索风险，并缓解仿真器利用仿真到现实差距的问题。其适用范围限于所评估的三个真实机器人全身移动操作任务；世界模型对齐依赖每任务 20 次真实 rollout，跨任务泛化与更复杂接触场景仍需验证。"
+      },
+      "i18n": {
+        "zh": {
+          "title": "WEVO：世界模型驱动的VLA优化，用于全身移动操作",
+          "summary": "WEVO 是一个无需遥操作的框架，在动作条件视频世界模型中后训练全身人形视觉-语言-动作（VLA）策略。它先用仿真操作与移动的“游玩”数据提升世界模型对接触动力学和视角变化的预测，再用合成示范训练的 VLA 在真实机器人上每任务采集 20 次自主 rollout 对齐世界模型；随后 VLA、全身控制器（WBC）与视频世界模型构成闭环强化学习环境，并提供稠密进度奖励。三个真实机器人任务上，游玩数据提升了所有评估的世界模型指标和下游策略成功率；视频世界模型强化学习把平均成功率从 23.3% 提升到 75.0%，而真实机器人强化学习为 48.3%。",
+          "lede": "WEVO 用动作条件视频世界模型替代不安全的人形真机探索，把全身 VLA 的平均成功率从 23.3% 提升到 75.0%。",
+          "tags": [
+            "视觉-语言-动作模型",
+            "世界模型",
+            "人形机器人全身移动操作"
+          ],
+          "sections": {
+            "background": "强化学习可让 VLA 策略超越模仿学习，但人形机器人在真实环境中探索不安全，仿真器强化学习又可能利用残余的仿真到现实差距，导致策略在部署时失效。",
+            "conclusion": "在三个真实机器人任务上，加入仿真游玩数据后，所有评估的世界模型指标和下游策略成功率均有提升。视频世界模型强化学习将平均成功率从 23.3% 提高到 75.0%，真实机器人强化学习为 48.3%。结论表明仿真提供策略初始化与广泛覆盖，视频世界模型提供与部署对齐的策略改进环境，二者互补。",
+            "method": "WEVO 先用仿真操作与移动游玩数据训练动作条件视频世界模型，提升接触动力学与视角变化预测；再用合成示范训练 VLA，并在真实机器人上每任务采集 20 次自主 rollout 对齐世界模型。之后将 VLA、全身控制器（WBC）和视频世界模型组成闭环强化学习环境，以稠密进度奖励优化策略，全程无需遥操作。",
+            "takeaways": "该工作说明视频世界模型可作为与真实部署对齐的安全强化学习环境，减少人形机器人真机探索风险，并缓解仿真器利用仿真到现实差距的问题。其适用范围限于所评估的三个真实机器人全身移动操作任务；世界模型对齐依赖每任务 20 次真实 rollout，跨任务泛化与更复杂接触场景仍需验证。"
+          }
+        },
+        "en": {
+          "title": "WEVO: World Model-Enabled VLA Optimization for Whole-Body Loco-Manipulation",
+          "summary": "WEVO is a teleoperation-free framework for post-training a whole-body humanoid vision-language-action (VLA) policy in an action-conditioned video world model. Simulated manipulation and locomotion play data improve the world model's prediction of contact dynamics and viewpoint changes. A VLA trained on synthetic demonstrations collects 20 autonomous real-robot rollouts per task to align the world model with deployment observations. The VLA, whole-body controller (WBC), and video world model then form a closed-loop reinforcement learning environment with dense progress rewards. Across three real-robot tasks, play data improves every evaluated world model metric and downstream policy success; video world model RL raises mean success from 23.3% to 75.0%, compared with 48.3% for real-robot RL.",
+          "lede": "WEVO replaces unsafe humanoid real-robot exploration with an action-conditioned video world model, raising whole-body VLA mean success from 23.3% to 75.0%.",
+          "tags": [
+            "vision-language-action models",
+            "world models",
+            "humanoid whole-body loco-manipulation"
+          ],
+          "sections": {
+            "background": "Reinforcement learning can improve VLA policies beyond imitation, but humanoid exploration on real robots is unsafe, and simulator RL can exploit residual sim-to-real gaps, causing policies to fail in deployment.",
+            "conclusion": "Across three real-robot tasks, adding simulated play data improves all evaluated world model metrics and downstream policy success. Video world model RL raises mean success from 23.3% to 75.0%, while real-robot RL reaches 48.3%. The results indicate that simulation provides policy initialization and broad coverage, whereas the video world model offers a deployment-aligned environment for policy improvement, making the two complementary.",
+            "method": "WEVO first trains an action-conditioned video world model on simulated manipulation and locomotion play data to improve contact-dynamics and viewpoint-change prediction. It then trains a VLA on synthetic demonstrations and collects 20 autonomous real-robot rollouts per task to align the world model with deployment observations. The VLA, whole-body controller (WBC), and video world model then form a closed-loop reinforcement learning environment optimized with dense progress rewards, without teleoperation.",
+            "takeaways": "The work shows that a video world model can serve as a safe, deployment-aligned RL environment, reducing the risk of real-humanoid exploration and mitigating simulator exploitation of sim-to-real gaps. Its scope is limited to the three evaluated real-robot whole-body loco-manipulation tasks; world model alignment relies on 20 real rollouts per task, and cross-task generalization and more complex contact scenarios remain to be validated."
+          }
+        }
+      },
+      "id": "2611.25251",
+      "original_title": "WEVO: World Model-Enabled VLA Optimization for Whole-Body Loco-Manipulation",
+      "original_summary": "Reinforcement learning (RL) can improve vision-language-action (VLA) policies beyond imitation, but humanoid exploration is unsafe and simulator RL can exploit residual sim-to-real gaps. We present WEVO, a teleoperation-free framework for post-training a whole-body humanoid VLA in an action-conditioned video world model (WM). Simulated manipulation and locomotion play data improve contact-dynamics and viewpoint-change prediction. A VLA trained on synthetic demonstrations collects 20 autonomous real robot rollouts per task to align the WM with deployment observations. The VLA, whole-body controller (WBC), and video WM then form a closed-loop RL environment with dense progress rewards. Across three real robot tasks, play data improves every evaluated WM metric and downstream policy success; video WM RL raises mean success from 23.3% to 75.0%, compared with 48.3% for real robot RL. We therefore leverage the complementary strengths of both environments: simulation provides policy initialization and broad coverage, while the video WM offers a deployment-aligned environment for policy improvement. Project website: https://qianzhong-chen.github.io/wevo.github.io/.",
+      "url": "https://arxiv.org/abs/2611.25251v1",
+      "source": "arXiv cs.RO",
+      "published": "2026-11-18T22:36:08+00:00",
+      "authors": [
+        "Qianzhong Chen",
+        "Muyuan Lin",
+        "Yuyin Sun",
+        "Mac Schwager",
+        "Cheng-Hao Kuo",
+        "Roberto Martín-Martín"
+      ],
+      "score": 4,
+      "versioned_id": "2611.25251v1",
+      "figure": {
+        "path": "./data/2026-11-21/figures/2611.25251.webp",
+        "caption": "Fig. 2: WEVO: teleoperation-free world model RL for humanoid loco-manipulation. (a) Hardware RL is costly and risky. (b) Prior WM-RL focuses on fixed-base tasks and uses teleoperation data. (c) WEVO combines synthetic demonstrations, simulated play data, and autonomous real robot rollouts for whole-body policy improvement."
+      },
+      "code_url": null,
+      "project_url": "https://qianzhong-chen.github.io/wevo.github.io/",
+      "pdf_url": "https://arxiv.org/pdf/2611.25251"
+    },
+    {
+      "title": "QDD-MM：一种面向腱驱机器人的简易紧凑开源准直驱肌肉模块",
+      "summary": "研究提出 QDD-MM，一种利用准直驱电机（QDD，低减速比、可反向驱动的电机）的腱驱肌肉模块，目标是让肌肉单元更简单、更紧凑、更易维护，并具备更高的反向驱动性和更快的驱动速度。作者用该模块搭建了单关节、两或三块肌肉的腱驱机器人以及部分肌肉骨骼人形，验证了有效性。",
+      "lede": "用准直驱电机把腱驱肌肉单元做成更简单、更紧凑、可复用的开源模块，并在单关节机器人和部分肌肉骨骼人形上完成验证。",
+      "tags": [
+        "腱驱机器人",
+        "准直驱电机",
+        "开源肌肉模块"
+      ],
+      "sections": {
+        "background": "腱驱机器人用电机收放线缆来模拟生物肌肉，具有变刚度和冗余驱动等优势。但肌肉骨骼结构天然需要大量且多样的肌肉单元，因此希望把每块肌肉做成紧凑模块，并能灵活适配多种排布。已有小型肌肉模块往往结构复杂、维护困难，且因减速比高而反向驱动性差、驱动速度受限。",
+        "conclusion": "作者用 QDD-MM 搭建了单关节、配两块或三块肌肉的腱驱机器人，以及一个部分肌肉骨骼人形，并验证了其有效性。摘要未给出具体数值指标，因此不能据此推断性能提升的幅度或适用范围。",
+        "method": "QDD-MM 采用准直驱电机，省去专用力传感机构，从而显著简化整体设计；同时支持多方向灵活走线、多种模块间连接方式，甚至可把模块本体当作结构件使用。设计已开源，定位为可复用的肌肉模块。",
+        "takeaways": "该工作说明准直驱电机可以同时简化腱驱肌肉模块的力感知与结构设计，并改善反向驱动性和驱动速度，为腱驱机器人降低门槛、加快迭代提供了可复用基础件。局限在于摘要只报告了单关节与部分人形的验证，未给出量化对比，实际性能与可扩展性仍需看完整实验。"
+      },
+      "i18n": {
+        "zh": {
+          "title": "QDD-MM：一种面向腱驱机器人的简易紧凑开源准直驱肌肉模块",
+          "summary": "研究提出 QDD-MM，一种利用准直驱电机（QDD，低减速比、可反向驱动的电机）的腱驱肌肉模块，目标是让肌肉单元更简单、更紧凑、更易维护，并具备更高的反向驱动性和更快的驱动速度。作者用该模块搭建了单关节、两或三块肌肉的腱驱机器人以及部分肌肉骨骼人形，验证了有效性。",
+          "lede": "用准直驱电机把腱驱肌肉单元做成更简单、更紧凑、可复用的开源模块，并在单关节机器人和部分肌肉骨骼人形上完成验证。",
+          "tags": [
+            "腱驱机器人",
+            "准直驱电机",
+            "开源肌肉模块"
+          ],
+          "sections": {
+            "background": "腱驱机器人用电机收放线缆来模拟生物肌肉，具有变刚度和冗余驱动等优势。但肌肉骨骼结构天然需要大量且多样的肌肉单元，因此希望把每块肌肉做成紧凑模块，并能灵活适配多种排布。已有小型肌肉模块往往结构复杂、维护困难，且因减速比高而反向驱动性差、驱动速度受限。",
+            "conclusion": "作者用 QDD-MM 搭建了单关节、配两块或三块肌肉的腱驱机器人，以及一个部分肌肉骨骼人形，并验证了其有效性。摘要未给出具体数值指标，因此不能据此推断性能提升的幅度或适用范围。",
+            "method": "QDD-MM 采用准直驱电机，省去专用力传感机构，从而显著简化整体设计；同时支持多方向灵活走线、多种模块间连接方式，甚至可把模块本体当作结构件使用。设计已开源，定位为可复用的肌肉模块。",
+            "takeaways": "该工作说明准直驱电机可以同时简化腱驱肌肉模块的力感知与结构设计，并改善反向驱动性和驱动速度，为腱驱机器人降低门槛、加快迭代提供了可复用基础件。局限在于摘要只报告了单关节与部分人形的验证，未给出量化对比，实际性能与可扩展性仍需看完整实验。"
+          }
+        },
+        "en": {
+          "title": "QDD-MM: A Simple and Compact Open-Source Muscle Module with Quasi-Direct-Drive Motor for Tendon-driven Robots",
+          "summary": "The work proposes QDD-MM, a tendon-driven muscle module built around quasi-direct-drive motors (QDD, low-gear-ratio motors that are easy to backdrive). The goal is a simpler, more compact and more maintainable muscle unit with higher backdrivability and faster actuation. The authors built one-joint tendon-driven robots with two or three muscles and a partial musculoskeletal humanoid using the module, and verified their effectiveness.",
+          "lede": "A quasi-direct-drive motor turns the tendon-driven muscle unit into a simpler, more compact, reusable open-source module, validated on one-joint robots and a partial musculoskeletal humanoid.",
+          "tags": [
+            "tendon-driven robots",
+            "quasi-direct-drive motor",
+            "open-source muscle module"
+          ],
+          "sections": {
+            "background": "Tendon-driven robots wind wires with motors to mimic biological muscles, offering advantages such as variable stiffness and redundant actuation. Musculoskeletal structures inherently need many diverse muscle units, so compact modularization of each muscle and flexible accommodation of diverse arrangements are desirable. Existing small muscle modules tend to be complex, hard to maintain, and limited in backdrivability and actuation speed because of high gear ratios.",
+            "conclusion": "The authors built one-joint tendon-driven robots with two or three muscles and a partial musculoskeletal humanoid using QDD-MM, and verified their effectiveness. The abstract reports no numerical metrics, so the magnitude of any performance gain and its scope of applicability cannot be inferred from it.",
+            "method": "QDD-MM uses quasi-direct-drive motors, which removes the need for a dedicated force-sensing mechanism and significantly simplifies the overall design. It also supports flexible wire routing in multiple directions, various module-to-module connections, and even use of the module body itself as a structural component. The design is openly available as a reusable muscle module.",
+            "takeaways": "The work indicates that quasi-direct-drive motors can simplify both force sensing and structural design in tendon-driven muscle modules while improving backdrivability and actuation speed, providing a reusable building block that lowers the barrier to tendon-driven robotics. A limitation is that the abstract reports only one-joint and partial-humanoid validation without quantitative comparisons, so actual performance and scalability require the full experiments."
+          }
+        }
+      },
+      "id": "2611.24279",
+      "original_title": "QDD-MM: A Simple and Compact Open-Source Muscle Module with Quasi-Direct-Drive Motor for Tendon-driven Robots",
+      "original_summary": "Tendon-driven robots, which actuate like biological muscles by using motors to wind wires, offer advantages such as variable stiffness and redundant actuation. Despite these advantages, musculoskeletal structures inherently involve a large number of diverse muscles, making it desirable to compactly modularize each muscle unit and flexibly accommodate diverse muscle arrangements. While various small muscle modules have been proposed to date, existing designs tend to be complex, difficult to maintain, and suffer from low backdrivability and limited actuation speed due to their high gear ratios. In this work, we propose QDD-MM, a muscle module that leverages recent advances in quasi-direct-drive motors to achieve a simpler and more compact structure with higher backdrivability and faster actuation than previous modules. By utilizing quasi-direct-drive motors, the module eliminates the need for dedicated force-sensing mechanisms, significantly simplifying the overall design, while also supporting flexible wire routing in multiple directions, various module-to-module connections, and even the use of the module body itself as a structural component. QDD-MM integrates these capabilities into a reusable muscle module, and its design is openly available at https://github.com/haraduka/qddmm. We developed tendon-driven robots with one joint and either two or three muscles, as well as a partial musculoskeletal humanoid, using the proposed QDD-MM and verified their effectiveness. We expect that this muscle module will democratize tendon-driven robotics and further accelerate progress in the field.",
+      "url": "https://arxiv.org/abs/2611.24279v1",
+      "source": "arXiv cs.RO",
+      "published": "2026-11-18T11:56:26+00:00",
+      "authors": [
+        "Kento Kawaharazuka",
+        "Yoshimoto Ribayashi",
+        "Takahiro Hattori",
+        "Shunnosuke Yoshimura",
+        "Kei Okada"
+      ],
+      "score": 4,
+      "versioned_id": "2611.24279v1",
+      "figure": {
+        "path": "./data/2026-11-21/figures/2611.24279.webp",
+        "caption": "Fig. 2: Design overview of QDD-MM: the muscle module consists of a main body integrating a quasi-direct-drive motor and pulley system, and a detachable wire routing unit that defines the wire’s pulling direction."
+      },
+      "attention": {
+        "github_stars": 7,
+        "github_url": "https://github.com/haraduka/qddmm"
+      },
+      "code_url": "https://github.com/haraduka/qddmm",
+      "project_url": null,
+      "pdf_url": "https://arxiv.org/pdf/2611.24279"
+    },
+    {
+      "title": "Ego2X：从第一人称人类数据到任意机器人的接触感知迁移",
+      "summary": "Ego2X 是一个以物体为中心的框架，把单目第一人称视频转换为灵巧手和两指夹爪都能物理执行的机器人数据。它的核心是 CORE（以接触为中心的物体交互表示），记录物体表面锚点上的每次接触、相对力、抓取模式和交互状态。在 HOT3D 上，接触驱动的校正把接触状态下的手部深度误差降低 33.7%；在 EgoDex 上，接触驱动的重定向实现了 62.9% 的标注接触，超过官方 HuRo 流程的 27.9%；在 RoboTwin 2.0 上，仅用 Ego2X 生成的片段对 X-VLA 做后训练（不使用模拟器演示），200 个配对场景的任务成功率从零样本的 40.5% 提升到 67.0%。",
+      "lede": "Ego2X 用接触表示把第一人称人类视频转成灵巧手和两指夹爪可执行的机器人数据，并在多个基准上验证了精度与下游任务收益。",
+      "tags": [
+        "第一人称视频",
+        "接触感知重定向",
+        "机器人数据生成"
+      ],
+      "sections": {
+        "background": "具身模型依赖真实交互数据，但在实体机器人上采集数据既慢又费人力。近来的第一人称视频到机器人数据流程通过迁移手和手臂运动来生成数据，主要用视觉外观判断保真度。然而这些轨迹常在物理上失败：手指悬在物体旁边，夹爪在空处闭合。作者认为，物体如何运动以及驱动运动的接触才是关键。",
+        "conclusion": "实验表明，以接触为中心的表示能同时改善数据转换的几何精度和下游策略学习。HOT3D 上接触状态手部深度误差降低 33.7%，EgoDex 上实现 62.9% 的标注接触（HuRo 为 27.9%），RoboTwin 2.0 上仅用 Ego2X 片段后训练 X-VLA 就把成功率从 40.5% 提到 67.0%。这些结果说明该流程可跨灵巧手与两指夹爪生成可执行数据，但结论限于所评测的数据集与任务场景。",
+        "method": "Ego2X 以 CORE（以接触为中心的物体交互表示）为核心，为物体表面每个接触记录锚点、相对力、抓取模式和交互状态。CORE 在流程中承担三项作用：用物体相对约束校正手与物体的漂移；引导逆运动学朝向机器人必须实现的接触；在擦除手臂和合成机器人时保留被持物体。由此把单目第一人称视频转成灵巧手和两指夹爪可执行的机器人数据。",
+        "takeaways": "这项工作提示，第一人称人类视频转机器人数据时，应以物体运动和接触为约束，而不只看视觉相似度。接触表示还能在手臂替换和机器人合成中保持物体交互不变，为跨形态数据复用提供思路。局限在于评测集中在 HOT3D、EgoDex 和 RoboTwin 2.0，真实机器人上的广泛泛化仍需验证。"
+      },
+      "i18n": {
+        "zh": {
+          "title": "Ego2X：从第一人称人类数据到任意机器人的接触感知迁移",
+          "summary": "Ego2X 是一个以物体为中心的框架，把单目第一人称视频转换为灵巧手和两指夹爪都能物理执行的机器人数据。它的核心是 CORE（以接触为中心的物体交互表示），记录物体表面锚点上的每次接触、相对力、抓取模式和交互状态。在 HOT3D 上，接触驱动的校正把接触状态下的手部深度误差降低 33.7%；在 EgoDex 上，接触驱动的重定向实现了 62.9% 的标注接触，超过官方 HuRo 流程的 27.9%；在 RoboTwin 2.0 上，仅用 Ego2X 生成的片段对 X-VLA 做后训练（不使用模拟器演示），200 个配对场景的任务成功率从零样本的 40.5% 提升到 67.0%。",
+          "lede": "Ego2X 用接触表示把第一人称人类视频转成灵巧手和两指夹爪可执行的机器人数据，并在多个基准上验证了精度与下游任务收益。",
+          "tags": [
+            "第一人称视频",
+            "接触感知重定向",
+            "机器人数据生成"
+          ],
+          "sections": {
+            "background": "具身模型依赖真实交互数据，但在实体机器人上采集数据既慢又费人力。近来的第一人称视频到机器人数据流程通过迁移手和手臂运动来生成数据，主要用视觉外观判断保真度。然而这些轨迹常在物理上失败：手指悬在物体旁边，夹爪在空处闭合。作者认为，物体如何运动以及驱动运动的接触才是关键。",
+            "conclusion": "实验表明，以接触为中心的表示能同时改善数据转换的几何精度和下游策略学习。HOT3D 上接触状态手部深度误差降低 33.7%，EgoDex 上实现 62.9% 的标注接触（HuRo 为 27.9%），RoboTwin 2.0 上仅用 Ego2X 片段后训练 X-VLA 就把成功率从 40.5% 提到 67.0%。这些结果说明该流程可跨灵巧手与两指夹爪生成可执行数据，但结论限于所评测的数据集与任务场景。",
+            "method": "Ego2X 以 CORE（以接触为中心的物体交互表示）为核心，为物体表面每个接触记录锚点、相对力、抓取模式和交互状态。CORE 在流程中承担三项作用：用物体相对约束校正手与物体的漂移；引导逆运动学朝向机器人必须实现的接触；在擦除手臂和合成机器人时保留被持物体。由此把单目第一人称视频转成灵巧手和两指夹爪可执行的机器人数据。",
+            "takeaways": "这项工作提示，第一人称人类视频转机器人数据时，应以物体运动和接触为约束，而不只看视觉相似度。接触表示还能在手臂替换和机器人合成中保持物体交互不变，为跨形态数据复用提供思路。局限在于评测集中在 HOT3D、EgoDex 和 RoboTwin 2.0，真实机器人上的广泛泛化仍需验证。"
+          }
+        },
+        "en": {
+          "title": "Ego2X: Contact-aware Transfer from Egocentric Human Data to Any Robot",
+          "summary": "Ego2X is an object-centric framework that converts monocular egocentric video into physically executable robot data for both dexterous hands and parallel grippers. Its core is CORE (Contact-centric Object-interaction REpresentation), which records each contact on the object by surface anchor, relative force, grasp mode, and interaction state. On HOT3D, contact-driven correction reduces in-contact hand depth error by 33.7%; on EgoDex, contact-driven retargeting realizes 62.9% of annotated contacts versus 27.9% for the official HuRo pipeline; on RoboTwin 2.0, post-training X-VLA on Ego2X episodes alone, without simulator demonstrations, raises task success from 40.5% zero-shot to 67.0% across 200 paired scenes.",
+          "lede": "Ego2X uses a contact representation to turn egocentric human video into executable robot data for dexterous hands and parallel grippers, with gains validated on multiple benchmarks.",
+          "tags": [
+            "egocentric video",
+            "contact-aware retargeting",
+            "robot data generation"
+          ],
+          "sections": {
+            "background": "Embodied models depend on real interaction data, but collecting it on physical robots is slow and labor-intensive. Recent ego-to-robot pipelines retarget first-person human videos to robot data by transferring hand and arm motion, and they judge fidelity mainly by visual appearance. Yet trajectories often fail physically: fingers hover beside objects and grippers close on empty space. The authors argue that how the object moves and the contacts driving that motion are what count.",
+            "conclusion": "Experiments show that a contact-centric representation improves both geometric accuracy of data conversion and downstream policy learning. Contact-driven correction lowers in-contact hand depth error by 33.7% on HOT3D; contact-driven retargeting realizes 62.9% of annotated contacts on EgoDex versus 27.9% for HuRo; and post-training X-VLA on Ego2X episodes alone raises success from 40.5% to 67.0% on RoboTwin 2.0. These results indicate the pipeline can produce executable data across dexterous hands and parallel grippers, though conclusions are limited to the evaluated datasets and task settings.",
+            "method": "Ego2X centers on CORE (Contact-centric Object-interaction REpresentation), which records each contact on the object by surface anchor, relative force, grasp mode, and interaction state. CORE serves three roles in the pipeline: it corrects hand-object drift via object-relative constraints, steers inverse kinematics toward contacts the robot must realize, and preserves held objects during arm erasure and robot compositing. This turns monocular egocentric video into executable robot data for dexterous hands and parallel grippers.",
+            "takeaways": "The work suggests that when converting egocentric human video to robot data, object motion and contact should serve as constraints rather than visual similarity alone. The contact representation also keeps object interaction intact during arm replacement and robot compositing, offering a route to cross-embodiment data reuse. A limitation is that evaluation centers on HOT3D, EgoDex, and RoboTwin 2.0, so broad generalization on real robots remains to be verified."
+          }
+        }
+      },
+      "id": "2611.24138",
+      "original_title": "Ego2X: Contact-aware Transfer from Egocentric Human Data to Any Robot",
+      "original_summary": "Embodied models depend on real interaction data, yet collecting it on physical robots is slow and labor-intensive. Recent ego-to-robot pipelines retarget first-person view human videos to robot data via transferring hand and arm motion. They judge fidelity mainly by visual appearance. However, trajectories often fail in terms of physics: fingers hover beside objects, and grippers close on empty space. We argue that how the object moves and the contacts that drive the motion count. Thus, we present Ego2X, an object-centric framework that converts monocular egocentric video into physically executable robot data across dexterous hands and parallel grippers. Ego2X centers on CORE (Contact-centric Object-interaction REpresentation), which records each contact on the object by its surface anchor, as well as relative force, grasp mode, and interaction state. Throughout the pipeline, CORE corrects hand-object drift via object-relative constraints, steers inverse kinematics toward contacts the robot must realize, and preserves held objects during arm erasure and robot compositing. On HOT3D, contact-driven correction reduces in-contact hand depth error by 33.7%, while on EgoDex, contact-driven retargeting realizes 62.9% of annotated contacts, surpassing the official HuRo pipeline (27.9%). In RoboTwin 2.0, post-training X-VLA on Ego2X episodes alone, without simulator demonstrations, raises task success rate from 40.5% zero-shot to 67.0% across 200 paired scenes. We will publicly release our conversion pipeline and CORE-annotated dataset for dexterous hands and parallel grippers.",
+      "url": "https://arxiv.org/abs/2611.24138v2",
+      "source": "arXiv cs.RO",
+      "published": "2026-11-18T09:48:30+00:00",
+      "authors": [
+        "Xinke Lyu",
+        "Bowen Yang",
+        "Zhicheng Wang"
+      ],
+      "score": 4,
+      "versioned_id": "2611.24138v2",
+      "figure": {
+        "path": "./data/2026-11-21/figures/2611.24138.webp",
+        "caption": "Figure 2: Ego2X pipeline and CORE overview. From monocular video {It}, Ego2X reconstructs metric hands and signed object surfaces ϕo (Sec. 3.1) to extract object-frame CORE records 𝐜t,k=(𝐩t,k,𝐟t,k,mt,k,st,k) (Sec. 3.2), driving decoupled depth correction, cross-morphology retargeting, de-skinned compositing, and closed-loop simulation verification (Secs. 3.3, 3.4 and 3.4)."
+      },
+      "code_url": null,
+      "project_url": null,
+      "pdf_url": "https://arxiv.org/pdf/2611.24138"
+    },
+    {
+      "title": "AeroRSI：面向空中视觉语言导航的递归自我改进",
+      "summary": "AeroRSI 是一个让无人机视觉语言导航策略从自身失败中反复学习的递归自我改进框架。它让失败策略从候选修复动作继续飞行，以飞行结果判断修复是否可靠，从而把采样动作和规则建议转化为监督信号。在 TravelUAV 数据集上，三轮迭代将 2B 参数监督策略的成功率从 46.4% 提升到 67.5%，碰撞减半，较同初始化的此前最优方法高 10.6 个百分点，且无需额外人工标注或推理开销。",
+      "lede": "让无人机按语言指令飞行仍易失败，AeroRSI 用策略自己的飞行结果验证修复动作，三轮迭代把 TravelUAV 成功率从 46.4% 提到 67.5%。",
+      "tags": [
+        "空中视觉语言导航",
+        "视觉语言动作模型",
+        "递归自我改进"
+      ],
+      "sections": {
+        "background": "视觉语言动作（VLA）模型让无人机能按自然语言指令飞行，但在闭环飞行中仍频繁失败。要纠正失败，需要在策略自身到达的状态上给出能避开失败的动作，即修复动作；这类数据人类飞行员无法大规模标注，规则规划器也难以可靠提供。此外，一个回合在首次失败处终止，后续失败被掩盖，只有先修复早期失败才能暴露。",
+        "conclusion": "在 TravelUAV 上，三轮自我改进把 2B 参数监督策略的成功率从 46.4% 提升到 67.5%，碰撞减少一半，比同一初始化下的此前最优结果高 10.6 个百分点，且不增加人工标注或推理成本。结论适用于该数据集与闭环飞行设定，其他平台和场景需另行验证。",
+        "method": "核心思路是让失败策略从候选修复动作继续飞行，用后续飞行结果判断修复是否可靠。这样，策略自己采样的动作、甚至直接模仿会损害性能的规则建议，都能成为可靠监督。AeroRSI 每轮重新生成监督：定位当前策略的失败，用继续飞行验证修复，再蒸馏这些修复，同时保持策略在其他状态上的行为不变。",
+        "takeaways": "对机器人研究而言，该工作说明策略可以借助自身闭环执行结果筛选监督信号，减少对外部专家标注的依赖，并把规则方法作为候选来源而非直接模仿对象。局限在于验证依赖可继续飞行的仿真环境，真实飞行中的安全与恢复能力、以及失败分布变化后的稳定性仍需检验。"
+      },
+      "i18n": {
+        "zh": {
+          "title": "AeroRSI：面向空中视觉语言导航的递归自我改进",
+          "summary": "AeroRSI 是一个让无人机视觉语言导航策略从自身失败中反复学习的递归自我改进框架。它让失败策略从候选修复动作继续飞行，以飞行结果判断修复是否可靠，从而把采样动作和规则建议转化为监督信号。在 TravelUAV 数据集上，三轮迭代将 2B 参数监督策略的成功率从 46.4% 提升到 67.5%，碰撞减半，较同初始化的此前最优方法高 10.6 个百分点，且无需额外人工标注或推理开销。",
+          "lede": "让无人机按语言指令飞行仍易失败，AeroRSI 用策略自己的飞行结果验证修复动作，三轮迭代把 TravelUAV 成功率从 46.4% 提到 67.5%。",
+          "tags": [
+            "空中视觉语言导航",
+            "视觉语言动作模型",
+            "递归自我改进"
+          ],
+          "sections": {
+            "background": "视觉语言动作（VLA）模型让无人机能按自然语言指令飞行，但在闭环飞行中仍频繁失败。要纠正失败，需要在策略自身到达的状态上给出能避开失败的动作，即修复动作；这类数据人类飞行员无法大规模标注，规则规划器也难以可靠提供。此外，一个回合在首次失败处终止，后续失败被掩盖，只有先修复早期失败才能暴露。",
+            "conclusion": "在 TravelUAV 上，三轮自我改进把 2B 参数监督策略的成功率从 46.4% 提升到 67.5%，碰撞减少一半，比同一初始化下的此前最优结果高 10.6 个百分点，且不增加人工标注或推理成本。结论适用于该数据集与闭环飞行设定，其他平台和场景需另行验证。",
+            "method": "核心思路是让失败策略从候选修复动作继续飞行，用后续飞行结果判断修复是否可靠。这样，策略自己采样的动作、甚至直接模仿会损害性能的规则建议，都能成为可靠监督。AeroRSI 每轮重新生成监督：定位当前策略的失败，用继续飞行验证修复，再蒸馏这些修复，同时保持策略在其他状态上的行为不变。",
+            "takeaways": "对机器人研究而言，该工作说明策略可以借助自身闭环执行结果筛选监督信号，减少对外部专家标注的依赖，并把规则方法作为候选来源而非直接模仿对象。局限在于验证依赖可继续飞行的仿真环境，真实飞行中的安全与恢复能力、以及失败分布变化后的稳定性仍需检验。"
+          }
+        },
+        "en": {
+          "title": "AeroRSI: Recursive Self-Improvement for Aerial Vision-Language Navigation",
+          "summary": "AeroRSI is a recursive self-improvement framework that lets an aerial vision-language navigation policy learn repeatedly from its own failures. A failing policy judges candidate repairs by flying on from them, so sampled actions and even rule-based proposals become reliable supervision. On TravelUAV, three rounds raise the success rate of a 2B-parameter supervised policy from 46.4% to 67.5% and halve collisions, surpassing the previous state of the art by 10.6 points from the same initialization without extra human labels or inference cost.",
+          "lede": "Flying UAVs by language still fails often; AeroRSI verifies repairs by letting the policy fly on, raising TravelUAV success from 46.4% to 67.5% in three rounds.",
+          "tags": [
+            "aerial vision-language navigation",
+            "vision-language-action models",
+            "recursive self-improvement"
+          ],
+          "sections": {
+            "background": "Vision-language-action (VLA) models let unmanned aerial vehicles (UAVs) follow natural-language instructions, yet they still fail frequently in closed-loop flight. Correcting these failures requires repairs, i.e., actions that avoid failure at the states the policy itself reaches; human pilots cannot label such data at scale, and rule-based planners cannot supply it reliably. Moreover, an episode terminates at its first failure, concealing later failures until earlier ones are repaired.",
+            "conclusion": "On TravelUAV, three rounds of self-improvement raise the success rate of a 2B-parameter supervised policy from 46.4% to 67.5% and reduce collisions by half, surpassing the previous state of the art by 10.6 points from the same initialization without extra human labels or inference cost. The conclusion applies to this dataset and closed-loop flight setting; other platforms and scenes require separate validation.",
+            "method": "The key idea is that a failing policy should judge its own repairs by flying on from them. Judged this way, its sampled actions and even rule-based proposals that hurt when imitated directly become reliable supervision. AeroRSI renews supervision each round: it anchors the failures of the current policy, verifies repairs by their continuation, and distills them while keeping behavior elsewhere unchanged.",
+            "takeaways": "For robotics research, the work shows that a policy can filter supervision through its own closed-loop execution, reducing reliance on external expert labels and treating rule-based methods as proposal sources rather than direct imitation targets. Limitations include dependence on a simulatable environment for continuation-based verification; safety and recovery in real flight, and stability as the failure distribution shifts, still need testing."
+          }
+        }
+      },
+      "id": "2611.24077",
+      "original_title": "AeroRSI: Recursive Self-Improvement for Aerial Vision-Language Navigation",
+      "original_summary": "Vision-language-action (VLA) models enable unmanned aerial vehicles (UAVs) to follow natural-language instructions, yet still fail frequently in closed-loop flight. Correcting these failures requires repairs, i.e., actions that avoid them at the states the policy itself reaches, which human pilots cannot label at scale and rule-based planners cannot supply reliably. In this paper, we present AeroRSI, a recursive self-improvement framework in which an aerial navigation policy iteratively learns from its own failures. Our key insight is that a failing policy should judge its own repairs by flying on from them. Judged in this way, its sampled actions and even rule-based proposals that hurt it when imitated directly become reliable supervision. Moreover, an episode terminates at its first failure, concealing subsequent failures until the earlier ones are repaired. AeroRSI thus renews its supervision in every round, anchoring the failures of the current policy, verifying repairs by its continuation, and distilling them while keeping its behavior elsewhere. On TravelUAV, three rounds raise the success rate of a supervised 2B-parameter policy from 46.4% to 67.5% and reduce collisions by half, surpassing the previous state of the art by 10.6 points from the same initialization without extra human labels or inference cost. Code and models are available at https://github.com/starsholic/AeroRSI.",
+      "url": "https://arxiv.org/abs/2611.24077v1",
+      "source": "arXiv cs.RO",
+      "published": "2026-11-18T09:07:04+00:00",
+      "authors": [
+        "Shiwei Wu",
+        "Yuwen Pan",
+        "Zhi Li",
+        "Yaowen Li",
+        "Yan Zhou",
+        "Xuemiao Xu",
+        "Yu Liu"
+      ],
+      "score": 4,
+      "versioned_id": "2611.24077v1",
+      "figure": {
+        "path": "./data/2026-11-21/figures/2611.24077.webp",
+        "caption": "Figure 2: Overview of AeroRSI. The top row shows the policy πk, of which only the visual merger and the LoRA are trained. In each round, (1) AFA samples anchors from probes before every failure of πk; (2) CVR restores each anchor, lets πk continue the executed action a−, its sampled actions, and rule-based proposals, and accepts as the repair c⋆ the first candidate that qualifies again in a re-flight; and (3) RRL distills the verified repairs into a student copy of πk, keeping the outputs of πk on states that need no repair, to obtain πk+1."
+      },
+      "attention": {
+        "github_stars": 3,
+        "github_url": "https://github.com/starsholic/aerorsi"
+      },
+      "code_url": "https://github.com/starsholic/AeroRSI",
+      "project_url": null,
+      "pdf_url": "https://arxiv.org/pdf/2611.24077"
+    },
+    {
+      "title": "Verify2Act：由评论器引导的潜在世界模型，用于验证语言条件操作计划",
+      "summary": "Verify2Act 是一个模块化验证框架，把语义动作提议与潜在物理验证分开：视觉语言模型提出候选计划，潜在世界模型在 DINOv2 特征空间中想象计划执行后的场景变化，再由双头评论器检查时间一致性与目标满足度，通过后才执行。系统部署在低成本机械臂上，世界模型与评论器仅用数字孪生生成的数据训练。在六个语言条件任务上达到 83.3% 任务成功率，高于去掉架构改动的潜在世界模型（61.7%）、仅用视觉语言模型（53.3%）和像素扩散世界模型（46.7%）；所有失败均来自底层抓取或放置滑脱，没有因规划导致的失败。仿真中在 CALVIN 上取得最高的五任务链成功率，反思式视觉语言模型调用次数比像素扩散验证少 30 倍，并在杂乱螺母装配任务上取得最高成功率。",
+      "lede": "Verify2Act 让视觉语言模型提出计划、潜在世界模型在特征空间预演、评论器把关后再执行，在低成本机械臂上把语言条件操作任务成功率提升到 83.3%。",
+      "tags": [
+        "潜在世界模型",
+        "操作计划验证",
+        "视觉语言模型"
+      ],
+      "sections": {
+        "background": "视觉语言模型能提出多步操作计划，却缺乏对场景将如何变化的可靠建模；像素级世界模型虽可用于检查计划，但速度慢且长时程下会漂移。因此需要一种既准确又高效的验证手段，在真正执行前筛掉不可行计划。",
+        "conclusion": "在六个语言条件任务上，Verify2Act 达到 83.3% 任务成功率，对比去掉架构改动的潜在世界模型 61.7%、仅视觉语言模型 53.3%、像素扩散世界模型 46.7%。它验证了所有实际执行的计划，且没有出现规划导致的失败，失败全部源于底层抓取或放置滑脱。仿真中，它在 CALVIN 上取得对比方法中最高的五任务链成功率，反思式视觉语言模型调用次数比像素扩散验证少 30 倍，并在杂乱螺母装配任务上成功率最高。",
+        "method": "框架分三步：视觉语言模型提出候选计划；潜在世界模型 V2A-WM 在 DINOv2 特征空间中想象每个计划的执行过程；双头评论器从时间一致性和目标满足度两方面评估想象轨迹，通过后才交给机器人执行。V2A-WM 在近期流匹配世界模型基础上加入交叉注意力动作接地和因果时间历史窗口。世界模型与评论器只用数字孪生生成的数据训练，系统部署在低成本机械臂上。",
+        "takeaways": "这项工作表明，把语义提议与潜在物理验证分离，可以在不依赖昂贵像素级生成的情况下有效过滤不可行计划，并显著减少反思式视觉语言模型调用。其局限在于验证依赖数字孪生训练的世界模型，真实场景中的底层执行误差（如抓取滑脱）仍未被覆盖；结论主要适用于所评测的语言条件操作任务与仿真基准。"
+      },
+      "i18n": {
+        "zh": {
+          "title": "Verify2Act：由评论器引导的潜在世界模型，用于验证语言条件操作计划",
+          "summary": "Verify2Act 是一个模块化验证框架，把语义动作提议与潜在物理验证分开：视觉语言模型提出候选计划，潜在世界模型在 DINOv2 特征空间中想象计划执行后的场景变化，再由双头评论器检查时间一致性与目标满足度，通过后才执行。系统部署在低成本机械臂上，世界模型与评论器仅用数字孪生生成的数据训练。在六个语言条件任务上达到 83.3% 任务成功率，高于去掉架构改动的潜在世界模型（61.7%）、仅用视觉语言模型（53.3%）和像素扩散世界模型（46.7%）；所有失败均来自底层抓取或放置滑脱，没有因规划导致的失败。仿真中在 CALVIN 上取得最高的五任务链成功率，反思式视觉语言模型调用次数比像素扩散验证少 30 倍，并在杂乱螺母装配任务上取得最高成功率。",
+          "lede": "Verify2Act 让视觉语言模型提出计划、潜在世界模型在特征空间预演、评论器把关后再执行，在低成本机械臂上把语言条件操作任务成功率提升到 83.3%。",
+          "tags": [
+            "潜在世界模型",
+            "操作计划验证",
+            "视觉语言模型"
+          ],
+          "sections": {
+            "background": "视觉语言模型能提出多步操作计划，却缺乏对场景将如何变化的可靠建模；像素级世界模型虽可用于检查计划，但速度慢且长时程下会漂移。因此需要一种既准确又高效的验证手段，在真正执行前筛掉不可行计划。",
+            "conclusion": "在六个语言条件任务上，Verify2Act 达到 83.3% 任务成功率，对比去掉架构改动的潜在世界模型 61.7%、仅视觉语言模型 53.3%、像素扩散世界模型 46.7%。它验证了所有实际执行的计划，且没有出现规划导致的失败，失败全部源于底层抓取或放置滑脱。仿真中，它在 CALVIN 上取得对比方法中最高的五任务链成功率，反思式视觉语言模型调用次数比像素扩散验证少 30 倍，并在杂乱螺母装配任务上成功率最高。",
+            "method": "框架分三步：视觉语言模型提出候选计划；潜在世界模型 V2A-WM 在 DINOv2 特征空间中想象每个计划的执行过程；双头评论器从时间一致性和目标满足度两方面评估想象轨迹，通过后才交给机器人执行。V2A-WM 在近期流匹配世界模型基础上加入交叉注意力动作接地和因果时间历史窗口。世界模型与评论器只用数字孪生生成的数据训练，系统部署在低成本机械臂上。",
+            "takeaways": "这项工作表明，把语义提议与潜在物理验证分离，可以在不依赖昂贵像素级生成的情况下有效过滤不可行计划，并显著减少反思式视觉语言模型调用。其局限在于验证依赖数字孪生训练的世界模型，真实场景中的底层执行误差（如抓取滑脱）仍未被覆盖；结论主要适用于所评测的语言条件操作任务与仿真基准。"
+          }
+        },
+        "en": {
+          "title": "Verify2Act: Critic-Guided Latent World Models for Verifying Language-Conditioned Manipulation Plans",
+          "summary": "Verify2Act is a modular verification framework that separates semantic action proposal from latent physical verification: a vision-language model proposes candidate plans, a latent world model imagines each plan in DINOv2 feature space, and a dual-head critic checks the imagined rollouts for temporal consistency and goal satisfaction before execution. The system is deployed on a low-cost robot arm, with the world model and critic trained only on data generated in a digital twin. Across six language-conditioned tasks it reaches 83.3% task success, versus 61.7% for a latent world model without the architectural changes, 53.3% for the vision-language model alone, and 46.7% for a pixel-diffusion world model. It verified every plan it executed and incurred no planning-induced failures; all failed episodes came from low-level grasp or placement slips. In simulation it obtains the highest five-task chain success on CALVIN among compared baselines with 30x fewer reflective vision-language model calls than pixel-diffusion verification, and the highest success on cluttered nut assembly.",
+          "lede": "Verify2Act lets a vision-language model propose plans, a latent world model preview them in feature space, and a critic gate execution, raising success on language-conditioned manipulation to 83.3% on a low-cost robot arm.",
+          "tags": [
+            "latent world models",
+            "manipulation plan verification",
+            "vision-language models"
+          ],
+          "sections": {
+            "background": "Vision-language models can propose multi-step manipulation plans but lack a grounded model of how a scene will change, while pixel-level world models that could check those plans are slow and drift over long horizons. A verification method is therefore needed that is both accurate and efficient enough to filter infeasible plans before execution.",
+            "conclusion": "On six language-conditioned tasks, Verify2Act reaches 83.3% task success, compared with 61.7% for a latent world model without the architectural changes, 53.3% for the vision-language model alone, and 46.7% for a pixel-diffusion world model. It verified every plan it executed and had no planning-induced failures; all failures were caused by low-level grasp or placement slips. In simulation it achieves the highest five-task chain success on CALVIN among compared baselines, uses 30x fewer reflective vision-language model calls than pixel-diffusion verification, and obtains the highest success on cluttered nut assembly.",
+            "method": "The framework has three stages: a vision-language model proposes candidate plans; the latent world model V2A-WM imagines each plan in DINOv2 feature space; and a dual-head critic evaluates the imagined rollouts for temporal consistency and goal satisfaction before execution. V2A-WM extends recent flow-matching world models with cross-attention action grounding and a causal temporal history window. The world model and critic are trained only on data generated in a digital twin, and the full system is deployed on a low-cost robot arm.",
+            "takeaways": "The work shows that separating semantic proposal from latent physical verification can filter infeasible plans without costly pixel-level generation and can substantially reduce reflective vision-language model calls. Limitations include reliance on a world model trained in a digital twin and the fact that low-level execution errors such as grasp slips remain uncovered; the conclusions apply mainly to the evaluated language-conditioned manipulation tasks and simulation benchmarks."
+          }
+        }
+      },
+      "id": "2611.25243",
+      "original_title": "Verify2Act: Critic-Guided Latent World Models for Verifying Language-Conditioned Manipulation Plans",
+      "original_summary": "Vision-Language Models (VLMs) can propose multi-step manipulation plans, but they have no grounded model of how a scene will change, and the pixel-level world models that could check those plans are slow and drift over long horizons. We present Verify2Act, a modular verification framework that separates semantic action proposal from latent physical verification. A VLM proposes candidate plans, a latent world model (V2A-WM) imagines each of them in the DINOv2 feature space, and a dual-head critic checks the imagined rollouts for temporal consistency and goal satisfaction before anything is executed. V2A-WM extends recent flow-matching world models with cross-attention action grounding and a causal temporal history window. We deploy the full system on a low-cost robot arm, training the world model and critic only on data generated in a digital twin. Across six language-conditioned tasks, Verify2Act reaches 83.3\\% task success, compared with 61.7\\% for a latent world model without our architectural changes, 53.3\\% for the VLM alone, and 46.7\\% for a pixel-diffusion world model. It verified every plan it executed and incurred no planning-induced failures: all of its failed episodes were caused by low-level grasp or placement slips. In simulation, Verify2Act obtains the highest five-task chain success on CALVIN among the compared baselines with 30$\\times$ fewer reflective VLM calls than pixel-diffusion verification, and the highest success on cluttered nut assembly.",
+      "url": "https://arxiv.org/abs/2611.25243v1",
+      "source": "arXiv cs.RO",
+      "published": "2026-11-18T22:22:00+00:00",
+      "authors": [
+        "Chrisantus Eze",
+        "Christopher Crick"
+      ],
+      "score": 4,
+      "versioned_id": "2611.25243v1",
+      "figure": {
+        "path": "./data/2026-11-21/figures/2611.25243.webp",
+        "caption": "Fig. 1: Verify2Act overview. Stage 1: a VLM proposes candidate multi-step plans from the camera observation and the language instruction. Stage 2: V2A-WM rolls out each candidate in the frozen DINOv2 latent space (St→St+k), conditioned on CLIP action tokens. Stage 3: a goal head scores the terminal latent state against the goal, and a temporal consistency head checks consecutive imagined states; the best verified plan is executed."
+      },
+      "code_url": null,
+      "project_url": null,
+      "pdf_url": "https://arxiv.org/pdf/2611.25243"
+    },
+    {
+      "title": "连接视觉语言推理与学习控制：野外足式机器人导航",
+      "summary": "ROAM 系统把在互联网规模数据上预训练的视觉语言模型（VLM，能看图并理解语义的模型）的常识推理，与在仿真中用强化学习（RL，通过试错训练控制策略）学到的运动控制和局部规划策略结合起来，让足式机器人能在阿尔卑斯山区和城市等复杂环境中完成公里级自主导航。VLM 负责解读场景、识别标志、评估风险并给出带导航代价的语义标签；开放词汇分割模块把这些标签转成实时稠密风险图，用来调节两个预训练 RL 策略，分别负责敏捷运动和局部导航。真机实验显示，机器人能以极少人工干预完成公里级徒步，根据标志避开危险，并判断安全落脚区域。作者同时指出，VLM 的可靠性和空间推理仍是瓶颈，基础模型是重要组件，但还不是野外导航的完整解决方案。",
+      "lede": "ROAM 用视觉语言模型做高层语义判断，用仿真学到的强化学习策略做底层运动与局部规划，在山区和城市真机环境中实现公里级自主导航。",
+      "tags": [
+        "足式机器人导航",
+        "视觉语言模型",
+        "强化学习控制"
+      ],
+      "sections": {
+        "background": "在多样化的真实环境中自主导航是机器人领域的核心难题之一：机器人既需要能应对各种地形的稳健底层运动控制，又需要能理解环境线索的高层推理能力。现有系统往往只擅长其中一端，难以在山区、城市等非结构化场景中长距离自主运行。",
+        "conclusion": "真机实验表明，ROAM 能让足式机器人以极少人工干预完成公里级徒步，能读懂标志以规避危险，并评估环境以选择安全落脚点。作者也明确指出局限：VLM 的可靠性和空间推理仍不足，基础模型是关键组件，但尚不能单独构成野外导航的完整方案。",
+        "method": "ROAM 由三部分组成：一是预训练 VLM 提供常识推理和场景语义理解，评估风险、解读标志，并输出带导航代价的语义标签；二是开放词汇分割模块把标签转成实时稠密风险图；三是两个在仿真中用强化学习预训练的策略，分别负责敏捷运动和局部导航，并以风险图为条件。这样就把高层语义推理与底层物理控制耦合起来。",
+        "takeaways": "这项工作说明，把视觉语言模型的语义常识与仿真学到的控制策略分层结合，是让足式机器人走向非结构化环境的一条可行路径；同时提醒研究者，VLM 的输出可靠性和空间推理能力仍是部署瓶颈，后续工作需要在基础模型与底层控制之间建立更稳健的接口与校验机制。"
+      },
+      "i18n": {
+        "zh": {
+          "title": "连接视觉语言推理与学习控制：野外足式机器人导航",
+          "summary": "ROAM 系统把在互联网规模数据上预训练的视觉语言模型（VLM，能看图并理解语义的模型）的常识推理，与在仿真中用强化学习（RL，通过试错训练控制策略）学到的运动控制和局部规划策略结合起来，让足式机器人能在阿尔卑斯山区和城市等复杂环境中完成公里级自主导航。VLM 负责解读场景、识别标志、评估风险并给出带导航代价的语义标签；开放词汇分割模块把这些标签转成实时稠密风险图，用来调节两个预训练 RL 策略，分别负责敏捷运动和局部导航。真机实验显示，机器人能以极少人工干预完成公里级徒步，根据标志避开危险，并判断安全落脚区域。作者同时指出，VLM 的可靠性和空间推理仍是瓶颈，基础模型是重要组件，但还不是野外导航的完整解决方案。",
+          "lede": "ROAM 用视觉语言模型做高层语义判断，用仿真学到的强化学习策略做底层运动与局部规划，在山区和城市真机环境中实现公里级自主导航。",
+          "tags": [
+            "足式机器人导航",
+            "视觉语言模型",
+            "强化学习控制"
+          ],
+          "sections": {
+            "background": "在多样化的真实环境中自主导航是机器人领域的核心难题之一：机器人既需要能应对各种地形的稳健底层运动控制，又需要能理解环境线索的高层推理能力。现有系统往往只擅长其中一端，难以在山区、城市等非结构化场景中长距离自主运行。",
+            "conclusion": "真机实验表明，ROAM 能让足式机器人以极少人工干预完成公里级徒步，能读懂标志以规避危险，并评估环境以选择安全落脚点。作者也明确指出局限：VLM 的可靠性和空间推理仍不足，基础模型是关键组件，但尚不能单独构成野外导航的完整方案。",
+            "method": "ROAM 由三部分组成：一是预训练 VLM 提供常识推理和场景语义理解，评估风险、解读标志，并输出带导航代价的语义标签；二是开放词汇分割模块把标签转成实时稠密风险图；三是两个在仿真中用强化学习预训练的策略，分别负责敏捷运动和局部导航，并以风险图为条件。这样就把高层语义推理与底层物理控制耦合起来。",
+            "takeaways": "这项工作说明，把视觉语言模型的语义常识与仿真学到的控制策略分层结合，是让足式机器人走向非结构化环境的一条可行路径；同时提醒研究者，VLM 的输出可靠性和空间推理能力仍是部署瓶颈，后续工作需要在基础模型与底层控制之间建立更稳健的接口与校验机制。"
+          }
+        },
+        "en": {
+          "title": "Bridging Vision-Language Reasoning and Learned Control for Legged Navigation in the Wild",
+          "summary": "ROAM (Robust Open-world Autonomous Mobility) couples the commonsense reasoning of a Vision-Language Model (VLM) pre-trained on internet-scale data with locomotion and local-planning policies learned in simulation via reinforcement learning (RL), enabling legged robots to navigate kilometer-scale routes in complex alpine and urban settings. The VLM interprets scenes, reads signs, assesses risk, and produces semantic labels with associated navigation costs; an open-vocabulary segmentation module converts these labels into a dense, real-time risk map that conditions two pre-trained RL policies for agile locomotion and local navigation. Real-world experiments show the robot completing kilometer-long hikes with minimal intervention, interpreting signs to avoid danger, and identifying safe footholds. The authors note that VLM reliability and spatial reasoning remain bottlenecks: foundation models are a crucial component but not yet a complete solution for navigation in the wild.",
+          "lede": "ROAM pairs a vision-language model for high-level semantic judgment with simulation-learned reinforcement learning policies for locomotion and local planning, achieving kilometer-scale autonomous navigation in real alpine and urban settings.",
+          "tags": [
+            "legged robot navigation",
+            "vision-language model",
+            "reinforcement learning control"
+          ],
+          "sections": {
+            "background": "Autonomous navigation in diverse real-world environments remains a central challenge in robotics: robots need both robust low-level motion control across varied terrain and high-level reasoning to interpret environmental cues. Existing systems tend to excel at one end but struggle to operate over long distances in unstructured settings such as alpine and urban environments.",
+            "conclusion": "Real-world experiments show that ROAM enables a legged robot to complete kilometer-long hikes with minimal intervention, interpret signs to avoid danger, and evaluate its environment to identify safe stepping areas. The authors explicitly note the limits: VLM reliability and spatial reasoning remain insufficient, and foundation models are a crucial component but not yet a complete solution for navigation in the wild.",
+            "method": "ROAM has three parts: a pre-trained VLM provides commonsense reasoning and semantic scene understanding, assessing risk, interpreting signs, and outputting semantic labels with navigation costs; an open-vocabulary segmentation module turns these labels into a dense, real-time risk map; and two RL policies pre-trained in simulation handle agile locomotion and local navigation, conditioned on that risk map. This couples high-level semantic reasoning with low-level physical control.",
+            "takeaways": "The work suggests that layering VLM-based semantic commonsense over simulation-learned control policies is a viable path toward legged robots in unstructured environments. It also warns that VLM output reliability and spatial reasoning remain deployment bottlenecks, so future work needs more robust interfaces and validation between foundation models and low-level control."
+          }
+        }
+      },
+      "id": "2611.25215",
+      "original_title": "Bridging vision-language reasoning and learned control for legged navigation in the wild",
+      "original_summary": "Autonomous navigation in diverse real-world environments remains one of the greatest challenges in robotics. It demands both robust low-level motion control to handle diverse terrain and high-level reasoning to interpret environmental cues. We present ROAM (Robust Open-world Autonomous Mobility), a system that enables legged robots to perform kilometer-scale navigation in complex alpine and urban settings. ROAM combines the world knowledge of a Vision-Language Model (VLM), pre-trained on internet-scale data, with robust locomotion and local planning policies learned in simulation via reinforcement learning (RL). The VLM provides common-sense reasoning and semantic interpretation of the scene, assessing risks, interpreting signs, and producing semantic labels with associated navigation costs. An open-vocabulary segmentation module converts these labels into a dense, real-time risk map, which conditions two pre-trained RL policies responsible for agile locomotion and local navigation, effectively coupling high-level VLM reasoning with low-level physical control. Real-world experiments showed the system's ability to autonomously navigate a wide range of complex real-world environments. The robot completes kilometer-long hikes with minimal intervention, interprets signs to avoid danger, and evaluates its environment to identify safe areas on which to step. This work represents a step toward the reliable deployment of systems in unstructured environments. However, it also underscores the challenges that remain in VLM reliability and spatial reasoning, indicating that foundational models are a crucial component but not yet a complete solution for navigation in the wild.",
+      "url": "https://arxiv.org/abs/2611.25215v1",
+      "source": "arXiv cs.RO",
+      "published": "2026-11-18T21:40:00+00:00",
+      "authors": [
+        "Takahiro Miki",
+        "Robin Schmid",
+        "Manthan Patel",
+        "Turcan Tuna",
+        "Julia Richter",
+        "Julian Nubert",
+        "Joonho Lee",
+        "Matthias Müller",
+        "Marco Hutter"
+      ],
+      "score": 4,
+      "versioned_id": "2611.25215v1",
+      "figure": {
+        "path": "./data/2026-11-21/figures/2611.25215.webp",
+        "caption": "Figure 2: Deployment of ROAM across diverse environments. These include natural outdoor settings such as mountain trails (A to E), forests (F), and grassy areas (G), as well as urban environments such as university campuses (H) and roads (I). The system was also tested in indoor settings (J to L). Additionally, we evaluated its performance in the presence of various challenges, such as smoke (M), train tracks (N), and signage (O)."
+      },
+      "code_url": null,
+      "project_url": "https://roam-hiking.github.io",
+      "pdf_url": "https://arxiv.org/pdf/2611.25215"
+    },
+    {
+      "title": "MAWAM：面向协同操作的多智能体世界-动作模型",
+      "summary": "MAWAM 是一种多智能体世界-动作模型，能在一次采样中同时生成每个机器人未来的视角画面和可执行的动作片段。它基于预训练的单机器人世界-动作主干网络构建，通过跨智能体注意力机制联合去噪所有机器人的动作与未来视角 token，同时为每个机器人保留独立的控制接口。在三个真机任务（收洗衣袋、叠浴巾、递伞）上，MAWAM 均取得最高成功率，平均成功率为 67.8%，比在相同示范数据和相机配置下训练的 MA-VLA 高出 18.9 个百分点。在仿真中，MAWAM 在最多四臂团队的八个任务上平均成功率达到 90.3%。消融实验表明，跨智能体注意力和团队阶段未来视频监督都能改善协同控制：去掉注意力后，四臂接力任务的成功率从 95.0% 降至 39.0%；去掉该监督后，Place Food 任务的成功率从 78.0% 降至 47.0%。",
+      "lede": "机器人团队协同操作时，每个动作都会改变队友所处的世界。MAWAM 用一次采样同时生成各机器人的未来视角与动作片段，在三个真机任务上平均成功率达 67.8%，比 MA-VLA 高 18.9 个百分点。",
+      "tags": [
+        "多智能体协同操作",
+        "世界-动作模型",
+        "跨智能体注意力"
+      ],
+      "sections": {
+        "background": "机器人团队中，任一成员的每个动作都会改变队友所处的世界状态，因此协同操作不能只预测单个机器人的动作，而需要同时预测团队动作以及这些动作共同造成的物理未来。现有方法往往把各机器人的决策割裂开来，难以显式建模队友之间的相互影响，在需要紧密配合的真机任务中成功率受限。",
+        "conclusion": "MAWAM 在三个真机协同任务上均取得最高成功率，平均 67.8%，比相同示范与相机设置下训练的 MA-VLA 高 18.9 个百分点；仿真中在最多四臂团队的八个任务上平均成功率达 90.3%。消融显示跨智能体注意力不可或缺：去掉后四臂接力从 95.0% 降到 39.0%；去掉团队阶段未来视频监督后，Place Food 从 78.0% 降到 47.0%。这些结果说明联合建模团队动作与共同物理未来对协同控制有效，结论覆盖所测真机任务与仿真任务范围。",
+        "method": "MAWAM 以预训练的单机器人世界-动作模型为主干，在一次采样中联合去噪所有机器人的动作 token 与未来视角 token，并通过跨智能体注意力让各机器人的预测相互参照；同时为每个机器人保留独立的控制接口，使联合预测不牺牲单机可执行性。训练中还引入团队阶段的未来视频监督，促使模型学习团队动作共同造成的物理后果。",
+        "takeaways": "对机器人研究而言，MAWAM 表明把“世界模型”从单机扩展到团队、让动作预测与共同未来预测相互约束，是提升多机协同成功率的有效路径；跨智能体注意力与团队阶段视频监督是两个关键组件。局限在于结论主要基于所测三个真机任务和八个仿真任务，团队规模最多四臂，更大队形与更复杂任务仍需验证。"
+      },
+      "i18n": {
+        "zh": {
+          "title": "MAWAM：面向协同操作的多智能体世界-动作模型",
+          "summary": "MAWAM 是一种多智能体世界-动作模型，能在一次采样中同时生成每个机器人未来的视角画面和可执行的动作片段。它基于预训练的单机器人世界-动作主干网络构建，通过跨智能体注意力机制联合去噪所有机器人的动作与未来视角 token，同时为每个机器人保留独立的控制接口。在三个真机任务（收洗衣袋、叠浴巾、递伞）上，MAWAM 均取得最高成功率，平均成功率为 67.8%，比在相同示范数据和相机配置下训练的 MA-VLA 高出 18.9 个百分点。在仿真中，MAWAM 在最多四臂团队的八个任务上平均成功率达到 90.3%。消融实验表明，跨智能体注意力和团队阶段未来视频监督都能改善协同控制：去掉注意力后，四臂接力任务的成功率从 95.0% 降至 39.0%；去掉该监督后，Place Food 任务的成功率从 78.0% 降至 47.0%。",
+          "lede": "机器人团队协同操作时，每个动作都会改变队友所处的世界。MAWAM 用一次采样同时生成各机器人的未来视角与动作片段，在三个真机任务上平均成功率达 67.8%，比 MA-VLA 高 18.9 个百分点。",
+          "tags": [
+            "多智能体协同操作",
+            "世界-动作模型",
+            "跨智能体注意力"
+          ],
+          "sections": {
+            "background": "机器人团队中，任一成员的每个动作都会改变队友所处的世界状态，因此协同操作不能只预测单个机器人的动作，而需要同时预测团队动作以及这些动作共同造成的物理未来。现有方法往往把各机器人的决策割裂开来，难以显式建模队友之间的相互影响，在需要紧密配合的真机任务中成功率受限。",
+            "conclusion": "MAWAM 在三个真机协同任务上均取得最高成功率，平均 67.8%，比相同示范与相机设置下训练的 MA-VLA 高 18.9 个百分点；仿真中在最多四臂团队的八个任务上平均成功率达 90.3%。消融显示跨智能体注意力不可或缺：去掉后四臂接力从 95.0% 降到 39.0%；去掉团队阶段未来视频监督后，Place Food 从 78.0% 降到 47.0%。这些结果说明联合建模团队动作与共同物理未来对协同控制有效，结论覆盖所测真机任务与仿真任务范围。",
+            "method": "MAWAM 以预训练的单机器人世界-动作模型为主干，在一次采样中联合去噪所有机器人的动作 token 与未来视角 token，并通过跨智能体注意力让各机器人的预测相互参照；同时为每个机器人保留独立的控制接口，使联合预测不牺牲单机可执行性。训练中还引入团队阶段的未来视频监督，促使模型学习团队动作共同造成的物理后果。",
+            "takeaways": "对机器人研究而言，MAWAM 表明把“世界模型”从单机扩展到团队、让动作预测与共同未来预测相互约束，是提升多机协同成功率的有效路径；跨智能体注意力与团队阶段视频监督是两个关键组件。局限在于结论主要基于所测三个真机任务和八个仿真任务，团队规模最多四臂，更大队形与更复杂任务仍需验证。"
+          }
+        },
+        "en": {
+          "title": "MAWAM: A Multi-Agent World-Action Model for Coordinated Manipulation",
+          "summary": "MAWAM is a multi-agent world-action model that jointly generates each robot's future views and executable action chunks in a single sample. Built on a pretrained single-robot world-action backbone, it jointly denoises all robots' action and future-view tokens through cross-agent attention while preserving a separate control interface for each robot. On three real-robot tasks (laundry-bag collection, bath-towel folding, and umbrella handover), MAWAM achieves the highest success on all three, with 67.8% mean success, 18.9 percentage points above MA-VLA trained on the same demonstrations and cameras. In simulation, MAWAM reaches 90.3% mean success on eight tasks with teams of up to four arms. Ablations show that cross-agent attention and team-stage future-video supervision both improve coordinated control: without attention, a four-arm relay falls from 95.0% to 39.0%, and without this supervision, Place Food falls from 78.0% to 47.0%.",
+          "lede": "When a robot team manipulates together, every move changes the world its teammates act in. MAWAM generates each robot's future views and action chunks in a single sample, reaching 67.8% mean success on three real-robot tasks, 18.9 percentage points above MA-VLA.",
+          "tags": [
+            "multi-agent coordinated manipulation",
+            "world-action model",
+            "cross-agent attention"
+          ],
+          "sections": {
+            "background": "In a robot team, every move by one member changes the world in which its teammates must act, so coordinated manipulation requires predicting the team's actions together with the physical future they jointly create. Existing approaches often decide for each robot in isolation and struggle to model inter-teammate effects explicitly, limiting success on real-robot tasks that demand tight coordination.",
+            "conclusion": "MAWAM achieves the highest success on all three real-robot coordinated tasks, with 67.8% mean success, 18.9 percentage points above MA-VLA trained on the same demonstrations and cameras. In simulation it reaches 90.3% mean success on eight tasks with teams of up to four arms. Ablations show cross-agent attention is essential: removing it drops a four-arm relay from 95.0% to 39.0%, and removing team-stage future-video supervision drops Place Food from 78.0% to 47.0%. These results indicate that jointly modeling team actions and the shared physical future improves coordinated control, within the scope of the tested real-robot and simulated tasks.",
+            "method": "MAWAM builds on a pretrained single-robot world-action backbone and jointly denoises all robots' action tokens and future-view tokens in a single sample, using cross-agent attention so each robot's prediction can reference its teammates'. It keeps a separate control interface per robot so joint prediction does not sacrifice per-robot executability. Training also adds team-stage future-video supervision, pushing the model to learn the physical consequences that team actions jointly produce.",
+            "takeaways": "For robotics research, MAWAM shows that extending a world model from a single robot to a team, and coupling action prediction with prediction of the shared future, is an effective path to higher multi-robot coordination success; cross-agent attention and team-stage video supervision are the two key components. Limitations: conclusions rest on the three tested real-robot tasks and eight simulated tasks with teams of up to four arms, so larger teams and more complex tasks remain to be validated."
+          }
+        }
+      },
+      "id": "2611.25105",
+      "original_title": "MAWAM: A Multi-Agent World-Action Model for Coordinated Manipulation",
+      "original_summary": "Every move in a robot team changes the world in which its teammates must act. Coordinated manipulation therefore calls for predicting the team's actions together with the physical future they jointly create. We introduce MAWAM, a multi-agent world-action model that jointly generates each robot's future views and executable action chunks in a single sample. Built from a pretrained single-robot world-action backbone, MAWAM jointly denoises all robots' action and future-view tokens through cross-agent attention, while preserving a separate control interface for each robot. MAWAM achieves the highest success on all three real-robot tasks (laundry-bag collection, bath-towel folding, and umbrella handover), with 67.8% mean success, 18.9 percentage points above MA-VLA trained on the same demonstrations and cameras. In simulation, MAWAM reaches 90.3% mean success on eight tasks with teams of up to four arms. Ablations show that cross-agent attention and team-stage future-video supervision both improve coordinated control: without attention, a four-arm relay falls from 95.0% to 39.0%, and without this supervision, Place Food falls from 78.0% to 47.0%.",
+      "url": "https://arxiv.org/abs/2611.25105v1",
+      "source": "arXiv cs.RO",
+      "published": "2026-11-18T19:39:30+00:00",
+      "authors": [
+        "Xianzhe Fan",
+        "Chi-Pin Huang",
+        "Fu-En Yang",
+        "Jing Wang",
+        "Yecheng Wu",
+        "Yu-Cheng Chou",
+        "Johan Bjorck",
+        "Linxi \"Jim\" Fan",
+        "Jan Kautz",
+        "Yu-Chiang Frank Wang",
+        "Zhiding Yu",
+        "Hengshuang Zhao",
+        "Zhiqi Li"
+      ],
+      "score": 4,
+      "versioned_id": "2611.25105v1",
+      "figure": {
+        "path": "./data/2026-11-21/figures/2611.25105.webp",
+        "caption": "Figure 2: Joint actions, shared consequences. Each robot’s actions change the scene for its teammates. Warm-up adapts the pretrained single-robot backbone one robot at a time; team training (a–c) then learns from synchronized team demonstrations. (a) Each robot’s stream carries its views, state, role, and noisy action and future-view targets; a simplex identity on the RoPE agent axis marks its views, and an action-to-video bias (arrow) adds its action summary to its future views. (b) One shared Transformer attends densely across all agents. (c) Video and action heads share the world-action objective of Eq. (2). (d) One joint sample gives every robot’s action chunk and private-view future (Figure 3); the robots execute the first 8 of 24 steps together, observe, and replan. Shown: Camera Alignment in simulation, with one private view and a distinct role label per arm, plus a read-only shared global camera."
+      },
+      "code_url": null,
+      "project_url": null,
+      "pdf_url": "https://arxiv.org/pdf/2611.25105"
+    }
+  ]
+}

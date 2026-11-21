@@ -1,6 +1,23 @@
 {
   "editions": [
     {
+      "date": "2026-11-21",
+      "papers": {
+        "path": "./data/2026-11-21/papers.json",
+        "count": 8,
+        "total_scanned": 105,
+        "lead": "ReLoco：通过行为条件运动先验统一人形机器人行走与跌倒恢复"
+      },
+      "news": {
+        "path": "./data/2026-11-21/news.json",
+        "count": 1,
+        "total_scanned": 114,
+        "lead": "美敦力Hugo手术机器人准备扩大手术规模"
+      },
+      "infographic": "./data/2026-11-21/infographic.png",
+      "infographic_en": "./data/2026-11-21/infographic.en.png"
+    },
+    {
       "date": "2026-11-20",
       "papers": {
         "path": "./data/2026-11-20/papers.json",
