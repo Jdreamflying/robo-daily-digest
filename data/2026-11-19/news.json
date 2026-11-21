@@ -1,0 +1,338 @@
+{
+  "date": "2026-11-19",
+  "total_scanned": 15,
+  "total_unique": 15,
+  "mode": "rules",
+  "items": [
+    {
+      "title": "From Commercial Scale to Embodied Intelligence: The Next Challenge for Robotics",
+      "summary": "Robotics is advancing rapidly. New AI models and increasingly capable hardware are expanding what machines can perceive, understand and do.",
+      "analysis": [
+        "Robotics is advancing rapidly. New AI models and increasingly capable hardware are expanding what machines can perceive, understand and do.",
+        "后续可关注「具身智能」相关的实施范围和验证依据。"
+      ],
+      "tags": [
+        "具身智能",
+        "Sponsored Content",
+        "Pudu Robotics"
+      ],
+      "lede": "From Commercial Scale to Embodied Intelligence",
+      "id": "7a6aa27945550cacb358fb36",
+      "original_title": "From Commercial Scale to Embodied Intelligence: The Next Challenge for Robotics",
+      "original_summary": "Robotics is advancing rapidly. New AI models and increasingly capable hardware are expanding what machines can perceive, understand and do.",
+      "url": "https://www.therobotreport.com/from-commercial-scale-to-embodied-intelligence-the-next-challenge-for-robotics",
+      "source": "The Robot Report",
+      "published": "2026-11-18T18:00:09+00:00",
+      "authors": [],
+      "score": 3
+    },
+    {
+      "title": "Boston Dynamics’ Atlas humanoid lands first non-automotive trial",
+      "summary": "Boston Dynamics’ Atlas humanoid robot will undergo its first trials outside the automotive industry at a major semiconductor manufacturer in early 2027.",
+      "analysis": [
+        "Boston Dynamics’ Atlas humanoid robot will undergo its first trials outside the automotive industry at a major semiconductor manufacturer in early 2027.",
+        "后续可关注「人形机器人」相关的实施范围和验证依据。"
+      ],
+      "tags": [
+        "人形机器人",
+        "Humanoids",
+        "Boston Dynamics"
+      ],
+      "lede": "Boston Dynamics’ Atlas humanoid lands first…",
+      "id": "52b393cb4dbcf1db4f1ed2ed",
+      "original_title": "Boston Dynamics’ Atlas humanoid lands first non-automotive trial",
+      "original_summary": "Boston Dynamics’ Atlas humanoid robot will undergo its first trials outside the automotive industry at a major semiconductor manufacturer in early 2027.",
+      "url": "https://www.therobotreport.com/boston-dynamics-atlas-humanoid-lands-first-non-automotive-trial",
+      "source": "The Robot Report",
+      "published": "2026-11-17T14:49:05+00:00",
+      "authors": [],
+      "score": 3
+    },
+    {
+      "title": "Agile Robots raises $500M to increase production capacity",
+      "summary": "Agile Robots builds and deploys a range of robots, including humanoids, mobile robots, robotic arms, and robotics hands.",
+      "analysis": [
+        "Agile Robots builds and deploys a range of robots, including humanoids, mobile robots, robotic arms, and robotics hands.",
+        "后续可关注「人形机器人」相关的实施范围和验证依据。"
+      ],
+      "tags": [
+        "人形机器人",
+        "人工智能",
+        "Autonomous Mobile Robots (AMRs)"
+      ],
+      "lede": "Agile Robots raises $500M to increase…",
+      "id": "957a6f22b48ee2793fe77854",
+      "original_title": "Agile Robots raises $500M to increase production capacity",
+      "original_summary": "Agile Robots builds and deploys a range of robots, including humanoids, mobile robots, robotic arms, and robotics hands.",
+      "url": "https://www.therobotreport.com/agile-robots-raises-500m-to-increase-production-capacity",
+      "source": "The Robot Report",
+      "published": "2026-11-16T17:47:48+00:00",
+      "authors": [],
+      "score": 2
+    },
+    {
+      "title": "Six AGIBOT G2 Robots Complete 1,730 Tasks in 24-Hour Shanghai Convenience Store Trial",
+      "summary": "Four of the six robots pass a performance assessment as the trial puts customer service, retail operations and embodied AI capabilities to the test in a working store.",
+      "analysis": [
+        "Four of the six robots pass a performance assessment as the trial puts customer service, retail operations and embodied AI capabilities to the test in a working store.",
+        "后续可关注「具身智能」相关的实施范围和验证依据。"
+      ],
+      "tags": [
+        "具身智能",
+        "人工智能",
+        "China"
+      ],
+      "lede": "Six AGIBOT G2 Robots Complete 1,730 Tasks in…",
+      "id": "c5b14a6f1935db96b55f435c",
+      "original_title": "Six AGIBOT G2 Robots Complete 1,730 Tasks in 24-Hour Shanghai Convenience Store Trial",
+      "original_summary": "Four of the six robots pass a performance assessment as the trial puts customer service, retail operations and embodied AI capabilities to the test in a working store.",
+      "url": "https://www.therobotreport.com/six-agibot-g2-robots-complete-1730-tasks-in-24-hour-shanghai-convenience-store-trial",
+      "source": "The Robot Report",
+      "published": "2026-11-13T16:32:58+00:00",
+      "authors": [],
+      "score": 2
+    },
+    {
+      "title": "NVIDIA replaces CEO amid China AI and robotics concerns",
+      "summary": "NVIDIA is replacing co-founder Jensen Huang with Collette Kress as CEO and Harvey C. Jones as board chair as it faces trade scrutiny.",
+      "analysis": [
+        "NVIDIA is replacing co-founder Jensen Huang with Collette Kress as CEO and Harvey C. Jones as board chair as it faces trade scrutiny.",
+        "后续可关注「人工智能」相关的实施范围和验证依据。"
+      ],
+      "tags": [
+        "人工智能",
+        "China",
+        "Ethics"
+      ],
+      "lede": "NVIDIA replaces CEO amid China AI and…",
+      "id": "f3f7b139466cebf82dc0ad69",
+      "original_title": "NVIDIA replaces CEO amid China AI and robotics concerns",
+      "original_summary": "NVIDIA is replacing co-founder Jensen Huang with Collette Kress as CEO and Harvey C. Jones as board chair as it faces trade scrutiny.",
+      "url": "https://www.therobotreport.com/nvidia-replaces-ceo-amid-china-ai-and-robotics-concerns",
+      "source": "The Robot Report",
+      "published": "2026-11-12T16:33:17+00:00",
+      "authors": [],
+      "score": 2
+    },
+    {
+      "title": "Runway’s Praxis-1 world action model for robotics is now available",
+      "summary": "Runway launched Praxis-1 with partners including Noble Machines, Standard Bots, and Ultra. Developers can now use it with open weights.",
+      "analysis": [
+        "Runway launched Praxis-1 with partners including Noble Machines, Standard Bots, and Ultra. Developers can now use it with open weights.",
+        "后续可关注「6-Axis」相关的实施范围和验证依据。"
+      ],
+      "tags": [
+        "6-Axis",
+        "人工智能",
+        "Humanoids"
+      ],
+      "lede": "Runway’s Praxis-1 world action model for…",
+      "id": "d47b5fcebcbd26cf5bf7df23",
+      "original_title": "Runway’s Praxis-1 world action model for robotics is now available",
+      "original_summary": "Runway launched Praxis-1 with partners including Noble Machines, Standard Bots, and Ultra. Developers can now use it with open weights.",
+      "url": "https://www.therobotreport.com/runways-praxis-1-world-action-model-for-robotics-is-now-available",
+      "source": "The Robot Report",
+      "published": "2026-11-12T13:18:47+00:00",
+      "authors": [],
+      "score": 2
+    },
+    {
+      "title": "Humyn Labs raises $47M to collect real-world data for robotics",
+      "summary": "Humyn Labs provides data collected from real-world operations for frontier AI labs, robotics companies, and world-model developers.",
+      "analysis": [
+        "Humyn Labs provides data collected from real-world operations for frontier AI labs, robotics companies, and world-model developers.",
+        "后续可关注「人工智能」相关的实施范围和验证依据。"
+      ],
+      "tags": [
+        "人工智能",
+        "投融资",
+        "物流自动化"
+      ],
+      "lede": "Humyn Labs raises $47M to collect real-world…",
+      "id": "1259020373caed942586ba51",
+      "original_title": "Humyn Labs raises $47M to collect real-world data for robotics",
+      "original_summary": "Humyn Labs provides data collected from real-world operations for frontier AI labs, robotics companies, and world-model developers.",
+      "url": "https://www.therobotreport.com/humyn-labs-raises-47m-to-collect-real-world-data-for-robotics",
+      "source": "The Robot Report",
+      "published": "2026-11-18T22:43:06+00:00",
+      "authors": [],
+      "score": 1
+    },
+    {
+      "title": "Rockwell Automation acquiring mobile robot maker AGILOX",
+      "summary": "Rockwell Automation has agreed to acquire autonomous mobile robot developer AGILOX, expanding its mobile robotics portfolio following its 2023 acquisition of OTTO Motors.",
+      "analysis": [
+        "Rockwell Automation has agreed to acquire autonomous mobile robot developer AGILOX, expanding its mobile robotics portfolio following its 2023 acquisition of OTTO Motors.",
+        "后续可关注「Autonomous Mobile Robots (AMRs)」相关的实施范围和验证依据。"
+      ],
+      "tags": [
+        "Autonomous Mobile Robots (AMRs)",
+        "投融资",
+        "物流自动化"
+      ],
+      "lede": "Rockwell Automation acquiring mobile robot…",
+      "id": "a83bc89939309ffafdb8cd4b",
+      "original_title": "Rockwell Automation acquiring mobile robot maker AGILOX",
+      "original_summary": "Rockwell Automation has agreed to acquire autonomous mobile robot developer AGILOX, expanding its mobile robotics portfolio following its 2023 acquisition of OTTO Motors.",
+      "url": "https://www.therobotreport.com/rockwell-automation-acquiring-mobile-robot-maker-agilox",
+      "source": "The Robot Report",
+      "published": "2026-11-18T16:44:18+00:00",
+      "authors": [],
+      "score": 1
+    },
+    {
+      "title": "California DMV bars Waymo AVs from operating on the state’s freeways",
+      "summary": "The DMV determined that Waymo's freeway operations \"pose an imminent hazard to public safety due to recurring incursions by its vehicles.\"",
+      "analysis": [
+        "The DMV determined that Waymo's freeway operations \"pose an imminent hazard to public safety due to recurring incursions by its vehicles.\"",
+        "后续可关注「人工智能」相关的实施范围和验证依据。"
+      ],
+      "tags": [
+        "人工智能",
+        "Automotive",
+        "Self-Driving Vehicles"
+      ],
+      "lede": "California DMV bars Waymo AVs from operating…",
+      "id": "e89e4142ede2400ebc95d8cd",
+      "original_title": "California DMV bars Waymo AVs from operating on the state’s freeways",
+      "original_summary": "The DMV determined that Waymo's freeway operations \"pose an imminent hazard to public safety due to recurring incursions by its vehicles.\"",
+      "url": "https://www.therobotreport.com/california-dmv-bars-waymo-avs-from-operating-on-the-states-freeways",
+      "source": "The Robot Report",
+      "published": "2026-11-17T23:55:07+00:00",
+      "authors": [],
+      "score": 1
+    },
+    {
+      "title": "Learn how AI is changing supply chain robotics",
+      "summary": "The live webinar, \"Robots in the Supply Chain,\" will take place Wednesday, November 18, 2026, at 12 P.M. ET.",
+      "analysis": [
+        "The live webinar, \"Robots in the Supply Chain,\" will take place Wednesday, November 18, 2026, at 12 P.M. ET.",
+        "后续可关注「Events」相关的实施范围和验证依据。"
+      ],
+      "tags": [
+        "Events",
+        "物流自动化",
+        "Ambi Robotics"
+      ],
+      "lede": "Learn how AI is changing supply chain robotics",
+      "id": "53c42c8398c9a8798f7aac39",
+      "original_title": "Learn how AI is changing supply chain robotics",
+      "original_summary": "The live webinar, \"Robots in the Supply Chain,\" will take place Wednesday, November 18, 2026, at 12 P.M. ET.",
+      "url": "https://www.therobotreport.com/learn-how-ai-is-changing-supply-chain-robotics",
+      "source": "The Robot Report",
+      "published": "2026-11-17T19:58:18+00:00",
+      "authors": [],
+      "score": 1
+    },
+    {
+      "title": "The hidden reason most robots fail on the factory floor",
+      "summary": "Evan Beard explains how AI-native robotics could make automation easier to program and help American manufacturing compete globally.",
+      "analysis": [
+        "Evan Beard explains how AI-native robotics could make automation easier to program and help American manufacturing compete globally.",
+        "后续可关注「Autonomous Mobile Robots (AMRs)」相关的实施范围和验证依据。"
+      ],
+      "tags": [
+        "Autonomous Mobile Robots (AMRs)",
+        "Cobot Arms",
+        "智能制造"
+      ],
+      "lede": "The hidden reason most robots fail on the…",
+      "id": "b4633b67e4f48d5d4bb3924d",
+      "original_title": "The hidden reason most robots fail on the factory floor",
+      "original_summary": "Evan Beard explains how AI-native robotics could make automation easier to program and help American manufacturing compete globally.",
+      "url": "https://www.therobotreport.com/the-hidden-reason-most-robots-fail-on-the-factory-floor",
+      "source": "The Robot Report",
+      "published": "2026-11-16T23:49:56+00:00",
+      "authors": [],
+      "score": 1
+    },
+    {
+      "title": "Food robotics 2.0: why this time could be different",
+      "summary": "Food robotics is entering a new era as companies shift from consumer-facing robot restaurants to B2B automation that help food manufacturers, restaurants, and grocery retailers improve productivity, reduce labor costs, and scale operations.",
+      "analysis": [
+        "Food robotics is entering a new era as companies shift from consumer-facing robot restaurants to B2B automation that help food manufacturers, restaurants, and grocery retailers improve productivity, reduce labor costs, and scale operations.",
+        "后续可关注「chef robotics」相关的实施范围和验证依据。"
+      ],
+      "tags": [
+        "chef robotics",
+        "机器人产业",
+        "行业资讯"
+      ],
+      "lede": "Food robotics 2.0",
+      "id": "80bc50eb97f5f229ad987e3f",
+      "original_title": "Food robotics 2.0: why this time could be different",
+      "original_summary": "Food robotics is entering a new era as companies shift from consumer-facing robot restaurants to B2B automation that help food manufacturers, restaurants, and grocery retailers improve productivity, reduce labor costs, and scale operations.",
+      "url": "https://www.therobotreport.com/food-robotics-2-0-why-this-time-could-be-different",
+      "source": "The Robot Report",
+      "published": "2026-11-14T13:00:38+00:00",
+      "authors": [],
+      "score": 1
+    },
+    {
+      "title": "How Rhoda AI is using video data to create generalized AI models for robots",
+      "summary": "Rhoda AI offers a direct video action model, which it recently extended with mobile DVA, to enable robots to understand the physical world.",
+      "analysis": [
+        "Rhoda AI offers a direct video action model, which it recently extended with mobile DVA, to enable robots to understand the physical world.",
+        "后续可关注「人工智能」相关的实施范围和验证依据。"
+      ],
+      "tags": [
+        "人工智能",
+        "物流自动化",
+        "智能制造"
+      ],
+      "lede": "How Rhoda AI is using video data to create…",
+      "id": "2e6b4a89f3b63d7caf94698e",
+      "original_title": "How Rhoda AI is using video data to create generalized AI models for robots",
+      "original_summary": "Rhoda AI offers a direct video action model, which it recently extended with mobile DVA, to enable robots to understand the physical world.",
+      "url": "https://www.therobotreport.com/how-rhoda-ai-is-using-video-data-to-create-generalized-ai-models-for-robots",
+      "source": "The Robot Report",
+      "published": "2026-11-13T13:30:44+00:00",
+      "authors": [],
+      "score": 1
+    },
+    {
+      "title": "Narwal builds robot vacuums to serve regional needs",
+      "summary": "Narwal executives say they spent a decade in research and development and have tailored their household cleaning robots to local markets.",
+      "analysis": [
+        "Narwal executives say they spent a decade in research and development and have tailored their household cleaning robots to local markets.",
+        "后续可关注「China」相关的实施范围和验证依据。"
+      ],
+      "tags": [
+        "China",
+        "Consumer Robotics",
+        "Regulatory & Compliance"
+      ],
+      "lede": "Narwal builds robot vacuums to serve…",
+      "id": "a946c853465f0cb5551c3258",
+      "original_title": "Narwal builds robot vacuums to serve regional needs",
+      "original_summary": "Narwal executives say they spent a decade in research and development and have tailored their household cleaning robots to local markets.",
+      "url": "https://www.therobotreport.com/narwal-builds-robot-vacuums-to-serve-regional-needs",
+      "source": "The Robot Report",
+      "published": "2026-11-13T13:18:05+00:00",
+      "authors": [],
+      "score": 1
+    },
+    {
+      "title": "Viam Launchpad aims to accelerate robotics deployments",
+      "summary": "The Viam Launchpad is intended to provide the software and engineering infrastructure to help startups bring robots to commercial deployment.",
+      "analysis": [
+        "The Viam Launchpad is intended to provide the software and engineering infrastructure to help startups bring robots to commercial deployment.",
+        "后续可关注「Analysis」相关的实施范围和验证依据。"
+      ],
+      "tags": [
+        "Analysis",
+        "Business Resources",
+        "Construction"
+      ],
+      "lede": "Viam Launchpad aims to accelerate robotics…",
+      "id": "b31aad8575dca1a79f5d3723",
+      "original_title": "Viam Launchpad aims to accelerate robotics deployments",
+      "original_summary": "The Viam Launchpad is intended to provide the software and engineering infrastructure to help startups bring robots to commercial deployment.",
+      "url": "https://www.therobotreport.com/viam-launchpad-aims-to-accelerate-robotics-deployments",
+      "source": "The Robot Report",
+      "published": "2026-11-12T13:30:31+00:00",
+      "authors": [],
+      "score": 1
+    }
+  ]
+}

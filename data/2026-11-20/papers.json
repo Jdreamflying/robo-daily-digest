@@ -1,0 +1,633 @@
+{
+  "date": "2026-11-20",
+  "total_scanned": 89,
+  "total_new": 89,
+  "total_unique": 89,
+  "paper_target_date": "2026-11-17",
+  "paper_source_date": "2026-11-17",
+  "paper_category": "cs.RO",
+  "scored_count": 89,
+  "qualified_count": 89,
+  "mode": "api",
+  "items": [
+    {
+      "title": "Magflow：工业级六自由度磁悬浮的可微仿真",
+      "summary": "Magflow 是一个完全可微、GPU 并行的六自由度磁悬浮仿真器，直接计算电磁物理而非依赖手工近似。研究者用它训练出首个面向工业级六自由度磁悬浮系统的神经网络控制器，该控制器仅从仿真物理中学习，零样本迁移到真实硬件，并在 4 kHz 硬实时约束下运行，还能悬浮一种没有手工解法的动子拓扑。",
+      "lede": "直接计算物理、放弃手工近似，Magflow 让神经网络控制器在工业级六自由度磁悬浮上以 4 kHz 实时运行，并零样本迁移到真实硬件。",
+      "tags": [
+        "磁悬浮控制",
+        "可微仿真",
+        "零样本仿真到现实迁移"
+      ],
+      "sections": {
+        "background": "六自由度磁悬浮理论上可实现无摩擦运输和微米级定位，但其动力学复杂且不稳定，底层控制难度很高。工业系统通常依赖软硬件协同设计：联合设计动子与定子几何，构造紧凑的手工电磁力近似，从而让控制计算在千赫兹频率下可行。代价是对工作空间和可支持的动子拓扑施加了过于保守的限制。",
+        "conclusion": "Magflow 训练的神经网络控制器从仿真零样本迁移到真实工业级六自由度磁悬浮硬件，满足 4 kHz 硬实时约束，表现出定性上新的行为，并成功悬浮了一种不存在手工解法的动子拓扑。这表明协同设计并非六自由度磁悬浮控制的物理必然，从仿真物理中学习控制可以找到超出传统控制工程能力的解。",
+        "method": "Magflow 不把底层物理简化为手工近似，而是直接计算物理，构建完全可微、GPU 并行的六自由度磁悬浮仿真器，并据此训练神经网络控制器。控制器完全从仿真物理中学习，随后部署到真实硬件。",
+        "takeaways": "该工作提示机器人研究可以绕开为实时性而做的保守手工建模，用可微、GPU 并行的物理仿真直接训练控制器，并依靠零样本迁移验证。局限在于结论目前针对特定工业级六自由度磁悬浮平台与 4 kHz 实时条件，是否推广到其他执行器和工况仍需验证。"
+      },
+      "i18n": {
+        "zh": {
+          "title": "Magflow：工业级六自由度磁悬浮的可微仿真",
+          "summary": "Magflow 是一个完全可微、GPU 并行的六自由度磁悬浮仿真器，直接计算电磁物理而非依赖手工近似。研究者用它训练出首个面向工业级六自由度磁悬浮系统的神经网络控制器，该控制器仅从仿真物理中学习，零样本迁移到真实硬件，并在 4 kHz 硬实时约束下运行，还能悬浮一种没有手工解法的动子拓扑。",
+          "lede": "直接计算物理、放弃手工近似，Magflow 让神经网络控制器在工业级六自由度磁悬浮上以 4 kHz 实时运行，并零样本迁移到真实硬件。",
+          "tags": [
+            "磁悬浮控制",
+            "可微仿真",
+            "零样本仿真到现实迁移"
+          ],
+          "sections": {
+            "background": "六自由度磁悬浮理论上可实现无摩擦运输和微米级定位，但其动力学复杂且不稳定，底层控制难度很高。工业系统通常依赖软硬件协同设计：联合设计动子与定子几何，构造紧凑的手工电磁力近似，从而让控制计算在千赫兹频率下可行。代价是对工作空间和可支持的动子拓扑施加了过于保守的限制。",
+            "conclusion": "Magflow 训练的神经网络控制器从仿真零样本迁移到真实工业级六自由度磁悬浮硬件，满足 4 kHz 硬实时约束，表现出定性上新的行为，并成功悬浮了一种不存在手工解法的动子拓扑。这表明协同设计并非六自由度磁悬浮控制的物理必然，从仿真物理中学习控制可以找到超出传统控制工程能力的解。",
+            "method": "Magflow 不把底层物理简化为手工近似，而是直接计算物理，构建完全可微、GPU 并行的六自由度磁悬浮仿真器，并据此训练神经网络控制器。控制器完全从仿真物理中学习，随后部署到真实硬件。",
+            "takeaways": "该工作提示机器人研究可以绕开为实时性而做的保守手工建模，用可微、GPU 并行的物理仿真直接训练控制器，并依靠零样本迁移验证。局限在于结论目前针对特定工业级六自由度磁悬浮平台与 4 kHz 实时条件，是否推广到其他执行器和工况仍需验证。"
+          }
+        },
+        "en": {
+          "title": "Magflow: Differentiable Simulation of Industrial-Grade 6D Magnetic Levitation",
+          "summary": "Magflow is a fully differentiable, GPU-parallel simulator for six-degree-of-freedom magnetic levitation that computes the underlying physics directly instead of relying on hand-crafted approximations. Researchers use it to train the first neural controller for an industrial-grade 6D magnetic levitation system, learned purely from simulated physics. The controller transfers zero-shot from simulation to real hardware, satisfies hard real-time constraints at 4 kHz, and even levitates a mover topology for which no hand-crafted solution exists.",
+          "lede": "By computing physics directly instead of using hand-crafted approximations, Magflow lets a neural controller run at 4 kHz on industrial-grade 6D magnetic levitation and transfer zero-shot to real hardware.",
+          "tags": [
+            "magnetic levitation control",
+            "differentiable simulation",
+            "zero-shot sim-to-real transfer"
+          ],
+          "sections": {
+            "background": "Six-degree-of-freedom magnetic levitation could in principle enable frictionless transport and micrometer-scale positioning, but its complex and unstable dynamics make low-level control inherently difficult. Industrial systems typically rely on deep hardware-software co-design: mover and stator geometries are jointly designed to enable a compact, hand-crafted approximation of electromagnetic force computation, keeping control computationally tractable at kilohertz rates. This imposes overly conservative constraints on the operating workspace and the range of supported mover topologies.",
+            "conclusion": "The neural controller trained with Magflow transfers zero-shot from simulation to real industrial-grade 6D magnetic levitation hardware, satisfies hard real-time constraints at 4 kHz, exhibits qualitatively new behaviors, and successfully levitates a mover topology for which no hand-crafted solution exists. These results show that co-design is not a physical necessity for 6D magnetic levitation control, and that control learning from simulated physics can find solutions beyond the reach of control engineering.",
+            "method": "Rather than reducing the underlying physics to a hand-crafted approximation, Magflow computes the physics directly. It is a fully differentiable, GPU-parallel simulator for 6D magnetic levitation, used to train a neural controller purely from simulated physics before deployment on real hardware.",
+            "takeaways": "The work suggests robotics research can bypass conservative hand-crafted modeling adopted for real-time feasibility, training controllers directly in differentiable, GPU-parallel physics simulation and validating them through zero-shot transfer. A limitation is that the conclusions currently concern a specific industrial-grade 6D magnetic levitation platform and 4 kHz real-time conditions; generalization to other actuators and operating conditions remains to be verified."
+          }
+        }
+      },
+      "id": "2611.23050",
+      "original_title": "Magflow: Differentiable Simulation of Industrial-Grade 6D Magnetic Levitation",
+      "original_summary": "Magnetic levitation with six-degrees-of-freedom enables frictionless transport and micrometer-scale positioning in principle, but low-level control is inherently challenging due to its complex and unstable dynamics. Industrial systems typically rely on deep hardware-software co-design, where mover and stator geometries are jointly designed to enable a compact, hand-crafted approximation of the electromagnetic force computation, thereby keeping control computationally tractable at kilohertz rates. However, this approach imposes overly conservative constraints on the operating workspace and the range of supported mover topologies. Instead of reducing the underlying physics to a hand-crafted approximation, we compute the physics directly. We introduce Magflow, a fully differentiable, GPU-parallel simulator for 6D magnetic levitation. It is used to train the first neural controller for an industrial-grade 6D magnetic levitation system that is learned purely from simulated physics. We show that the learned neural controller transfers zero-shot from simulation to real hardware while satisfying hard real-time constraints at 4 kHz. The learned controller achieves qualitatively new behaviors and even levitates a mover topology for which no hand-crafted solution exists. These results demonstrate that co-design is not a physical necessity for 6D magnetic levitation control. More broadly, control learning from simulated physics can find solutions beyond the reach of control engineering in demanding industrial domains. Source code and demonstration videos are publicly available at https://sites.google.com/view/magflow.",
+      "url": "https://arxiv.org/abs/2611.23050v1",
+      "source": "arXiv cs.RO",
+      "published": "2026-11-17T16:46:26+00:00",
+      "authors": [
+        "Philipp Hartmann",
+        "Jannick Stranghöner",
+        "Klaus Neumann"
+      ],
+      "score": 5,
+      "versioned_id": "2611.23050v1",
+      "figure": {
+        "path": "./data/2026-11-20/figures/2611.23050.webp",
+        "caption": "Fig. 1: Magflow is the first differentiable simulator for 6D magnetic levitation, fusing the electromagnetic physics and the neural controller into a single GPU computational graph. Backpropagation through time trains the controller end-to-end, purely from physics. The trained controller then transfers zero-shot to the real hardware running at 4 kHz."
+      },
+      "code_url": null,
+      "project_url": null,
+      "pdf_url": "https://arxiv.org/pdf/2611.23050"
+    },
+    {
+      "title": "商用现成人形机器人的自主赛道竞速：系统设计与真实部署",
+      "summary": "本文报告了一套部署在宇树 G1 商用通用人形机器人上的完整自主跑步系统，并在 2026 年世界人形机器人运动会的 100 米、400 米和 1500 米项目中实际参赛。系统整合了基于视觉的车道感知、路径跟踪，以及用强化学习配合人类运动先验训练出的跑步策略。为应对人形跑步的难点，作者稳定了头部相机图像以抵抗身体晃动，并用惯性测量单元（IMU，测量加速度和角速度的传感器）辅助的腿部里程计在腾空阶段维持定位。为控制电机发热，训练时惩罚髋关节俯仰力矩，加装散热板，并按温度限制速度、为不同项目制定配速。最终成绩为 100 米第 13 名（共 74 台）、400 米首轮第 10 名（共 44 台）但半决赛摔倒、1500 米第 7 名（共 35 台）。这次部署中，散热余量在每一项比赛中都决定了配速，半决赛摔倒则源于一次车道检测错误。",
+      "lede": "一台宇树 G1 在真实赛道上自主跑完 100 米、400 米和 1500 米，成绩背后真正的限制因素是电机散热和车道检测。",
+      "tags": [
+        "人形机器人",
+        "自主竞速",
+        "强化学习"
+      ],
+      "sections": {
+        "background": "基于学习的方法已让人形机器人跑得稳健，并开始参加竞技赛事。但很少有报告描述一套完整的自主人形跑步系统在真实比赛中的表现：机器人要在新场地沿车道跑、在硬件限制内控制配速，并且全程无需人工干预地完赛。本文填补的正是这一空白。",
+        "conclusion": "系统在 2026 年世界人形机器人运动会上取得 100 米第 13 名（共 74 台）、400 米首轮第 10 名（共 44 台，半决赛摔倒）、1500 米第 7 名（共 35 台）。作者明确指出，散热余量在每项比赛中都成为配速的约束，而半决赛摔倒由一次车道检测错误引起。这些结果说明，在真实赛事中，热管理和感知可靠性往往比单纯的运动能力更决定成绩。",
+        "method": "系统由三部分组成：视觉车道感知、路径跟踪和强化学习跑步策略，策略训练时引入人类运动先验。针对跑步中的具体问题，作者用图像稳定抵消身体晃动对头部相机的影响，用 IMU 辅助的腿部里程计在腾空阶段衔接定位；针对电机发热，训练时惩罚髋关节俯仰力矩，硬件上加装散热板，运行时按温度限制速度并为各项目单独配速。",
+        "takeaways": "这项工作表明，人形机器人自主竞速的瓶颈不只在跑步策略本身，还在感知稳定、状态估计和热管理这些系统环节。其结论适用于以商用现成人形机器人参加真实赛道比赛的场景；半决赛的摔倒也提示，车道检测一旦出错，后果可能是直接退赛，感知冗余值得优先投入。"
+      },
+      "i18n": {
+        "zh": {
+          "title": "商用现成人形机器人的自主赛道竞速：系统设计与真实部署",
+          "summary": "本文报告了一套部署在宇树 G1 商用通用人形机器人上的完整自主跑步系统，并在 2026 年世界人形机器人运动会的 100 米、400 米和 1500 米项目中实际参赛。系统整合了基于视觉的车道感知、路径跟踪，以及用强化学习配合人类运动先验训练出的跑步策略。为应对人形跑步的难点，作者稳定了头部相机图像以抵抗身体晃动，并用惯性测量单元（IMU，测量加速度和角速度的传感器）辅助的腿部里程计在腾空阶段维持定位。为控制电机发热，训练时惩罚髋关节俯仰力矩，加装散热板，并按温度限制速度、为不同项目制定配速。最终成绩为 100 米第 13 名（共 74 台）、400 米首轮第 10 名（共 44 台）但半决赛摔倒、1500 米第 7 名（共 35 台）。这次部署中，散热余量在每一项比赛中都决定了配速，半决赛摔倒则源于一次车道检测错误。",
+          "lede": "一台宇树 G1 在真实赛道上自主跑完 100 米、400 米和 1500 米，成绩背后真正的限制因素是电机散热和车道检测。",
+          "tags": [
+            "人形机器人",
+            "自主竞速",
+            "强化学习"
+          ],
+          "sections": {
+            "background": "基于学习的方法已让人形机器人跑得稳健，并开始参加竞技赛事。但很少有报告描述一套完整的自主人形跑步系统在真实比赛中的表现：机器人要在新场地沿车道跑、在硬件限制内控制配速，并且全程无需人工干预地完赛。本文填补的正是这一空白。",
+            "conclusion": "系统在 2026 年世界人形机器人运动会上取得 100 米第 13 名（共 74 台）、400 米首轮第 10 名（共 44 台，半决赛摔倒）、1500 米第 7 名（共 35 台）。作者明确指出，散热余量在每项比赛中都成为配速的约束，而半决赛摔倒由一次车道检测错误引起。这些结果说明，在真实赛事中，热管理和感知可靠性往往比单纯的运动能力更决定成绩。",
+            "method": "系统由三部分组成：视觉车道感知、路径跟踪和强化学习跑步策略，策略训练时引入人类运动先验。针对跑步中的具体问题，作者用图像稳定抵消身体晃动对头部相机的影响，用 IMU 辅助的腿部里程计在腾空阶段衔接定位；针对电机发热，训练时惩罚髋关节俯仰力矩，硬件上加装散热板，运行时按温度限制速度并为各项目单独配速。",
+            "takeaways": "这项工作表明，人形机器人自主竞速的瓶颈不只在跑步策略本身，还在感知稳定、状态估计和热管理这些系统环节。其结论适用于以商用现成人形机器人参加真实赛道比赛的场景；半决赛的摔倒也提示，车道检测一旦出错，后果可能是直接退赛，感知冗余值得优先投入。"
+          }
+        },
+        "en": {
+          "title": "Autonomous Track Racing with a Commercially Available Humanoid: System Design and Real-World Deployment",
+          "summary": "This paper reports a complete autonomous humanoid running system deployed on the Unitree G1, a commercially available general-purpose humanoid, and raced in the 100 m, 400 m, and 1500 m events of the World Humanoid Robot Games 2026. The system combines vision-based lane perception, path tracking, and a running policy trained by reinforcement learning with a human motion prior. To handle the difficulties of humanoid running, the authors stabilize head-camera images against body motion and use IMU-assisted leg odometry to bridge flight phases. To manage motor heating, they penalize hip-pitch torque during training, add heat-dissipation plates, and apply temperature-based speed limiting with event-specific pacing. The robot placed 13th of 74 in the 100 m, 10th of 44 in the 400 m first round before falling in the semifinal, and seventh of 35 in the 1500 m. In this deployment, thermal margin set the pace in every event, and the semifinal fall followed a lane-detection error.",
+          "lede": "A Unitree G1 ran the 100 m, 400 m, and 1500 m autonomously on real tracks, with motor heat and lane detection as the decisive limits.",
+          "tags": [
+            "humanoid robots",
+            "autonomous racing",
+            "reinforcement learning"
+          ],
+          "sections": {
+            "background": "Learning-based methods now let humanoids run robustly, and they have begun to compete in athletic events. Yet few reports describe a complete autonomous humanoid running system in an actual race, where the robot must follow a lane at a new venue, pace itself within hardware limits, and finish without intervention. This paper addresses that gap.",
+            "conclusion": "The system placed 13th of 74 in the 100 m, 10th of 44 in the 400 m first round before falling in the semifinal, and seventh of 35 in the 1500 m at the World Humanoid Robot Games 2026. The authors state that thermal margin set the pace in every event and that the semifinal fall followed a lane-detection error. These results indicate that, in real competition, thermal management and perception reliability often matter more to the outcome than locomotion capability alone.",
+            "method": "The system has three parts: vision-based lane perception, path tracking, and a reinforcement-learning running policy trained with a human motion prior. For specific running problems, the authors stabilize images to counter body motion affecting the head camera and use IMU-assisted leg odometry to maintain localization through flight phases. For motor heating, they penalize hip-pitch torque during training, add heat-dissipation plates in hardware, and at runtime limit speed by temperature with event-specific pacing.",
+            "takeaways": "This work shows that the bottleneck in autonomous humanoid racing lies not only in the running policy but also in system-level elements such as perception stability, state estimation, and thermal management. Its conclusions apply to racing scenarios with commercially available humanoids on real tracks; the semifinal fall also shows that a single lane-detection error can end a run, so perception redundancy deserves priority."
+          }
+        }
+      },
+      "id": "2611.22445",
+      "original_title": "Autonomous Track Racing with a Commercially Available Humanoid: System Design and Real-World Deployment",
+      "original_summary": "Learning-based methods now let humanoids run robustly, and they have begun to compete in athletic events. Yet few reports describe a complete autonomous humanoid running system in an actual race, where the robot must follow a lane at a new venue, pace itself within hardware limits, and finish without intervention. We report such a system deployed on the Unitree G1, a commercially available general-purpose humanoid, in the 100 m, 400 m, and 1500 m events of the World Humanoid Robot Games 2026. The system integrates vision-based lane perception, path tracking, and a running policy trained by reinforcement learning with a human motion prior. To address the challenges of humanoid running, we stabilize head-camera images against body motion and use IMU-assisted leg odometry to bridge flight phases. To manage motor heating, we penalize hip-pitch torque during training, add heat-dissipation plates, and apply temperature-based speed limiting with event-specific pacing. The robot placed 13th of 74 in the 100 m, 10th of 44 in the 400 m first round before falling in the semifinal, and seventh of 35 in the 1500 m. In this deployment, thermal margin set the pace in every event, and the semifinal fall followed a lane-detection error.",
+      "url": "https://arxiv.org/abs/2611.22445v1",
+      "source": "arXiv cs.RO",
+      "published": "2026-11-17T09:14:43+00:00",
+      "authors": [
+        "Koki Inami",
+        "Takashi Sato",
+        "Hiroyuki Oka",
+        "Shota Takizawa",
+        "Yuya Takahashi",
+        "Amon Suzuki",
+        "Hayato Ono",
+        "Kohtaro Ihara",
+        "Yuki Noka",
+        "Shohei Matsugu"
+      ],
+      "score": 5,
+      "versioned_id": "2611.22445v1",
+      "figure": null,
+      "code_url": null,
+      "project_url": null,
+      "pdf_url": "https://arxiv.org/pdf/2611.22445"
+    },
+    {
+      "title": "TCP4D：面向机器人操作的工具中心点跟踪与生成统一模型",
+      "summary": "TCP4D 用与具体机器人本体无关的工具中心点（TCP）位姿作为动作空间，让同一个四维场景表示既跟踪视频中已发生的 TCP 运动，又生成未来的 TCP 轨迹。跟踪器从单目视频和初始二维 TCP 查询出发，直接恢复 SE(3) 度量位姿、夹爪状态、场景几何与相机参数；生成器沿恢复的轨迹从同一表示中采样局部特征，结合机器人观测与语言指令预测未来 TCP 状态。配套的跨本体增强流程无需源机器人状态记录，就能把现有 RGB 视频转成其他本体的示范。实验显示，跟踪器在 DROID 和 RoboLab 上的绝对轨迹误差分别为 7.60 mm 和 16.07 mm，仅用十条示范即可适配新本体；生成器在 RoboTwin 上平均成功率为 69.19%，在两个真实任务上优于成熟策略模型，源数据与增强示范联合训练比仅用增强示范使目标机器人成功率提升 41.5%。",
+      "lede": "TCP4D 用统一的四维场景表示，把视频中的工具中心点跟踪与未来轨迹生成合到一个模型里，并借助跨本体增强把普通 RGB 视频变成其他机器人的示范。",
+      "tags": [
+        "机器人操作",
+        "工具中心点跟踪",
+        "跨本体学习"
+      ],
+      "sections": {
+        "background": "机器人操作视频包含丰富的视觉经验，但仅凭 RGB 观测恢复动作和夹爪状态标注仍然困难。现有方法往往依赖特定机器人的状态记录，难以跨本体复用；而动作空间若与具体本体绑定，也会限制视频数据的利用范围。",
+        "conclusion": "跟踪器在 DROID 和 RoboLab 上取得 7.60 mm 与 16.07 mm 的绝对轨迹误差，仅需十条示范即可适配新本体；生成器在 RoboTwin 上平均成功率为 69.19%，并在两个真实任务上超过成熟策略模型。源数据与增强示范联合训练，比仅用增强示范把目标机器人成功率提高 41.5%。这些结果说明统一四维表示能同时支撑跟踪与生成，且跨本体增强有效。",
+        "method": "以工具中心点（TCP，即机器人末端执行工具的参考点位）位姿作为与本体无关的动作空间，构建共享的四维场景表示。跟踪器输入单目视频和初始二维 TCP 查询，输出 SE(3) 度量位姿、夹爪状态、场景几何和相机参数；生成器沿恢复的 TCP 轨迹从同一表示采样局部特征，再与机器人观测和语言指令结合，预测未来 TCP 状态。跨本体增强流程对恢复的运动做重定向并合成对应观测，从而把现有 RGB 视频转成其他本体的示范，无需源机器人状态。",
+        "takeaways": "该工作表明，把动作统一到 TCP 位姿并共享四维场景表示，可让视频跟踪与策略生成互相受益，也降低了对源机器人状态的依赖。局限在于结论主要建立在上述数据集和任务上，跟踪精度与生成成功率在更复杂场景中的表现仍需验证；跨本体增强的效果也依赖重定向与观测合成的质量。"
+      },
+      "i18n": {
+        "zh": {
+          "title": "TCP4D：面向机器人操作的工具中心点跟踪与生成统一模型",
+          "summary": "TCP4D 用与具体机器人本体无关的工具中心点（TCP）位姿作为动作空间，让同一个四维场景表示既跟踪视频中已发生的 TCP 运动，又生成未来的 TCP 轨迹。跟踪器从单目视频和初始二维 TCP 查询出发，直接恢复 SE(3) 度量位姿、夹爪状态、场景几何与相机参数；生成器沿恢复的轨迹从同一表示中采样局部特征，结合机器人观测与语言指令预测未来 TCP 状态。配套的跨本体增强流程无需源机器人状态记录，就能把现有 RGB 视频转成其他本体的示范。实验显示，跟踪器在 DROID 和 RoboLab 上的绝对轨迹误差分别为 7.60 mm 和 16.07 mm，仅用十条示范即可适配新本体；生成器在 RoboTwin 上平均成功率为 69.19%，在两个真实任务上优于成熟策略模型，源数据与增强示范联合训练比仅用增强示范使目标机器人成功率提升 41.5%。",
+          "lede": "TCP4D 用统一的四维场景表示，把视频中的工具中心点跟踪与未来轨迹生成合到一个模型里，并借助跨本体增强把普通 RGB 视频变成其他机器人的示范。",
+          "tags": [
+            "机器人操作",
+            "工具中心点跟踪",
+            "跨本体学习"
+          ],
+          "sections": {
+            "background": "机器人操作视频包含丰富的视觉经验，但仅凭 RGB 观测恢复动作和夹爪状态标注仍然困难。现有方法往往依赖特定机器人的状态记录，难以跨本体复用；而动作空间若与具体本体绑定，也会限制视频数据的利用范围。",
+            "conclusion": "跟踪器在 DROID 和 RoboLab 上取得 7.60 mm 与 16.07 mm 的绝对轨迹误差，仅需十条示范即可适配新本体；生成器在 RoboTwin 上平均成功率为 69.19%，并在两个真实任务上超过成熟策略模型。源数据与增强示范联合训练，比仅用增强示范把目标机器人成功率提高 41.5%。这些结果说明统一四维表示能同时支撑跟踪与生成，且跨本体增强有效。",
+            "method": "以工具中心点（TCP，即机器人末端执行工具的参考点位）位姿作为与本体无关的动作空间，构建共享的四维场景表示。跟踪器输入单目视频和初始二维 TCP 查询，输出 SE(3) 度量位姿、夹爪状态、场景几何和相机参数；生成器沿恢复的 TCP 轨迹从同一表示采样局部特征，再与机器人观测和语言指令结合，预测未来 TCP 状态。跨本体增强流程对恢复的运动做重定向并合成对应观测，从而把现有 RGB 视频转成其他本体的示范，无需源机器人状态。",
+            "takeaways": "该工作表明，把动作统一到 TCP 位姿并共享四维场景表示，可让视频跟踪与策略生成互相受益，也降低了对源机器人状态的依赖。局限在于结论主要建立在上述数据集和任务上，跟踪精度与生成成功率在更复杂场景中的表现仍需验证；跨本体增强的效果也依赖重定向与观测合成的质量。"
+          }
+        },
+        "en": {
+          "title": "TCP4D: A Unified Tool-Center-Point Tracking and Generation Model for Robot Manipulation",
+          "summary": "TCP4D uses the embodiment-agnostic tool-center-point (TCP) pose as its action space, letting a shared 4D scene representation both track observed TCP motion and generate future TCP trajectories. Given a monocular video and initial 2D TCP queries, the tracker directly recovers metric SE(3) TCP poses, gripper states, scene geometry, and camera parameters. The generator samples local features from the same 4D representation along the recovered TCP tracks and combines them with robot observations and language instructions to predict future TCP states. A cross-embodiment augmentation pipeline converts existing RGB videos into demonstrations for alternative embodiments by retargeting the recovered motion and synthesizing corresponding observations, without recorded source-robot states. Experiments show absolute trajectory errors of 7.60 mm on DROID and 16.07 mm on RoboLab, with adaptation to a new embodiment using only ten demonstrations. The generator achieves 69.19% mean success on RoboTwin and outperforms well-established policy models on two real-world tasks, while joint training on source and augmented demonstrations improves target-robot success by 41.5% over augmented-only training.",
+          "lede": "TCP4D unifies tool-center-point tracking from video and future trajectory generation in one model through a shared 4D scene representation, and uses cross-embodiment augmentation to turn ordinary RGB videos into demonstrations for other robots.",
+          "tags": [
+            "robot manipulation",
+            "tool-center-point tracking",
+            "cross-embodiment learning"
+          ],
+          "sections": {
+            "background": "Robot manipulation videos offer rich visual experience, yet recovering action and gripper-state annotations from RGB observations remains challenging. Existing methods often depend on embodiment-specific state recordings, which limits reuse across robots, and an action space tied to a particular embodiment restricts how video data can be exploited.",
+            "conclusion": "The tracker reaches absolute trajectory errors of 7.60 mm on DROID and 16.07 mm on RoboLab and adapts to a new embodiment with only ten demonstrations. The generator achieves 69.19% mean success on RoboTwin and outperforms well-established policy models on two real-world tasks. Joint training on source and augmented demonstrations improves target-robot success by 41.5% over augmented-only training. These results indicate that a unified 4D representation can support both tracking and generation, and that cross-embodiment augmentation is effective.",
+            "method": "The method uses the tool-center-point (TCP) pose, the reference point of the robot's end-effector tool, as an embodiment-agnostic action space and builds a shared 4D scene representation. The tracker takes a monocular video and initial 2D TCP queries and outputs metric SE(3) poses, gripper states, scene geometry, and camera parameters. The generator samples local features from the same representation along the recovered TCP tracks and combines them with robot observations and language instructions to predict future TCP states. The cross-embodiment augmentation pipeline retargets the recovered motion and synthesizes corresponding observations, converting existing RGB videos into demonstrations for other embodiments without source-robot states.",
+            "takeaways": "The work shows that unifying actions as TCP poses with a shared 4D scene representation lets video tracking and policy generation benefit each other and reduces dependence on source-robot states. Limitations are that conclusions rest on the reported datasets and tasks, tracking accuracy and generation success in more complex scenes still need validation, and cross-embodiment augmentation depends on the quality of retargeting and observation synthesis."
+          }
+        }
+      },
+      "id": "2611.23143",
+      "original_title": "TCP4D: A Unified Tool-Center-Point Tracking and Generation Model for Robot Manipulation",
+      "original_summary": "Robot manipulation videos provide a rich visual experience, yet recovering robot action and gripper-state annotations from RGB observations still remains challenging. Using the embodiment-agnostic tool-center-point (TCP) pose as the action space, we present TCP4D, a unified model in which a shared 4D scene representation both tracks observed TCP motion and generates future TCP trajectories. Given a monocular video and initial 2D TCP queries, the tracker directly recovers metric TCP poses in SE(3) and gripper states alongside scene geometry and camera parameters. The generator samples local features from the same 4D representation along the recovered TCP tracks, then combines them with robot observations and language instructions to predict future TCP states. Our new cross-embodiment augmentation pipeline converts existing RGB videos into demonstrations for alternative embodiments by retargeting the recovered motion and synthesizing the corresponding observations, without recorded source-robot states. Experiments show that the tracker achieves absolute trajectory errors of 7.60 and 16.07 mm on DROID and RoboLab and adapts to a new embodiment with only ten demonstrations. The generator achieves 69.19% mean success on RoboTwin and outperforms well-established policy models on two real-world tasks, while joint training on source and augmented demonstrations improves target-robot success by 41.5% over augmented-only training.",
+      "url": "https://arxiv.org/abs/2611.23143v1",
+      "source": "arXiv cs.RO",
+      "published": "2026-11-17T17:59:42+00:00",
+      "authors": [
+        "Haosong Peng",
+        "Xiangyang Liu",
+        "Zhengshen Zhang",
+        "Yunfeng Fan",
+        "Tianyu Qi",
+        "Xin Xia",
+        "Yufeng Zhan",
+        "Wenchao Xu"
+      ],
+      "score": 4,
+      "versioned_id": "2611.23143v1",
+      "figure": {
+        "path": "./data/2026-11-20/figures/2611.23143.webp",
+        "caption": "Figure 7: Real-world experiments setup and task rollouts. The right panel shows the rollout of tasks 1) placing pens and 2) stacking bowls, with the predicted TCP trajectory over the next 32 steps displayed in each inference window. The color gradient from blue to orange indicates the temporal order of future actions. Complete rollout visualizations are in Appx. F.2."
+      },
+      "attention": {
+        "hf_upvotes": 25,
+        "hf_comments": 4,
+        "github_stars": 21,
+        "github_url": "https://github.com/livioni/tcp4d"
+      },
+      "code_url": null,
+      "project_url": "https://livioni.github.io/TCP4D/",
+      "pdf_url": "https://arxiv.org/pdf/2611.23143"
+    },
+    {
+      "title": "Heave-Ho：去中心化长时程多类人机器人协作",
+      "summary": "Heave-Ho 是一个面向长时程多类人机器人移动操作的去中心化协作框架。它通过多智能体后训练，把类人机器人基础跟踪模型适配到机器人之间物理耦合的交互场景，使各机器人仅凭局部观测即可实现协调的去中心化控制；高层则训练视觉语言规划器，并设计基于语音的领队-跟随协调机制，在无网络通信条件下同步去中心化执行。系统用两台同构类人机器人训练，可扩展到最多十台机器人组成的团队，并无需重新训练即可泛化到异构团队。作者还提出 HH-Bench，包含 12 项任务，覆盖 2 至 10 台类人机器人团队（含异构团队）。系统评估显示 Heave-Ho 持续优于基线方法，真实世界实验也展示了其在挑战性任务中的稳健去中心化协作能力。",
+      "lede": "Heave-Ho 用去中心化框架让多台类人机器人完成长时程移动操作：底层靠局部观测协调全身动作，高层用视觉语言规划与语音领队-跟随机制同步执行，无需网络通信。",
+      "tags": [
+        "类人机器人协作",
+        "去中心化控制",
+        "长时程规划"
+      ],
+      "sections": {
+        "background": "类人机器人协作有望突破单台机器人的能力上限，但真正实现这一潜力并不容易：机器人之间需要协调全身动作、保持长时程规划的一致，并在多机之间精确同步。现有方法往往依赖集中式控制或网络通信，难以在真实、分散的环境中支撑物理耦合的长时间协作。",
+        "conclusion": "Heave-Ho 在 HH-Bench 的 12 项任务上持续优于基线方法，任务覆盖 2 至 10 台类人机器人团队，包括异构团队。真实世界实验进一步表明，系统能在挑战性任务中实现稳健的去中心化协作。用两台同构机器人训练后，系统可扩展到最多十台机器人，并无需重新训练即可泛化到异构团队。",
+        "method": "底层采用多智能体后训练框架，将类人机器人基础跟踪模型适配到机器人之间物理耦合的交互，使每台机器人仅依赖局部观测就能进行协调的去中心化控制。高层训练视觉语言规划器，并设计基于语音的领队-跟随协调机制，在没有网络通信的情况下同步各机器人的去中心化执行。",
+        "takeaways": "这项工作说明，去中心化协作不必依赖网络通信，也能支撑长时程、物理耦合的多类人机器人任务；语音协调与局部观测控制为真实部署提供了可扩展路径。其局限在于结论主要建立在 HH-Bench 与作者的真实世界实验上，跨更广泛任务和环境的适用性仍需进一步验证。"
+      },
+      "i18n": {
+        "zh": {
+          "title": "Heave-Ho：去中心化长时程多类人机器人协作",
+          "summary": "Heave-Ho 是一个面向长时程多类人机器人移动操作的去中心化协作框架。它通过多智能体后训练，把类人机器人基础跟踪模型适配到机器人之间物理耦合的交互场景，使各机器人仅凭局部观测即可实现协调的去中心化控制；高层则训练视觉语言规划器，并设计基于语音的领队-跟随协调机制，在无网络通信条件下同步去中心化执行。系统用两台同构类人机器人训练，可扩展到最多十台机器人组成的团队，并无需重新训练即可泛化到异构团队。作者还提出 HH-Bench，包含 12 项任务，覆盖 2 至 10 台类人机器人团队（含异构团队）。系统评估显示 Heave-Ho 持续优于基线方法，真实世界实验也展示了其在挑战性任务中的稳健去中心化协作能力。",
+          "lede": "Heave-Ho 用去中心化框架让多台类人机器人完成长时程移动操作：底层靠局部观测协调全身动作，高层用视觉语言规划与语音领队-跟随机制同步执行，无需网络通信。",
+          "tags": [
+            "类人机器人协作",
+            "去中心化控制",
+            "长时程规划"
+          ],
+          "sections": {
+            "background": "类人机器人协作有望突破单台机器人的能力上限，但真正实现这一潜力并不容易：机器人之间需要协调全身动作、保持长时程规划的一致，并在多机之间精确同步。现有方法往往依赖集中式控制或网络通信，难以在真实、分散的环境中支撑物理耦合的长时间协作。",
+            "conclusion": "Heave-Ho 在 HH-Bench 的 12 项任务上持续优于基线方法，任务覆盖 2 至 10 台类人机器人团队，包括异构团队。真实世界实验进一步表明，系统能在挑战性任务中实现稳健的去中心化协作。用两台同构机器人训练后，系统可扩展到最多十台机器人，并无需重新训练即可泛化到异构团队。",
+            "method": "底层采用多智能体后训练框架，将类人机器人基础跟踪模型适配到机器人之间物理耦合的交互，使每台机器人仅依赖局部观测就能进行协调的去中心化控制。高层训练视觉语言规划器，并设计基于语音的领队-跟随协调机制，在没有网络通信的情况下同步各机器人的去中心化执行。",
+            "takeaways": "这项工作说明，去中心化协作不必依赖网络通信，也能支撑长时程、物理耦合的多类人机器人任务；语音协调与局部观测控制为真实部署提供了可扩展路径。其局限在于结论主要建立在 HH-Bench 与作者的真实世界实验上，跨更广泛任务和环境的适用性仍需进一步验证。"
+          }
+        },
+        "en": {
+          "title": "Heave-Ho: Decentralized Long-Horizon Multi-Humanoid Collaboration",
+          "summary": "Heave-Ho is a decentralized framework for long-horizon collaborative multi-humanoid loco-manipulation. At the low level, a multi-agent post-training framework adapts a humanoid foundation tracking model to physically coupled interactions between humanoids, enabling coordinated decentralized control from local observations alone. At the high level, a vision-language planner is trained and a speech-based leader-follower coordination mechanism synchronizes decentralized execution without network communication. Trained with two identical humanoids, the system scales to teams of up to ten robots and generalizes to heterogeneous teams without retraining. The authors also introduce HH-Bench, comprising 12 tasks involving teams of 2 to 10 humanoids, including heterogeneous teams. Systematic evaluations show that Heave-Ho consistently outperforms baseline methods, and real-world experiments demonstrate robust decentralized collaboration across challenging tasks.",
+          "lede": "Heave-Ho is a decentralized framework that lets multiple humanoids perform long-horizon loco-manipulation: low-level control coordinates whole-body motion from local observations, while a vision-language planner and speech-based leader-follower mechanism synchronize execution without network communication.",
+          "tags": [
+            "humanoid collaboration",
+            "decentralized control",
+            "long-horizon planning"
+          ],
+          "sections": {
+            "background": "Humanoid collaboration promises to extend capabilities beyond what individual robots can achieve, but realizing this potential requires coordinated whole-body interactions, coherent long-horizon planning, and precise synchronization across robots. Existing approaches often rely on centralized control or network communication, which makes physically coupled, long-duration collaboration difficult in real, decentralized settings.",
+            "conclusion": "Heave-Ho consistently outperforms baseline methods on the 12 tasks of HH-Bench, which cover teams of 2 to 10 humanoids, including heterogeneous teams. Real-world experiments further show robust decentralized collaboration across challenging tasks. Trained with two identical humanoids, the system scales to teams of up to ten robots and generalizes to heterogeneous teams without retraining.",
+            "method": "At the low level, a multi-agent post-training framework adapts a humanoid foundation tracking model to physically coupled interactions between humanoids, so that each robot can perform coordinated decentralized control using local observations alone. At the high level, a vision-language planner is trained, and a speech-based leader-follower coordination mechanism synchronizes decentralized execution without network communication.",
+            "takeaways": "The work shows that decentralized collaboration can support long-horizon, physically coupled multi-humanoid tasks without network communication; speech-based coordination and local-observation control offer a scalable path toward real deployment. A limitation is that the conclusions rest mainly on HH-Bench and the authors' real-world experiments, so applicability to broader tasks and environments still needs further validation."
+          }
+        }
+      },
+      "id": "2611.22275",
+      "original_title": "Heave-Ho: Decentralized Long-Horizon Multi-Humanoid Collaboration",
+      "original_summary": "Collaboration promises to extend humanoid capabilities beyond what individual robots can achieve. However, realizing this potential requires coordinated whole-body interactions, coherent long-horizon planning, and precise synchronization across robots. We introduce Heave-Ho, a decentralized framework for long-horizon collaborative multi-humanoid loco-manipulation. At the low level, we develop a multi-agent post-training framework that adapts a humanoid foundation tracking model to physically coupled interactions between humanoids, enabling coordinated decentralized control from local observations alone. At the high level, we train a vision-language planner and design a speech-based leader-follower coordination mechanism to synchronize decentralized execution without network communication. Trained with two identical humanoids, our system scales to teams of up to ten robots and generalizes to heterogeneous teams without retraining. To benchmark these capabilities, we introduce HH-Bench, comprising 12 tasks involving teams of 2 to 10 humanoids, including heterogeneous teams. Systematic evaluations show that Heave-Ho consistently outperforms baseline methods, while real-world experiments demonstrate robust decentralized collaboration across challenging tasks.",
+      "url": "https://arxiv.org/abs/2611.22275v2",
+      "source": "arXiv cs.RO",
+      "published": "2026-11-17T06:21:03+00:00",
+      "authors": [
+        "Ting-Hsuan Chen",
+        "Siheng Zhao",
+        "Han Jiang",
+        "Qi Pan",
+        "Louison Lu",
+        "Jiaheng Luo",
+        "Henghui Bao",
+        "Yiyu Chen",
+        "Quan Nguyen",
+        "Yue Wang"
+      ],
+      "score": 4,
+      "versioned_id": "2611.22275v2",
+      "figure": {
+        "path": "./data/2026-11-20/figures/2611.22275.webp",
+        "caption": "Figure 5: Real-world experiments. The first four rows show two G1 robots over time, from left to right, labeled with the team skill being executed. The last row shows teams that differ from the training configuration, including a different humanoid and people. Faces are obscured for anonymity. Full time sequences of all teams are in App. C.2 and videos on the project page."
+      },
+      "attention": {
+        "hf_upvotes": 22,
+        "hf_comments": 2,
+        "github_stars": 27,
+        "github_url": "https://github.com/heaveho-humanoid/heave-ho"
+      },
+      "code_url": null,
+      "project_url": "https://heaveho-humanoid.github.io/",
+      "pdf_url": "https://arxiv.org/pdf/2611.22275"
+    },
+    {
+      "title": "InteractVLA：将视觉-语言-动作模型变为可交互的机器人操作工具",
+      "summary": "InteractVLA 提出一种双向几何接口，让视觉-语言智能体能够引导和检查预训练的流式视觉-语言-动作（VLA）策略，而不是把它们当作只能接收语言指令的黑箱。正向方向通过可微的指令到位姿映射，把智能体指定的末端执行器目标转化为动作专家上的输入梯度，并用软时间目标对齐在不扭曲接近运动的前提下匹配目标位姿；反向方向把生成的动作块和标定后的相机重投影暴露给智能体，使其能诊断空间偏差、修正后续调用目标或局部调整轨迹。该方法在 LIBERO-Plus 上达到 99.4%，在 RoboDojo 上达到 48.62%，在 RoboCasa365 上达到 89.4%。",
+      "lede": "InteractVLA 用双向几何接口把预训练流式 VLA 变成智能体可引导、可检查的操作工具，并在 LIBERO-Plus、RoboDojo 和 RoboCasa365 上取得领先结果。",
+      "tags": [
+        "视觉-语言-动作模型",
+        "智能体式机器人操作",
+        "几何引导"
+      ],
+      "sections": {
+        "background": "现有智能体式操作把预训练 VLA 策略当作不透明的、只接受语言的原语：当策略在不熟悉的指令或场景扰动下失败时，智能体无法引导其行为，只能反复重试或人工接管。",
+        "conclusion": "让 VLA 变得可控不仅提升了在线智能体工具使用能力，还解锁了有效的递归自我改进。实验结果为 LIBERO-Plus 99.4%、RoboDojo 48.62%、RoboCasa365 89.4%，均达到当时最优水平。",
+        "method": "核心是智能体与 VLA 之间的双向几何接口。正向：测试时几何引导把智能体指定的末端执行器目标，经可微的指令到位姿映射转换为通过动作专家的输入梯度；软时间目标对齐把到达时间视为潜在执行索引，以匹配目标位姿而不扭曲策略的接近运动。反向：动作信息驱动的智能体精修把生成的动作块与标定后的相机重投影返回给智能体，使其诊断空间差异、修正后续 VLA 调用的目标，或在引导轨迹上局部调整运动片段。",
+        "takeaways": "该工作说明把 VLA 从黑箱原语变为可引导、可检查的工具，能显著改善智能体在分布外指令和场景扰动下的操作表现，并支持递归自我改进；其局限在于依赖可微的动作专家与相机标定，结论主要适用于具备这些条件的流式 VLA 操作场景。"
+      },
+      "i18n": {
+        "zh": {
+          "title": "InteractVLA：将视觉-语言-动作模型变为可交互的机器人操作工具",
+          "summary": "InteractVLA 提出一种双向几何接口，让视觉-语言智能体能够引导和检查预训练的流式视觉-语言-动作（VLA）策略，而不是把它们当作只能接收语言指令的黑箱。正向方向通过可微的指令到位姿映射，把智能体指定的末端执行器目标转化为动作专家上的输入梯度，并用软时间目标对齐在不扭曲接近运动的前提下匹配目标位姿；反向方向把生成的动作块和标定后的相机重投影暴露给智能体，使其能诊断空间偏差、修正后续调用目标或局部调整轨迹。该方法在 LIBERO-Plus 上达到 99.4%，在 RoboDojo 上达到 48.62%，在 RoboCasa365 上达到 89.4%。",
+          "lede": "InteractVLA 用双向几何接口把预训练流式 VLA 变成智能体可引导、可检查的操作工具，并在 LIBERO-Plus、RoboDojo 和 RoboCasa365 上取得领先结果。",
+          "tags": [
+            "视觉-语言-动作模型",
+            "智能体式机器人操作",
+            "几何引导"
+          ],
+          "sections": {
+            "background": "现有智能体式操作把预训练 VLA 策略当作不透明的、只接受语言的原语：当策略在不熟悉的指令或场景扰动下失败时，智能体无法引导其行为，只能反复重试或人工接管。",
+            "conclusion": "让 VLA 变得可控不仅提升了在线智能体工具使用能力，还解锁了有效的递归自我改进。实验结果为 LIBERO-Plus 99.4%、RoboDojo 48.62%、RoboCasa365 89.4%，均达到当时最优水平。",
+            "method": "核心是智能体与 VLA 之间的双向几何接口。正向：测试时几何引导把智能体指定的末端执行器目标，经可微的指令到位姿映射转换为通过动作专家的输入梯度；软时间目标对齐把到达时间视为潜在执行索引，以匹配目标位姿而不扭曲策略的接近运动。反向：动作信息驱动的智能体精修把生成的动作块与标定后的相机重投影返回给智能体，使其诊断空间差异、修正后续 VLA 调用的目标，或在引导轨迹上局部调整运动片段。",
+            "takeaways": "该工作说明把 VLA 从黑箱原语变为可引导、可检查的工具，能显著改善智能体在分布外指令和场景扰动下的操作表现，并支持递归自我改进；其局限在于依赖可微的动作专家与相机标定，结论主要适用于具备这些条件的流式 VLA 操作场景。"
+          }
+        },
+        "en": {
+          "title": "InteractVLA: Turning VLAs into Interactive Tools for Agentic Robotic Manipulation",
+          "summary": "InteractVLA introduces a bidirectional geometric interface that lets vision-language agents steer and inspect pretrained flow-based vision-language-action (VLA) policies instead of treating them as opaque, language-only primitives. In the forward direction, a differentiable command-to-pose mapping turns an agent-specified end-effector target into input gradients through the action expert, while soft-time target alignment matches the target pose without distorting the policy's approach motion. In the reverse direction, action-informed agentic refinement exposes generated action chunks and calibrated camera reprojections to the agent, enabling it to diagnose spatial discrepancies, revise targets for later VLA calls, or locally adjust motion segments. The method reaches 99.4% on LIBERO-Plus, 48.62% on RoboDojo, and 89.4% on RoboCasa365.",
+          "lede": "InteractVLA uses a bidirectional geometric interface to turn pretrained flow-based VLAs into steerable, inspectable tools for vision-language agents, reporting leading results on LIBERO-Plus, RoboDojo, and RoboCasa365.",
+          "tags": [
+            "vision-language-action models",
+            "agentic robotic manipulation",
+            "geometric guidance"
+          ],
+          "sections": {
+            "background": "Existing agentic manipulation systems treat pretrained VLA policies as opaque, language-only primitives: when a policy call fails under unfamiliar instructions or scene perturbations, the agent cannot steer its behavior and is forced into futile retries or costly manual takeover.",
+            "conclusion": "Making the VLA controllable not only boosts online agentic tool use but also unlocks effective recursive self-improvement (RSI). Experiments report 99.4% on LIBERO-Plus, 48.62% on RoboDojo, and 89.4% on RoboCasa365, achieving state-of-the-art performance.",
+            "method": "The core is a bidirectional geometric interface between the agent and the VLA. Forward: test-time geometric guidance translates an agent-specified end-effector target into input gradients through the action expert via a differentiable command-to-pose mapping, and soft-time target alignment treats arrival time as a latent execution index to match the target pose without distorting the policy's approach motion. Reverse: action-informed agentic refinement exposes generated action chunks and calibrated camera reprojections back to the agent, allowing it to diagnose spatial discrepancies, revise targets for subsequent VLA calls, or locally adjust motion segments on top of the guided trajectory.",
+            "takeaways": "The work shows that turning VLAs from black-box primitives into steerable, inspectable tools markedly improves agentic manipulation under out-of-distribution instructions and scene perturbations, and supports recursive self-improvement. Its scope is limited to flow-based VLA manipulation settings that provide a differentiable action expert and calibrated cameras."
+          }
+        }
+      },
+      "id": "2611.22584",
+      "original_title": "InteractVLA: Turning VLAs into Interactive Tools for Agentic Robotic Manipulation",
+      "original_summary": "Existing agentic manipulation systems treat pretrained vision-language-action (VLA) policies as opaque, language-only primitives: when a policy call fails under unfamiliar instructions or scene perturbations, the agent cannot steer its behavior and is forced into futile retries or costly manual takeover. We present InteractVLA, a framework that turns pretrained flow-based VLAs into geometrically steerable and inspectable tools through a bidirectional geometric interface with vision-language agents. In the forward direction, test-time geometric guidance translates an agent-specified end-effector target into input gradients through the action expert via a differentiable command-to-pose mapping, while soft-time target alignment treats arrival time as a latent execution index to match the target pose without distorting the policy's approach motion. In the reverse direction, action-informed agentic refinement exposes generated action chunks and calibrated camera reprojections back to the agent, allowing it to diagnose spatial discrepancies, revise targets for subsequent VLA calls, or locally adjust motion segments on top of the guided trajectory. Making the VLA controllable not only boosts online agentic tool use, but also unlocks effective recursive self-improvement (RSI), achieving state-of-the-art performance of 99.4\\% on LIBERO-Plus, 48.62\\% on RoboDojo, and 89.4\\% on RoboCasa365. Project page: https://lingwupro.github.io/InteractVLA/.",
+      "url": "https://arxiv.org/abs/2611.22584v1",
+      "source": "arXiv cs.RO",
+      "published": "2026-11-17T11:07:45+00:00",
+      "authors": [
+        "Chen Zhao",
+        "Zipeng Ye",
+        "Shifeng Bao",
+        "Yihan Lin",
+        "Haitao Shen",
+        "Yining Luo",
+        "Yuchen Xie",
+        "Jing Zhang"
+      ],
+      "score": 4,
+      "versioned_id": "2611.22584v1",
+      "figure": {
+        "path": "./data/2026-11-20/figures/2611.22584.webp",
+        "caption": "Figure 6: InteractVLA enables diverse real-world manipulation through interactive VLA control. From top to bottom, the sequences show Tabletop Tidying, Upright Bottle, Water Pouring, and Move Cube on the Dexmal platform. Each row presents successive stages of task execution from left to right, demonstrating coordinated grasping, reorientation, and placement under agent guidance. For Move Cube, we show the robot’s overhead camera view to highlight the tight clearance between the cube and the cup, illustrating the precision required for placement. Full video demonstrations are available at https://lingwupro.github.io/InteractVLA/."
+      },
+      "attention": {
+        "github_stars": 1,
+        "github_url": "https://github.com/lingwupro/interactvla"
+      },
+      "code_url": null,
+      "project_url": "https://lingwupro.github.io/InteractVLA/",
+      "pdf_url": "https://arxiv.org/pdf/2611.22584"
+    },
+    {
+      "title": "我的动作有多不确定？用冻结世界模型进行自校正视觉规划",
+      "summary": "本文提出一种利用冻结潜在世界模型反向预测来检测并补偿动作执行偏差的视觉规划方法。在PushT、TwoRoom和OGBench-Cube任务上，检测性能与理论预测的AUROC差距在0.05以内；自校正将PushT成功率从0.650提升到0.862，将更难的Cube任务成功率从0.378提升到0.432，达到与已知真实偏移的oracle相当的水平，并优于五种常见测试时自适应方法。在真实机械臂上，该方法识别出关节编码器无法记录的基座关节偏移，将到达误差从36 mm降至3-5 mm；在会话前封存的随机偏移下，估计可恢复真实偏移所实现误差降低量的92-94%。",
+      "lede": "冻结世界模型不仅能预测未来，还能反向检验动作执行是否偏离指令，并在真实机械臂上把到达误差从36 mm降到3-5 mm。",
+      "tags": [
+        "视觉规划",
+        "世界模型",
+        "机器人控制"
+      ],
+      "sections": {
+        "background": "冻结潜在世界模型结合基于采样的模型预测控制可构成视觉规划器，但部署时实际执行的动作可能偏离指令动作，而冻结模型本身无法察觉这种偏移。现有残差能量会把执行偏移与模型自身误差混在一起，难以区分偏差来源，导致规划器无法针对性纠正。",
+        "conclusion": "实验表明，偏移分数能以局部最优检验检测执行偏移，检测性能与理论预测的AUROC差距在0.05以内，并能给出Cramer-Rao误差棒估计、识别主导偏移来源。自校正使PushT成功率从0.650升至0.862，Cube从0.378升至0.432，与已知真实偏移的oracle相当，优于五种常见测试时自适应方法。真实机械臂上识别出编码器未记录的基座关节偏移，到达误差从36 mm降至3-5 mm；随机封存偏移下恢复真实偏移误差降低量的92-94%。",
+        "method": "方法核心是将冻结世界模型反向运行：对任意假设的执行偏移，模型预测在该偏移下本应观测到的结果，再与实际观测比较，从而量化偏移并让规划器自校正。与残差能量不同，偏移分数只保留残差中可由执行偏移产生的部分，排除模型自身误差。一旦报警触发，规划器即补偿该偏移。",
+        "takeaways": "该工作说明冻结世界模型可通过预测未来、检验动作接口的不确定性与有效性、最终纠正失败，充当一种过滤器。其局限在于实验覆盖的任务与平台有限，检测与补偿依赖偏移可被反向预测建模的假设；对更复杂或非参数化偏移的适用性仍需验证。"
+      },
+      "i18n": {
+        "zh": {
+          "title": "我的动作有多不确定？用冻结世界模型进行自校正视觉规划",
+          "summary": "本文提出一种利用冻结潜在世界模型反向预测来检测并补偿动作执行偏差的视觉规划方法。在PushT、TwoRoom和OGBench-Cube任务上，检测性能与理论预测的AUROC差距在0.05以内；自校正将PushT成功率从0.650提升到0.862，将更难的Cube任务成功率从0.378提升到0.432，达到与已知真实偏移的oracle相当的水平，并优于五种常见测试时自适应方法。在真实机械臂上，该方法识别出关节编码器无法记录的基座关节偏移，将到达误差从36 mm降至3-5 mm；在会话前封存的随机偏移下，估计可恢复真实偏移所实现误差降低量的92-94%。",
+          "lede": "冻结世界模型不仅能预测未来，还能反向检验动作执行是否偏离指令，并在真实机械臂上把到达误差从36 mm降到3-5 mm。",
+          "tags": [
+            "视觉规划",
+            "世界模型",
+            "机器人控制"
+          ],
+          "sections": {
+            "background": "冻结潜在世界模型结合基于采样的模型预测控制可构成视觉规划器，但部署时实际执行的动作可能偏离指令动作，而冻结模型本身无法察觉这种偏移。现有残差能量会把执行偏移与模型自身误差混在一起，难以区分偏差来源，导致规划器无法针对性纠正。",
+            "conclusion": "实验表明，偏移分数能以局部最优检验检测执行偏移，检测性能与理论预测的AUROC差距在0.05以内，并能给出Cramer-Rao误差棒估计、识别主导偏移来源。自校正使PushT成功率从0.650升至0.862，Cube从0.378升至0.432，与已知真实偏移的oracle相当，优于五种常见测试时自适应方法。真实机械臂上识别出编码器未记录的基座关节偏移，到达误差从36 mm降至3-5 mm；随机封存偏移下恢复真实偏移误差降低量的92-94%。",
+            "method": "方法核心是将冻结世界模型反向运行：对任意假设的执行偏移，模型预测在该偏移下本应观测到的结果，再与实际观测比较，从而量化偏移并让规划器自校正。与残差能量不同，偏移分数只保留残差中可由执行偏移产生的部分，排除模型自身误差。一旦报警触发，规划器即补偿该偏移。",
+            "takeaways": "该工作说明冻结世界模型可通过预测未来、检验动作接口的不确定性与有效性、最终纠正失败，充当一种过滤器。其局限在于实验覆盖的任务与平台有限，检测与补偿依赖偏移可被反向预测建模的假设；对更复杂或非参数化偏移的适用性仍需验证。"
+          }
+        },
+        "en": {
+          "title": "How Uncertain Is My Action? Self-Correcting Visual Planning with Frozen World Models",
+          "summary": "This paper proposes a visual planning method that detects and compensates for actuation shifts by running a frozen latent world model in reverse. On PushT, TwoRoom, and OGBench-Cube, measured detection follows the theoretical prediction to within 0.05 AUROC; self-correction raises success from 0.650 to 0.862 on PushT and from 0.378 to 0.432 on the harder Cube task, matching an oracle told the true shift and outperforming five common test-time adaptation methods. On a real robotic arm, the score identifies a base-joint offset that no joint encoder registers and reduces reach error from 36 mm to 3-5 mm; under shifts drawn at random and sealed before the session, estimates recover 92-94% of the error reduction achieved with the true shift.",
+          "lede": "A frozen world model can not only predict the future but also reverse-check whether executed actions deviate from commands, cutting reach error from 36 mm to 3-5 mm on a real robotic arm.",
+          "tags": [
+            "visual planning",
+            "world models",
+            "robot control"
+          ],
+          "sections": {
+            "background": "A frozen latent world model combined with sampling-based model predictive control forms a visual planner, but at deployment the executed action can depart from the commanded one, and the frozen model has no way to notice. Residual energy mixes this actuation shift with the model's own error, making it hard to isolate the source and correct the planner accordingly.",
+            "conclusion": "Experiments show that the shift score detects actuation shifts with a locally optimal test, with measured detection following the prediction to within 0.05 AUROC, and provides Cramer-Rao error bars and identifies the dominant generator. Self-correction raises success from 0.650 to 0.862 on PushT and from 0.378 to 0.432 on Cube, levels with an oracle told the true shift, and beats five common test-time adaptation methods. On a real robotic arm it identifies a base-joint offset no joint encoder registers, reducing reach error from 36 mm to 3-5 mm; under randomly drawn shifts sealed before the session, estimates recover 92-94% of the error reduction achieved with the true shift.",
+            "method": "The core idea is to run the frozen world model in reverse: for any hypothesized actuation shift, the model predicts what it should have observed under that shift, and comparing this prediction with the actual observation quantifies the shift and lets the planner correct itself. Unlike residual energy, the shift score keeps only the part of the residual that a shift can produce, excluding the model's own error. Once an alarm fires, the planner compensates for the shift.",
+            "takeaways": "The work suggests that a frozen world model can act as a filter by predicting the future, testing action-interface uncertainty and validity, and finally correcting failures. Limitations include the limited set of tasks and platforms tested and the assumption that shifts can be modeled by reverse prediction; applicability to more complex or non-parametric shifts remains to be validated."
+          }
+        }
+      },
+      "id": "2611.23620",
+      "original_title": "How Uncertain Is My Action? Self-Correcting Visual Planning with Frozen World Models",
+      "original_summary": "A frozen latent world model combined with sampling-based model predictive control is a visual planner. At deployment, the executed action can depart from the commanded one, and the frozen model has no way to notice. We show that the model can be run in reverse: for any hypothesized actuation shift, it predicts what it should have observed under that shift, and comparing this prediction with what was actually observed quantifies the shift and lets the planner correct itself. Unlike the residual energy, which mixes the shift with the model's own error, the score keeps only the part of the residual that a shift can produce. This shift score detects the shift with a locally optimal test, estimates it with Cramer-Rao error bars, names the dominant generator, and compensates the planner once an alarm fires. On PushT, TwoRoom and OGBench-Cube with a frozen latent world model, measured detection follows the prediction to within 0.05 AUROC. Self-correction raises success from 0.650 to 0.862 on PushT and from 0.378 to 0.432 on the harder Cube task, levels with an oracle that is told the true shift at the same block, better than five common test-time adaptation methods. On a real robotic arm, the score identifies a base-joint offset that no joint encoder registers and reduces the reach error from 36 mm to 3-5 mm, and under shifts drawn at random and sealed before the session, estimates recover 92-94% of the error reduction achieved with the true shift. The broader implication is that a frozen world model can act as a filter by predicting the future, testing action-interface uncertainty and validity, and finally correcting failures.",
+      "url": "https://arxiv.org/abs/2611.23620v1",
+      "source": "arXiv cs.RO",
+      "published": "2026-11-17T23:23:42+00:00",
+      "authors": [
+        "Siqing Li",
+        "Luming Yang",
+        "Yijia Jiao",
+        "Junze Deng",
+        "Alper Yilmaz"
+      ],
+      "score": 4,
+      "versioned_id": "2611.23620v1",
+      "figure": {
+        "path": "./data/2026-11-20/figures/2611.23620.webp",
+        "caption": "Figure 3: Overview of Actus. The frozen model plans as usual and the actuator applies the unknown shift T⁡(θ) (red). The residual and one JVP per generator give (st,Ft), pooled into (S,F) for alarm, the estimate δ^; after the first alarm the planner re-plans through T​(δ^)−1."
+      },
+      "code_url": null,
+      "project_url": null,
+      "pdf_url": "https://arxiv.org/pdf/2611.23620"
+    },
+    {
+      "title": "可恢复性而非不变性：机器人在性能极限处的可认证安全",
+      "summary": "该研究提出“可恢复性”这一基于收缩理论的安全概念，不再要求部署控制器本身保持前向不变，而是认证机器人在任意状态下都能切回可信恢复模式的能力。作者证明，只要从认证管道内任意位置切入恢复模式，即使存在扰动和模型误差，也能保证指数收敛；并提出收缩插入梯度来决定切换时机，配合序列凸合成逐步扩大认证管道。仿真四旋翼穿越不确定障碍时优于基于不变性的安全过滤器，全尺寸IndyNXT自动驾驶赛车在雨天操控极限下沿激进赛道线反复恢复。",
+      "lede": "不再要求激进行为自身不变，而是认证机器人随时能切回可信恢复模式，把形式化安全保证延伸到操控极限。",
+      "tags": [
+        "可恢复性安全认证",
+        "收缩理论",
+        "自动驾驶赛车"
+      ],
+      "sections": {
+        "background": "机器人安全认证通常依赖部署控制器的前向不变性，即要求系统状态始终不离开安全集。这一性质在运行包线边缘需要高保真模型，而那里恰恰是模型最不可靠、机器人性能却最好的区域。结果是许多最希望机器人执行的行为，从学习策略到接近抓地极限的激进机动，都无法获得认证。",
+        "conclusion": "作者证明，从认证管道内任意位置切换到恢复模式，可在扰动和模型误差下保证指数收敛。仿真中，四旋翼穿越不确定障碍时该方法优于基于不变性的安全过滤器；硬件实验中，全尺寸IndyNXT自动驾驶赛车在雨天操控极限下沿激进赛道线行驶并反复恢复。结论适用范围是：安全保证针对“可恢复”而非部署行为本身的不变性，因此不要求激进或学习行为自身满足不变性。",
+        "method": "核心是把安全认证从“部署行为保持不变”转为“机器人能重新进入可信恢复模式”。作者用收缩理论刻画恢复模式的收敛性，证明认证管道内任意起点切入恢复模式都指数收敛。为决定何时切换，推导收缩插入梯度，即恢复插入对证书的一阶影响，并嵌入切换时间规划：可行性本身保证安全，最优性只影响性能。证书由序列凸合成生成，单调扩大认证管道，逼近精确的生存核。",
+        "takeaways": "对机器人研究的启发是：不必为激进、学习型或实验性行为强行建立高保真不变性模型，而是为其配备可认证的退出策略，从而把形式化安全保证扩展到性能极限附近的行为。局限在于安全承诺依赖恢复模式的存在与认证管道的构造，材料未给出更广泛平台或恢复模式失效时的结果。"
+      },
+      "i18n": {
+        "zh": {
+          "title": "可恢复性而非不变性：机器人在性能极限处的可认证安全",
+          "summary": "该研究提出“可恢复性”这一基于收缩理论的安全概念，不再要求部署控制器本身保持前向不变，而是认证机器人在任意状态下都能切回可信恢复模式的能力。作者证明，只要从认证管道内任意位置切入恢复模式，即使存在扰动和模型误差，也能保证指数收敛；并提出收缩插入梯度来决定切换时机，配合序列凸合成逐步扩大认证管道。仿真四旋翼穿越不确定障碍时优于基于不变性的安全过滤器，全尺寸IndyNXT自动驾驶赛车在雨天操控极限下沿激进赛道线反复恢复。",
+          "lede": "不再要求激进行为自身不变，而是认证机器人随时能切回可信恢复模式，把形式化安全保证延伸到操控极限。",
+          "tags": [
+            "可恢复性安全认证",
+            "收缩理论",
+            "自动驾驶赛车"
+          ],
+          "sections": {
+            "background": "机器人安全认证通常依赖部署控制器的前向不变性，即要求系统状态始终不离开安全集。这一性质在运行包线边缘需要高保真模型，而那里恰恰是模型最不可靠、机器人性能却最好的区域。结果是许多最希望机器人执行的行为，从学习策略到接近抓地极限的激进机动，都无法获得认证。",
+            "conclusion": "作者证明，从认证管道内任意位置切换到恢复模式，可在扰动和模型误差下保证指数收敛。仿真中，四旋翼穿越不确定障碍时该方法优于基于不变性的安全过滤器；硬件实验中，全尺寸IndyNXT自动驾驶赛车在雨天操控极限下沿激进赛道线行驶并反复恢复。结论适用范围是：安全保证针对“可恢复”而非部署行为本身的不变性，因此不要求激进或学习行为自身满足不变性。",
+            "method": "核心是把安全认证从“部署行为保持不变”转为“机器人能重新进入可信恢复模式”。作者用收缩理论刻画恢复模式的收敛性，证明认证管道内任意起点切入恢复模式都指数收敛。为决定何时切换，推导收缩插入梯度，即恢复插入对证书的一阶影响，并嵌入切换时间规划：可行性本身保证安全，最优性只影响性能。证书由序列凸合成生成，单调扩大认证管道，逼近精确的生存核。",
+            "takeaways": "对机器人研究的启发是：不必为激进、学习型或实验性行为强行建立高保真不变性模型，而是为其配备可认证的退出策略，从而把形式化安全保证扩展到性能极限附近的行为。局限在于安全承诺依赖恢复模式的存在与认证管道的构造，材料未给出更广泛平台或恢复模式失效时的结果。"
+          }
+        },
+        "en": {
+          "title": "Recoverability, Not Invariance: Certified Safety for Robots at the Limits of Performance",
+          "summary": "This work introduces recoverability, a contraction-theoretic safety concept that certifies a robot's ability to reengage a trusted recovery mode rather than requiring forward invariance of the deployed controller. The authors prove exponential convergence when switching to the recovery mode from anywhere inside a certified tube, even under disturbances and model error; derive the contraction insertion gradient to decide switching time; and develop sequential convex synthesis that monotonically grows the certified tube toward the exact viability kernel. The approach outperforms invariance-based safety filters in simulated quadrotor flight through uncertain obstacles and repeatedly recovers a full-scale IndyNXT autonomous racecar from an aggressive raceline at the limits of handling in the rain.",
+          "lede": "Rather than requiring aggressive behaviors to be invariant, certify that the robot can always switch back to a trusted recovery mode, extending formal safety to the limits of handling.",
+          "tags": [
+            "recoverability safety certification",
+            "contraction theory",
+            "autonomous racecar"
+          ],
+          "sections": {
+            "background": "Safety certification in robotics typically rests on forward invariance of the deployed controller, which demands high-fidelity models at the edge of the operating envelope, exactly where models are least reliable and robots perform best. As a result, many behaviors we most want robots to run, from learned policies to aggressive maneuvers at the limits of traction, cannot be certified at all.",
+            "conclusion": "The authors prove that switching to the recovery mode from anywhere inside a certified tube guarantees exponential convergence, even under disturbances and model error. In simulation, the method outperforms invariance-based safety filters for quadrotor flight through uncertain obstacles; in hardware, a full-scale IndyNXT autonomous racecar repeatedly recovers from an aggressive raceline at the limits of handling in the rain. The scope is that safety guarantees target recoverability rather than invariance of the deployed behavior, so aggressive or learned behaviors need not themselves be invariant.",
+            "method": "The core shift is from certifying that the deployed behavior stays invariant to certifying that the robot can reengage a trusted recovery mode. Contraction theory characterizes convergence of the recovery mode, proving exponential convergence from any starting point inside the certified tube. To decide when to switch, the authors derive the contraction insertion gradient, the first-order effect of a recovery insertion on the certificate, and embed it in a switching-time program in which feasibility alone guarantees safety and optimality only shapes performance. Certificates are supplied by sequential convex synthesis that monotonically grows the certified tube toward the exact viability kernel.",
+            "takeaways": "For robotics research, the lesson is that aggressive, learned, or experimental behaviors need not be forced into high-fidelity invariance models; instead, they can be paired with a certified exit strategy, extending formal safety guarantees to behaviors near the performance limit. The limitation is that the safety promise depends on the existence of a recovery mode and on construction of the certified tube; the material does not report results on broader platforms or when the recovery mode fails."
+          }
+        }
+      },
+      "id": "2611.23589",
+      "original_title": "Recoverability, Not Invariance: Certified Safety for Robots at the Limits of Performance",
+      "original_summary": "Safety certification in robotics typically rests on forward invariance of the deployed controller, a property that demands high-fidelity models at the edge of the operating envelope, exactly where models are least reliable and robots perform best. As a result, many of the behaviors we most want robots to run, from learned policies to aggressive maneuvers at the limits of traction, cannot be certified at all. We introduce recoverability, a contraction-theoretic safety concept that resolves this tension by certifying a robot's ability to reengage a trusted recovery mode rather than the invariance of a deployed behavior. We prove that switching to the recovery mode from anywhere inside a certified tube guarantees exponential convergence, even under disturbances and model error. To decide when to switch, we derive the contraction insertion gradient, the first-order effect of a recovery insertion on the certificate, and embed it in a switching-time program in which feasibility alone guarantees safety and optimality only shapes performance. To supply the certificates, we develop sequential convex synthesis that monotonically grows the certified tube toward the exact viability kernel. We validate our approach in simulated quadrotor flight through uncertain obstacles, where it outperforms invariance-based safety filters, and in hardware deployments aboard a full-scale IndyNXT autonomous racecar, where it repeatedly recovers the car from an aggressive raceline at the limits of handling in the rain. Recoverability provides a certified exit strategy, extending formal safety guarantees to aggressive, learned, and experimental behaviors without requiring their invariance.",
+      "url": "https://arxiv.org/abs/2611.23589v1",
+      "source": "arXiv cs.RO",
+      "published": "2026-11-17T22:40:23+00:00",
+      "authors": [
+        "Thomas A. Berrueta",
+        "Joshua D. Ibrahim",
+        "Gilchrist X. Johnson",
+        "John Lathrop",
+        "Soon-Jo Chung"
+      ],
+      "score": 4,
+      "versioned_id": "2611.23589v1",
+      "figure": {
+        "path": "./data/2026-11-20/figures/2611.23589.webp",
+        "caption": "Fig. 2: Safety and performance under three deployment strategies. In the left panel the aggressive deployed mode runs with no intervention, so the executed trajectory follows 𝐱new​(t) at zero performance cost but eventually leaves the safe set 𝒮 with no certificate to warn of the exit. In the center panel a backup-CBF filter keeps the state inside the rollout set ℬT, but the filtered trajectory deviates from 𝐱new​(t) whenever the constraint is active, so the filter incurs a performance cost whenever the constraint is active. In the right panel our framework monitors the synthesized recovery tube 𝒯syn⊆𝒮 and executes 𝐱new​(t) untouched until the certified switch at τ⋆, placed ahead of the latest certified time τexit, after which the recovery mode Frec contracts to the reference 𝐱r​(t) exponentially in d𝐌, so the performance cost is zero until τ⋆ and safety is guaranteed throughout."
+      },
+      "code_url": null,
+      "project_url": null,
+      "pdf_url": "https://arxiv.org/pdf/2611.23589"
+    },
+    {
+      "title": "LuxTac：面向触觉机器人学习的柔性、可扩展开源光学触觉单元阵列，具备分布式三轴力感知",
+      "summary": "LuxTac 是一种约 3.5 毫米厚、由现成元件构成的光学触觉单元阵列，每个触觉单元用数字 RGBC 光数字转换器测量局部压入深度，并通过可更换的彩色壁硅胶盒在单元级别解析剪切方向，无需相机或磁体。用数控压头和六轴力/力矩传感器标定后，法向盒在 104 mN 至至少 5.8 N 范围内线性响应（R²=0.999），重复性 2.0%、迟滞 5.9%，归一化后单元间差异 6–10%；剪切盒的逐单元三轴力模型在三种压头形状、九个留出会话上汇总估计 R² 达 x/y/z=0.96/0.96/0.92，单单元 0.92/0.93/0.94，剪切方向误差中位数 4.8 度。将 LuxTac 压力读数加入 Action Chunking Transformer 策略后，轴孔装配成功率较纯视觉基线显著提升。",
+      "lede": "一种约 3.5 毫米厚、由现成元件构成的开源光学触觉阵列，首次在单个触觉单元上解析剪切力，并在轴孔装配中证明触觉能显著提升学习策略的成功率。",
+      "tags": [
+        "触觉传感",
+        "机器人学习",
+        "光学触觉阵列"
+      ],
+      "sections": {
+        "background": "低成本触觉阵列已让触觉成为机器人学习的实用输入，但压阻式设计只能感知压力，而能同时解析剪切力的相机式传感器又过于笨重，难以在夹爪表面大面积铺设。现有方案在成本、厚度与多轴感知之间难以兼顾，限制了触觉在精细操作学习中的使用。",
+        "conclusion": "法向盒在 104 mN 至至少 5.8 N 范围内呈线性响应（R²=0.999），重复性 2.0%、迟滞 5.9%，归一化后单元间差异 6–10%。剪切盒的逐单元三轴力估计在三种压头形状和九个留出会话上，汇总 R² 为 x/y/z=0.96/0.96/0.92，单单元为 0.92/0.93/0.94，剪切方向误差中位数为 4.8 度。在 Action Chunking Transformer 策略中加入 LuxTac 压力读数后，轴孔装配成功率较纯视觉基线显著提升。",
+        "method": "每个触觉单元由半透明白色硅胶层下的数字 RGBC 光数字转换器构成，表面覆盖不透光黑色薄膜，使 LED 背散射光随局部压入深度单调变化。同一电路板可换装两种硅胶盒：普通盒用于法向力感知；彩色壁盒把局部剪切编码进返回光的颜色，从而在单个触觉单元上解析剪切，无需相机、磁体或凸点覆盖层。用自动化数控压头和六轴力/力矩传感器标定，并为每个触觉单元建立三轴力估计模型。",
+        "takeaways": "LuxTac 表明，用廉价现成光学元件和可更换硅胶盒即可在薄型、可扩展的阵列上实现逐单元三轴力感知，为触觉机器人学习提供了低成本、易铺设的硬件路径。其结论基于特定标定流程与轴孔装配任务，跨本体、跨任务的泛化能力仍需进一步验证；剪切感知依赖彩色壁盒，更换盒体后需重新标定。"
+      },
+      "i18n": {
+        "zh": {
+          "title": "LuxTac：面向触觉机器人学习的柔性、可扩展开源光学触觉单元阵列，具备分布式三轴力感知",
+          "summary": "LuxTac 是一种约 3.5 毫米厚、由现成元件构成的光学触觉单元阵列，每个触觉单元用数字 RGBC 光数字转换器测量局部压入深度，并通过可更换的彩色壁硅胶盒在单元级别解析剪切方向，无需相机或磁体。用数控压头和六轴力/力矩传感器标定后，法向盒在 104 mN 至至少 5.8 N 范围内线性响应（R²=0.999），重复性 2.0%、迟滞 5.9%，归一化后单元间差异 6–10%；剪切盒的逐单元三轴力模型在三种压头形状、九个留出会话上汇总估计 R² 达 x/y/z=0.96/0.96/0.92，单单元 0.92/0.93/0.94，剪切方向误差中位数 4.8 度。将 LuxTac 压力读数加入 Action Chunking Transformer 策略后，轴孔装配成功率较纯视觉基线显著提升。",
+          "lede": "一种约 3.5 毫米厚、由现成元件构成的开源光学触觉阵列，首次在单个触觉单元上解析剪切力，并在轴孔装配中证明触觉能显著提升学习策略的成功率。",
+          "tags": [
+            "触觉传感",
+            "机器人学习",
+            "光学触觉阵列"
+          ],
+          "sections": {
+            "background": "低成本触觉阵列已让触觉成为机器人学习的实用输入，但压阻式设计只能感知压力，而能同时解析剪切力的相机式传感器又过于笨重，难以在夹爪表面大面积铺设。现有方案在成本、厚度与多轴感知之间难以兼顾，限制了触觉在精细操作学习中的使用。",
+            "conclusion": "法向盒在 104 mN 至至少 5.8 N 范围内呈线性响应（R²=0.999），重复性 2.0%、迟滞 5.9%，归一化后单元间差异 6–10%。剪切盒的逐单元三轴力估计在三种压头形状和九个留出会话上，汇总 R² 为 x/y/z=0.96/0.96/0.92，单单元为 0.92/0.93/0.94，剪切方向误差中位数为 4.8 度。在 Action Chunking Transformer 策略中加入 LuxTac 压力读数后，轴孔装配成功率较纯视觉基线显著提升。",
+            "method": "每个触觉单元由半透明白色硅胶层下的数字 RGBC 光数字转换器构成，表面覆盖不透光黑色薄膜，使 LED 背散射光随局部压入深度单调变化。同一电路板可换装两种硅胶盒：普通盒用于法向力感知；彩色壁盒把局部剪切编码进返回光的颜色，从而在单个触觉单元上解析剪切，无需相机、磁体或凸点覆盖层。用自动化数控压头和六轴力/力矩传感器标定，并为每个触觉单元建立三轴力估计模型。",
+            "takeaways": "LuxTac 表明，用廉价现成光学元件和可更换硅胶盒即可在薄型、可扩展的阵列上实现逐单元三轴力感知，为触觉机器人学习提供了低成本、易铺设的硬件路径。其结论基于特定标定流程与轴孔装配任务，跨本体、跨任务的泛化能力仍需进一步验证；剪切感知依赖彩色壁盒，更换盒体后需重新标定。"
+          }
+        },
+        "en": {
+          "title": "LuxTac: A Flexible, Scalable, and Open-Source Optical Taxel Array with Distributed Three-Axis Force Sensing for Tactile Robot Learning",
+          "summary": "LuxTac is an approximately 3.5 mm thick optical taxel array built from off-the-shelf parts, in which each taxel uses a digital RGBC light-to-digital converter to measure local indentation depth and, via interchangeable colored-wall silicone cartridges, resolves shear at the individual taxel level without cameras or magnets. Characterized with a CNC indenter and a six-axis force/torque sensor, the normal cartridge responds linearly to force (R²=0.999) from 104 mN to at least 5.8 N, with 2.0% repeatability, 5.9% hysteresis, and 6–10% taxel-to-taxel variation after normalization; per-taxel three-axis force models with the shear cartridge reach summed R² of 0.96/0.96/0.92 in x/y/z across three indenter shapes and nine held-out sessions, 0.92/0.93/0.94 per taxel, and a median shear-direction error of 4.8 degrees. Adding LuxTac pressure readings to an Action Chunking Transformer policy substantially improves peg-in-hole success over a vision-only baseline.",
+          "lede": "An open-source optical taxel array about 3.5 mm thick, built from off-the-shelf parts, that resolves shear at individual taxels and shows touch can substantially improve learned peg-in-hole policies.",
+          "tags": [
+            "tactile sensing",
+            "robot learning",
+            "optical taxel array"
+          ],
+          "sections": {
+            "background": "Low-cost tactile arrays have made touch a practical input for robot learning, but piezoresistive designs sense only pressure, while camera-based sensors that also resolve shear are too bulky to tile over a gripper. Existing options struggle to combine low cost, thin form factor, and multi-axis sensing, limiting touch in fine manipulation learning.",
+            "conclusion": "The normal cartridge responds linearly to force (R²=0.999) from 104 mN to at least 5.8 N, with 2.0% repeatability, 5.9% hysteresis, and 6–10% taxel-to-taxel variation after normalization. Per-taxel three-axis force estimates with the shear cartridge reach summed R² of 0.96/0.96/0.92 in x/y/z across three indenter shapes and nine held-out sessions, 0.92/0.93/0.94 per taxel, and a median shear-direction error of 4.8 degrees. Adding LuxTac pressure readings to an Action Chunking Transformer policy substantially improves peg-in-hole success over a vision-only baseline.",
+            "method": "Each taxel consists of a digital RGBC light-to-digital converter beneath a translucent white silicone layer capped by an opaque black film, so back-scattered LED light falls monotonically with local indentation depth. The same board accepts two interchangeable gel cartridges: a plain one for normal sensing, and one with colored walls that encodes local shear in the color of the returned light, resolving shear at individual taxels with no camera, magnets, or bump overlay. An automated CNC indenter and a six-axis force/torque sensor are used for characterization, and per-taxel models estimate three-axis force at every taxel.",
+            "takeaways": "LuxTac shows that inexpensive off-the-shelf optical components and interchangeable silicone cartridges can deliver per-taxel three-axis force sensing on a thin, scalable array, offering a low-cost, easy-to-tile hardware path for tactile robot learning. The results are tied to a specific calibration procedure and peg-in-hole task, so generalization across embodiments and tasks remains to be validated; shear sensing depends on the colored-wall cartridge and requires recalibration after cartridge changes."
+          }
+        }
+      },
+      "id": "2611.23575",
+      "original_title": "LuxTac: A Flexible, Scalable, and Open-Source Optical Taxel Array with Distributed Three-Axis Force Sensing for Tactile Robot Learning",
+      "original_summary": "Low-cost tactile arrays have made touch a practical input for robot learning, but piezoresistive designs sense only pressure, while camera-based sensors that also resolve shear are too bulky to tile over a gripper. To solve this problem, we present LuxTac, a flexible, scalable optical taxel array, about 3.5 mm thick and built from off-the-shelf parts. Each taxel is a digital RGBC light-to-digital converter under a translucent white silicone layer capped by an opaque black film, so the back-scattered LED light falls monotonically with local indentation depth. The same board accepts two interchangeable gel cartridges: a plain one for normal sensing, and one with colored walls that encodes the local shear in the color of the returned light, with no camera, magnets, or bump overlay, making LuxTac, to our knowledge, the first optical taxel array to resolve shear at individual taxels. Characterized with an automated CNC indenter and a six-axis force/torque sensor, the normal cartridge responds linearly to force ($R^2$ = 0.999) from 104 mN to at least 5.8 N, with 2.0% repeatability, 5.9% hysteresis, and a taxel-to-taxel variation of 6-10% after normalization. With the shear cartridge, per-taxel models estimate the three-axis force at every taxel; across three indenter shapes and nine held-out sessions, the summed estimates reach $R^2$ = 0.96/0.96/0.92 in x/y/z, each taxel's estimate 0.92/0.93/0.94, and the median shear-direction error is 4.8 degrees. Adding LuxTac pressure readings to an Action Chunking Transformer policy substantially improves peg-in-hole success over a vision-only baseline. Design files, code, and videos are available at https://luxtac.github.io.",
+      "url": "https://arxiv.org/abs/2611.23575v1",
+      "source": "arXiv cs.RO",
+      "published": "2026-11-17T22:21:50+00:00",
+      "authors": [
+        "Md Rakibul Islam Prince",
+        "John Pelan",
+        "Zhiyuan Zhang",
+        "Adyaa Khera",
+        "Katherine Pesetski",
+        "Adeesh Desai",
+        "Akimizu Sugiyama",
+        "Minwoo Ki",
+        "Benjamin Alan Capelle",
+        "Temitope Ibrahim Amosa",
+        "Zijie Xu",
+        "Yihan Huang",
+        "Taehun Chung",
+        "Long Wang",
+        "Wei Li",
+        "Shaoting Lin",
+        "Yu She"
+      ],
+      "score": 4,
+      "versioned_id": "2611.23575v1",
+      "figure": {
+        "path": "./data/2026-11-20/figures/2611.23575.webp",
+        "caption": "Fig. 2: Scalability of LuxTac (renderings). Each taxel is an independent digital detector on its own bus segment, therefore, the same taxel cell tiles into arrays of other sizes and aspect ratios without changing the readout scheme. Top to bottom: 8×8 and 8×4 arrays, and the prototype board. A US dime (17.9 mm) and a 1 cm bar are shown for scale."
+      },
+      "attention": {
+        "github_stars": 0,
+        "github_url": "https://github.com/adeeshdesai/luxtac-sim"
+      },
+      "code_url": null,
+      "project_url": "https://luxtac.github.io",
+      "pdf_url": "https://arxiv.org/pdf/2611.23575"
+    }
+  ]
+}

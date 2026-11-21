@@ -1,0 +1,267 @@
+{
+  "date": "2026-11-20",
+  "total_scanned": 2957,
+  "total_unique": 22,
+  "window_count": 160,
+  "window_hours": 48,
+  "cutoff": "2026-11-18T15:00:00+00:00",
+  "window_end": "2026-11-20T15:00:00+00:00",
+  "scored_count": 22,
+  "qualified_count": 4,
+  "mode": "api",
+  "items": [
+    {
+      "title": "MIT 团队造出可自主飞行的轻量机器人，自带传感器和计算机",
+      "summary": "这款小型飞行机器人不再依赖外部的动作捕捉系统，能自行感知和计算，向农业巡检、工业监控等实际应用靠近了一步。",
+      "lede": "MIT 研究人员展示了一款自带传感器和计算机的轻量飞行机器人，它无需外部动作捕捉系统即可飞行。",
+      "tags": [
+        "机器人",
+        "无人机",
+        "传感器"
+      ],
+      "analysis": [
+        "研究团队让这款轻量飞行机器人把传感器和计算设备都带在身上，飞行时不再需要房间里的动作捕捉系统来告诉它位置。",
+        "这意味着它有望在农田、工厂等没有外部定位设施的地方执行巡检任务，而不必被限制在实验室环境里。",
+        "目前公开的信息没有说明它在户外复杂光线、风力或长时间飞行下的表现，续航和稳定性也尚未披露。"
+      ],
+      "i18n": {
+        "zh": {
+          "title": "MIT 团队造出可自主飞行的轻量机器人，自带传感器和计算机",
+          "summary": "这款小型飞行机器人不再依赖外部的动作捕捉系统，能自行感知和计算，向农业巡检、工业监控等实际应用靠近了一步。",
+          "lede": "MIT 研究人员展示了一款自带传感器和计算机的轻量飞行机器人，它无需外部动作捕捉系统即可飞行。",
+          "tags": [
+            "机器人",
+            "无人机",
+            "传感器"
+          ],
+          "analysis": [
+            "研究团队让这款轻量飞行机器人把传感器和计算设备都带在身上，飞行时不再需要房间里的动作捕捉系统来告诉它位置。",
+            "这意味着它有望在农田、工厂等没有外部定位设施的地方执行巡检任务，而不必被限制在实验室环境里。",
+            "目前公开的信息没有说明它在户外复杂光线、风力或长时间飞行下的表现，续航和稳定性也尚未披露。"
+          ]
+        },
+        "en": {
+          "title": "MIT team builds a lightweight flying robot that carries its own sensors and computer",
+          "summary": "The small flying robot no longer relies on an external motion-capture system, sensing and computing on board, bringing it closer to uses such as agricultural inspection and industrial surveillance.",
+          "lede": "MIT researchers have demonstrated a lightweight flying robot that carries its own sensors and computer and can fly without an external motion-capture system.",
+          "tags": [
+            "Robotics",
+            "Drones",
+            "Sensors"
+          ],
+          "analysis": [
+            "The research team put the sensors and computing hardware on the lightweight flying robot itself, so it no longer needs a room-based motion-capture system to tell it where it is.",
+            "That could let it carry out inspection tasks in places like farms and factories that lack external positioning equipment, instead of being confined to a lab.",
+            "Public information does not say how it performs outdoors under complex lighting, wind or long flights, and its battery life and stability have not been disclosed."
+          ]
+        }
+      },
+      "id": "f4d5cc76792a20c67ba410f5",
+      "original_title": "This featherweight, flying robot carries its own sensors and computers",
+      "original_summary": "The speedy microrobot flies without an attached motion-capture system, moving it closer to applications like agriculture or industrial surveillance.",
+      "url": "https://news.mit.edu/2026/featherweight-flying-robot-carries-its-own-sensors-and-computers-1118",
+      "source": "MIT News Robotics",
+      "published": "2026-11-18T19:00:00+00:00",
+      "authors": [],
+      "score": 4,
+      "category": "robotics",
+      "image": {
+        "path": "./data/2026-11-20/news_images/f4d5cc76792a20c67ba410f5.webp",
+        "width": 1200,
+        "height": 800,
+        "source_url": "https://news.mit.edu/2026/featherweight-flying-robot-carries-its-own-sensors-and-computers-1118",
+        "image_url": "https://news.mit.edu/sites/default/files/images/202611/MIT-Onboard-Microbot-A1-press.jpg",
+        "alt": ""
+      }
+    },
+    {
+      "title": "Claude 解决了黑洞物理中的两个开放问题",
+      "summary": "据报道，Anthropic 的 AI 模型 Claude 在黑洞物理领域解决了两个此前未解决的问题。",
+      "lede": "据报道，Anthropic 的 AI 模型 Claude 在黑洞物理领域解决了两个此前未解决的问题。",
+      "tags": [
+        "人工智能",
+        "黑洞物理",
+        "Claude"
+      ],
+      "analysis": [
+        "据报道，Anthropic 的 AI 模型 Claude 在黑洞物理领域解决了两个此前未解决的问题。",
+        "如果这一结果成立，它可能表明通用 AI 模型能帮助物理学家处理理论推导中的难题，而不只是做文献整理或计算辅助。",
+        "目前尚不清楚这两个问题具体是什么、Claude 的解答是否经过同行评审，以及结果是否被独立验证；相关细节尚未公开。"
+      ],
+      "i18n": {
+        "zh": {
+          "title": "Claude 解决了黑洞物理中的两个开放问题",
+          "summary": "据报道，Anthropic 的 AI 模型 Claude 在黑洞物理领域解决了两个此前未解决的问题。",
+          "lede": "据报道，Anthropic 的 AI 模型 Claude 在黑洞物理领域解决了两个此前未解决的问题。",
+          "tags": [
+            "人工智能",
+            "黑洞物理",
+            "Claude"
+          ],
+          "analysis": [
+            "据报道，Anthropic 的 AI 模型 Claude 在黑洞物理领域解决了两个此前未解决的问题。",
+            "如果这一结果成立，它可能表明通用 AI 模型能帮助物理学家处理理论推导中的难题，而不只是做文献整理或计算辅助。",
+            "目前尚不清楚这两个问题具体是什么、Claude 的解答是否经过同行评审，以及结果是否被独立验证；相关细节尚未公开。"
+          ]
+        },
+        "en": {
+          "title": "Claude solves two open problems in black hole physics",
+          "summary": "Anthropic's AI model Claude has reportedly solved two previously open problems in black hole physics.",
+          "lede": "Anthropic's AI model Claude has reportedly solved two previously open problems in black hole physics.",
+          "tags": [
+            "artificial intelligence",
+            "black hole physics",
+            "Claude"
+          ],
+          "analysis": [
+            "Anthropic's AI model Claude has reportedly solved two previously open problems in black hole physics.",
+            "If the result holds, it could suggest that general-purpose AI models can help physicists with hard theoretical derivations, not just literature work or calculation support.",
+            "It is not yet clear what the two problems are, whether Claude's solutions have been peer-reviewed, or whether the results have been independently verified; those details have not been made public."
+          ]
+        }
+      },
+      "id": "5fe21d2b4ecab0b0d155093a",
+      "original_title": "Claude solves two open problems in the physics of black holes",
+      "original_summary": "",
+      "url": "https://www.anthropic.com/research/claude-black-hole-physics",
+      "source": "Hacker News",
+      "published": "2026-11-19T17:30:44+00:00",
+      "authors": [],
+      "score": 3,
+      "category": "ai_frontier",
+      "engagement": {
+        "points": 560,
+        "comments": 270
+      },
+      "discussion_url": "https://news.ycombinator.com/item?id=50563148",
+      "image": {
+        "path": "./data/2026-11-20/news_images/5fe21d2b4ecab0b0d155093a.webp",
+        "width": 1200,
+        "height": 675,
+        "source_url": "https://www.anthropic.com/research/claude-black-hole-physics",
+        "image_url": "https://assets.claude.com/6d8063c48d1b3397632daa51c8240476aad8cba3.jpg?w=1920&q=75&fm=webp&fit=max",
+        "alt": "Abstract illustration of a black circle, like a black hole, at the center of swirling marbled patterns, blue and gold above and brown and pale blue below."
+      }
+    },
+    {
+      "title": "英伟达 Cosmos 用两条提示词生成可直接用于训练的物理 AI 数据集",
+      "summary": "英伟达介绍，在 Cosmos 中只需两条提示词，就能生成高质量、多样化的物理 AI 训练数据集，用来补足稀有缺陷、夜间事故等难以实拍采集的场景。",
+      "lede": "英伟达称，在 Cosmos 中用两条提示词就能生成物理 AI 训练数据集，重点覆盖稀有缺陷、夜间事故等难采集场景。",
+      "tags": [
+        "物理 AI",
+        "合成数据",
+        "世界模型"
+      ],
+      "analysis": [
+        "英伟达发布了一套基于 Cosmos 世界模型的工作流程，用户输入两条提示词即可生成面向物理 AI 的训练数据集，目标场景包括稀有缺陷和夜间事故等实拍成本高、样本少的困难情况。",
+        "这类合成数据可用于训练和测试机器人与视觉模型，让开发者不必完全依赖真实采集，就能覆盖更多边缘场景，从而提升模型在少见情况下的表现。",
+        "目前公开信息只说明了方法思路和适用场景，没有给出数据集规模、生成质量指标或下游模型的实际提升数据；这些效果仍需进一步验证。"
+      ],
+      "i18n": {
+        "zh": {
+          "title": "英伟达 Cosmos 用两条提示词生成可直接用于训练的物理 AI 数据集",
+          "summary": "英伟达介绍，在 Cosmos 中只需两条提示词，就能生成高质量、多样化的物理 AI 训练数据集，用来补足稀有缺陷、夜间事故等难以实拍采集的场景。",
+          "lede": "英伟达称，在 Cosmos 中用两条提示词就能生成物理 AI 训练数据集，重点覆盖稀有缺陷、夜间事故等难采集场景。",
+          "tags": [
+            "物理 AI",
+            "合成数据",
+            "世界模型"
+          ],
+          "analysis": [
+            "英伟达发布了一套基于 Cosmos 世界模型的工作流程，用户输入两条提示词即可生成面向物理 AI 的训练数据集，目标场景包括稀有缺陷和夜间事故等实拍成本高、样本少的困难情况。",
+            "这类合成数据可用于训练和测试机器人与视觉模型，让开发者不必完全依赖真实采集，就能覆盖更多边缘场景，从而提升模型在少见情况下的表现。",
+            "目前公开信息只说明了方法思路和适用场景，没有给出数据集规模、生成质量指标或下游模型的实际提升数据；这些效果仍需进一步验证。"
+          ]
+        },
+        "en": {
+          "title": "NVIDIA Cosmos Generates Training-Ready Physical AI Datasets From Two Prompts",
+          "summary": "NVIDIA says two prompts in Cosmos are enough to generate high-quality, diverse training datasets for physical AI, aimed at hard-to-capture cases such as rare defects and nighttime incidents.",
+          "lede": "NVIDIA says two prompts in Cosmos can produce physical AI training datasets, focusing on hard-to-collect cases such as rare defects and nighttime incidents.",
+          "tags": [
+            "Physical AI",
+            "Synthetic Data",
+            "World Models"
+          ],
+          "analysis": [
+            "NVIDIA has introduced a Cosmos-based workflow in which users enter two prompts to produce training datasets for physical AI, targeting scenarios like rare defects and nighttime incidents that are costly or difficult to capture in the real world.",
+            "Such synthetic data can be used to train and test robotics and vision models, letting developers cover more edge cases without relying entirely on real-world collection and potentially improving performance in uncommon situations.",
+            "The public material describes the approach and intended use cases but does not report dataset size, generation-quality metrics, or measured gains in downstream models, so those effects remain unverified."
+          ]
+        }
+      },
+      "id": "e0a5680da648bf1e9f0c1f68",
+      "original_title": "Build Training-Ready Physical AI Datasets with Two Prompts in NVIDIA Cosmos",
+      "original_summary": "World model accuracy starts with high-quality, diverse training datasets. Yet capturing rare defects, nighttime incidents, and other challenging scenarios is...",
+      "url": "https://developer.nvidia.com/blog/build-training-ready-physical-ai-datasets-with-two-prompts-in-nvidia-cosmos",
+      "source": "NVIDIA Technical Blog",
+      "published": "2026-11-18T17:00:00+00:00",
+      "authors": [],
+      "score": 3,
+      "category": "robotics",
+      "image": {
+        "path": "./data/2026-11-20/news_images/e0a5680da648bf1e9f0c1f68.webp",
+        "width": 500,
+        "height": 282,
+        "source_url": "https://developer.nvidia.com/blog/build-training-ready-physical-ai-datasets-with-two-prompts-in-nvidia-cosmos",
+        "image_url": "https://developer-blogs.nvidia.com/wp-content/uploads/2026/11/cosmos-gif-500x282.gif",
+        "alt": ""
+      }
+    },
+    {
+      "title": "慕尼黑工业大学团队研发软体外骨骼，帮助老人更轻松起身",
+      "summary": "慕尼黑工业大学Lorenzo Masia教授实验室开发出一种软体外骨骼，可辅助髋部和腿部力量下降的老年人及有医疗状况者从椅子上站起，也可用于工业场景中的重体力任务。",
+      "lede": "一种软体外骨骼正在帮助髋部和腿部力量下降的人更轻松地从椅子上站起来，研发方是慕尼黑工业大学Lorenzo Masia教授的实验室。",
+      "tags": [
+        "软体外骨骼",
+        "助老科技",
+        "机器人"
+      ],
+      "analysis": [
+        "研究团队开发了一种软体外骨骼，穿戴后帮助髋部和腿部力量与协调性下降的人从椅子上站起来。",
+        "这类设备面向老年人和有医疗状况的人群，目标是让他们日常起身更省力；同一技术也可辅助工业工人完成重体力任务。",
+        "目前公开的信息有限，尚未披露穿戴测试的人数、实际减力幅度以及长期使用效果，相关验证结果有待公布。"
+      ],
+      "i18n": {
+        "zh": {
+          "title": "慕尼黑工业大学团队研发软体外骨骼，帮助老人更轻松起身",
+          "summary": "慕尼黑工业大学Lorenzo Masia教授实验室开发出一种软体外骨骼，可辅助髋部和腿部力量下降的老年人及有医疗状况者从椅子上站起，也可用于工业场景中的重体力任务。",
+          "lede": "一种软体外骨骼正在帮助髋部和腿部力量下降的人更轻松地从椅子上站起来，研发方是慕尼黑工业大学Lorenzo Masia教授的实验室。",
+          "tags": [
+            "软体外骨骼",
+            "助老科技",
+            "机器人"
+          ],
+          "analysis": [
+            "研究团队开发了一种软体外骨骼，穿戴后帮助髋部和腿部力量与协调性下降的人从椅子上站起来。",
+            "这类设备面向老年人和有医疗状况的人群，目标是让他们日常起身更省力；同一技术也可辅助工业工人完成重体力任务。",
+            "目前公开的信息有限，尚未披露穿戴测试的人数、实际减力幅度以及长期使用效果，相关验证结果有待公布。"
+          ]
+        },
+        "en": {
+          "title": "Soft exosuit from TUM lab helps older adults stand up more easily",
+          "summary": "A soft exosuit developed in Professor Lorenzo Masia's lab at the Technical University of Munich assists older people and those with medical conditions in standing up from a chair, and could also support industrial workers doing heavy tasks.",
+          "lede": "A soft exosuit developed at the Technical University of Munich is designed to make standing up from a chair easier for people with weakened hips and legs.",
+          "tags": [
+            "soft exosuit",
+            "assistive tech",
+            "robotics"
+          ],
+          "analysis": [
+            "Researchers have built a soft exosuit that helps people with declining strength and coordination in the hips and legs get up from a chair.",
+            "The device targets older adults and people with medical conditions so everyday standing is less strenuous; the same technology is also intended to assist industrial workers with heavy tasks.",
+            "Public details are limited: the number of people who tested the suit, how much force it actually offsets, and long-term results have not been disclosed, so those effects remain unverified."
+          ]
+        }
+      },
+      "id": "4f9c18ee4d43564e62e754bf",
+      "original_title": "Soft exosuit makes it easier to stand up",
+      "original_summary": "Exoskeletons developed at Professor Lorenzo Masia’s lab help elderly people and those with medical conditions move more easily. They also assist industrial workers in performing heavy tasks. Photo: Andreas Heddergott / TUM. Getting up from a chair can be difficult for older people, often due to declining strength and coordination in the hip and leg […]",
+      "url": "https://robohub.org/soft-exosuit-makes-it-easier-to-stand-up",
+      "source": "Robohub",
+      "published": "2026-11-19T10:09:47+00:00",
+      "authors": [],
+      "score": 3,
+      "category": "robotics"
+    }
+  ]
+}

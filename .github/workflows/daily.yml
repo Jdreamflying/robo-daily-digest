@@ -1,0 +1,130 @@
+name: Build and publish robotics digest
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "30 6 * * *"
+
+concurrency:
+  group: daily-digest-pages
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    if: github.ref_name == github.event.repository.default_branch
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pages: read
+    outputs:
+      date: ${{ steps.build.outputs.date }}
+      ref: ${{ steps.archive.outputs.ref }}
+      site_url: ${{ steps.pages.outputs.base_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - uses: actions/configure-pages@v5
+        id: pages
+      - uses: actions/cache@v4
+        with:
+          path: data/cache
+          key: digest-api-v1-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: digest-api-v1-
+      - name: Install dependencies
+        run: |
+          python -m pip install -r requirements.txt
+          sudo apt-get update
+          sudo apt-get install -y fonts-noto-cjk
+      - name: Build today's digest
+        id: build
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_BASE_URL: ${{ vars.OPENAI_BASE_URL }}
+          FILTER_MODEL: ${{ vars.FILTER_MODEL }}
+          EDITOR_MODEL: ${{ vars.EDITOR_MODEL }}
+          EDITOR_MAX_TOKENS: ${{ vars.EDITOR_MAX_TOKENS }}
+          API_DELAY_SECONDS: ${{ vars.API_DELAY_SECONDS }}
+          OPENAI_JSON_MODE: ${{ vars.OPENAI_JSON_MODE }}
+          SITE_URL: ${{ steps.pages.outputs.base_url }}
+          NOTIFY_ENABLED: "false"
+        run: |
+          day=$(python -m digest_common)
+          bash ./run.sh --date "$day"
+          echo "date=$day" >> "$GITHUB_OUTPUT"
+      - name: Persist the archive
+        id: archive
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A -- data/index.json data/????-??-?? rss.xml
+          if ! git diff --cached --quiet; then
+            git commit -m "Update robotics digest"
+            for attempt in 1 2 3; do
+              git pull --rebase --autostash
+              if git push; then
+                break
+              fi
+              if [ "$attempt" -eq 3 ]; then
+                echo "Could not push the archive after $attempt attempts." >&2
+                exit 1
+              fi
+            done
+          fi
+          echo "ref=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+      - name: Stage the static site
+        run: |
+          mkdir -p _site/data
+          cp index.html news.html manifest.json rss.xml .nojekyll _site/
+          cp -R assets _site/
+          cp data/index.json _site/data/
+          cp -R data/????-??-?? _site/data/
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: generate
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/deploy-pages@v4
+        id: deployment
+
+  notify:
+    if: vars.NOTIFY_ENABLED == 'true'
+    needs: [generate, deploy]
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.generate.outputs.ref }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install -r requirements.txt
+      - name: Notify after deployment
+        env:
+          ISSUE_DATE: ${{ needs.generate.outputs.date }}
+          SITE_URL: ${{ needs.generate.outputs.site_url }}
+          NOTIFY_ENABLED: ${{ vars.NOTIFY_ENABLED }}
+          NOTIFY_WEBHOOK_URL: ${{ secrets.NOTIFY_WEBHOOK_URL }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ vars.TELEGRAM_CHAT_ID }}
+          SMTP_HOST: ${{ vars.SMTP_HOST }}
+          SMTP_PORT: ${{ vars.SMTP_PORT }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+          SMTP_TO: ${{ secrets.SMTP_TO }}
+        run: python -m to_web.notify --date "$ISSUE_DATE"

@@ -1,0 +1,166 @@
+timezone: Asia/Tokyo
+
+arxiv:
+  category: cs.RO
+  url: https://export.arxiv.org/api/query
+  lag_days: 3
+  fallback_days: 3
+
+news:
+  rss:
+    - name: MIT News Robotics
+      url: https://news.mit.edu/topic/mitrobotics-rss.xml
+      source_type: official
+    - name: Stanford AI Lab Blog
+      url: https://ai.stanford.edu/blog/feed.xml
+      source_type: official
+      require_robotics_focus: true
+    - name: OpenAI News
+      url: https://openai.com/news/rss.xml
+      source_type: official
+      require_robotics_focus: true
+    - name: Google DeepMind Blog
+      url: https://deepmind.google/blog/rss.xml
+      source_type: official
+      require_robotics_focus: true
+    - name: NVIDIA Technical Blog
+      url: https://developer.nvidia.com/blog/feed/
+      source_type: official
+      require_robotics_focus: true
+    - name: Hugging Face Blog
+      url: https://huggingface.co/blog/feed.xml
+      source_type: official
+      require_robotics_focus: true
+    - name: BAIR Blog
+      url: https://bair.berkeley.edu/blog/feed.xml
+      source_type: official
+      require_robotics_focus: true
+    - name: ROS Discourse Announcements
+      url: https://discourse.ros.org/c/announcements/15.rss
+      source_type: community
+      max_items: 2
+      require_release_or_announce: true
+    - name: LeRobot Releases
+      url: https://github.com/huggingface/lerobot/releases.atom
+      source_type: release
+    - name: IsaacLab Releases
+      url: https://github.com/isaac-sim/IsaacLab/releases.atom
+      source_type: release
+    - name: MuJoCo Releases
+      url: https://github.com/google-deepmind/mujoco/releases.atom
+      source_type: release
+    - name: Genesis Releases
+      url: https://github.com/Genesis-Embodied-AI/Genesis/releases.atom
+      source_type: release
+    - name: Newton Releases
+      url: https://github.com/newton-physics/newton/releases.atom
+      source_type: release
+    - name: IEEE Spectrum Robotics
+      url: https://spectrum.ieee.org/feeds/topic/robotics.rss
+      source_type: specialist_media
+      max_items: 3
+    - name: The Robot Report
+      url: https://www.therobotreport.com/feed/
+      source_type: specialist_media
+      max_items: 3
+    - name: TechCrunch Robotics
+      url: https://techcrunch.com/category/robotics/feed/
+      source_type: specialist_media
+      max_items: 2
+    - name: Robohub
+      url: https://robohub.org/feed/
+      source_type: community
+      max_items: 2
+  email_imap:
+    enabled: false
+  hacker_news:
+    name: Hacker News
+    url: https://hn.algolia.com/api/v1/search_by_date
+    source_type: community
+    min_points: 50
+    min_comments: 20
+    max_items: 3
+  max_age_hours: 48
+  default_max_per_source: 3
+  robotics_focus_keywords:
+    - 机器人
+    - 具身智能
+    - 灵巧手
+    - 机械臂
+    - 外骨骼
+    - Robot
+    - Robots
+    - Robotics
+    - Robotic arm
+    - Robotic arms
+    - Humanoid
+    - Humanoids
+    - Embodied AI
+    - Embodied Intelligence
+    - Physical AI
+    - Dexterous hand
+    - Dexterous hands
+    - Exoskeleton
+    - Exoskeletons
+    - ROS
+    - LeRobot
+    - MuJoCo
+    - Isaac
+    - IsaacLab
+    - Drone
+    - Drones
+    - Robotics simulation
+  frontier_keywords:
+    - AI model
+    - AI models
+    - language model
+    - language models
+    - LLM
+    - LLMs
+    - foundation model
+    - AI agent
+    - AI agents
+    - coding agent
+    - agentic
+    - Claude
+    - Gemini
+    - ChatGPT
+    - GPT
+    - DeepSeek
+    - Qwen
+    - AI大模型
+    - 大语言模型
+    - 智能体
+  exclude_tags:
+    - Sponsored Content
+    - Events
+    - Webinar
+    - Podcast
+
+keywords:
+  - Humanoid
+  - VLA
+  - Embodied AI
+  - Manipulation
+  - Whole-Body Control
+  - Sim-to-Real
+  - 机器人
+  - 人形机器人
+  - 具身智能
+  - 灵巧手
+  - 世界模型
+  - Isaac
+  - LeRobot
+  - Robot
+  - Robotics
+  - Robot Learning
+  - Embodied Intelligence
+  - Vision-Language-Action
+  - World Model
+
+selection:
+  papers: 8
+  news: 10
+  max_ai_news: 3
+  min_news_score: 3
+  filter_batch_size: 12

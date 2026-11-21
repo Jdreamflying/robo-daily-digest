@@ -1,0 +1,37 @@
+{
+  "editions": [
+    {
+      "date": "2026-11-20",
+      "papers": {
+        "path": "./data/2026-11-20/papers.json",
+        "count": 8,
+        "total_scanned": 89,
+        "lead": "Magflow：工业级六自由度磁悬浮的可微仿真"
+      },
+      "news": {
+        "path": "./data/2026-11-20/news.json",
+        "count": 4,
+        "total_scanned": 160,
+        "lead": "MIT 团队造出可自主飞行的轻量机器人，自带传感器和计算机"
+      },
+      "infographic": "./data/2026-11-20/infographic.png",
+      "infographic_en": "./data/2026-11-20/infographic.en.png"
+    },
+    {
+      "date": "2026-11-19",
+      "papers": {
+        "path": "./data/2026-11-19/papers.json",
+        "count": 8,
+        "total_scanned": 140,
+        "lead": "BiCAT: Bimanual Coordination Action Tokenization"
+      },
+      "news": {
+        "path": "./data/2026-11-19/news.json",
+        "count": 15,
+        "total_scanned": 15,
+        "lead": "From Commercial Scale to Embodied Intelligence: The Next Challenge for Robotics"
+      },
+      "infographic": "./data/2026-11-19/infographic.png"
+    }
+  ]
+}
