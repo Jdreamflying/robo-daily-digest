@@ -1,0 +1,13 @@
+{
+  "date": "2026-11-22",
+  "total_scanned": 2909,
+  "total_unique": 9,
+  "window_count": 89,
+  "window_hours": 48,
+  "cutoff": "2026-11-20T07:45:35.002064+00:00",
+  "window_end": "2026-11-22T07:45:35.002064+00:00",
+  "scored_count": 9,
+  "qualified_count": 1,
+  "mode": "api",
+  "items": []
+}

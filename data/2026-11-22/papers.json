@@ -1,0 +1,656 @@
+{
+  "date": "2026-11-22",
+  "total_scanned": 76,
+  "total_new": 76,
+  "total_unique": 76,
+  "paper_target_date": "2026-11-19",
+  "paper_source_date": "2026-11-19",
+  "paper_category": "cs.RO",
+  "scored_count": 76,
+  "qualified_count": 76,
+  "mode": "api",
+  "items": [
+    {
+      "title": "Awaken-HI：用全身人类经验扩展人形机器人智能",
+      "summary": "研究构建了 Awaken-Human 数据集，将约 5 万小时的第一人称立体视频与同步的全身人体运动配对，覆盖 100 多种技能；并据此提出面向人形机器人移动操作（行走与操作结合）的视觉-语言-动作模型 Awaken-HI。该模型通过共享动作专家同时预测原始人体运动和重定向后的机器人动作。实验显示，人体轨迹直接监督共享动作专家能让技能更有效地从人迁移到人形机器人；增加人类预训练数据可按经验缩放律降低留出集上的机器人动作预测误差，并提升真实机器人下游任务的平均成功率。完成全语料预训练并在 T800 平台适配后，Awaken-HI 在 8 个单项任务上平均成功率达 93.75%，在单项与长程评测中均优于 GR00T N1.7 和 π0.5；同一策略还能泛化到机器人后训练阶段未见过的物体，以及熟悉物体的新“物体-目的地”组合。",
+      "lede": "约 5 万小时带同步全身运动的第一人称视频，训练出在 8 项真实机器人任务上平均成功率达 93.75% 的人形机器人移动操作策略。",
+      "tags": [
+        "人形机器人",
+        "视觉-语言-动作模型",
+        "全身运动迁移"
+      ],
+      "sections": {
+        "background": "人形机器人的核心目标是承担家庭和工作场所中的日常劳动。现有第一人称视频数据集虽覆盖不少此类活动，却缺少与视频同步的全身运动数据，难以支撑大规模学习“边走边操作”的移动操作技能。",
+        "conclusion": "人体轨迹直接监督共享动作专家，比间接迁移更有利于把移动操作技能从人传到人形机器人。增加人类预训练数据会按经验缩放律降低留出集机器人动作预测误差，并提高真实机器人任务成功率。全语料预训练并在 T800 适配后，Awaken-HI 在 8 个单项任务上平均成功率为 93.75%，单项和长程评测均超过 GR00T N1.7 与 π0.5；同一策略可泛化到后训练未见物体及熟悉物体的新组合。",
+        "method": "先构建 Awaken-Human：约 5 万小时第一人称立体视频与同步全身人体运动配对，覆盖 100 多种技能。再训练 Awaken-HI 视觉-语言-动作模型，用共享动作专家同时输出原始人体运动和重定向后的机器人动作，让人体运动轨迹直接监督该专家，从而把人类全身经验用于人形机器人移动操作。",
+        "takeaways": "这项工作表明，大规模、带同步全身运动的第一人称人类数据是人形机器人移动操作的有效预训练来源，且数据量增长带来可预测的收益。其结论建立在 T800 平台与所评测任务之上；对其他机器人平台、更多技能和更长任务的适用性仍需验证。"
+      },
+      "i18n": {
+        "zh": {
+          "title": "Awaken-HI：用全身人类经验扩展人形机器人智能",
+          "summary": "研究构建了 Awaken-Human 数据集，将约 5 万小时的第一人称立体视频与同步的全身人体运动配对，覆盖 100 多种技能；并据此提出面向人形机器人移动操作（行走与操作结合）的视觉-语言-动作模型 Awaken-HI。该模型通过共享动作专家同时预测原始人体运动和重定向后的机器人动作。实验显示，人体轨迹直接监督共享动作专家能让技能更有效地从人迁移到人形机器人；增加人类预训练数据可按经验缩放律降低留出集上的机器人动作预测误差，并提升真实机器人下游任务的平均成功率。完成全语料预训练并在 T800 平台适配后，Awaken-HI 在 8 个单项任务上平均成功率达 93.75%，在单项与长程评测中均优于 GR00T N1.7 和 π0.5；同一策略还能泛化到机器人后训练阶段未见过的物体，以及熟悉物体的新“物体-目的地”组合。",
+          "lede": "约 5 万小时带同步全身运动的第一人称视频，训练出在 8 项真实机器人任务上平均成功率达 93.75% 的人形机器人移动操作策略。",
+          "tags": [
+            "人形机器人",
+            "视觉-语言-动作模型",
+            "全身运动迁移"
+          ],
+          "sections": {
+            "background": "人形机器人的核心目标是承担家庭和工作场所中的日常劳动。现有第一人称视频数据集虽覆盖不少此类活动，却缺少与视频同步的全身运动数据，难以支撑大规模学习“边走边操作”的移动操作技能。",
+            "conclusion": "人体轨迹直接监督共享动作专家，比间接迁移更有利于把移动操作技能从人传到人形机器人。增加人类预训练数据会按经验缩放律降低留出集机器人动作预测误差，并提高真实机器人任务成功率。全语料预训练并在 T800 适配后，Awaken-HI 在 8 个单项任务上平均成功率为 93.75%，单项和长程评测均超过 GR00T N1.7 与 π0.5；同一策略可泛化到后训练未见物体及熟悉物体的新组合。",
+            "method": "先构建 Awaken-Human：约 5 万小时第一人称立体视频与同步全身人体运动配对，覆盖 100 多种技能。再训练 Awaken-HI 视觉-语言-动作模型，用共享动作专家同时输出原始人体运动和重定向后的机器人动作，让人体运动轨迹直接监督该专家，从而把人类全身经验用于人形机器人移动操作。",
+            "takeaways": "这项工作表明，大规模、带同步全身运动的第一人称人类数据是人形机器人移动操作的有效预训练来源，且数据量增长带来可预测的收益。其结论建立在 T800 平台与所评测任务之上；对其他机器人平台、更多技能和更长任务的适用性仍需验证。"
+          }
+        },
+        "en": {
+          "title": "Awaken-HI: Scaling Humanoid Intelligence with Whole-Body Human Experience",
+          "summary": "The work builds Awaken-Human, a dataset pairing roughly 50,000 hours of egocentric stereo video with synchronized whole-body human motion across more than 100 skills, and introduces Awaken-HI, a vision-language-action model for humanoid loco-manipulation that jointly predicts original human motion and retargeted robot actions through a shared action expert. Experiments show that loco-manipulation skills transfer more effectively from people to humanoids when human trajectories directly supervise the shared action expert; increasing human pretraining data reduces held-out robot action prediction error according to an empirical scaling law and raises mean success on downstream real-robot tasks. After full-corpus pretraining and T800 adaptation, Awaken-HI reaches a mean success rate of 93.75% across eight individual tasks and outperforms GR00T N1.7 and π0.5 in both individual and long-horizon evaluations. The same policy generalizes to objects unseen during robot post-training and to new pairings of familiar objects and destinations.",
+          "lede": "About 50,000 hours of egocentric video with synchronized whole-body motion yields a humanoid loco-manipulation policy reaching a 93.75% mean success rate on eight real-robot tasks.",
+          "tags": [
+            "humanoid robots",
+            "vision-language-action models",
+            "whole-body motion transfer"
+          ],
+          "sections": {
+            "background": "A central goal of humanoid robotics is to perform the everyday work people do in homes and workplaces. Existing egocentric video datasets cover many such activities but provide little synchronized whole-body motion data, limiting large-scale learning of loco-manipulation, that is, walking and manipulating at the same time.",
+            "conclusion": "Directly supervising the shared action expert with human trajectories transfers loco-manipulation skills from people to humanoids more effectively than indirect transfer. More human pretraining data lowers held-out robot action prediction error following an empirical scaling law and raises success on real-robot tasks. After full-corpus pretraining and T800 adaptation, Awaken-HI achieves a mean success rate of 93.75% across eight individual tasks and beats GR00T N1.7 and π0.5 in individual and long-horizon evaluations; the same policy generalizes to objects unseen in robot post-training and to new object-destination pairings.",
+            "method": "Awaken-Human pairs about 50,000 hours of egocentric stereo video with synchronized whole-body human motion over more than 100 skills. Awaken-HI, a vision-language-action model, uses a shared action expert to jointly predict original human motion and retargeted robot actions, so human motion trajectories directly supervise that expert and bring whole-body human experience to humanoid loco-manipulation.",
+            "takeaways": "Large-scale egocentric human data with synchronized whole-body motion is an effective pretraining source for humanoid loco-manipulation, and gains grow predictably with data volume. The findings are tied to the T800 platform and the evaluated tasks; applicability to other robot platforms, more skills, and longer tasks remains to be tested."
+          }
+        }
+      },
+      "id": "2611.26420",
+      "original_title": "Awaken-HI: Scaling Humanoid Intelligence with Whole-Body Human Experience",
+      "original_summary": "A central goal of humanoid robotics is for robots to perform the everyday work people do in homes and workplaces. Existing egocentric video datasets cover many of these activities but provide little synchronized whole-body motion data for learning loco-manipulation at scale. We build Awaken-Human, which pairs approximately 50,000 hours of egocentric stereo video with synchronized whole-body human motion and covers more than 100 skills. Building on this, we also introduce Awaken-HI (Humanoid Intelligence), a vision-language-action model for humanoid loco-manipulation that jointly predicts original human motion and retargeted robot actions through a shared action expert. We show that loco-manipulation skills transfer more effectively from people to humanoids when human trajectories directly supervise the shared action expert. Increasing human pretraining data reduces held-out robot action prediction error according to an empirical scaling law and raises the mean success rate on downstream real-robot tasks. After full-corpus pretraining and T800 adaptation, Awaken-HI achieves a mean success rate of 93.75% across eight individual tasks and outperforms GR00T N1.7 and $π_{0.5}$ in both individual and long-horizon evaluations. The same policy generalizes to objects unseen during robot post-training and to new pairings of familiar objects and destinations.",
+      "url": "https://arxiv.org/abs/2611.26420v1",
+      "source": "arXiv cs.RO",
+      "published": "2026-11-19T17:03:03+00:00",
+      "authors": [
+        "EngineAI"
+      ],
+      "score": 5,
+      "versioned_id": "2611.26420v1",
+      "figure": {
+        "path": "./data/2026-11-22/figures/2611.26420.webp",
+        "caption": "Figure 1: Overview of Awaken-HI and the Awaken-Human dataset. Awaken-Human pairs approximately 50,000 hours of egocentric stereo video with synchronized whole-body motion (left). We pretrain Awaken-HI on human motion and retargeted robot actions, then fine-tune it on robot demonstrations (center). The right panels summarize scaling and generalization results alongside the full model’s 93.75% mean success rate across eight individual tasks."
+      },
+      "code_url": null,
+      "project_url": null,
+      "pdf_url": "https://arxiv.org/pdf/2611.26420"
+    },
+    {
+      "title": "Mind2Act World：面向机器人操作中具身心智、物理动作与心智-动作组合的诊断基准",
+      "summary": "Mind2Act World 是一个包含 30 个模拟操作任务的诊断基准，覆盖五个真实应用领域，每个任务设三个难度等级和两种场景设置（Clean 与 Random），共 180 种配置。任务分为三个视图：Mind 测试基于历史观测的决策，Act 测试精确及时的执行，Mind2Act 在闭环任务中结合两者，由动作结果指导后续决策。对多模态智能体、视觉-语言-动作模型（VLA）和世界-动作模型（WAM）的评估显示，单一视图上的能力无法迁移到 Mind2Act 任务：最强智能体在 Mind 和 Act 上分别成功 52.7% 和 39.0%，但在 Mind2Act 上仅 12.0%。",
+      "lede": "一个把推理、执行与二者组合分开诊断的机器人操作基准，揭示单项能力强并不等于闭环任务做得好。",
+      "tags": [
+        "机器人操作基准",
+        "具身智能",
+        "视觉-语言-动作模型"
+      ],
+      "sections": {
+        "background": "具身智能要求机器人具备三种互补能力：基于历史的认知推理、精确及时的物理执行，以及通过环境反馈将推理与执行组合起来。现有基准要么在同一任务中同时评估推理与执行，要么将二者分开评估而不考察其组合，因此难以判断失败究竟来自推理、执行还是二者的组合。",
+        "conclusion": "最强智能体在 Mind 视图成功率为 52.7%，在 Act 视图为 39.0%，但在 Mind2Act 闭环任务中仅 12.0%。诊断工具进一步将三个代表性系统的失败片段归因于 Mind、Act 或二者的组合，并生成能力画像。结果表明，单一视图上的能力不会自动迁移到需要组合的闭环任务。",
+        "method": "基准包含 30 个模拟操作任务，来自五个真实应用领域，每个任务有三个难度等级和 Clean、Random 两种场景设置，共 180 种配置。任务组织为 Mind、Act、Mind2Act 三个视图，其中 Mind2Act 为闭环任务，动作结果会影响后续决策。诊断工具将失败片段归因于推理、执行或组合，并汇总为每个系统的能力画像卡。",
+        "takeaways": "最强智能体能保持任务状态，但在持续接触上表现吃力；端到端策略能执行练过的动作，却几乎不保留任务状态。这说明通过环境反馈组合推理与执行是当前的主要开放问题，也提示机器人研究需要同时关注状态保持与精细接触控制，并在闭环设定下评估系统，而非仅看单项能力。"
+      },
+      "i18n": {
+        "zh": {
+          "title": "Mind2Act World：面向机器人操作中具身心智、物理动作与心智-动作组合的诊断基准",
+          "summary": "Mind2Act World 是一个包含 30 个模拟操作任务的诊断基准，覆盖五个真实应用领域，每个任务设三个难度等级和两种场景设置（Clean 与 Random），共 180 种配置。任务分为三个视图：Mind 测试基于历史观测的决策，Act 测试精确及时的执行，Mind2Act 在闭环任务中结合两者，由动作结果指导后续决策。对多模态智能体、视觉-语言-动作模型（VLA）和世界-动作模型（WAM）的评估显示，单一视图上的能力无法迁移到 Mind2Act 任务：最强智能体在 Mind 和 Act 上分别成功 52.7% 和 39.0%，但在 Mind2Act 上仅 12.0%。",
+          "lede": "一个把推理、执行与二者组合分开诊断的机器人操作基准，揭示单项能力强并不等于闭环任务做得好。",
+          "tags": [
+            "机器人操作基准",
+            "具身智能",
+            "视觉-语言-动作模型"
+          ],
+          "sections": {
+            "background": "具身智能要求机器人具备三种互补能力：基于历史的认知推理、精确及时的物理执行，以及通过环境反馈将推理与执行组合起来。现有基准要么在同一任务中同时评估推理与执行，要么将二者分开评估而不考察其组合，因此难以判断失败究竟来自推理、执行还是二者的组合。",
+            "conclusion": "最强智能体在 Mind 视图成功率为 52.7%，在 Act 视图为 39.0%，但在 Mind2Act 闭环任务中仅 12.0%。诊断工具进一步将三个代表性系统的失败片段归因于 Mind、Act 或二者的组合，并生成能力画像。结果表明，单一视图上的能力不会自动迁移到需要组合的闭环任务。",
+            "method": "基准包含 30 个模拟操作任务，来自五个真实应用领域，每个任务有三个难度等级和 Clean、Random 两种场景设置，共 180 种配置。任务组织为 Mind、Act、Mind2Act 三个视图，其中 Mind2Act 为闭环任务，动作结果会影响后续决策。诊断工具将失败片段归因于推理、执行或组合，并汇总为每个系统的能力画像卡。",
+            "takeaways": "最强智能体能保持任务状态，但在持续接触上表现吃力；端到端策略能执行练过的动作，却几乎不保留任务状态。这说明通过环境反馈组合推理与执行是当前的主要开放问题，也提示机器人研究需要同时关注状态保持与精细接触控制，并在闭环设定下评估系统，而非仅看单项能力。"
+          }
+        },
+        "en": {
+          "title": "Mind2Act World: A Diagnostic Benchmark for Embodied Mind, Physical Action, and Mind-Action Composition in Robotic Manipulation",
+          "summary": "Mind2Act World is a diagnostic benchmark of 30 simulated manipulation tasks spanning five real-world application domains, with three difficulty levels and two scene settings (Clean and Random) per task, yielding 180 configurations. Tasks are organized into three views: Mind tests decisions based on past observations, Act tests precise and timely execution, and Mind2Act combines both in closed-loop tasks where action outcomes guide later decisions. Evaluation of multimodal agents, vision-language-action models (VLAs), and world-action models (WAMs) shows that competence in a single view does not carry over to Mind2Act tasks: the strongest agent succeeds in 52.7% of Mind and 39.0% of Act episodes but in only 12.0% of Mind2Act episodes.",
+          "lede": "A robotic manipulation benchmark that diagnoses reasoning, execution, and their composition separately, showing that strength in one capability does not imply success in closed-loop tasks.",
+          "tags": [
+            "robotic manipulation benchmark",
+            "embodied intelligence",
+            "vision-language-action models"
+          ],
+          "sections": {
+            "background": "Embodied intelligence requires three complementary capabilities: history-based cognitive reasoning, precise and timely physical execution, and the composition of reasoning and execution through environmental feedback. Existing benchmarks either evaluate reasoning and execution within the same tasks or assess them separately without their composition, so they reveal little about whether a failure comes from reasoning, execution, or their composition.",
+            "conclusion": "The strongest agent succeeds in 52.7% of Mind episodes and 39.0% of Act episodes but in only 12.0% of closed-loop Mind2Act episodes. A diagnosis harness attributes failed episodes of three representative systems to Mind, Act, or their composition and summarizes each system in a profile card. The results show that competence in a single view does not automatically transfer to closed-loop tasks that require composition.",
+            "method": "The benchmark contains 30 simulated manipulation tasks from five real-world application domains, each with three difficulty levels and two scene settings (Clean and Random), totaling 180 configurations. Tasks are organized into three views: Mind, Act, and Mind2Act, where Mind2Act consists of closed-loop tasks in which action outcomes guide later decisions. The diagnosis harness attributes failed episodes to reasoning, execution, or their composition and aggregates them into a capability profile card for each system.",
+            "takeaways": "The strongest agent retains task state but struggles with sustained contact, whereas end-to-end policies execute practiced motions but retain little task state. These findings point to composing reasoning and execution through environmental feedback as the main open problem, suggesting that robotics research should address both state retention and fine contact control and evaluate systems in closed-loop settings rather than on isolated capabilities alone."
+          }
+        }
+      },
+      "id": "2611.26444",
+      "original_title": "Mind2Act World: A Diagnostic Benchmark for Embodied Mind, Physical Action, and Mind-Action Composition in Robotic Manipulation",
+      "original_summary": "Embodied intelligence aims to let robots perform complex physical tasks with human-like adaptability and reliability, which requires three complementary capabilities: history-based cognitive reasoning, precise and timely physical execution, and the composition of reasoning and execution through environmental feedback. Yet existing benchmarks either evaluate reasoning and execution within the same tasks or assess them separately without their composition, so they reveal little about whether a failure comes from reasoning, execution, or their composition. We introduce Mind2Act World, a diagnostic benchmark of 30 simulated manipulation tasks from five real-world application domains. Each task has three difficulty levels and two scene settings (Clean and Random), yielding 180 configurations. The tasks form three views: Mind tests decisions based on past observations, Act tests precise and timely execution, and Mind2Act combines both in closed-loop tasks where action outcomes guide later decisions. Comparing the three views shows whether a system lacks a capability or fails to compose capabilities it already has. A diagnosis harness further attributes the failed episodes of three representative systems to Mind, Act, or their composition and summarizes each system in a profile card. Our evaluation of multimodal agents, vision-language-action models (VLAs), and world-action models (WAMs) shows that competence in a single view does not carry over to Mind2Act tasks. Even the strongest agent succeeds in 52.7% of Mind and 39.0% of Act episodes but in only 12.0% of Mind2Act episodes. The strongest agent retains task state but struggles with sustained contact, whereas end-to-end policies execute practiced motions but retain little task state. These findings point to composing reasoning and execution through environmental feedback as the main open problem.",
+      "url": "https://arxiv.org/abs/2611.26444v1",
+      "source": "arXiv cs.RO",
+      "published": "2026-11-19T17:15:38+00:00",
+      "authors": [
+        "Yuzhi Huang",
+        "Jie Wu",
+        "Fanding Huang",
+        "Junchao Lin",
+        "Weichen Zhang",
+        "Ziyi Xiong",
+        "Yang Li",
+        "Zhengwei Xie",
+        "Zhimin Wang",
+        "Zhen Liu",
+        "Jiazhen Huang",
+        "Yuzheng Zhang",
+        "Yuche Liu",
+        "Hongyi Yang",
+        "Chen Tang",
+        "Shixiang Tang",
+        "Hakan Aktas",
+        "Adam Wu",
+        "Duo Wu",
+        "Kangye Ji",
+        "Shuzhao Xie",
+        "Huanan Liu",
+        "Weijue Bu",
+        "Chenxin Li",
+        "Xinyuan Wang",
+        "Tianyi Bai",
+        "Yinan Mao",
+        "Jiawei Wang",
+        "Minglei Li",
+        "Heng Yu",
+        "Ehsan Adeli",
+        "Minchen Li",
+        "Yong-Lu Li",
+        "Cengiz Öztireli",
+        "Huazhe Xu",
+        "Chao Yu",
+        "Jing Zhang",
+        "Shanghang Zhang",
+        "Weitao Zhou",
+        "Wenwu Zhu",
+        "Cheng Chi",
+        "Jingyan Jiang",
+        "Zhi Wang"
+      ],
+      "score": 4,
+      "versioned_id": "2611.26444v1",
+      "figure": {
+        "path": "./data/2026-11-22/figures/2611.26444.webp",
+        "caption": "Figure 16: Tasks grouped by application domain. Each task sits under the domain whose real-world requirement it is built from. The color of each task ID gives its view."
+      },
+      "attention": {
+        "hf_upvotes": 50,
+        "hf_comments": 4,
+        "github_stars": 33,
+        "github_url": "https://github.com/mind2act/mind2act_world"
+      },
+      "code_url": "https://github.com/Mind2Act/Mind2Act_World",
+      "project_url": null,
+      "pdf_url": "https://arxiv.org/pdf/2611.26444"
+    },
+    {
+      "title": "学习哪些动作会带来变化：面向动力学忠实世界模型的动作效果匹配",
+      "summary": "世界模型的目标是在不实际执行动作的情况下预测动作后果，但现有模型虽能生成逼真的视频，却常常忽略细微动作差异对未来的影响。作者提出 AFFECT，一种辅助训练目标，让世界模型学会动作扰动引起的视觉变化分布。在 OGBench 仿真以及真实 DROID 和 ALOHA-2 平台上，AFFECT 使世界模型推演更贴近真实结果：在 DROID 上，策略成功率与世界模型预测成功率之间的皮尔逊相关系数从 0.47 提升到 0.79，FVD 最多降低 23%；在规划任务中，使用 AFFECT 训练的世界模型选择动作可使任务成功率最多提升 8.3%。",
+      "lede": "世界模型要真正用于机器人决策，不能只生成逼真视频，还要对动作的细微变化敏感。AFFECT 通过匹配动作扰动引起的视觉变化，让世界模型推演更贴近真实动力学。",
+      "tags": [
+        "世界模型",
+        "机器人策略评估",
+        "动作效果匹配"
+      ],
+      "sections": {
+        "background": "世界模型被用于机器人策略评估和基于模型的规划，前提是它能准确反映动作如何改变未来观测。然而当前世界模型即使生成的视频越来越逼真，也往往无法捕捉动作的微小变化所带来的后果，而现实中几乎相同的动作可能导致截然不同的结果。这限制了世界模型在需要精细动作敏感性的任务中的可靠性。",
+        "conclusion": "AFFECT 显著提升了世界模型对动作扰动的响应忠实度。在 DROID 真实机器人平台上，世界模型中的策略成功率与真机成功率的皮尔逊相关系数由 0.47 升至 0.79，同时 FVD 最多降低 23%。将 AFFECT 训练的世界模型用于规划时，任务成功率最多提升 8.3%。这些结果在 OGBench 仿真、DROID 和 ALOHA-2 真实平台上得到验证，说明该方法能缩小世界模型推演与真实动力学之间的差距。",
+        "method": "AFFECT 是一种辅助训练目标，核心是学习动作扰动引起的视觉变化分布。具体做法是：向在任务无关的人类遥操作数据上训练的策略动作中注入时间相关的噪声，然后训练世界模型，使其生成的视频对这一噪声的响应与录制视频中的响应一致。这样无需从同一初始状态反复执行动作，就能让世界模型学会区分细微动作差异带来的不同未来。",
+        "takeaways": "AFFECT 表明，通过匹配动作扰动下的视觉变化，可以低成本地提升世界模型的动力学忠实度，使其更适合策略评估和规划。其局限在于依赖人类遥操作数据中的动作分布，且主要在已有平台上验证；对于更复杂或分布外的动作，效果仍需进一步检验。"
+      },
+      "i18n": {
+        "zh": {
+          "title": "学习哪些动作会带来变化：面向动力学忠实世界模型的动作效果匹配",
+          "summary": "世界模型的目标是在不实际执行动作的情况下预测动作后果，但现有模型虽能生成逼真的视频，却常常忽略细微动作差异对未来的影响。作者提出 AFFECT，一种辅助训练目标，让世界模型学会动作扰动引起的视觉变化分布。在 OGBench 仿真以及真实 DROID 和 ALOHA-2 平台上，AFFECT 使世界模型推演更贴近真实结果：在 DROID 上，策略成功率与世界模型预测成功率之间的皮尔逊相关系数从 0.47 提升到 0.79，FVD 最多降低 23%；在规划任务中，使用 AFFECT 训练的世界模型选择动作可使任务成功率最多提升 8.3%。",
+          "lede": "世界模型要真正用于机器人决策，不能只生成逼真视频，还要对动作的细微变化敏感。AFFECT 通过匹配动作扰动引起的视觉变化，让世界模型推演更贴近真实动力学。",
+          "tags": [
+            "世界模型",
+            "机器人策略评估",
+            "动作效果匹配"
+          ],
+          "sections": {
+            "background": "世界模型被用于机器人策略评估和基于模型的规划，前提是它能准确反映动作如何改变未来观测。然而当前世界模型即使生成的视频越来越逼真，也往往无法捕捉动作的微小变化所带来的后果，而现实中几乎相同的动作可能导致截然不同的结果。这限制了世界模型在需要精细动作敏感性的任务中的可靠性。",
+            "conclusion": "AFFECT 显著提升了世界模型对动作扰动的响应忠实度。在 DROID 真实机器人平台上，世界模型中的策略成功率与真机成功率的皮尔逊相关系数由 0.47 升至 0.79，同时 FVD 最多降低 23%。将 AFFECT 训练的世界模型用于规划时，任务成功率最多提升 8.3%。这些结果在 OGBench 仿真、DROID 和 ALOHA-2 真实平台上得到验证，说明该方法能缩小世界模型推演与真实动力学之间的差距。",
+            "method": "AFFECT 是一种辅助训练目标，核心是学习动作扰动引起的视觉变化分布。具体做法是：向在任务无关的人类遥操作数据上训练的策略动作中注入时间相关的噪声，然后训练世界模型，使其生成的视频对这一噪声的响应与录制视频中的响应一致。这样无需从同一初始状态反复执行动作，就能让世界模型学会区分细微动作差异带来的不同未来。",
+            "takeaways": "AFFECT 表明，通过匹配动作扰动下的视觉变化，可以低成本地提升世界模型的动力学忠实度，使其更适合策略评估和规划。其局限在于依赖人类遥操作数据中的动作分布，且主要在已有平台上验证；对于更复杂或分布外的动作，效果仍需进一步检验。"
+          }
+        },
+        "en": {
+          "title": "Learning What Actions Change: Action Effect Matching for Dynamics-Faithful World Models",
+          "summary": "World models aim to predict the consequences of actions without executing them in the real world, but current models often produce realistic videos while failing to capture how small action changes affect future observations. The authors propose AFFECT, an auxiliary training objective that learns the distribution of visual changes induced by action perturbations. Across OGBench simulation and real-world DROID and ALOHA-2 setups, AFFECT makes world-model rollouts more faithful to real outcomes: on DROID, the Pearson correlation between policy success rates in the world model and on the real robot rises from 0.47 to 0.79, with up to 23% lower FVD; in planning, selecting actions with AFFECT-trained world models improves task success by up to 8.3%.",
+          "lede": "For world models to be useful for robot decision-making, they must be sensitive to subtle action changes, not just generate realistic videos. AFFECT matches the visual changes induced by action perturbations to make world-model rollouts more faithful to true dynamics.",
+          "tags": [
+            "world models",
+            "robotic policy evaluation",
+            "action effect matching"
+          ],
+          "sections": {
+            "background": "World models are used for robotic policy evaluation and model-based planning under the assumption that they accurately reflect how actions change future observations. Yet current world models, despite generating increasingly realistic videos, often fail to capture how small action changes affect future observations, even though nearly identical actions can lead to qualitatively different outcomes in reality. This limits their reliability in tasks that require fine-grained action sensitivity.",
+            "conclusion": "AFFECT substantially improves the fidelity of world-model responses to action perturbations. On the real-world DROID platform, the Pearson correlation between policy success rates in the world model and on the real robot rises from 0.47 to 0.79, alongside up to 23% lower FVD. When AFFECT-trained world models are used for planning, task success improves by up to 8.3%. These results are validated on OGBench simulation and the real-world DROID and ALOHA-2 setups, showing that the method narrows the gap between world-model rollouts and true dynamics.",
+            "method": "AFFECT is an auxiliary training objective that learns the distribution of visual changes induced by action perturbations. Temporally correlated noise is injected into the actions of a policy trained on task-agnostic human teleoperation data, and the world model is then trained so that its generated videos respond to this noise as the recorded videos do. This teaches the world model to distinguish the different futures caused by subtle action differences without requiring repeated executions from the same initial state.",
+            "takeaways": "AFFECT shows that matching visual changes under action perturbations can improve the dynamics faithfulness of world models at low cost, making them better suited for policy evaluation and planning. Limitations include reliance on the action distribution in human teleoperation data and validation mainly on existing platforms; effectiveness for more complex or out-of-distribution actions remains to be tested."
+          }
+        }
+      },
+      "id": "2611.25980",
+      "original_title": "Learning What Actions Change: Action Effect Matching for Dynamics-Faithful World Models",
+      "original_summary": "World models aim to predict environment dynamics under actions, enabling the prediction of action consequences without executing them in the real world. Yet despite producing increasingly realistic videos, current world models often fail to capture how small action changes affect future observations. This limits their use in tasks such as robotic policy evaluation and model-based planning, where nearly identical actions can lead to qualitatively different outcomes. To address this, we propose AFFECT, an auxiliary training objective for learning the distribution of visual changes induced by action perturbations. Specifically, we inject temporally correlated noise into the actions of a policy trained on task-agnostic human teleoperation. We then train the world model so that its generated videos respond to this noise as the recorded videos do, without requiring repeated executions from the same initial state. Across OGBench simulation and real-world DROID and ALOHA-2 setups, AFFECT makes world-model rollouts more faithful to real outcomes. On DROID, the Pearson correlation between policy success rates in the world model and on the real robot rises from 0.47 to 0.79, alongside up to 23% lower FVD. These gains carry over to planning, where selecting actions with AFFECT-trained world models improves task success by up to 8.3%.",
+      "url": "https://arxiv.org/abs/2611.25980v1",
+      "source": "arXiv cs.RO",
+      "published": "2026-11-19T12:03:05+00:00",
+      "authors": [
+        "John Won",
+        "Yonghoon Dong",
+        "Jinwoo Shin"
+      ],
+      "score": 4,
+      "versioned_id": "2611.25980v1",
+      "figure": {
+        "path": "./data/2026-11-22/figures/2611.25980.webp",
+        "caption": "Figure 6: Open-loop long-horizon rollouts on the real-world FR3. Each panel shows one episode. (a) Ground-truth rollout recorded while the FR3 executes the action trajectory. (b, c) Videos generated by Cosmos3 and Cosmos3 + AFFECT when conditioned on the same action trajectory. Frames are ordered in time from left to right."
+      },
+      "attention": {
+        "hf_upvotes": 15,
+        "hf_comments": 2
+      },
+      "code_url": null,
+      "project_url": null,
+      "pdf_url": "https://arxiv.org/pdf/2611.25980"
+    },
+    {
+      "title": "LocoMuJoCo：面向全身控制的综合模仿学习基准",
+      "summary": "LocoMuJoCo 是一个面向全身控制的开源基准，同时支持模仿学习（IL，从示范动作中学习控制策略）和强化学习（RL，通过试错奖励学习控制策略）。它用同一套接口把 CPU 上的 MuJoCo 物理仿真与 GPU 上的 MJX、MjWarp 后端连接起来，提供 9 种人形、3 种（肌）骨骼和 4 种四足机器人形态，并为每个人形机器人配备整理好的原生动作捕捉数据集，还能把 AMASS 和 LAFAN1 数据重定向到这些机器人上。其模块化插件架构让观测、奖励、控制模式、地形和域随机化可以自由替换；用 JAX 实现的多种强化学习与模仿学习算法支持 JIT 编译的端到端训练；配套的 loco-mujoco-real 仓库提供从仿真到真机的部署方案。论文介绍了设计思路、SMPL 到机器人以及机器人与机器人之间的重定向流程，并给出使用示例。",
+      "lede": "一个统一 CPU 与 GPU 仿真后端、覆盖人形与四足形态的开源基准，为全身控制的模仿学习与强化学习提供可复现的评测与部署路径。",
+      "tags": [
+        "全身控制",
+        "模仿学习基准",
+        "仿真到真机"
+      ],
+      "sections": {
+        "background": "全身控制（让机器人协调全身关节完成平衡、行走等动作）的模仿学习研究缺少统一、可复现的评测平台：不同工作使用不同的机器人模型、动作数据来源、仿真后端和训练流程，结果难以横向比较。现有基准往往只覆盖单一形态或单一后端，也缺少从动作捕捉数据到机器人可执行轨迹的标准化重定向管线，以及从仿真到真机部署的配套支持。",
+        "conclusion": "论文以开源形式发布 LocoMuJoCo（MIT 许可），给出设计、SMPL 到机器人与机器人与机器人之间的重定向流程及使用示例。材料未报告具体数值结果或百分点对比，因此不给出性能结论；其贡献在于提供统一接口、多形态覆盖、原生动作捕捉数据与可替换组件构成的基准平台。",
+        "method": "核心是用单一 API 统一 MuJoCo（CPU）与 MJX、MjWarp（GPU）两类仿真后端，使用户能在同一套代码下切换计算设备。平台内置 9 种人形、3 种（肌）骨骼和 4 种四足机器人形态，每个人形机器人配有整理好的原生动作捕捉数据集，并支持将 AMASS 与 LAFAN1 数据重定向到这些形态。模块化插件架构把观测、奖励、控制模式、地形和域随机化做成可互换组件；用 JAX 实现的多种强化学习与模仿学习算法支持 JIT 编译的端到端训练；配套 loco-mujoco-real 仓库负责从仿真到真机的部署。",
+        "takeaways": "对机器人研究而言，该基准的价值在于把形态、数据、仿真后端和算法放在同一接口下，便于公平比较全身控制中的模仿学习与强化学习方法，并通过重定向管线复用现有动作捕捉数据、通过配套仓库推进真机验证。局限在于材料未给出定量实验，平台的实际训练效果与仿真到真机的迁移表现仍需使用者自行评估；此外，其覆盖范围限于所列人形、（肌）骨骼与四足形态。"
+      },
+      "i18n": {
+        "zh": {
+          "title": "LocoMuJoCo：面向全身控制的综合模仿学习基准",
+          "summary": "LocoMuJoCo 是一个面向全身控制的开源基准，同时支持模仿学习（IL，从示范动作中学习控制策略）和强化学习（RL，通过试错奖励学习控制策略）。它用同一套接口把 CPU 上的 MuJoCo 物理仿真与 GPU 上的 MJX、MjWarp 后端连接起来，提供 9 种人形、3 种（肌）骨骼和 4 种四足机器人形态，并为每个人形机器人配备整理好的原生动作捕捉数据集，还能把 AMASS 和 LAFAN1 数据重定向到这些机器人上。其模块化插件架构让观测、奖励、控制模式、地形和域随机化可以自由替换；用 JAX 实现的多种强化学习与模仿学习算法支持 JIT 编译的端到端训练；配套的 loco-mujoco-real 仓库提供从仿真到真机的部署方案。论文介绍了设计思路、SMPL 到机器人以及机器人与机器人之间的重定向流程，并给出使用示例。",
+          "lede": "一个统一 CPU 与 GPU 仿真后端、覆盖人形与四足形态的开源基准，为全身控制的模仿学习与强化学习提供可复现的评测与部署路径。",
+          "tags": [
+            "全身控制",
+            "模仿学习基准",
+            "仿真到真机"
+          ],
+          "sections": {
+            "background": "全身控制（让机器人协调全身关节完成平衡、行走等动作）的模仿学习研究缺少统一、可复现的评测平台：不同工作使用不同的机器人模型、动作数据来源、仿真后端和训练流程，结果难以横向比较。现有基准往往只覆盖单一形态或单一后端，也缺少从动作捕捉数据到机器人可执行轨迹的标准化重定向管线，以及从仿真到真机部署的配套支持。",
+            "conclusion": "论文以开源形式发布 LocoMuJoCo（MIT 许可），给出设计、SMPL 到机器人与机器人与机器人之间的重定向流程及使用示例。材料未报告具体数值结果或百分点对比，因此不给出性能结论；其贡献在于提供统一接口、多形态覆盖、原生动作捕捉数据与可替换组件构成的基准平台。",
+            "method": "核心是用单一 API 统一 MuJoCo（CPU）与 MJX、MjWarp（GPU）两类仿真后端，使用户能在同一套代码下切换计算设备。平台内置 9 种人形、3 种（肌）骨骼和 4 种四足机器人形态，每个人形机器人配有整理好的原生动作捕捉数据集，并支持将 AMASS 与 LAFAN1 数据重定向到这些形态。模块化插件架构把观测、奖励、控制模式、地形和域随机化做成可互换组件；用 JAX 实现的多种强化学习与模仿学习算法支持 JIT 编译的端到端训练；配套 loco-mujoco-real 仓库负责从仿真到真机的部署。",
+            "takeaways": "对机器人研究而言，该基准的价值在于把形态、数据、仿真后端和算法放在同一接口下，便于公平比较全身控制中的模仿学习与强化学习方法，并通过重定向管线复用现有动作捕捉数据、通过配套仓库推进真机验证。局限在于材料未给出定量实验，平台的实际训练效果与仿真到真机的迁移表现仍需使用者自行评估；此外，其覆盖范围限于所列人形、（肌）骨骼与四足形态。"
+          }
+        },
+        "en": {
+          "title": "LocoMuJoCo: A Comprehensive Imitation Learning Benchmark for Whole-Body Control",
+          "summary": "LocoMuJoCo is an open-source benchmark for imitation learning (IL, learning control policies from demonstrations) and reinforcement learning (RL, learning policies through trial-and-error reward) on whole-body control. A single API couples MuJoCo on CPU with the MJX and MjWarp backends on GPU, exposes 9 humanoid, 3 (musculo-)skeletal, and 4 quadruped embodiments, and ships a curated native motion-capture dataset for every humanoid, to which AMASS and LAFAN1 can also be retargeted. A modular plug-in architecture makes observations, rewards, control modes, terrains, and domain randomization fully interchangeable; compact JAX implementations of many RL and IL algorithms provide JIT-compiled end-to-end training; and the companion loco-mujoco-real repository provides sim-to-real deployment. The paper describes the design, the SMPL-to-robot and robot-to-robot retargeting pipeline, and a usage example.",
+          "lede": "An open-source benchmark unifying CPU and GPU simulation backends across humanoid and quadruped embodiments, offering a reproducible evaluation and deployment path for imitation and reinforcement learning in whole-body control.",
+          "tags": [
+            "whole-body control",
+            "imitation learning benchmark",
+            "sim-to-real"
+          ],
+          "sections": {
+            "background": "Imitation learning for whole-body control (coordinating all joints to achieve balance, locomotion, and related skills) lacks a unified, reproducible evaluation platform: studies differ in robot models, motion data sources, simulation backends, and training pipelines, making results hard to compare. Existing benchmarks often cover a single embodiment or backend and lack a standardized retargeting pipeline from motion capture to robot-executable trajectories, as well as support for sim-to-real deployment.",
+            "conclusion": "LocoMuJoCo is released as open source under the MIT license, together with its design, the SMPL-to-robot and robot-to-robot retargeting pipeline, and a usage example. The material reports no quantitative results or percentage-point comparisons, so no performance conclusion is drawn; the contribution is a benchmark platform with a unified API, multi-embodiment coverage, native motion-capture data, and interchangeable components.",
+            "method": "The core is a single API that unifies MuJoCo on CPU with the MJX and MjWarp backends on GPU, letting users switch compute devices within the same codebase. The platform includes 9 humanoid, 3 (musculo-)skeletal, and 4 quadruped embodiments; every humanoid comes with a curated native motion-capture dataset, and AMASS and LAFAN1 data can be retargeted to these embodiments. A modular plug-in architecture makes observations, rewards, control modes, terrains, and domain randomization interchangeable. Compact JAX implementations of many RL and IL algorithms enable JIT-compiled end-to-end training, and the companion loco-mujoco-real repository handles sim-to-real deployment.",
+            "takeaways": "For robotics research, the value lies in placing embodiments, data, simulation backends, and algorithms under one interface, enabling fair comparison of IL and RL methods for whole-body control, reusing existing motion-capture data through the retargeting pipeline, and supporting real-robot validation via the companion repository. Limitations: the material provides no quantitative experiments, so actual training performance and sim-to-real transfer must be assessed by users; coverage is restricted to the listed humanoid, (musculo-)skeletal, and quadruped embodiments."
+          }
+        }
+      },
+      "id": "2611.26293",
+      "original_title": "LocoMuJoCo: A Comprehensive Imitation Learning Benchmark for Whole-Body Control",
+      "original_summary": "LocoMuJoCo is an open-source benchmark for imitation learning (IL) and reinforcement learning (RL) on whole-body control. The library couples MuJoCo (CPU) with MJX and the MjWarp backend (GPU) under a single API, exposes 9 humanoid, 3 (musculo-)skeletal, and 4 quadruped embodiments, and ships a curated native motion-capture dataset for every humanoid, to which it can also retarget AMASS and LAFAN1. A modular plug-in architecture makes observations, rewards, control modes, terrains, and domain randomization fully interchangeable, while compact JAX implementations of many RL and IL algorithms provide JIT-compiled end-to-end training, and the companion loco-mujoco-real repository provides sim-to-real deployment. We describe the design, the SMPL-to-robot and robot-to-robot retargeting pipeline, and a usage example. LocoMuJoCo is released under MIT at https://github.com/robfiras/loco-mujoco.",
+      "url": "https://arxiv.org/abs/2611.26293v1",
+      "source": "arXiv cs.RO",
+      "published": "2026-11-19T15:48:40+00:00",
+      "authors": [
+        "Firas Al-Hafez",
+        "Davide Tateo",
+        "Oleg Kaidanov",
+        "Aditya Bhatt",
+        "Artur Zelik",
+        "Zhengyi Luo",
+        "Jan Peters"
+      ],
+      "score": 4,
+      "versioned_id": "2611.26293v1",
+      "figure": {
+        "path": "./data/2026-11-22/figures/2611.26293.webp",
+        "caption": "Figure 1: The 12 humanoid and (musculo-)skeletal embodiments replaying one walking trajectory; ghosted poses show time. All share one training, plug-in, and dataset interface."
+      },
+      "attention": {
+        "github_stars": 1489,
+        "github_url": "https://github.com/robfiras/loco-mujoco"
+      },
+      "code_url": "https://github.com/robfiras/loco-mujoco",
+      "project_url": null,
+      "pdf_url": "https://arxiv.org/pdf/2611.26293"
+    },
+    {
+      "title": "MoRE：面向多物理机器人世界模型的专家混合方法",
+      "summary": "机器人世界模型需要预测物体在机器人动作与物理动力学下的演化。现有三维世界模型预测能力较强，但难以统一处理不同物体交互带来的异质动力学。MoRE 将机器人交互分解为不同物理机制，并为每种机制分配专门的运动专家，构建了围绕刚性、可变形与抓取动力学的三维世界模型专家混合架构，使单一模型既能覆盖多样物理行为，又能保留各机制特有的先验。该模型在混合仿真与真实数据上训练，并与模型预测控制（MPC）结合以支持多种操作任务。实验显示，MoRE 在各物理机制下提升了预测精度，并带来更强的真实世界 MPC 性能。",
+      "lede": "MoRE 用刚性、可变形、抓取三类运动专家组成三维世界模型，在混合仿真与真实数据上训练，并与 MPC 结合提升真实操作表现。",
+      "tags": [
+        "机器人世界模型",
+        "专家混合",
+        "模型预测控制"
+      ],
+      "sections": {
+        "background": "机器人世界模型要同时预测刚体碰撞、软体形变和抓取接触等多种物理行为，这些行为的动力学差异很大。现有三维世界模型虽然预测能力较强，却难以用统一框架处理这种异质动力学，容易在不同物理机制之间相互干扰。",
+        "conclusion": "作者将机器人交互按物理机制分解，并为每类机制设置专门的运动专家。实验表明，MoRE 在刚性、可变形和抓取等各物理机制下都提升了预测精度，接入模型预测控制（MPC）后，真实世界操作任务的性能也随之增强。摘要未给出具体数值或百分点，因此无法量化提升幅度。",
+        "method": "MoRE 是一个三维世界模型，采用运动专家混合结构，按刚性、可变形和抓取动力学划分专家，让单一模型在共享框架下保留各机制特有的先验。模型在仿真与真实世界混合数据上训练，并与 MPC 结合，用于多种操作任务。",
+        "takeaways": "这项工作说明，按物理机制分工的专家结构有助于世界模型处理异质动力学，并能把预测精度的提升转化为真实机器人控制性能。其局限在于，摘要未报告具体数值、任务规模和失败案例，专家划分是否覆盖更复杂的接触与多物体交互仍需进一步验证。"
+      },
+      "i18n": {
+        "zh": {
+          "title": "MoRE：面向多物理机器人世界模型的专家混合方法",
+          "summary": "机器人世界模型需要预测物体在机器人动作与物理动力学下的演化。现有三维世界模型预测能力较强，但难以统一处理不同物体交互带来的异质动力学。MoRE 将机器人交互分解为不同物理机制，并为每种机制分配专门的运动专家，构建了围绕刚性、可变形与抓取动力学的三维世界模型专家混合架构，使单一模型既能覆盖多样物理行为，又能保留各机制特有的先验。该模型在混合仿真与真实数据上训练，并与模型预测控制（MPC）结合以支持多种操作任务。实验显示，MoRE 在各物理机制下提升了预测精度，并带来更强的真实世界 MPC 性能。",
+          "lede": "MoRE 用刚性、可变形、抓取三类运动专家组成三维世界模型，在混合仿真与真实数据上训练，并与 MPC 结合提升真实操作表现。",
+          "tags": [
+            "机器人世界模型",
+            "专家混合",
+            "模型预测控制"
+          ],
+          "sections": {
+            "background": "机器人世界模型要同时预测刚体碰撞、软体形变和抓取接触等多种物理行为，这些行为的动力学差异很大。现有三维世界模型虽然预测能力较强，却难以用统一框架处理这种异质动力学，容易在不同物理机制之间相互干扰。",
+            "conclusion": "作者将机器人交互按物理机制分解，并为每类机制设置专门的运动专家。实验表明，MoRE 在刚性、可变形和抓取等各物理机制下都提升了预测精度，接入模型预测控制（MPC）后，真实世界操作任务的性能也随之增强。摘要未给出具体数值或百分点，因此无法量化提升幅度。",
+            "method": "MoRE 是一个三维世界模型，采用运动专家混合结构，按刚性、可变形和抓取动力学划分专家，让单一模型在共享框架下保留各机制特有的先验。模型在仿真与真实世界混合数据上训练，并与 MPC 结合，用于多种操作任务。",
+            "takeaways": "这项工作说明，按物理机制分工的专家结构有助于世界模型处理异质动力学，并能把预测精度的提升转化为真实机器人控制性能。其局限在于，摘要未报告具体数值、任务规模和失败案例，专家划分是否覆盖更复杂的接触与多物体交互仍需进一步验证。"
+          }
+        },
+        "en": {
+          "title": "MoRE: Mixture-of-Experts for Multi-Physics Robotic World Models",
+          "summary": "A robotic world model must predict how objects evolve under robot actions and physical dynamics. Recent 3D world models have strong predictive capabilities but still struggle with the heterogeneous dynamics arising from diverse object interactions. MoRE decomposes robotic interactions into distinct physical regimes and assigns each to a specialized motion expert, building a 3D world model with a mixture of motion experts organized around rigid, deformable, and prehensile dynamics. This design lets a single model capture diverse physical behaviors while preserving regime-specific priors. Trained on mixed simulation and real-world data, MoRE integrates with Model Predictive Control (MPC) to support diverse manipulation tasks. Experiments show that MoRE improves prediction accuracy across physics regimes and leads to stronger real-world MPC performance.",
+          "lede": "MoRE combines rigid, deformable, and prehensile motion experts in a 3D world model trained on mixed simulation and real data, and pairs it with MPC to improve real-world manipulation.",
+          "tags": [
+            "robotic world models",
+            "mixture of experts",
+            "model predictive control"
+          ],
+          "sections": {
+            "background": "Robotic world models must predict rigid collisions, soft-body deformation, and grasp contact at the same time, yet these behaviors follow very different dynamics. Existing 3D world models have strong predictive capabilities but struggle to handle such heterogeneous dynamics in a unified framework, so different physical regimes can interfere with one another.",
+            "conclusion": "The authors decompose robotic interactions by physical regime and assign a specialized motion expert to each. Experiments show that MoRE improves prediction accuracy across rigid, deformable, and prehensile regimes, and that integrating it with Model Predictive Control (MPC) strengthens real-world manipulation performance. The abstract reports no specific values or percentage points, so the size of the gains cannot be quantified.",
+            "method": "MoRE is a 3D world model with a mixture-of-motion-experts structure, dividing experts by rigid, deformable, and prehensile dynamics so that a single model preserves regime-specific priors within a shared framework. It is trained on mixed simulation and real-world data and integrated with MPC for diverse manipulation tasks.",
+            "takeaways": "This work suggests that organizing world models into experts by physical regime helps handle heterogeneous dynamics and can translate prediction gains into real robot control performance. Limitations: the abstract reports no specific numbers, task scale, or failure cases, and whether the expert split covers more complex contact and multi-object interactions remains to be verified."
+          }
+        }
+      },
+      "id": "2611.25336",
+      "original_title": "MoRE: Mixture-of-Experts for Multi-Physics Robotic World Models",
+      "original_summary": "A robotic world model should predict how objects evolve under robot actions and physical dynamics. While recent 3D world models have shown strong predictive capabilities, they still struggle with the heterogeneous dynamics arising from diverse object interactions. To address this in a unified framework, we decompose robotic interactions into distinct physical regimes and assign each to a specialized motion expert. We introduce MoRE, a 3D world model with a mixture of motion experts organized around rigid, deformable, and prehensile dynamics. This design enables a single model to capture diverse physical behaviors while preserving regime-specific priors. Trained on mixed simulation and real-world data, MoRE integrates with Model Predictive Control (MPC) to support diverse manipulation tasks. Experiments show that MoRE improves prediction accuracy across physics regimes, leading to stronger real-world MPC performance. Code, data, and project website are available at https://alwaysleepy.github.io/MoRE-WM-site/.",
+      "url": "https://arxiv.org/abs/2611.25336v1",
+      "source": "arXiv cs.RO",
+      "published": "2026-11-19T01:24:08+00:00",
+      "authors": [
+        "Ziyu Zhu",
+        "Shaowei Liu",
+        "Albert J. Zhai",
+        "Henry Che",
+        "Wei-Chiu Ma",
+        "Shenlong Wang"
+      ],
+      "score": 4,
+      "versioned_id": "2611.25336v1",
+      "figure": {
+        "path": "./data/2026-11-22/figures/2611.25336.webp",
+        "caption": "Figure 5: Real world dynamics predictions. We visualize predictions of point motion on real world data. The red points are the end-effector (action) points. The Vanilla model struggles to treat the box as rigid and the toy sloth as soft. In contrast, our model correctly handles the different cases."
+      },
+      "attention": {
+        "github_stars": 4,
+        "github_url": "https://github.com/more-robo/more-wm"
+      },
+      "code_url": null,
+      "project_url": "https://alwaysleepy.github.io/MoRE-WM-site/",
+      "pdf_url": "https://arxiv.org/pdf/2611.25336"
+    },
+    {
+      "title": "ECHO：面向人形全身控制的上下文行为基础模型",
+      "summary": "人形行为基础模型（BFM）通过大规模动作模仿和大规模并行强化学习获得多样技能，但广泛的行为能力并不保证在不同物理条件下都能精确执行。若不区分底层动力学，策略可能倾向于保守折中，而非针对特定环境的精确控制。我们提出 ECHO，一种上下文行为基础模型，将交互经验转化为环境特定的控制，把通用行为能力与动力学特定的执行分离开来。混合与退火采样（Mixed and Annealed Sampling）首先在单一预训练阶段通过平衡针对性练习与广泛动作覆盖来建立行为先验。在此先验之上，上下文表示与残差适配（Context Representation and Residual Adaptation）从交互历史中学习结构化动力学表示，用以引导对冻结先验的残差修正，从而无需测试时参数更新即可实现适配。大量实验表明，ECHO 在多种动作和物理条件下优于所有基线方法。此外，在 Unitree G1 上的部署展示了涵盖极端杂技动作和地形交互的全身遥操作，以及操作与全身控制中的负载适配能力。",
+      "lede": "人形行为基础模型能学会多种动作，却未必能在不同物理条件下精确执行。ECHO 通过上下文表示与残差适配，把交互经验转化为环境特定的控制修正，并在 Unitree G1 上验证了极端杂技、地形交互与负载适配能力。",
+      "tags": [
+        "人形全身控制",
+        "行为基础模型",
+        "上下文自适应"
+      ],
+      "sections": {
+        "background": "人形行为基础模型通过大规模动作模仿和大规模并行强化学习获得多样技能，但广泛的行为能力并不等于在不同物理条件下都能精确执行。如果策略不区分底层动力学，就容易选择保守的折中方案，牺牲针对特定环境的精度。",
+        "conclusion": "实验显示，ECHO 在多种动作和物理条件下优于所有基线方法。在 Unitree G1 上的部署实现了涵盖极端杂技动作与地形交互的全身遥操作，并在操作和全身控制中表现出负载适配能力。",
+        "method": "ECHO 将通用行为能力与动力学特定的执行分离。混合与退火采样在单一预训练阶段平衡针对性练习与广泛动作覆盖，建立行为先验；上下文表示与残差适配再从交互历史中学习结构化动力学表示，引导对冻结先验的残差修正，无需测试时参数更新即可完成适配。",
+        "takeaways": "ECHO 表明，把交互经验转化为环境特定的残差修正，可以在不更新参数的前提下提升人形全身控制的执行精度，为行为基础模型从“会做”走向“做得准”提供了可行路径。其适用范围限于论文所测试的动作与物理条件，以及 Unitree G1 平台上的遥操作、操作与全身控制任务。"
+      },
+      "i18n": {
+        "zh": {
+          "title": "ECHO：面向人形全身控制的上下文行为基础模型",
+          "summary": "人形行为基础模型（BFM）通过大规模动作模仿和大规模并行强化学习获得多样技能，但广泛的行为能力并不保证在不同物理条件下都能精确执行。若不区分底层动力学，策略可能倾向于保守折中，而非针对特定环境的精确控制。我们提出 ECHO，一种上下文行为基础模型，将交互经验转化为环境特定的控制，把通用行为能力与动力学特定的执行分离开来。混合与退火采样（Mixed and Annealed Sampling）首先在单一预训练阶段通过平衡针对性练习与广泛动作覆盖来建立行为先验。在此先验之上，上下文表示与残差适配（Context Representation and Residual Adaptation）从交互历史中学习结构化动力学表示，用以引导对冻结先验的残差修正，从而无需测试时参数更新即可实现适配。大量实验表明，ECHO 在多种动作和物理条件下优于所有基线方法。此外，在 Unitree G1 上的部署展示了涵盖极端杂技动作和地形交互的全身遥操作，以及操作与全身控制中的负载适配能力。",
+          "lede": "人形行为基础模型能学会多种动作，却未必能在不同物理条件下精确执行。ECHO 通过上下文表示与残差适配，把交互经验转化为环境特定的控制修正，并在 Unitree G1 上验证了极端杂技、地形交互与负载适配能力。",
+          "tags": [
+            "人形全身控制",
+            "行为基础模型",
+            "上下文自适应"
+          ],
+          "sections": {
+            "background": "人形行为基础模型通过大规模动作模仿和大规模并行强化学习获得多样技能，但广泛的行为能力并不等于在不同物理条件下都能精确执行。如果策略不区分底层动力学，就容易选择保守的折中方案，牺牲针对特定环境的精度。",
+            "conclusion": "实验显示，ECHO 在多种动作和物理条件下优于所有基线方法。在 Unitree G1 上的部署实现了涵盖极端杂技动作与地形交互的全身遥操作，并在操作和全身控制中表现出负载适配能力。",
+            "method": "ECHO 将通用行为能力与动力学特定的执行分离。混合与退火采样在单一预训练阶段平衡针对性练习与广泛动作覆盖，建立行为先验；上下文表示与残差适配再从交互历史中学习结构化动力学表示，引导对冻结先验的残差修正，无需测试时参数更新即可完成适配。",
+            "takeaways": "ECHO 表明，把交互经验转化为环境特定的残差修正，可以在不更新参数的前提下提升人形全身控制的执行精度，为行为基础模型从“会做”走向“做得准”提供了可行路径。其适用范围限于论文所测试的动作与物理条件，以及 Unitree G1 平台上的遥操作、操作与全身控制任务。"
+          }
+        },
+        "en": {
+          "title": "ECHO: In-Context Behavior Foundation Model for Humanoid Whole-Body Control",
+          "summary": "Humanoid behavior foundation models (BFMs) acquire diverse skills through large-scale motion imitation and massively parallel reinforcement learning, yet broad behavioral capability does not ensure precise execution across physical conditions. Without distinguishing the underlying dynamics, policies may favor conservative compromises over environment-specific precision. We introduce ECHO, an in-context BFM that turns interaction experience into environment-specific control, separating general behavioral capability from dynamics-specific execution. Mixed and Annealed Sampling first establishes a behavior prior in a single pretraining stage by balancing targeted practice with broad motion coverage. Building on this prior, Context Representation and Residual Adaptation learns structured dynamics representations from interaction histories to guide residual corrections to the frozen prior, enabling adaptation without test-time parameter updates. Extensive experiments show that ECHO outperforms all baseline methods across diverse motions and physical conditions. Moreover, deployment on the Unitree G1 demonstrates whole-body teleoperation spanning extreme acrobatics and terrain interaction, alongside payload adaptation in manipulation and whole-body control.",
+          "lede": "Humanoid behavior foundation models can learn many motions yet may fail to execute them precisely under different physical conditions. ECHO uses context representation and residual adaptation to turn interaction experience into environment-specific control corrections, validated on the Unitree G1 for extreme acrobatics, terrain interaction, and payload adaptation.",
+          "tags": [
+            "humanoid whole-body control",
+            "behavior foundation model",
+            "in-context adaptation"
+          ],
+          "sections": {
+            "background": "Humanoid behavior foundation models acquire diverse skills through large-scale motion imitation and massively parallel reinforcement learning, but broad behavioral capability does not guarantee precise execution under different physical conditions. If a policy does not distinguish the underlying dynamics, it may favor conservative compromises and sacrifice environment-specific precision.",
+            "conclusion": "Experiments show that ECHO outperforms all baseline methods across diverse motions and physical conditions. Deployment on the Unitree G1 demonstrates whole-body teleoperation spanning extreme acrobatics and terrain interaction, along with payload adaptation in manipulation and whole-body control.",
+            "method": "ECHO separates general behavioral capability from dynamics-specific execution. Mixed and Annealed Sampling balances targeted practice with broad motion coverage in a single pretraining stage to establish a behavior prior; Context Representation and Residual Adaptation then learns structured dynamics representations from interaction histories to guide residual corrections to the frozen prior, enabling adaptation without test-time parameter updates.",
+            "takeaways": "ECHO shows that turning interaction experience into environment-specific residual corrections can improve execution precision in humanoid whole-body control without parameter updates, offering a path for behavior foundation models to move from capability to precision. Its scope is limited to the motions and physical conditions tested and to teleoperation, manipulation, and whole-body control tasks on the Unitree G1."
+          }
+        }
+      },
+      "id": "2611.25778",
+      "original_title": "ECHO: In-Context Behavior foundation model for Humanoid Whole-Body Control",
+      "original_summary": "Humanoid behavior foundation models (BFMs) acquire diverse skills through large-scale motion imitation and massively parallel reinforcement learning, yet broad behavioral capability does not ensure precise execution across physical conditions. Without distinguishing the underlying dynamics, policies may favor conservative compromises over environment-specific precision. We introduce ECHO, an in-context BFM that turns interaction experience into environment-specific control, separating general behavioral capability from dynamics-specific execution. Mixed and Annealed Sampling first establishes a behavior prior in a single pretraining stage by balancing targeted practice with broad motion coverage. Building on this prior, Context Representation and Residual Adaptation learns structured dynamics representations from interaction histories to guide residual corrections to the frozen prior, enabling adaptation without test-time parameter updates. Extensive experiments show that ECHO outperforms all baseline methods across diverse motions and physical conditions. Moreover, deployment on the Unitree G1 demonstrates whole-body teleoperation spanning extreme acrobatics and terrain interaction, alongside payload adaptation in manipulation and whole-body control. Page is available at https://mwondering.github.io/echo-bfm/",
+      "url": "https://arxiv.org/abs/2611.25778v1",
+      "source": "arXiv cs.RO",
+      "published": "2026-11-19T09:11:24+00:00",
+      "authors": [
+        "Xingyi Wang",
+        "Bin Li",
+        "Jiyuan Shi",
+        "Chenyun Zhang",
+        "Weiji Xie",
+        "Xiangyu Miao",
+        "Junsong Wu",
+        "Wei Song",
+        "Shiqiang Zhu",
+        "Chenjia Bai"
+      ],
+      "score": 4,
+      "versioned_id": "2611.25778v1",
+      "figure": {
+        "path": "./data/2026-11-22/figures/2611.25778.webp",
+        "caption": "Figure 7: Real-world in-context adaptation with ECHO. Top: manipulation. The robot performs object manipulation with an added wrist payload; insets highlight the hand–object interactions. Middle three rows: in-context whole-body behaviors. Under payloads attached to its limbs, the robot executes diverse behaviors, including single-leg balance, squatting, sitting, and transitions between standing and prone postures. Bottom: in-context adaptation process. Successive frames show the robot’s postural responses as a payload is attached to and removed from its arm. ECHO uses interaction-derived context to guide dynamics-specific control corrections without test-time parameter updates. Frames within each row progress from left to right."
+      },
+      "attention": {
+        "github_stars": 2,
+        "github_url": "https://github.com/mwondering/echo-bfm"
+      },
+      "code_url": null,
+      "project_url": "https://mwondering.github.io/echo-bfm/",
+      "pdf_url": "https://arxiv.org/pdf/2611.25778"
+    },
+    {
+      "title": "PGX：面向长时程人形机器人移动操作的可物理落地执行框架",
+      "summary": "PGX 把长时程人形机器人移动操作拆成三层：用基于物理谓词的状态机管任务推进，让视觉-语言-动作（VLA）模型只在主动操作阶段专注技能，再用世界坐标锁定维持空间一致性。作者在三个仿真任务和一个使用 Unitree G1 人形机器人的真实任务上验证，阶段推进和任务成功率均有提升。",
+      "lede": "PGX 用物理谓词状态机、阶段化 VLA 技能和世界坐标锁定三层结构，把长时程人形移动操作中的时序与精度问题从单体模型中拆出来，并在 Unitree G1 真机上验证了阶段推进与任务成功率的提升。",
+      "tags": [
+        "长时程移动操作",
+        "人形机器人",
+        "视觉-语言-动作模型"
+      ],
+      "sections": {
+        "background": "视觉-语言-动作（VLA）模型能执行多种单项操作技能，但面对长时程移动操作仍吃力：时间结构、技能切换和精度要求被压进一个单体模型里，难以兼顾。现有做法往往依赖大量训练来隐式学习阶段划分和空间对齐，泛化与恢复能力有限。",
+        "conclusion": "论文在三个仿真任务和一个真实任务上验证 PGX，真实平台为 Unitree G1 人形机器人。结果显示阶段推进和任务成功率均有提升；摘要未给出具体数值和百分点，因此不能引用具体提升幅度。结论适用于长时程移动操作场景，尤其是需要阶段切换、恢复和空间一致性的任务。",
+        "method": "PGX 把时间和精度控制卸载到两个无需训练的经典组件上，让 VLA 专注阶段相关技能。第一层是基于谓词的状态机，用物理谓词控制阶段转换、触发恢复并协调导航与等待；共享的谓词语义把离线示教分段、在线执行和分阶段评估串起来。第二层是 VLA 技能，只在主动操作阶段运行，平坦训练或分阶段训练的模型都聚焦任务相关动作。第三层是世界坐标锁定（WCL），通过基站保持、物体相对定位和世界锚定接触目标维持空间一致性。",
+        "takeaways": "对机器人研究的启发是：不必把所有长时程逻辑都塞进 VLA，可以用可解释的物理谓词状态机承担时序与恢复，用世界坐标锁定保证精度，从而降低对单体模型隐式能力的依赖。局限在于摘要未报告具体成功率数值和消融幅度，谓词设计和世界坐标锁定的工程依赖程度也需在更多平台和任务上检验。"
+      },
+      "i18n": {
+        "zh": {
+          "title": "PGX：面向长时程人形机器人移动操作的可物理落地执行框架",
+          "summary": "PGX 把长时程人形机器人移动操作拆成三层：用基于物理谓词的状态机管任务推进，让视觉-语言-动作（VLA）模型只在主动操作阶段专注技能，再用世界坐标锁定维持空间一致性。作者在三个仿真任务和一个使用 Unitree G1 人形机器人的真实任务上验证，阶段推进和任务成功率均有提升。",
+          "lede": "PGX 用物理谓词状态机、阶段化 VLA 技能和世界坐标锁定三层结构，把长时程人形移动操作中的时序与精度问题从单体模型中拆出来，并在 Unitree G1 真机上验证了阶段推进与任务成功率的提升。",
+          "tags": [
+            "长时程移动操作",
+            "人形机器人",
+            "视觉-语言-动作模型"
+          ],
+          "sections": {
+            "background": "视觉-语言-动作（VLA）模型能执行多种单项操作技能，但面对长时程移动操作仍吃力：时间结构、技能切换和精度要求被压进一个单体模型里，难以兼顾。现有做法往往依赖大量训练来隐式学习阶段划分和空间对齐，泛化与恢复能力有限。",
+            "conclusion": "论文在三个仿真任务和一个真实任务上验证 PGX，真实平台为 Unitree G1 人形机器人。结果显示阶段推进和任务成功率均有提升；摘要未给出具体数值和百分点，因此不能引用具体提升幅度。结论适用于长时程移动操作场景，尤其是需要阶段切换、恢复和空间一致性的任务。",
+            "method": "PGX 把时间和精度控制卸载到两个无需训练的经典组件上，让 VLA 专注阶段相关技能。第一层是基于谓词的状态机，用物理谓词控制阶段转换、触发恢复并协调导航与等待；共享的谓词语义把离线示教分段、在线执行和分阶段评估串起来。第二层是 VLA 技能，只在主动操作阶段运行，平坦训练或分阶段训练的模型都聚焦任务相关动作。第三层是世界坐标锁定（WCL），通过基站保持、物体相对定位和世界锚定接触目标维持空间一致性。",
+            "takeaways": "对机器人研究的启发是：不必把所有长时程逻辑都塞进 VLA，可以用可解释的物理谓词状态机承担时序与恢复，用世界坐标锁定保证精度，从而降低对单体模型隐式能力的依赖。局限在于摘要未报告具体成功率数值和消融幅度，谓词设计和世界坐标锁定的工程依赖程度也需在更多平台和任务上检验。"
+          }
+        },
+        "en": {
+          "title": "PGX: Physically Grounded Execution for Long-Horizon Humanoid Loco-Manipulation",
+          "summary": "PGX decomposes long-horizon humanoid loco-manipulation into three layers: a predicate-based state machine that governs task progression, vision-language-action (VLA) skills that operate only during active manipulation phases, and world-coordinate locking that maintains spatial consistency. The authors validate it on three simulated tasks and one real-world task using a Unitree G1 humanoid robot, reporting improvements in stage progression and task success rates.",
+          "lede": "PGX combines a physical-predicate state machine, stage-wise VLA skills, and world-coordinate locking to separate timing and precision from a monolithic model for long-horizon humanoid loco-manipulation, with validation on a Unitree G1 showing improved stage progression and task success rates.",
+          "tags": [
+            "long-horizon loco-manipulation",
+            "humanoid robots",
+            "vision-language-action models"
+          ],
+          "sections": {
+            "background": "Vision-language-action (VLA) models can execute diverse individual manipulation skills, yet they still struggle with long-horizon loco-manipulation, where temporal structure, skill switching, and precision requirements are tightly coupled inside a monolithic model. Existing approaches often rely on extensive training to implicitly learn phase segmentation and spatial alignment, limiting generalization and recovery.",
+            "conclusion": "The paper validates PGX on three simulated tasks and one real-world task using a Unitree G1 humanoid robot. Results show improvements in stage progression and task success rates; the abstract does not report specific numbers or percentage points, so no exact gains can be cited. The conclusions apply to long-horizon loco-manipulation settings that require phase transitions, recovery, and spatial consistency.",
+            "method": "PGX offloads temporal and precision control to two classical training-free components, letting the VLA focus on stage-specific skills. The first layer is a predicate-based state machine that uses physical predicates to gate phase transitions, trigger recovery, and coordinate navigation and waiting; shared predicate semantics connect offline demonstration segmentation, online execution, and stage-wise evaluation. The second layer consists of VLA skills that operate only within active manipulation phases, with flat or stage-trained models concentrating on task-relevant actions. The third layer, world-coordinate locking (WCL), maintains spatial consistency through base station keeping, object-relative positioning, and world-anchored contact targets.",
+            "takeaways": "The lesson for robotics research is that not all long-horizon logic needs to be packed into a VLA: an interpretable physical-predicate state machine can handle timing and recovery, while world-coordinate locking ensures precision, reducing reliance on the implicit capabilities of a monolithic model. Limitations include the absence of specific success-rate numbers and ablation magnitudes in the abstract, and the engineering dependence of predicate design and world-coordinate locking needs testing on more platforms and tasks."
+          }
+        }
+      },
+      "id": "2611.26596",
+      "original_title": "PGX: Physically Grounded Execution for Long-Horizon Humanoid Loco-Manipulation",
+      "original_summary": "Robotic vision-language-action (VLA) models can execute diverse individual manipulation skills, yet they still struggle with long-horizon loco-manipulation tasks, where temporal structure, skills, and precision are tightly coupled within a monolithic model. We propose Physically Grounded Execution (PGX), a framework that offloads temporal and precision control to two classical training-free components, allowing the VLA to focus on stage-specific skill dynamics. PGX decomposes long-horizon loco-manipulation into three layers: (i) a predicate-based state machine governs task progression, using physical predicates to gate phase transitions, trigger recovery, and coordinate navigation and waiting. Shared predicate semantics connect offline demonstration segmentation, online execution, and stage-wise evaluation; (ii) VLA skills operate within active manipulation phases, with flat or stage-trained models concentrating on task-relevant actions; and (iii) world-coordinate locking (WCL) maintains spatial consistency through base station keeping, object-relative positioning, and world-anchored contact targets. We demonstrate the effectiveness of PGX with extensive experiments conducted on three simulated tasks and one real-world task using a Unitree G1 humanoid robot for long-horizon loco-manipulation, showing improvements in stage progression and task success rates. Project page is available at: https://kl-research.github.io/pgx",
+      "url": "https://arxiv.org/abs/2611.26596v1",
+      "source": "arXiv cs.RO",
+      "published": "2026-11-19T18:52:18+00:00",
+      "authors": [
+        "Kai Lu",
+        "Chenyang Ma",
+        "Ioannis Havoutis"
+      ],
+      "score": 4,
+      "versioned_id": "2611.26596v1",
+      "figure": {
+        "path": "./data/2026-11-22/figures/2611.26596.webp",
+        "caption": "Fig. 6: Real-robot setup. The Unitree G1 with Dex-3 hands and head and wrist cameras at the workstation with the mug, the coffee machine, and the delivery area."
+      },
+      "code_url": null,
+      "project_url": "https://kl-research.github.io/pgx",
+      "pdf_url": "https://arxiv.org/pdf/2611.26596"
+    },
+    {
+      "title": "PhyDEX：通过动态外在灵巧性评估视觉-语言-动作模型物理推理能力的基准",
+      "summary": "现有视觉-语言-动作（VLA）模型基准主要评估夹爪与物体的接触，忽略了重力、摩擦、惯性和质量分布等环境交互，难以判断策略是否真正理解物理。为此，作者提出PhyDEX——一个抛掷基准，要求机器人推断物体质量、质心和摩擦，将物体投送到运动学工作空间之外。PhyDEX包含9个任务、100个场景的3.5万条轨迹（143小时），覆盖均匀、不规则和动态质量物体，以及静态、多目标和移动目标。数据由全自动流水线生成，结合抓取生成、运动规划和随机物理属性下的闭环抛掷优化。评估GR00T N1.7、DynamicVLA和ForceVLA三个代表性VLA，成功率均低于3%。分析揭示两个瓶颈：预训练模型鲁棒性不足导致多数失败发生在抛掷前；物理盲性——提供真实物理属性可使成功率约翻倍。在人形机器人和真实世界实验中也观察到相同失败模式。",
+      "lede": "PhyDEX基准通过抛掷任务揭示当前VLA模型物理推理能力不足，成功率低于3%，并提供物理属性后成功率约翻倍。",
+      "tags": [
+        "视觉-语言-动作模型",
+        "物理推理基准",
+        "动态外在灵巧性"
+      ],
+      "sections": {
+        "background": "视觉-语言-动作（VLA）模型在语言条件机器人操作中进展迅速，但现有基准主要评估夹爪与物体的接触，很少考察物体如何通过重力、摩擦、惯性和质量分布与环境交互。因此，当前策略是否真正理解物理，还是仅从训练数据中插值，仍不清楚。",
+        "conclusion": "在PhyDEX上评估GR00T N1.7、DynamicVLA和ForceVLA，三者成功率均低于3%。分析发现两个关键瓶颈：预训练模型鲁棒性有限，导致大多数失败发生在抛掷动作之前；以及物理盲性，提供真实物理属性后成功率约翻倍。在人形机器人和真实世界实验中观察到相同失败模式。",
+        "method": "PhyDEX采用抛掷任务作为动态外在灵巧性的测试场景：机器人需推断物体质量、质心和摩擦，将物体投送到运动学工作空间之外的目标。基准包含9个任务、100个场景的3.5万条轨迹（143小时），覆盖均匀、不规则和动态质量物体，以及静态、多目标和移动目标。所有数据由可扩展的全自动流水线生成，该流水线结合抓取生成、运动规划，并在随机物理属性下进行闭环抛掷优化。",
+        "takeaways": "对机器人研究的启发是：仅靠视觉-语言-动作模型在接触丰富任务上的表现不足以证明物理理解；需要显式建模或提供物理属性以提升策略的物理基础。局限在于当前基准聚焦抛掷这一动态外在灵巧性任务，结论适用范围限于此类场景；且真实物理属性在部署时通常不可直接获得，如何让模型自主推断仍是待解问题。"
+      },
+      "i18n": {
+        "zh": {
+          "title": "PhyDEX：通过动态外在灵巧性评估视觉-语言-动作模型物理推理能力的基准",
+          "summary": "现有视觉-语言-动作（VLA）模型基准主要评估夹爪与物体的接触，忽略了重力、摩擦、惯性和质量分布等环境交互，难以判断策略是否真正理解物理。为此，作者提出PhyDEX——一个抛掷基准，要求机器人推断物体质量、质心和摩擦，将物体投送到运动学工作空间之外。PhyDEX包含9个任务、100个场景的3.5万条轨迹（143小时），覆盖均匀、不规则和动态质量物体，以及静态、多目标和移动目标。数据由全自动流水线生成，结合抓取生成、运动规划和随机物理属性下的闭环抛掷优化。评估GR00T N1.7、DynamicVLA和ForceVLA三个代表性VLA，成功率均低于3%。分析揭示两个瓶颈：预训练模型鲁棒性不足导致多数失败发生在抛掷前；物理盲性——提供真实物理属性可使成功率约翻倍。在人形机器人和真实世界实验中也观察到相同失败模式。",
+          "lede": "PhyDEX基准通过抛掷任务揭示当前VLA模型物理推理能力不足，成功率低于3%，并提供物理属性后成功率约翻倍。",
+          "tags": [
+            "视觉-语言-动作模型",
+            "物理推理基准",
+            "动态外在灵巧性"
+          ],
+          "sections": {
+            "background": "视觉-语言-动作（VLA）模型在语言条件机器人操作中进展迅速，但现有基准主要评估夹爪与物体的接触，很少考察物体如何通过重力、摩擦、惯性和质量分布与环境交互。因此，当前策略是否真正理解物理，还是仅从训练数据中插值，仍不清楚。",
+            "conclusion": "在PhyDEX上评估GR00T N1.7、DynamicVLA和ForceVLA，三者成功率均低于3%。分析发现两个关键瓶颈：预训练模型鲁棒性有限，导致大多数失败发生在抛掷动作之前；以及物理盲性，提供真实物理属性后成功率约翻倍。在人形机器人和真实世界实验中观察到相同失败模式。",
+            "method": "PhyDEX采用抛掷任务作为动态外在灵巧性的测试场景：机器人需推断物体质量、质心和摩擦，将物体投送到运动学工作空间之外的目标。基准包含9个任务、100个场景的3.5万条轨迹（143小时），覆盖均匀、不规则和动态质量物体，以及静态、多目标和移动目标。所有数据由可扩展的全自动流水线生成，该流水线结合抓取生成、运动规划，并在随机物理属性下进行闭环抛掷优化。",
+            "takeaways": "对机器人研究的启发是：仅靠视觉-语言-动作模型在接触丰富任务上的表现不足以证明物理理解；需要显式建模或提供物理属性以提升策略的物理基础。局限在于当前基准聚焦抛掷这一动态外在灵巧性任务，结论适用范围限于此类场景；且真实物理属性在部署时通常不可直接获得，如何让模型自主推断仍是待解问题。"
+          }
+        },
+        "en": {
+          "title": "PhyDEX: A Benchmark for Physical Reasoning in Vision-Language-Action Models via Dynamic Extrinsic Dexterity",
+          "summary": "Existing benchmarks for Vision-Language-Action (VLA) models mainly evaluate gripper-object contact and largely ignore how objects interact with the environment through gravity, friction, inertia, and mass distribution, leaving unclear whether policies truly understand physics or merely interpolate from training data. To address this gap, the authors introduce PhyDEX, a throwing benchmark that requires a robot to infer an object's mass, center of mass, and friction to send it to a destination beyond its kinematic workspace. PhyDEX contains 35K trajectories (143 hours) across nine tasks and 100 scenes, covering uniform, irregular, and dynamic-mass objects with static, multiple, and moving destinations. All data are generated by a scalable, fully automatic pipeline that combines grasp generation, motion planning, and closed-loop throw optimization under randomized physical properties. Evaluating three representative VLAs—GR00T N1.7, DynamicVLA, and ForceVLA—all achieve success rates below 3%. Analysis reveals two key bottlenecks: limited robustness of pretrained models, causing most failures before the throw, and physical blindness, as providing ground-truth physical properties roughly doubles success. Experiments on a humanoid robot and in the real world show the same failure patterns.",
+          "lede": "The PhyDEX benchmark reveals that current VLA models lack physical reasoning through a throwing task, with success rates below 3% and roughly double when physical properties are provided.",
+          "tags": [
+            "Vision-Language-Action Models",
+            "Physical Reasoning Benchmark",
+            "Dynamic Extrinsic Dexterity"
+          ],
+          "sections": {
+            "background": "Vision-Language-Action (VLA) models have advanced rapidly in language-conditioned robotic manipulation, yet existing benchmarks mainly evaluate gripper-object contact and largely ignore how objects interact with the environment through gravity, friction, inertia, and mass distribution. As a result, it remains unclear whether current policies truly understand physics or merely interpolate from their training data.",
+            "conclusion": "Evaluating GR00T N1.7, DynamicVLA, and ForceVLA on PhyDEX, all achieve success rates below 3%. Analysis reveals two key bottlenecks: limited robustness of pretrained models, which causes most failures before the throw, and physical blindness, as providing ground-truth physical properties roughly doubles success. The same failure patterns are observed on a humanoid robot and in the real world.",
+            "method": "PhyDEX uses a throwing task as a testbed for dynamic extrinsic dexterity: the robot must infer an object's mass, center of mass, and friction to send it to a destination beyond its kinematic workspace. The benchmark contains 35K trajectories (143 hours) across nine tasks and 100 scenes, covering uniform, irregular, and dynamic-mass objects with static, multiple, and moving destinations. All data are generated by a scalable, fully automatic pipeline that combines grasp generation, motion planning, and closed-loop throw optimization under randomized physical properties.",
+            "takeaways": "For robotics research, the implication is that performance on contact-rich tasks alone does not demonstrate physical understanding in VLA models; explicitly modeling or providing physical properties is needed to improve physical grounding. A limitation is that the current benchmark focuses on throwing as a dynamic extrinsic dexterity task, so conclusions are scoped to such scenarios; moreover, ground-truth physical properties are typically unavailable at deployment, and enabling models to infer them autonomously remains an open problem."
+          }
+        }
+      },
+      "id": "2611.26565",
+      "original_title": "PhyDEX: A Benchmark for Physical Reasoning in Vision-Language-Action Models via Dynamic Extrinsic Dexterity",
+      "original_summary": "Vision-Language-Action (VLA) models have advanced rapidly in language-conditioned robotic manipulation, yet existing benchmarks mainly evaluate gripper--object contact and largely ignore how objects interact with the environment through gravity, friction, inertia, and mass distribution. As a result, it remains unclear whether current policies truly understand physics or merely interpolate from their training data. We address this gap through the lens of dynamic extrinsic dexterity and introduce PhyDEX, a throwing benchmark in which a robot must infer an object's mass, center of mass, and friction to send it to a destination beyond its kinematic workspace. PhyDEX contains 35K trajectories (143 hours) across nine tasks and 100 scenes, covering uniform, irregular, and dynamic-mass objects with static, multiple, and moving destinations. All data are generated by a scalable, fully automatic pipeline that combines grasp generation, motion planning, and closed-loop throw optimization under randomized physical properties. We evaluate three representative VLAs, GR00T N1.7, DynamicVLA, and ForceVLA, and find that all achieve success rates below 3\\%. Our analysis reveals two key bottlenecks: limited robustness of pretrained models, which causes most failures before the throw, and physical blindness, as providing ground-truth physical properties roughly doubles success. Experiments on a humanoid robot and in the real world show the same failure patterns. We hope PhyDEX will drive the development of physically grounded robot policies.",
+      "url": "https://arxiv.org/abs/2611.26565v1",
+      "source": "arXiv cs.RO",
+      "published": "2026-11-19T18:33:43+00:00",
+      "authors": [
+        "Hao Vo",
+        "Taisei Hanyu",
+        "Yuki Ikebe",
+        "Pham Tri Quang",
+        "Sreevenkata Anjani Tishita Godavarthi",
+        "Nghi D. Q. Bui",
+        "Daniel Sonntag",
+        "Chase Rainwater",
+        "Duy Minh Ho Nguyen",
+        "Anh Nguyen",
+        "Ngan Le"
+      ],
+      "score": 4,
+      "versioned_id": "2611.26565v1",
+      "figure": {
+        "path": "./data/2026-11-22/figures/2611.26565.webp",
+        "caption": "Figure 5: Real-world experimental setup. A UR10e arm with a Robotiq 2F-85 gripper and a wrist-mounted F/T sensor, observed by a base camera (RealSense D455) and a wrist camera (RealSense D405)."
+      },
+      "code_url": null,
+      "project_url": "https://uark-aicv.github.io/PhyDEX/",
+      "pdf_url": "https://arxiv.org/pdf/2611.26565"
+    }
+  ]
+}
