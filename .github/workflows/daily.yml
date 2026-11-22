@@ -3,7 +3,7 @@ name: Build and publish robotics digest
 on:
   workflow_dispatch:
   schedule:
-    - cron: "30 6 * * *"
+    - cron: "17 0 * * *"
 
 concurrency:
   group: daily-digest-pages
