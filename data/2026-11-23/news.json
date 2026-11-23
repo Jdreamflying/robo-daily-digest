@@ -1,0 +1,81 @@
+{
+  "date": "2026-11-23",
+  "total_scanned": 2908,
+  "total_unique": 7,
+  "window_count": 84,
+  "window_hours": 48,
+  "cutoff": "2026-11-21T07:44:31.299336+00:00",
+  "window_end": "2026-11-23T07:44:31.299336+00:00",
+  "scored_count": 7,
+  "qualified_count": 1,
+  "mode": "api",
+  "items": [
+    {
+      "title": "Genesis 发布 v1.5.0，新增动态视觉纹理并改进第三方渲染后端支持",
+      "summary": "Genesis v1.5.0 增加了对动态视觉纹理的支持，并改进了第三方渲染后端的互操作性，同时通过惰性刷新降低了步骤间调用设置器的开销。",
+      "lede": "Genesis 发布 v1.5.0，新增动态视觉纹理支持，改进第三方渲染后端互操作性，并优化设置器调用开销。",
+      "tags": [
+        "Genesis",
+        "动态视觉纹理",
+        "渲染后端"
+      ],
+      "analysis": [
+        "Genesis v1.5.0 新增了动态视觉纹理支持，可用于动画屏幕、绘画等场景；同时提供了稳定的 API 和协议，以提升第三方渲染后端的互操作性。",
+        "该版本通过惰性刷新仅在读取时更新过时的派生量，大幅降低了步骤间调用设置器的成本，并修复了多个 bug，如极分解返回反射、网格缓存跨版本损坏等问题。",
+        "目前尚不清楚动态视觉纹理的具体性能影响和第三方渲染后端互操作层的兼容性范围，这些信息未在发布说明中详细公开。"
+      ],
+      "i18n": {
+        "zh": {
+          "title": "Genesis 发布 v1.5.0，新增动态视觉纹理并改进第三方渲染后端支持",
+          "summary": "Genesis v1.5.0 增加了对动态视觉纹理的支持，并改进了第三方渲染后端的互操作性，同时通过惰性刷新降低了步骤间调用设置器的开销。",
+          "lede": "Genesis 发布 v1.5.0，新增动态视觉纹理支持，改进第三方渲染后端互操作性，并优化设置器调用开销。",
+          "tags": [
+            "Genesis",
+            "动态视觉纹理",
+            "渲染后端"
+          ],
+          "analysis": [
+            "Genesis v1.5.0 新增了动态视觉纹理支持，可用于动画屏幕、绘画等场景；同时提供了稳定的 API 和协议，以提升第三方渲染后端的互操作性。",
+            "该版本通过惰性刷新仅在读取时更新过时的派生量，大幅降低了步骤间调用设置器的成本，并修复了多个 bug，如极分解返回反射、网格缓存跨版本损坏等问题。",
+            "目前尚不清楚动态视觉纹理的具体性能影响和第三方渲染后端互操作层的兼容性范围，这些信息未在发布说明中详细公开。"
+          ]
+        },
+        "en": {
+          "title": "Genesis Releases v1.5.0 with Dynamic Visual Textures and Improved Third-Party Rendering Backend Support",
+          "summary": "Genesis v1.5.0 adds support for dynamic visual textures and improves interoperability with third-party rendering backends, while reducing the cost of calling setters between steps through lazy refreshing.",
+          "lede": "Genesis v1.5.0 adds dynamic visual textures, improves third-party rendering backend interoperability, and optimizes setter call overhead.",
+          "tags": [
+            "Genesis",
+            "dynamic visual textures",
+            "rendering backends"
+          ],
+          "analysis": [
+            "Genesis v1.5.0 introduces dynamic visual textures, useful for applications like animated screens and painting, and provides an efficient interoperability layer with a stable API and protocol for third-party rendering backends.",
+            "The release dramatically reduces the cost of calling setters between steps by lazily refreshing stale derived quantities only as they are read, and fixes several bugs such as polar decomposition returning a reflection and mesh caches breaking across dependency versions.",
+            "The specific performance impact of dynamic visual textures and the compatibility scope of the third-party rendering backend interoperability layer are not detailed in the release notes and remain unverified."
+          ]
+        }
+      },
+      "id": "5b28e842801e194de52e94c0",
+      "original_title": "Genesis v1.5.0",
+      "original_summary": "This releases adds supports of dynamic visual textures, which is useful for a wide range of applications from animated screens but to painting. Besides, support of third-party rendering backends has been greatly improved by providing a efficient interoperability layer with a stable API and protocol. Finally, the cost of calling setters between steps has been dramatically reduced by refreshing stale derived quantities lazily only as they are read. Breaking / Changing [FEATURE] Add debug view mode and dynamic vertices of visual geoms. (@duburcqa) (#3849) [MISC] Interpret unset or zero effort in URDF as unbounded. (@jih0-kim) (#3503) New Features Add support of dynamic visual texture. (@Milotrince) (#3828⁠) Bug fixes Fix polar decomposition returning a reflection for matrices of negative det. (@duburcqa) (#3856) Fix decimating a mesh with duplicate faces. (@realquantumcookie) (#3491) Fix liquid scenes hanging on macOS in the debug view. (@duburcqa) (#3860) Fix the gradient of the orientation set on a fixed-base entity. (@duburcqa) (#3867) Fix debug mode leaking its settings of torch into later sessions. (@duburcqa) (#3869) Fix mesh caches breaking across dependency versions. (@Milotrince) (#3672) Fix animate mistiming frames and drop moviepy. (@Milotrince) (#3858) Fix crashes on arrays loaded from the on-disk mesh caches. (@Milotrince) (#3874) Fix recorders raising at exit after stop_recording. (@b84330808) (#3905) Fix thin-lens cameras ignoring their focal length. (@duburcqa) (#3870) Fix force fields ignoring their direction or deactivation, and activate them once created. (@MohammadHijjawi97) (#3486) Fix USD parsing of angular joint stiffness and damping. (@jeongseok-meta) (#3872) Miscellaneous Fix type checkers unable to resolve genesis dtypes. (@Milotrince) (#3645) Migrate examples and tests off deprecated visual options. (@duburcqa) (#3855) Keep the poses of fixed root links apart from the link poses derived from the state. (@duburcqa) (#3862) Add support of draw_debug for camera sensors. (@duburcqa) (#3868) Let solver getters return a view on request. (@duburcqa) (#3909) Refresh stale derived quantities lazily as they are read. (@duburcqa) (#3863)",
+      "url": "https://github.com/Genesis-Embodied-AI/genesis-world/releases/tag/v1.5.0",
+      "source": "Genesis Releases",
+      "published": "2026-11-23T02:15:29+00:00",
+      "authors": [],
+      "score": 4,
+      "category": "robotics",
+      "engagement": {
+        "github_stars": 30297
+      },
+      "image": {
+        "path": "./data/2026-11-23/news_images/5b28e842801e194de52e94c0.webp",
+        "width": 1188,
+        "height": 800,
+        "source_url": "https://github.com/Genesis-Embodied-AI/genesis-world/releases/tag/v1.5.0",
+        "image_url": "https://private-user-images.githubusercontent.com/17752950/715400004-3b305ecb-11e1-470d-9dac-4c6649f11c66.gif?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3OTU0MjAyOTksIm5iZiI6MTc5NTQxOTk5OSwicGF0aCI6Ii8xNzc1Mjk1MC83MTU0MDAwMDQtM2IzMDVlY2ItMTFlMS00NzBkLTlkYWMtNGM2NjQ5ZjExYzY2LmdpZj9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjExMjMlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYxMTIzVDA3NDYzOVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWZmMmI1YmZkN2Y2ODU2ZjlkZGE5MDRlYzgxOWE5YzcyODc0YmQ4OGMwYWRjODQ4ZTFmZTQzZDNjMWUyMTRjZjImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnJlc3BvbnNlLWNvbnRlbnQtdHlwZT1pbWFnZSUyRmdpZiJ9.FoNidNFLevRZrqjqF2lPlFMMQw2VyUFDJJpBEpUkdV8",
+        "alt": "dynamic textures"
+      }
+    }
+  ]
+}

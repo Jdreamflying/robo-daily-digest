@@ -1,0 +1,603 @@
+{
+  "date": "2026-11-23",
+  "total_scanned": 74,
+  "total_new": 74,
+  "total_unique": 74,
+  "paper_target_date": "2026-11-20",
+  "paper_source_date": "2026-11-20",
+  "paper_category": "cs.RO",
+  "scored_count": 74,
+  "qualified_count": 74,
+  "mode": "api",
+  "items": [
+    {
+      "title": "BeyondEgo：通过人形机器人自我-外部视角前瞻，学习超越自我中心感知的行动",
+      "summary": "BeyondEgo 针对人形机器人全身移动操作中自我中心视觉-语言-动作（VLA）策略难以捕捉身体与场景关系、且单纯动作模仿缺乏未来场景监督的问题，在空间和时间两个维度扩展 VLA 感知。空间上，用冻结的 DINOv3 编码同步的外部视角并拼接到自我中心 VLM 词元以条件化动作专家；时间上，用双视角未来观测作为特权监督，训练任务条件 VLM 特征上的残差适配器，并由前瞻专家回归 0.6 秒后的双视角 DINOv3 表示。部署时丢弃前瞻专家，仅保留 420 万参数适配器。作者还提出 HELM，据称是首个具有同步自我中心与外部视角、覆盖五项全身任务的闭环人形移动操作基准。在 HELM 上，分布内成功率从 48.0% 提升到 92.0%，在 200 个布局、资产、材质和光照变化的留出场景上从 23.5% 提升到 65.0%；消融显示双视角 DINOv3 前瞻取得最佳迁移结果。",
+      "lede": "BeyondEgo 用同步外部视角和未来双视角表示监督扩展人形机器人 VLA 策略，在 HELM 基准上将分布内成功率从 48.0% 提升至 92.0%。",
+      "tags": [
+        "人形机器人移动操作",
+        "视觉-语言-动作策略",
+        "自我-外部视角学习"
+      ],
+      "sections": {
+        "background": "人形机器人移动操作需要协调全身运动来完成复杂环境中的操作任务。仅依赖自我中心视觉的 VLA 策略可能遗漏关键的身体-场景关系，而单纯的动作模仿没有为未来场景演化提供显式监督，导致策略在分布变化下泛化不足。",
+        "conclusion": "在 HELM 基准上，BeyondEgo 将分布内成功率从 48.0% 提高到 92.0%，在 200 个含布局、资产、材质和光照变化的留出场景上从 23.5% 提高到 65.0%。消融实验表明，双视角 DINOv3 前瞻带来最佳迁移效果。结论适用于该闭环人形移动操作基准及所测试的分布变化类型。",
+        "method": "空间上，将同步外部视角经冻结 DINOv3 编码后的词元与自我中心 VLM 词元拼接，用于条件化动作专家。时间上，以双视角未来观测作为特权监督，训练任务条件 VLM 特征上的残差适配器；前瞻专家回归 0.6 秒后的双视角 DINOv3 表示。部署时移除前瞻专家，仅保留 420 万参数的适配器。",
+        "takeaways": "该工作说明，引入外部视角和未来表示监督可在不增加部署时前瞻模块的情况下显著提升人形移动操作的鲁棒性，为 VLA 策略补充身体-场景关系与时间前瞻提供了可行路径。局限在于结论主要基于 HELM 基准和特定分布变化，真实世界泛化仍需进一步验证。"
+      },
+      "i18n": {
+        "zh": {
+          "title": "BeyondEgo：通过人形机器人自我-外部视角前瞻，学习超越自我中心感知的行动",
+          "summary": "BeyondEgo 针对人形机器人全身移动操作中自我中心视觉-语言-动作（VLA）策略难以捕捉身体与场景关系、且单纯动作模仿缺乏未来场景监督的问题，在空间和时间两个维度扩展 VLA 感知。空间上，用冻结的 DINOv3 编码同步的外部视角并拼接到自我中心 VLM 词元以条件化动作专家；时间上，用双视角未来观测作为特权监督，训练任务条件 VLM 特征上的残差适配器，并由前瞻专家回归 0.6 秒后的双视角 DINOv3 表示。部署时丢弃前瞻专家，仅保留 420 万参数适配器。作者还提出 HELM，据称是首个具有同步自我中心与外部视角、覆盖五项全身任务的闭环人形移动操作基准。在 HELM 上，分布内成功率从 48.0% 提升到 92.0%，在 200 个布局、资产、材质和光照变化的留出场景上从 23.5% 提升到 65.0%；消融显示双视角 DINOv3 前瞻取得最佳迁移结果。",
+          "lede": "BeyondEgo 用同步外部视角和未来双视角表示监督扩展人形机器人 VLA 策略，在 HELM 基准上将分布内成功率从 48.0% 提升至 92.0%。",
+          "tags": [
+            "人形机器人移动操作",
+            "视觉-语言-动作策略",
+            "自我-外部视角学习"
+          ],
+          "sections": {
+            "background": "人形机器人移动操作需要协调全身运动来完成复杂环境中的操作任务。仅依赖自我中心视觉的 VLA 策略可能遗漏关键的身体-场景关系，而单纯的动作模仿没有为未来场景演化提供显式监督，导致策略在分布变化下泛化不足。",
+            "conclusion": "在 HELM 基准上，BeyondEgo 将分布内成功率从 48.0% 提高到 92.0%，在 200 个含布局、资产、材质和光照变化的留出场景上从 23.5% 提高到 65.0%。消融实验表明，双视角 DINOv3 前瞻带来最佳迁移效果。结论适用于该闭环人形移动操作基准及所测试的分布变化类型。",
+            "method": "空间上，将同步外部视角经冻结 DINOv3 编码后的词元与自我中心 VLM 词元拼接，用于条件化动作专家。时间上，以双视角未来观测作为特权监督，训练任务条件 VLM 特征上的残差适配器；前瞻专家回归 0.6 秒后的双视角 DINOv3 表示。部署时移除前瞻专家，仅保留 420 万参数的适配器。",
+            "takeaways": "该工作说明，引入外部视角和未来表示监督可在不增加部署时前瞻模块的情况下显著提升人形移动操作的鲁棒性，为 VLA 策略补充身体-场景关系与时间前瞻提供了可行路径。局限在于结论主要基于 HELM 基准和特定分布变化，真实世界泛化仍需进一步验证。"
+          }
+        },
+        "en": {
+          "title": "BeyondEgo: Learning to Act Beyond Egocentric Perception via Humanoid Ego-Exo Foresight",
+          "summary": "BeyondEgo addresses the difficulty of humanoid loco-manipulation with egocentric vision-language-action (VLA) policies, which can miss critical body-scene relationships and lack explicit supervision for future scene evolution beyond action imitation. The method extends VLA perception in space and time. Spatially, a synchronized exocentric view is encoded with frozen DINOv3 and concatenated with egocentric VLM tokens to condition the action expert. Temporally, future observations from both views serve as privileged supervision for a residual adapter on task-conditioned VLM features, with a foresight expert regressing DINOv3 representations of both views 0.6s ahead. At deployment, the foresight expert is discarded and the 4.2M-parameter adapter is retained. The authors also introduce HELM, described as the first closed-loop humanoid loco-manipulation benchmark with synchronized egocentric and exocentric views across five whole-body tasks. On HELM, BeyondEgo improves success from 48.0% to 92.0% in distribution and from 23.5% to 65.0% on 200 held-out scenes with layout, asset, material, and lighting shifts; ablations show that dual-view DINOv3 foresight yields the best transfer results.",
+          "lede": "BeyondEgo extends humanoid VLA policies with a synchronized exocentric view and future dual-view representation supervision, raising in-distribution success on HELM from 48.0% to 92.0%.",
+          "tags": [
+            "Humanoid Loco-Manipulation",
+            "Vision-Language-Action Policies",
+            "Ego-Exo Representation Learning"
+          ],
+          "sections": {
+            "background": "Humanoid loco-manipulation requires coordinating whole-body motion to perform manipulation tasks in complex environments. Egocentric-only VLA policies can miss critical body-scene relationships, and action imitation alone provides no explicit supervision for future scene evolution, limiting generalization under distribution shifts.",
+            "conclusion": "On the HELM benchmark, BeyondEgo raises in-distribution success from 48.0% to 92.0% and improves success from 23.5% to 65.0% on 200 held-out scenes with layout, asset, material, and lighting shifts. Ablations show that dual-view DINOv3 foresight yields the best transfer results. The conclusions apply to this closed-loop humanoid loco-manipulation benchmark and the tested shift types.",
+            "method": "Spatially, tokens from a synchronized exocentric view encoded by frozen DINOv3 are concatenated with egocentric VLM tokens to condition the action expert. Temporally, future observations from both views provide privileged supervision for a residual adapter on task-conditioned VLM features, and a foresight expert regresses DINOv3 representations of both views 0.6s ahead. At deployment, the foresight expert is removed and only the 4.2M-parameter adapter is kept.",
+            "takeaways": "The work shows that adding an exocentric view and future-representation supervision can substantially improve humanoid loco-manipulation robustness without keeping a foresight module at deployment, offering a practical way to supply VLA policies with body-scene relationships and temporal foresight. Limitations include reliance on the HELM benchmark and specific distribution shifts, leaving real-world generalization to be further validated."
+          }
+        }
+      },
+      "id": "2611.27047",
+      "original_title": "BeyondEgo: Learning to Act Beyond Egocentric Perception via Humanoid Ego-Exo Foresight",
+      "original_summary": "Humanoid loco-manipulation requires coordinating whole-body motion to perform manipulation tasks in complex environments. Yet egocentric vision-language-action (VLA) policies can miss critical body--scene relationships, and action imitation alone provides no explicit supervision for future scene evolution. We propose BeyondEgo to extend VLA perception in space and time. Spatially, we encode a synchronized exocentric view with frozen DINOv3 and concatenate the resulting tokens with egocentric VLM tokens to condition the action expert. Temporally, we use future observations from both views as privileged supervision for a residual adapter on task-conditioned VLM features. A foresight expert regresses DINOv3 representations of both views 0.6s ahead. At deployment, the foresight expert is discarded and the 4.2M-parameter adapter is retained. We also introduce HELM, to our knowledge, the first closed-loop humanoid loco-manipulation benchmark with synchronized egocentric and exocentric views across five whole-body tasks.On HELM, BeyondEgo improves success from 48.0% to 92.0% in distribution and from 23.5% to 65.0% on 200 held-out scenes with layout, asset, material, and lighting shifts. Ablations show that dual-view DINOv3 foresight yields the best transfer results.",
+      "url": "https://arxiv.org/abs/2611.27047v1",
+      "source": "arXiv cs.RO",
+      "published": "2026-11-20T03:18:23+00:00",
+      "authors": [
+        "Zhaoshan Yang",
+        "Chenglei Li",
+        "Haoyu Lei",
+        "Yutao Zhang",
+        "Yuyu Yang",
+        "Zhuo Chen",
+        "Ling Ding",
+        "Zhongxing Ren",
+        "Yi Gu",
+        "Heyang Zhang",
+        "Peng Su",
+        "Jin Pan"
+      ],
+      "score": 4,
+      "versioned_id": "2611.27047v1",
+      "figure": {
+        "path": "./data/2026-11-23/figures/2611.27047.webp",
+        "caption": "Figure 2: BeyondEgo architecture. Frozen VLM and DINOv3 encoders process the ego image with the instruction and the exo image, respectively. Adapted ego tokens, projected exo tokens, and robot state condition the action expert. Hand and arm targets are executed directly, while AMO translates body commands into waist and leg joint targets. During training, the foresight expert predicts dual-view features 0.6 s ahead, supervised by frozen DINOv3 targets through token-wise cosine loss. The foresight branch is removed at deployment."
+      },
+      "code_url": null,
+      "project_url": null,
+      "pdf_url": "https://arxiv.org/pdf/2611.27047"
+    },
+    {
+      "title": "EgoSurgHands：面向开放手术训练的第一人称3D手部姿态数据集与基准",
+      "summary": "EgoSurgHands 是首个真实采集的第一人称（以佩戴者视角拍摄）开放手术训练手部3D姿态数据集与评测基准，包含55段操作录像中的41,909条训练手部实例和13段留出录像中经人工校验的9,476条评测数据，覆盖13项任务、3种手套颜色和4名受训者。基准评测了8种零样本方法，其中 JointTransformer 表现最佳，误差为14.95毫米；第一人称预训练模型在未见佩戴者上的迁移效果更好，但手术场景与通用场景之间仍存在明显差距，常用工具 MediaPipe Hands 仅在24.1%的评测帧中检测到手。",
+      "lede": "首个真实采集的第一人称开放手术训练3D手部姿态数据集与基准，揭示第一人称预训练的迁移优势与手术场景的显著领域差距。",
+      "tags": [
+        "第一人称3D手部姿态",
+        "手术训练数据集",
+        "机器人从示范学习"
+      ],
+      "sections": {
+        "background": "手术技能评估、增强现实（AR）引导和机器人从示范中学习，都需要精确追踪外科医生的手部三维姿态。然而现有手术数据集都没有提供真实采集的第一人称关节式3D手部姿态，导致相关方法难以在手术场景中直接训练和验证。",
+        "conclusion": "在8种零样本方法的评测中，JointTransformer 表现最佳，PA-MPJPE（对齐后的平均关节位置误差）为14.95毫米。第一人称预训练与更强的跨佩戴者迁移相关：WildHands 和 JointTransformer 的 PA-MPJPE 分别比非第一人称预训练的 HaMeR 低18%和40%。但手术领域差距仍然显著，广泛使用的 MediaPipe Hands 仅在24.1%的评测行中检测到手。作为基线，在冻结主干上加入58K参数的残差校正器（JRN），两个第一人称预训练主干在留出佩戴者上达到10.96–14.85毫米的 PA-MPJPE。",
+        "method": "数据由多传感器眼镜采集，每帧包含相机内参、带逐手置信度的手部关键点、时间戳和眼动注视，并在SLAM成功时提供SLAM外参。评测标签融合了传感器伪真值、逐帧人工交叉复核、外科医生对存疑样本的裁定，以及独立的多视角三角化参考。评测采用同一语料内按操作流程不重叠的划分，并设置留一佩戴者协议以测试未见受训者。",
+        "takeaways": "该工作说明第一人称预训练有助于手部姿态估计向手术场景迁移，但通用模型直接零样本用于手术仍不可靠，MediaPipe Hands 的低检测率尤其提示不能直接部署。数据集规模与受训者多样性有限，结论主要适用于合成垫上的开放手术训练场景；JRN 基线也表明轻量校正可在冻结主干上进一步降低误差。"
+      },
+      "i18n": {
+        "zh": {
+          "title": "EgoSurgHands：面向开放手术训练的第一人称3D手部姿态数据集与基准",
+          "summary": "EgoSurgHands 是首个真实采集的第一人称（以佩戴者视角拍摄）开放手术训练手部3D姿态数据集与评测基准，包含55段操作录像中的41,909条训练手部实例和13段留出录像中经人工校验的9,476条评测数据，覆盖13项任务、3种手套颜色和4名受训者。基准评测了8种零样本方法，其中 JointTransformer 表现最佳，误差为14.95毫米；第一人称预训练模型在未见佩戴者上的迁移效果更好，但手术场景与通用场景之间仍存在明显差距，常用工具 MediaPipe Hands 仅在24.1%的评测帧中检测到手。",
+          "lede": "首个真实采集的第一人称开放手术训练3D手部姿态数据集与基准，揭示第一人称预训练的迁移优势与手术场景的显著领域差距。",
+          "tags": [
+            "第一人称3D手部姿态",
+            "手术训练数据集",
+            "机器人从示范学习"
+          ],
+          "sections": {
+            "background": "手术技能评估、增强现实（AR）引导和机器人从示范中学习，都需要精确追踪外科医生的手部三维姿态。然而现有手术数据集都没有提供真实采集的第一人称关节式3D手部姿态，导致相关方法难以在手术场景中直接训练和验证。",
+            "conclusion": "在8种零样本方法的评测中，JointTransformer 表现最佳，PA-MPJPE（对齐后的平均关节位置误差）为14.95毫米。第一人称预训练与更强的跨佩戴者迁移相关：WildHands 和 JointTransformer 的 PA-MPJPE 分别比非第一人称预训练的 HaMeR 低18%和40%。但手术领域差距仍然显著，广泛使用的 MediaPipe Hands 仅在24.1%的评测行中检测到手。作为基线，在冻结主干上加入58K参数的残差校正器（JRN），两个第一人称预训练主干在留出佩戴者上达到10.96–14.85毫米的 PA-MPJPE。",
+            "method": "数据由多传感器眼镜采集，每帧包含相机内参、带逐手置信度的手部关键点、时间戳和眼动注视，并在SLAM成功时提供SLAM外参。评测标签融合了传感器伪真值、逐帧人工交叉复核、外科医生对存疑样本的裁定，以及独立的多视角三角化参考。评测采用同一语料内按操作流程不重叠的划分，并设置留一佩戴者协议以测试未见受训者。",
+            "takeaways": "该工作说明第一人称预训练有助于手部姿态估计向手术场景迁移，但通用模型直接零样本用于手术仍不可靠，MediaPipe Hands 的低检测率尤其提示不能直接部署。数据集规模与受训者多样性有限，结论主要适用于合成垫上的开放手术训练场景；JRN 基线也表明轻量校正可在冻结主干上进一步降低误差。"
+          }
+        },
+        "en": {
+          "title": "EgoSurgHands: An Egocentric 3D Hand Pose Dataset and Benchmark for Open Surgery Training",
+          "summary": "EgoSurgHands is the first dataset and benchmark of real-captured egocentric articulated 3D hand pose for open surgery training on synthetic pads. It contains 41,909 training hand-instance rows from 55 procedure recordings and 9,476 human-validated evaluation rows from 13 held-out recordings, spanning 13 tasks, 3 glove colors, and 4 trainees. Across eight zero-shot methods, JointTransformer performed best with 14.95 mm error; egocentric pretraining was associated with stronger transfer to unseen wearers, yet a substantial surgical domain gap remains, and MediaPipe Hands detected a hand in only 24.1% of evaluation rows.",
+          "lede": "The first real-captured egocentric 3D hand pose dataset and benchmark for open surgery training, revealing the transfer benefit of egocentric pretraining and a substantial surgical domain gap.",
+          "tags": [
+            "egocentric 3D hand pose",
+            "surgical training dataset",
+            "robot learning from demonstration"
+          ],
+          "sections": {
+            "background": "Surgical skill assessment, augmented reality (AR) guidance, and robot learning from demonstration all require accurate 3D tracking of the surgeon's hands. However, no existing surgical dataset provides real-captured egocentric articulated 3D hand pose, making it difficult to train and validate such methods directly in surgical settings.",
+            "conclusion": "Among eight methods evaluated zero-shot, JointTransformer was the best performing model with a PA-MPJPE (aligned mean joint position error) of 14.95 mm. Egocentric pretraining was associated with stronger cross-wearer transfer: WildHands and JointTransformer had 18% and 40% lower PA-MPJPE, respectively, than the non-egocentric HaMeR. A substantial surgical domain gap remains, and the widely deployed MediaPipe Hands detected a hand in only 24.1% of evaluation rows. As a baseline, a 58K-parameter residual corrector (JRN) on frozen backbones reached 10.96–14.85 mm PA-MPJPE on held-out wearers for the two ego-pretrained backbones.",
+            "method": "Data were captured with multi-sensor glasses. Each frame carries camera intrinsics, hand landmarks with per-hand confidence, timestamps, and eye gaze, plus SLAM extrinsics where SLAM succeeded. Evaluation labels combine sensor-fused pseudo-ground truth, human cross-review of every frame, surgeon adjudication of flagged cases, and an independent multi-view triangulated reference. Evaluation uses a within-corpus, procedure-disjoint split and a leave-one-wearer-out protocol to test unseen trainees.",
+            "takeaways": "The work shows that egocentric pretraining helps transfer hand pose estimation to surgical scenes, but off-the-shelf models are not reliable zero-shot in surgery; the low detection rate of MediaPipe Hands especially warns against direct deployment. Dataset scale and trainee diversity are limited, so conclusions mainly apply to open surgery training on synthetic pads. The JRN baseline further shows that lightweight correction on frozen backbones can reduce error."
+          }
+        }
+      },
+      "id": "2611.27101",
+      "original_title": "EgoSurgHands: An Egocentric 3D Hand Pose Dataset & Benchmark for Open Surgery Training",
+      "original_summary": "Surgical skill assessment, AR guidance, and robot learning from demonstration all benefit from 3D tracking of the surgeon's hands, yet no surgical dataset offers real egocentric articulated 3D hand pose. We introduce EgoSurgHands, a benchmark for real-captured egocentric hand pose estimation in open surgery training on synthetic pads. Captured with multi-sensor glasses, it contains 41,909 training hand-instance rows across 55 procedure recordings and 9,476 human-validated evaluation rows across 13 held-out recordings, spanning 13 tasks, 3 glove colors, and 4 trainees from first-year medical student to third-year resident. Each frame carries a multi-sensor stack: intrinsics, hand landmarks with per-hand confidence, timestamps, and eye gaze, plus SLAM extrinsics where SLAM succeeded. Evaluation labels combine sensor-fused pseudo-ground truth, human cross-review of every frame, surgeon adjudication of flagged cases, and an independent multi-view triangulated reference. Alongside the within-corpus, procedure-disjoint split, a leave-one-wearer-out protocol tested unseen trainees. Across eight methods evaluated zero-shot, from MANO-based reconstructors to the two-hand IntagHand and the keypoint-only MediaPipe Hands, egocentric pretraining was associated with stronger transfer on every held-out wearer. WildHands and JointTransformer had 18\\% and 40\\% lower PA-MPJPE, respectively, than the non-egocentric HaMeR. JointTransformer was the best performing model with an error of 14.95 mm. A substantial surgical domain gap remains, and the widely deployed MediaPipe Hands detected a hand in only 24.1\\% of evaluation rows. As a baseline, a 58K-parameter residual corrector (JRN) on frozen backbones reached 10.96-14.85 mm PA-MPJPE on held-out wearers for the two ego-pretrained backbones. We release the dataset and benchmark code at https://egosurghands.github.io",
+      "url": "https://arxiv.org/abs/2611.27101v1",
+      "source": "arXiv cs.RO",
+      "published": "2026-11-20T04:19:58+00:00",
+      "authors": [
+        "Ankit Pal",
+        "Guillaume Kugener",
+        "Sofia Volpi",
+        "Joshua Schwartz",
+        "Alex Idarraga",
+        "Pranav Rajpurkar",
+        "Gabriel A. Brat"
+      ],
+      "score": 4,
+      "versioned_id": "2611.27101v1",
+      "figure": {
+        "path": "./data/2026-11-23/figures/2611.27101.webp",
+        "caption": "Figure 15: Qualitative: WH-ZS vs WH+JRN vs MPS GT. Three frames covering all glove conditions (top P1 blue, middle P2 white, bottom P4 brown). Columns: WildHands zero-shot, our WH+JRN-58K, MPS pseudo-GT. All overlays Procrustes-aligned to GT to isolate shape error. WH-ZS predicts an open-hand template that misses the surgical curl grip; JRN recovers it."
+      },
+      "attention": {
+        "github_stars": 1,
+        "github_url": "https://github.com/monk1337/egosurghands"
+      },
+      "code_url": "https://github.com/monk1337/egoSurgHands",
+      "project_url": "https://egosurghands.github.io",
+      "pdf_url": "https://arxiv.org/pdf/2611.27101"
+    },
+    {
+      "title": "Task2Hand：面向参数化灵巧手形态设计的接触接地技能",
+      "summary": "Task2Hand 把一份功能性操作需求转化为参数化灵巧手模型，并让每个候选设计依次通过按成本排序的接触、动力学与学习三道关卡；每道关卡返回状态与证据记录，失败时记录最早阻塞点、只修改一组有界参数并重跑较便宜的关卡。该流程自主生成、验证并训练，在声明边界内运行，把权衡、停滞和冲突证据上报给人类设定下一设计方向。由此得到的 SAGE Hand 为四指、16 个驱动自由度，在匹配训练协议下六棱柱任务成功率为 45.6%（LEAP 手为 37.3%），双色圆柱任务为 70.8%（LEAP 手为 51.6%）；密集模拟触觉输入使圆柱掉落率降低一半以上。受控迭代实验中，带该技能的路径在 165 次试验中保持 164 次捕获，不带技能的路径退化到 14/165，说明关卡在细化过程中起到回归防护作用。",
+      "lede": "一份操作需求如何变成一只可训练的手？Task2Hand 用按成本排序的接触、动力学与学习关卡筛选候选设计，并由此得到在两项灵巧操作任务上优于 LEAP 手的 SAGE Hand。",
+      "tags": [
+        "灵巧手设计",
+        "接触接地",
+        "机器人学习"
+      ],
+      "sections": {
+        "background": "灵巧手设计需要在几何建模、机器人描述代码、碰撞调试、抓取初始化和策略训练之间反复投入专家工作，且各环节相互牵制，早期改动容易在后期训练中才暴露问题，缺乏系统化的筛选与回归保护。",
+        "conclusion": "在匹配训练协议下，SAGE Hand 在六棱柱任务上达到 45.6% 成功率，LEAP 手为 37.3%；在双色圆柱任务上达到 70.8%，LEAP 手为 51.6%。密集模拟触觉输入使圆柱掉落率降低一半以上。受控迭代研究中，带技能的路径在 165 次试验中保持 164 次捕获，不带技能的路径退化到 14/165，表明关卡起到回归防护作用。",
+        "method": "Task2Hand 是一个技能式规范包：把功能操作需求转成参数化手模型，每个候选依次通过按成本排序的接触、动力学和学习关卡，每关返回状态与证据记录；失败时记录最早阻塞点，只修改一组有界参数并重跑较便宜的关卡，在声明边界内自主生成、验证和训练，并把权衡、停滞与冲突证据上报人类决定下一方向。最终设计 SAGE Hand 为四指、16 个驱动自由度，带集成引导掌、紧凑根部和圆柱指尖，以及经碰撞清理的对置拇指。",
+        "takeaways": "该工作说明把接触可行性、动力学与学习效果组织成低成本优先的关卡，可以在设计迭代中守住已有能力、避免退化，并让智能体在明确边界内自主探索、把真正需要判断的权衡交给人。其结论限于所声明的参数边界与匹配训练协议，成功率来自特定任务与仿真触觉条件，向其他手型、任务或真实平台的推广仍需验证。"
+      },
+      "i18n": {
+        "zh": {
+          "title": "Task2Hand：面向参数化灵巧手形态设计的接触接地技能",
+          "summary": "Task2Hand 把一份功能性操作需求转化为参数化灵巧手模型，并让每个候选设计依次通过按成本排序的接触、动力学与学习三道关卡；每道关卡返回状态与证据记录，失败时记录最早阻塞点、只修改一组有界参数并重跑较便宜的关卡。该流程自主生成、验证并训练，在声明边界内运行，把权衡、停滞和冲突证据上报给人类设定下一设计方向。由此得到的 SAGE Hand 为四指、16 个驱动自由度，在匹配训练协议下六棱柱任务成功率为 45.6%（LEAP 手为 37.3%），双色圆柱任务为 70.8%（LEAP 手为 51.6%）；密集模拟触觉输入使圆柱掉落率降低一半以上。受控迭代实验中，带该技能的路径在 165 次试验中保持 164 次捕获，不带技能的路径退化到 14/165，说明关卡在细化过程中起到回归防护作用。",
+          "lede": "一份操作需求如何变成一只可训练的手？Task2Hand 用按成本排序的接触、动力学与学习关卡筛选候选设计，并由此得到在两项灵巧操作任务上优于 LEAP 手的 SAGE Hand。",
+          "tags": [
+            "灵巧手设计",
+            "接触接地",
+            "机器人学习"
+          ],
+          "sections": {
+            "background": "灵巧手设计需要在几何建模、机器人描述代码、碰撞调试、抓取初始化和策略训练之间反复投入专家工作，且各环节相互牵制，早期改动容易在后期训练中才暴露问题，缺乏系统化的筛选与回归保护。",
+            "conclusion": "在匹配训练协议下，SAGE Hand 在六棱柱任务上达到 45.6% 成功率，LEAP 手为 37.3%；在双色圆柱任务上达到 70.8%，LEAP 手为 51.6%。密集模拟触觉输入使圆柱掉落率降低一半以上。受控迭代研究中，带技能的路径在 165 次试验中保持 164 次捕获，不带技能的路径退化到 14/165，表明关卡起到回归防护作用。",
+            "method": "Task2Hand 是一个技能式规范包：把功能操作需求转成参数化手模型，每个候选依次通过按成本排序的接触、动力学和学习关卡，每关返回状态与证据记录；失败时记录最早阻塞点，只修改一组有界参数并重跑较便宜的关卡，在声明边界内自主生成、验证和训练，并把权衡、停滞与冲突证据上报人类决定下一方向。最终设计 SAGE Hand 为四指、16 个驱动自由度，带集成引导掌、紧凑根部和圆柱指尖，以及经碰撞清理的对置拇指。",
+            "takeaways": "该工作说明把接触可行性、动力学与学习效果组织成低成本优先的关卡，可以在设计迭代中守住已有能力、避免退化，并让智能体在明确边界内自主探索、把真正需要判断的权衡交给人。其结论限于所声明的参数边界与匹配训练协议，成功率来自特定任务与仿真触觉条件，向其他手型、任务或真实平台的推广仍需验证。"
+          }
+        },
+        "en": {
+          "title": "Task2Hand: A Contact-Grounded Skill for Parametric Dexterous-Hand Morphology Design",
+          "summary": "Task2Hand turns a functional manipulation brief into a parameterized hand model and routes every candidate through cost-ordered contact, dynamics, and learning gates. Each gate returns a status and an evidence record; on failure, the Skill records the earliest blocker, revises one bounded parameter group, and reruns the cheaper gates. The agent generates, validates, and trains autonomously within declared bounds, escalating trade-offs, plateaus, and conflicting evidence to a human who sets the next design direction. The resulting SAGE Hand has four fingers and 16 actuated DoF; under a matched training protocol it reaches 45.6% task success on a hexagonal prism versus 37.3% for the LEAP hand, and 70.8% on a bicolor cylinder versus 51.6%. Dense simulated tactile input more than halves the cylinder drop rate. In a controlled iteration study, the Skill path preserves capture at 164/165 trials while the path without the Skill degrades to 14/165, confirming that the gates act as a regression guard during refinement.",
+          "lede": "How does a manipulation brief become a trainable hand? Task2Hand screens candidate designs through cost-ordered contact, dynamics, and learning gates, yielding SAGE Hand, which outperforms the LEAP hand on two dexterous manipulation tasks.",
+          "tags": [
+            "dexterous hand design",
+            "contact grounding",
+            "robot learning"
+          ],
+          "sections": {
+            "background": "Dexterous hand design demands repeated expert work across geometry, robot-description code, collision debugging, grasp initialization, and policy training. These stages are tightly coupled, and early changes may only surface as failures during later training, so there is little systematic screening or regression protection.",
+            "conclusion": "Under a matched training protocol, SAGE Hand reaches 45.6% task success on a hexagonal prism versus 37.3% for the LEAP hand, and 70.8% on a bicolor cylinder versus 51.6%. Dense simulated tactile input more than halves the cylinder drop rate. In a controlled iteration study, the Skill path preserves capture at 164/165 trials while the path without the Skill degrades to 14/165, showing that the gates act as a regression guard.",
+            "method": "Task2Hand is a Skill: a specification package that turns a functional manipulation brief into a parameterized hand model and routes every candidate through cost-ordered contact, dynamics, and learning gates. Each gate returns a status and an evidence record; on failure, the Skill records the earliest blocker, revises one bounded parameter group, and reruns the cheaper gates. The agent generates, validates, and trains autonomously within declared bounds, escalating trade-offs, plateaus, and conflicting evidence to a human who sets the next design direction. The resulting SAGE Hand has four fingers, 16 actuated DoF, an integrated guiding palm, compact roots, cylindrical tips, and a collision-cleared opposable thumb.",
+            "takeaways": "Organizing contact feasibility, dynamics, and learning outcomes into low-cost-first gates can protect existing capabilities against regression during design iteration, while letting an agent explore autonomously within explicit bounds and reserving genuine trade-offs for human judgment. The conclusions are limited to the declared parameter bounds and matched training protocol; success rates come from specific tasks and simulated tactile conditions, and generalization to other hand morphologies, tasks, or real platforms remains to be validated."
+          }
+        }
+      },
+      "id": "2611.27967",
+      "original_title": "Task2Hand: A Contact-Grounded Skill for Parametric Dexterous-Hand Morphology Design",
+      "original_summary": "Dexterous hand design demands repeated expert work across geometry, robot-description code, collision debugging, grasp initialization, and policy training. We present Task2Hand, a Skill: a specification package that turns a functional manipulation brief into a parameterized hand model and routes every candidate through cost-ordered contact, dynamics, and learning gates. Each gate returns a status and an evidence record; on failure, the Skill records the earliest blocker, revises one bounded parameter group, and reruns the cheaper gates. The agent generates, validates, and trains autonomously within declared bounds, and escalates trade-offs, plateaus, and conflicting evidence to a human who sets the next design direction. An evidence-driven design trajectory for bidirectional in-hand manipulation yielded SAGE Hand (Skill-Aware Generative Embodiment): four fingers, 16 actuated DoF, an integrated guiding palm, compact roots, cylindrical tips, and a collision-cleared opposable thumb. Under a matched training protocol, SAGE Hand reaches 45.6% task success on a hexagonal prism against 37.3% for the LEAP hand, and 70.8% on a bicolor cylinder against 51.6%. Dense simulated tactile input more than halves the cylinder drop rate. In a controlled iteration study, the Skill path preserves capture at 164/165 trials while the path without the Skill degrades to 14/165, confirming that the gates act as a regression guard during refinement. Accepted candidates pack with URDF/MJCF, metrics, checkpoints, and a provenance manifest.",
+      "url": "https://arxiv.org/abs/2611.27967v1",
+      "source": "arXiv cs.RO",
+      "published": "2026-11-20T18:48:12+00:00",
+      "authors": [
+        "Haoyang Wang",
+        "Weibo Gao",
+        "Zhengxiong Li",
+        "Lingfeng Tao"
+      ],
+      "score": 4,
+      "versioned_id": "2611.27967v1",
+      "figure": {
+        "path": "./data/2026-11-23/figures/2611.27967.webp",
+        "caption": "Fig. 1: Overview of the Task2Hand design loop. A human provides a functional manipulation brief and design guidance, and an AI coding agent equipped with the Task2Hand Skill generates parameterized hand-model candidates. Physics-based and learning verification gates evaluate each candidate, and failure evidence guides bounded parameter refinement and morphology revision. The design history depicts the resulting evolution toward the final design and a fabricated prototype."
+      },
+      "code_url": null,
+      "project_url": null,
+      "pdf_url": "https://arxiv.org/pdf/2611.27967"
+    },
+    {
+      "title": "相信重复出现的梯度：用于人形运动跟踪的截断世界模型策略梯度",
+      "summary": "通过在世界模型中对想象回报反向传播来训练人形运动跟踪器速度很快，因为世界模型能提供一阶策略梯度。本文检验这种梯度在仿真器中有多少成立。在 Unitree G1 的跟踪器上，梯度最大的 0.5% 想象轨迹贡献了总梯度范数的 22%，但无论从同一状态再采样一次，还是用仿真器验证，都无法确认这些梯度。当沿模型梯度方向移动动作时，在梯度范数低于批次中位数的位置，仿真器返回的回报变化达到预测值的 94%；在 3 到 10 倍中位数之间为 48%；超过 30 倍时仅为 1%。被任一检验确认的那部分梯度，其增长在几倍中位数处停止。因此，作者将每条轨迹的动作梯度范数截断在批次中位数的 10 倍，按预测梯度范数比例选择想象起点以减少截断损失，并在世界模型与评论家预测回报最低处重置回合。在 223 小时运动数据上训练、在 353 个训练中无演员执行过的动作上测试，该方法将所基于的基线 SuperMimic 的归一化回报从 0.953 提升到 0.967，将测试片段最低 1% 的回报从 0.65 提升到 0.76，将持续摔倒的测试片段从 15–18 个减半到 7–10 个，并在基线 40% 的迭代次数和一半的训练时间内达到基线最终回报。在 LAFAN1 上，与先前工作使用相同片段训练和评估，达到 0.935，对比 0.906。",
+      "lede": "世界模型给出的策略梯度并非处处可信；截断高范数梯度并调整想象起点，可让人形运动跟踪更快更稳。",
+      "tags": [
+        "人形运动跟踪",
+        "世界模型",
+        "策略梯度"
+      ],
+      "sections": {
+        "background": "用世界模型（学习得到的仿真器）对想象回报反向传播来训练人形运动跟踪器，速度快，因为世界模型直接给出一阶策略梯度。但关键问题是：这种梯度有多少在真实仿真器中成立？如果大量梯度来自模型不可靠的区域，策略就会被错误方向推动，导致跟踪失败或训练不稳定。",
+        "conclusion": "实验表明，梯度最大的 0.5% 想象轨迹贡献了 22% 的总梯度范数，但重复采样和仿真器都无法确认这些梯度。沿梯度移动动作时，仿真器返回的回报变化在梯度范数低于批次中位数处达到预测值的 94%，3 到 10 倍中位数之间为 48%，超过 30 倍时仅 1%。截断梯度后，SuperMimic 的归一化回报从 0.953 升至 0.967，最低 1% 测试片段从 0.65 升至 0.76，持续摔倒片段从 15–18 减至 7–10，并以基线 40% 的迭代次数和一半训练时间达到基线最终回报。在 LAFAN1 上达到 0.935，对比 0.906。",
+        "method": "方法核心是三条措施：第一，将每条想象轨迹的动作梯度范数截断在批次中位数的 10 倍，因为超过该阈值的梯度几乎不被仿真器确认；第二，按预测梯度范数比例选择想象起点，使截断移除的梯度更少；第三，在世界模型与评论家预测回报最低处重置回合，避免在模型不可靠区域浪费训练。这些措施共同提高梯度可信度，同时保留世界模型带来的速度优势。",
+        "takeaways": "这项工作提醒机器人学习研究者：世界模型提供的一阶梯度并非处处可信，高范数梯度尤其容易来自模型误差。对梯度做截断、按可信度采样起点、在低回报处重置，是提升人形运动跟踪稳定性和样本效率的实用手段。局限在于结论主要基于 Unitree G1 和特定运动数据集，阈值 10 倍中位数是否适用于其他平台或任务仍需验证。"
+      },
+      "i18n": {
+        "zh": {
+          "title": "相信重复出现的梯度：用于人形运动跟踪的截断世界模型策略梯度",
+          "summary": "通过在世界模型中对想象回报反向传播来训练人形运动跟踪器速度很快，因为世界模型能提供一阶策略梯度。本文检验这种梯度在仿真器中有多少成立。在 Unitree G1 的跟踪器上，梯度最大的 0.5% 想象轨迹贡献了总梯度范数的 22%，但无论从同一状态再采样一次，还是用仿真器验证，都无法确认这些梯度。当沿模型梯度方向移动动作时，在梯度范数低于批次中位数的位置，仿真器返回的回报变化达到预测值的 94%；在 3 到 10 倍中位数之间为 48%；超过 30 倍时仅为 1%。被任一检验确认的那部分梯度，其增长在几倍中位数处停止。因此，作者将每条轨迹的动作梯度范数截断在批次中位数的 10 倍，按预测梯度范数比例选择想象起点以减少截断损失，并在世界模型与评论家预测回报最低处重置回合。在 223 小时运动数据上训练、在 353 个训练中无演员执行过的动作上测试，该方法将所基于的基线 SuperMimic 的归一化回报从 0.953 提升到 0.967，将测试片段最低 1% 的回报从 0.65 提升到 0.76，将持续摔倒的测试片段从 15–18 个减半到 7–10 个，并在基线 40% 的迭代次数和一半的训练时间内达到基线最终回报。在 LAFAN1 上，与先前工作使用相同片段训练和评估，达到 0.935，对比 0.906。",
+          "lede": "世界模型给出的策略梯度并非处处可信；截断高范数梯度并调整想象起点，可让人形运动跟踪更快更稳。",
+          "tags": [
+            "人形运动跟踪",
+            "世界模型",
+            "策略梯度"
+          ],
+          "sections": {
+            "background": "用世界模型（学习得到的仿真器）对想象回报反向传播来训练人形运动跟踪器，速度快，因为世界模型直接给出一阶策略梯度。但关键问题是：这种梯度有多少在真实仿真器中成立？如果大量梯度来自模型不可靠的区域，策略就会被错误方向推动，导致跟踪失败或训练不稳定。",
+            "conclusion": "实验表明，梯度最大的 0.5% 想象轨迹贡献了 22% 的总梯度范数，但重复采样和仿真器都无法确认这些梯度。沿梯度移动动作时，仿真器返回的回报变化在梯度范数低于批次中位数处达到预测值的 94%，3 到 10 倍中位数之间为 48%，超过 30 倍时仅 1%。截断梯度后，SuperMimic 的归一化回报从 0.953 升至 0.967，最低 1% 测试片段从 0.65 升至 0.76，持续摔倒片段从 15–18 减至 7–10，并以基线 40% 的迭代次数和一半训练时间达到基线最终回报。在 LAFAN1 上达到 0.935，对比 0.906。",
+            "method": "方法核心是三条措施：第一，将每条想象轨迹的动作梯度范数截断在批次中位数的 10 倍，因为超过该阈值的梯度几乎不被仿真器确认；第二，按预测梯度范数比例选择想象起点，使截断移除的梯度更少；第三，在世界模型与评论家预测回报最低处重置回合，避免在模型不可靠区域浪费训练。这些措施共同提高梯度可信度，同时保留世界模型带来的速度优势。",
+            "takeaways": "这项工作提醒机器人学习研究者：世界模型提供的一阶梯度并非处处可信，高范数梯度尤其容易来自模型误差。对梯度做截断、按可信度采样起点、在低回报处重置，是提升人形运动跟踪稳定性和样本效率的实用手段。局限在于结论主要基于 Unitree G1 和特定运动数据集，阈值 10 倍中位数是否适用于其他平台或任务仍需验证。"
+          }
+        },
+        "en": {
+          "title": "Trust What Repeats: Capped World-Model Policy Gradients for Humanoid Motion Tracking",
+          "summary": "Training a humanoid motion tracker by backpropagating imagined returns through a learned world model is fast, because the model provides a first-order policy gradient. This work asks how much of that gradient holds in the simulator. On a tracker for the Unitree G1, the 0.5% of imagined rollouts with the largest gradients carry 22% of the summed gradient norm, yet neither a second rollout from the same state nor the simulator confirms them. When actions are moved along the model's gradient, the simulator returns 94% of the predicted change in return where the gradient norm is below the batch median, 48% between 3 and 10 times the median, and 1% above 30 times; the part of a gradient that either check confirms stops growing at a few times the median. The authors therefore cap each rollout's action-gradient norm at 10 times the batch median, draw imagination starts in proportion to their predicted gradient norm so that the cap removes less, and reset episodes where the world model and critic predict the lowest return. Trained on 223 hours of motion and tested on 353 motions that no actor performed in training, the method raises the normalized return of SuperMimic, the baseline it builds on, from 0.953 to 0.967 and the lowest 1% of test clips from 0.65 to 0.76, halves the test clips that fall persistently from 15–18 to 7–10, and reaches the baseline's final return in 40% of the baseline's iterations and half its training time. On LAFAN1, trained and evaluated on the same clips as prior work, it reaches 0.935 against 0.906.",
+          "lede": "Policy gradients from world models are not uniformly trustworthy; capping high-norm gradients and adjusting imagination starts makes humanoid motion tracking faster and more stable.",
+          "tags": [
+            "humanoid motion tracking",
+            "world models",
+            "policy gradients"
+          ],
+          "sections": {
+            "background": "Training a humanoid motion tracker by backpropagating imagined returns through a learned world model is fast because the world model directly provides a first-order policy gradient. The key question is how much of this gradient holds in the actual simulator. If many gradients come from regions where the model is unreliable, the policy is pushed in wrong directions, leading to tracking failures or unstable training.",
+            "conclusion": "Experiments show that the 0.5% of imagined rollouts with the largest gradients carry 22% of the summed gradient norm, but neither a second rollout from the same state nor the simulator confirms them. When actions are moved along the gradient, the simulator returns 94% of the predicted change in return where the gradient norm is below the batch median, 48% between 3 and 10 times the median, and only 1% above 30 times. After capping gradients, SuperMimic's normalized return rises from 0.953 to 0.967, the lowest 1% of test clips from 0.65 to 0.76, persistent-fall clips drop from 15–18 to 7–10, and the baseline's final return is reached in 40% of its iterations and half its training time. On LAFAN1, the method reaches 0.935 against 0.906.",
+            "method": "The method has three core measures. First, each imagined rollout's action-gradient norm is capped at 10 times the batch median, because gradients above this threshold are rarely confirmed by the simulator. Second, imagination starts are drawn in proportion to their predicted gradient norm, so the cap removes less gradient mass. Third, episodes are reset where the world model and critic predict the lowest return, avoiding wasted training in unreliable model regions. Together these measures improve gradient trustworthiness while preserving the speed advantage of the world model.",
+            "takeaways": "This work reminds robot-learning researchers that first-order gradients from world models are not uniformly trustworthy; high-norm gradients are especially likely to stem from model error. Capping gradients, sampling starts by trustworthiness, and resetting at low-return states are practical tools for improving the stability and sample efficiency of humanoid motion tracking. A limitation is that the conclusions are mainly based on the Unitree G1 and specific motion datasets; whether the 10-times-median threshold transfers to other platforms or tasks remains to be verified."
+          }
+        }
+      },
+      "id": "2611.27648",
+      "original_title": "Trust What Repeats: Capped World-Model Policy Gradients for Humanoid Motion Tracking",
+      "original_summary": "Training a humanoid motion tracker by backpropagating imagined returns through a learned world model is fast, because the model gives a first-order policy gradient. We ask how much of that gradient holds in the simulator. On a tracker for the Unitree G1, the $0.5\\%$ of imagined rollouts with the largest gradients carry $22\\%$ of the summed gradient norm, yet neither a second rollout from the same state nor the simulator confirms them. When the actions are moved along the model's gradient, the simulator returns 94% of the predicted change in return where the gradient norm is below the batch median, 48% between 3 and 10 times the median, and 1% above 30 times; the part of a gradient that either check confirms stops growing at a few times the median. We therefore cap each rollout's action-gradient norm at 10 times the batch median, draw imagination starts in proportion to their predicted gradient norm so that the cap removes less, and reset episodes where the world model and critic predict the lowest return. Trained on 223 hours of motion and tested on 353 motions that no actor performed in training, the method raises the normalized return of SuperMimic, the baseline it builds on, from 0.953 to 0.967 and the lowest $1\\%$ of test clips from 0.65 to 0.76, halves the test clips that fall persistently, from 15--18 to 7--10, and reaches the baseline's final return in 40% of the baseline's iterations and half its training time. On LAFAN1, trained and evaluated on the same clips as prior work, it reaches 0.935 against 0.906.",
+      "url": "https://arxiv.org/abs/2611.27648v1",
+      "source": "arXiv cs.RO",
+      "published": "2026-11-20T14:11:47+00:00",
+      "authors": [
+        "Xuzhe Dang",
+        "Stefan Edelkamp"
+      ],
+      "score": 4,
+      "versioned_id": "2611.27648v1",
+      "figure": {
+        "path": "./data/2026-11-23/figures/2611.27648.webp",
+        "caption": "Fig. 4: Two test motions, never performed in training, played by SuperMimic (top row of each pair) and our method (bottom row), with the reference in translucent green; the numbers in the frames are the mean position error of the tracked bodies. Top: one of the only two test clips that the baseline fails on all three seeds at iteration 25,000 and our method on none. Bottom: the clip with the largest difference on the first seed among those of the hip-hop shuffle, one of the five motions with the largest gain, on which both complete the motion. The policies are the averaged ones at iteration 25,000 of the first seed. Frames are rendered from rollouts in stock MuJoCo, not the training simulator; outcomes and returns (left) agree with the benchmark’s to within 0.012. After the baseline’s fall the rollout goes on for one second (faded frames), outside the episode."
+      },
+      "code_url": null,
+      "project_url": null,
+      "pdf_url": "https://arxiv.org/pdf/2611.27648"
+    },
+    {
+      "title": "StereoVLM：面向度量三维空间推理的双目视觉语言模型",
+      "summary": "现有视觉语言模型（VLM）语义理解强，但难以在物理世界中进行度量三维空间推理。它们通常从单张或多张未标定图像推断三维结构，缺乏跨视角几何约束，导致度量三维推断本质模糊，无法判断空间预测基于视觉证据还是语义先验。StereoVLM 利用标定双目提供的显式跨视角几何，首次让 VLM 直接从标定双目观测中学习可迁移的三维表示。模型采用分层学习范式，从跨视角对应与视差估计，到标定条件度量深度感知，再到语义空间推理。实验发现视差监督在未见环境中的泛化显著优于直接双目深度监督。团队还提出 Stereo3D-Bench 基准，涵盖点级几何到物体级空间推理三个层次。StereoVLM-8B 在基准上达到 95.17% 深度精度（δ₁）和 66.98 物体级平均分。干预实验表明性能提升源于有效跨视角几何，而非额外视觉 token 或语义先验。分层几何监督在五个空间基准上平均提升 3.54 分，在 RoboCasa 操作任务中成功率提升 4.3 个百分点。",
+      "lede": "StereoVLM 让视觉语言模型借助标定双目几何进行度量三维空间推理，在新建基准上取得 95.17% 深度精度，并在机器人操作任务中提升成功率 4.3 个百分点。",
+      "tags": [
+        "计算机视觉",
+        "人工智能",
+        "机器人学"
+      ],
+      "sections": {
+        "background": "视觉语言模型在语义理解上表现突出，但在物理世界中进行度量三维空间推理仍很有限。现有模型通常从一张或多张图像推断三维场景结构，却不知道相机标定参数，也没有跨视角几何约束。这使度量三维推断本身存在歧义，难以判断模型的空间预测究竟来自视觉证据，还是主要被语义先验驱动。标定双目能提供显式的跨视角几何，有望消除这种歧义，为度量三维感知和几何泛化提供更可靠的基础。",
+        "conclusion": "StereoVLM-8B 在 Stereo3D-Bench 上取得 95.17% 的深度精度（δ₁）和 66.98 的物体级平均分。干预实验显示，模型在该基准上的表现受益于有效的跨视角几何，不能仅用额外视觉 token 或语义先验解释。分层几何监督在五个空间基准上平均带来 3.54 分提升，并在 RoboCasa 操作任务中把成功率提高 4.3 个百分点。此外，视差监督在未见环境中的泛化明显优于直接双目深度监督。",
+        "method": "StereoVLM 是首个面向度量三维空间推理的几何感知双目视觉语言模型。它采用分层学习范式：先学习跨视角对应与视差估计，再在标定条件下进行度量深度感知，最后完成语义空间推理。这样设计是因为标定双目提供的显式跨视角几何能约束度量尺度，使模型不必只靠语义先验猜测三维结构。研究还发现，用视差作为监督信号比直接监督双目深度更能泛化到未见环境。为系统评估这些能力，作者提出 Stereo3D-Bench，覆盖从点级几何到物体级空间推理的三个层次。",
+        "takeaways": "这项工作说明，把标定双目几何引入视觉语言模型，能让三维空间推理更可靠、更可迁移，而不是停留在语义猜测上。对机器人研究而言，这意味着可以利用双目相机的标定信息为操作和导航提供度量尺度约束，并借助视差监督提升在新环境中的泛化。局限在于，方法依赖标定双目观测和有效跨视角几何；在单目、未标定或跨视角几何失效的场景中，其优势是否成立仍需进一步验证。"
+      },
+      "i18n": {
+        "zh": {
+          "title": "StereoVLM：面向度量三维空间推理的双目视觉语言模型",
+          "summary": "现有视觉语言模型（VLM）语义理解强，但难以在物理世界中进行度量三维空间推理。它们通常从单张或多张未标定图像推断三维结构，缺乏跨视角几何约束，导致度量三维推断本质模糊，无法判断空间预测基于视觉证据还是语义先验。StereoVLM 利用标定双目提供的显式跨视角几何，首次让 VLM 直接从标定双目观测中学习可迁移的三维表示。模型采用分层学习范式，从跨视角对应与视差估计，到标定条件度量深度感知，再到语义空间推理。实验发现视差监督在未见环境中的泛化显著优于直接双目深度监督。团队还提出 Stereo3D-Bench 基准，涵盖点级几何到物体级空间推理三个层次。StereoVLM-8B 在基准上达到 95.17% 深度精度（δ₁）和 66.98 物体级平均分。干预实验表明性能提升源于有效跨视角几何，而非额外视觉 token 或语义先验。分层几何监督在五个空间基准上平均提升 3.54 分，在 RoboCasa 操作任务中成功率提升 4.3 个百分点。",
+          "lede": "StereoVLM 让视觉语言模型借助标定双目几何进行度量三维空间推理，在新建基准上取得 95.17% 深度精度，并在机器人操作任务中提升成功率 4.3 个百分点。",
+          "tags": [
+            "计算机视觉",
+            "人工智能",
+            "机器人学"
+          ],
+          "sections": {
+            "background": "视觉语言模型在语义理解上表现突出，但在物理世界中进行度量三维空间推理仍很有限。现有模型通常从一张或多张图像推断三维场景结构，却不知道相机标定参数，也没有跨视角几何约束。这使度量三维推断本身存在歧义，难以判断模型的空间预测究竟来自视觉证据，还是主要被语义先验驱动。标定双目能提供显式的跨视角几何，有望消除这种歧义，为度量三维感知和几何泛化提供更可靠的基础。",
+            "conclusion": "StereoVLM-8B 在 Stereo3D-Bench 上取得 95.17% 的深度精度（δ₁）和 66.98 的物体级平均分。干预实验显示，模型在该基准上的表现受益于有效的跨视角几何，不能仅用额外视觉 token 或语义先验解释。分层几何监督在五个空间基准上平均带来 3.54 分提升，并在 RoboCasa 操作任务中把成功率提高 4.3 个百分点。此外，视差监督在未见环境中的泛化明显优于直接双目深度监督。",
+            "method": "StereoVLM 是首个面向度量三维空间推理的几何感知双目视觉语言模型。它采用分层学习范式：先学习跨视角对应与视差估计，再在标定条件下进行度量深度感知，最后完成语义空间推理。这样设计是因为标定双目提供的显式跨视角几何能约束度量尺度，使模型不必只靠语义先验猜测三维结构。研究还发现，用视差作为监督信号比直接监督双目深度更能泛化到未见环境。为系统评估这些能力，作者提出 Stereo3D-Bench，覆盖从点级几何到物体级空间推理的三个层次。",
+            "takeaways": "这项工作说明，把标定双目几何引入视觉语言模型，能让三维空间推理更可靠、更可迁移，而不是停留在语义猜测上。对机器人研究而言，这意味着可以利用双目相机的标定信息为操作和导航提供度量尺度约束，并借助视差监督提升在新环境中的泛化。局限在于，方法依赖标定双目观测和有效跨视角几何；在单目、未标定或跨视角几何失效的场景中，其优势是否成立仍需进一步验证。"
+          }
+        },
+        "en": {
+          "title": "StereoVLM: Binocular Vision-Language Models for Metric 3D Spatial Reasoning",
+          "summary": "Existing vision-language models (VLMs) have strong semantic understanding but remain limited in metric 3D spatial reasoning in the physical world. They typically infer 3D scene structure from one or more images without known camera calibration or cross-view geometric constraints, making metric 3D inference inherently ambiguous and leaving it unclear whether spatial predictions are grounded in visual evidence or driven primarily by semantic priors. StereoVLM is the first geometry-aware binocular VLM for metric 3D spatial reasoning. It uses calibrated stereo to provide explicit cross-view geometry and follows a hierarchical learning paradigm spanning cross-view correspondence and disparity estimation, calibration-conditioned metric depth perception, and semantic spatial reasoning. The authors find that disparity supervision generalizes substantially better than direct binocular depth supervision on unseen environments. They also introduce Stereo3D-Bench, a benchmark with three levels from point-level geometry to object-level spatial reasoning. StereoVLM-8B achieves 95.17% depth accuracy (δ₁) and a 66.98 average object-level score on Stereo3D-Bench. Intervention results indicate that performance benefits from valid cross-view geometry and cannot be explained solely by additional visual tokens or semantic priors. Hierarchical geometric supervision yields average gains of 3.54 points across five spatial benchmarks and 4.3 percentage points in RoboCasa manipulation success.",
+          "lede": "StereoVLM enables vision-language models to perform metric 3D spatial reasoning using calibrated binocular geometry, achieving 95.17% depth accuracy on a new benchmark and a 4.3 percentage point gain in robotic manipulation success.",
+          "tags": [
+            "Computer Vision",
+            "Artificial Intelligence",
+            "Robotics"
+          ],
+          "sections": {
+            "background": "Vision-language models excel at semantic understanding but are limited in reasoning about metric 3D space in the physical world. Existing models typically infer 3D scene structure from one or more images without known camera calibration or cross-view geometric constraints. This makes metric 3D inference inherently ambiguous and leaves it unclear whether spatial predictions are grounded in visual evidence or driven primarily by semantic priors. Calibrated stereo provides explicit cross-view geometry that can resolve this ambiguity and offer a more reliable foundation for metric 3D perception and geometric generalization.",
+            "conclusion": "StereoVLM-8B achieves 95.17% depth accuracy (δ₁) and a 66.98 average object-level score on Stereo3D-Bench. Intervention results show that the model's performance on this benchmark benefits from valid cross-view geometry and cannot be explained solely by additional visual tokens or semantic priors. Hierarchical geometric supervision yields average gains of 3.54 points across five spatial benchmarks and improves RoboCasa manipulation success by 4.3 percentage points. In addition, disparity supervision generalizes substantially better than direct binocular depth supervision on unseen environments.",
+            "method": "StereoVLM is the first geometry-aware binocular vision-language model for metric 3D spatial reasoning. It follows a hierarchical learning paradigm: it first learns cross-view correspondence and disparity estimation, then performs calibration-conditioned metric depth perception, and finally carries out semantic spatial reasoning. This design is useful because the explicit cross-view geometry from calibrated stereo constrains metric scale, so the model does not have to guess 3D structure from semantic priors alone. The authors also find that supervising with disparity generalizes better to unseen environments than directly supervising binocular depth. To evaluate these capabilities systematically, they introduce Stereo3D-Bench, which covers three levels from point-level geometry to object-level spatial reasoning.",
+            "takeaways": "This work shows that incorporating calibrated stereo geometry into vision-language models makes 3D spatial reasoning more reliable and transferable rather than relying on semantic guessing. For robotics, it suggests using stereo camera calibration to provide metric scale constraints for manipulation and navigation, and using disparity supervision to improve generalization in new environments. A limitation is that the method depends on calibrated binocular observations and valid cross-view geometry; whether its advantages hold in monocular, uncalibrated, or geometrically degraded settings requires further validation."
+          }
+        }
+      },
+      "id": "2611.27915",
+      "original_title": "StereoVLM: Binocular Vision-Language Models for Metric 3D Spatial Reasoning",
+      "original_summary": "Vision-language models (VLMs) exhibit strong semantic understanding but remain limited in their ability to reason about metric 3D space in the physical world. Existing VLMs typically infer 3D scene structure from one or more images without known camera calibration or cross-view geometric constraints. This makes metric 3D inference inherently ambiguous and leaves it unclear whether their spatial predictions are grounded in visual evidence or driven primarily by semantic priors. In contrast, calibrated stereo provides explicit cross-view geometry that resolves this ambiguity and offers a more reliable foundation for metric 3D perception and geometric generalization. We investigate how VLMs can learn transferable 3D representations directly from calibrated binocular observations. To this end, we introduce StereoVLM, the first geometry-aware binocular VLM for metric 3D spatial reasoning. StereoVLM follows a hierarchical learning paradigm spanning from cross-view correspondence and disparity estimation to calibration-conditioned metric depth perception and semantic spatial reasoning. We further find that disparity supervision generalizes substantially better than direct binocular depth supervision on unseen environments. To evaluate these capabilities, we introduce Stereo3D-Bench, a comprehensive benchmark across three levels, from point-level geometry to object-level spatial reasoning. StereoVLM-8B achieves 95.17% depth accuracy ($δ_1$) and a 66.98 average object-level score on Stereo3D-Bench. Intervention results further indicate that the model's performance on Stereo3D-Bench benefits from valid cross-view geometry and cannot be explained solely by additional visual tokens or semantic priors. Hierarchical geometric supervision also yields average gains of 3.54 points across five spatial benchmarks and 4.3 percentage points in RoboCasa manipulation success.",
+      "url": "https://arxiv.org/abs/2611.27915v1",
+      "source": "arXiv cs.RO",
+      "published": "2026-11-20T17:52:02+00:00",
+      "authors": [
+        "Chi Yan",
+        "Guoyang Zhao",
+        "Wentao Yuan",
+        "Yixiao Ge",
+        "Yanning Zhou",
+        "Dan Xu"
+      ],
+      "score": 4,
+      "versioned_id": "2611.27915v1",
+      "figure": {
+        "path": "./data/2026-11-23/figures/2611.27915.webp",
+        "caption": "Figure 4: Qualitative comparison of metric-depth predictions on Stereo3D-Bench."
+      },
+      "code_url": null,
+      "project_url": null,
+      "pdf_url": "https://arxiv.org/pdf/2611.27915"
+    },
+    {
+      "title": "面向安全关键电气操作的人形机器人：感知驱动的运行时约束过滤器",
+      "summary": "人形机器人可降低电气开关操作中的人员暴露风险，但安全控制颇具挑战：工具需抵达目标开关，而旁边存在相似设备，操作员指令稍不精确就可能碰到非目标开关。本研究提出一种运行时安全过滤器，在人形机器人虚拟现实遥操作过程中逐条检查操作员指令。该过滤器融合由机器人头部相机估计的场景模型，以及以目标为条件的控制屏障函数二次规划，在保持工具远离非目标开关的同时，让安全指令原样通过。在宇树 G1 人形机器人上的真实实验显示，在两个站立位置各进行六轮测试，目标操作在全部十轮中成功，目标保持不变且未触发非目标开关。仿真研究实现 9/9 次安全完成，而原始遥操作为 5/9，表明该方法用于人形机器人开关操作具有可行性。",
+      "lede": "人形机器人替人操作电气开关时，如何防止工具误碰旁边的相似开关？研究者用感知驱动的运行时安全过滤器，在宇树 G1 上实现十轮全部安全完成。",
+      "tags": [
+        "人形机器人",
+        "安全控制",
+        "遥操作"
+      ],
+      "sections": {
+        "background": "电气开关操作风险高，人员近距离作业存在暴露危险，人形机器人是替代人工的可行方向。但开关面板上目标开关与相似设备相邻，遥操作指令稍有偏差就可能误触非目标开关，形成安全关键问题。",
+        "conclusion": "在宇树 G1 人形机器人的真实实验中，两个站立位置各六轮，共十轮目标操作全部成功，目标开关保持不变，且未发生非目标开关触发。仿真中该方法实现 9/9 次安全完成，原始遥操作为 5/9，说明过滤器能显著提升操作安全性。",
+        "method": "方法是在虚拟现实遥操作中逐条检查操作员指令的运行时安全过滤器。它结合机器人头部相机估计的场景模型，并采用以目标为条件的控制屏障函数二次规划：安全指令原样通过，可能使工具接近非目标开关的指令则被约束修正。",
+        "takeaways": "该工作表明，将感知场景模型与控制屏障函数结合，可在不改变安全指令的前提下为遥操作提供运行时安全保障，适用于目标与干扰设备高度相似的电气操作场景。其结论基于宇树 G1 平台与有限轮次实验，向更多开关布局和其他任务推广仍需进一步验证。"
+      },
+      "i18n": {
+        "zh": {
+          "title": "面向安全关键电气操作的人形机器人：感知驱动的运行时约束过滤器",
+          "summary": "人形机器人可降低电气开关操作中的人员暴露风险，但安全控制颇具挑战：工具需抵达目标开关，而旁边存在相似设备，操作员指令稍不精确就可能碰到非目标开关。本研究提出一种运行时安全过滤器，在人形机器人虚拟现实遥操作过程中逐条检查操作员指令。该过滤器融合由机器人头部相机估计的场景模型，以及以目标为条件的控制屏障函数二次规划，在保持工具远离非目标开关的同时，让安全指令原样通过。在宇树 G1 人形机器人上的真实实验显示，在两个站立位置各进行六轮测试，目标操作在全部十轮中成功，目标保持不变且未触发非目标开关。仿真研究实现 9/9 次安全完成，而原始遥操作为 5/9，表明该方法用于人形机器人开关操作具有可行性。",
+          "lede": "人形机器人替人操作电气开关时，如何防止工具误碰旁边的相似开关？研究者用感知驱动的运行时安全过滤器，在宇树 G1 上实现十轮全部安全完成。",
+          "tags": [
+            "人形机器人",
+            "安全控制",
+            "遥操作"
+          ],
+          "sections": {
+            "background": "电气开关操作风险高，人员近距离作业存在暴露危险，人形机器人是替代人工的可行方向。但开关面板上目标开关与相似设备相邻，遥操作指令稍有偏差就可能误触非目标开关，形成安全关键问题。",
+            "conclusion": "在宇树 G1 人形机器人的真实实验中，两个站立位置各六轮，共十轮目标操作全部成功，目标开关保持不变，且未发生非目标开关触发。仿真中该方法实现 9/9 次安全完成，原始遥操作为 5/9，说明过滤器能显著提升操作安全性。",
+            "method": "方法是在虚拟现实遥操作中逐条检查操作员指令的运行时安全过滤器。它结合机器人头部相机估计的场景模型，并采用以目标为条件的控制屏障函数二次规划：安全指令原样通过，可能使工具接近非目标开关的指令则被约束修正。",
+            "takeaways": "该工作表明，将感知场景模型与控制屏障函数结合，可在不改变安全指令的前提下为遥操作提供运行时安全保障，适用于目标与干扰设备高度相似的电气操作场景。其结论基于宇树 G1 平台与有限轮次实验，向更多开关布局和其他任务推广仍需进一步验证。"
+          }
+        },
+        "en": {
+          "title": "Humanoid Robots for Safety-Critical Electrical Switching: A Perception-Informed Runtime Constraint Filter",
+          "summary": "Humanoid robots can reduce personnel exposure during electrical switching, but safe control is challenging because the tool must reach a target switch next to similar devices, where an imprecise operator command can contact a non-target switch. This study proposes a runtime safety filter that checks each operator command during virtual-reality teleoperation of a humanoid robot. The filter integrates a scene model estimated from the robot head camera and a target-conditioned control barrier function quadratic program that keeps the tool away from the non-target switch while passing safe commands unchanged. In real-world experiments on a Unitree G1 humanoid robot, with six rounds at each of two standing positions, target operations succeed in all ten rounds with an unchanged target and no non-target actuation. A simulation study achieves 9/9 safe completions, compared with 5/9 for raw teleoperation, demonstrating the feasibility of the method for humanoid switching operations.",
+          "lede": "When a humanoid robot operates electrical switches, how can the tool avoid nearby look-alike switches? A perception-informed runtime safety filter achieved ten safe completions on a Unitree G1.",
+          "tags": [
+            "humanoid robots",
+            "safety control",
+            "teleoperation"
+          ],
+          "sections": {
+            "background": "Electrical switching is hazardous, and humanoid robots offer a way to reduce personnel exposure. However, target switches sit next to similar devices, so a slightly imprecise teleoperation command can actuate a non-target switch, making safety a critical concern.",
+            "conclusion": "In real-world experiments on a Unitree G1 humanoid robot, six rounds at each of two standing positions yielded ten successful target operations, with the target unchanged and no non-target actuation. In simulation, the method achieved 9/9 safe completions versus 5/9 for raw teleoperation, showing a clear safety improvement.",
+            "method": "The method is a runtime safety filter that checks each operator command during virtual-reality teleoperation. It combines a scene model estimated from the robot head camera with a target-conditioned control barrier function quadratic program: safe commands pass unchanged, while commands that could bring the tool near the non-target switch are constrained and corrected.",
+            "takeaways": "The work shows that combining a perceived scene model with a control barrier function can provide runtime safety for teleoperation without altering safe commands, which suits electrical tasks where targets and distractors look alike. The conclusions rest on the Unitree G1 platform and a limited number of trials, so generalization to more switch layouts and other tasks needs further validation."
+          }
+        }
+      },
+      "id": "2611.27845",
+      "original_title": "Humanoid robots for safety-critical electrical switching: A perception-informed runtime constraint filter",
+      "original_summary": "Humanoid robots can reduce personnel exposure in electrical switching, but safe control is challenging because the tool must reach a target switch next to similar devices, where an imprecise operator command can contact a non-target switch. This study proposes a runtime safety filter that checks each operator command during virtual-reality teleoperation of a humanoid robot. The filter integrates a scene model estimated from the robot head camera and a target-conditioned control barrier function quadratic program that keeps the tool away from the non-target switch while passing safe commands unchanged. In real-world experiments on a Unitree G1 humanoid robot, with six rounds at each of two standing positions, target operations succeed in all ten rounds with an unchanged target and no non-target actuation. A simulation study achieves 9/9 safe completions, compared with 5/9 for raw teleoperation, demonstrating the feasibility of the method for humanoid switching operations.",
+      "url": "https://arxiv.org/abs/2611.27845v1",
+      "source": "arXiv cs.RO",
+      "published": "2026-11-20T16:58:59+00:00",
+      "authors": [
+        "Songyang Liu",
+        "Yu Hou",
+        "Yuqing Hu",
+        "Shuai Li"
+      ],
+      "score": 4,
+      "versioned_id": "2611.27845v1",
+      "figure": {
+        "path": "./data/2026-11-23/figures/2611.27845.webp",
+        "caption": "Figure 5: Experimental setups. (a) Simulation: G1 pressing a pushbutton in MuJoCo. (b) Real-world: G1 with a right-wrist tool at two wall-mounted safety switches."
+      },
+      "code_url": null,
+      "project_url": null,
+      "pdf_url": "https://arxiv.org/pdf/2611.27845"
+    },
+    {
+      "title": "S-BFM：从稀疏时空目标学习的人形机器人行为基础模型",
+      "summary": "S-BFM 是一种人形机器人全身控制的行为基础模型，只需给定目标姿态、朝向和到达时间等稀疏时空目标，就能自主生成中间过渡动作及其节奏，无需密集参考轨迹。仿真中，全局关节位置误差较最佳基线降低逾 32%，固定目标到达率从 43.5% 提升至 74.6%，终端位置误差从 1.67 米降至 0.26 米；模型已部署于全尺寸 AGIBOT A3 人形机器人。",
+      "lede": "只需告诉人形机器人去哪里、以什么姿态、何时到达，S-BFM 就能自行补全中间动作与节奏，并在仿真和 AGIBOT A3 真机上验证了效果。",
+      "tags": [
+        "人形机器人控制",
+        "行为基础模型",
+        "稀疏时空目标"
+      ],
+      "sections": {
+        "background": "通用全身运动跟踪器能执行多样的人形动作，但依赖密集参考轨迹。实际任务往往只规定机器人应在何处、以何种姿态、何时到达，中间运动需另交给规划器处理，这增加了系统复杂度，也限制了底层控制器的自主性。",
+        "conclusion": "在固定与混合时间跨度下，S-BFM 的全局关节位置误差较最佳基线降低逾 32%；固定目标到达率从 43.5% 提升至 74.6%，终端位置误差从 1.67 米降至 0.26 米。作者进一步将 S-BFM 部署到全尺寸 AGIBOT A3 人形机器人，表明稀疏时空目标足以驱动自然且节奏合理的全身运动。",
+        "method": "方法分三步：空间接地通过空间重建，在前向—后向行为表示中加入世界坐标系下的位置与朝向；时间条件蒸馏通过闭环模仿一个使用密集参考轨迹的教师模型，从真实运动中学习过渡动作与节奏；生成式微调借助蒸馏得到的运动生成器，扩展可覆盖的距离与到达时间范围。",
+        "takeaways": "该工作提示，底层控制器可像人类运动协调那样，自行组织稀疏目标之间的运动与节奏，从而减少对独立规划器的依赖。其结论主要建立在仿真评测与 AGIBOT A3 真机部署上，对更复杂地形、动态障碍和长期任务的适用性仍需进一步验证。"
+      },
+      "i18n": {
+        "zh": {
+          "title": "S-BFM：从稀疏时空目标学习的人形机器人行为基础模型",
+          "summary": "S-BFM 是一种人形机器人全身控制的行为基础模型，只需给定目标姿态、朝向和到达时间等稀疏时空目标，就能自主生成中间过渡动作及其节奏，无需密集参考轨迹。仿真中，全局关节位置误差较最佳基线降低逾 32%，固定目标到达率从 43.5% 提升至 74.6%，终端位置误差从 1.67 米降至 0.26 米；模型已部署于全尺寸 AGIBOT A3 人形机器人。",
+          "lede": "只需告诉人形机器人去哪里、以什么姿态、何时到达，S-BFM 就能自行补全中间动作与节奏，并在仿真和 AGIBOT A3 真机上验证了效果。",
+          "tags": [
+            "人形机器人控制",
+            "行为基础模型",
+            "稀疏时空目标"
+          ],
+          "sections": {
+            "background": "通用全身运动跟踪器能执行多样的人形动作，但依赖密集参考轨迹。实际任务往往只规定机器人应在何处、以何种姿态、何时到达，中间运动需另交给规划器处理，这增加了系统复杂度，也限制了底层控制器的自主性。",
+            "conclusion": "在固定与混合时间跨度下，S-BFM 的全局关节位置误差较最佳基线降低逾 32%；固定目标到达率从 43.5% 提升至 74.6%，终端位置误差从 1.67 米降至 0.26 米。作者进一步将 S-BFM 部署到全尺寸 AGIBOT A3 人形机器人，表明稀疏时空目标足以驱动自然且节奏合理的全身运动。",
+            "method": "方法分三步：空间接地通过空间重建，在前向—后向行为表示中加入世界坐标系下的位置与朝向；时间条件蒸馏通过闭环模仿一个使用密集参考轨迹的教师模型，从真实运动中学习过渡动作与节奏；生成式微调借助蒸馏得到的运动生成器，扩展可覆盖的距离与到达时间范围。",
+            "takeaways": "该工作提示，底层控制器可像人类运动协调那样，自行组织稀疏目标之间的运动与节奏，从而减少对独立规划器的依赖。其结论主要建立在仿真评测与 AGIBOT A3 真机部署上，对更复杂地形、动态障碍和长期任务的适用性仍需进一步验证。"
+          }
+        },
+        "en": {
+          "title": "S-BFM: A Behavioral Foundation Model for Humanoid Control from Sparse Spatiotemporal Goals",
+          "summary": "S-BFM is a behavioral foundation model for humanoid whole-body control that generates intervening motion and its pace from sparse spatiotemporal goals, namely target postures, poses, and arrival times, without dense reference trajectories. In simulation it lowers global joint-position error by over 32% relative to the best baseline, raises fixed-goal reach from 43.5% to 74.6%, and cuts terminal position error from 1.67 m to 0.26 m; it is also deployed on the full-size AGIBOT A3 humanoid.",
+          "lede": "Given only where a humanoid should go, in which posture, and when to arrive, S-BFM fills in the intervening motion and pace by itself, with results validated in simulation and on the AGIBOT A3 humanoid.",
+          "tags": [
+            "humanoid robot control",
+            "behavioral foundation model",
+            "sparse spatiotemporal goals"
+          ],
+          "sections": {
+            "background": "General-purpose whole-body trackers can execute diverse humanoid motions but require dense reference trajectories. Real tasks usually specify only where, in which posture, and when the robot should arrive, leaving the motion in between to a separate planner. This adds system complexity and limits the autonomy of the low-level controller.",
+            "conclusion": "Under fixed and mixed horizons, S-BFM lowers global joint-position error by over 32% relative to the best baseline. Fixed-goal reach rises from 43.5% to 74.6%, and terminal position error falls from 1.67 m to 0.26 m. The authors further deploy S-BFM on the full-size AGIBOT A3 humanoid, showing that sparse spatiotemporal goals suffice for natural, well-timed whole-body motion.",
+            "method": "The method has three parts. Spatial Grounding adds world-frame position and heading to a forward-backward behavior representation through spatial reconstruction. Time-Conditioned Distillation learns transitions and pace from real motion through closed-loop imitation of a dense-reference teacher. Generative Fine-Tuning uses a distilled motion generator to broaden the covered distances and arrival times.",
+            "takeaways": "The work suggests that a low-level controller can organize the motion and pace between sparse goals on its own, much like human motor coordination, reducing reliance on a separate planner. Its conclusions rest mainly on simulation evaluation and deployment on the AGIBOT A3 humanoid; applicability to more complex terrain, dynamic obstacles, and long-horizon tasks still needs further validation."
+          }
+        }
+      },
+      "id": "2611.27552",
+      "original_title": "S-BFM: A Behavioral Foundation Model for Humanoid Control from Sparse Spatiotemporal Goals",
+      "original_summary": "General-purpose whole-body trackers can execute diverse humanoid motions, but they require dense reference trajectories. However, tasks usually specify only where, in which posture, and when the robot should arrive, leaving the motion in between to a separate planner. Inspired by human motor coordination, our key idea is that a low-level controller can organize the intervening motion and its pace by itself from sparse goals with arrival times. In this paper, we propose S-BFM, a novel behavioral foundation model superior in its autonomy: it generates whole-body transitions from target postures, poses, and arrival times alone. Specifically, we first introduce Spatial Grounding, which adds world-frame position and heading to a forward-backward behavior representation through spatial reconstruction. Then, Time-Conditioned Distillation is designed to learn transitions and pace from real motion through closed-loop imitation of a dense-reference teacher. Lastly, Generative Fine-Tuning is introduced to broaden the covered distances and arrival times with a distilled motion generator. In simulation, S-BFM lowers global joint-position error by over 32% relative to the best baseline under fixed and mixed horizons, and raises fixed-goal reach from 43.5% to 74.6% while cutting terminal position error from 1.67 to 0.26 m. We further deploy S-BFM on the full-size AGIBOT A3 humanoid. Sparse spatiotemporal goals thus suffice for natural, well-timed whole-body motion.",
+      "url": "https://arxiv.org/abs/2611.27552v1",
+      "source": "arXiv cs.RO",
+      "published": "2026-11-20T12:47:59+00:00",
+      "authors": [
+        "Kun Yang",
+        "Xuanyu Chen",
+        "Jing Tan",
+        "Yanjing Liu",
+        "Yubo Zhao",
+        "Renjing Xu",
+        "Addison Lin Wang"
+      ],
+      "score": 4,
+      "versioned_id": "2611.27552v1",
+      "figure": {
+        "path": "./data/2026-11-23/figures/2611.27552.webp",
+        "caption": "Figure 2: Overview of our S-BFM framework. Stage I learns a behavior representation grounded in world-frame position and heading. Stage II distills reference-guided transitions conditioned on the remaining time. Stage III broadens the range of distances and horizons through generative fine-tuning."
+      },
+      "code_url": null,
+      "project_url": null,
+      "pdf_url": "https://arxiv.org/pdf/2611.27552"
+    },
+    {
+      "title": "NavRSI：面向视觉语言导航的递归式执行框架自我改进",
+      "summary": "NavRSI 是一种以执行框架为中心的递归自我改进方法，让冻结的大语言模型（LLM，即不更新参数的大模型）通过闭环经验自行改写导航执行框架。它在 R2R-CE 验证集未见划分上以 GPT-6-Astra 达到 85.64% 成功率，比此前报告的最佳结果高 4.13 个百分点，并在 RxR-CE、NavRAG-CE 和一台真实人形机器人上验证了泛化性。",
+      "lede": "不改模型参数，只改模型与环境的交互框架：NavRSI 让冻结的大语言模型在闭环经验中递归优化导航执行框架，在 R2R-CE 上刷新纪录。",
+      "tags": [
+        "视觉语言导航",
+        "大语言模型智能体",
+        "自我改进"
+      ],
+      "sections": {
+        "background": "前沿大语言模型已能通过直接闭环感知与行动完成视觉语言导航（VLN，即依据自然语言指令在环境中移动）。但导航表现很大程度上取决于约束 LLM 与环境交互的执行框架，而现有框架多依赖人工设计的导航工具、记忆机制和智能体角色，难以自动适配不同模型与环境。",
+        "conclusion": "实验显示，来自四家厂商的 LLM 均获得一致提升；在完整 R2R-CE 验证集未见划分上，GPT-6-Astra 达到 85.64% 成功率，超过此前报告的最佳结果 4.13 个百分点。RxR-CE、NavRAG-CE 以及一台真实人形机器人上的评测进一步表明方法具有泛化性。部署时仅需单个 RGB 相机和基础动作，无需任务专用模型训练或额外导航工具。",
+        "method": "NavRSI 每轮迭代收集导航轨迹与失败诊断，由设计者智能体重写执行框架，并保留被证明有效的修改；设计者从以往修改中积累经验，使执行框架与该经验共同演化。模拟器提供的特权诊断信息只供设计者使用，导航 LLM 无法访问，因此不依赖额外传感器或工具。",
+        "takeaways": "该工作说明，提升导航能力不必改动模型参数，而可把改进重点放在模型与环境的交互框架上，并通过闭环经验自动迭代。其局限在于改进过程依赖模拟器特权诊断，真实场景中的失败诊断获取方式与迁移效果仍需进一步考察。"
+      },
+      "i18n": {
+        "zh": {
+          "title": "NavRSI：面向视觉语言导航的递归式执行框架自我改进",
+          "summary": "NavRSI 是一种以执行框架为中心的递归自我改进方法，让冻结的大语言模型（LLM，即不更新参数的大模型）通过闭环经验自行改写导航执行框架。它在 R2R-CE 验证集未见划分上以 GPT-6-Astra 达到 85.64% 成功率，比此前报告的最佳结果高 4.13 个百分点，并在 RxR-CE、NavRAG-CE 和一台真实人形机器人上验证了泛化性。",
+          "lede": "不改模型参数，只改模型与环境的交互框架：NavRSI 让冻结的大语言模型在闭环经验中递归优化导航执行框架，在 R2R-CE 上刷新纪录。",
+          "tags": [
+            "视觉语言导航",
+            "大语言模型智能体",
+            "自我改进"
+          ],
+          "sections": {
+            "background": "前沿大语言模型已能通过直接闭环感知与行动完成视觉语言导航（VLN，即依据自然语言指令在环境中移动）。但导航表现很大程度上取决于约束 LLM 与环境交互的执行框架，而现有框架多依赖人工设计的导航工具、记忆机制和智能体角色，难以自动适配不同模型与环境。",
+            "conclusion": "实验显示，来自四家厂商的 LLM 均获得一致提升；在完整 R2R-CE 验证集未见划分上，GPT-6-Astra 达到 85.64% 成功率，超过此前报告的最佳结果 4.13 个百分点。RxR-CE、NavRAG-CE 以及一台真实人形机器人上的评测进一步表明方法具有泛化性。部署时仅需单个 RGB 相机和基础动作，无需任务专用模型训练或额外导航工具。",
+            "method": "NavRSI 每轮迭代收集导航轨迹与失败诊断，由设计者智能体重写执行框架，并保留被证明有效的修改；设计者从以往修改中积累经验，使执行框架与该经验共同演化。模拟器提供的特权诊断信息只供设计者使用，导航 LLM 无法访问，因此不依赖额外传感器或工具。",
+            "takeaways": "该工作说明，提升导航能力不必改动模型参数，而可把改进重点放在模型与环境的交互框架上，并通过闭环经验自动迭代。其局限在于改进过程依赖模拟器特权诊断，真实场景中的失败诊断获取方式与迁移效果仍需进一步考察。"
+          }
+        },
+        "en": {
+          "title": "NavRSI: Recursive Harness Self-Improvement for Vision-and-Language Navigation",
+          "summary": "NavRSI is a harness-centric recursive self-improvement framework that lets frozen large language models (LLMs) rewrite their navigation harness through closed-loop experience. It reaches an 85.64% success rate on the full R2R-CE val-unseen split with GPT-6-Astra, 4.13 percentage points above the previously reported best, and generalizes to RxR-CE, NavRAG-CE, and a real humanoid robot.",
+          "lede": "Rather than changing model weights, NavRSI changes the harness: frozen LLMs recursively refine their navigation harness through closed-loop experience, setting a new record on R2R-CE.",
+          "tags": [
+            "vision-and-language navigation",
+            "LLM agents",
+            "self-improvement"
+          ],
+          "sections": {
+            "background": "Frontier large language models (LLMs) can perform vision-and-language navigation (VLN), following natural-language instructions through direct closed-loop perception and action. However, navigation performance depends strongly on the harness that governs LLM-environment interaction, and existing harnesses largely rely on manually designed navigation tools, memory, and agent roles, which are hard to adapt automatically across models and environments.",
+            "conclusion": "Experiments show consistent improvements across LLMs from four vendors. On the full R2R-CE val-unseen split, GPT-6-Astra reaches an 85.64% success rate, surpassing the previously reported best by 4.13 percentage points. Evaluations on RxR-CE, NavRAG-CE, and a real humanoid robot further demonstrate generalizability. Deployment requires only a single RGB camera and primitive actions, with no task-specific model training or additional navigation tools.",
+            "method": "In each round, NavRSI iteratively collects navigation trajectories and failure diagnostics, employs a designer agent to rewrite the harness, and retains revisions that prove effective, while the designer accumulates experience from previous revisions so that the harness and this experience co-evolve. Privileged simulator diagnostics guide only the designer and remain inaccessible to the navigating LLM, so no extra sensors or tools are needed at deployment.",
+            "takeaways": "The work shows that navigation can be improved without changing model parameters, by focusing improvement on the model-environment harness and iterating automatically through closed-loop experience. A limitation is that improvement relies on privileged simulator diagnostics; how such failure diagnostics are obtained and transferred in real-world settings remains to be examined."
+          }
+        }
+      },
+      "id": "2611.27499",
+      "original_title": "NavRSI: Recursive Harness Self-Improvement for Vision-and-Language Navigation",
+      "original_summary": "Frontier large language models (LLMs) have enabled vision-and-language navigation (VLN) through direct closed-loop perception and action. However, navigation performance depends strongly on the harness governing LLM-environment interactions, while existing harnesses largely rely on manually designed navigation tools, memory, and agent roles. We introduce NavRSI, a harness-centric recursive self-improvement framework that optimizes the navigation behavior of frozen LLMs through closed-loop experience. In each round, NavRSI iteratively collects navigation trajectories and failure diagnostics, employs a designer agent to rewrite the harness, and retains the revisions that prove effective, while the designer accumulates experience from previous revisions so that the harness and this experience co-evolve. Privileged simulator diagnostics guide only the designer and remain inaccessible to the navigating LLM, enabling deployment with a single RGB camera and primitive actions, without task-specific model training or additional navigation tools. Experiments demonstrate consistent improvements across LLMs from four vendors, with 85.64% success rate on the full R2R-CE val-unseen split with GPT-6-Astra, surpassing the previously reported best by 4.13%. Evaluations on RxR-CE, NavRAG-CE, and a real humanoid robot further demonstrate its generalizability.",
+      "url": "https://arxiv.org/abs/2611.27499v1",
+      "source": "arXiv cs.RO",
+      "published": "2026-11-20T11:47:47+00:00",
+      "authors": [
+        "Guangzhao Dai",
+        "Guoxin Lian",
+        "Shuo Wang",
+        "Shengbin Yue",
+        "Qianru Sun",
+        "Xiangbo Shu",
+        "Bin Zhu"
+      ],
+      "score": 4,
+      "versioned_id": "2611.27499v1",
+      "figure": {
+        "path": "./data/2026-11-23/figures/2611.27499.webp",
+        "caption": "Figure 3: Real-world demo of NavRSI on the Unitree G1 robot."
+      },
+      "code_url": null,
+      "project_url": "https://daiguangzhao.github.io/NavRSI",
+      "pdf_url": "https://arxiv.org/pdf/2611.27499"
+    }
+  ]
+}

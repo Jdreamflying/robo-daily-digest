@@ -1,6 +1,23 @@
 {
   "editions": [
     {
+      "date": "2026-11-23",
+      "papers": {
+        "path": "./data/2026-11-23/papers.json",
+        "count": 8,
+        "total_scanned": 74,
+        "lead": "BeyondEgo：通过人形机器人自我-外部视角前瞻，学习超越自我中心感知的行动"
+      },
+      "news": {
+        "path": "./data/2026-11-23/news.json",
+        "count": 1,
+        "total_scanned": 84,
+        "lead": "Genesis 发布 v1.5.0，新增动态视觉纹理并改进第三方渲染后端支持"
+      },
+      "infographic": "./data/2026-11-23/infographic.png",
+      "infographic_en": "./data/2026-11-23/infographic.en.png"
+    },
+    {
       "date": "2026-11-22",
       "papers": {
         "path": "./data/2026-11-22/papers.json",
