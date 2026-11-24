@@ -11,7 +11,7 @@
       "news": {
         "path": "./data/2026-11-24/news.json",
         "count": 8,
-        "total_scanned": 232,
+        "total_scanned": 231,
         "lead": "Uber、Nuro 与 Lucid 在旧金山湾区启动完全无人驾驶出租车测试"
       },
       "infographic": "./data/2026-11-24/infographic.png",
