@@ -1,0 +1,78 @@
+{
+  "date": "2026-11-24",
+  "total_scanned": 2935,
+  "total_unique": 12,
+  "window_count": 118,
+  "window_hours": 48,
+  "cutoff": "2026-11-22T09:57:16.153511+00:00",
+  "window_end": "2026-11-24T09:57:16.153511+00:00",
+  "scored_count": 12,
+  "qualified_count": 2,
+  "mode": "api",
+  "items": [
+    {
+      "title": "约翰迪尔收购 Orchard AI，加强作物季决策工具",
+      "summary": "约翰迪尔表示，这笔交易将增强其帮助种植者在整个生长季做出更明智决策的能力。",
+      "lede": "约翰迪尔收购 Orchard AI，称将增强种植者在整个生长季的决策支持能力，但交易细节和产品效果尚未公开。",
+      "tags": [
+        "农业",
+        "人工智能",
+        "并购"
+      ],
+      "analysis": [
+        "约翰迪尔宣布收购 Orchard AI，并将其纳入自身技术产品组合。公司称，此举旨在加强帮助种植者在整个生长季做出更明智决策的能力。",
+        "从用途看，这类工具面向农业生产中的日常判断，例如在作物生长过程中辅助种植者安排和调整管理措施。约翰迪尔希望把相关能力与现有农业技术结合，覆盖更完整的生长季。",
+        "目前公开信息有限：交易金额、Orchard AI 的具体产品功能、整合时间表以及实际效果均未披露，因此尚无法判断这些工具在田间能带来多大改善。"
+      ],
+      "i18n": {
+        "zh": {
+          "title": "约翰迪尔收购 Orchard AI，加强作物季决策工具",
+          "summary": "约翰迪尔表示，这笔交易将增强其帮助种植者在整个生长季做出更明智决策的能力。",
+          "lede": "约翰迪尔收购 Orchard AI，称将增强种植者在整个生长季的决策支持能力，但交易细节和产品效果尚未公开。",
+          "tags": [
+            "农业",
+            "人工智能",
+            "并购"
+          ],
+          "analysis": [
+            "约翰迪尔宣布收购 Orchard AI，并将其纳入自身技术产品组合。公司称，此举旨在加强帮助种植者在整个生长季做出更明智决策的能力。",
+            "从用途看，这类工具面向农业生产中的日常判断，例如在作物生长过程中辅助种植者安排和调整管理措施。约翰迪尔希望把相关能力与现有农业技术结合，覆盖更完整的生长季。",
+            "目前公开信息有限：交易金额、Orchard AI 的具体产品功能、整合时间表以及实际效果均未披露，因此尚无法判断这些工具在田间能带来多大改善。"
+          ]
+        },
+        "en": {
+          "title": "John Deere acquires Orchard AI to strengthen in-season decision tools",
+          "summary": "John Deere said the deal strengthens its ability to help growers make more informed decisions throughout the growing season.",
+          "lede": "John Deere has acquired Orchard AI, saying the deal will boost decision support for growers throughout the growing season, though deal details and product results remain undisclosed.",
+          "tags": [
+            "Agriculture",
+            "Artificial Intelligence",
+            "Mergers & Acquisitions"
+          ],
+          "analysis": [
+            "John Deere announced it has acquired Orchard AI and is folding the company into its technology portfolio. The company said the move is meant to strengthen its ability to help growers make more informed decisions throughout the growing season.",
+            "In practical terms, such tools are aimed at day-to-day farming judgments, such as helping growers plan and adjust management steps as crops develop. John Deere wants to combine the capability with its existing agricultural technology to cover more of the growing season.",
+            "Public information is limited: the deal value, Orchard AI's specific product features, the integration timeline and real-world results have not been disclosed, so it is not yet possible to judge how much difference the tools will make in the field."
+          ]
+        }
+      },
+      "id": "6b8dc09eb4c56c0f8115ef0e",
+      "original_title": "How does Orchard AI fit into John Deere’s technology portfolio?",
+      "original_summary": "John Deere said the deal strengthens its ability to help growers make more informed decisions throughout the growing season.",
+      "url": "https://www.therobotreport.com/how-does-orchard-ai-fit-into-john-deeres-technology-portfolio",
+      "source": "The Robot Report",
+      "published": "2026-11-23T20:29:55+00:00",
+      "authors": [],
+      "score": 3,
+      "category": "robotics",
+      "image": {
+        "path": "./data/2026-11-24/news_images/6b8dc09eb4c56c0f8115ef0e.webp",
+        "width": 1000,
+        "height": 649,
+        "source_url": "https://www.therobotreport.com/how-does-orchard-ai-fit-into-john-deeres-technology-portfolio/",
+        "image_url": "https://www.therobotreport.com/wp-content/uploads/2026/11/orchard-ai-tractor-featured.jpg",
+        "alt": "A John Deere tractor moving through a field. "
+      }
+    }
+  ]
+}
