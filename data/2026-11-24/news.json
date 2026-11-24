@@ -1,78 +1,439 @@
 {
   "date": "2026-11-24",
-  "total_scanned": 2935,
-  "total_unique": 12,
-  "window_count": 118,
+  "total_scanned": 3101,
+  "total_unique": 47,
+  "window_count": 225,
   "window_hours": 48,
-  "cutoff": "2026-11-22T09:57:16.153511+00:00",
-  "window_end": "2026-11-24T09:57:16.153511+00:00",
-  "scored_count": 12,
-  "qualified_count": 2,
+  "cutoff": "2026-11-22T12:32:41.692614+00:00",
+  "window_end": "2026-11-24T12:32:41.692614+00:00",
+  "scored_count": 47,
+  "qualified_count": 13,
+  "event_duplicate_count": 2,
   "mode": "api",
   "items": [
     {
-      "title": "约翰迪尔收购 Orchard AI，加强作物季决策工具",
-      "summary": "约翰迪尔表示，这笔交易将增强其帮助种植者在整个生长季做出更明智决策的能力。",
-      "lede": "约翰迪尔收购 Orchard AI，称将增强种植者在整个生长季的决策支持能力，但交易细节和产品效果尚未公开。",
+      "title": "RoboTrack：面向真实机器人操作的点跟踪方法发布",
+      "summary": "一项名为 RoboTrack 的点跟踪方法发布，目标是让机器人在真实环境中完成操作任务。",
+      "lede": "RoboTrack 是一种面向真实机器人操作的点跟踪方法，相关细节尚未公开。",
       "tags": [
-        "农业",
-        "人工智能",
-        "并购"
+        "机器人",
+        "点跟踪",
+        "操作"
       ],
       "analysis": [
-        "约翰迪尔宣布收购 Orchard AI，并将其纳入自身技术产品组合。公司称，此举旨在加强帮助种植者在整个生长季做出更明智决策的能力。",
-        "从用途看，这类工具面向农业生产中的日常判断，例如在作物生长过程中辅助种植者安排和调整管理措施。约翰迪尔希望把相关能力与现有农业技术结合，覆盖更完整的生长季。",
-        "目前公开信息有限：交易金额、Orchard AI 的具体产品功能、整合时间表以及实际效果均未披露，因此尚无法判断这些工具在田间能带来多大改善。"
+        "研究团队发布了 RoboTrack，一种用于真实世界机器人操作的点跟踪方法。",
+        "目前公开信息未给出跟踪精度、速度或测试规模等具体数字。",
+        "该方法面向真实场景下的机器人操作，实际效果仍需更多实验数据支持。"
       ],
       "i18n": {
         "zh": {
-          "title": "约翰迪尔收购 Orchard AI，加强作物季决策工具",
-          "summary": "约翰迪尔表示，这笔交易将增强其帮助种植者在整个生长季做出更明智决策的能力。",
-          "lede": "约翰迪尔收购 Orchard AI，称将增强种植者在整个生长季的决策支持能力，但交易细节和产品效果尚未公开。",
+          "title": "RoboTrack：面向真实机器人操作的点跟踪方法发布",
+          "summary": "一项名为 RoboTrack 的点跟踪方法发布，目标是让机器人在真实环境中完成操作任务。",
+          "lede": "RoboTrack 是一种面向真实机器人操作的点跟踪方法，相关细节尚未公开。",
           "tags": [
-            "农业",
-            "人工智能",
-            "并购"
+            "机器人",
+            "点跟踪",
+            "操作"
           ],
           "analysis": [
-            "约翰迪尔宣布收购 Orchard AI，并将其纳入自身技术产品组合。公司称，此举旨在加强帮助种植者在整个生长季做出更明智决策的能力。",
-            "从用途看，这类工具面向农业生产中的日常判断，例如在作物生长过程中辅助种植者安排和调整管理措施。约翰迪尔希望把相关能力与现有农业技术结合，覆盖更完整的生长季。",
-            "目前公开信息有限：交易金额、Orchard AI 的具体产品功能、整合时间表以及实际效果均未披露，因此尚无法判断这些工具在田间能带来多大改善。"
+            "研究团队发布了 RoboTrack，一种用于真实世界机器人操作的点跟踪方法。",
+            "目前公开信息未给出跟踪精度、速度或测试规模等具体数字。",
+            "该方法面向真实场景下的机器人操作，实际效果仍需更多实验数据支持。"
           ]
         },
         "en": {
-          "title": "John Deere acquires Orchard AI to strengthen in-season decision tools",
-          "summary": "John Deere said the deal strengthens its ability to help growers make more informed decisions throughout the growing season.",
-          "lede": "John Deere has acquired Orchard AI, saying the deal will boost decision support for growers throughout the growing season, though deal details and product results remain undisclosed.",
+          "title": "RoboTrack: Point tracking method released for real-world robotic manipulation",
+          "summary": "A point tracking method called RoboTrack has been released, aimed at helping robots perform manipulation tasks in real-world settings.",
+          "lede": "RoboTrack is a point tracking method for real-world robotic manipulation, with details still limited.",
           "tags": [
-            "Agriculture",
-            "Artificial Intelligence",
-            "Mergers & Acquisitions"
+            "robotics",
+            "point tracking",
+            "manipulation"
           ],
           "analysis": [
-            "John Deere announced it has acquired Orchard AI and is folding the company into its technology portfolio. The company said the move is meant to strengthen its ability to help growers make more informed decisions throughout the growing season.",
-            "In practical terms, such tools are aimed at day-to-day farming judgments, such as helping growers plan and adjust management steps as crops develop. John Deere wants to combine the capability with its existing agricultural technology to cover more of the growing season.",
-            "Public information is limited: the deal value, Orchard AI's specific product features, the integration timeline and real-world results have not been disclosed, so it is not yet possible to judge how much difference the tools will make in the field."
+            "The research team released RoboTrack, a point tracking method for real-world robotic manipulation.",
+            "The available information does not include specific numbers on tracking accuracy, speed, or test scale.",
+            "The method targets real-world robot operation, but its practical impact still needs more experimental evidence."
           ]
         }
       },
-      "id": "6b8dc09eb4c56c0f8115ef0e",
-      "original_title": "How does Orchard AI fit into John Deere’s technology portfolio?",
-      "original_summary": "John Deere said the deal strengthens its ability to help growers make more informed decisions throughout the growing season.",
-      "url": "https://www.therobotreport.com/how-does-orchard-ai-fit-into-john-deeres-technology-portfolio",
-      "source": "The Robot Report",
-      "published": "2026-11-23T20:29:55+00:00",
+      "id": "eb2701ff66febea272938825",
+      "original_title": "RoboTrack: Point tracking for real-world robotic manipulation",
+      "original_summary": "",
+      "url": "https://huggingface.co/blog/allenai/robotrack",
+      "source": "Hugging Face Blog",
+      "published": "2026-11-23T17:20:37+00:00",
       "authors": [],
       "score": 3,
       "category": "robotics",
       "image": {
-        "path": "./data/2026-11-24/news_images/6b8dc09eb4c56c0f8115ef0e.webp",
-        "width": 1000,
-        "height": 649,
-        "source_url": "https://www.therobotreport.com/how-does-orchard-ai-fit-into-john-deeres-technology-portfolio/",
-        "image_url": "https://www.therobotreport.com/wp-content/uploads/2026/11/orchard-ai-tractor-featured.jpg",
-        "alt": "A John Deere tractor moving through a field. "
+        "path": "./data/2026-11-24/news_images/eb2701ff66febea272938825.webp",
+        "width": 1120,
+        "height": 800,
+        "source_url": "https://huggingface.co/blog/allenai/robotrack",
+        "image_url": "https://cdn-uploads.huggingface.co/production/uploads/638e39b249de7ae552d977b5/0KlbITzhyUGtGPyvi09um.png",
+        "alt": ""
       }
+    },
+    {
+      "title": "亚马逊送货无人机撞坏密歇根居民车库",
+      "summary": "一架亚马逊送货无人机在密歇根撞上居民车库，此事发生之际，美国联邦航空管理局（FAA）正考虑放宽商业无人机送货的规定。",
+      "lede": "亚马逊送货无人机在密歇根撞上居民车库，正值美国监管机构考虑扩大商业无人机送货之际。",
+      "tags": [
+        "亚马逊无人机",
+        "送货无人机",
+        "密歇根事故"
+      ],
+      "analysis": [
+        "亚马逊的一架送货无人机在密歇根撞坏了一处居民车库。",
+        "事故发生时，美国联邦航空管理局正在审议一项扩大商业无人机送货运营的规定。",
+        "目前尚无人员伤亡或具体损失金额的公开信息。"
+      ],
+      "i18n": {
+        "zh": {
+          "title": "亚马逊送货无人机撞坏密歇根居民车库",
+          "summary": "一架亚马逊送货无人机在密歇根撞上居民车库，此事发生之际，美国联邦航空管理局（FAA）正考虑放宽商业无人机送货的规定。",
+          "lede": "亚马逊送货无人机在密歇根撞上居民车库，正值美国监管机构考虑扩大商业无人机送货之际。",
+          "tags": [
+            "亚马逊无人机",
+            "送货无人机",
+            "密歇根事故"
+          ],
+          "analysis": [
+            "亚马逊的一架送货无人机在密歇根撞坏了一处居民车库。",
+            "事故发生时，美国联邦航空管理局正在审议一项扩大商业无人机送货运营的规定。",
+            "目前尚无人员伤亡或具体损失金额的公开信息。"
+          ]
+        },
+        "en": {
+          "title": "Amazon Delivery Drone Damages Michigan Resident's Garage",
+          "summary": "An Amazon delivery drone struck a resident's garage in Michigan, an incident that comes as the FAA weighs a rule that would expand commercial drone delivery operations.",
+          "lede": "An Amazon delivery drone damaged a Michigan resident's garage as U.S. regulators consider expanding commercial drone delivery.",
+          "tags": [
+            "Amazon drones",
+            "drone delivery",
+            "Michigan incident"
+          ],
+          "analysis": [
+            "An Amazon delivery drone struck and damaged a resident's garage in Michigan.",
+            "The incident comes as the Federal Aviation Administration considers a rule that would expand commercial drone delivery operations.",
+            "No injuries or specific damage figures have been publicly reported."
+          ]
+        }
+      },
+      "id": "9475166d1e1235463ea3598f",
+      "original_title": "Amazon Drone Damages Michigan Resident’s Garage",
+      "original_summary": "Incident comes as FAA considers regulation that would expand commercial UAV delivery operations.",
+      "url": "https://www.flyingmag.com/amazon-delivery-drone-damages-michigan-garage",
+      "source": "FLYING",
+      "published": "2026-11-23T20:30:00+00:00",
+      "authors": [],
+      "score": 3,
+      "category": "robotics",
+      "engagement": {
+        "hn_points": 15,
+        "hn_comments": 7
+      },
+      "discussion_url": "https://news.ycombinator.com/item?id=50622030",
+      "image": {
+        "path": "./data/2026-11-24/news_images/9475166d1e1235463ea3598f.webp",
+        "width": 1200,
+        "height": 675,
+        "source_url": "https://www.flyingmag.com/amazon-delivery-drone-damages-michigan-garage/",
+        "image_url": "https://www.flyingmag.com/wp-content/uploads/2026/11/about-amazon-hero-prime-air-amazon-news-wl-20260817.jpg",
+        "alt": "Amazon Prime Air MK30 delivery drone"
+      }
+    },
+    {
+      "title": "特斯拉开始推送 FSD v15，新增实时生成式“现实视图”",
+      "summary": "特斯拉已开始推送监督版全自动驾驶 v15，称这是对端到端辅助驾驶系统的彻底重做。核心功能 Reality View 用实时生成的俯视画面取代旧版线框图形，司机可点击画面影响车辆计划。",
+      "lede": "特斯拉推送 FSD v15，核心是实时生成的俯视驾驶画面。",
+      "tags": [
+        "自动驾驶",
+        "电动车",
+        "特斯拉"
+      ],
+      "analysis": [
+        "特斯拉开始推送监督版全自动驾驶 v15，称这是对端到端辅助驾驶系统的彻底重做。",
+        "新功能 Reality View 用实时生成的俯视画面取代旧版线框图形，司机可点击画面影响车辆计划。",
+        "该版本目前处于监督驾驶阶段，司机仍需对车辆负责。"
+      ],
+      "i18n": {
+        "zh": {
+          "title": "特斯拉开始推送 FSD v15，新增实时生成式“现实视图”",
+          "summary": "特斯拉已开始推送监督版全自动驾驶 v15，称这是对端到端辅助驾驶系统的彻底重做。核心功能 Reality View 用实时生成的俯视画面取代旧版线框图形，司机可点击画面影响车辆计划。",
+          "lede": "特斯拉推送 FSD v15，核心是实时生成的俯视驾驶画面。",
+          "tags": [
+            "自动驾驶",
+            "电动车",
+            "特斯拉"
+          ],
+          "analysis": [
+            "特斯拉开始推送监督版全自动驾驶 v15，称这是对端到端辅助驾驶系统的彻底重做。",
+            "新功能 Reality View 用实时生成的俯视画面取代旧版线框图形，司机可点击画面影响车辆计划。",
+            "该版本目前处于监督驾驶阶段，司机仍需对车辆负责。"
+          ]
+        },
+        "en": {
+          "title": "Tesla starts rolling out FSD v15 with real-time generative 'Reality View'",
+          "summary": "Tesla has begun rolling out Full Self-Driving (Supervised) v15, calling it a ground-up overhaul of its end-to-end driver assist system. The centerpiece, Reality View, replaces old wireframe graphics with a live, generated overhead view that drivers can tap to influence what the car plans to do.",
+          "lede": "Tesla is rolling out FSD v15, centered on a real-time generated overhead driving view.",
+          "tags": [
+            "Autonomous Cars",
+            "Electric Cars",
+            "Tesla"
+          ],
+          "analysis": [
+            "Tesla has begun rolling out Full Self-Driving (Supervised) v15, which it calls a ground-up overhaul of its end-to-end driver assist system.",
+            "The centerpiece, Reality View, replaces old wireframe graphics with a live, generated overhead view that drivers can tap to influence what the car plans to do.",
+            "The release is supervised, meaning the driver remains responsible for the car."
+          ]
+        }
+      },
+      "id": "d98f7951be9034dbf773c566",
+      "original_title": "Tesla’s FSD v15 turns driving visuals into Grand Theft Auto",
+      "original_summary": "Tesla has begun rolling out Full Self-Driving (Supervised) v15, calling it a ground-up overhaul of its end-to-end driver assist system. The centerpiece is Reality View, a real-time generative display that swaps out old wireframe graphics for a live, overhead camera angle that lets drivers see and tap to influence what the car plans to do […]",
+      "url": "https://www.theverge.com/transportation/1039919/tesla-fsd-v15-reality-view-gta-nhtsa-safety-rollout",
+      "source": "The Verge Transportation",
+      "published": "2026-11-23T14:12:28+00:00",
+      "authors": [],
+      "score": 3,
+      "category": "robotics",
+      "image": {
+        "path": "./data/2026-11-24/news_images/d98f7951be9034dbf773c566.webp",
+        "width": 512,
+        "height": 512,
+        "source_url": "https://www.theverge.com/transportation/1039919/tesla-fsd-v15-reality-view-gta-nhtsa-safety-rollout",
+        "image_url": "https://platform.theverge.com/wp-content/uploads/sites/2/chorus/author_profile_images/195793/ANDREW_HAWKINS.0.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100&w=2400",
+        "alt": "Andrew J. Hawkins"
+      }
+    },
+    {
+      "title": "研究团队用智能体团队和形式化验证加速量子算法开发",
+      "summary": "一项新研究利用智能体团队配合形式化验证，改进用于核聚变和化学模拟的量子算法。",
+      "lede": "研究团队提出用智能体团队和形式化验证来加快量子算法开发，目标应用是核聚变和化学模拟。",
+      "tags": [
+        "量子计算",
+        "形式化验证",
+        "智能体"
+      ],
+      "analysis": [
+        "研究团队发布了用智能体团队和形式化验证改进量子算法的方法。",
+        "该方法面向核聚变和化学模拟两类应用。",
+        "材料未给出速度提升或验证通过率等具体数字，实际效果尚待更多数据确认。"
+      ],
+      "i18n": {
+        "zh": {
+          "title": "研究团队用智能体团队和形式化验证加速量子算法开发",
+          "summary": "一项新研究利用智能体团队配合形式化验证，改进用于核聚变和化学模拟的量子算法。",
+          "lede": "研究团队提出用智能体团队和形式化验证来加快量子算法开发，目标应用是核聚变和化学模拟。",
+          "tags": [
+            "量子计算",
+            "形式化验证",
+            "智能体"
+          ],
+          "analysis": [
+            "研究团队发布了用智能体团队和形式化验证改进量子算法的方法。",
+            "该方法面向核聚变和化学模拟两类应用。",
+            "材料未给出速度提升或验证通过率等具体数字，实际效果尚待更多数据确认。"
+          ]
+        },
+        "en": {
+          "title": "Researchers use agent teams and formal verification to speed up quantum algorithm development",
+          "summary": "A new study uses agent teams together with formal verification to improve quantum algorithms for fusion and chemistry simulations.",
+          "lede": "Researchers propose using agent teams and formal verification to speed up quantum algorithm development, with fusion and chemistry simulation as the target applications.",
+          "tags": [
+            "quantum computing",
+            "formal verification",
+            "AI agents"
+          ],
+          "analysis": [
+            "The research team released a method that combines agent teams with formal verification to improve quantum algorithms.",
+            "The method targets two applications: fusion and chemistry simulation.",
+            "The material gives no specific figures such as speedup or verification pass rates, so the practical impact still needs more data."
+          ]
+        }
+      },
+      "id": "895b540db6a8889e694ca9f9",
+      "original_title": "Finding faster quantum algorithms with agents and formal verification",
+      "original_summary": "Using agent teams and formal verification to improve quantum algorithms for fusion and chemistry.",
+      "url": "https://deepmind.google/blog/finding-faster-quantum-algorithms-with-agents-and-formal-verification",
+      "source": "Google DeepMind Blog",
+      "published": "2026-11-23T16:59:40+00:00",
+      "authors": [],
+      "score": 3,
+      "category": "ai_frontier"
+    },
+    {
+      "title": "研究发现：大语言模型能察觉此前被注入的概念",
+      "summary": "一项研究显示，大语言模型可以识别出自己此前被暗中注入的概念，这种能力被称为“潜在内省”。",
+      "lede": "大语言模型不仅能生成文字，还可能察觉自己此前被悄悄注入了什么概念。",
+      "tags": [
+        "大语言模型",
+        "AI安全",
+        "可解释性"
+      ],
+      "analysis": [
+        "研究团队发布了一项关于大语言模型“潜在内省”能力的发现。",
+        "实验表明，模型能够检测出此前被注入的概念，说明它对自己的内部状态有一定察觉。",
+        "这一结果提示，未来或可借助模型的自我检测来发现隐蔽的提示注入。"
+      ],
+      "i18n": {
+        "zh": {
+          "title": "研究发现：大语言模型能察觉此前被注入的概念",
+          "summary": "一项研究显示，大语言模型可以识别出自己此前被暗中注入的概念，这种能力被称为“潜在内省”。",
+          "lede": "大语言模型不仅能生成文字，还可能察觉自己此前被悄悄注入了什么概念。",
+          "tags": [
+            "大语言模型",
+            "AI安全",
+            "可解释性"
+          ],
+          "analysis": [
+            "研究团队发布了一项关于大语言模型“潜在内省”能力的发现。",
+            "实验表明，模型能够检测出此前被注入的概念，说明它对自己的内部状态有一定察觉。",
+            "这一结果提示，未来或可借助模型的自我检测来发现隐蔽的提示注入。"
+          ]
+        },
+        "en": {
+          "title": "Study Finds LLMs Can Detect Concepts Injected Into Them Earlier",
+          "summary": "A study shows that large language models can recognize concepts that were secretly injected into them beforehand, an ability the researchers call \"latent introspection.\"",
+          "lede": "Large language models may not only produce text but also notice what was quietly injected into them beforehand.",
+          "tags": [
+            "large language models",
+            "AI safety",
+            "interpretability"
+          ],
+          "analysis": [
+            "Researchers released findings on large language models' ability to perform \"latent introspection.\"",
+            "Experiments showed the models could detect concepts injected into them earlier, suggesting some awareness of their own internal state.",
+            "The result hints that models' self-checks could one day help catch hidden prompt injections."
+          ]
+        }
+      },
+      "id": "80a050ce3ae348312bb7abfb",
+      "original_title": "Latent Introspection: LLMs Can Detect Prior Concept Injections",
+      "original_summary": "",
+      "url": "https://arxiv.org/abs/2602.20031",
+      "source": "Hacker News",
+      "published": "2026-11-23T22:29:48+00:00",
+      "authors": [],
+      "score": 3,
+      "category": "ai_frontier",
+      "engagement": {
+        "points": 67,
+        "comments": 5
+      },
+      "discussion_url": "https://news.ycombinator.com/item?id=50620328"
+    },
+    {
+      "title": "多州起诉 SpaceX，要求阻止 Grok 生成儿童性虐待图像和报复性色情内容",
+      "summary": "X 称 Grok 的每项输出都经过筛查，但州总检察长表示 Grok 仍在生成儿童性虐待材料。",
+      "lede": "多州总检察长起诉 SpaceX，要求阻止 Grok 生成儿童性虐待图像和报复性色情内容，X 则称每项输出都经过筛查。",
+      "tags": [
+        "人工智能",
+        "政策",
+        "儿童性虐待材料"
+      ],
+      "analysis": [
+        "多个州的总检察长对 SpaceX 提起诉讼，要求阻止其 AI 聊天机器人 Grok 生成儿童性虐待材料和报复性色情内容。",
+        "X 表示 Grok 的每项输出都经过筛查，但各州总检察长称该工具仍在生成这类材料。",
+        "诉讼针对的是 Grok 的输出内容，目前尚不清楚法院是否会下令限制该功能。"
+      ],
+      "i18n": {
+        "zh": {
+          "title": "多州起诉 SpaceX，要求阻止 Grok 生成儿童性虐待图像和报复性色情内容",
+          "summary": "X 称 Grok 的每项输出都经过筛查，但州总检察长表示 Grok 仍在生成儿童性虐待材料。",
+          "lede": "多州总检察长起诉 SpaceX，要求阻止 Grok 生成儿童性虐待图像和报复性色情内容，X 则称每项输出都经过筛查。",
+          "tags": [
+            "人工智能",
+            "政策",
+            "儿童性虐待材料"
+          ],
+          "analysis": [
+            "多个州的总检察长对 SpaceX 提起诉讼，要求阻止其 AI 聊天机器人 Grok 生成儿童性虐待材料和报复性色情内容。",
+            "X 表示 Grok 的每项输出都经过筛查，但各州总检察长称该工具仍在生成这类材料。",
+            "诉讼针对的是 Grok 的输出内容，目前尚不清楚法院是否会下令限制该功能。"
+          ]
+        },
+        "en": {
+          "title": "States sue SpaceX to stop Grok from generating child sex images and revenge porn",
+          "summary": "X says every Grok output is screened, but state attorneys general say Grok is still making child sexual abuse material.",
+          "lede": "Multiple state attorneys general sued SpaceX to stop Grok from generating child sexual abuse images and revenge porn, while X says every output is screened.",
+          "tags": [
+            "AI",
+            "Policy",
+            "child sexual abuse material"
+          ],
+          "analysis": [
+            "Attorneys general from multiple states sued SpaceX to stop its AI chatbot Grok from generating child sexual abuse material and revenge porn.",
+            "X says every Grok output is screened, but the state attorneys general say the tool is still producing such material.",
+            "The lawsuit targets Grok's outputs, and it is not yet clear whether a court will order limits on the feature."
+          ]
+        }
+      },
+      "id": "bf2b853553a4f5010e2dfd1d",
+      "original_title": "States sue SpaceX to stop Grok from generating child sex images, revenge porn",
+      "original_summary": "X says every Grok output is screened, but state AGs say Grok is still making CSAM.",
+      "url": "https://arstechnica.com/tech-policy/2026/11/states-sue-spacex-to-stop-grok-from-generating-child-sex-images-revenge-porn",
+      "source": "Ars Technica AI",
+      "published": "2026-11-23T21:30:44+00:00",
+      "authors": [],
+      "score": 3,
+      "category": "ai_frontier"
+    },
+    {
+      "title": "英伟达恢复黄仁勋职务，结束11天缺席",
+      "summary": "英伟达董事会与黄仁勋及美国政府高级官员沟通后，撤销了11天前的人事决定，恢复其职务。",
+      "lede": "英伟达董事会撤销11天前的人事决定，恢复黄仁勋职务。",
+      "tags": [
+        "人工智能",
+        "新闻",
+        "英伟达"
+      ],
+      "analysis": [
+        "英伟达董事会撤销了11天前的人事决定，恢复黄仁勋的职务。",
+        "这一反转发生在董事会与黄仁勋及美国政府高级官员沟通之后，背景是白宫、投资者和科技高管不断施压。"
+      ],
+      "i18n": {
+        "zh": {
+          "title": "英伟达恢复黄仁勋职务，结束11天缺席",
+          "summary": "英伟达董事会与黄仁勋及美国政府高级官员沟通后，撤销了11天前的人事决定，恢复其职务。",
+          "lede": "英伟达董事会撤销11天前的人事决定，恢复黄仁勋职务。",
+          "tags": [
+            "人工智能",
+            "新闻",
+            "英伟达"
+          ],
+          "analysis": [
+            "英伟达董事会撤销了11天前的人事决定，恢复黄仁勋的职务。",
+            "这一反转发生在董事会与黄仁勋及美国政府高级官员沟通之后，背景是白宫、投资者和科技高管不断施压。"
+          ]
+        },
+        "en": {
+          "title": "NVIDIA reinstates Jensen Huang after 11-day absence",
+          "summary": "NVIDIA's board reversed its decision after discussions with Huang and senior U.S. government officials, amid pressure from the White House, investors and tech executives.",
+          "lede": "NVIDIA's board has reinstated Jensen Huang, reversing a decision made 11 days ago.",
+          "tags": [
+            "Artificial Intelligence",
+            "News",
+            "NVIDIA"
+          ],
+          "analysis": [
+            "NVIDIA's board reversed a personnel decision made 11 days earlier and reinstated Jensen Huang.",
+            "The reversal followed discussions with Huang and senior U.S. government officials, amid growing pressure from the White House, investors and technology executives."
+          ]
+        }
+      },
+      "id": "fc1c8c8c704ca05392b97e99",
+      "original_title": "NVIDIA reinstates Jensen Huang after 11-day absence",
+      "original_summary": "The NVIDIA board reversed its decision following discussions with Huang and senior U.S. government officials, amid growing pressure from the White House, investors and technology executives.",
+      "url": "https://www.therobotreport.com/nvidia-reinstates-jensen-huang-after-11-day-absence",
+      "source": "The Robot Report",
+      "published": "2026-11-23T14:20:46+00:00",
+      "authors": [],
+      "score": 3,
+      "category": "ai_frontier",
+      "new_progress": "Nvidia董事会在与Huang及美国政府高级官员沟通后，撤销了11天前的人事决定，恢复其职务。"
     }
   ]
 }
