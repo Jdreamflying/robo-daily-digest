@@ -1,13 +1,13 @@
 {
   "date": "2026-11-24",
-  "total_scanned": 3101,
+  "total_scanned": 3103,
   "total_unique": 48,
-  "window_count": 226,
+  "window_count": 228,
   "window_hours": 48,
-  "cutoff": "2026-11-22T12:42:07.791429+00:00",
-  "window_end": "2026-11-24T12:42:07.791429+00:00",
+  "cutoff": "2026-11-22T12:56:20.428047+00:00",
+  "window_end": "2026-11-24T12:56:20.428047+00:00",
   "scored_count": 48,
-  "qualified_count": 14,
+  "qualified_count": 13,
   "event_duplicate_count": 2,
   "mode": "api",
   "items": [
@@ -263,67 +263,6 @@
       "authors": [],
       "score": 3,
       "category": "ai_frontier"
-    },
-    {
-      "title": "研究发现：大语言模型能察觉此前被注入的概念",
-      "summary": "一项研究显示，大语言模型可以识别出自己此前被暗中注入的概念，这种能力被称为“潜在内省”。",
-      "lede": "大语言模型不仅能生成文字，还可能察觉自己此前被悄悄注入了什么概念。",
-      "tags": [
-        "大语言模型",
-        "AI安全",
-        "可解释性"
-      ],
-      "analysis": [
-        "研究团队发布了一项关于大语言模型“潜在内省”能力的发现。",
-        "实验表明，模型能够检测出此前被注入的概念，说明它对自己的内部状态有一定察觉。",
-        "这一结果提示，未来或可借助模型的自我检测来发现隐蔽的提示注入。"
-      ],
-      "i18n": {
-        "zh": {
-          "title": "研究发现：大语言模型能察觉此前被注入的概念",
-          "summary": "一项研究显示，大语言模型可以识别出自己此前被暗中注入的概念，这种能力被称为“潜在内省”。",
-          "lede": "大语言模型不仅能生成文字，还可能察觉自己此前被悄悄注入了什么概念。",
-          "tags": [
-            "大语言模型",
-            "AI安全",
-            "可解释性"
-          ],
-          "analysis": [
-            "研究团队发布了一项关于大语言模型“潜在内省”能力的发现。",
-            "实验表明，模型能够检测出此前被注入的概念，说明它对自己的内部状态有一定察觉。",
-            "这一结果提示，未来或可借助模型的自我检测来发现隐蔽的提示注入。"
-          ]
-        },
-        "en": {
-          "title": "Study Finds LLMs Can Detect Concepts Injected Into Them Earlier",
-          "summary": "A study shows that large language models can recognize concepts that were secretly injected into them beforehand, an ability the researchers call \"latent introspection.\"",
-          "lede": "Large language models may not only produce text but also notice what was quietly injected into them beforehand.",
-          "tags": [
-            "large language models",
-            "AI safety",
-            "interpretability"
-          ],
-          "analysis": [
-            "Researchers released findings on large language models' ability to perform \"latent introspection.\"",
-            "Experiments showed the models could detect concepts injected into them earlier, suggesting some awareness of their own internal state.",
-            "The result hints that models' self-checks could one day help catch hidden prompt injections."
-          ]
-        }
-      },
-      "id": "80a050ce3ae348312bb7abfb",
-      "original_title": "Latent Introspection: LLMs Can Detect Prior Concept Injections",
-      "original_summary": "",
-      "url": "https://arxiv.org/abs/2602.20031",
-      "source": "Hacker News",
-      "published": "2026-11-23T22:29:48+00:00",
-      "authors": [],
-      "score": 3,
-      "category": "ai_frontier",
-      "engagement": {
-        "points": 67,
-        "comments": 5
-      },
-      "discussion_url": "https://news.ycombinator.com/item?id=50620328"
     },
     {
       "title": "亚马逊称黑客的AI代理几乎无需人工介入就发现并利用了0-day漏洞",
