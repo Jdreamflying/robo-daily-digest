@@ -1,16 +1,80 @@
 {
   "date": "2026-11-24",
-  "total_scanned": 3102,
-  "total_unique": 48,
-  "window_count": 227,
+  "total_scanned": 3105,
+  "total_unique": 50,
+  "window_count": 232,
   "window_hours": 48,
-  "cutoff": "2026-11-22T13:01:03.655147+00:00",
-  "window_end": "2026-11-24T13:01:03.655147+00:00",
-  "scored_count": 48,
-  "qualified_count": 13,
+  "cutoff": "2026-11-22T13:15:49.784321+00:00",
+  "window_end": "2026-11-24T13:15:49.784321+00:00",
+  "scored_count": 50,
+  "qualified_count": 14,
   "event_duplicate_count": 2,
   "mode": "api",
   "items": [
+    {
+      "title": "Uber、Nuro 与 Lucid 在旧金山湾区启动完全无人驾驶出租车测试",
+      "summary": "Uber、Nuro 和 Lucid 开始在旧金山湾区公共道路上测试完全无人驾驶出租车，随后将向员工开放乘坐。这一三方合作最早于 2025 年 7 月公布。",
+      "lede": "Uber、Nuro 和 Lucid 在旧金山湾区开始完全无人驾驶出租车测试，员工乘坐服务即将跟进。",
+      "tags": [
+        "无人驾驶",
+        "出租车",
+        "Uber"
+      ],
+      "analysis": [
+        "Uber、Nuro 和 Lucid 宣布在旧金山湾区启动完全无人驾驶的公共道路测试。",
+        "测试车辆不再配备人类安全员，员工专属乘坐服务将在测试后不久推出。",
+        "这一合作是 Uber 在放弃自研自动驾驶项目后重返无人驾驶出租车市场的重要一步。"
+      ],
+      "i18n": {
+        "zh": {
+          "title": "Uber、Nuro 与 Lucid 在旧金山湾区启动完全无人驾驶出租车测试",
+          "summary": "Uber、Nuro 和 Lucid 开始在旧金山湾区公共道路上测试完全无人驾驶出租车，随后将向员工开放乘坐。这一三方合作最早于 2025 年 7 月公布。",
+          "lede": "Uber、Nuro 和 Lucid 在旧金山湾区开始完全无人驾驶出租车测试，员工乘坐服务即将跟进。",
+          "tags": [
+            "无人驾驶",
+            "出租车",
+            "Uber"
+          ],
+          "analysis": [
+            "Uber、Nuro 和 Lucid 宣布在旧金山湾区启动完全无人驾驶的公共道路测试。",
+            "测试车辆不再配备人类安全员，员工专属乘坐服务将在测试后不久推出。",
+            "这一合作是 Uber 在放弃自研自动驾驶项目后重返无人驾驶出租车市场的重要一步。"
+          ]
+        },
+        "en": {
+          "title": "Uber, Nuro and Lucid begin fully driverless robotaxi testing in San Francisco Bay Area",
+          "summary": "Uber, Nuro and Lucid have started testing fully driverless robotaxis on public roads in the San Francisco Bay Area, with employee-only rides to follow shortly. The three-way alliance was first announced in July 2025.",
+          "lede": "Uber, Nuro and Lucid have started fully driverless robotaxi testing in the San Francisco Bay Area, with employee rides coming soon.",
+          "tags": [
+            "Autonomous Vehicles",
+            "Robotaxi",
+            "Uber"
+          ],
+          "analysis": [
+            "Uber, Nuro and Lucid announced they have begun fully driverless public-road testing in the San Francisco Bay Area.",
+            "The test vehicles no longer carry a human safety driver, and employee-only rides will launch shortly after testing.",
+            "The partnership marks Uber's push back into autonomous ride-hailing after abandoning its own troubled self-driving program."
+          ]
+        }
+      },
+      "id": "168dc9e0fda6e685b93a00e2",
+      "original_title": "Uber, Nuro, and Lucid kick off fully driverless robotaxi testing",
+      "original_summary": "Uber's high-stakes robotaxi bet is officially ditching its human safety net. Nuro, Lucid, and Uber are starting fully driverless public road testing in the San Francisco Bay Area, with employee-only rides launching shortly after. First announced in July 2025, this three-way alliance represents Uber's aggressive comeback in autonomous ride-hailing, after having abandoned its own troubled […]",
+      "url": "https://www.theverge.com/transportation/1040676/uber-nuro-lucid-driverless-robotaxi-testing-bay-area",
+      "source": "The Verge Transportation",
+      "published": "2026-11-24T13:00:00+00:00",
+      "authors": [],
+      "score": 4,
+      "category": "robotics",
+      "image": {
+        "path": "./data/2026-11-24/news_images/168dc9e0fda6e685b93a00e2.webp",
+        "width": 512,
+        "height": 512,
+        "source_url": "https://www.theverge.com/transportation/1040676/uber-nuro-lucid-driverless-robotaxi-testing-bay-area",
+        "image_url": "https://platform.theverge.com/wp-content/uploads/sites/2/chorus/author_profile_images/195793/ANDREW_HAWKINS.0.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100&w=2400",
+        "alt": "Andrew J. Hawkins"
+      }
+    },
     {
       "title": "RoboTrack：面向真实机器人操作的点跟踪方法发布",
       "summary": "一项名为 RoboTrack 的点跟踪方法发布，目标是让机器人在真实环境中完成操作任务。",
@@ -198,15 +262,7 @@
       "published": "2026-11-23T14:12:28+00:00",
       "authors": [],
       "score": 3,
-      "category": "robotics",
-      "image": {
-        "path": "./data/2026-11-24/news_images/d98f7951be9034dbf773c566.webp",
-        "width": 512,
-        "height": 512,
-        "source_url": "https://www.theverge.com/transportation/1039919/tesla-fsd-v15-reality-view-gta-nhtsa-safety-rollout",
-        "image_url": "https://platform.theverge.com/wp-content/uploads/sites/2/chorus/author_profile_images/195793/ANDREW_HAWKINS.0.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100&w=2400",
-        "alt": "Andrew J. Hawkins"
-      }
+      "category": "robotics"
     },
     {
       "title": "研究团队用智能体团队和形式化验证加速量子算法开发",
