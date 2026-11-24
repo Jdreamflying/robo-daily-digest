@@ -1,0 +1,618 @@
+{
+  "date": "2026-11-25",
+  "total_scanned": 87,
+  "total_new": 87,
+  "total_unique": 71,
+  "paper_target_date": "2026-11-22",
+  "paper_source_date": "2026-11-20",
+  "paper_category": "cs.RO",
+  "previously_published": 16,
+  "scored_count": 71,
+  "qualified_count": 71,
+  "mode": "api",
+  "items": [
+    {
+      "title": "模型该告诉规划器什么？机器人损伤后风险感知规划的结果接口",
+      "summary": "机器人受损后需判断哪些路线仍可承担，且可接受风险随任务变化。本文认为学习模型是否有用取决于其决策接口，即模型交给规划器什么。决策策略直接告诉规划器怎么做，而结果模型（一种世界模型）预测每条路线的后果。研究在模拟的Unitree Go2四足机器人和H1人形机器人上进行，设置包括电机减弱、增加负载或降低足部摩擦。比较四种接口：决策策略；用固定惩罚训练同一策略；预测每条路线可行性和旅行时间的结果模型；以及称为能力契约的结果模型，它预测机器人在每种地形上的成功概率和旅行时间，并沿路线组合。所有接口共享收集的经验、匹配的调参和风险校准，以及不确定性保护。两个相对低风险的探测使能力契约对危险地形的排序能力与每种危险四次新试验相当。在校准的5%选择经验不可行路线限制下，与普通策略相比，结果模型将拒绝任务从约32%降至7-8%（Go2），从57%降至35-36%（H1）。固定惩罚缩小差距，但最佳惩罚随风险目标变化。预测结果使规划器能通过改变路线在风险要求收紧时保留任务。",
+      "lede": "机器人受伤后还能走哪条路？本文比较四种模型接口，发现预测后果比直接给指令更能帮规划器在风险变化时保住任务。",
+      "tags": [
+        "机器人规划",
+        "风险感知",
+        "世界模型"
+      ],
+      "sections": {
+        "background": "机器人损伤后，其可承受的路线和可接受风险会随任务变化，传统决策策略或固定惩罚难以适应这种动态风险需求。学习模型能否帮助机器人，关键在于模型向规划器提供何种信息：是直接指令还是后果预测。现有方法多关注策略学习，而忽略了决策接口的设计对风险感知规划的影响。",
+        "conclusion": "在模拟Unitree Go2和H1机器人上，结果模型（预测可行性和旅行时间）相比普通决策策略，在5%不可行路线限制下将拒绝任务比例从约32%降至7-8%（Go2）、从57%降至35-36%（H1）。固定惩罚能缩小差距，但最优惩罚随风险目标变化。能力契约用两个低风险探测即可达到与每种危险四次新试验相近的危险地形排序能力。预测结果使规划器能通过调整路线在风险收紧时保留任务。",
+        "method": "输入是机器人收集的经验数据，包括不同地形上的成功与否和旅行时间。核心模块是结果模型：对每种地形预测成功概率和旅行时间，并沿路线组合成整体成功概率和总时间，形成能力契约。规划器根据风险限制选择路线，并配有不确定性保护。已验证的改进来自结果模型提供的后果预测，使规划器能动态调整路线，而非依赖固定策略或惩罚。",
+        "takeaways": "若机器人配备结果模型接口，可在损伤后根据风险要求动态选择路线，适用于四足和人形机器人在电机减弱、负载增加或摩擦降低等场景。所需硬件包括能感知地形和自身状态的传感器，数据需包含不同地形上的成功与时间记录。距离真机部署还需在真实损伤条件下验证模型预测准确性和不确定性保护的有效性，并测试更多风险目标和任务类型。"
+      },
+      "i18n": {
+        "zh": {
+          "title": "模型该告诉规划器什么？机器人损伤后风险感知规划的结果接口",
+          "summary": "机器人受损后需判断哪些路线仍可承担，且可接受风险随任务变化。本文认为学习模型是否有用取决于其决策接口，即模型交给规划器什么。决策策略直接告诉规划器怎么做，而结果模型（一种世界模型）预测每条路线的后果。研究在模拟的Unitree Go2四足机器人和H1人形机器人上进行，设置包括电机减弱、增加负载或降低足部摩擦。比较四种接口：决策策略；用固定惩罚训练同一策略；预测每条路线可行性和旅行时间的结果模型；以及称为能力契约的结果模型，它预测机器人在每种地形上的成功概率和旅行时间，并沿路线组合。所有接口共享收集的经验、匹配的调参和风险校准，以及不确定性保护。两个相对低风险的探测使能力契约对危险地形的排序能力与每种危险四次新试验相当。在校准的5%选择经验不可行路线限制下，与普通策略相比，结果模型将拒绝任务从约32%降至7-8%（Go2），从57%降至35-36%（H1）。固定惩罚缩小差距，但最佳惩罚随风险目标变化。预测结果使规划器能通过改变路线在风险要求收紧时保留任务。",
+          "lede": "机器人受伤后还能走哪条路？本文比较四种模型接口，发现预测后果比直接给指令更能帮规划器在风险变化时保住任务。",
+          "tags": [
+            "机器人规划",
+            "风险感知",
+            "世界模型"
+          ],
+          "sections": {
+            "background": "机器人损伤后，其可承受的路线和可接受风险会随任务变化，传统决策策略或固定惩罚难以适应这种动态风险需求。学习模型能否帮助机器人，关键在于模型向规划器提供何种信息：是直接指令还是后果预测。现有方法多关注策略学习，而忽略了决策接口的设计对风险感知规划的影响。",
+            "conclusion": "在模拟Unitree Go2和H1机器人上，结果模型（预测可行性和旅行时间）相比普通决策策略，在5%不可行路线限制下将拒绝任务比例从约32%降至7-8%（Go2）、从57%降至35-36%（H1）。固定惩罚能缩小差距，但最优惩罚随风险目标变化。能力契约用两个低风险探测即可达到与每种危险四次新试验相近的危险地形排序能力。预测结果使规划器能通过调整路线在风险收紧时保留任务。",
+            "method": "输入是机器人收集的经验数据，包括不同地形上的成功与否和旅行时间。核心模块是结果模型：对每种地形预测成功概率和旅行时间，并沿路线组合成整体成功概率和总时间，形成能力契约。规划器根据风险限制选择路线，并配有不确定性保护。已验证的改进来自结果模型提供的后果预测，使规划器能动态调整路线，而非依赖固定策略或惩罚。",
+            "takeaways": "若机器人配备结果模型接口，可在损伤后根据风险要求动态选择路线，适用于四足和人形机器人在电机减弱、负载增加或摩擦降低等场景。所需硬件包括能感知地形和自身状态的传感器，数据需包含不同地形上的成功与时间记录。距离真机部署还需在真实损伤条件下验证模型预测准确性和不确定性保护的有效性，并测试更多风险目标和任务类型。"
+          }
+        },
+        "en": {
+          "title": "What Must a Model Tell a Planner? Outcome Interfaces for Risk-Aware Planning After Robot Damage",
+          "summary": "When a robot is damaged, it must decide which routes it can still afford, and the acceptable risk can change from mission to mission. This paper argues that whether a learned model helps depends on its decision interface—what the model hands to the planner. A decision policy tells the planner what to do, while an outcome model (a world model) predicts the consequences of each route. The study uses simulated Unitree Go2 quadrupeds and H1 humanoids with weakened motors, added payloads, or reduced foot friction. Four interfaces are compared: a decision policy; the same policy trained with fixed penalties for infeasible routes; an outcome model predicting feasibility and travel time per route; and a capability contract, an outcome model that predicts success probability and travel time on each terrain and composes them along a route. All share collected experience, matched tuning and risk calibration, and an uncertainty guard. Two low-risk probes let the capability contract rank hazardous terrains about as well as four new trials per hazard. At a calibrated 5% limit on selecting empirically infeasible routes, outcome models cut declined missions from about 32% to 7–8% on Go2 and from 57% to 35–36% on H1 compared with the plain policy. Fixed penalties narrow this gap, but the best penalty changes with the risk target. Predicting outcomes lets the planner preserve missions by changing routes as risk requirements tighten.",
+          "lede": "Which route can a damaged robot still afford? Comparing four model interfaces, this study finds that predicting outcomes helps planners preserve missions as risk requirements change, more than giving direct instructions.",
+          "tags": [
+            "robot planning",
+            "risk-aware planning",
+            "world models"
+          ],
+          "sections": {
+            "background": "After damage, a robot's affordable routes and acceptable risk vary by mission, and traditional decision policies or fixed penalties struggle to adapt to such dynamic risk requirements. Whether a learned model helps hinges on what information it provides to the planner: direct instructions or consequence predictions. Existing methods often focus on policy learning while neglecting the design of the decision interface for risk-aware planning.",
+            "conclusion": "On simulated Unitree Go2 and H1 robots, outcome models (predicting feasibility and travel time) reduce declined missions from about 32% to 7–8% (Go2) and from 57% to 35–36% (H1) compared with a plain decision policy under a 5% infeasible-route limit. Fixed penalties narrow the gap, but the optimal penalty varies with the risk target. The capability contract ranks hazardous terrains about as well as four new trials per hazard using only two low-risk probes. Predicting outcomes enables the planner to preserve missions by adjusting routes as risk tightens.",
+            "method": "The input is experience data collected by the robot, including success/failure and travel time on different terrains. The core module is an outcome model: for each terrain, it predicts success probability and travel time, and composes them along a route into an overall success probability and total time, forming a capability contract. The planner selects routes according to risk limits, with an uncertainty guard. The verified improvement comes from the consequence predictions provided by the outcome model, allowing the planner to dynamically adjust routes rather than relying on fixed policies or penalties.",
+            "takeaways": "If a robot is equipped with an outcome-model interface, it can dynamically select routes after damage according to risk requirements, applicable to quadrupeds and humanoids with weakened motors, added payloads, or reduced friction. Required hardware includes sensors that perceive terrain and robot state, and data must include success and time records on different terrains. Before real-world deployment, validation is needed on prediction accuracy and uncertainty guard effectiveness under real damage conditions, and testing across more risk targets and mission types."
+          }
+        }
+      },
+      "id": "2611.27939",
+      "original_title": "What Must a Model Tell a Planner? Outcome Interfaces for Risk-Aware Planning After Robot Damage",
+      "original_summary": "When a robot is damaged, it must decide which routes it can still afford, and the amount of risk it may accept can change from one mission to the next. We argue that whether a learned model helps such a robot depends on its decision interface, that is, on what the model hands to the planner. A decision policy tells the planner what to do, whereas an outcome model, a kind of world model, predicts the consequences of each route. We study simulated Unitree Go2 quadrupeds and H1 humanoids with weakened motors, added payloads, or reduced foot friction. We compare four interfaces. The first is a decision policy, and the second is the same policy trained with fixed penalties for infeasible routes. The third is an outcome model that predicts the feasibility and travel time of each route. The fourth, which we call a capability contract, is an outcome model that predicts the chance of success and the travel time of the robot on each terrain and composes them along a route. All share the same collected experience, matched tuning and risk calibration, and an uncertainty guard. Two comparatively low-risk probes let the capability contract rank hazardous terrains about as well as four new trials on every hazard. At a calibrated 5% limit on selecting empirically infeasible routes, outcome models cut declined missions from about 32% to 7-8% on Go2 and from 57% to 35-36% on H1 compared with the plain policy. Fixed penalties narrow this gap, but the best penalty changes with the risk target. Predicting outcomes lets the planner preserve missions by changing routes as risk requirements tighten.",
+      "url": "https://arxiv.org/abs/2611.27939v1",
+      "source": "arXiv cs.RO",
+      "published": "2026-11-20T18:12:49+00:00",
+      "authors": [
+        "Hassan Iqbal",
+        "Krishna Kumar"
+      ],
+      "score": 4,
+      "versioned_id": "2611.27939v1",
+      "figure": {
+        "path": "./data/2026-11-25/figures/2611.27939.webp",
+        "caption": "Figure 4: Go2 robot 300 with weakened front left thigh, rear left thigh, and front left calf joints at 0.49, 0.72, and 0.66 times nominal torque, respectively. Its base mass is 1.25 times nominal and its foot friction is 0.59. The selected frames show the robot and three terrains from the recorded examples."
+      },
+      "code_url": null,
+      "project_url": null,
+      "pdf_url": "https://arxiv.org/pdf/2611.27939"
+    },
+    {
+      "title": "ROSWORLD：当数字任务能力遇上物理执行",
+      "summary": "ROSWORLD 是一个把物理仿真机器人工作站与实时运行的 OSWorld 桌面环境耦合起来的基准，让机器人和桌面智能体在同一套官方评测器下追求相同目标。模型只能通过工作站摄像头观察，并用单臂刚性探针或双臂灵巧手操作键盘鼠标。在五个前沿模型、十个应用共 40 项任务中，桌面端能完成 31–39 项的模型，用探针最多完成 23 项，用双手最多完成 28 项。配对轨迹分析显示模型会向键盘输入调整策略，但物理执行常因漏按、点错目标和意外接触而失败。",
+      "lede": "ROSWORLD 把仿真机器人工作站接到实时 OSWorld 桌面上，用同一套评测器量化“会在电脑上做事”与“能用手真的做到”之间的差距。",
+      "tags": [
+        "机器人基准",
+        "计算机使用智能体",
+        "物理执行"
+      ],
+      "sections": {
+        "background": "计算机使用智能体已能通过直接软件输入解决多数桌面任务，但同一台计算机前的机器人必须把图形界面知识转化为对键盘和鼠标的物理接触。现有评测要么只测软件操作，要么只测机器人操作，缺少在同一目标、同一评测器下衡量“知道怎么做”与“真的做到”之间差距的手段。",
+        "conclusion": "在五个前沿模型和十个应用的 40 项任务上，桌面端完成 31–39 项的模型，使用单臂刚性探针时最多完成 23 项，使用双臂灵巧手时最多完成 28 项。配对轨迹分析表明模型会调整交互策略偏向键盘输入，但物理执行仍频繁因漏按、目标定位错误和意外接触而失败。这些结果限于该仿真工作站与 OSWorld 桌面耦合的设定。",
+        "method": "模型只接收工作站摄像头视角的观测，并通过单臂刚性探针或双臂灵巧手操作键盘和鼠标等外设。ROSWORLD 将物理仿真的机器人工作站与实时运行的 OSWorld 桌面连接，使机器人和桌面智能体面对相同任务并由同一官方评测器打分。评测覆盖五个前沿模型、十个应用共 40 项任务，并配对比较桌面执行与物理执行的轨迹。已验证的差距来自物理接触环节，而非任务理解环节。",
+        "takeaways": "若要让机器人代替人在真实办公桌前操作既有软件，需要先具备摄像头观测、机械臂或灵巧手以及稳定的外设接触控制。该基准表明，桌面端的高完成率不能直接迁移到物理执行，部署前必须验证按键定位、接触力控制和意外碰撞处理。当前结论仅适用于仿真工作站与 OSWorld 桌面耦合的设定，距离真机部署还缺真实硬件上的重复精度、力觉反馈和长期稳定性验证。"
+      },
+      "i18n": {
+        "zh": {
+          "title": "ROSWORLD：当数字任务能力遇上物理执行",
+          "summary": "ROSWORLD 是一个把物理仿真机器人工作站与实时运行的 OSWorld 桌面环境耦合起来的基准，让机器人和桌面智能体在同一套官方评测器下追求相同目标。模型只能通过工作站摄像头观察，并用单臂刚性探针或双臂灵巧手操作键盘鼠标。在五个前沿模型、十个应用共 40 项任务中，桌面端能完成 31–39 项的模型，用探针最多完成 23 项，用双手最多完成 28 项。配对轨迹分析显示模型会向键盘输入调整策略，但物理执行常因漏按、点错目标和意外接触而失败。",
+          "lede": "ROSWORLD 把仿真机器人工作站接到实时 OSWorld 桌面上，用同一套评测器量化“会在电脑上做事”与“能用手真的做到”之间的差距。",
+          "tags": [
+            "机器人基准",
+            "计算机使用智能体",
+            "物理执行"
+          ],
+          "sections": {
+            "background": "计算机使用智能体已能通过直接软件输入解决多数桌面任务，但同一台计算机前的机器人必须把图形界面知识转化为对键盘和鼠标的物理接触。现有评测要么只测软件操作，要么只测机器人操作，缺少在同一目标、同一评测器下衡量“知道怎么做”与“真的做到”之间差距的手段。",
+            "conclusion": "在五个前沿模型和十个应用的 40 项任务上，桌面端完成 31–39 项的模型，使用单臂刚性探针时最多完成 23 项，使用双臂灵巧手时最多完成 28 项。配对轨迹分析表明模型会调整交互策略偏向键盘输入，但物理执行仍频繁因漏按、目标定位错误和意外接触而失败。这些结果限于该仿真工作站与 OSWorld 桌面耦合的设定。",
+            "method": "模型只接收工作站摄像头视角的观测，并通过单臂刚性探针或双臂灵巧手操作键盘和鼠标等外设。ROSWORLD 将物理仿真的机器人工作站与实时运行的 OSWorld 桌面连接，使机器人和桌面智能体面对相同任务并由同一官方评测器打分。评测覆盖五个前沿模型、十个应用共 40 项任务，并配对比较桌面执行与物理执行的轨迹。已验证的差距来自物理接触环节，而非任务理解环节。",
+            "takeaways": "若要让机器人代替人在真实办公桌前操作既有软件，需要先具备摄像头观测、机械臂或灵巧手以及稳定的外设接触控制。该基准表明，桌面端的高完成率不能直接迁移到物理执行，部署前必须验证按键定位、接触力控制和意外碰撞处理。当前结论仅适用于仿真工作站与 OSWorld 桌面耦合的设定，距离真机部署还缺真实硬件上的重复精度、力觉反馈和长期稳定性验证。"
+          }
+        },
+        "en": {
+          "title": "ROSWORLD: When Digital Task Competence Meets Physical Execution",
+          "summary": "ROSWORLD is a benchmark that couples a physically simulated robot workstation to a live OSWorld desktop, so a robot and a desktop agent pursue the same goals under the same official evaluators. The evaluated model receives observations only from workstation camera views and operates peripherals through either a single-arm rigid probe or dual-arm dexterous hands. Across five frontier models and 40 tasks in ten applications, models that complete 31–39 tasks on the desktop complete at most 23 with the probe and 28 with the hands. Paired trajectory analysis shows that models adapt their interaction strategies toward keyboard input, yet physical execution frequently fails through missed presses, incorrect targets, and unintended contacts.",
+          "lede": "ROSWORLD connects a simulated robot workstation to a live OSWorld desktop and uses the same evaluators to quantify the gap between knowing what to do on a computer and physically doing it.",
+          "tags": [
+            "robot benchmark",
+            "computer-use agents",
+            "physical execution"
+          ],
+          "sections": {
+            "background": "Computer-use agents now solve most desktop tasks through direct software input, but a robot at the same computer must turn graphical-interface knowledge into physical contact with a keyboard and mouse. Existing evaluations either test software operation alone or robot manipulation alone, leaving no way to measure the gap between knowing what to do and physically doing it under the same goals and evaluators.",
+            "conclusion": "Across five frontier models and 40 tasks in ten applications, models that complete 31–39 tasks on the desktop complete at most 23 with the single-arm rigid probe and at most 28 with the dual-arm dexterous hands. Paired trajectory analysis shows that models shift interaction strategies toward keyboard input, but physical execution still frequently fails through missed presses, incorrect target localization, and unintended contacts. These results are limited to the coupled simulated workstation and OSWorld desktop setting.",
+            "method": "The model receives observations only from workstation camera views and operates peripherals such as the keyboard and mouse through either a single-arm rigid probe or dual-arm dexterous hands. ROSWORLD connects a physically simulated robot workstation to a live OSWorld desktop so that the robot and the desktop agent face the same tasks and are scored by the same official evaluators. Evaluation covers five frontier models and 40 tasks in ten applications, with paired comparison of desktop and physical execution trajectories. The verified gap arises in the physical contact stage rather than in task understanding.",
+            "takeaways": "A robot replacing a person at a real office desk to operate existing software would first need camera observations, a robotic arm or dexterous hands, and stable peripheral contact control. This benchmark shows that high desktop completion rates do not transfer directly to physical execution, so key localization, contact-force control, and unintended-collision handling must be validated before deployment. The current conclusions apply only to the coupled simulated workstation and OSWorld desktop setting; real-robot deployment still lacks validation of repeatability, force feedback, and long-term stability on physical hardware."
+          }
+        }
+      },
+      "id": "2611.27467",
+      "original_title": "ROSWORLD: When Digital Task Competence Meets Physical Execution",
+      "original_summary": "Computer-use agents now solve most desktop tasks through direct software input, but a robot using the same computer must turn GUI knowledge into physical contact with a keyboard and mouse. We introduce ROSWorld, a benchmark that couples a physically simulated robot workstation to a live OSWorld desktop, so that a robot and a desktop agent pursue the same goals under the same official evaluators. The evaluated model receives observations only from the workstation camera views and operates the peripherals through either a single-arm rigid probe or dual-arm dexterous hands. Across five frontier models and 40 tasks in ten applications, models that complete 31-39 tasks on the desktop complete at most 23 with the probe and 28 with the hands. Paired trajectory analysis shows that models adapt their interaction strategies toward keyboard input, yet physical execution frequently fails through missed presses, incorrect targets, and unintended contacts. ROSWorld makes the gap between knowing what to do on a computer and physically doing it measurable.",
+      "url": "https://arxiv.org/abs/2611.27467v1",
+      "source": "arXiv cs.RO",
+      "published": "2026-11-20T11:17:29+00:00",
+      "authors": [
+        "Caoyuan Ma",
+        "Wendi Liu",
+        "Zhimin Zhang",
+        "Muyao Niu",
+        "Yujie Lu",
+        "Zengxi Zhang",
+        "Ji Zhao",
+        "Shuai Dong",
+        "Wenpu Liu",
+        "Ziyue Wang",
+        "Wenzheng Chang",
+        "Taiqiang Wu",
+        "Weichu Xie",
+        "Yuqi Xu",
+        "Haiyuan Wan",
+        "Xuehui Wang",
+        "Jiaqi Wang",
+        "Wenqi Shao",
+        "Yinqiang Zheng"
+      ],
+      "score": 4,
+      "versioned_id": "2611.27467v1",
+      "figure": {
+        "path": "./data/2026-11-25/figures/2611.27467.webp",
+        "caption": "Figure 1: Overview of ROSWORLD. The live OSWorld desktop is rendered on the simulated monitor. The model observes camera views and controls the robot to interact with the keyboard and mouse. Contact-generated input events are delivered to the VM, closing the physical–digital loop. Task success is scored by OSWorld’s official application-state evaluators."
+      },
+      "code_url": null,
+      "project_url": null,
+      "pdf_url": "https://arxiv.org/pdf/2611.27467"
+    },
+    {
+      "title": "GenPA：将图像生成模型用作高效机器人策略",
+      "summary": "GenPA 把预训练图像生成模型直接改造成动作学习器，不再把未来视觉预测当作连接视觉生成预训练与动作学习的必要环节。它用 19M 参数的动作回归适配器微调图像生成主干，并复用原生生成目标做感知协同训练；部署时只需一次主干前向和动作回归，无需生成图像或迭代去噪。在未额外使用大规模机器人数据预训练的情况下，GenPA 在 LIBERO 上达到 99.10% 成功率、LIBERO-Plus 上 83.79%，并在真机操作任务中表现出较强鲁棒性；单张 H100 编译推理下每个动作块耗时 20.9 ms，相比强 VLA 与 WAM 基线加速 1.7–3.4 倍。",
+      "lede": "GenPA 提出不再把未来视觉预测作为图像生成预训练与机器人动作学习之间的必经环节，而是直接用 19M 参数适配器把图像生成主干改造成动作策略，并在 LIBERO 与真机任务上验证了效果与推理效率。",
+      "tags": [
+        "机器人操作",
+        "视觉生成模型",
+        "动作学习"
+      ],
+      "sections": {
+        "background": "预训练视觉生成模型在机器人操作中展现出潜力，但代表性做法仍把未来视觉预测当作视觉生成预训练与动作学习之间的核心桥梁，即使推理阶段不再生成未来场景，也保留该训练目标。这带来不必要的计算与架构负担，也限制了图像生成模型直接作为策略学习的可能。",
+        "conclusion": "GenPA 表明图像生成模型本身可直接适配为动作学习器，无需在推理时做未来视觉预测。在未额外进行大规模机器人数据预训练的条件下，仿真基准 LIBERO 成功率为 99.10%，LIBERO-Plus 为 83.79%，真机操作任务也表现出对扰动的鲁棒性。编译推理下，单张 H100 GPU 上每个动作块耗时 20.9 ms，相比强 VLA 与 WAM 基线取得 1.7–3.4 倍加速；消融实验进一步指出当前深度监督是简单有效的训练配方。",
+        "method": "输入是当前视觉观测与语言指令，GenPA 将其送入预训练图像生成主干，由轻量 19M 参数动作回归适配器直接输出动作块。训练时复用图像生成主干原生的生成目标做感知协同训练，并利用原生图像编辑接口承载不同视觉目标，无需任务专用感知头。这样可在同一策略架构内比较当前场景感知、未来预测及其组合，而部署时只做一次主干前向和动作回归，不生成图像也不迭代去噪。消融显示当前深度监督是简单有效的改进来源；由于材料未提供与旧方法的逐项对照，其设计动机在于去掉推理期视觉生成与动作去噪开销。",
+        "takeaways": "若拥有预训练图像生成主干和少量机器人示教数据，GenPA 可作为一种低推理开销的 VLA 式策略用于桌面操作等场景；其 20.9 ms 动作块延迟依赖单张 H100 与编译推理，换到边缘硬件需重新验证。真机部署前还需补充更多任务、相机扰动和长时序场景的验证，因为当前真机结论限于材料报告的任务设定。LIBERO 与 LIBERO-Plus 的高成功率说明该路线在仿真基准上可行，但不应外推为对所有机器人平台均成立。"
+      },
+      "i18n": {
+        "zh": {
+          "title": "GenPA：将图像生成模型用作高效机器人策略",
+          "summary": "GenPA 把预训练图像生成模型直接改造成动作学习器，不再把未来视觉预测当作连接视觉生成预训练与动作学习的必要环节。它用 19M 参数的动作回归适配器微调图像生成主干，并复用原生生成目标做感知协同训练；部署时只需一次主干前向和动作回归，无需生成图像或迭代去噪。在未额外使用大规模机器人数据预训练的情况下，GenPA 在 LIBERO 上达到 99.10% 成功率、LIBERO-Plus 上 83.79%，并在真机操作任务中表现出较强鲁棒性；单张 H100 编译推理下每个动作块耗时 20.9 ms，相比强 VLA 与 WAM 基线加速 1.7–3.4 倍。",
+          "lede": "GenPA 提出不再把未来视觉预测作为图像生成预训练与机器人动作学习之间的必经环节，而是直接用 19M 参数适配器把图像生成主干改造成动作策略，并在 LIBERO 与真机任务上验证了效果与推理效率。",
+          "tags": [
+            "机器人操作",
+            "视觉生成模型",
+            "动作学习"
+          ],
+          "sections": {
+            "background": "预训练视觉生成模型在机器人操作中展现出潜力，但代表性做法仍把未来视觉预测当作视觉生成预训练与动作学习之间的核心桥梁，即使推理阶段不再生成未来场景，也保留该训练目标。这带来不必要的计算与架构负担，也限制了图像生成模型直接作为策略学习的可能。",
+            "conclusion": "GenPA 表明图像生成模型本身可直接适配为动作学习器，无需在推理时做未来视觉预测。在未额外进行大规模机器人数据预训练的条件下，仿真基准 LIBERO 成功率为 99.10%，LIBERO-Plus 为 83.79%，真机操作任务也表现出对扰动的鲁棒性。编译推理下，单张 H100 GPU 上每个动作块耗时 20.9 ms，相比强 VLA 与 WAM 基线取得 1.7–3.4 倍加速；消融实验进一步指出当前深度监督是简单有效的训练配方。",
+            "method": "输入是当前视觉观测与语言指令，GenPA 将其送入预训练图像生成主干，由轻量 19M 参数动作回归适配器直接输出动作块。训练时复用图像生成主干原生的生成目标做感知协同训练，并利用原生图像编辑接口承载不同视觉目标，无需任务专用感知头。这样可在同一策略架构内比较当前场景感知、未来预测及其组合，而部署时只做一次主干前向和动作回归，不生成图像也不迭代去噪。消融显示当前深度监督是简单有效的改进来源；由于材料未提供与旧方法的逐项对照，其设计动机在于去掉推理期视觉生成与动作去噪开销。",
+            "takeaways": "若拥有预训练图像生成主干和少量机器人示教数据，GenPA 可作为一种低推理开销的 VLA 式策略用于桌面操作等场景；其 20.9 ms 动作块延迟依赖单张 H100 与编译推理，换到边缘硬件需重新验证。真机部署前还需补充更多任务、相机扰动和长时序场景的验证，因为当前真机结论限于材料报告的任务设定。LIBERO 与 LIBERO-Plus 的高成功率说明该路线在仿真基准上可行，但不应外推为对所有机器人平台均成立。"
+          }
+        },
+        "en": {
+          "title": "GenPA: Image Generators as Efficient Robot Policies",
+          "summary": "GenPA adapts a pretrained image generation model directly into an action learner, dropping future visual prediction as the necessary link between visual generative pretraining and action learning. It fine-tunes the image generation backbone with a lightweight 19M-parameter action regression adapter and reuses the native generative objective for perception co-training; at deployment it needs only a single backbone forward pass and action regression, with no image generation or iterative action denoising. Without additional large-scale robot-data pretraining, GenPA reaches 99.10% success on LIBERO and 83.79% on LIBERO-Plus and shows robustness to perturbations in real-world manipulation tasks; under compiled inference it takes 20.9 ms per action chunk on a single H100 GPU, a 1.7-3.4x speedup over strong VLA and WAM baselines.",
+          "lede": "GenPA drops future visual prediction as a required link between image generation pretraining and robot action learning, instead adapting an image generation backbone into a policy with a 19M-parameter adapter and validating effectiveness and inference efficiency on LIBERO and real-world tasks.",
+          "tags": [
+            "robotic manipulation",
+            "visual generation models",
+            "action learning"
+          ],
+          "sections": {
+            "background": "Pretrained visual generation models have shown promise for robotic manipulation, but a representative line of work still treats future visual prediction as the central link between visual generative pretraining and action learning, keeping it as a training objective even when future scenes are no longer generated at inference. This adds unnecessary computation and architectural burden and limits the direct use of image generation models as policies.",
+            "conclusion": "GenPA shows that image generation models can themselves be adapted into action learners without future visual prediction at inference. Without additional large-scale robot-data pretraining, it achieves 99.10% success on the LIBERO simulation benchmark and 83.79% on LIBERO-Plus, and shows robustness to perturbations in real-world manipulation tasks. Under compiled inference, each action chunk takes 20.9 ms on a single H100 GPU, giving 1.7-3.4x speedups over strong VLA and WAM baselines; ablations further identify current-depth supervision as a simple, effective training recipe.",
+            "method": "The input is the current visual observation and language instruction, which GenPA feeds into a pretrained image generation backbone; a lightweight 19M-parameter action regression adapter directly outputs an action chunk. During training, the backbone's native generative objective is reused for perception co-training, and its native image-editing interface accommodates different visual targets without task-specific perception heads. This allows current-scene perception, future prediction, and their combinations to be compared within one policy architecture, while deployment uses only a single backbone forward pass and action regression, with no image generation or iterative action denoising. Ablations point to current-depth supervision as the simple effective ingredient; since the material provides no item-by-item comparison against prior methods, the design motivation is to remove inference-time visual generation and action denoising overhead.",
+            "takeaways": "Given a pretrained image generation backbone and a modest amount of robot demonstration data, GenPA could serve as a low-latency VLA-style policy for settings such as tabletop manipulation; its 20.9 ms action-chunk latency depends on a single H100 with compiled inference and would need revalidation on edge hardware. Before real-world deployment, more tasks, camera perturbations, and long-horizon scenarios still need validation, since the real-robot conclusions are limited to the settings reported in the material. The high LIBERO and LIBERO-Plus success rates show the route is viable on simulation benchmarks but should not be generalized to all robot platforms."
+          }
+        }
+      },
+      "id": "2611.27446",
+      "original_title": "GenPA: Image Generators as Efficient Robot Policies",
+      "original_summary": "Pretrained visual generation models have shown great promise in robotic manipulation. However, a representative line of work still treats future visual prediction as the central link between visual generative pretraining and action learning, retaining it as a training objective even when future scenes are no longer generated at inference time. We argue that the instruction-following, spatial understanding, and visual imagination capabilities acquired through image generation pretraining can support control without future visual prediction: image generation models themselves can be directly adapted into powerful action learners. Building on this perspective, we propose GenPA, which fine-tunes an image generation backbone with a lightweight 19M-parameter action regression adapter and reuses its native generative objective for perception co-training. The native image-editing interface accommodates different visual targets without task-specific perception heads, enabling comparisons of current-scene perception, future prediction, and their combinations within a common policy architecture. At deployment, GenPA requires only a single backbone forward pass and action regression, without visual generation or iterative action denoising. Without additional large-scale robot-data pretraining, GenPA demonstrates strong control performance and robustness to perturbations across simulation benchmarks (99.10% success on LIBERO and 83.79% on LIBERO-Plus) and real-world manipulation tasks. Under compiled inference, GenPA takes 20.9 ms per action chunk on a single H100 GPU, achieving 1.7-3.4x speedups over strong VLA and WAM baselines. Our latency analysis further highlights architectural advantages of visual generation backbones for efficient robot control. Ablations across visual tasks and their combinations identify current-depth supervision as a simple, effective training recipe.",
+      "url": "https://arxiv.org/abs/2611.27446v1",
+      "source": "arXiv cs.RO",
+      "published": "2026-11-20T10:41:53+00:00",
+      "authors": [
+        "Zian Deng",
+        "Tianyi Zhang",
+        "Zilong Zheng",
+        "Ziyu Liu",
+        "Tao Zhang",
+        "Yao Lyu",
+        "Shengbo Eben Li"
+      ],
+      "score": 4,
+      "versioned_id": "2611.27446v1",
+      "figure": {
+        "path": "./data/2026-11-25/figures/2611.27446.webp",
+        "caption": "Figure 1: Motivation and overview of GenPA. (a) Given a scene image, a manipulation instruction, and an editing request, GPT Image 2 visualizes a goal state or sketches end-effector paths in image space, illustrating the potential of image generation models for spatial understanding and visual planning (generation details in Appendix F). (b) GenPA jointly trains action prediction and perception with shared backbone weights and uses only the action path at deployment. The action regression adapter has 19M parameters in the LIBERO configuration."
+      },
+      "code_url": null,
+      "project_url": "https://deng-zian.github.io/GenPA-website/",
+      "pdf_url": "https://arxiv.org/pdf/2611.27446"
+    },
+    {
+      "title": "RoboCap-10k：面向机器人学习的度量精确第一人称数据集",
+      "summary": "RoboCap-10k 提供 1 万小时在 11 个国家、工人带薪班次中采集的无脚本操作第一人称视频，覆盖 18 个任务族、200 种任务类型和 2000 项任务。所有视频均由同一款 250 克帽子设备 RoboCap 拍摄，该设备配备六个同步全局快门相机和双惯性测量单元（IMU）。在线标定使每台设备的对极误差低于 1 像素，视觉惯性 SLAM 输出重力对齐的 6 自由度头部轨迹，多视角手部跟踪器给出厘米级度量精度的手部姿态，每段视频还配有任务与子任务语言描述。",
+      "lede": "RoboCap-10k 用统一帽子设备在 11 国工人班次中采集 1 万小时操作视频，提供低于 1 像素对极误差的标定、重力对齐 6 自由度头部轨迹和厘米级手部姿态。",
+      "tags": [
+        "第一人称视频数据集",
+        "机器人操作学习",
+        "视觉惯性SLAM"
+      ],
+      "sections": {
+        "background": "第一人称视频是机器人学习中最易扩展的操作数据来源，但难点在于生成高质量监督信号。现有大规模数据集要么缺少度量 3D 标签，要么依赖异构设备、动作捕捉实验室或头显内置实时跟踪器，且后者在发布数据上的精度并未报告。",
+        "conclusion": "作者构建了 RoboCap-10k：1 万小时精选的无脚本操作视频，来自 11 个国家工人的带薪班次，覆盖 18 个任务族、200 种任务类型、2000 项任务。全部数据由同一款 RoboCap 设备采集；在线标定使每台设备对极误差低于 1 像素，视觉惯性 SLAM 给出重力对齐的 6 自由度头部轨迹，多视角手部跟踪器给出厘米级度量精度的手部姿态，每段视频附有任务与子任务语言描述。",
+        "method": "输入是 RoboCap 帽子上的六个同步全局快门相机和双 IMU 采集的多视角图像与惯性数据。首先通过在线标定把每台设备的对极误差压到 1 像素以下，保证多相机几何一致；然后用视觉惯性 SLAM 估计重力对齐的 6 自由度头部轨迹；再用多视角手部跟踪器输出厘米级度量精度的手部姿态；最后为每段视频标注任务与子任务语言描述。已验证的改进来自统一设备与在线标定带来的几何一致性，以及 SLAM 与多视角跟踪提供的度量尺度，材料未报告与旧方法的对照优势。",
+        "takeaways": "若要在真实机器人上利用该数据，需要先具备与 RoboCap 类似的头戴多相机与 IMU 硬件，或能复现其标定与 SLAM 流程，才能获得度量尺度的头部与手部轨迹。该数据适合训练第一人称操作策略、手部姿态估计和任务语言对齐模型，但材料未报告在具体机器人平台上的策略迁移实验。距离真机部署还缺策略在真实机器人上的闭环验证，以及不同设备、不同光照和不同任务分布下的泛化测试。"
+      },
+      "i18n": {
+        "zh": {
+          "title": "RoboCap-10k：面向机器人学习的度量精确第一人称数据集",
+          "summary": "RoboCap-10k 提供 1 万小时在 11 个国家、工人带薪班次中采集的无脚本操作第一人称视频，覆盖 18 个任务族、200 种任务类型和 2000 项任务。所有视频均由同一款 250 克帽子设备 RoboCap 拍摄，该设备配备六个同步全局快门相机和双惯性测量单元（IMU）。在线标定使每台设备的对极误差低于 1 像素，视觉惯性 SLAM 输出重力对齐的 6 自由度头部轨迹，多视角手部跟踪器给出厘米级度量精度的手部姿态，每段视频还配有任务与子任务语言描述。",
+          "lede": "RoboCap-10k 用统一帽子设备在 11 国工人班次中采集 1 万小时操作视频，提供低于 1 像素对极误差的标定、重力对齐 6 自由度头部轨迹和厘米级手部姿态。",
+          "tags": [
+            "第一人称视频数据集",
+            "机器人操作学习",
+            "视觉惯性SLAM"
+          ],
+          "sections": {
+            "background": "第一人称视频是机器人学习中最易扩展的操作数据来源，但难点在于生成高质量监督信号。现有大规模数据集要么缺少度量 3D 标签，要么依赖异构设备、动作捕捉实验室或头显内置实时跟踪器，且后者在发布数据上的精度并未报告。",
+            "conclusion": "作者构建了 RoboCap-10k：1 万小时精选的无脚本操作视频，来自 11 个国家工人的带薪班次，覆盖 18 个任务族、200 种任务类型、2000 项任务。全部数据由同一款 RoboCap 设备采集；在线标定使每台设备对极误差低于 1 像素，视觉惯性 SLAM 给出重力对齐的 6 自由度头部轨迹，多视角手部跟踪器给出厘米级度量精度的手部姿态，每段视频附有任务与子任务语言描述。",
+            "method": "输入是 RoboCap 帽子上的六个同步全局快门相机和双 IMU 采集的多视角图像与惯性数据。首先通过在线标定把每台设备的对极误差压到 1 像素以下，保证多相机几何一致；然后用视觉惯性 SLAM 估计重力对齐的 6 自由度头部轨迹；再用多视角手部跟踪器输出厘米级度量精度的手部姿态；最后为每段视频标注任务与子任务语言描述。已验证的改进来自统一设备与在线标定带来的几何一致性，以及 SLAM 与多视角跟踪提供的度量尺度，材料未报告与旧方法的对照优势。",
+            "takeaways": "若要在真实机器人上利用该数据，需要先具备与 RoboCap 类似的头戴多相机与 IMU 硬件，或能复现其标定与 SLAM 流程，才能获得度量尺度的头部与手部轨迹。该数据适合训练第一人称操作策略、手部姿态估计和任务语言对齐模型，但材料未报告在具体机器人平台上的策略迁移实验。距离真机部署还缺策略在真实机器人上的闭环验证，以及不同设备、不同光照和不同任务分布下的泛化测试。"
+          }
+        },
+        "en": {
+          "title": "RoboCap-10k: A Metrically Accurate Egocentric Dataset for Robot Learning",
+          "summary": "RoboCap-10k provides 10,000 hours of unscripted egocentric manipulation video collected during workers' paid shifts in 11 countries, covering 18 task families, 200 task types, and 2,000 tasks. All video is captured by one device, the RoboCap, a 250 g hat with six synchronized global-shutter cameras and dual inertial measurement units (IMUs). Online calibration brings every device below 1 px of epipolar error, visual-inertial SLAM yields gravity-aligned 6-DoF head trajectories, a multi-view hand tracker produces centimeter-level metric hand poses, and each episode carries task and sub-task language captions.",
+          "lede": "RoboCap-10k uses one hat device to collect 10,000 hours of manipulation video across workers' shifts in 11 countries, offering sub-1-px epipolar calibration, gravity-aligned 6-DoF head trajectories, and centimeter-level hand poses.",
+          "tags": [
+            "egocentric video dataset",
+            "robot manipulation learning",
+            "visual-inertial SLAM"
+          ],
+          "sections": {
+            "background": "Egocentric video is the most scalable source of manipulation data for robot learning, but the difficulty lies in producing high-quality supervision. Existing large corpora either lack metric 3D labels or rely on heterogeneous devices, motion-capture labs, or a headset's built-in real-time tracker whose accuracy is not reported for the released data.",
+            "conclusion": "The authors build RoboCap-10k: 10,000 curated hours of unscripted manipulation recorded during workers' paid shifts in 11 countries, spanning 18 task families, 200 task types, and 2,000 tasks. Every hour is captured on one device, the RoboCap; online calibration brings every device below 1 px of epipolar error, visual-inertial SLAM yields gravity-aligned 6-DoF head trajectories, a multi-view hand tracker yields centimeter-level metric hand poses, and each episode is annotated with task and sub-task language captions.",
+            "method": "The input is multi-view imagery and inertial data from six synchronized global-shutter cameras and dual IMUs on the RoboCap hat. Online calibration first reduces each device's epipolar error below 1 px to keep multi-camera geometry consistent; visual-inertial SLAM then estimates gravity-aligned 6-DoF head trajectories; a multi-view hand tracker outputs centimeter-level metric hand poses; finally each episode is annotated with task and sub-task language captions. The verified improvements come from the geometric consistency enabled by a single device type and online calibration, plus the metric scale from SLAM and multi-view tracking; the material reports no comparison against prior methods.",
+            "takeaways": "To use this data on a real robot, one first needs head-mounted multi-camera and IMU hardware similar to RoboCap, or the ability to reproduce its calibration and SLAM pipeline, in order to obtain metric-scale head and hand trajectories. The data suits training egocentric manipulation policies, hand pose estimation, and task-language alignment models, but the material reports no policy transfer experiments on a specific robot platform. Before real-robot deployment, closed-loop policy validation on a physical robot and generalization tests across devices, lighting, and task distributions are still missing."
+          }
+        }
+      },
+      "id": "2611.26916",
+      "original_title": "RoboCap-10k: A Metrically Accurate Egocentric Dataset for Robot Learning",
+      "original_summary": "Egocentric video is the most scalable source of manipulation data for robot learning, but its difficulty lies in producing high-quality supervision. Existing large corpora lack metric 3D labels or rely on heterogeneous devices, motion-capture labs, or a headset's built-in real-time tracker, whose accuracy is not reported for the released data. We introduce RoboCap-10k: 10,000 curated hours of unscripted manipulation recorded during workers' paid shifts in 11 countries, spanning 18 task families, 200 task types, and 2,000 tasks. Every hour is captured on one device, the RoboCap, a 250 g hat with six synchronized global-shutter cameras and dual IMUs. Online calibration brings every device below 1 px of epipolar error, visual-inertial SLAM yields gravity-aligned 6-DoF head trajectories, and a multi-view hand tracker yields metric cm-precise hand poses. Each episode is annotated with task and sub-task language captions. Project page: https://robocap10k.com",
+      "url": "https://arxiv.org/abs/2611.26916v1",
+      "source": "arXiv cs.RO",
+      "published": "2026-11-20T00:04:54+00:00",
+      "authors": [
+        "Kheri Hughes",
+        "Qasim Ali",
+        "Nikash Bhardwaj",
+        "Owen Akhibi",
+        "Niresh Dravin",
+        "Vivek Sharma",
+        "Sam Cho",
+        "Ethan Lee",
+        "Paul Luo",
+        "Sunny Yu",
+        "Jonathan Victor",
+        "Amanda Young",
+        "Michael Cho",
+        "Ademi Adeniji",
+        "Vincent Liu"
+      ],
+      "score": 4,
+      "versioned_id": "2611.26916v1",
+      "figure": {
+        "path": "./data/2026-11-25/figures/2611.26916.webp",
+        "caption": "Figure 2: Hand pose estimates across workplaces. Egocentric frames from the nine sessions of Figure 1, with the estimated MANO hand meshes rendered over the image (blue: left hand, magenta: right hand). The tracker holds up through gloves, tool and object contact, partial occlusion, clutter and outdoor lighting. Appendix B shows 36 further sessions."
+      },
+      "code_url": null,
+      "project_url": null,
+      "pdf_url": "https://arxiv.org/pdf/2611.26916"
+    },
+    {
+      "title": "面向自动驾驶赛车的交互式半参数在轨学习车辆动力学",
+      "summary": "针对赛车极限工况下名义车辆动力学模型与实际动力学之间的失配，本文提出交互式半参数学习框架，在同一个预测误差目标下同时学习物理参数与残差项，并交替递归更新、每次更新仅在共享目标不升高时被接受，从而保证目标函数单调不增并收敛。数值仿真与硬件实验显示该框架优于基线；相比名义模型，仿真中横向速度与横摆角速度的一步预测误差分别降低 90.0% 和 81.6%，硬件实验中分别降低 54.0% 和 59.4%。",
+      "lede": "把物理参数与残差放在同一个预测误差目标下交替学习，并用接受准则保证目标单调不增，使赛车极限工况下的动力学预测误差明显下降。",
+      "tags": [
+        "自动驾驶赛车",
+        "车辆动力学建模",
+        "半参数学习"
+      ],
+      "sections": {
+        "background": "自动驾驶赛车要在操控极限附近做规划与控制，因此需要精确的车辆动力学模型；但名义模型与实际车辆之间总存在失配。已有方法利用赛道行驶中采集的在轨数据来缩小失配，通常要么只调整名义模型的物理参数，要么只学习一个残差项来补偿剩余误差。两类做法分开处理，限制了它们消除失配的能力，因为参数偏差与未建模动态往往同时存在、相互影响。",
+        "conclusion": "作者在数值仿真和硬件实验上对比了所提框架与基线方法，结果均显示该框架更优。相对名义模型，仿真中横向速度和横摆角速度的一步预测误差分别下降 90.0% 和 81.6%；硬件实验中分别下降 54.0% 和 59.4%。这些数字说明参数学习与残差学习联合进行能显著减小极限工况下的预测偏差，但结论限于材料报告的仿真设定与硬件平台。",
+        "method": "输入是车辆在赛道上按赛车条件行驶时采集的在轨数据，以及一个带可调物理参数的名义动力学模型。框架把物理参数和残差项放在同一个预测误差目标下学习：参数更新改变残差的拟合目标，残差更新又改变参数的拟合目标，因此两者交替递归更新，每一步都参考对方的最新结果。每次更新只有在不增加共享目标时才被接受，由此保证目标函数在递归过程中单调不增并收敛。已验证的改进来自这种联合优化：仿真与硬件实验中的一步预测误差均低于基线，但材料未给出与旧方法逐项对照的机制性归因。",
+        "takeaways": "若要在真实赛车上部署，需要能稳定采集在轨数据的传感器与计算平台，并具备在线或近在线更新模型的计算余量；在赛道极限驾驶、轮胎非线性明显的场景下，该框架有望减小横向速度与横摆角速度的预测偏差。目前验证限于材料报告的仿真设定与硬件实验，距离实车比赛级部署还缺长时间闭环竞速、不同赛道与轮胎状态变化下的泛化验证。由于更新接受条件只保证共享目标不增，实际部署还需确认在噪声与数据分布漂移下递归更新的稳定性。"
+      },
+      "i18n": {
+        "zh": {
+          "title": "面向自动驾驶赛车的交互式半参数在轨学习车辆动力学",
+          "summary": "针对赛车极限工况下名义车辆动力学模型与实际动力学之间的失配，本文提出交互式半参数学习框架，在同一个预测误差目标下同时学习物理参数与残差项，并交替递归更新、每次更新仅在共享目标不升高时被接受，从而保证目标函数单调不增并收敛。数值仿真与硬件实验显示该框架优于基线；相比名义模型，仿真中横向速度与横摆角速度的一步预测误差分别降低 90.0% 和 81.6%，硬件实验中分别降低 54.0% 和 59.4%。",
+          "lede": "把物理参数与残差放在同一个预测误差目标下交替学习，并用接受准则保证目标单调不增，使赛车极限工况下的动力学预测误差明显下降。",
+          "tags": [
+            "自动驾驶赛车",
+            "车辆动力学建模",
+            "半参数学习"
+          ],
+          "sections": {
+            "background": "自动驾驶赛车要在操控极限附近做规划与控制，因此需要精确的车辆动力学模型；但名义模型与实际车辆之间总存在失配。已有方法利用赛道行驶中采集的在轨数据来缩小失配，通常要么只调整名义模型的物理参数，要么只学习一个残差项来补偿剩余误差。两类做法分开处理，限制了它们消除失配的能力，因为参数偏差与未建模动态往往同时存在、相互影响。",
+            "conclusion": "作者在数值仿真和硬件实验上对比了所提框架与基线方法，结果均显示该框架更优。相对名义模型，仿真中横向速度和横摆角速度的一步预测误差分别下降 90.0% 和 81.6%；硬件实验中分别下降 54.0% 和 59.4%。这些数字说明参数学习与残差学习联合进行能显著减小极限工况下的预测偏差，但结论限于材料报告的仿真设定与硬件平台。",
+            "method": "输入是车辆在赛道上按赛车条件行驶时采集的在轨数据，以及一个带可调物理参数的名义动力学模型。框架把物理参数和残差项放在同一个预测误差目标下学习：参数更新改变残差的拟合目标，残差更新又改变参数的拟合目标，因此两者交替递归更新，每一步都参考对方的最新结果。每次更新只有在不增加共享目标时才被接受，由此保证目标函数在递归过程中单调不增并收敛。已验证的改进来自这种联合优化：仿真与硬件实验中的一步预测误差均低于基线，但材料未给出与旧方法逐项对照的机制性归因。",
+            "takeaways": "若要在真实赛车上部署，需要能稳定采集在轨数据的传感器与计算平台，并具备在线或近在线更新模型的计算余量；在赛道极限驾驶、轮胎非线性明显的场景下，该框架有望减小横向速度与横摆角速度的预测偏差。目前验证限于材料报告的仿真设定与硬件实验，距离实车比赛级部署还缺长时间闭环竞速、不同赛道与轮胎状态变化下的泛化验证。由于更新接受条件只保证共享目标不增，实际部署还需确认在噪声与数据分布漂移下递归更新的稳定性。"
+          }
+        },
+        "en": {
+          "title": "Interactive Semi-Parametric On-Track Learning for Vehicle Dynamics in Autonomous Racing",
+          "summary": "In autonomous racing, a mismatch inevitably remains between the nominal vehicle dynamics model and the actual vehicle near the limits of handling. This paper proposes an interactive semi-parametric learning framework that learns both the physical parameters and a residual term under a single shared prediction-error objective, updating them recursively in turn, with each update accepted only if it does not increase the shared objective, so the objective is guaranteed to be non-increasing and convergent. Numerical simulations and hardware experiments show the framework outperforms the baselines; compared with the nominal model, it reduces the one-step prediction errors of lateral velocity and yaw rate by 90.0% and 81.6% in simulation and by 54.0% and 59.4% on hardware.",
+          "lede": "Learning physical parameters and a residual under one shared prediction-error objective, with an acceptance rule that keeps the objective non-increasing, markedly lowers dynamics prediction error near the limits of racing.",
+          "tags": [
+            "autonomous racing",
+            "vehicle dynamics modeling",
+            "semi-parametric learning"
+          ],
+          "sections": {
+            "background": "Autonomous racing requires an accurate vehicle dynamics model near the limits of handling, yet a mismatch between the nominal and actual dynamics inevitably remains. Existing methods learn from on-track data, i.e., data collected while the vehicle drives on the track under racing conditions, by either adapting the physical parameters of the nominal model or learning a residual that captures the remaining mismatch. Handling parameters and residual separately restricts their ability to resolve the mismatch, since parameter bias and unmodeled dynamics typically coexist and interact.",
+            "conclusion": "The authors compare the proposed framework with baselines in numerical simulations and hardware experiments, and it outperforms them in both. Compared with the nominal model, it reduces the one-step prediction errors of lateral velocity and yaw rate by 90.0% and 81.6% in simulation and by 54.0% and 59.4% on hardware. These numbers indicate that jointly learning parameters and residuals substantially reduces prediction error near the limits of handling, but the conclusions are limited to the simulation settings and hardware platform reported in the material.",
+            "method": "The input is on-track data collected while the vehicle drives under racing conditions, together with a nominal dynamics model that has adjustable physical parameters. The framework learns the physical parameters and a residual term under a single shared prediction-error objective: updating the parameters changes the residual's learning target, and updating the residual changes the parameters' target, so the two are recursively updated in turn, each guided by the other's latest update. Each update is accepted only if it does not increase the shared objective, which guarantees that the objective is non-increasing and convergent over the recursion. The verified improvement comes from this joint optimization: one-step prediction errors in simulation and hardware experiments are lower than the baselines, though the material does not provide a mechanism-level attribution against prior methods.",
+            "takeaways": "Deployment on a real race car would require sensors and a compute platform that can reliably collect on-track data, plus enough compute headroom for online or near-online model updates; in scenarios with limit handling and pronounced tire nonlinearity, the framework is expected to reduce prediction errors of lateral velocity and yaw rate. Validation is currently limited to the simulation settings and hardware experiments reported in the material, and race-level deployment still lacks verification of long-duration closed-loop racing and generalization across tracks and changing tire conditions. Because the acceptance rule only guarantees a non-increasing shared objective, practical deployment also needs to confirm the stability of the recursive updates under noise and data distribution shift."
+          }
+        }
+      },
+      "id": "2611.27932",
+      "original_title": "Interactive Semi-Parametric On-Track Learning for Vehicle Dynamics in Autonomous Racing",
+      "original_summary": "Autonomous racing requires an accurate vehicle dynamics model near the limits of handling, yet a mismatch between the nominal and actual dynamics inevitably remains. To reduce this mismatch, existing methods learn from on-track data, i.e., data collected while the vehicle drives on the track under racing conditions, by adapting the physical parameters of the nominal model or by learning a residual that captures the remaining mismatch. However, these on-track learning methods typically handle either the physical parameters or the residual separately, which restricts their ability to resolve the mismatch. To address this limitation, we propose an interactive semi-parametric learning framework that learns both the physical parameters and the residual under a single shared prediction-error objective. Since updating one changes the learning target of the other, they are recursively updated in turn, each guided by the other's latest update. Each update is then accepted only if it does not increase the shared objective, so that the objective is guaranteed to be non-increasing and convergent over the recursion. Numerical simulations and hardware experiments show that the proposed framework outperforms the baselines. Compared with the nominal model, it reduces the one-step prediction errors of lateral velocity and yaw rate by 90.0% and 81.6% in simulation and by 54.0% and 59.4% on hardware.",
+      "url": "https://arxiv.org/abs/2611.27932v1",
+      "source": "arXiv cs.RO",
+      "published": "2026-11-20T18:08:14+00:00",
+      "authors": [
+        "Jungbin Kim",
+        "Youngim Nam",
+        "Cheolhyeon Kwon"
+      ],
+      "score": 4,
+      "versioned_id": "2611.27932v1",
+      "figure": {
+        "path": "./data/2026-11-25/figures/2611.27932.webp",
+        "caption": "Fig. 8: Sum of one-step prediction errors in vy and ω mapped along the actual trajectory in a representative hardware run. The blue line denotes the reference trajectory."
+      },
+      "code_url": null,
+      "project_url": null,
+      "pdf_url": "https://arxiv.org/pdf/2611.27932"
+    },
+    {
+      "title": "BRINA：结合 AKAZE 的底参考惯性导航，一种面向自主海洋载具的声呐 SLAM",
+      "summary": "前视声呐（FLS）在光学感知受限的水下环境中能提供可靠感知，但每个回波缺少高程信息，限制了其用于导航。直接由声呐图像估计运动时会出现未知的米制尺度，通常需借助多普勒速度计（DVL）解决。本文提出 BRINA（Bottom-Referenced Inertial Navigation with AKAZE），一种仅以 FLS 作为外部感知传感器的声呐-惯性 SLAM 系统。BRINA 从每个波束的首个海底回波估计声呐高度，并将匹配特征投影到海底，从而在没有 DVL 的情况下提供米制里程计。作者进一步推导了剩余尺度误差与海底倾斜及坡度变化之间的界。方法在自主水下航行器的仿真中评估，并在十次任务中用两套 FLS 系统、在不同工况下对无人水面艇开展现场实验。",
+      "lede": "不靠多普勒速度计，只用前视声呐和惯性测量，BRINA 从海底回波中恢复米制尺度，为海洋机器人提供声呐 SLAM 新路径。",
+      "tags": [
+        "前视声呐 SLAM",
+        "声呐-惯性里程计",
+        "自主海洋载具"
+      ],
+      "sections": {
+        "background": "前视声呐是水下机器人重要的外部感知手段，但每个回波只给出距离与方位，缺少高程，导致从声呐图像直接估计的运动存在未知米制尺度。常规做法依赖多普勒速度计提供速度尺度，这增加了硬件成本与系统复杂度，也限制了仅装声呐的载具自主导航。",
+        "conclusion": "BRINA 在仿真中以自主水下航行器验证，并在十次现场任务中用两套前视声呐系统对无人水面艇测试，覆盖不同工况。材料报告的核心结论是：仅用前视声呐加惯性测量即可获得米制里程计，无需 DVL；同时给出了剩余尺度误差受海底倾斜与坡度变化约束的推导。具体数值指标未在摘要中给出，故不在此复述。",
+        "method": "输入是前视声呐图像序列与惯性测量数据。系统先对声呐图像提取并匹配 AKAZE 特征，再从每个波束的首个海底回波估计声呐相对海底的高度。利用该高度把匹配特征投影到海底平面，从而恢复米制尺度并形成里程计，随后与惯性信息融合完成 SLAM。作者还推导了剩余尺度误差与海底倾斜、坡度变化之间的界，用于说明该投影在何种海底条件下可靠。",
+        "takeaways": "对仅装前视声呐与惯性单元的水下或水面机器人，该方法提供了不依赖 DVL 的米制导航路径，适合成本或载荷受限的平台。落地前提是能稳定检测每个波束的首个海底回波，且海底倾斜与坡度变化处于推导界所覆盖的范围。目前证据来自仿真与十次无人水面艇现场任务，距离长期真机部署仍需在更复杂海底地形、不同水质与任务时长下验证尺度误差界与实际漂移。"
+      },
+      "i18n": {
+        "zh": {
+          "title": "BRINA：结合 AKAZE 的底参考惯性导航，一种面向自主海洋载具的声呐 SLAM",
+          "summary": "前视声呐（FLS）在光学感知受限的水下环境中能提供可靠感知，但每个回波缺少高程信息，限制了其用于导航。直接由声呐图像估计运动时会出现未知的米制尺度，通常需借助多普勒速度计（DVL）解决。本文提出 BRINA（Bottom-Referenced Inertial Navigation with AKAZE），一种仅以 FLS 作为外部感知传感器的声呐-惯性 SLAM 系统。BRINA 从每个波束的首个海底回波估计声呐高度，并将匹配特征投影到海底，从而在没有 DVL 的情况下提供米制里程计。作者进一步推导了剩余尺度误差与海底倾斜及坡度变化之间的界。方法在自主水下航行器的仿真中评估，并在十次任务中用两套 FLS 系统、在不同工况下对无人水面艇开展现场实验。",
+          "lede": "不靠多普勒速度计，只用前视声呐和惯性测量，BRINA 从海底回波中恢复米制尺度，为海洋机器人提供声呐 SLAM 新路径。",
+          "tags": [
+            "前视声呐 SLAM",
+            "声呐-惯性里程计",
+            "自主海洋载具"
+          ],
+          "sections": {
+            "background": "前视声呐是水下机器人重要的外部感知手段，但每个回波只给出距离与方位，缺少高程，导致从声呐图像直接估计的运动存在未知米制尺度。常规做法依赖多普勒速度计提供速度尺度，这增加了硬件成本与系统复杂度，也限制了仅装声呐的载具自主导航。",
+            "conclusion": "BRINA 在仿真中以自主水下航行器验证，并在十次现场任务中用两套前视声呐系统对无人水面艇测试，覆盖不同工况。材料报告的核心结论是：仅用前视声呐加惯性测量即可获得米制里程计，无需 DVL；同时给出了剩余尺度误差受海底倾斜与坡度变化约束的推导。具体数值指标未在摘要中给出，故不在此复述。",
+            "method": "输入是前视声呐图像序列与惯性测量数据。系统先对声呐图像提取并匹配 AKAZE 特征，再从每个波束的首个海底回波估计声呐相对海底的高度。利用该高度把匹配特征投影到海底平面，从而恢复米制尺度并形成里程计，随后与惯性信息融合完成 SLAM。作者还推导了剩余尺度误差与海底倾斜、坡度变化之间的界，用于说明该投影在何种海底条件下可靠。",
+            "takeaways": "对仅装前视声呐与惯性单元的水下或水面机器人，该方法提供了不依赖 DVL 的米制导航路径，适合成本或载荷受限的平台。落地前提是能稳定检测每个波束的首个海底回波，且海底倾斜与坡度变化处于推导界所覆盖的范围。目前证据来自仿真与十次无人水面艇现场任务，距离长期真机部署仍需在更复杂海底地形、不同水质与任务时长下验证尺度误差界与实际漂移。"
+          }
+        },
+        "en": {
+          "title": "BRINA: Bottom-Referenced Inertial Navigation with AKAZE, a Sonar SLAM for Autonomous Marine Vehicles",
+          "summary": "Forward-looking sonar (FLS) provides reliable underwater perception where optical sensing is limited, but navigation use is hindered by the unobserved elevation of each return. Motion estimated directly from sonar images therefore suffers from an unknown metric scale, commonly resolved with a Doppler velocity log (DVL). We present BRINA (Bottom-Referenced Inertial Navigation with AKAZE), a sonar-inertial SLAM system for marine vehicles that uses the FLS as its only exteroceptive sensor. BRINA estimates sonar altitude from the first seabed return in each beam and uses it to project matched features onto the seabed, providing metric odometry without a DVL. We further derive a bound relating the remaining scale error to seabed tilt and slope variability. The method is evaluated in simulation with an autonomous underwater vehicle and in field experiments with uncrewed surface vehicles over ten missions, using two FLS systems under different operating conditions.",
+          "lede": "Without a Doppler velocity log, BRINA recovers metric scale from seabed returns using only forward-looking sonar and inertial sensing, offering a new sonar SLAM path for marine robots.",
+          "tags": [
+            "forward-looking sonar SLAM",
+            "sonar-inertial odometry",
+            "autonomous marine vehicles"
+          ],
+          "sections": {
+            "background": "Forward-looking sonar is a key exteroceptive sensor for marine robots, but each return gives only range and bearing without elevation, so motion estimated directly from sonar images has an unknown metric scale. The usual remedy is a Doppler velocity log for velocity scale, which adds hardware cost and system complexity and limits autonomy for vehicles carrying only sonar.",
+            "conclusion": "BRINA is evaluated in simulation with an autonomous underwater vehicle and in ten field missions with uncrewed surface vehicles using two forward-looking sonar systems under different operating conditions. The reported conclusion is that forward-looking sonar plus inertial measurement alone yields metric odometry without a DVL, together with a derived bound on remaining scale error as a function of seabed tilt and slope variability. Specific numerical metrics are not given in the abstract and are not restated here.",
+            "method": "The inputs are forward-looking sonar image sequences and inertial measurements. The system extracts and matches AKAZE features in the sonar images, then estimates sonar altitude above the seabed from the first seabed return in each beam. Using that altitude, matched features are projected onto the seabed plane to recover metric scale and form odometry, which is then fused with inertial information for SLAM. The authors also derive a bound linking remaining scale error to seabed tilt and slope variability, indicating when the projection is reliable.",
+            "takeaways": "For underwater or surface robots carrying only forward-looking sonar and an inertial unit, the method offers a metric navigation path that does not depend on a DVL, suited to platforms with tight cost or payload budgets. Deployment assumes reliable detection of the first seabed return in each beam and seabed tilt and slope variability within the derived bound. Evidence comes from simulation and ten uncrewed surface vehicle field missions; long-term deployment still needs validation of the scale-error bound and drift under more complex seabed terrain, varying water conditions, and longer mission durations."
+          }
+        }
+      },
+      "id": "2611.27817",
+      "original_title": "BRINA: Bottom-Referenced Inertial Navigation with AKAZE, a Sonar SLAM for Autonomous Marine Vehicles",
+      "original_summary": "Forward-looking sonar (FLS) provides reliable underwater perception where optical sensing is limited, but its use for navigation is hindered by the unobserved elevation of each return. As a result, motion estimated directly from sonar images suffers from an unknown metric scale that is commonly resolved using a Doppler velocity log (DVL). We present BRINA (Bottom-Referenced Inertial Navigation with AKAZE), a sonar-inertial SLAM system for marine vehicles that uses the FLS as its only exteroceptive sensor. BRINA estimates the sonar altitude from the first seabed return in each beam and uses it to project matched features onto the seabed, providing metric odometry without a DVL. We further derive a bound relating the remaining scale error to seabed tilt and slope variability. The method is evaluated in simulation with an autonomous underwater vehicle, and in field experiments with uncrewed surface vehicles over ten missions, using two FLS systems under different operating conditions.",
+      "url": "https://arxiv.org/abs/2611.27817v1",
+      "source": "arXiv cs.RO",
+      "published": "2026-11-20T16:43:43+00:00",
+      "authors": [
+        "Adolfo Damiano Cafaro",
+        "Patrizio Mariani",
+        "Roberto Galeazzi"
+      ],
+      "score": 4,
+      "versioned_id": "2611.27817v1",
+      "figure": {
+        "path": "./data/2026-11-25/figures/2611.27817.webp",
+        "caption": "Fig. 4: Mission ID8 from above, east x and north y. The colour is the true depth zb of the seabed. The black line is the true path, starting at the white circle, with a square every 100 m, and the cyan line the Brina trajectory, odometry only."
+      },
+      "code_url": null,
+      "project_url": null,
+      "pdf_url": "https://arxiv.org/pdf/2611.27817"
+    },
+    {
+      "title": "通用动作评论家：利用前沿模型实现自动驾驶",
+      "summary": "该研究提出通用动作评论家（Generalist Action Critic，GAC），一种零样本推理时框架：由专用驾驶规划器生成并初选多条候选轨迹，再由冻结的前沿模型作为动作评论家，结合场景证据评估所选轨迹，决定保留或从候选中重选。在 HUGSIM 上，GAC 将 DrivoR 的 HD-Score 提升至 43.2，在未使用额外仿真数据训练的方法中达到最优；在三个规划器上均提升闭环驾驶安全性，HD-Score 相对增益最高达 32.1%。NAVSIM v1 实验显示，GAC 纠正了最多 52.13% 的可纠正不安全轨迹选择，仅在 0.67% 的原本高质量选择中引入新失败。",
+      "lede": "冻结的前沿模型不直接开车，而是在推理时评审专用规划器选出的轨迹，必要时从候选中重选，从而提升闭环驾驶安全性。",
+      "tags": [
+        "自动驾驶",
+        "前沿模型",
+        "轨迹评估"
+      ],
+      "sections": {
+        "background": "前沿模型具备强大的通用推理能力，为物理世界中的智能决策带来新可能。自动驾驶领域近期多通过额外适配让模型输出动作，尤其在现有模型表现不佳的场景中。但这类适配成本高，且可能削弱通用推理优势；如何在不重新训练的前提下，把前沿模型的推理能力与专用驾驶规划器的规划能力结合，是待解决的问题。",
+        "conclusion": "在 HUGSIM 闭环评测中，GAC 将 DrivoR 的 HD-Score 提升至 43.2，在未使用额外仿真数据训练的方法中达到最优；在三个规划器上均持续提升闭环驾驶安全性，HD-Score 相对增益最高达 32.1%。NAVSIM v1 实验进一步显示，GAC 最多纠正 52.13% 的可纠正不安全轨迹选择，仅在 0.67% 的原本高质量选择中引入新失败。结论限于材料报告的仿真评测设定。",
+        "method": "输入是专用规划器生成的多条候选轨迹及其初选结果，以及带空间叠加标注的相机图像和文本形式的驾驶上下文与推理原则。冻结的前沿模型充当动作评论家，依据场景证据评估初选轨迹，决定保留或从候选中重选。推理时框架控制各阶段可见信息，以支持轨迹评估与重选。已验证的改进来自推理时协作而非重新训练规划器；材料未提供与旧方法的直接对照，因此其设计动机是弥补专用规划器在困难场景下的选择失误。",
+        "takeaways": "若面向自动驾驶仿真评测或数据回放流程，GAC 可在不重训规划器的条件下作为推理时安全过滤器，前提是具备候选轨迹、相机图像与场景上下文。部署需要前沿模型的推理接口和带空间叠加的图像预处理，并控制各阶段信息可见性。距离真机部署仍缺真实道路闭环验证、时延与算力预算评估，以及更多规划器和传感器配置下的泛化测试；现有结论仅限 HUGSIM 与 NAVSIM v1 的 reported 设定。"
+      },
+      "i18n": {
+        "zh": {
+          "title": "通用动作评论家：利用前沿模型实现自动驾驶",
+          "summary": "该研究提出通用动作评论家（Generalist Action Critic，GAC），一种零样本推理时框架：由专用驾驶规划器生成并初选多条候选轨迹，再由冻结的前沿模型作为动作评论家，结合场景证据评估所选轨迹，决定保留或从候选中重选。在 HUGSIM 上，GAC 将 DrivoR 的 HD-Score 提升至 43.2，在未使用额外仿真数据训练的方法中达到最优；在三个规划器上均提升闭环驾驶安全性，HD-Score 相对增益最高达 32.1%。NAVSIM v1 实验显示，GAC 纠正了最多 52.13% 的可纠正不安全轨迹选择，仅在 0.67% 的原本高质量选择中引入新失败。",
+          "lede": "冻结的前沿模型不直接开车，而是在推理时评审专用规划器选出的轨迹，必要时从候选中重选，从而提升闭环驾驶安全性。",
+          "tags": [
+            "自动驾驶",
+            "前沿模型",
+            "轨迹评估"
+          ],
+          "sections": {
+            "background": "前沿模型具备强大的通用推理能力，为物理世界中的智能决策带来新可能。自动驾驶领域近期多通过额外适配让模型输出动作，尤其在现有模型表现不佳的场景中。但这类适配成本高，且可能削弱通用推理优势；如何在不重新训练的前提下，把前沿模型的推理能力与专用驾驶规划器的规划能力结合，是待解决的问题。",
+            "conclusion": "在 HUGSIM 闭环评测中，GAC 将 DrivoR 的 HD-Score 提升至 43.2，在未使用额外仿真数据训练的方法中达到最优；在三个规划器上均持续提升闭环驾驶安全性，HD-Score 相对增益最高达 32.1%。NAVSIM v1 实验进一步显示，GAC 最多纠正 52.13% 的可纠正不安全轨迹选择，仅在 0.67% 的原本高质量选择中引入新失败。结论限于材料报告的仿真评测设定。",
+            "method": "输入是专用规划器生成的多条候选轨迹及其初选结果，以及带空间叠加标注的相机图像和文本形式的驾驶上下文与推理原则。冻结的前沿模型充当动作评论家，依据场景证据评估初选轨迹，决定保留或从候选中重选。推理时框架控制各阶段可见信息，以支持轨迹评估与重选。已验证的改进来自推理时协作而非重新训练规划器；材料未提供与旧方法的直接对照，因此其设计动机是弥补专用规划器在困难场景下的选择失误。",
+            "takeaways": "若面向自动驾驶仿真评测或数据回放流程，GAC 可在不重训规划器的条件下作为推理时安全过滤器，前提是具备候选轨迹、相机图像与场景上下文。部署需要前沿模型的推理接口和带空间叠加的图像预处理，并控制各阶段信息可见性。距离真机部署仍缺真实道路闭环验证、时延与算力预算评估，以及更多规划器和传感器配置下的泛化测试；现有结论仅限 HUGSIM 与 NAVSIM v1 的 reported 设定。"
+          }
+        },
+        "en": {
+          "title": "Generalist Action Critic: Harnessing Frontier Models in Autonomous Driving",
+          "summary": "The study introduces Generalist Action Critic (GAC), a zero-shot inference-time framework in which specialized driving planners generate and initially select multiple candidate trajectories, and a frozen frontier model acts as an action critic that assesses the selected trajectory against scene evidence and either retains it or reselects from the candidates. On HUGSIM, GAC raises DrivoR's HD-Score to 43.2, achieving state-of-the-art performance among methods trained without additional simulation data, and consistently improves closed-loop driving safety across three planners with relative HD-Score gains of up to 32.1%. Experiments on NAVSIM v1 show that GAC corrects up to 52.13% of eligible unsafe trajectory selections while introducing new failures in only 0.67% of originally high-quality selections.",
+          "lede": "A frozen frontier model does not drive directly; it reviews trajectories selected by specialized planners at inference time and reselects from candidates when needed, improving closed-loop driving safety.",
+          "tags": [
+            "autonomous driving",
+            "frontier models",
+            "trajectory assessment"
+          ],
+          "sections": {
+            "background": "Frontier models have demonstrated strong general-purpose reasoning, opening new possibilities for intelligent decision making in the physical world. Recent autonomous-driving approaches often seek to leverage these capabilities through additional adaptation for action output, particularly in scenarios where existing models underperform. Such adaptation is costly and may weaken general reasoning; how to combine frontier-model reasoning with specialized driving planners without retraining remains an open problem.",
+            "conclusion": "In HUGSIM closed-loop evaluation, GAC raises DrivoR's HD-Score to 43.2, achieving state-of-the-art performance among methods trained without additional simulation data, and consistently improves closed-loop driving safety across three planners with relative HD-Score gains of up to 32.1%. On NAVSIM v1, GAC corrects up to 52.13% of eligible unsafe trajectory selections while introducing new failures in only 0.67% of originally high-quality selections. These conclusions are limited to the simulation evaluation settings reported in the material.",
+            "method": "The input consists of multiple candidate trajectories and an initial selection from a specialized planner, camera images with spatial overlays, and textual driving context and reasoning principles. A frozen frontier model serves as an action critic that assesses the selected trajectory against scene evidence and either retains it or reselects from the candidates. The inference-time harness regulates the information available at each stage to support trajectory assessment and reselection. The verified improvement comes from inference-time cooperation rather than retraining the planner; the material provides no direct comparison against prior methods, so the design motivation is to compensate for selection errors of specialized planners in difficult scenarios.",
+            "takeaways": "For autonomous-driving simulation evaluation or data replay pipelines, GAC can act as an inference-time safety filter without retraining planners, provided candidate trajectories, camera images, and scene context are available. Deployment requires a frontier-model inference interface and image preprocessing with spatial overlays, along with control of information visibility at each stage. Real-world deployment still lacks closed-loop validation on public roads, latency and compute-budget assessment, and generalization tests across more planners and sensor configurations; current conclusions are limited to the reported HUGSIM and NAVSIM v1 settings."
+          }
+        }
+      },
+      "id": "2611.27804",
+      "original_title": "Generalist Action Critic: Harnessing Frontier Models in Autonomous Driving",
+      "original_summary": "Frontier models have demonstrated remarkable general-purpose reasoning capabilities, opening new possibilities for intelligent decision making in the physical world. In autonomous driving, many recent approaches seek to leverage these capabilities through additional adaptation for action output, particularly in scenarios where existing models underperform. We introduce Generalist Action Critic (GAC), a zero-shot framework that combines frontier models' general-purpose reasoning with the planning competence of specialized driving models through an inference-time harness. In GAC, specialized planners generate multiple candidate trajectories and make an initial selection, while a frozen frontier model serves as an action critic that assesses the selected trajectory against scene evidence and either retains it or reselects from the available candidates. The harness combines camera images with spatial overlays, provides driving context and reasoning principles through textual instructions, and regulates the information available at each stage to support trajectory assessment and reselection. On HUGSIM, GAC raises DrivoR's HD-Score to 43.2, achieving state-of-the-art performance among methods trained without additional simulation data. GAC also consistently improves closed-loop driving safety across three planners, with relative HD-Score gains of up to 32.1%. Experiments on NAVSIM v1 further reveal how GAC improves planning performance by correcting up to 52.13% of eligible unsafe trajectory selections while introducing new failures in only 0.67% of originally high-quality selections. These results demonstrate the potential of harnessing frontier models to improve driving safety through inference-time cooperation with specialized planners.",
+      "url": "https://arxiv.org/abs/2611.27804v1",
+      "source": "arXiv cs.RO",
+      "published": "2026-11-20T16:32:53+00:00",
+      "authors": [
+        "Yun Yan",
+        "Shizhi Hu",
+        "Zhichao Li",
+        "Yang Guan",
+        "Shiqi Liu",
+        "Jiaxin Gao",
+        "Xiangteng Zhang",
+        "Wenbo Ding",
+        "Jiuhua Zhao",
+        "Hui Guo",
+        "Xintao Yan",
+        "Keqiang Li",
+        "Shengbo Eben Li"
+      ],
+      "score": 4,
+      "versioned_id": "2611.27804v1",
+      "figure": {
+        "path": "./data/2026-11-25/figures/2611.27804.webp",
+        "caption": "Figure 2: Overview of Generalist Action Critic (GAC). A specialized planner generates candidate trajectories and provides its original selection. An evidence-grounded inference harness integrates layered visual representations and a structured reasoning context to support a frontier model serving as the action critic. Through selective decision revision, the critic assesses the original selection, retaining it upon acceptance and reselecting from the same candidate set upon rejection."
+      },
+      "code_url": null,
+      "project_url": "https://yanyunn.github.io/GAC/",
+      "pdf_url": "https://arxiv.org/pdf/2611.27804"
+    },
+    {
+      "title": "EvoTER：通过工具使用经验与反思进化具身智能体",
+      "summary": "EvoTER 是一个无需更新模型参数、依靠经验驱动让具身智能体自我进化工具使用技能的框架。它通过“探索者—诊断者—验证者”三角色循环，把成功与失败的工具调用轨迹蒸馏为可复用技能，并且只在完整任务成功率提升时才保留修改。仿真中整体任务成功率从进化前的 53.60% 提升到 80.40%；真机实验中，用仿真初始化可减少习得短程技能所需尝试次数，持续真机进化把长程任务成功率从 20% 提升到 80%–100%，还能把仿真开发之后新增的工具功能纳入技能库。",
+      "lede": "EvoTER 让具身智能体不改模型参数，靠记录、诊断和验证工具使用经验来进化技能库；仿真成功率从 53.60% 升到 80.40%，真机长程任务从 20% 升到 80%–100%。",
+      "tags": [
+        "具身智能体",
+        "工具使用",
+        "经验进化"
+      ],
+      "sections": {
+        "background": "长程具身任务要求智能体把指令对应到不断变化的观测上，协调多种异构工具，并在失败向下游传播时恢复。现有基于大语言模型（LLM）的智能体虽能保留经验、打磨可复用技能，但局部修复成功并不等于在共享流程库上带来完整任务层面的收益，这正是 EvoTER 要解决的痛点。",
+        "conclusion": "在仿真中，EvoTER 把整体任务成功率从进化前基线 53.60% 提升到 80.40%。真机实验中，仿真初始化减少了获得短程技能所需的尝试次数；持续真机进化把各任务的长程成功率从 20% 提升到 80%–100%，并使进化中的技能库能纳入仿真开发之后新增的工具功能。上述结论限于材料报告的仿真与真机设定。",
+        "method": "输入是智能体在任务中产生的工具使用轨迹，包括成功与失败执行。探索者负责记录这些轨迹；诊断者把轨迹蒸馏为四类技能：工具选择、参数计算、后置条件检查与失败恢复；验证者只在新会话中确认完整任务成功率提升后，才保留候选修改。整个过程不更新模型参数，改进来自经验蒸馏与严格验证，而非依赖局部修复的直觉。",
+        "takeaways": "若要在真实机器人上使用 EvoTER，需要能记录工具调用轨迹的执行环境、可复用的共享流程库，以及在新会话中复测完整任务成功率的验证流程。它适合多工具、长程、失败会级联的工业或服务机器人场景；但前提是具备上述数据与验证条件。距离更广泛真机部署，仍需在材料未覆盖的任务、工具与环境中验证技能库的迁移性和安全性。"
+      },
+      "i18n": {
+        "zh": {
+          "title": "EvoTER：通过工具使用经验与反思进化具身智能体",
+          "summary": "EvoTER 是一个无需更新模型参数、依靠经验驱动让具身智能体自我进化工具使用技能的框架。它通过“探索者—诊断者—验证者”三角色循环，把成功与失败的工具调用轨迹蒸馏为可复用技能，并且只在完整任务成功率提升时才保留修改。仿真中整体任务成功率从进化前的 53.60% 提升到 80.40%；真机实验中，用仿真初始化可减少习得短程技能所需尝试次数，持续真机进化把长程任务成功率从 20% 提升到 80%–100%，还能把仿真开发之后新增的工具功能纳入技能库。",
+          "lede": "EvoTER 让具身智能体不改模型参数，靠记录、诊断和验证工具使用经验来进化技能库；仿真成功率从 53.60% 升到 80.40%，真机长程任务从 20% 升到 80%–100%。",
+          "tags": [
+            "具身智能体",
+            "工具使用",
+            "经验进化"
+          ],
+          "sections": {
+            "background": "长程具身任务要求智能体把指令对应到不断变化的观测上，协调多种异构工具，并在失败向下游传播时恢复。现有基于大语言模型（LLM）的智能体虽能保留经验、打磨可复用技能，但局部修复成功并不等于在共享流程库上带来完整任务层面的收益，这正是 EvoTER 要解决的痛点。",
+            "conclusion": "在仿真中，EvoTER 把整体任务成功率从进化前基线 53.60% 提升到 80.40%。真机实验中，仿真初始化减少了获得短程技能所需的尝试次数；持续真机进化把各任务的长程成功率从 20% 提升到 80%–100%，并使进化中的技能库能纳入仿真开发之后新增的工具功能。上述结论限于材料报告的仿真与真机设定。",
+            "method": "输入是智能体在任务中产生的工具使用轨迹，包括成功与失败执行。探索者负责记录这些轨迹；诊断者把轨迹蒸馏为四类技能：工具选择、参数计算、后置条件检查与失败恢复；验证者只在新会话中确认完整任务成功率提升后，才保留候选修改。整个过程不更新模型参数，改进来自经验蒸馏与严格验证，而非依赖局部修复的直觉。",
+            "takeaways": "若要在真实机器人上使用 EvoTER，需要能记录工具调用轨迹的执行环境、可复用的共享流程库，以及在新会话中复测完整任务成功率的验证流程。它适合多工具、长程、失败会级联的工业或服务机器人场景；但前提是具备上述数据与验证条件。距离更广泛真机部署，仍需在材料未覆盖的任务、工具与环境中验证技能库的迁移性和安全性。"
+          }
+        },
+        "en": {
+          "title": "EvoTER: Evolving Embodied Agents via Tool-Use Experience and Reflection",
+          "summary": "EvoTER is an experience-driven framework that lets embodied agents self-evolve tool-use skills without updating model parameters. Through an Explorer–Diagnoser–Validator loop, it distills successful and failed tool-use trajectories into reusable skills and keeps a revision only when complete-task success improves in fresh sessions. In simulation, overall task success rises from a pre-evolution baseline of 53.60% to 80.40%. In real-world experiments, simulation initialization reduces the attempts needed to acquire short-horizon skills, while continued real-world evolution raises long-horizon success from 20% to 80%–100% across tasks and lets the evolving skill library incorporate new tool functionality introduced after simulation development.",
+          "lede": "EvoTER lets embodied agents evolve a tool-use skill library without updating model parameters by recording, diagnosing, and validating experience; simulation success rises from 53.60% to 80.40%, and real-world long-horizon success from 20% to 80%–100%.",
+          "tags": [
+            "embodied agents",
+            "tool use",
+            "experience evolution"
+          ],
+          "sections": {
+            "background": "Long-horizon embodied tasks require agents to ground instructions in changing observations, coordinate heterogeneous tools, and recover from failures that can propagate downstream. Existing LLM-based agents can retain experience and refine reusable skills, but a successful local repair does not by itself establish complete-task gains over the current shared procedure library. This gap motivates EvoTER.",
+            "conclusion": "In simulation, EvoTER improves overall task success from a pre-evolution baseline of 53.60% to 80.40%. In real-world experiments, simulation initialization reduces the attempts required to acquire short-horizon skills, and continued real-world evolution improves long-horizon success from 20% to 80%–100% across tasks while allowing the evolving skill library to incorporate new tool functionality introduced after simulation development. These conclusions are limited to the simulation and real-world settings reported in the material.",
+            "method": "The input is the agent's tool-use trajectories, including both successful and failed executions. The Explorer records these trajectories; the Diagnoser distills them into skills for tool selection, parameter computation, postcondition checks, and recovery; and the Validator retains a candidate revision only when it improves complete-task success in fresh sessions. Model parameters are not updated; the verified improvement comes from experience distillation plus strict validation rather than from local repairs alone.",
+            "takeaways": "Applying EvoTER on real robots requires an execution environment that records tool-use trajectories, a shared procedure library, and a validation loop that re-tests complete-task success in fresh sessions. It fits multi-tool, long-horizon industrial or service robot settings where failures cascade, provided those data and validation conditions hold. Broader real-world deployment still needs validation of skill-library transfer and safety on tasks, tools, and environments not covered by the material."
+          }
+        }
+      },
+      "id": "2611.27797",
+      "original_title": "EvoTER: Evolving Embodied Agents via Tool-Use Experience and Reflection",
+      "original_summary": "Long-horizon embodied tasks require agents to ground instructions in changing observations, coordinate heterogeneous tools, and recover from failures that can propagate through downstream operations. Although existing LLM-based agents retain experience and refine reusable skills, successful local repairs do not by themselves establish complete-task gains over the current shared procedure library. We present EvoTER, an experience-driven framework that enables embodied agents to self-evolve tool-use skills without updating model parameters. EvoTER operates through a three-role evolution loop: Explorer records tool-use trajectories; Diagnoser distills successful and failed executions into skills for tool selection, parameter computation, postcondition checks, and recovery; and Validator retains candidate revisions only when they improve complete-task success in fresh sessions. In simulation, EvoTER improves overall task success from a pre-evolution baseline of 53.60% to 80.40%. In real-world experiments, simulation initialization reduces the attempts required to acquire short-horizon skills, while continued real-world evolution improves long-horizon success from 20% to 80%-100% across tasks and enables the evolving skill library to incorporate new tool functionality introduced after simulation development. Project page: https://evoter-project.github.io/",
+      "url": "https://arxiv.org/abs/2611.27797v1",
+      "source": "arXiv cs.RO",
+      "published": "2026-11-20T16:28:51+00:00",
+      "authors": [
+        "Yingting Zhou",
+        "Yuyin Zhou",
+        "Yongliang Wang",
+        "Haoran Li",
+        "Dongbin Zhao"
+      ],
+      "score": 4,
+      "versioned_id": "2611.27797v1",
+      "figure": {
+        "path": "./data/2026-11-25/figures/2611.27797.webp",
+        "caption": "Fig. 4: Qualitative examples of skill revision in simulation. Each example depicts an initial failure (red), the corresponding diagnosis and skill update (dashed box), and the recovered execution (green). Parameter computation (DeliverStraw): the tool center point (TCP) target is computed from the observed straw axis to place the free tip at the goal. Script construction (CloseBlenderLid): privileged diagnosis of a tilted lid is distilled into two deployment-compatible RGB-D scripts. Tool selection (SearingMeat): a routing rule replaces repeated VLA calls with atomic tools. Execution sequencing (StackBowlsCabinet): the bowls are nested at the source and transported as a single planning unit."
+      },
+      "code_url": null,
+      "project_url": "https://evoter-project.github.io/",
+      "pdf_url": "https://arxiv.org/pdf/2611.27797"
+    }
+  ]
+}

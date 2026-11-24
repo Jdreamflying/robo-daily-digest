@@ -1,0 +1,265 @@
+{
+  "date": "2026-11-25",
+  "total_scanned": 3119,
+  "total_unique": 59,
+  "window_count": 267,
+  "window_hours": 48,
+  "cutoff": "2026-11-22T23:02:33.023114+00:00",
+  "window_end": "2026-11-24T23:02:33.023114+00:00",
+  "scored_count": 59,
+  "qualified_count": 9,
+  "event_duplicate_count": 9,
+  "mode": "api",
+  "items": [
+    {
+      "title": "Microduck 用 Isaac Lab 和 Newton 完成避障的仿真到现实流程",
+      "summary": "Microduck 团队展示了在 Isaac Lab 和 Newton 物理引擎中训练避障策略、再迁移到真实机器人的工作流程。",
+      "lede": "Microduck 团队公布了一套用 Isaac Lab 和 Newton 训练避障、再迁移到真机的流程。",
+      "tags": [
+        "机器人",
+        "避障",
+        "仿真到现实"
+      ],
+      "analysis": [
+        "Microduck 团队发布了基于 Isaac Lab 和 Newton 的避障仿真到现实（Sim2Real）流程。",
+        "该流程先在仿真中训练避障策略，再部署到真实机器人上。",
+        "材料未给出成功率、测试次数等具体数字，实际效果尚待更多验证。"
+      ],
+      "i18n": {
+        "zh": {
+          "title": "Microduck 用 Isaac Lab 和 Newton 完成避障的仿真到现实流程",
+          "summary": "Microduck 团队展示了在 Isaac Lab 和 Newton 物理引擎中训练避障策略、再迁移到真实机器人的工作流程。",
+          "lede": "Microduck 团队公布了一套用 Isaac Lab 和 Newton 训练避障、再迁移到真机的流程。",
+          "tags": [
+            "机器人",
+            "避障",
+            "仿真到现实"
+          ],
+          "analysis": [
+            "Microduck 团队发布了基于 Isaac Lab 和 Newton 的避障仿真到现实（Sim2Real）流程。",
+            "该流程先在仿真中训练避障策略，再部署到真实机器人上。",
+            "材料未给出成功率、测试次数等具体数字，实际效果尚待更多验证。"
+          ]
+        },
+        "en": {
+          "title": "Microduck completes sim-to-real obstacle avoidance workflow with Isaac Lab and Newton",
+          "summary": "The Microduck team demonstrated a workflow that trains obstacle avoidance in Isaac Lab and Newton, then transfers the policy to a real robot.",
+          "lede": "Microduck has shared a pipeline that trains obstacle avoidance with Isaac Lab and Newton and moves it to a physical robot.",
+          "tags": [
+            "robotics",
+            "obstacle avoidance",
+            "sim-to-real"
+          ],
+          "analysis": [
+            "The Microduck team released a sim-to-real obstacle avoidance workflow built on Isaac Lab and Newton.",
+            "The workflow trains avoidance policies in simulation before deploying them on a real robot.",
+            "The material gives no success rate or test counts, so real-world performance still needs more validation."
+          ]
+        }
+      },
+      "id": "6a28e842b3bf4bfd8400220e",
+      "original_title": "Microduck Obstacle Avoidance: A Sim2Real Workflow with Isaac Lab and Newton",
+      "original_summary": "",
+      "url": "https://huggingface.co/blog/nvidia/microduck-obstacle-avoidance",
+      "source": "Hugging Face Blog",
+      "published": "2026-11-24T16:34:13+00:00",
+      "authors": [],
+      "score": 3,
+      "category": "robotics",
+      "image": {
+        "path": "./data/2026-11-25/news_images/6a28e842b3bf4bfd8400220e.webp",
+        "width": 960,
+        "height": 600,
+        "source_url": "https://huggingface.co/blog/nvidia/microduck-obstacle-avoidance",
+        "image_url": "https://cdn-uploads.huggingface.co/production/uploads/6847ab8c06094fa4afb6ee38/M70tUMNd7N4KO5QGI37YZ.png",
+        "alt": ""
+      }
+    },
+    {
+      "title": "GPT-6模型展现出内在的蛋白质设计能力",
+      "summary": "GPT-6模型通过推理和编写代码来设计蛋白质结构和序列。实验室测试在五个靶点上发现了结合证据。",
+      "lede": "GPT-6模型通过推理和编写代码设计蛋白质，实验室测试在五个靶点上发现了结合证据。",
+      "tags": [
+        "科学",
+        "人工智能",
+        "蛋白质设计"
+      ],
+      "analysis": [
+        "研究团队报告，GPT-6模型能借助推理和代码设计蛋白质的结构与序列。",
+        "实验室测试在五个靶点上发现了结合证据，说明模型的设计在实验中得到了初步验证。"
+      ],
+      "i18n": {
+        "zh": {
+          "title": "GPT-6模型展现出内在的蛋白质设计能力",
+          "summary": "GPT-6模型通过推理和编写代码来设计蛋白质结构和序列。实验室测试在五个靶点上发现了结合证据。",
+          "lede": "GPT-6模型通过推理和编写代码设计蛋白质，实验室测试在五个靶点上发现了结合证据。",
+          "tags": [
+            "科学",
+            "人工智能",
+            "蛋白质设计"
+          ],
+          "analysis": [
+            "研究团队报告，GPT-6模型能借助推理和代码设计蛋白质的结构与序列。",
+            "实验室测试在五个靶点上发现了结合证据，说明模型的设计在实验中得到了初步验证。"
+          ]
+        },
+        "en": {
+          "title": "GPT-6 models show built-in protein-design capability",
+          "summary": "GPT-6 models design protein structures and sequences through reasoning and code. Lab tests found evidence of binding across five targets.",
+          "lede": "GPT-6 models design proteins through reasoning and code, with lab tests finding binding evidence across five targets.",
+          "tags": [
+            "Science",
+            "Artificial intelligence",
+            "Protein design"
+          ],
+          "analysis": [
+            "Researchers report that GPT-6 models can design protein structures and sequences using reasoning and code.",
+            "Lab tests found binding evidence across five targets, offering early experimental support for the designs."
+          ]
+        }
+      },
+      "id": "ac2f786b30f6d45772c42167",
+      "original_title": "GPT-6 models demonstrate intrinsic protein-design capabilities",
+      "original_summary": "GPT-6 models design protein structures and sequences using reasoning and code. Lab tests found evidence of binding across five targets.",
+      "url": "https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities",
+      "source": "OpenAI News",
+      "published": "2026-11-24T13:00:00+00:00",
+      "authors": [],
+      "score": 4,
+      "category": "ai_frontier",
+      "engagement": {
+        "hn_points": 80,
+        "hn_comments": 13
+      },
+      "discussion_url": "https://news.ycombinator.com/item?id=50634658",
+      "image": {
+        "path": "./data/2026-11-25/news_images/ac2f786b30f6d45772c42167.webp",
+        "width": 1200,
+        "height": 575,
+        "source_url": "https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities/",
+        "image_url": "https://images.ctfassets.net/kftzwdyauwt9/4u7ogWwVXuqX5GRdnZxsLM/23d72378f6fea65debd91c914f32fb54/protein-workflows-intrinsic-desktop-light.png?w=3840&q=90&fm=webp",
+        "alt": "Diagram comparing a language model coordinating specialized tools with a single model handling protein tasks directly."
+      }
+    },
+    {
+      "title": "OpenAI 与思科推出 Shirudo：面向 Linux 的开源运行时，可在打补丁期间保护运行中的系统",
+      "summary": "OpenAI 和思科发布开源 Linux 运行时 Shirudo，帮助团队在部署补丁时保护正在运行的系统。",
+      "lede": "OpenAI 和思科推出开源 Linux 运行时 Shirudo，用于在打补丁期间保护运行中的系统。",
+      "tags": [
+        "安全",
+        "开源",
+        "Linux"
+      ],
+      "analysis": [
+        "OpenAI 和思科发布了开源 Linux 运行时 Shirudo。",
+        "该工具面向正在运行的系统，在团队部署补丁期间提供保护。",
+        "目前没有公布性能数字或实际使用效果的数据。"
+      ],
+      "i18n": {
+        "zh": {
+          "title": "OpenAI 与思科推出 Shirudo：面向 Linux 的开源运行时，可在打补丁期间保护运行中的系统",
+          "summary": "OpenAI 和思科发布开源 Linux 运行时 Shirudo，帮助团队在部署补丁时保护正在运行的系统。",
+          "lede": "OpenAI 和思科推出开源 Linux 运行时 Shirudo，用于在打补丁期间保护运行中的系统。",
+          "tags": [
+            "安全",
+            "开源",
+            "Linux"
+          ],
+          "analysis": [
+            "OpenAI 和思科发布了开源 Linux 运行时 Shirudo。",
+            "该工具面向正在运行的系统，在团队部署补丁期间提供保护。",
+            "目前没有公布性能数字或实际使用效果的数据。"
+          ]
+        },
+        "en": {
+          "title": "OpenAI and Cisco launch Shirudo, an open-source Linux runtime that protects running systems during patching",
+          "summary": "OpenAI and Cisco have released Shirudo, an open-source runtime for Linux that helps teams protect running systems while they roll out patches.",
+          "lede": "OpenAI and Cisco have introduced Shirudo, an open-source Linux runtime for protecting running systems during patch rollouts.",
+          "tags": [
+            "Security",
+            "Open Source",
+            "Linux"
+          ],
+          "analysis": [
+            "OpenAI and Cisco released Shirudo, an open-source runtime for Linux.",
+            "The tool is meant to protect systems that are running while teams deploy patches.",
+            "No performance figures or real-world impact data were provided."
+          ]
+        }
+      },
+      "id": "b0689cf87ab570a441c88635",
+      "original_title": "OpenAI and Cisco introduce Shirudo",
+      "original_summary": "OpenAI and Cisco introduce Shirudo, an open-source runtime for Linux. It helps teams protect running systems while they roll out patches.",
+      "url": "https://openai.com/index/introducing-shirudo",
+      "source": "OpenAI News",
+      "published": "2026-11-23T21:20:00+00:00",
+      "authors": [],
+      "score": 3,
+      "category": "ai_frontier",
+      "image": {
+        "path": "./data/2026-11-25/news_images/b0689cf87ab570a441c88635.webp",
+        "width": 1200,
+        "height": 728,
+        "source_url": "https://openai.com/index/introducing-shirudo/",
+        "image_url": "https://images.ctfassets.net/kftzwdyauwt9/bScTLq9smNJq5XAlaHIQW/fab0e70b1aab8ca8dffb70a747056fd7/guardian-agent-desktop-light.png?w=3840&q=90&fm=webp",
+        "alt": "The guardian agent uses eBPF instruments to observe kernel and network activity and eBPF controls to apply targeted protections."
+      }
+    },
+    {
+      "title": "谷歌搜索 AI 模式接入 Drive 和 Wallet，可读取个人数据作答",
+      "summary": "谷歌把 AI 模式中的个人智能功能扩展到 Drive、Wallet 和 Gemini 应用，让搜索能调用用户已存在谷歌生态里的数据。",
+      "lede": "谷歌搜索的 AI 模式新增个人数据接入，可读取 Drive 和 Wallet 中的信息来回答问题。",
+      "tags": [
+        "谷歌",
+        "AI 搜索",
+        "个人数据"
+      ],
+      "analysis": [
+        "谷歌宣布，搜索的 AI 模式现在可以接入 Drive 和 Wallet，并在 Gemini 应用中提供个人智能功能。",
+        "这意味着 AI 回答可以结合用户自己存储的文件和钱包信息，而不只依赖公开网页。",
+        "目前没有公布具体可用范围或上线时间等细节。"
+      ],
+      "i18n": {
+        "zh": {
+          "title": "谷歌搜索 AI 模式接入 Drive 和 Wallet，可读取个人数据作答",
+          "summary": "谷歌把 AI 模式中的个人智能功能扩展到 Drive、Wallet 和 Gemini 应用，让搜索能调用用户已存在谷歌生态里的数据。",
+          "lede": "谷歌搜索的 AI 模式新增个人数据接入，可读取 Drive 和 Wallet 中的信息来回答问题。",
+          "tags": [
+            "谷歌",
+            "AI 搜索",
+            "个人数据"
+          ],
+          "analysis": [
+            "谷歌宣布，搜索的 AI 模式现在可以接入 Drive 和 Wallet，并在 Gemini 应用中提供个人智能功能。",
+            "这意味着 AI 回答可以结合用户自己存储的文件和钱包信息，而不只依赖公开网页。",
+            "目前没有公布具体可用范围或上线时间等细节。"
+          ]
+        },
+        "en": {
+          "title": "Google Search's AI Mode can now pull from Drive and Wallet for personalized answers",
+          "summary": "Google is extending Personal Intelligence in AI Mode to Drive, Wallet, and the Gemini app, letting Search draw on data users already keep inside Google's ecosystem.",
+          "lede": "Google Search's AI Mode can now use information from Drive and Wallet to answer questions.",
+          "tags": [
+            "Google",
+            "AI search",
+            "personal data"
+          ],
+          "analysis": [
+            "Google said AI Mode in Search can now connect to Drive and Wallet, and Personal Intelligence is also coming to the Gemini app.",
+            "This lets AI answers draw on a user's own stored files and wallet information, not just public web pages.",
+            "Google did not share specifics such as availability limits or a rollout timeline."
+          ]
+        }
+      },
+      "id": "25f33d1df44504de388cb9b6",
+      "original_title": "Google Search’s AI Mode can now tap into Drive and Wallet for more personalized responses",
+      "original_summary": "By bringing Personal Intelligence in AI Mode to Drive, Wallet, and the Gemini app, Google is leveraging the wealth of user data that's already within its ecosystem",
+      "url": "https://techcrunch.com/2026/11/23/google-searchs-ai-mode-can-now-tap-into-drive-and-wallet-for-more-personalized-responses",
+      "source": "TechCrunch AI",
+      "published": "2026-11-23T19:14:46+00:00",
+      "authors": [],
+      "score": 3,
+      "category": "ai_frontier"
+    }
+  ]
+}
