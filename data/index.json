@@ -11,7 +11,7 @@
       "news": {
         "path": "./data/2026-11-24/news.json",
         "count": 7,
-        "total_scanned": 228,
+        "total_scanned": 227,
         "lead": "RoboTrack：面向真实机器人操作的点跟踪方法发布"
       },
       "infographic": "./data/2026-11-24/infographic.png",
