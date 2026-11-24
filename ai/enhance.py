@@ -11,7 +11,8 @@ from math import log1p
 
 import requests
 
-from digest_common import DATA, RAW, ROOT, config, date_parser, load_env, read_json, read_jsonl, write_json
+from digest_common import DATA, RAW, ROOT, config, date_parser, load_env, read_json, read_jsonl, recent_items, write_json
+from daily_arxiv.fetch_arxiv import published_ids, unversioned
 from feed_utils import matches_keyword, normalized_words
 
 PROMPTS = ROOT / "ai" / "prompts"
@@ -65,7 +66,8 @@ FIRST_HAND_SOURCES = {"official", "release"}
 NEWS_SOFT_TITLE = re.compile(
     r"\b(?:press release|sponsored|advertorial|opinion|commentary|job openings?|hiring|"
     r"hobby project|personal project|toy robot|WLED|LED strips?|pre[- ]orders?|concept robot|"
-    r"plans? to (?:ship|launch|deliver)|could (?:ship|launch)|what.s next)\b|软文|招聘|概念机|预计交付",
+    r"plans? to (?:ship|launch|deliver)|could (?:ship|launch)|what.s next)\b|"
+    r"^how to\b|\bbeginner.s guide\b|软文|招聘|概念机|预计交付",
     re.I,
 )
 FUTURE_DELIVERY = re.compile(
@@ -80,8 +82,8 @@ FUNDING = re.compile(
     re.I,
 )
 NEWS_MILESTONE = re.compile(
-    r"\b(?:deployed|roll(?:ed|s) out|mass production|production line|(?:beg(?:an|ins?|un)|start(?:ed|s)) shipping|"
-    r"acquir(?:es|ed|ing)|closed (?:the |a )?deal|(?:completed|ran|passed) real[- ]world (?:trials?|tests?))\b|"
+    r"\b(?:deployed|roll(?:ed|s) out|(?:began|begun|started) rolling out|mass production|production line|(?:beg(?:an|ins?|un)|start(?:ed|s)) shipping|"
+    r"acquir(?:es|ed|ing)|acquisition|closed (?:the |a )?deal|(?:completed|ran|passed) real[- ]world (?:trials?|tests?))\b|"
     r"已部署|投入使用|启动量产|开始交付|完成收购",
     re.I,
 )
@@ -89,7 +91,8 @@ NEWS_PROGRESS = re.compile(
     r"\b(?:releas(?:es?|ed)|launch(?:es|ed)|available now|open[- ]sourc(?:es?|ed)|"
     r"announc(?:es?|ed)|introduc(?:es?|ed)|present(?:s|ed)|published|"
     r"demonstrat(?:es?|ed)|benchmarks?|datasets?|validated|(?:built|developed) a prototype|"
-    r"flies without|tested on|robot trials?)\b|发布|开源|数据集|基准测试|真机|实测|验证",
+    r"flies without|tested on|robot trials?|(?:crash(?:es|ed)|damages?|struck) (?:into |a |an )?|"
+    r"can now|adds? support for)\b|发布|开源|数据集|基准测试|真机|实测|验证",
     re.I,
 )
 RESEARCH_PROGRESS = re.compile(
@@ -98,6 +101,19 @@ RESEARCH_PROGRESS = re.compile(
     r"\b(?:robots?|exosuits?|exoskeletons?|prototypes?)\s+"
     r"(?:was |were )?(?:developed|demonstrated|tested|designed|built)\b|"
     r"\b(?:published|posted)\b.{0,55}\b(?:paper|study|results)\b",
+    re.I,
+)
+RESEARCH_PROJECT = re.compile(r"^[\w.-]+:\s+.{0,120}\b(?:real[- ]world|tracking|simulation|manipulation|locomotion)\b", re.I)
+INDUSTRY_DEVELOPMENT = re.compile(
+    r"\b(?:investment|financing|funding|capex|chip supply|compute capacity|data cent(?:er|re)s?|"
+    r"export controls?|export restrictions?|licen[cs]ing rules?|blacklist|production contract|deployment|"
+    r"AI chips?|AI accelerators?|GPUs?|AI models?|AI agents?)\b"
+    r".{0,100}\b(?:signed|approved|adopted|banned|blocked|restricted|won|secures?|secured|"
+    r"reinstated|invested|invests?|shipped|deploys?|deployed|sold|sells?|went live|entered production)\b"
+    r"|\b(?:signed|secured|approved|adopted|banned|blocked|reinstated|restricted|invested|invests?|"
+    r"shipped|deploys?|deployed|sells?|sold|closed|closes?)\b.{0,100}\b"
+    r"(?:funding|financing|investment|AI chips?|AI accelerators?|GPUs?|data cent(?:er|re)s?|export controls?|"
+    r"export restrictions?|licen[cs]ing rules?|AI agents?|AI models?|compute capacity|production contract)\b",
     re.I,
 )
 
@@ -125,9 +141,15 @@ def news_rule_score(row, keywords, source_type):
             return 5 if source_type == "official" else 4
     if NEWS_MILESTONE.search(text):
         return 5 if source_type == "official" else 3
-    if source_type == "official" and NEWS_PROGRESS.search(text):
+    if source_type in FIRST_HAND_SOURCES | {"specialist_media"} and INDUSTRY_DEVELOPMENT.search(text):
+        return 3
+    if source_type == "official" and (
+        NEWS_PROGRESS.search(text) or (row.get("category") == "robotics" and RESEARCH_PROJECT.search(row["title"]))
+    ):
         return 4
-    if source_type == "community" and (NEWS_PROGRESS.search(text) or RESEARCH_PROGRESS.search(text)):
+    if source_type in {"community", "specialist_media"} and (
+        NEWS_PROGRESS.search(text) or RESEARCH_PROGRESS.search(text)
+    ):
         return 3
     if row.get("category") == "ai_frontier" and source_type == "official":
         return 3
@@ -271,11 +293,31 @@ def valid_score(value):
     return type(value) is int and 1 <= value <= 5
 
 
-def filter_result(result, ids):
+def news_assessment(value):
+    if not isinstance(value, dict) or not valid_score(value.get("score")):
+        return None
+    status = value.get("history_status")
+    if status not in ("new", "duplicate", "update"):
+        return None
+    category = value.get("category")
+    if category not in ("robotics", "ai_frontier"):
+        return None
+    progress = value.get("new_progress")
+    if status == "update" and (not isinstance(progress, str) or not progress.strip()):
+        return None
+    return {
+        "score": value["score"], "history_status": status, "category": category,
+        "new_progress": progress.strip()[:350] if status == "update" else "",
+    }
+
+
+def filter_result(result, ids, kind="papers"):
     scores = {}
     for item in result.get("scores", []):
         if isinstance(item, dict) and isinstance(item.get("id"), str) and item["id"] in ids and valid_score(item.get("score")):
-            scores[item["id"]] = item["score"]
+            assessment = news_assessment(item) if kind == "news" else item["score"]
+            if assessment is not None:
+                scores[item["id"]] = assessment
     if not scores:
         raise ValueError("no valid scores")
     return scores
@@ -374,7 +416,7 @@ class EditorAPI:
         self.base = (os.getenv("OPENAI_BASE_URL") or "https://api.openai.com/v1").rstrip("/")
         self.filter_model = os.getenv("FILTER_MODEL") or "gpt-4o-mini"
         self.editor_model = os.getenv("EDITOR_MODEL") or "gpt-4o-mini"
-        self.editor_max_tokens = int(os.getenv("EDITOR_MAX_TOKENS") or "2048")
+        self.editor_max_tokens = int(os.getenv("EDITOR_MAX_TOKENS") or "3072")
         if self.editor_max_tokens <= 0:
             raise ValueError("EDITOR_MAX_TOKENS must be positive")
         self.delay = max(0, float(os.getenv("API_DELAY_SECONDS") or "1"))
@@ -442,7 +484,7 @@ def article_payload(row):
     return {key: row.get(key, "") for key in ("id", "title", "summary", "tags", "published")}
 
 
-def model_scores(api, rows, kind, keywords, batch_size, source_types=None):
+def model_scores(api, rows, kind, keywords, batch_size, source_types=None, *, history=()):
     prompt = (PROMPTS / "filter.txt").read_text(encoding="utf-8")
     scores, pending = {}, []
     for row in rows:
@@ -456,8 +498,12 @@ def model_scores(api, rows, kind, keywords, batch_size, source_types=None):
         for field in ("attention", "engagement"):
             if row.get(field):
                 article[field] = row[field]
-        path = api.cache_path("filter", api.filter_model, prompt, [kind, keywords, article])
-        score = safe_cache_read(path, lambda value: value if valid_score(value) else None) if path.is_file() else None
+        cache_input = [kind, keywords, article]
+        if kind == "news":
+            cache_input.append(history)
+        path = api.cache_path("filter", api.filter_model, prompt, cache_input)
+        validate = news_assessment if kind == "news" else lambda value: value if valid_score(value) else None
+        score = safe_cache_read(path, validate) if path.is_file() else None
         if score is not None:
             scores[row["id"]] = score
         else:
@@ -465,8 +511,10 @@ def model_scores(api, rows, kind, keywords, batch_size, source_types=None):
 
     def ask_for_scores(articles, label):
         ids = {article["id"] for article in articles}
-        return api.ask(api.filter_model, prompt, {"kind": kind, "keywords": keywords, "items": articles},
-                       lambda result: filter_result(result, ids), label) or {}
+        payload = {"kind": kind, "keywords": keywords, "items": articles}
+        if kind == "news":
+            payload["recent_coverage"] = history
+        return api.ask(api.filter_model, prompt, payload, lambda result: filter_result(result, ids, kind), label) or {}
 
     for start in range(0, len(pending), batch_size):
         batch = pending[start:start + batch_size]
@@ -484,6 +532,8 @@ def model_scores(api, rows, kind, keywords, batch_size, source_types=None):
 
 def model_article(api, prompt, row, kind):
     payload = article_payload(row)
+    if kind == "news" and row.get("new_progress"):
+        payload["new_progress"] = row["new_progress"]
     path = api.cache_path("editor", api.editor_model, prompt, [kind, payload])
     cached = safe_cache_read(path, lambda value: editor_result(value, kind)) if path.is_file() else None
     if cached:
@@ -558,61 +608,41 @@ def within_source_quota(rows, quotas, default):
 
 
 def select_articles(ranked, kind, limit, max_ai, quotas, default_quota, edit):
+    if kind == "papers":
+        return list(islice((article for row in ranked if (article := edit(row))), limit))
+
     selected = []
     source_counts = Counter()
-    ai_count = 0
 
     def choose(row):
-        nonlocal ai_count
-        if len(selected) >= limit:
-            return
-        if kind == "news" and source_counts[row["source"]] >= quotas.get(row["source"], default_quota):
+        if source_counts[row["source"]] >= quotas.get(row["source"], default_quota):
             return
         if article := edit(row):
             selected.append(article)
             source_counts[row["source"]] += 1
-            ai_count += article.get("category") == "ai_frontier"
 
-    if kind == "papers":
-        for row in ranked:
-            if len(selected) >= limit:
-                break
-            choose(row)
-        return selected
-
-    reserve = limit - min(max_ai, limit * 3 // 10)
-    reserved = set()
     for row in ranked:
-        if len(selected) >= reserve:
-            break
+        if len(selected) == limit:
+            return selected
         if row.get("category") != "ai_frontier":
             choose(row)
-            reserved.add(row["id"])
+    robotics_count = len(selected)
+    ai_limit = min(max_ai, 4) if robotics_count >= 6 else max_ai
+    fill_to = min(limit, robotics_count + ai_limit)
     for row in ranked:
-        if len(selected) >= limit:
+        if len(selected) >= fill_to:
             break
-        if row["id"] in reserved:
-            continue
-        if row.get("category") == "ai_frontier" and (
-            ai_count >= max_ai or (ai_count + 1) * 10 > (len(selected) + 1) * 3
-        ):
-            continue
-        choose(row)
-
-    positions = {row["id"]: i for i, row in enumerate(ranked)}
-    selected.sort(key=lambda row: positions[row["id"]])
-    # Reserve two lead slots for robotics while preserving rank within each group.
-    if len(selected) >= 3:
-        robot_ids = (row["id"] for row in selected if row["category"] == "robotics")
-        lead_ids = set(islice(robot_ids, 2))
-        lead_ids.add(next(row["id"] for row in selected if row["id"] not in lead_ids))
-        selected.sort(key=lambda row: row["id"] not in lead_ids)
+        if row.get("category") == "ai_frontier":
+            choose(row)
     return selected
 
 
 def publish_issue(day, kind, source, settings, api, limit=None, candidate_limit=None):
     raw = RAW / f"{day}_{source}.jsonl"
     rows, meta = read_jsonl(raw), read_json(raw.with_suffix(".meta.json"))
+    if kind == "papers":
+        already_published = published_ids(day)
+        rows = [row for row in rows if unversioned(row["id"]) not in already_published]
     keywords = settings["keywords"]
     sample = limit is not None
     selection = settings["selection"]
@@ -626,7 +656,7 @@ def publish_issue(day, kind, source, settings, api, limit=None, candidate_limit=
         news_sources.append(news["hacker_news"])
     quotas = {feed["name"]: feed["max_items"] for feed in news_sources if "max_items" in feed}
     source_types = {feed["name"]: feed.get("source_type", "") for feed in news_sources}
-    max_ai = min(3, max(0, selection.get("max_ai_news", 3)))
+    max_ai = min(5, max(0, selection.get("max_ai_news", 5)))
     minimum = selection.get("min_news_score", 3) if kind == "news" else 1
     if not valid_score(minimum):
         raise ValueError("selection.min_news_score must be an integer between 1 and 5")
@@ -645,20 +675,41 @@ def publish_issue(day, kind, source, settings, api, limit=None, candidate_limit=
             # Keep room for alternative stories when the editor rejects a result.
             ranked = within_source_quota(ranked, {key: value * 3 for key, value in quotas.items()}, default_quota * 3)
             ranked = list(ranked)
-            robotics = [row for row in ranked if row.get("category") != "ai_frontier"][:cap - cap * 3 // 10]
+            robotics = [row for row in ranked if row.get("category") != "ai_frontier"][:max(0, cap - max_ai)]
             reserved = {row["id"] for row in robotics}
             candidates = robotics + list(islice((row for row in ranked if row["id"] not in reserved), cap - len(robotics)))
         else:
             candidates = list(islice(ranked, cap))
-    scores = model_scores(api, candidates, kind, keywords, max(1, selection["filter_batch_size"]), source_types) if api else {
-        row["id"]: score_by_rules(row) for row in candidates
-    }
+    history = [
+        {
+            "date": day_published,
+            "title": item.get("original_title") or item["title"],
+            "summary": (item.get("summary") or item.get("original_summary") or "")[:240],
+        }
+        for day_published, item in recent_items(day, "news.json")
+    ] if api and kind == "news" else []
+    if api:
+        scores = model_scores(
+            api, candidates, kind, keywords, max(1, selection["filter_batch_size"]), source_types, history=history,
+        )
+    else:
+        scores = {row["id"]: score_by_rules(row) for row in candidates}
+    duplicate_count = 0
     if api and kind == "news":
         for row in candidates:
             identifier = row["id"]
-            if identifier in scores and weak_news(row):
-                scores[identifier] = min(2, scores[identifier])
-    qualified = [row for row in candidates if scores.get(row["id"], 0) >= minimum]
+            assessment = scores.get(identifier)
+            if assessment is None:
+                continue
+            if assessment["history_status"] == "duplicate":
+                duplicate_count += 1
+                scores[identifier] = 0
+            else:
+                scores[identifier] = min(2, assessment["score"]) if weak_news(row) else assessment["score"]
+                row["category"] = assessment["category"]
+                if assessment["new_progress"]:
+                    row["new_progress"] = assessment["new_progress"]
+    qualified = [row for row in candidates if row["id"] in scores and scores[row["id"]] >= minimum]
     ranked = rank_rows(qualified, scores, kind, keywords, source_types)
 
     def edit(row):
@@ -673,7 +724,7 @@ def publish_issue(day, kind, source, settings, api, limit=None, candidate_limit=
                 item.update(versioned_id=row.get("versioned_id", row["id"]), figure=None)
             else:
                 item["category"] = row.get("category", "robotics")
-            for field in ("attention", "engagement", "discussion_url"):
+            for field in ("attention", "engagement", "discussion_url", "new_progress"):
                 if row.get(field):
                     item[field] = row[field]
             return item
@@ -692,14 +743,16 @@ def publish_issue(day, kind, source, settings, api, limit=None, candidate_limit=
                 editor_result(item, kind)
             previous_counts = Counter(item.get("source") for item in previous)
             previous_ai = sum(item.get("category") == "ai_frontier" for item in previous)
-            mix_valid = previous_ai <= max_ai and previous_ai * 10 <= len(previous) * 3 and (
-                sum(item.get("category") == "ai_frontier" for item in previous[:3]) <= 1
+            previous_robots = len(previous) - previous_ai
+            mix_valid = previous_ai <= (min(max_ai, 4) if previous_robots >= 6 else max_ai) and all(
+                item.get("category") == ("robotics" if i < previous_robots else "ai_frontier")
+                for i, item in enumerate(previous)
             )
             if previous and len(previous) <= limit and all(
                 item.get("id") in eligible and item.get("score", 0) >= minimum for item in previous
             ) and (
                 saved.get("paper_source_date") == meta.get("paper_source_date") if kind == "papers"
-                else mix_valid and all(item.get("category") in {"robotics", "ai_frontier"} for item in previous)
+                else mix_valid
                 and all(count <= quotas.get(name, default_quota) for name, count in previous_counts.items())
             ):
                 print(f"{kind}: keeping previously validated items; all requested edits failed", file=sys.stderr)
@@ -708,9 +761,10 @@ def publish_issue(day, kind, source, settings, api, limit=None, candidate_limit=
             pass
     issue_meta = {key: meta[key] for key in (
         "total_scanned", "total_new", "total_unique", "window_count", "window_hours", "cutoff", "window_end",
-        "paper_target_date", "paper_source_date", "paper_category",
+        "paper_target_date", "paper_source_date", "paper_category", "previously_published",
     ) if key in meta}
     write_json(output, {"date": day, **issue_meta, "scored_count": len(scores), "qualified_count": len(qualified),
+                        **({"event_duplicate_count": duplicate_count} if kind == "news" else {}),
                         "mode": "api" if api else "rules", "items": selected})
     print(f"{kind}: {len(scores)}/{len(candidates)} candidates scored, {len(qualified)} met the cutoff, {len(selected)} picked -> {output.name}")
 

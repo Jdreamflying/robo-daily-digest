@@ -1,7 +1,7 @@
 import argparse
 import json
 import os
-from datetime import date, datetime
+from datetime import date, datetime, timedelta
 from pathlib import Path
 from tempfile import NamedTemporaryFile
 from zoneinfo import ZoneInfo
@@ -62,6 +62,16 @@ def write_json(path, payload):
 
 def read_json(path):
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def recent_items(day, filename, days=7):
+    issue = date.fromisoformat(day)
+    for offset in range(1, days + 1):
+        path = DATA / (issue - timedelta(days=offset)).isoformat() / filename
+        if not path.is_file():
+            continue
+        for item in read_json(path)["items"]:
+            yield path.parent.name, item
 
 
 def write_jsonl(path, rows):

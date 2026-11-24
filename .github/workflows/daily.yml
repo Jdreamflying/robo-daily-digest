@@ -3,7 +3,7 @@ name: Build and publish robotics digest
 on:
   workflow_dispatch:
   schedule:
-    - cron: "17 0 * * *"
+    - cron: "37 23 * * *"
 
 concurrency:
   group: daily-digest-pages
@@ -20,8 +20,11 @@ jobs:
       date: ${{ steps.build.outputs.date }}
       ref: ${{ steps.archive.outputs.ref }}
       site_url: ${{ steps.pages.outputs.base_url }}
+      published: ${{ steps.archive.outputs.published }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -52,29 +55,58 @@ jobs:
           NOTIFY_ENABLED: "false"
         run: |
           day=$(python -m digest_common)
-          bash ./run.sh --date "$day"
           echo "date=$day" >> "$GITHUB_OUTPUT"
+          if [[ "$GITHUB_EVENT_NAME" == schedule ]] &&
+            python -c 'import json, sys; from pathlib import Path; p = Path(sys.argv[1]); sys.exit(not (p.is_file() and json.loads(p.read_text(encoding="utf-8")).get("mode") == "api"))' "data/$day/papers.json"; then
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+            echo "API edition for $day already exists."
+            exit 0
+          fi
+          bash ./run.sh --date "$day"
       - name: Persist the archive
         id: archive
+        if: steps.build.outputs.skip != 'true'
+        env:
+          ISSUE_DATE: ${{ steps.build.outputs.date }}
+          ARCHIVE_BRANCH: ${{ github.event.repository.default_branch }}
+          SITE_URL: ${{ steps.pages.outputs.base_url }}
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A -- data/index.json data/????-??-?? rss.xml
-          if ! git diff --cached --quiet; then
-            git commit -m "Update robotics digest"
-            for attempt in 1 2 3; do
-              git pull --rebase --autostash
-              if git push; then
-                break
+          edition="data/$ISSUE_DATE"
+          archive_root=$(mktemp -d)
+          for attempt in 1 2 3; do
+            git fetch origin "+refs/heads/$ARCHIVE_BRANCH:refs/remotes/origin/$ARCHIVE_BRANCH"
+            archive="$archive_root/attempt-$attempt"
+            git worktree add --detach "$archive" "refs/remotes/origin/$ARCHIVE_BRANCH"
+            if [[ "$GITHUB_EVENT_NAME" == schedule ]] &&
+              python -c 'import json, sys; from pathlib import Path; p = Path(sys.argv[1]); sys.exit(not (p.is_file() and json.loads(p.read_text(encoding="utf-8")).get("mode") == "api"))' "$archive/$edition/papers.json"; then
+              echo "API edition for $ISSUE_DATE was published while generating."
+              exit 0
+            fi
+            git -C "$archive" rm -r --ignore-unmatch -- "$edition"
+            mkdir -p "$archive/data"
+            cp -a "$edition" "$archive/data/"
+            (
+              cd "$archive"
+              python -m to_web.build_index
+              git add -A -- "$edition" data/index.json rss.xml
+              if ! git diff --cached --quiet; then
+                git -c user.name="github-actions[bot]" \
+                  -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+                  commit -m "Update robotics digest for $ISSUE_DATE"
               fi
-              if [ "$attempt" -eq 3 ]; then
-                echo "Could not push the archive after $attempt attempts." >&2
-                exit 1
-              fi
-            done
-          fi
-          echo "ref=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+            )
+            if git -C "$archive" push origin "HEAD:refs/heads/$ARCHIVE_BRANCH"; then
+              echo "ref=$(git -C "$archive" rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+              echo "path=$archive" >> "$GITHUB_OUTPUT"
+              echo "published=true" >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
+          done
+          echo "Could not push the archive after three attempts." >&2
+          exit 1
       - name: Stage the static site
+        if: steps.archive.outputs.published == 'true'
+        working-directory: ${{ steps.archive.outputs.path }}
         run: |
           mkdir -p _site/data
           cp index.html news.html manifest.json rss.xml .nojekyll _site/
@@ -82,11 +114,13 @@ jobs:
           cp data/index.json _site/data/
           cp -R data/????-??-?? _site/data/
       - uses: actions/upload-pages-artifact@v3
+        if: steps.archive.outputs.published == 'true'
         with:
-          path: _site
+          path: ${{ steps.archive.outputs.path }}/_site
 
   deploy:
     needs: generate
+    if: needs.generate.outputs.published == 'true'
     runs-on: ubuntu-latest
     permissions:
       pages: write
@@ -99,7 +133,7 @@ jobs:
         id: deployment
 
   notify:
-    if: vars.NOTIFY_ENABLED == 'true'
+    if: vars.NOTIFY_ENABLED == 'true' && needs.deploy.result == 'success'
     needs: [generate, deploy]
     runs-on: ubuntu-latest
     continue-on-error: true

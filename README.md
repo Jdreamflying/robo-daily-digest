@@ -27,11 +27,11 @@ python -m venv .venv
 bash ./run.sh --dry-run
 ```
 
-`run.sh` 自动选择本地虚拟环境。默认按 `config.yaml` 中的 `Asia/Tokyo` 确定期次日期。资讯取最近 48 小时，按网址、标题以及可识别的融资或发布事件去重，并排除前 7 天已刊登内容。各源扫描窗口、送评数和过滤计数可从期次及原始元数据核对。历史期次仍使用抓取时 RSS 可见的条目。
+`run.sh` 按 `config.yaml` 中的 `Asia/Tokyo` 确定期次。资讯取最近 48 小时，先按网址和标题去重，同批合并可识别的融资或发布报道。模型初筛还会对照近七天的标题和摘要，过滤重复报道，并把有证据的新进展交给编辑。扫描窗口和送评数记录在期次及原始元数据中。
 
-资讯最多刊登 10 条。一期中 AI 前沿最多 3 条且不超过实际刊登数的 30%，三张主卡至少两张是机器人主题。各源默认最多入选 3 条，可通过 `max_items` 覆盖。Hacker News 使用公开 Algolia 接口，门槛为至少 50 分或 20 条评论。`selection.min_news_score` 默认设为 3，入选不足时按实际数量发布。主卡原文配图符合条件时会保存为 WebP 并附来源。
+资讯目标为 8–10 条，最多刊登 10 条。机器人稿先选并排在前面。AI 模型、应用、芯片算力及产业稿按分数补位，最多 5 条，机器人稿达到 6 条时最多补 4 条。AI 垂直频道的窗内条目经通用过滤后直接送评。Hacker News 的机器人稿须达到 15 分或 8 条评论，AI 前沿稿须达到 35 分或 15 条评论。`selection.min_news_score` 默认设为 3，达标稿不足时按实际数量发布。主卡原图符合条件时会保存为 WebP 并附来源。
 
-论文通过 arXiv 官方 API 按 UTC 首次提交日期查询期次前三天，周末或无结果时最多向前回退三天。页面显示实际查询日期。Hugging Face Daily Papers 的点赞、评论和关联 GitHub 仓库 Stars 用于辅助排序，缺失数据时继续按论文质量与方向排序。终端环境变量 `DIGEST_GITHUB_TOKEN` 可提高 GitHub API 限额。
+论文通过 arXiv 官方 API 按 UTC 首次提交日期查询期次前三天，周末或无可用论文时最多向前回退三天。近七天已刊登的 arXiv ID 按去掉版本号后的值排除。页面显示实际查询日期。Hugging Face Daily Papers 的点赞、评论和关联 GitHub 仓库 Stars 用于辅助排序。终端环境变量 `DIGEST_GITHUB_TOKEN` 可提高 GitHub API 限额。
 
 无 API Key 或带 `--dry-run` 时，编辑阶段按关键词打分，生成双语字段和论文四段式摘录，标题与摘要沿用原始材料。需要模型编选时，从 `.env.example` 复制一份 `.env` 并填写接口参数，再运行 `bash ./run.sh`。接口使用 `/chat/completions`，单次精读调用生成中英两版。可设置 `OPENAI_JSON_MODE=true` 启用 JSON mode。成功结果写入 `data/cache/`，重跑时复用，超过 14 天未修改的缓存会清理。提示词在 `ai/prompts/`，IMAP 预留在 `daily_news/fetch_news.py`，默认关闭。
 
@@ -43,11 +43,11 @@ bash ./run.sh --dry-run
 ./run.sh --limit-papers 2 --limit-news 3
 ```
 
-以上参数让每类最多 12 条候选进入初筛，并把小样本写入目标期次。可用 `--max-filter-candidates N` 覆盖候选数。双语校验失败会触发重试。编辑器的输出上限默认为 2048 tokens，可通过 `EDITOR_MAX_TOKENS` 调整。带 `--dry-run` 时会使用规则编选并跳过通知。
+以上参数让每类最多 12 条候选进入初筛，并把小样本写入目标期次。可用 `--max-filter-candidates N` 覆盖候选数。双语校验失败会触发重试。编辑器的输出上限默认为 3072 tokens，可通过 `EDITOR_MAX_TOKENS` 调整。带 `--dry-run` 时会使用规则编选并跳过通知。
 
 ## GitHub Pages
 
-推送到 GitHub 后，在仓库的 **Settings → Pages** 中将 Source 设为 **GitHub Actions**。工作流每天日本时间 15:30 运行，也可在 **Actions** 手动触发。生成任务会将期次数据提交至默认分支，并发布静态文件。启用了分支保护的仓库需允许该工作流账号写入归档。
+推送到 GitHub 后，在仓库的 **Settings → Pages** 中将 Source 设为 **GitHub Actions**。兜底计划在日本时间 08:37 触发，发现当天已有 API 版论文时跳过生成和部署。**Actions** 手动触发仍会更新。工作流基于远端默认分支重建索引后提交当日期次，并发布该提交中的静态文件。启用了分支保护的仓库需允许该工作流账号写入归档。
 
 规则模式和定时发布无需手填 Secrets 或 Variables。模型编选只需设置 Secret `OPENAI_API_KEY`。使用兼容服务时按需设置 `OPENAI_BASE_URL`、`FILTER_MODEL`、`EDITOR_MODEL`，其余模型参数也可用同名 Variables 配置。站点地址由 Pages 提供。
 

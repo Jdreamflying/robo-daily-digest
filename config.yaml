@@ -18,11 +18,11 @@ news:
     - name: OpenAI News
       url: https://openai.com/news/rss.xml
       source_type: official
-      require_robotics_focus: true
+      ai_vertical: true
     - name: Google DeepMind Blog
       url: https://deepmind.google/blog/rss.xml
       source_type: official
-      require_robotics_focus: true
+      ai_vertical: true
     - name: NVIDIA Technical Blog
       url: https://developer.nvidia.com/blog/feed/
       source_type: official
@@ -30,7 +30,7 @@ news:
     - name: Hugging Face Blog
       url: https://huggingface.co/blog/feed.xml
       source_type: official
-      require_robotics_focus: true
+      ai_vertical: true
     - name: BAIR Blog
       url: https://bair.berkeley.edu/blog/feed.xml
       source_type: official
@@ -71,15 +71,52 @@ news:
       url: https://robohub.org/feed/
       source_type: community
       max_items: 2
+    - name: Ars Technica AI
+      url: https://arstechnica.com/ai/feed/
+      source_type: specialist_media
+      ai_vertical: true
+      max_items: 2
+    - name: The Verge AI
+      url: https://www.theverge.com/rss/ai-artificial-intelligence/index.xml
+      source_type: specialist_media
+      ai_vertical: true
+      max_items: 2
+    - name: MIT Technology Review
+      url: https://www.technologyreview.com/topic/artificial-intelligence/feed/
+      source_type: specialist_media
+      ai_vertical: true
+      max_items: 2
+    - name: TechCrunch AI
+      url: https://techcrunch.com/category/artificial-intelligence/feed/
+      source_type: specialist_media
+      ai_vertical: true
+      max_items: 2
+    - name: TechCrunch Transportation
+      url: https://techcrunch.com/category/transportation/feed/
+      source_type: specialist_media
+      robotics_only: true
+      max_items: 2
+    - name: The Verge Transportation
+      url: https://www.theverge.com/rss/transportation/index.xml
+      source_type: specialist_media
+      robotics_only: true
+      max_items: 2
+    - name: FLYING
+      url: https://www.flyingmag.com/feed/
+      source_type: specialist_media
+      robotics_only: true
+      max_items: 1
   email_imap:
     enabled: false
   hacker_news:
     name: Hacker News
     url: https://hn.algolia.com/api/v1/search_by_date
     source_type: community
-    min_points: 50
-    min_comments: 20
-    max_items: 3
+    min_points: 35
+    min_comments: 15
+    max_items: 4
+    robotics_min_points: 15
+    robotics_min_comments: 8
   max_age_hours: 48
   default_max_per_source: 3
   robotics_focus_keywords:
@@ -110,6 +147,18 @@ news:
     - Drone
     - Drones
     - Robotics simulation
+    - Autonomous vehicles
+    - Autonomous driving
+    - Robotaxi
+    - Robotaxis
+    - Humanoid robot
+    - Robotic
+    - Exosuit
+    - Self-driving
+    - Autonomous drone
+    - FSD
+    - Robotic manipulation
+    - 无人驾驶
   frontier_keywords:
     - AI model
     - AI models
@@ -133,9 +182,12 @@ news:
     - 智能体
   exclude_tags:
     - Sponsored Content
+    - Event
     - Events
     - Webinar
+    - Webinars
     - Podcast
+    - Podcasts
 
 keywords:
   - Humanoid
@@ -161,6 +213,6 @@ keywords:
 selection:
   papers: 8
   news: 10
-  max_ai_news: 3
+  max_ai_news: 5
   min_news_score: 3
   filter_batch_size: 12

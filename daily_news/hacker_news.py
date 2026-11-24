@@ -8,7 +8,11 @@ from feed_utils import canonical_link, plain_text, safe_link
 def fetch_hn(settings, cutoff, upper):
     rows = {}
     dates = f"created_at_i>={int(cutoff.timestamp())},created_at_i<={int(upper.timestamp())}"
-    for field, minimum in (("points", settings["min_points"]), ("num_comments", settings["min_comments"])):
+    thresholds = {
+        "points": min(settings["min_points"], settings.get("robotics_min_points", settings["min_points"])),
+        "num_comments": min(settings["min_comments"], settings.get("robotics_min_comments", settings["min_comments"])),
+    }
+    for field, minimum in thresholds.items():
         for page in range(10):
             data = api_json(settings["url"], {
                 "tags": "story", "numericFilters": f"{dates},{field}>={minimum}",
@@ -21,7 +25,7 @@ def fetch_hn(settings, cutoff, upper):
                     continue
                 number = str(hit["objectID"])
                 engagement = counts(hit, {"points": "points", "comments": "num_comments"})
-                if engagement.get("points", 0) < settings["min_points"] and engagement.get("comments", 0) < settings["min_comments"]:
+                if engagement.get("points", 0) < thresholds["points"] and engagement.get("comments", 0) < thresholds["num_comments"]:
                     continue
                 if type(hit.get("created_at_i")) is not int or not hit.get("title"):
                     continue

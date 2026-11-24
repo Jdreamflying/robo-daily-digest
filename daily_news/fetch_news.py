@@ -10,8 +10,10 @@ import requests
 
 from community_signals import news_attention
 from daily_news.hacker_news import fetch_hn
-from daily_news.news_events import SOURCE_PRIORITY, event_key, merge_engagement, title_key
-from digest_common import DATA, RAW, config, date_parser, read_json, write_json, write_jsonl
+from daily_news.news_events import (
+    SOURCE_PRIORITY, event_key, launch_anchors, merge_engagement, named_launch_key, same_incident, title_key,
+)
+from digest_common import RAW, config, date_parser, recent_items, write_json, write_jsonl
 from feed_utils import (
     canonical_link, feed_date, feed_tags, fetch_feed, matches_keyword, normalized_words, plain_text, safe_link,
 )
@@ -54,27 +56,22 @@ def issue_window(day, hours, zone):
 
 
 def recent_published_keys(day):
-    urls, titles, events = set(), set(), set()
-    target = datetime.fromisoformat(day).date()
-    for path in DATA.glob("????-??-??/news.json"):
-        try:
-            other_day = datetime.fromisoformat(path.parent.name).date()
-            if other_day == target or (target - other_day).days < 0 or (target - other_day).days > 7:
-                continue
-            items = read_json(path).get("items", [])
-        except (OSError, ValueError, TypeError, AttributeError):
-            continue
-        for item in items:
-            url = canonical_link(safe_link(item.get("url", "")))
-            original = item.get("original_title") or item.get("title", "")
-            title = title_key(original)
-            if url:
-                urls.add(url)
-            if title:
-                titles.add(title)
-            if event := event_key(original):
-                events.add(event)
-    return urls, titles, events
+    urls, titles = set(), set()
+    for _, item in recent_items(day, "news.json"):
+        if url := safe_link(item.get("url", "")):
+            urls.add(canonical_link(url))
+        if title := title_key(item.get("original_title") or item.get("title", "")):
+            titles.add(title)
+    return urls, titles
+
+
+def hn_passes_threshold(row, topic, source):
+    prefix = "robotics_" if topic == "robotics" else ""
+    engagement = row["engagement"]
+    return (
+        engagement.get("points", 0) >= source.get(prefix + "min_points", source["min_points"])
+        or engagement.get("comments", 0) >= source.get(prefix + "min_comments", source["min_comments"])
+    )
 
 
 def fetch_email_imap(settings):
@@ -143,6 +140,10 @@ def topic_for(row, source, news):
     tags = {normalized_words(tag) for tag in row["tags"]}
     if any(matches_keyword(title, word) or normalized_words(word) in tags for word in news["robotics_focus_keywords"]):
         return "robotics"
+    if source.get("robotics_only"):
+        return None
+    if source.get("ai_vertical"):
+        return "ai_frontier"
     topical = source.get("require_robotics_focus") or source == news.get("hacker_news")
     if topical:
         if any(matches_keyword(title, word) or normalized_words(word) in tags for word in news["frontier_keywords"]):
@@ -172,6 +173,8 @@ def collect_news(day, settings, cutoff, upper):
             topic = topic_for(row, source, news)
             if not topic:
                 reason = "topic_miss"
+            elif source is hn and not hn_passes_threshold(row, topic, source):
+                reason = "hn_below_threshold"
             elif source.get("require_release_or_announce") and not forum_announcement(row["title"], row["summary"]):
                 reason = "forum_non_announcement"
             else:
@@ -204,7 +207,8 @@ def collect_news(day, settings, cutoff, upper):
     if news["rss"] and not fetched and not rows:
         raise SystemExit("No news feed could be fetched.")
 
-    previous_urls, previous_titles, previous_events = recent_published_keys(day)
+    previous_urls, previous_titles = recent_published_keys(day)
+    launches = launch_anchors(rows)
     existing, unique = {}, []
     source_types = {name: source.get("source_type") for name, source in feeds.items()}
     for row in sorted(rows, key=lambda item: (
@@ -212,11 +216,13 @@ def collect_news(day, settings, cutoff, upper):
     ), reverse=True):
         title = title_key(row["title"])
         event = event_key(row["title"])
-        if row["url"] in previous_urls or title in previous_titles or event in previous_events:
+        if row["url"] in previous_urls or title in previous_titles:
             filtered["cross_day_duplicate"] += 1
             continue
-        keys = [row["url"], title, event]
+        keys = [row["url"], title, event, named_launch_key(row, launches)]
         duplicate = next((existing[key] for key in keys if key in existing), None)
+        if duplicate is None:
+            duplicate = next((item for item in unique if same_incident(item, row)), None)
         if duplicate:
             merge_engagement(duplicate, row)
             filtered["same_event_duplicate"] += 1

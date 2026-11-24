@@ -5,11 +5,19 @@ from datetime import date, timedelta
 import feedparser
 import requests
 
-from digest_common import RAW, config, date_parser, write_json, write_jsonl
+from digest_common import RAW, config, date_parser, recent_items, write_json, write_jsonl
 from feed_utils import feed_date, feed_tags, plain_text, safe_link
 from community_signals import paper_attention
 
 ARXIV_ID = re.compile(r"(?:/abs/|oai:arXiv\.org:)([\w./-]+)", re.IGNORECASE)
+
+
+def unversioned(identifier):
+    return re.sub(r"v\d+$", "", identifier.strip(), flags=re.I).casefold()
+
+
+def published_ids(day):
+    return {unversioned(item["id"]) for _, item in recent_items(day, "papers.json") if item.get("id")}
 
 
 def normalize(entry, source):
@@ -18,7 +26,7 @@ def normalize(entry, source):
     if not match or not title:
         return None
     versioned_id = match[1].rstrip("/")
-    identifier = re.sub(r"v\d+$", "", versioned_id)
+    identifier = unversioned(versioned_id)
     abstract = plain_text(entry.get("summary"))
     if abstract.startswith("arXiv:") and "Abstract:" in abstract:
         abstract = abstract.split("Abstract:", 1)[1].strip()
@@ -63,7 +71,7 @@ def query_day(feed, day, session):
         time.sleep(3)
 
 
-def find_source_day(feed, target, session):
+def find_source_day(feed, target, session, *, already_published=()):
     queried = False
     for offset in range(feed.get("fallback_days", 3) + 1):
         day = target - timedelta(days=offset)
@@ -79,7 +87,7 @@ def find_source_day(feed, target, session):
             and row["announcement"] not in {"replace", "replace-cross"}
             and feed["category"] in row["tags"]
         ]
-        if rows:
+        if any(row["id"] not in already_published for row in rows):
             return day, rows, len(entries)
     return None, [], 0
 
@@ -88,12 +96,14 @@ def main():
     args = date_parser("Query the arXiv submission day and collect public paper metrics.").parse_args()
     feed = config()["arxiv"]
     target = date.fromisoformat(args.date) - timedelta(days=feed.get("lag_days", 3))
+    published = published_ids(args.date)
     with requests.Session() as session:
         session.headers["User-Agent"] = "robo-daily-digest/1.0 (arXiv news reader)"
-        day, rows, scanned = find_source_day(feed, target, session)
+        day, rows, scanned = find_source_day(feed, target, session, already_published=published)
     papers = {}
     for row in rows:
-        papers.setdefault(row["id"], row)
+        if row["id"] not in published:
+            papers.setdefault(row["id"], row)
     if papers:
         paper_attention(papers, day)
     output = RAW / f"{args.date}_arxiv.jsonl"
@@ -102,6 +112,7 @@ def main():
         "total_scanned": scanned,
         "total_new": len(rows),
         "total_unique": len(papers),
+        "previously_published": len({row["id"] for row in rows} & published),
         "paper_target_date": target.isoformat(),
         "paper_source_date": day.isoformat() if day else None,
         "paper_category": feed["category"],
