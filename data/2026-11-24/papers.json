@@ -541,73 +541,76 @@
       "pdf_url": "https://arxiv.org/pdf/2611.28411"
     },
     {
-      "title": "模型该告诉规划器什么？机器人损伤后风险感知规划的结果接口",
-      "summary": "机器人受损后需判断哪些路线仍可承担，且可接受风险随任务变化。本文认为学习模型是否有用取决于其决策接口，即模型交给规划器什么。决策策略直接告诉规划器怎么做，而结果模型（一种世界模型）预测每条路线的后果。研究在模拟的Unitree Go2四足机器人和H1人形机器人上进行，设置包括电机减弱、增加负载或降低足部摩擦。比较四种接口：决策策略；用固定惩罚训练同一策略；预测每条路线可行性和旅行时间的结果模型；以及称为能力契约的结果模型，它预测机器人在每种地形上的成功概率和旅行时间，并沿路线组合。所有接口共享收集的经验、匹配的调参和风险校准，以及不确定性保护。两个相对低风险的探测使能力契约对危险地形的排序能力与每种危险四次新试验相当。在校准的5%选择经验不可行路线限制下，与普通策略相比，结果模型将拒绝任务从约32%降至7-8%（Go2），从57%降至35-36%（H1）。固定惩罚缩小差距，但最佳惩罚随风险目标变化。预测结果使规划器能通过改变路线在风险要求收紧时保留任务。",
-      "lede": "机器人受伤后还能走哪条路？本文比较四种模型接口，发现预测后果比直接给指令更能帮规划器在风险变化时保住任务。",
+      "title": "面向自主机器人应用的实时神经形态听觉与视觉感知：在漫游车平台上的集成与实验评估",
+      "summary": "该技术报告展示了一台四轮漫游车平台，同时集成三条实时感知流水线：基于预训练音频神经网络（PANNs）并运行在 NVIDIA Jetson GPU 上的传统音频分类流水线；将脉冲神经网络（SNN）部署在 SynSense Xylo Audio 2 芯片上的神经形态音频流水线；以及用事件相机采集事件、由 SpikeYOLO 脉冲检测器处理以检测交通锥的神经形态视觉流水线。在 Xylo 芯片上，从麦克风信号到低音与高音分类的整个处理链均在片上完成，主机只负责配置设备并读取输出神经元。所有模型以容器化服务部署并通过 ROS 2 集成，可配置的动作调度器将检测类别映射为机器人行为，闭合感知与执行回路。平台在概念验证场景中演示：机器人对两条音频流水线检测到的声音类别作出反应，并用事件相机检测交通锥，表明将神经形态硬件集成到实时运行的多模态机器人平台具有可行性。",
+      "lede": "一台四轮漫游车把传统音频分类、片上脉冲神经网络音频分类和事件相机交通锥检测三条实时流水线通过 ROS 2 集成，演示了神经形态硬件进入多模态机器人平台的可行性。",
       "tags": [
-        "机器人规划",
-        "风险感知",
-        "世界模型"
+        "神经形态感知",
+        "脉冲神经网络",
+        "ROS 2 机器人集成"
       ],
       "sections": {
-        "background": "机器人损伤后，其可承受的路线和可接受风险会随任务变化，传统决策策略或固定惩罚难以适应这种动态风险需求。学习模型能否帮助机器人，关键在于模型向规划器提供何种信息：是直接指令还是后果预测。现有方法多关注策略学习，而忽略了决策接口的设计对风险感知规划的影响。",
-        "conclusion": "在模拟Unitree Go2和H1机器人上，结果模型（预测可行性和旅行时间）相比普通决策策略，在5%不可行路线限制下将拒绝任务比例从约32%降至7-8%（Go2）、从57%降至35-36%（H1）。固定惩罚能缩小差距，但最优惩罚随风险目标变化。能力契约用两个低风险探测即可达到与每种危险四次新试验相近的危险地形排序能力。预测结果使规划器能通过调整路线在风险收紧时保留任务。",
-        "method": "输入是机器人收集的经验数据，包括不同地形上的成功与否和旅行时间。核心模块是结果模型：对每种地形预测成功概率和旅行时间，并沿路线组合成整体成功概率和总时间，形成能力契约。规划器根据风险限制选择路线，并配有不确定性保护。已验证的改进来自结果模型提供的后果预测，使规划器能动态调整路线，而非依赖固定策略或惩罚。",
-        "takeaways": "若机器人配备结果模型接口，可在损伤后根据风险要求动态选择路线，适用于四足和人形机器人在电机减弱、负载增加或摩擦降低等场景。所需硬件包括能感知地形和自身状态的传感器，数据需包含不同地形上的成功与时间记录。距离真机部署还需在真实损伤条件下验证模型预测准确性和不确定性保护的有效性，并测试更多风险目标和任务类型。"
+        "background": "移动机器人需要持续运行感知，且受严格延迟与能耗约束；神经形态感知与计算被视为替代传统深度学习流水线的有前景方案。但多数神经形态方案仍在离线或孤立基准上评估，将其集成进完整机器人系统的探索仍然有限。",
+        "conclusion": "报告在四轮漫游车平台上完成了三条实时感知流水线的集成与概念验证演示：传统 PANNs 音频分类在 NVIDIA Jetson GPU 上运行，SNN 音频分类在 SynSense Xylo Audio 2 芯片上全片上完成，SpikeYOLO 在事件相机数据上检测交通锥。所有模型以容器化服务部署并经 ROS 2 集成，动作调度器将检测类别映射为机器人行为，机器人能对两条音频流水线检测到的声音类别作出反应并检测交通锥，证明神经形态硬件可实时融入多模态机器人平台。",
+        "method": "输入包括麦克风音频信号和事件相机输出的事件流。传统音频分支用预训练音频神经网络（PANNs）在 NVIDIA Jetson GPU 上做音频分类；神经形态音频分支把脉冲神经网络（SNN）部署在 SynSense Xylo Audio 2 芯片上，从麦克风信号到低音与高音分类全部在片上完成，主机仅配置设备并读取输出神经元；神经形态视觉分支用 SpikeYOLO 脉冲检测器处理事件相机数据以检测交通锥。三条流水线均以容器化服务部署，通过 ROS 2 集成，并由可配置的动作调度器把检测类别映射为机器人行为，从而闭合感知与执行回路。已验证的改进来自系统集成与实时运行演示，材料未报告与旧方法的对照性能比较。",
+        "takeaways": "该平台适合需要低延迟、低功耗持续感知的移动机器人场景，例如用声音类别触发行为、用事件相机检测交通锥等目标；部署需要 ROS 2 环境、NVIDIA Jetson GPU、SynSense Xylo Audio 2 芯片与事件相机等硬件条件。若要把此类神经形态流水线用于真实任务，还需在更多场景与更长运行时间下验证稳定性、延迟和能耗，并补充与常规深度学习流水线的定量对照。当前结论仅限材料报告的概念验证设定，不能外推为已优于传统方法。"
       },
       "i18n": {
         "zh": {
-          "title": "模型该告诉规划器什么？机器人损伤后风险感知规划的结果接口",
-          "summary": "机器人受损后需判断哪些路线仍可承担，且可接受风险随任务变化。本文认为学习模型是否有用取决于其决策接口，即模型交给规划器什么。决策策略直接告诉规划器怎么做，而结果模型（一种世界模型）预测每条路线的后果。研究在模拟的Unitree Go2四足机器人和H1人形机器人上进行，设置包括电机减弱、增加负载或降低足部摩擦。比较四种接口：决策策略；用固定惩罚训练同一策略；预测每条路线可行性和旅行时间的结果模型；以及称为能力契约的结果模型，它预测机器人在每种地形上的成功概率和旅行时间，并沿路线组合。所有接口共享收集的经验、匹配的调参和风险校准，以及不确定性保护。两个相对低风险的探测使能力契约对危险地形的排序能力与每种危险四次新试验相当。在校准的5%选择经验不可行路线限制下，与普通策略相比，结果模型将拒绝任务从约32%降至7-8%（Go2），从57%降至35-36%（H1）。固定惩罚缩小差距，但最佳惩罚随风险目标变化。预测结果使规划器能通过改变路线在风险要求收紧时保留任务。",
-          "lede": "机器人受伤后还能走哪条路？本文比较四种模型接口，发现预测后果比直接给指令更能帮规划器在风险变化时保住任务。",
+          "title": "面向自主机器人应用的实时神经形态听觉与视觉感知：在漫游车平台上的集成与实验评估",
+          "summary": "该技术报告展示了一台四轮漫游车平台，同时集成三条实时感知流水线：基于预训练音频神经网络（PANNs）并运行在 NVIDIA Jetson GPU 上的传统音频分类流水线；将脉冲神经网络（SNN）部署在 SynSense Xylo Audio 2 芯片上的神经形态音频流水线；以及用事件相机采集事件、由 SpikeYOLO 脉冲检测器处理以检测交通锥的神经形态视觉流水线。在 Xylo 芯片上，从麦克风信号到低音与高音分类的整个处理链均在片上完成，主机只负责配置设备并读取输出神经元。所有模型以容器化服务部署并通过 ROS 2 集成，可配置的动作调度器将检测类别映射为机器人行为，闭合感知与执行回路。平台在概念验证场景中演示：机器人对两条音频流水线检测到的声音类别作出反应，并用事件相机检测交通锥，表明将神经形态硬件集成到实时运行的多模态机器人平台具有可行性。",
+          "lede": "一台四轮漫游车把传统音频分类、片上脉冲神经网络音频分类和事件相机交通锥检测三条实时流水线通过 ROS 2 集成，演示了神经形态硬件进入多模态机器人平台的可行性。",
           "tags": [
-            "机器人规划",
-            "风险感知",
-            "世界模型"
+            "神经形态感知",
+            "脉冲神经网络",
+            "ROS 2 机器人集成"
           ],
           "sections": {
-            "background": "机器人损伤后，其可承受的路线和可接受风险会随任务变化，传统决策策略或固定惩罚难以适应这种动态风险需求。学习模型能否帮助机器人，关键在于模型向规划器提供何种信息：是直接指令还是后果预测。现有方法多关注策略学习，而忽略了决策接口的设计对风险感知规划的影响。",
-            "conclusion": "在模拟Unitree Go2和H1机器人上，结果模型（预测可行性和旅行时间）相比普通决策策略，在5%不可行路线限制下将拒绝任务比例从约32%降至7-8%（Go2）、从57%降至35-36%（H1）。固定惩罚能缩小差距，但最优惩罚随风险目标变化。能力契约用两个低风险探测即可达到与每种危险四次新试验相近的危险地形排序能力。预测结果使规划器能通过调整路线在风险收紧时保留任务。",
-            "method": "输入是机器人收集的经验数据，包括不同地形上的成功与否和旅行时间。核心模块是结果模型：对每种地形预测成功概率和旅行时间，并沿路线组合成整体成功概率和总时间，形成能力契约。规划器根据风险限制选择路线，并配有不确定性保护。已验证的改进来自结果模型提供的后果预测，使规划器能动态调整路线，而非依赖固定策略或惩罚。",
-            "takeaways": "若机器人配备结果模型接口，可在损伤后根据风险要求动态选择路线，适用于四足和人形机器人在电机减弱、负载增加或摩擦降低等场景。所需硬件包括能感知地形和自身状态的传感器，数据需包含不同地形上的成功与时间记录。距离真机部署还需在真实损伤条件下验证模型预测准确性和不确定性保护的有效性，并测试更多风险目标和任务类型。"
+            "background": "移动机器人需要持续运行感知，且受严格延迟与能耗约束；神经形态感知与计算被视为替代传统深度学习流水线的有前景方案。但多数神经形态方案仍在离线或孤立基准上评估，将其集成进完整机器人系统的探索仍然有限。",
+            "conclusion": "报告在四轮漫游车平台上完成了三条实时感知流水线的集成与概念验证演示：传统 PANNs 音频分类在 NVIDIA Jetson GPU 上运行，SNN 音频分类在 SynSense Xylo Audio 2 芯片上全片上完成，SpikeYOLO 在事件相机数据上检测交通锥。所有模型以容器化服务部署并经 ROS 2 集成，动作调度器将检测类别映射为机器人行为，机器人能对两条音频流水线检测到的声音类别作出反应并检测交通锥，证明神经形态硬件可实时融入多模态机器人平台。",
+            "method": "输入包括麦克风音频信号和事件相机输出的事件流。传统音频分支用预训练音频神经网络（PANNs）在 NVIDIA Jetson GPU 上做音频分类；神经形态音频分支把脉冲神经网络（SNN）部署在 SynSense Xylo Audio 2 芯片上，从麦克风信号到低音与高音分类全部在片上完成，主机仅配置设备并读取输出神经元；神经形态视觉分支用 SpikeYOLO 脉冲检测器处理事件相机数据以检测交通锥。三条流水线均以容器化服务部署，通过 ROS 2 集成，并由可配置的动作调度器把检测类别映射为机器人行为，从而闭合感知与执行回路。已验证的改进来自系统集成与实时运行演示，材料未报告与旧方法的对照性能比较。",
+            "takeaways": "该平台适合需要低延迟、低功耗持续感知的移动机器人场景，例如用声音类别触发行为、用事件相机检测交通锥等目标；部署需要 ROS 2 环境、NVIDIA Jetson GPU、SynSense Xylo Audio 2 芯片与事件相机等硬件条件。若要把此类神经形态流水线用于真实任务，还需在更多场景与更长运行时间下验证稳定性、延迟和能耗，并补充与常规深度学习流水线的定量对照。当前结论仅限材料报告的概念验证设定，不能外推为已优于传统方法。"
           }
         },
         "en": {
-          "title": "What Must a Model Tell a Planner? Outcome Interfaces for Risk-Aware Planning After Robot Damage",
-          "summary": "When a robot is damaged, it must decide which routes it can still afford, and the acceptable risk can change from mission to mission. This paper argues that whether a learned model helps depends on its decision interface—what the model hands to the planner. A decision policy tells the planner what to do, while an outcome model (a world model) predicts the consequences of each route. The study uses simulated Unitree Go2 quadrupeds and H1 humanoids with weakened motors, added payloads, or reduced foot friction. Four interfaces are compared: a decision policy; the same policy trained with fixed penalties for infeasible routes; an outcome model predicting feasibility and travel time per route; and a capability contract, an outcome model that predicts success probability and travel time on each terrain and composes them along a route. All share collected experience, matched tuning and risk calibration, and an uncertainty guard. Two low-risk probes let the capability contract rank hazardous terrains about as well as four new trials per hazard. At a calibrated 5% limit on selecting empirically infeasible routes, outcome models cut declined missions from about 32% to 7–8% on Go2 and from 57% to 35–36% on H1 compared with the plain policy. Fixed penalties narrow this gap, but the best penalty changes with the risk target. Predicting outcomes lets the planner preserve missions by changing routes as risk requirements tighten.",
-          "lede": "Which route can a damaged robot still afford? Comparing four model interfaces, this study finds that predicting outcomes helps planners preserve missions as risk requirements change, more than giving direct instructions.",
+          "title": "Real-time neuromorphic audio and vision perception for autonomous robotic applications: Integration and experimental evaluation on a rover platform",
+          "summary": "This technical report presents a four-wheel rover platform that combines three real-time perception pipelines: a classical audio tagging pipeline based on Pretrained Audio Neural Networks (PANNs) running on an NVIDIA Jetson GPU; a neuromorphic audio pipeline in which a spiking neural network (SNN) is deployed on the SynSense Xylo Audio 2 chip; and a neuromorphic vision pipeline in which events from an event-based camera are processed by the SpikeYOLO spiking detector for traffic cone detection. On the Xylo chip, the entire processing chain from the microphone signal to the classification of low- and high-pitched sounds runs on-chip, while the host only configures the device and reads the output neurons. All models are deployed as containerised services and integrated through ROS 2, and a configurable action dispatcher maps detected classes to robot behaviours, closing the loop between perception and actuation. The platform is demonstrated in a proof-of-concept scenario in which the robot reacts to sound classes detected by both audio pipelines and detects traffic cones with the event camera, showing the feasibility of integrating neuromorphic hardware into a multimodal robotic platform operating in real time.",
+          "lede": "A four-wheel rover integrates classical audio tagging, on-chip spiking neural network audio classification, and event-camera traffic cone detection through ROS 2, demonstrating that neuromorphic hardware can enter a multimodal robotic platform.",
           "tags": [
-            "robot planning",
-            "risk-aware planning",
-            "world models"
+            "neuromorphic perception",
+            "spiking neural networks",
+            "ROS 2 robotic integration"
           ],
           "sections": {
-            "background": "After damage, a robot's affordable routes and acceptable risk vary by mission, and traditional decision policies or fixed penalties struggle to adapt to such dynamic risk requirements. Whether a learned model helps hinges on what information it provides to the planner: direct instructions or consequence predictions. Existing methods often focus on policy learning while neglecting the design of the decision interface for risk-aware planning.",
-            "conclusion": "On simulated Unitree Go2 and H1 robots, outcome models (predicting feasibility and travel time) reduce declined missions from about 32% to 7–8% (Go2) and from 57% to 35–36% (H1) compared with a plain decision policy under a 5% infeasible-route limit. Fixed penalties narrow the gap, but the optimal penalty varies with the risk target. The capability contract ranks hazardous terrains about as well as four new trials per hazard using only two low-risk probes. Predicting outcomes enables the planner to preserve missions by adjusting routes as risk tightens.",
-            "method": "The input is experience data collected by the robot, including success/failure and travel time on different terrains. The core module is an outcome model: for each terrain, it predicts success probability and travel time, and composes them along a route into an overall success probability and total time, forming a capability contract. The planner selects routes according to risk limits, with an uncertainty guard. The verified improvement comes from the consequence predictions provided by the outcome model, allowing the planner to dynamically adjust routes rather than relying on fixed policies or penalties.",
-            "takeaways": "If a robot is equipped with an outcome-model interface, it can dynamically select routes after damage according to risk requirements, applicable to quadrupeds and humanoids with weakened motors, added payloads, or reduced friction. Required hardware includes sensors that perceive terrain and robot state, and data must include success and time records on different terrains. Before real-world deployment, validation is needed on prediction accuracy and uncertainty guard effectiveness under real damage conditions, and testing across more risk targets and mission types."
+            "background": "Mobile robots must run perception continuously under tight latency and energy constraints, and neuromorphic sensing and computing are seen as a promising alternative to conventional deep learning pipelines. However, most neuromorphic solutions are still evaluated offline or on isolated benchmarks, and their integration into complete robotic systems remains largely unexplored.",
+            "conclusion": "The report integrates three real-time perception pipelines on a four-wheel rover platform and demonstrates them in a proof-of-concept scenario: classical PANNs audio tagging runs on an NVIDIA Jetson GPU, SNN-based audio classification runs entirely on-chip on the SynSense Xylo Audio 2, and SpikeYOLO detects traffic cones on event-camera data. All models are deployed as containerised services and integrated through ROS 2, and an action dispatcher maps detected classes to robot behaviours; the robot reacts to sound classes detected by both audio pipelines and detects traffic cones, showing that neuromorphic hardware can be integrated into a multimodal robotic platform in real time.",
+            "method": "The inputs are microphone audio signals and event streams from an event-based camera. The classical audio branch uses Pretrained Audio Neural Networks (PANNs) on an NVIDIA Jetson GPU for audio tagging; the neuromorphic audio branch deploys a spiking neural network (SNN) on the SynSense Xylo Audio 2 chip, where the whole chain from microphone signal to low- and high-pitched sound classification runs on-chip while the host only configures the device and reads output neurons; the neuromorphic vision branch uses the SpikeYOLO spiking detector on event-camera data to detect traffic cones. All three pipelines are deployed as containerised services, integrated through ROS 2, and connected to robot behaviours by a configurable action dispatcher, closing the perception-actuation loop. The verified improvement comes from system integration and a real-time demonstration; the material reports no controlled performance comparison against prior methods.",
+            "takeaways": "The platform targets mobile robot scenarios that need low-latency, low-power continuous perception, such as triggering behaviours from sound classes or detecting targets like traffic cones with an event camera; deployment requires a ROS 2 environment, an NVIDIA Jetson GPU, a SynSense Xylo Audio 2 chip, and an event-based camera. Before such neuromorphic pipelines can be used in real tasks, stability, latency, and energy use must be validated across more scenarios and longer runs, and quantitative comparisons with conventional deep learning pipelines are needed. The conclusions are limited to the proof-of-concept setting reported in the material and should not be extrapolated as outperforming conventional methods."
           }
         }
       },
-      "id": "2611.27939",
-      "original_title": "What Must a Model Tell a Planner? Outcome Interfaces for Risk-Aware Planning After Robot Damage",
-      "original_summary": "When a robot is damaged, it must decide which routes it can still afford, and the amount of risk it may accept can change from one mission to the next. We argue that whether a learned model helps such a robot depends on its decision interface, that is, on what the model hands to the planner. A decision policy tells the planner what to do, whereas an outcome model, a kind of world model, predicts the consequences of each route. We study simulated Unitree Go2 quadrupeds and H1 humanoids with weakened motors, added payloads, or reduced foot friction. We compare four interfaces. The first is a decision policy, and the second is the same policy trained with fixed penalties for infeasible routes. The third is an outcome model that predicts the feasibility and travel time of each route. The fourth, which we call a capability contract, is an outcome model that predicts the chance of success and the travel time of the robot on each terrain and composes them along a route. All share the same collected experience, matched tuning and risk calibration, and an uncertainty guard. Two comparatively low-risk probes let the capability contract rank hazardous terrains about as well as four new trials on every hazard. At a calibrated 5% limit on selecting empirically infeasible routes, outcome models cut declined missions from about 32% to 7-8% on Go2 and from 57% to 35-36% on H1 compared with the plain policy. Fixed penalties narrow this gap, but the best penalty changes with the risk target. Predicting outcomes lets the planner preserve missions by changing routes as risk requirements tighten.",
-      "url": "https://arxiv.org/abs/2611.27939v1",
+      "id": "2611.27953",
+      "original_title": "Real-time neuromorphic audio and vision perception for autonomous robotic applications: Integration and experimental evaluation on a rover platform",
+      "original_summary": "Neuromorphic sensing and computing offer a promising alternative to conventional deep learning pipelines for mobile robots, where perception must run continuously under tight latency and energy constraints. However, most neuromorphic solutions are still evaluated offline or on isolated benchmarks, and their integration into complete robotic systems remains largely unexplored. In this technical report, a four-wheel rover platform is presented that combines three real-time perception pipelines: a classical audio tagging pipeline based on Pretrained Audio Neural Networks (PANNs) running on an NVIDIA Jetson GPU, a neuromorphic audio pipeline in which a spiking neural network (SNN) is deployed on the SynSense Xylo Audio~2 chip, and a neuromorphic vision pipeline in which events from an event-based camera are processed by the SpikeYOLO spiking detector for traffic cone detection. On the Xylo chip, the whole processing chain---from the microphone signal to the classification of low- and high-pitched sounds---is performed on-chip, while the host only configures the device and reads the output neurons. All models are deployed as containerised services and integrated through ROS~2, and a configurable action dispatcher maps the detected classes to robot behaviours, closing the loop between perception and actuation. The platform is demonstrated in a proof-of-concept scenario in which the robot reacts to sound classes detected by both audio pipelines and detects traffic cones with the event camera, showing the feasibility of integrating neuromorphic hardware into a multimodal robotic platform operating in real time.",
+      "url": "https://arxiv.org/abs/2611.27953v1",
       "source": "arXiv cs.RO",
-      "published": "2026-11-20T18:12:49+00:00",
+      "published": "2026-11-20T18:27:26+00:00",
       "authors": [
-        "Hassan Iqbal",
-        "Krishna Kumar"
+        "Guillem Fustier-Castillo",
+        "Ruben Ribes-Serrano",
+        "Javier Naranjo-Alcazar",
+        "Vicent Ortiz-Castello",
+        "Pedro Zuccarello"
       ],
       "score": 4,
-      "versioned_id": "2611.27939v1",
+      "versioned_id": "2611.27953v1",
       "figure": {
-        "path": "./data/2026-11-24/figures/2611.27939.webp",
-        "caption": "Figure 4: Go2 robot 300 with weakened front left thigh, rear left thigh, and front left calf joints at 0.49, 0.72, and 0.66 times nominal torque, respectively. Its base mass is 1.25 times nominal and its foot friction is 0.59. The selected frames show the robot and three terrains from the recorded examples."
+        "path": "./data/2026-11-24/figures/2611.27953.webp",
+        "caption": "Figure 3: Hardware architecture of the rover."
       },
       "code_url": null,
       "project_url": null,
-      "pdf_url": "https://arxiv.org/pdf/2611.27939"
+      "pdf_url": "https://arxiv.org/pdf/2611.27953"
     }
   ]
 }

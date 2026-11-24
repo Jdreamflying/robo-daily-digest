@@ -1,13 +1,13 @@
 {
   "date": "2026-11-24",
   "total_scanned": 3101,
-  "total_unique": 47,
-  "window_count": 225,
+  "total_unique": 48,
+  "window_count": 226,
   "window_hours": 48,
-  "cutoff": "2026-11-22T12:32:41.692614+00:00",
-  "window_end": "2026-11-24T12:32:41.692614+00:00",
-  "scored_count": 47,
-  "qualified_count": 13,
+  "cutoff": "2026-11-22T12:42:07.791429+00:00",
+  "window_end": "2026-11-24T12:42:07.791429+00:00",
+  "scored_count": 48,
+  "qualified_count": 14,
   "event_duplicate_count": 2,
   "mode": "api",
   "items": [
@@ -324,6 +324,62 @@
         "comments": 5
       },
       "discussion_url": "https://news.ycombinator.com/item?id=50620328"
+    },
+    {
+      "title": "亚马逊称黑客的AI代理几乎无需人工介入就发现并利用了0-day漏洞",
+      "summary": "Cairn AI框架对防御方和攻击方都有帮助。",
+      "lede": "亚马逊称黑客的AI代理几乎无需人工介入就发现并利用了0-day漏洞。",
+      "tags": [
+        "AI",
+        "安全",
+        "0-day漏洞"
+      ],
+      "analysis": [
+        "亚马逊表示，黑客的AI代理在几乎没有人工介入的情况下发现并利用了0-day漏洞。",
+        "亚马逊称其Cairn AI框架对防御方和攻击方都有帮助。",
+        "材料未给出具体数字或实际影响依据。"
+      ],
+      "i18n": {
+        "zh": {
+          "title": "亚马逊称黑客的AI代理几乎无需人工介入就发现并利用了0-day漏洞",
+          "summary": "Cairn AI框架对防御方和攻击方都有帮助。",
+          "lede": "亚马逊称黑客的AI代理几乎无需人工介入就发现并利用了0-day漏洞。",
+          "tags": [
+            "AI",
+            "安全",
+            "0-day漏洞"
+          ],
+          "analysis": [
+            "亚马逊表示，黑客的AI代理在几乎没有人工介入的情况下发现并利用了0-day漏洞。",
+            "亚马逊称其Cairn AI框架对防御方和攻击方都有帮助。",
+            "材料未给出具体数字或实际影响依据。"
+          ]
+        },
+        "en": {
+          "title": "Amazon says hackers' AI agents found and exploited a 0-day with little human input",
+          "summary": "The Cairn AI framework is proving to be a boon for defenders and attackers.",
+          "lede": "Amazon says hackers' AI agents found and exploited a 0-day with little human input.",
+          "tags": [
+            "AI",
+            "Security",
+            "0-day"
+          ],
+          "analysis": [
+            "Amazon said hackers' AI agents found and exploited a 0-day with little human input.",
+            "Amazon said its Cairn AI framework is proving to be a boon for defenders and attackers.",
+            "The material gives no specific numbers or evidence of real-world impact."
+          ]
+        }
+      },
+      "id": "44bd775b8ffe162aa816a6f0",
+      "original_title": "Amazon says hackers' AI agents found and exploited 0-day with little human input",
+      "original_summary": "The Cairn AI framework is proving to be a boon for defenders and attackers.",
+      "url": "https://arstechnica.com/security/2026/11/amazon-says-hackers-ai-agents-found-and-exploited-0-day-with-little-human-input",
+      "source": "Ars Technica AI",
+      "published": "2026-11-24T12:30:05+00:00",
+      "authors": [],
+      "score": 3,
+      "category": "ai_frontier"
     },
     {
       "title": "多州起诉 SpaceX，要求阻止 Grok 生成儿童性虐待图像和报复性色情内容",
