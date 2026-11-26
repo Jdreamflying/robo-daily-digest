@@ -1,6 +1,23 @@
 {
   "editions": [
     {
+      "date": "2026-11-26",
+      "papers": {
+        "path": "./data/2026-11-26/papers.json",
+        "count": 8,
+        "total_scanned": 115,
+        "lead": "RoboUniverse-10K：通过真实到仿真环境迈向智能体机器人规模化时代"
+      },
+      "news": {
+        "path": "./data/2026-11-26/news.json",
+        "count": 5,
+        "total_scanned": 262,
+        "lead": "乌克兰首次用作战激光击落俄罗斯喷气动力无人机"
+      },
+      "infographic": "./data/2026-11-26/infographic.png",
+      "infographic_en": "./data/2026-11-26/infographic.en.png"
+    },
+    {
       "date": "2026-11-25",
       "papers": {
         "path": "./data/2026-11-25/papers.json",

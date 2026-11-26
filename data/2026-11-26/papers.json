@@ -1,0 +1,671 @@
+{
+  "date": "2026-11-26",
+  "total_scanned": 115,
+  "total_new": 115,
+  "total_unique": 115,
+  "paper_target_date": "2026-11-23",
+  "paper_source_date": "2026-11-23",
+  "paper_category": "cs.RO",
+  "previously_published": 0,
+  "scored_count": 115,
+  "qualified_count": 115,
+  "mode": "api",
+  "items": [
+    {
+      "title": "RoboUniverse-10K：通过真实到仿真环境迈向智能体机器人规模化时代",
+      "summary": "该工作构建了 10,807 个可交互、可重置、可验证的物理环境，这些环境由真实世界视频经自动化 Real2Sim 与质量保证流程生成，每个环境运行在隔离的 Harbor 兼容测试框架中，隐藏特权状态与评分逻辑以模拟真实感知。作者另留出 500 个未见任务构成专家验证的零样本基准 RoboUniverse-Verified。评测 11 个闭源与开源模型显示巨大差距：前沿模型成功率达 85.8%，开源基线仅 2.6% 至 10.0%，瓶颈在于低级抓取、可变形物体操作和接触后物理控制。作者用 GPT-6 Astra 收集约 17K 条多轮轨迹、共 0.79B token，对 Qwen3.6-35B-A3B 做全参数监督微调得到 RoboUniverse-35B-A3B，在 RoboUniverse-Verified 上把零样本成功率从 0.8% 提升到 21.2%，并在 LIBERO-MAX、RoboCasa、RoboTwin 2.0 和一台真实 Franka 机械臂上实现零样本任务完成。",
+      "lede": "RoboUniverse-10K 用真实视频自动生成上万个可验证物理环境，并以此训练出零样本成功率从 0.8% 提升到 21.2% 的机器人智能体模型。",
+      "tags": [
+        "智能体机器人",
+        "真实到仿真",
+        "零样本基准"
+      ],
+      "sections": {
+        "background": "智能体机器人（Agentic Robotics）让基础模型充当编码智能体，通过可执行程序控制机器人，被视为具身智能的一条有前景的路线。但软件工程领域有海量可执行环境支撑后训练，机器人领域却受限于规模小、人工构建的基准和分布内评测，难以规模化训练与检验。",
+        "conclusion": "在 500 个未见任务的零样本基准上，11 个模型中前沿模型成功率为 85.8%，开源基线仅 2.6% 至 10.0%，差距主要来自低级抓取、可变形物体操作和接触后物理控制。经约 17K 条多轮轨迹（0.79B token）全参数监督微调后，RoboUniverse-35B-A3B 将零样本成功率从 0.8% 提升到 21.2%，并在 LIBERO-MAX、RoboCasa、RoboTwin 2.0 及一台真实 Franka 机械臂上完成零样本任务。",
+        "method": "输入是真实世界视频，经自动化 Real2Sim 与质量保证流程转成可交互、可重置、可验证的物理环境，每个环境运行在隔离的 Harbor 兼容框架中，并隐藏特权状态与评分逻辑以贴近真实感知。同一流程留出 500 个未见任务，经专家验证构成零样本基准 RoboUniverse-Verified。训练侧用 GPT-6 Astra 收集约 17K 条多轮轨迹、共 0.79B token，对 Qwen3.6-35B-A3B 做全参数监督微调得到 RoboUniverse-35B-A3B。已验证的改进来自这一监督微调：零样本成功率由 0.8% 升至 21.2%，并在多个仿真基准和真实 Franka 机械臂上完成任务。",
+        "takeaways": "若要在真实机器人上使用该路线，需要可执行程序接口、隔离的评测框架以及足量的多轮轨迹数据；材料显示其在真实 Franka 机械臂上仅验证了零样本任务完成，尚未报告成功率等定量真机指标。对产业场景而言，可设想用 Real2Sim 批量生成可重置环境来降低基准构建成本，但这取决于视频到仿真转换的保真度与质量保证流程的覆盖度。开源的环境与模型为大规模强化学习打下基础，但距离稳定真机部署仍缺真机成功率、鲁棒性与安全性等验证。"
+      },
+      "i18n": {
+        "zh": {
+          "title": "RoboUniverse-10K：通过真实到仿真环境迈向智能体机器人规模化时代",
+          "summary": "该工作构建了 10,807 个可交互、可重置、可验证的物理环境，这些环境由真实世界视频经自动化 Real2Sim 与质量保证流程生成，每个环境运行在隔离的 Harbor 兼容测试框架中，隐藏特权状态与评分逻辑以模拟真实感知。作者另留出 500 个未见任务构成专家验证的零样本基准 RoboUniverse-Verified。评测 11 个闭源与开源模型显示巨大差距：前沿模型成功率达 85.8%，开源基线仅 2.6% 至 10.0%，瓶颈在于低级抓取、可变形物体操作和接触后物理控制。作者用 GPT-6 Astra 收集约 17K 条多轮轨迹、共 0.79B token，对 Qwen3.6-35B-A3B 做全参数监督微调得到 RoboUniverse-35B-A3B，在 RoboUniverse-Verified 上把零样本成功率从 0.8% 提升到 21.2%，并在 LIBERO-MAX、RoboCasa、RoboTwin 2.0 和一台真实 Franka 机械臂上实现零样本任务完成。",
+          "lede": "RoboUniverse-10K 用真实视频自动生成上万个可验证物理环境，并以此训练出零样本成功率从 0.8% 提升到 21.2% 的机器人智能体模型。",
+          "tags": [
+            "智能体机器人",
+            "真实到仿真",
+            "零样本基准"
+          ],
+          "sections": {
+            "background": "智能体机器人（Agentic Robotics）让基础模型充当编码智能体，通过可执行程序控制机器人，被视为具身智能的一条有前景的路线。但软件工程领域有海量可执行环境支撑后训练，机器人领域却受限于规模小、人工构建的基准和分布内评测，难以规模化训练与检验。",
+            "conclusion": "在 500 个未见任务的零样本基准上，11 个模型中前沿模型成功率为 85.8%，开源基线仅 2.6% 至 10.0%，差距主要来自低级抓取、可变形物体操作和接触后物理控制。经约 17K 条多轮轨迹（0.79B token）全参数监督微调后，RoboUniverse-35B-A3B 将零样本成功率从 0.8% 提升到 21.2%，并在 LIBERO-MAX、RoboCasa、RoboTwin 2.0 及一台真实 Franka 机械臂上完成零样本任务。",
+            "method": "输入是真实世界视频，经自动化 Real2Sim 与质量保证流程转成可交互、可重置、可验证的物理环境，每个环境运行在隔离的 Harbor 兼容框架中，并隐藏特权状态与评分逻辑以贴近真实感知。同一流程留出 500 个未见任务，经专家验证构成零样本基准 RoboUniverse-Verified。训练侧用 GPT-6 Astra 收集约 17K 条多轮轨迹、共 0.79B token，对 Qwen3.6-35B-A3B 做全参数监督微调得到 RoboUniverse-35B-A3B。已验证的改进来自这一监督微调：零样本成功率由 0.8% 升至 21.2%，并在多个仿真基准和真实 Franka 机械臂上完成任务。",
+            "takeaways": "若要在真实机器人上使用该路线，需要可执行程序接口、隔离的评测框架以及足量的多轮轨迹数据；材料显示其在真实 Franka 机械臂上仅验证了零样本任务完成，尚未报告成功率等定量真机指标。对产业场景而言，可设想用 Real2Sim 批量生成可重置环境来降低基准构建成本，但这取决于视频到仿真转换的保真度与质量保证流程的覆盖度。开源的环境与模型为大规模强化学习打下基础，但距离稳定真机部署仍缺真机成功率、鲁棒性与安全性等验证。"
+          }
+        },
+        "en": {
+          "title": "RoboUniverse-10K: Toward the Scaling Era of Agentic Robotics via Real-to-Sim Environments",
+          "summary": "This work builds 10,807 interactive, resettable, and verifiable physics environments generated from real-world videos through an automated Real2Sim and quality assurance pipeline; each runs in an isolated, Harbor-compatible harness that hides privileged states and grading logic to mirror real-world sensing. A held-out set of 500 unseen tasks forms RoboUniverse-Verified, an expert-verified zero-shot benchmark. Evaluating 11 closed- and open-source models reveals a large gap: frontier models reach 85.8% success, while open-source baselines lag at 2.6% to 10.0%, bottlenecked by low-level grasping, deformable-object manipulation, and post-contact physical control. Using about 17K multi-turn trajectories totaling 0.79B tokens collected with GPT-6 Astra, the authors perform full-parameter supervised fine-tuning on Qwen3.6-35B-A3B to obtain RoboUniverse-35B-A3B, which lifts zero-shot success on RoboUniverse-Verified from 0.8% to 21.2% and achieves zero-shot task completions on LIBERO-MAX, RoboCasa, RoboTwin 2.0, and a real Franka arm.",
+          "lede": "RoboUniverse-10K automatically generates over ten thousand verifiable physics environments from real videos and trains a robotic agent model whose zero-shot success rises from 0.8% to 21.2%.",
+          "tags": [
+            "Agentic Robotics",
+            "Real2Sim",
+            "Zero-shot Benchmark"
+          ],
+          "sections": {
+            "background": "Agentic Robotics, in which foundation models act as coding agents that control robots through executable programs, is a promising paradigm for embodied intelligence. Unlike software engineering, where massive executable environments power post-training, robotics remains constrained by small, manually built benchmarks and in-distribution evaluation, limiting scale in both training and testing.",
+            "conclusion": "On the 500 unseen tasks of the zero-shot benchmark, frontier models reach 85.8% success while open-source baselines reach only 2.6% to 10.0%, with the gap concentrated in low-level grasping, deformable-object manipulation, and post-contact physical control. After full-parameter supervised fine-tuning on about 17K multi-turn trajectories (0.79B tokens), RoboUniverse-35B-A3B raises zero-shot success from 0.8% to 21.2% and completes zero-shot tasks on LIBERO-MAX, RoboCasa, RoboTwin 2.0, and a real Franka arm.",
+            "method": "The input is real-world video, converted by an automated Real2Sim and quality assurance pipeline into interactive, resettable, and verifiable physics environments, each running in an isolated Harbor-compatible harness that hides privileged states and grading logic to approximate real-world sensing. The same pipeline holds out 500 unseen tasks, expert-verified to form the zero-shot benchmark RoboUniverse-Verified. For training, about 17K multi-turn trajectories totaling 0.79B tokens are collected with GPT-6 Astra, and Qwen3.6-35B-A3B is fine-tuned with full parameters to yield RoboUniverse-35B-A3B. The verified improvement comes from this supervised fine-tuning: zero-shot success rises from 0.8% to 21.2%, and tasks are completed across several simulated benchmarks and a real Franka arm.",
+            "takeaways": "Deploying this route on real robots requires an executable-program interface, an isolated evaluation harness, and sufficient multi-turn trajectory data; the material reports only zero-shot task completion on a real Franka arm, without quantitative real-robot success metrics. For industrial settings, one could conditionally use Real2Sim to mass-generate resettable environments and lower benchmark construction cost, but this depends on the fidelity of video-to-simulation conversion and the coverage of the quality assurance pipeline. The open-sourced environments and model lay a foundation for large-scale reinforcement learning, yet stable real-robot deployment still lacks validation of real-robot success rates, robustness, and safety."
+          }
+        }
+      },
+      "id": "2611.31002",
+      "original_title": "RoboUniverse-10K: Toward the Scaling Era of Agentic Robotics via Real-to-Sim Environments",
+      "original_summary": "Agentic Robotics, in which foundation models act as coding agents to control robots through executable programs, has emerged as a compelling paradigm for embodied intelligence. Yet unlike software engineering, where massive executable environments power post-training, robotics remains constrained by small, manual benchmarks and in-distribution evaluation. To bridge this gap, we introduce RoboUniverse-10K, 10,807 interactive, resettable, and verifiable physics environments built from real-world videos via an automated Real2Sim and quality assurance pipeline. Each runs in an isolated, Harbor-compatible harness that hides privileged states and grading logic to mirror real-world sensing. From the same pipeline, we hold out 500 unseen tasks to establish RoboUniverse-Verified, an expert-verified zero-shot benchmark. Evaluating 11 closed- and open-source models reveals a huge gap: frontier models reach 85.8\\% success, while open-source baselines lag at 2.6\\% to 10.0\\%, bottlenecked by low-level grasping, deformable-object manipulation, and post-contact physical control. Finally, we collect about 17K multi-turn trajectories totaling 0.79B tokens with GPT-6 Astra and perform full-parameter supervised fine-tuning on Qwen3.6-35B-A3B, yielding RoboUniverse-35B-A3B. Our model achieves substantial zero-shot gains on RoboUniverse-Verified, lifting the success rate from 0.8\\% to 21.2\\%, while achieving zero-shot task completions across LIBERO-MAX, RoboCasa, RoboTwin 2.0, and a real Franka arm. We open-source the RL-ready environments and model to lay the foundation for large-scale reinforcement learning in Agentic Robotics.",
+      "url": "https://arxiv.org/abs/2611.31002v1",
+      "source": "arXiv cs.RO",
+      "published": "2026-11-23T16:53:57+00:00",
+      "authors": [
+        "Jinkun Liu",
+        "Yingze Wang",
+        "Situ Wang",
+        "Deyao Hong",
+        "Mingju Gao",
+        "Wenyi Li",
+        "Yizhe Chi",
+        "Youjie Zheng",
+        "Kaisen Yang",
+        "Xiangyang Wang",
+        "Bingxiang He",
+        "Yuxin Zuo",
+        "Boyuan Chen",
+        "Yue Chen",
+        "Cheng Qian",
+        "Tianxing Chen",
+        "Huichi Zhou",
+        "Huaxiu Yao",
+        "Hao Tang",
+        "Hao Zhou",
+        "Ya-Qin Zhang",
+        "Calvin Xiao",
+        "Tiga Altman",
+        "Huan-ang Gao"
+      ],
+      "score": 5,
+      "versioned_id": "2611.31002v1",
+      "figure": {
+        "path": "./data/2026-11-26/figures/2611.31002.webp",
+        "caption": "Figure 1: Overview of RoboUniverse-10K. (a) An agentic Real2Sim pipeline turns real robot videos into verifiable simulation environments spanning eight task families. (b) RoboUniverse-10K is far larger than existing robot simulation benchmarks. (c) SFT on RoboUniverse-10K lifts Qwen3.6-35B-A3B from 0.8% to 21.2% on RoboUniverse-Verified, and the resulting model transfers zero-shot to a real Franka arm."
+      },
+      "code_url": null,
+      "project_url": null,
+      "pdf_url": "https://arxiv.org/pdf/2611.31002"
+    },
+    {
+      "title": "CHAMP：基于全身运动先验的协调人形机器人移动操作",
+      "summary": "CHAMP 是一个面向人形机器人移动操作（行走与手部操作协同）的统一框架：先用约 2,298 小时异构人类与机器人数据预训练视觉语言模型，使其预测未来身体与手部运动，再通过 Coordination-oriented Action Expert（CAE，协调导向动作专家）把运动先验落到目标控制器上，联合生成身体与手部动作。实验在七个仿真任务上取得 84.8% 总体成功率，在 Unitree G1 真机七个任务上取得 91.4%，均优于所评估基线；长时序爆米花分装任务成功率为 70.0%，最佳基线为 40.0%。",
+      "lede": "CHAMP 用约 2,298 小时异构数据预训练全身运动先验，再以协调动作专家接入控制器，在仿真与 Unitree G1 真机上验证行走与手部操作的协同。",
+      "tags": [
+        "人形机器人",
+        "移动操作",
+        "全身运动先验"
+      ],
+      "sections": {
+        "background": "人形机器人要在人类环境中工作，必须同时协调行走与灵巧操作，而难点在于从来源各异的数据中学习可用的运动先验，并把它有效接入机器人控制。人类数据与机器人数据在身体标注、手部标注上并不齐备，如何统一利用这些异构数据、并让预训练的运动知识真正驱动机器人动作，是本文要解决的问题。",
+        "conclusion": "在七个仿真任务上，CHAMP 总体成功率为 84.8%；在 Unitree G1 真机的七个任务上为 91.4%，两种设定下均优于所评估的基线。长时序爆米花分装任务中，CHAMP 成功率为 70.0%，最佳基线为 40.0%。这些结果说明统一全身运动先验加协调动作专家能在仿真与真机上支撑行走与手部操作的协同，但结论限于文中报告的任务集合与平台。",
+        "method": "输入是约 2,298 小时异构人类与机器人数据，其中部分样本只有身体标注、部分只有手部标注、部分两者兼有。CHAMP 先预训练一个视觉语言模型，让它从这些数据预测未来的身体与手部运动，并用共享运动表示把不同具身的数据统一到同一学习框架中。为把运动先验落到控制层，作者引入 Coordination-oriented Action Expert（CAE，协调导向动作专家），用目标控制器生成的回放数据训练；CAE 通过稀疏路由自适应地选择、变换并融合预训练模型多层特征，联合输出身体与手部动作。已验证的改进来自这一预训练加 CAE 接地的组合，其效果以文中仿真与真机对比实验为准。",
+        "takeaways": "若要在人形机器人上实现边走边操作，例如在家庭或服务场景中递送与分装物品，可考虑用大规模异构人体与机器人数据预训练全身运动先验，再用目标控制器的回放数据训练动作专家做接地。所需条件是足量带身体或手部标注的异构数据、可回放的目标控制器，以及 Unitree G1 这类具备全身与手部关节的真机平台。距离更广泛真机部署，仍需在更多任务、更多具身与更长时序上验证，并确认对未见场景的泛化；现有 91.4% 与 70.0% 等结论仅适用于文中报告的任务与设定。"
+      },
+      "i18n": {
+        "zh": {
+          "title": "CHAMP：基于全身运动先验的协调人形机器人移动操作",
+          "summary": "CHAMP 是一个面向人形机器人移动操作（行走与手部操作协同）的统一框架：先用约 2,298 小时异构人类与机器人数据预训练视觉语言模型，使其预测未来身体与手部运动，再通过 Coordination-oriented Action Expert（CAE，协调导向动作专家）把运动先验落到目标控制器上，联合生成身体与手部动作。实验在七个仿真任务上取得 84.8% 总体成功率，在 Unitree G1 真机七个任务上取得 91.4%，均优于所评估基线；长时序爆米花分装任务成功率为 70.0%，最佳基线为 40.0%。",
+          "lede": "CHAMP 用约 2,298 小时异构数据预训练全身运动先验，再以协调动作专家接入控制器，在仿真与 Unitree G1 真机上验证行走与手部操作的协同。",
+          "tags": [
+            "人形机器人",
+            "移动操作",
+            "全身运动先验"
+          ],
+          "sections": {
+            "background": "人形机器人要在人类环境中工作，必须同时协调行走与灵巧操作，而难点在于从来源各异的数据中学习可用的运动先验，并把它有效接入机器人控制。人类数据与机器人数据在身体标注、手部标注上并不齐备，如何统一利用这些异构数据、并让预训练的运动知识真正驱动机器人动作，是本文要解决的问题。",
+            "conclusion": "在七个仿真任务上，CHAMP 总体成功率为 84.8%；在 Unitree G1 真机的七个任务上为 91.4%，两种设定下均优于所评估的基线。长时序爆米花分装任务中，CHAMP 成功率为 70.0%，最佳基线为 40.0%。这些结果说明统一全身运动先验加协调动作专家能在仿真与真机上支撑行走与手部操作的协同，但结论限于文中报告的任务集合与平台。",
+            "method": "输入是约 2,298 小时异构人类与机器人数据，其中部分样本只有身体标注、部分只有手部标注、部分两者兼有。CHAMP 先预训练一个视觉语言模型，让它从这些数据预测未来的身体与手部运动，并用共享运动表示把不同具身的数据统一到同一学习框架中。为把运动先验落到控制层，作者引入 Coordination-oriented Action Expert（CAE，协调导向动作专家），用目标控制器生成的回放数据训练；CAE 通过稀疏路由自适应地选择、变换并融合预训练模型多层特征，联合输出身体与手部动作。已验证的改进来自这一预训练加 CAE 接地的组合，其效果以文中仿真与真机对比实验为准。",
+            "takeaways": "若要在人形机器人上实现边走边操作，例如在家庭或服务场景中递送与分装物品，可考虑用大规模异构人体与机器人数据预训练全身运动先验，再用目标控制器的回放数据训练动作专家做接地。所需条件是足量带身体或手部标注的异构数据、可回放的目标控制器，以及 Unitree G1 这类具备全身与手部关节的真机平台。距离更广泛真机部署，仍需在更多任务、更多具身与更长时序上验证，并确认对未见场景的泛化；现有 91.4% 与 70.0% 等结论仅适用于文中报告的任务与设定。"
+          }
+        },
+        "en": {
+          "title": "CHAMP: Coordinated Humanoid Loco-Manipulation with Whole-Body Motion Priors",
+          "summary": "CHAMP is a unified framework for humanoid loco-manipulation that pretrains a vision-language model on roughly 2,298 hours of heterogeneous human and robot data to predict future body and hand motion, then grounds these priors in robot control through a Coordination-oriented Action Expert (CAE) trained on replay data from the target controller. It reports 84.8% overall success on seven simulated tasks and 91.4% on seven real-world tasks with a Unitree G1, outperforming the evaluated baselines, including 70.0% versus 40.0% for the best baseline on a long-horizon popcorn-serving task.",
+          "lede": "CHAMP pretrains whole-body motion priors on about 2,298 hours of heterogeneous data and grounds them via a coordination-oriented action expert, validated in simulation and on a Unitree G1.",
+          "tags": [
+            "humanoid robots",
+            "loco-manipulation",
+            "whole-body motion priors"
+          ],
+          "sections": {
+            "background": "Humanoid robots operating in human environments must coordinate locomotion with dexterous manipulation, and a key challenge is learning motion priors from diverse data and using them effectively for coordinated control. Human and robot datasets differ in whether they carry body annotations, hand annotations, or both, so unifying them and making the pretrained motion knowledge actually drive robot actions is the problem this work addresses.",
+            "conclusion": "CHAMP achieves 84.8% overall success on seven simulated tasks and 91.4% on seven real-world tasks with a Unitree G1, outperforming the evaluated baselines in both settings. On the long-horizon popcorn-serving task it reaches 70.0% success versus 40.0% for the best baseline. These results indicate that unified whole-body motion priors plus a coordination-oriented action expert can support coordinated locomotion and hand manipulation in simulation and on real hardware, within the task set and platform reported.",
+            "method": "The input is about 2,298 hours of heterogeneous human and robot data, where some samples have only body annotations, some only hand annotations, and some both. CHAMP first pretrains a vision-language model to predict future body and hand motion from this data, using a shared motion representation to unify embodiments across datasets. To ground the priors in control, the authors introduce a Coordination-oriented Action Expert (CAE) trained on replay data generated by the target controller; through sparse routing, CAE adaptively selects, transforms, and fuses features from multiple layers of the pretrained model to jointly produce body and hand actions. The validated improvement comes from this combination of pretraining and CAE grounding, as measured by the reported simulation and real-world comparisons.",
+            "takeaways": "For humanoids that must walk and manipulate at once, such as delivering or serving items in home and service settings, one could pretrain whole-body motion priors on large heterogeneous human and robot data and then train an action expert on target-controller replay data to ground them. This requires sufficient annotated body or hand data, a replayable target controller, and a platform such as the Unitree G1 with whole-body and hand joints. Broader real-world deployment still needs validation on more tasks, more embodiments, and longer horizons, plus evidence of generalization to unseen scenes; the reported 91.4% and 70.0% figures hold only for the tasks and settings in the paper."
+          }
+        }
+      },
+      "id": "2611.30449",
+      "original_title": "CHAMP: Coordinated Humanoid Loco-Manipulation with Whole-Body Motion Priors",
+      "original_summary": "Coordinating locomotion and dexterous manipulation is fundamental to humanoid robots operating in human environments. A key challenge is learning motion priors from diverse data and using them effectively for coordinated robot control. We present CHAMP, a unified framework for humanoid loco-manipulation that combines whole-body motion pretraining with adaptive feature extraction. CHAMP pretrains a vision-language model to predict future body and hand motion from approximately 2,298 hours of heterogeneous human and robot data. A shared motion representation enables unified whole-body motion learning across embodiments from datasets with body annotations, hand annotations, or both. To ground these motion priors in robot control, we introduce a Coordination-oriented Action Expert (CAE) and train it on replay data generated using the target controller. Through sparse routing, CAE adaptively selects, transforms, and fuses features from multiple layers of the pretrained model to jointly generate body and hand actions. In experiments, CHAMP achieves overall success rates of 84.8% on seven simulated tasks and 91.4% on seven real-world tasks with a Unitree G1, outperforming the evaluated baselines in both settings. In particular, CHAMP achieves 70.0% success on the long-horizon popcorn-serving task, compared with 40.0% for the best-performing baseline.",
+      "url": "https://arxiv.org/abs/2611.30449v1",
+      "source": "arXiv cs.RO",
+      "published": "2026-11-23T10:40:38+00:00",
+      "authors": [
+        "Lijun Han",
+        "Muyuan Ma",
+        "Zichen Wang",
+        "Siyuan Liu",
+        "Yuxi Liu",
+        "Yutong Wang",
+        "Bohao Zhang",
+        "Heng Zhou",
+        "Wei Sui"
+      ],
+      "score": 5,
+      "versioned_id": "2611.30449v1",
+      "figure": {
+        "path": "./data/2026-11-26/figures/2611.30449.webp",
+        "caption": "Figure 5: Real-world task settings. Images from our robot recordings illustrate the seven tasks. (g) shows successive stages of long-horizon popcorn serving."
+      },
+      "code_url": null,
+      "project_url": "https://han-li-jun.github.io/CHAMP/index.html",
+      "pdf_url": "https://arxiv.org/pdf/2611.30449"
+    },
+    {
+      "title": "WorldLeague：评测物理能动性",
+      "summary": "WorldLeague 是一个在 60 个仿真机器人任务上比较 AI 系统的基准，通过机器人轨迹衡量其向物理目标推进的程度。任务分为探索取证（WorldSeek）、物体重排（WorldShape）和适应变化（WorldShift）三类。视觉语言模型（VLM）负责选择目标与动作，视觉语言动作模型（VLA）和世界动作模型（WAM）使用原生控制接口。每个系统在六个能力维度上得到交互得分与物理成功率，合称“物理能动性画像”。在 13 个代表性系统中，Claude Fable 5.2 完成 60 个目标中的 13 个，平均交互得分最高，为 28.58/100；它在四个维度领先，GPT-6.1-Sol 与 GPT-6-Astra 在规则遵循任务上并列第一。即使 VLM 答对所有最终问题，仍有 71.8% 的回合交互得分为零。",
+      "lede": "60 个仿真机器人任务、13 个 AI 系统、一套统一的物理能动性画像——WorldLeague 试图回答：今天的 AI 究竟能自主完成哪些物理目标。",
+      "tags": [
+        "机器人基准",
+        "具身智能",
+        "视觉语言动作模型"
+      ],
+      "sections": {
+        "background": "现有 AI 已能操作 Blender、在复杂电子游戏中遵循指令、用机械臂操作物体，但人们仍不清楚今天的系统能自主完成多大范围的物理目标。回答这个问题需要在同一组任务上同时考察感知、记忆、规划和行动的不同组合，而现有评测往往只覆盖其中一部分，或让不同系统使用不同控制接口，难以横向比较。",
+        "conclusion": "在 13 个代表性 AI 系统中，Claude Fable 5.2 完成 60 个目标中的 13 个，平均交互得分最高，为 28.58/100，并在六个能力维度中的四个领先；GPT-6.1-Sol 与 GPT-6-Astra 在规则遵循任务上并列第一。一个关键发现是：即使 VLM 答对所有最终问题，仍有 71.8% 的回合交互得分为零，说明“答对问题”不等于“推动物理目标”。这些结果限于仿真环境和所报告的 13 个系统设定。",
+        "method": "系统接收仿真机器人场景，输出目标选择与动作，基准从机器人轨迹而非最终答案计算向物理目标的推进量。WorldLeague 把任务分为 WorldSeek（探索场景收集证据）、WorldShape（重排物体）和 WorldShift（适应环境变化）三类，共 60 个任务。为兼容不同系统，VLM 通过统一接口选择目标与动作，VLA 和 WAM 则使用各自原生控制。每个系统在六个能力维度上分别统计交互得分（推进程度）和物理成功率（达成频率），合成物理能动性画像。该设计使部分进展也能被量化，而不只记录最终成败。",
+        "takeaways": "若要在真实机器人上使用这类评测思路，需要能记录轨迹的仿真环境、统一的任务接口，以及可复现的 VLM/VLA/WAM 接入方式。对产业场景而言，它可用于比较不同具身系统在探索、重排和适应变化上的能力边界，但前提是任务与真实部署场景足够接近。距离真机部署仍缺验证：当前结果全部来自仿真，尚未报告在真实机器人平台上的迁移表现。此外，VLM 高答题正确率与零交互得分之间的落差提示，仅用问答指标评估具身系统会高估其物理能力。"
+      },
+      "i18n": {
+        "zh": {
+          "title": "WorldLeague：评测物理能动性",
+          "summary": "WorldLeague 是一个在 60 个仿真机器人任务上比较 AI 系统的基准，通过机器人轨迹衡量其向物理目标推进的程度。任务分为探索取证（WorldSeek）、物体重排（WorldShape）和适应变化（WorldShift）三类。视觉语言模型（VLM）负责选择目标与动作，视觉语言动作模型（VLA）和世界动作模型（WAM）使用原生控制接口。每个系统在六个能力维度上得到交互得分与物理成功率，合称“物理能动性画像”。在 13 个代表性系统中，Claude Fable 5.2 完成 60 个目标中的 13 个，平均交互得分最高，为 28.58/100；它在四个维度领先，GPT-6.1-Sol 与 GPT-6-Astra 在规则遵循任务上并列第一。即使 VLM 答对所有最终问题，仍有 71.8% 的回合交互得分为零。",
+          "lede": "60 个仿真机器人任务、13 个 AI 系统、一套统一的物理能动性画像——WorldLeague 试图回答：今天的 AI 究竟能自主完成哪些物理目标。",
+          "tags": [
+            "机器人基准",
+            "具身智能",
+            "视觉语言动作模型"
+          ],
+          "sections": {
+            "background": "现有 AI 已能操作 Blender、在复杂电子游戏中遵循指令、用机械臂操作物体，但人们仍不清楚今天的系统能自主完成多大范围的物理目标。回答这个问题需要在同一组任务上同时考察感知、记忆、规划和行动的不同组合，而现有评测往往只覆盖其中一部分，或让不同系统使用不同控制接口，难以横向比较。",
+            "conclusion": "在 13 个代表性 AI 系统中，Claude Fable 5.2 完成 60 个目标中的 13 个，平均交互得分最高，为 28.58/100，并在六个能力维度中的四个领先；GPT-6.1-Sol 与 GPT-6-Astra 在规则遵循任务上并列第一。一个关键发现是：即使 VLM 答对所有最终问题，仍有 71.8% 的回合交互得分为零，说明“答对问题”不等于“推动物理目标”。这些结果限于仿真环境和所报告的 13 个系统设定。",
+            "method": "系统接收仿真机器人场景，输出目标选择与动作，基准从机器人轨迹而非最终答案计算向物理目标的推进量。WorldLeague 把任务分为 WorldSeek（探索场景收集证据）、WorldShape（重排物体）和 WorldShift（适应环境变化）三类，共 60 个任务。为兼容不同系统，VLM 通过统一接口选择目标与动作，VLA 和 WAM 则使用各自原生控制。每个系统在六个能力维度上分别统计交互得分（推进程度）和物理成功率（达成频率），合成物理能动性画像。该设计使部分进展也能被量化，而不只记录最终成败。",
+            "takeaways": "若要在真实机器人上使用这类评测思路，需要能记录轨迹的仿真环境、统一的任务接口，以及可复现的 VLM/VLA/WAM 接入方式。对产业场景而言，它可用于比较不同具身系统在探索、重排和适应变化上的能力边界，但前提是任务与真实部署场景足够接近。距离真机部署仍缺验证：当前结果全部来自仿真，尚未报告在真实机器人平台上的迁移表现。此外，VLM 高答题正确率与零交互得分之间的落差提示，仅用问答指标评估具身系统会高估其物理能力。"
+          }
+        },
+        "en": {
+          "title": "WorldLeague: Benchmarking Physical Agency",
+          "summary": "WorldLeague is a benchmark that compares AI systems on a common set of 60 simulated robot tasks by measuring progress toward each task's physical goal from the robot's trajectory. Tasks span exploration for evidence (WorldSeek), object rearrangement (WorldShape), and adaptation to change (WorldShift). Vision-language models (VLMs) choose targets and motions through a shared interface, while vision-language-action models (VLAs) and world-action models (WAMs) use their native controls. Each system receives an Interactive Score and a physical success rate across six capability dimensions, forming a Physical Agency Profile. Among 13 representative systems, Claude Fable 5.2 achieves 13 of the 60 goals and the highest mean Interactive Score (28.58/100), leading in four dimensions, while GPT-6.1-Sol and GPT-6-Astra tie for first on rule-following tasks. Even when VLMs answer every final question correctly, they receive an Interactive Score of zero in 71.8% of those episodes.",
+          "lede": "Sixty simulated robot tasks, 13 AI systems, and one shared Physical Agency Profile: WorldLeague asks which physical goals today's AI can actually achieve on its own.",
+          "tags": [
+            "robot benchmark",
+            "embodied AI",
+            "vision-language-action models"
+          ],
+          "sections": {
+            "background": "AI systems can already operate Blender, follow instructions in complex video games, and manipulate objects with robot arms, yet it remains unclear what range of physical goals today's systems can achieve autonomously. Answering this requires testing systems on tasks that demand different combinations of perception, memory, planning, and action. Existing evaluations often cover only part of this space or let different systems use different control interfaces, making comparison difficult.",
+            "conclusion": "Among 13 representative AI systems, Claude Fable 5.2 achieves 13 of the 60 goals and the highest mean Interactive Score (28.58/100), leading in four of the six capability dimensions; GPT-6.1-Sol and GPT-6-Astra tie for first on rule-following tasks. A key finding is that even when VLMs answer every final question correctly, they receive an Interactive Score of zero in 71.8% of those episodes, showing that answering questions correctly does not mean making progress toward a physical goal. These results are limited to the simulated setting and the 13 reported systems.",
+            "method": "A system receives a simulated robot scene and outputs target choices and actions, and the benchmark computes progress toward the physical goal from the robot's trajectory rather than from final answers. WorldLeague divides its 60 tasks into WorldSeek (exploring scenes to gather evidence), WorldShape (rearranging objects), and WorldShift (adapting to changes). To accommodate different systems, VLMs select targets and motions through a shared interface, while VLAs and WAMs use their native controls. For each of six capability dimensions, the benchmark records an Interactive Score (degree of progress) and a physical success rate (frequency of goal achievement), together forming a Physical Agency Profile. This design quantifies partial progress instead of recording only final success or failure.",
+            "takeaways": "Applying this evaluation approach to real robots would require a simulation environment that logs trajectories, a unified task interface, and reproducible access to VLM, VLA, and WAM systems. For industry settings, it can compare embodied systems' capability boundaries in exploration, rearrangement, and adaptation, provided the tasks are close enough to real deployment scenarios. Validation is still missing for real-world deployment: all reported results come from simulation, and transfer to physical robot platforms is not reported. The gap between high VLM question-answering accuracy and zero Interactive Scores also suggests that question-answering metrics alone overestimate the physical competence of embodied systems."
+          }
+        }
+      },
+      "id": "2611.30989",
+      "original_title": "WorldLeague: Benchmarking Physical Agency",
+      "original_summary": "AI systems can now operate Blender, follow instructions in complex video games, and manipulate objects with robot arms. What range of physical goals can today's AI systems achieve autonomously? Answering this question requires testing systems on tasks that demand different combinations of perception, memory, planning, and action. We introduce \\textbf{WorldLeague}, a benchmark that compares AI systems on a common set of \\textbf{60 simulated robot tasks} by measuring progress toward each task's physical goal from the robot's trajectory. Robots explore scenes to gather evidence in \\textbf{WorldSeek}, rearrange objects in \\textbf{WorldShape}, and adapt to changes in \\textbf{WorldShift}. Tying these goals to a single control interface limits which AI systems can be compared. In WorldLeague, vision-language models (VLMs) choose targets and motions, while vision-language-action models (VLAs) and world-action models (WAMs) use their native controls. For each of six capability dimensions, we measure how much progress a system makes toward its goals (Interactive Score) and how often it achieves them (physical success rate). Together, these measures form the system's \\emph{Physical Agency Profile}. Among 13 representative AI systems, Claude Fable 5.2 achieves 13 of the 60 goals and earns the highest mean Interactive Score (28.58/100). Fable leads in four dimensions, while GPT-6.1-Sol and GPT-6-Astra tie for first on rule-following tasks. Even when VLMs answer every final question correctly, they receive an Interactive Score of zero in 71.8\\% of those episodes. WorldLeague gives Embodied AI, Physical AI, and Agentic AI a shared basis for comparing what AI systems achieve autonomously, from partial progress toward a physical goal to full goal completion. Project Webpage: https://xyangzhou.github.io/WorldLeague",
+      "url": "https://arxiv.org/abs/2611.30989v1",
+      "source": "arXiv cs.RO",
+      "published": "2026-11-23T16:44:19+00:00",
+      "authors": [
+        "Xinyang Zhou",
+        "Qi Li",
+        "Xinchao Wang"
+      ],
+      "score": 4,
+      "versioned_id": "2611.30989v1",
+      "figure": {
+        "path": "./data/2026-11-26/figures/2611.30989.webp",
+        "caption": "Figure 2: From goal to executable task. (A) The instruction specifies the visit order, pickups, and tray constraint. (B) The scene fixes object placements and the robot’s starting configuration. (C) The evaluator checks visits and pickups in order, tray contents, stability, and release."
+      },
+      "attention": {
+        "hf_upvotes": 136,
+        "hf_comments": 2,
+        "github_stars": 19,
+        "github_url": "https://github.com/xyangzhou/worldleague"
+      },
+      "code_url": null,
+      "project_url": "https://xyangzhou.github.io/WorldLeague",
+      "pdf_url": "https://arxiv.org/pdf/2611.30989"
+    },
+    {
+      "title": "Motion Mamba 2.0：面向长时程人形控制的自回归扩散 Mamba",
+      "summary": "Motion Mamba 2.0 提出一种基于 Mamba 的根-身体扩散架构，结合局部注意力、可恢复循环状态与持久内容记忆（PCM），用于长时程、可实时控制的人形动作生成。在重定向 HiPHI 数据集上，模型可在最长 39.52 秒的 rollout 中实现准确的终端控制；在 BONES Seed 与重定向 HumanML3D 上的短时程对比中，模型保持了较强的空间控制与文本-动作匹配能力。在 RTX 4090 上，优化后的执行方案将完整窗口延迟中位数从 1685.35 ms 降至 276.14 ms，配对加速比中位数为 6.138 倍，且在测试 rollout 中输出与提交状态完全一致。研究还在 Unitree G1 真机上验证了顺序文本引导动作组合、富有表现力的动作以及键盘鼠标交互式行走。",
+      "lede": "Motion Mamba 2.0 用 Mamba 循环状态与持久内容记忆扩展长时程动作生成，并在 RTX 4090 与 Unitree G1 上验证了加速与真机控制。",
+      "tags": [
+        "人形机器人控制",
+        "长时程动作生成",
+        "扩散模型与Mamba"
+      ],
+      "sections": {
+        "background": "交互式动画与人形机器人需要长时程、实时可控的动作生成：智能体在移动过程中要响应不断变化的指令和空间目标。现有自回归扩散方法逐段生成动作，但受限于有界注意力缓存，难以访问久远历史；同时反复去噪带来显著推理开销。",
+        "conclusion": "在重定向 HiPHI 上，模型对最长 39.52 秒的 rollout 实现了准确的终端控制；在 BONES Seed 和重定向 HumanML3D 的短时程对比中，模型仍保持较强的空间控制与文本-动作匹配。RTX 4090 上，优化执行将完整窗口延迟中位数从 1685.35 ms 降至 276.14 ms，配对加速比中位数为 6.138 倍，测试 rollout 中输出与提交状态一致。Unitree G1 真机实验展示了顺序文本引导动作组合、富有表现力的动作以及键盘鼠标交互式行走。",
+        "method": "输入是压缩后的动作历史、Mamba 循环状态及其状态变化，以及文本条件特征。持久内容记忆（PCM）把这些信息转换为动态更新的内容槽，供局部注意力访问，从而在有限缓存下保留久远历史。模型采用基于 Mamba 的根-身体扩散架构，自回归地逐段生成动作。推理侧结合 CUDA Graph 重放、融合内核与执行流简化，同时保留规范的历史更新，以降低重复去噪开销。已验证的改进来自该执行方案在保持输出一致前提下的延迟下降。",
+        "takeaways": "在需要人形机器人按文本指令连续执行动作、并用键盘鼠标交互控制的场景中，该方法具备应用潜力，但前提是具备 Unitree G1 这类真机平台与相应动作数据。实时部署还需在更多硬件与更长运行时间下验证延迟和稳定性。当前结论限于材料报告的 HiPHI、BONES Seed、HumanML3D 设定及 RTX 4090 与 Unitree G1 实验条件。"
+      },
+      "i18n": {
+        "zh": {
+          "title": "Motion Mamba 2.0：面向长时程人形控制的自回归扩散 Mamba",
+          "summary": "Motion Mamba 2.0 提出一种基于 Mamba 的根-身体扩散架构，结合局部注意力、可恢复循环状态与持久内容记忆（PCM），用于长时程、可实时控制的人形动作生成。在重定向 HiPHI 数据集上，模型可在最长 39.52 秒的 rollout 中实现准确的终端控制；在 BONES Seed 与重定向 HumanML3D 上的短时程对比中，模型保持了较强的空间控制与文本-动作匹配能力。在 RTX 4090 上，优化后的执行方案将完整窗口延迟中位数从 1685.35 ms 降至 276.14 ms，配对加速比中位数为 6.138 倍，且在测试 rollout 中输出与提交状态完全一致。研究还在 Unitree G1 真机上验证了顺序文本引导动作组合、富有表现力的动作以及键盘鼠标交互式行走。",
+          "lede": "Motion Mamba 2.0 用 Mamba 循环状态与持久内容记忆扩展长时程动作生成，并在 RTX 4090 与 Unitree G1 上验证了加速与真机控制。",
+          "tags": [
+            "人形机器人控制",
+            "长时程动作生成",
+            "扩散模型与Mamba"
+          ],
+          "sections": {
+            "background": "交互式动画与人形机器人需要长时程、实时可控的动作生成：智能体在移动过程中要响应不断变化的指令和空间目标。现有自回归扩散方法逐段生成动作，但受限于有界注意力缓存，难以访问久远历史；同时反复去噪带来显著推理开销。",
+            "conclusion": "在重定向 HiPHI 上，模型对最长 39.52 秒的 rollout 实现了准确的终端控制；在 BONES Seed 和重定向 HumanML3D 的短时程对比中，模型仍保持较强的空间控制与文本-动作匹配。RTX 4090 上，优化执行将完整窗口延迟中位数从 1685.35 ms 降至 276.14 ms，配对加速比中位数为 6.138 倍，测试 rollout 中输出与提交状态一致。Unitree G1 真机实验展示了顺序文本引导动作组合、富有表现力的动作以及键盘鼠标交互式行走。",
+            "method": "输入是压缩后的动作历史、Mamba 循环状态及其状态变化，以及文本条件特征。持久内容记忆（PCM）把这些信息转换为动态更新的内容槽，供局部注意力访问，从而在有限缓存下保留久远历史。模型采用基于 Mamba 的根-身体扩散架构，自回归地逐段生成动作。推理侧结合 CUDA Graph 重放、融合内核与执行流简化，同时保留规范的历史更新，以降低重复去噪开销。已验证的改进来自该执行方案在保持输出一致前提下的延迟下降。",
+            "takeaways": "在需要人形机器人按文本指令连续执行动作、并用键盘鼠标交互控制的场景中，该方法具备应用潜力，但前提是具备 Unitree G1 这类真机平台与相应动作数据。实时部署还需在更多硬件与更长运行时间下验证延迟和稳定性。当前结论限于材料报告的 HiPHI、BONES Seed、HumanML3D 设定及 RTX 4090 与 Unitree G1 实验条件。"
+          }
+        },
+        "en": {
+          "title": "Motion Mamba 2.0: Autoregressive Diffusion Mamba for Long-Horizon Humanoid Control",
+          "summary": "Motion Mamba 2.0 introduces a Mamba-based root-body diffusion architecture that combines local attention, resumable recurrent states, and persistent content memory (PCM) for long-horizon, real-time controllable motion generation. On retargeted HiPHI, the model achieves accurate terminal control over rollouts of up to 39.52 s; short-horizon comparisons on BONES Seed and retargeted HumanML3D show that it retains strong spatial control and text-motion matching. On an RTX 4090, the optimized execution reduces median complete-window latency from 1685.35 to 276.14 ms, with a median paired speedup of 6.138x while preserving identical outputs and committed states in the tested rollouts. Real-world evaluation on the Unitree G1 demonstrates sequential text-guided action composition, expressive motion, and interactive locomotion via keyboard and mouse control.",
+          "lede": "Motion Mamba 2.0 extends long-horizon motion generation with Mamba recurrent states and persistent content memory, validated for speedup on an RTX 4090 and for control on a Unitree G1.",
+          "tags": [
+            "Humanoid robot control",
+            "Long-horizon motion generation",
+            "Diffusion models and Mamba"
+          ],
+          "sections": {
+            "background": "Interactive animation and humanoid robotics require long-horizon, real-time controllable motion generation, where an agent must respond to changing instructions and spatial goals while moving. Existing autoregressive diffusion methods generate motion incrementally, but bounded attention caches limit access to distant history, and repeated denoising introduces substantial inference overhead.",
+            "conclusion": "On retargeted HiPHI, the model achieves accurate terminal control over rollouts of up to 39.52 s. Short-horizon comparisons on BONES Seed and retargeted HumanML3D show that it retains strong spatial control and text-motion matching. On an RTX 4090, the optimized execution reduces median complete-window latency from 1685.35 to 276.14 ms, with a median paired speedup of 6.138x while preserving identical outputs and committed states in the tested rollouts. Unitree G1 experiments demonstrate sequential text-guided action composition, expressive motion, and interactive locomotion through keyboard and mouse control.",
+            "method": "The input consists of compressed motion history, Mamba recurrent states and their state changes, and text-conditioned features. Persistent content memory (PCM) transforms these into dynamically updated content slots accessible to local attention, preserving distant history under a bounded cache. The model uses a Mamba-based root-body diffusion architecture to generate motion incrementally in an autoregressive manner. On the inference side, CUDA Graph replay, fused kernels, and execution-flow simplification are combined while preserving the canonical history update, reducing repeated denoising overhead. The verified improvement comes from the latency reduction of this execution scheme while keeping outputs identical.",
+            "takeaways": "The method is applicable to scenarios where a humanoid robot must continuously execute actions from text instructions and support keyboard-and-mouse interactive control, provided a real platform such as the Unitree G1 and corresponding motion data are available. Real-time deployment still requires validation of latency and stability on more hardware and over longer runs. The reported conclusions are limited to the HiPHI, BONES Seed, and HumanML3D settings and to the RTX 4090 and Unitree G1 experimental conditions."
+          }
+        }
+      },
+      "id": "2611.29897",
+      "original_title": "Motion Mamba 2.0: Autoregressive Diffusion Mamba for Long-Horizon Humanoid Control",
+      "original_summary": "Long-horizon, real-time controllable motion generation is essential for interactive animation and humanoid robotics, where an agent must respond to changing instructions and spatial goals while moving. Existing autoregressive diffusion methods generate motion incrementally, but bounded attention caches limit access to distant history, while repeated denoising introduces substantial inference overhead. We present Motion Mamba 2.0, a Mamba-based root-body diffusion architecture that integrates local attention, resumable recurrent states, and persistent content memory (PCM) for long-horizon controllable motion generation. PCM transforms compressed motion history from Mamba recurrent states, together with state changes and text-conditioned features, into dynamically updated content slots accessible to local attention. To enable efficient inference, we further develop an execution scheme tailored to this architecture, combining CUDA Graph replay, fused kernels, and execution-flow simplification while preserving the canonical history update. Evaluations on retargeted HiPHI demonstrate accurate terminal control over rollouts of up to 39.52 s, while short-horizon comparisons on BONES Seed and retargeted HumanML3D show that the model also retains strong spatial control and text-motion matching. On an RTX 4090, the optimized execution reduces median complete-window latency from 1685.35 to 276.14 ms, achieving a median paired speedup of 6.138$\\times$ while preserving identical outputs and committed states in the tested rollouts. Moreover, we conduct extensive real-world evaluation on the Unitree G1, demonstrating sequential text-guided action composition, expressive motion, and interactive locomotion through keyboard and mouse control.",
+      "url": "https://arxiv.org/abs/2611.29897v1",
+      "source": "arXiv cs.RO",
+      "published": "2026-11-23T01:51:57+00:00",
+      "authors": [
+        "Yue Huang",
+        "Tianshan Zhang",
+        "Zeyu Zhang",
+        "Jayeon Kang",
+        "Akide Liu",
+        "Sungjoon Choi",
+        "Dacheng Tao",
+        "Hao Tang"
+      ],
+      "score": 4,
+      "versioned_id": "2611.29897v1",
+      "figure": {
+        "path": "./data/2026-11-26/figures/2611.29897.webp",
+        "caption": "Fig. 8: Real-world qualitative results on Unitree G1. (a) T1, sequential action composition; (b) T2, expressive motion; (c) T3, keyboard-controlled locomotion; and (d) T4, mouse-controlled locomotion. Each panel shows real-robot frames, Viser references, timestamps, and the complete prompt sequence."
+      },
+      "attention": {
+        "hf_upvotes": 215,
+        "hf_comments": 3,
+        "github_stars": 38,
+        "github_url": "https://github.com/aigeeksgroup/motionmamba2.0"
+      },
+      "code_url": "https://github.com/AIGeeksGroup/MotionMamba2.0",
+      "project_url": "https://aigeeksgroup.github.io/MotionMamba2.0",
+      "pdf_url": "https://arxiv.org/pdf/2611.29897"
+    },
+    {
+      "title": "Embo-Harness：理解前沿模型作为策略的闭环框架",
+      "summary": "该研究提出 Embo-Harness 框架，系统研究如何把前沿多模态模型直接当作机器人策略使用，并拆解提示、规划、动作执行与工具调用四个环节，归纳出六条经验配方。在 RoboLab-120 上成功率达 83.3%，比最强已报告基线高 26.2 个百分点；在四项真实操作任务的 20 次零样本试验中成功 15 次。受控干预显示，模型性能更依赖准确的空间目标估计，而非显式的低层关节或轨迹生成。",
+      "lede": "一项系统研究拆解了前沿多模态模型直接充当机器人策略时的关键设计选择，并给出可复用的经验配方与实测结果。",
+      "tags": [
+        "机器人策略",
+        "多模态大模型",
+        "闭环智能体框架"
+      ],
+      "sections": {
+        "background": "前沿多模态模型能根据观测和指令直接生成机器人动作，展现出很强的泛化能力，因此出现了让模型在闭环机器人框架中直接充当策略的新范式。但这类框架该如何设计、其强性能究竟来自哪些能力，此前并不清楚，缺少系统性的实证研究。",
+        "conclusion": "在 RoboLab-120 基准上，Embo-Harness 取得 83.3% 成功率，比最强已报告基线高出 26.2 个百分点；在四项真实世界操作任务中，20 次零样本试验成功 15 次。受控干预进一步表明，所研究的模型更依赖准确的空间目标估计，而不是显式生成低层关节或轨迹。这些结论限于材料报告的基准与真机设定。",
+        "method": "输入是机器人观测与任务指令，模型在闭环中直接输出动作。框架把机器人智能体循环拆成提示、规划、动作执行和工具调用四部分，逐一做对照实验。配方优先利用模型原生的视觉推理与工具调用接口，而不是手工规划、技能库或动作先验。已验证的改进来自动作表示、动作分块、推理投入程度、视觉观测方式、短多动作序列和策略精炼等具体选择。",
+        "takeaways": "若要在真实操作场景中复用该配方，需要前沿多模态模型接口、闭环执行环境和可采集的视觉观测数据。真机部署前还需在更多任务与平台上验证零样本成功率，并检验空间目标估计模块的鲁棒性。当前 15/20 的真机结果只适用于材料报告的四项任务设定，不能外推为通用操作能力。"
+      },
+      "i18n": {
+        "zh": {
+          "title": "Embo-Harness：理解前沿模型作为策略的闭环框架",
+          "summary": "该研究提出 Embo-Harness 框架，系统研究如何把前沿多模态模型直接当作机器人策略使用，并拆解提示、规划、动作执行与工具调用四个环节，归纳出六条经验配方。在 RoboLab-120 上成功率达 83.3%，比最强已报告基线高 26.2 个百分点；在四项真实操作任务的 20 次零样本试验中成功 15 次。受控干预显示，模型性能更依赖准确的空间目标估计，而非显式的低层关节或轨迹生成。",
+          "lede": "一项系统研究拆解了前沿多模态模型直接充当机器人策略时的关键设计选择，并给出可复用的经验配方与实测结果。",
+          "tags": [
+            "机器人策略",
+            "多模态大模型",
+            "闭环智能体框架"
+          ],
+          "sections": {
+            "background": "前沿多模态模型能根据观测和指令直接生成机器人动作，展现出很强的泛化能力，因此出现了让模型在闭环机器人框架中直接充当策略的新范式。但这类框架该如何设计、其强性能究竟来自哪些能力，此前并不清楚，缺少系统性的实证研究。",
+            "conclusion": "在 RoboLab-120 基准上，Embo-Harness 取得 83.3% 成功率，比最强已报告基线高出 26.2 个百分点；在四项真实世界操作任务中，20 次零样本试验成功 15 次。受控干预进一步表明，所研究的模型更依赖准确的空间目标估计，而不是显式生成低层关节或轨迹。这些结论限于材料报告的基准与真机设定。",
+            "method": "输入是机器人观测与任务指令，模型在闭环中直接输出动作。框架把机器人智能体循环拆成提示、规划、动作执行和工具调用四部分，逐一做对照实验。配方优先利用模型原生的视觉推理与工具调用接口，而不是手工规划、技能库或动作先验。已验证的改进来自动作表示、动作分块、推理投入程度、视觉观测方式、短多动作序列和策略精炼等具体选择。",
+            "takeaways": "若要在真实操作场景中复用该配方，需要前沿多模态模型接口、闭环执行环境和可采集的视觉观测数据。真机部署前还需在更多任务与平台上验证零样本成功率，并检验空间目标估计模块的鲁棒性。当前 15/20 的真机结果只适用于材料报告的四项任务设定，不能外推为通用操作能力。"
+          }
+        },
+        "en": {
+          "title": "Embo-Harness: Towards Understanding Frontier-Model-as-Policy Harness",
+          "summary": "This work presents Embo-Harness, a framework for systematically studying how frontier multimodal models can serve directly as robot policies. It examines four parts of the robotic agentic loop—prompting, planning, action execution, and tool use—and distills six empirical findings into a practical recipe. On RoboLab-120 it reaches 83.3% success, 26.2 percentage points above the strongest reported baseline, and succeeds in 15 of 20 zero-shot trials across four real-world manipulation tasks. Controlled interventions indicate the model relies more on accurate spatial target estimation than on explicit low-level joint or trajectory generation.",
+          "lede": "A systematic study breaks down the key design choices for using frontier multimodal models directly as robot policies, offering a reusable recipe and measured results.",
+          "tags": [
+            "robot policy",
+            "multimodal large models",
+            "closed-loop agentic harness"
+          ],
+          "sections": {
+            "background": "Frontier multimodal models can generate robot actions directly from observations and instructions and generalize well, enabling a paradigm in which they act as policies inside closed-loop robotic harnesses. However, the design principles of such harnesses and the capabilities behind their strong performance were unclear, and systematic empirical study was lacking.",
+            "conclusion": "On RoboLab-120, Embo-Harness achieves an 83.3% success rate, outperforming the strongest reported baseline by 26.2 percentage points. It also succeeds in 15 of 20 zero-shot trials across four real-world manipulation tasks. Controlled interventions show the studied model depends more on accurate spatial target estimation than on explicit low-level joint or trajectory generation. These conclusions are limited to the benchmark and real-world settings reported in the material.",
+            "method": "The input is robot observations plus task instructions, and the model outputs actions directly in a closed loop. The framework splits the robotic agentic loop into prompting, planning, action execution, and tool use, and studies each with controlled comparisons. The recipe favors interfaces that exploit the model's native visual reasoning and tool-use abilities over handcrafted plans, skills, or action priors. Verified improvements come from specific choices in action representation, action chunking, reasoning effort, visual observations, short multi-action sequences, and policy refinement.",
+            "takeaways": "Reusing this recipe in real manipulation settings would require a frontier multimodal model interface, a closed-loop execution environment, and collectable visual observation data. Before real-world deployment, zero-shot success must be validated on more tasks and platforms, and the robustness of spatial target estimation must be tested. The 15/20 real-world result applies only to the four tasks reported and should not be generalized to general manipulation ability."
+          }
+        }
+      },
+      "id": "2611.31201",
+      "original_title": "Embo-Harness: Towards Understanding Frontier-Model-as-Policy Harness",
+      "original_summary": "Frontier multimodal models exhibit extraordinary generalization in generating robot actions from observations and instructions, enabling a new paradigm in which they serve directly as policies within closed-loop robotic harnesses. However, the design principles of such harnesses, and the capabilities underlying their strong performance, remain unclear. We present Embo-Harness, a framework for systematically studying frontier-model-as-policy harnesses. We investigate four components of the robotic agentic loop, namely, prompting, planning, action execution, and tool use, and distill six empirical findings into a practical recipe. This recipe prioritizes interfaces that exploit the model's native visual reasoning and tool-use capabilities over handcrafted plans, skills, or action priors, and identifies effective choices for action representation, chunking, reasoning effort, visual observations, short multi-action sequences, and policy refinement. On RoboLab-120, Embo-Harness achieves an 83.3\\% success rate, outperforming the strongest reported baseline by 26.2 percentage points. It also succeeds in 15 of 20 zero-shot trials across four real-world manipulation tasks. Beyond performance, controlled interventions indicate that the studied model depends more strongly on accurate spatial target estimation than on explicit low-level joint or trajectory generation. These results provide both a practical recipe for building strong frontier-model-as-policy harnesses and a clearer account of the capabilities that drive their performance.",
+      "url": "https://arxiv.org/abs/2611.31201v1",
+      "source": "arXiv cs.RO",
+      "published": "2026-11-23T18:48:54+00:00",
+      "authors": [
+        "Xiao-Ming Wu",
+        "Kang Liao",
+        "Yuexiao Ma",
+        "Taolin Zhang",
+        "Mingqian Zhou",
+        "Nuo Chen",
+        "Ziming Li",
+        "Yihang Luo",
+        "Rui Li",
+        "Zhonghua Wu",
+        "Tianyu Xie",
+        "Xiawu Zheng",
+        "Zhongang Cai",
+        "Zhi Hou",
+        "Chen Change Loy"
+      ],
+      "score": 4,
+      "versioned_id": "2611.31201v1",
+      "figure": {
+        "path": "./data/2026-11-26/figures/2611.31201.webp",
+        "caption": "Figure 5: Real-world robotic setup for Embo-Harness. Our setup consists of a Franka Research 3 (FR3) robot arm equipped with a Robotiq 2F-85 gripper, a wrist-mounted ZED Mini camera, and an external ZED 2 camera. We illustrate the objects and workspace used for real-world tabletop manipulation tasks."
+      },
+      "attention": {
+        "hf_upvotes": 103,
+        "hf_comments": 2,
+        "github_stars": 68,
+        "github_url": "https://github.com/dravenalg/embo-harness"
+      },
+      "code_url": null,
+      "project_url": "https://dravenalg.github.io/projects/Embo-Harness/",
+      "pdf_url": "https://arxiv.org/pdf/2611.31201"
+    },
+    {
+      "title": "世界模型即原生潜在动作模型",
+      "summary": "该研究把预训练视频世界模型直接当作潜在动作模型（LAM，从视频中提取可复用动作表征的模型）使用，只增加可学习的动力学寄存器作为因果桥梁，并在仅运动不同的反事实时序对上训练，从而把视频动力学压缩成紧凑的原生潜在动作。原生潜在动作在 LARY 基准的动作分类与控制回归上优于现有 LAM，并能把相同运动迁移到新机器人、新场景以及从人手迁移到机器人，而训练中并未使用迁移目标。基于 3.8B 模型提出的 PAWlicy 预训练范式在 RoboTwin 2.0 上用域随机化示范训练达到 93.6% 平均成功率，在 RoboDojo 各评估维度上具有竞争力，真机两个任务上均优于 pi_0.5 基线。",
+      "lede": "把预训练视频世界模型改造成潜在动作模型，仅加动力学寄存器，就能从无动作视频中提取可跨机器人复用的动作表征，并用于 VLA 策略预训练。",
+      "tags": [
+        "潜在动作模型",
+        "视频世界模型",
+        "视觉-语言-动作策略"
+      ],
+      "sections": {
+        "background": "大规模多样化视频（如第一人称人类视频和异构机器人录像）蕴含丰富动力学，但往往缺少动作标注或缺少共享动作空间。现有潜在动作模型需从零训练逆动力学模型（IDM，由状态对推断动作）和正动力学模型（FDM，由动作预测下一状态），并在像素重建与潜在容量、精度之间权衡。预训练视频世界模型能原生生成高保真动力学，却以稠密、跨层纠缠的方式表示。",
+        "conclusion": "将世界模型视为 LAM 后，仅需极小改动即可提取其动力学。原生潜在动作在 LARY 基准的动作分类和控制回归上均超过现有 LAM；无需迁移目标即可在新机器人、新场景重放相同运动，并实现从人手到机器人的迁移。3.8B 的 PAWlicy 在 RoboTwin 2.0 上用域随机化示范训练取得 93.6% 平均成功率，为 VLA 中最高；在 RoboDojo 各评估维度具竞争力，其 Precision 与榜单领先条目相当；真机两个任务上均优于 pi_0.5 基线。两阶段仅用公开数据和公开世界模型。",
+        "method": "输入是预训练视频扩散 Transformer 及成对的时序视频帧。同一个预训练模型同时充当 IDM 和 FDM，可学习的动力学寄存器是两者之间唯一的因果桥梁。训练使用仅在运动上不同的反事实时序对，使寄存器把视频动力学蒸馏为紧凑的原生潜在动作。PAWlicy 则让 Native LAM 在大规模视频上充当动力学教师来预训练 VLA 策略，且从不生成视频。",
+        "takeaways": "若具备公开预训练视频世界模型与大规模无动作视频，可先用 Native LAM 提取潜在动作，再以 PAWlicy 预训练 VLA 策略，用于新机器人或新场景的操作任务。真机部署需额外验证：材料仅在两个真机任务上报告优于 pi_0.5，尚未覆盖更多本体、任务与安全鲁棒性。其 93.6% 成功率限于 RoboTwin 2.0 的域随机化示范设定，迁移到真实环境前需补充实机评测。"
+      },
+      "i18n": {
+        "zh": {
+          "title": "世界模型即原生潜在动作模型",
+          "summary": "该研究把预训练视频世界模型直接当作潜在动作模型（LAM，从视频中提取可复用动作表征的模型）使用，只增加可学习的动力学寄存器作为因果桥梁，并在仅运动不同的反事实时序对上训练，从而把视频动力学压缩成紧凑的原生潜在动作。原生潜在动作在 LARY 基准的动作分类与控制回归上优于现有 LAM，并能把相同运动迁移到新机器人、新场景以及从人手迁移到机器人，而训练中并未使用迁移目标。基于 3.8B 模型提出的 PAWlicy 预训练范式在 RoboTwin 2.0 上用域随机化示范训练达到 93.6% 平均成功率，在 RoboDojo 各评估维度上具有竞争力，真机两个任务上均优于 pi_0.5 基线。",
+          "lede": "把预训练视频世界模型改造成潜在动作模型，仅加动力学寄存器，就能从无动作视频中提取可跨机器人复用的动作表征，并用于 VLA 策略预训练。",
+          "tags": [
+            "潜在动作模型",
+            "视频世界模型",
+            "视觉-语言-动作策略"
+          ],
+          "sections": {
+            "background": "大规模多样化视频（如第一人称人类视频和异构机器人录像）蕴含丰富动力学，但往往缺少动作标注或缺少共享动作空间。现有潜在动作模型需从零训练逆动力学模型（IDM，由状态对推断动作）和正动力学模型（FDM，由动作预测下一状态），并在像素重建与潜在容量、精度之间权衡。预训练视频世界模型能原生生成高保真动力学，却以稠密、跨层纠缠的方式表示。",
+            "conclusion": "将世界模型视为 LAM 后，仅需极小改动即可提取其动力学。原生潜在动作在 LARY 基准的动作分类和控制回归上均超过现有 LAM；无需迁移目标即可在新机器人、新场景重放相同运动，并实现从人手到机器人的迁移。3.8B 的 PAWlicy 在 RoboTwin 2.0 上用域随机化示范训练取得 93.6% 平均成功率，为 VLA 中最高；在 RoboDojo 各评估维度具竞争力，其 Precision 与榜单领先条目相当；真机两个任务上均优于 pi_0.5 基线。两阶段仅用公开数据和公开世界模型。",
+            "method": "输入是预训练视频扩散 Transformer 及成对的时序视频帧。同一个预训练模型同时充当 IDM 和 FDM，可学习的动力学寄存器是两者之间唯一的因果桥梁。训练使用仅在运动上不同的反事实时序对，使寄存器把视频动力学蒸馏为紧凑的原生潜在动作。PAWlicy 则让 Native LAM 在大规模视频上充当动力学教师来预训练 VLA 策略，且从不生成视频。",
+            "takeaways": "若具备公开预训练视频世界模型与大规模无动作视频，可先用 Native LAM 提取潜在动作，再以 PAWlicy 预训练 VLA 策略，用于新机器人或新场景的操作任务。真机部署需额外验证：材料仅在两个真机任务上报告优于 pi_0.5，尚未覆盖更多本体、任务与安全鲁棒性。其 93.6% 成功率限于 RoboTwin 2.0 的域随机化示范设定，迁移到真实环境前需补充实机评测。"
+          }
+        },
+        "en": {
+          "title": "World Models as Native Latent Action Models",
+          "summary": "This work treats a pretrained video world model directly as a latent action model (LAM, which extracts reusable action representations from video), adding only learnable dynamics registers as a causal bridge and training on counterfactual temporal pairs that differ in motion alone, so the registers distill a video's dynamics into a compact native latent action. Native latent actions outperform existing LAMs on the LARY benchmark in action classification and control regression, and replay the same motion on new robots, in new scenes, and from human hands to robots, although no transfer objective is used in training. The PAWlicy pretraining paradigm with a 3.8B model reaches a 93.6% average success rate on RoboTwin 2.0 trained with domain-randomized demonstrations, is competitive on every evaluated dimension of RoboDojo, and improves over the pi_0.5 baseline on both real-robot tasks.",
+          "lede": "Turning a pretrained video world model into a latent action model with only dynamics registers yields action representations from action-free video that transfer across robots and serve VLA policy pretraining.",
+          "tags": [
+            "latent action models",
+            "video world models",
+            "vision-language-action policies"
+          ],
+          "sections": {
+            "background": "Large and diverse video sources, such as egocentric human video and heterogeneous robot recordings, carry rich dynamics but often lack actions or a shared action space. Existing latent action models train inverse-dynamics models (IDM, inferring actions from state pairs) and forward-dynamics models (FDM, predicting the next state from actions) from scratch, trading pixel reconstruction against latent capacity and accuracy. Pretrained video world models natively generate high-fidelity dynamics but represent them densely and entangled across layers.",
+            "conclusion": "Viewing the world model as a LAM, its dynamics can be extracted with minimal changes. Native latent actions outperform existing LAMs on the LARY benchmark in both action classification and control regression; without a transfer objective they replay the same motion on new robots, in new scenes, and from human hands to robots. The 3.8B PAWlicy reaches a 93.6% average success rate on RoboTwin 2.0 trained with domain-randomized demonstrations, the highest among VLAs; on RoboDojo it is competitive on every evaluated dimension, with Precision on par with leading leaderboard entries; on real robots it improves over the pi_0.5 baseline on both tasks. Both stages use only public data and a publicly released world model.",
+            "method": "The input is a pretrained video diffusion transformer plus paired temporal video frames. One pretrained model serves as both IDM and FDM, with learnable dynamics registers as the only causal bridge between them. Training uses counterfactual temporal pairs that differ in motion alone, so the registers distill a video's dynamics into a compact native latent action. PAWlicy then uses Native LAM as a dynamics teacher on large-scale video to pretrain VLA policies, and never generates video.",
+            "takeaways": "Given a public pretrained video world model and large-scale action-free video, one could first extract latent actions with Native LAM and then pretrain a VLA policy with PAWlicy for manipulation on new robots or in new scenes. Real-robot deployment needs further validation: the material reports gains over pi_0.5 on only two real-robot tasks, without covering more embodiments, tasks, or safety robustness. The 93.6% success rate is limited to the domain-randomized demonstration setting of RoboTwin 2.0 and requires real-robot evaluation before transfer to physical environments."
+          }
+        }
+      },
+      "id": "2611.30898",
+      "original_title": "World Models as Native Latent Action Models",
+      "original_summary": "Large and diverse video sources, such as egocentric human video and heterogeneous robot recordings, carry rich dynamics but come either without actions or without a shared action space. Latent action models (LAMs) can recover these dynamics, but they train their inverse- and forward-dynamics models (IDM, FDM) from scratch, trading off pixel reconstruction against latent capacity and accuracy. Pretrained video world models natively generate high-fidelity dynamics, yet represent them densely, entangled across all layers. Viewing the world model as a LAM, we show that these dynamics can be extracted with minimal changes to the model. Native LAM operates one pretrained video diffusion transformer as both IDM and FDM, with learnable dynamics registers as the only causal bridge between the two, and trains on counterfactual temporal pairs that differ in motion alone, so that the registers distill a video's dynamics into a compact native latent action. We further propose a pretraining paradigm for vision-language-action (VLA) policies, Pretraining Actions from World models (PAWlicy), in which Native LAM serves as a dynamics teacher on large-scale video; unlike world action models, it never generates video. Native latent actions outperform existing LAMs on the LARY benchmark in both action classification and control regression, and replay the same motion on new robots, in new scenes, and from human hands to robots, although no transfer objective is used in training. With a 3.8B model, PAWlicy reaches a 93.6% average success rate on RoboTwin 2.0 trained with domain-randomized demonstrations, the highest among VLAs. On RoboDojo, it is competitive on every dimension we evaluate, and its Precision, evaluated by us, is on par with the leading leaderboard entries. On real robots, it improves over the pi_0.5 baseline on both tasks. Both stages use only public data and a publicly released world model.",
+      "url": "https://arxiv.org/abs/2611.30898v1",
+      "source": "arXiv cs.RO",
+      "published": "2026-11-23T16:01:06+00:00",
+      "authors": [
+        "Qinyue Li",
+        "Weijie Qiao",
+        "Qingyi Tao",
+        "Zerui Gong",
+        "Zhe Yang",
+        "Quanzhou Li",
+        "Taolin Zhang",
+        "Jinglin He",
+        "Zhonghua Wu",
+        "Chen Change Loy"
+      ],
+      "score": 4,
+      "versioned_id": "2611.30898v1",
+      "figure": {
+        "path": "./data/2026-11-26/figures/2611.30898.webp",
+        "caption": "Figure 1: World models as native latent action models. (a) Existing LAMs learn an IDM and an FDM from scratch. (b) A pretrained video world model is already an FDM. (c) Native LAM runs one world model in two modes, reading a latent action 𝐚^ from video and regenerating the future from 𝐚^. (d) Latent actions share one space and replay the same motion from edited first frames in new setups. (e) PAWlicy pretrains a VLA on 𝐚^ without reconstructing pixels."
+      },
+      "attention": {
+        "hf_upvotes": 28,
+        "hf_comments": 2
+      },
+      "code_url": null,
+      "project_url": "https://pawteam-eai.github.io/native-lam/",
+      "pdf_url": "https://arxiv.org/pdf/2611.30898"
+    },
+    {
+      "title": "RUIBench：什么才算好的机器人使用接口？",
+      "summary": "基础模型能推理复杂物理任务，但把这种智能转化为可靠的机器人执行仍很困难。作者认为一个关键却常被忽视的因素是机器人使用接口（RUI），它决定智能体如何表达并执行物理动作。为系统研究其影响，作者提出 RUIBench，包含五个任务套件共 30 个操作任务，覆盖世界知识、上下文学习、探索发现、动态交互和富接触操作。作者还开发 RUIKit，一个统一框架，将六种动作抽象与两种交互形式交叉组合，在共享感知与控制下得到 13 种接口。仿真中仅改变 RUI，前沿智能体的成功率从 45% 升至 81%，微调的 4B 模型从 13% 升至 47%。分析表明，有效接口减少不必要的决策同时保留必要反馈，其收益受智能体行为和物理不确定性影响。作者还发现验证缺口：智能体常在可观察失败时仍宣称成功，说明需要超越单个动作的任务级验证。这些发现确立 RUI 设计是具身智能体可靠性的关键因素。",
+      "lede": "仅更换机器人使用接口，前沿智能体成功率就从 45% 升到 81%——RUIBench 用 30 个任务和 13 种接口量化了接口设计对具身可靠性的影响。",
+      "tags": [
+        "机器人使用接口",
+        "具身智能体基准",
+        "机器人操作"
+      ],
+      "sections": {
+        "background": "基础模型已能对复杂物理任务进行推理，但把这种能力落到机器人执行上仍不可靠。现有研究多关注模型能力本身，而智能体如何把意图表达为可执行的物理动作——即机器人使用接口（RUI）——常被忽视。作者认为这一环节直接影响任务成败，因此需要系统化的基准来量化接口设计的影响。",
+        "conclusion": "在仿真中，仅改变 RUI 就能让前沿智能体的成功率从 45% 提升到 81%，让微调的 4B 模型从 13% 提升到 47%。分析显示，有效接口减少不必要的决策并保留关键反馈，收益大小取决于智能体行为和物理不确定性。作者还发现智能体常在明显失败时仍报告成功，暴露出任务级验证的缺口。上述结论限于仿真设定，尚未给出真机验证。",
+        "method": "RUIKit 在共享的感知与控制条件下，把六种动作抽象与两种交互形式交叉组合，形成 13 种机器人使用接口，使接口成为唯一变量。智能体接收相同的感知输入，但通过不同接口表达动作并接收反馈，从而在 RUIBench 的 30 个任务上比较成功率。RUIBench 覆盖五个套件：世界知识、上下文学习、探索发现、动态交互和富接触操作。已验证的改进来自接口切换本身，而非模型或控制器的变化；作者据此分析减少冗余决策与保留必要反馈如何影响表现。",
+        "takeaways": "若要在真实机器人上复现，需要先具备共享感知与控制栈，并能在同一平台上切换多种动作抽象和交互形式，同时准备覆盖五类任务的操作数据集。产业场景可设想为用基础模型驱动机器人执行装配、抓取或动态交互任务，此时接口选择应作为与模型选型同等重要的设计变量。距离真机部署还缺真机实验验证，以及任务级成功判定机制，因为仿真中已观察到智能体误报成功。现有结论仅适用于材料报告的仿真设定和任务范围。"
+      },
+      "i18n": {
+        "zh": {
+          "title": "RUIBench：什么才算好的机器人使用接口？",
+          "summary": "基础模型能推理复杂物理任务，但把这种智能转化为可靠的机器人执行仍很困难。作者认为一个关键却常被忽视的因素是机器人使用接口（RUI），它决定智能体如何表达并执行物理动作。为系统研究其影响，作者提出 RUIBench，包含五个任务套件共 30 个操作任务，覆盖世界知识、上下文学习、探索发现、动态交互和富接触操作。作者还开发 RUIKit，一个统一框架，将六种动作抽象与两种交互形式交叉组合，在共享感知与控制下得到 13 种接口。仿真中仅改变 RUI，前沿智能体的成功率从 45% 升至 81%，微调的 4B 模型从 13% 升至 47%。分析表明，有效接口减少不必要的决策同时保留必要反馈，其收益受智能体行为和物理不确定性影响。作者还发现验证缺口：智能体常在可观察失败时仍宣称成功，说明需要超越单个动作的任务级验证。这些发现确立 RUI 设计是具身智能体可靠性的关键因素。",
+          "lede": "仅更换机器人使用接口，前沿智能体成功率就从 45% 升到 81%——RUIBench 用 30 个任务和 13 种接口量化了接口设计对具身可靠性的影响。",
+          "tags": [
+            "机器人使用接口",
+            "具身智能体基准",
+            "机器人操作"
+          ],
+          "sections": {
+            "background": "基础模型已能对复杂物理任务进行推理，但把这种能力落到机器人执行上仍不可靠。现有研究多关注模型能力本身，而智能体如何把意图表达为可执行的物理动作——即机器人使用接口（RUI）——常被忽视。作者认为这一环节直接影响任务成败，因此需要系统化的基准来量化接口设计的影响。",
+            "conclusion": "在仿真中，仅改变 RUI 就能让前沿智能体的成功率从 45% 提升到 81%，让微调的 4B 模型从 13% 提升到 47%。分析显示，有效接口减少不必要的决策并保留关键反馈，收益大小取决于智能体行为和物理不确定性。作者还发现智能体常在明显失败时仍报告成功，暴露出任务级验证的缺口。上述结论限于仿真设定，尚未给出真机验证。",
+            "method": "RUIKit 在共享的感知与控制条件下，把六种动作抽象与两种交互形式交叉组合，形成 13 种机器人使用接口，使接口成为唯一变量。智能体接收相同的感知输入，但通过不同接口表达动作并接收反馈，从而在 RUIBench 的 30 个任务上比较成功率。RUIBench 覆盖五个套件：世界知识、上下文学习、探索发现、动态交互和富接触操作。已验证的改进来自接口切换本身，而非模型或控制器的变化；作者据此分析减少冗余决策与保留必要反馈如何影响表现。",
+            "takeaways": "若要在真实机器人上复现，需要先具备共享感知与控制栈，并能在同一平台上切换多种动作抽象和交互形式，同时准备覆盖五类任务的操作数据集。产业场景可设想为用基础模型驱动机器人执行装配、抓取或动态交互任务，此时接口选择应作为与模型选型同等重要的设计变量。距离真机部署还缺真机实验验证，以及任务级成功判定机制，因为仿真中已观察到智能体误报成功。现有结论仅适用于材料报告的仿真设定和任务范围。"
+          }
+        },
+        "en": {
+          "title": "RUIBench: What Makes a Good Robot-Use Interface?",
+          "summary": "Foundation models can reason about complex physical tasks, yet translating this intelligence into reliable robot execution remains challenging. The authors argue that a critical, often overlooked factor is the robot-use interface (RUI), which determines how agents express and execute physical actions. To systematically study its impact, they introduce RUIBench, comprising 30 manipulation tasks across five suites spanning world knowledge, in-context learning, discovery, dynamic interaction, and contact-rich manipulation. They further develop RUIKit, a unified framework that crosses six action abstractions with two interaction forms, yielding 13 interfaces under shared perception and control. In simulation, changing only the RUI shifts a frontier agent's success rate from 45% to 81%, and that of a fine-tuned 4B model from 13% to 47%. The analysis reveals that effective interfaces reduce unnecessary decisions while preserving essential feedback, with their benefits shaped by agent behavior and physical uncertainty. The authors further uncover a verification gap, where agents frequently declare success despite observable failures, revealing the need for task-level verification beyond individual actions. Together, these findings establish RUI design as a critical factor in embodied agent reliability.",
+          "lede": "Changing only the robot-use interface lifted a frontier agent's success rate from 45% to 81%—RUIBench quantifies interface design with 30 tasks and 13 interfaces.",
+          "tags": [
+            "robot-use interface",
+            "embodied agent benchmark",
+            "robot manipulation"
+          ],
+          "sections": {
+            "background": "Foundation models can already reason about complex physical tasks, but grounding this capability in reliable robot execution remains difficult. Prior work tends to focus on model capability itself, while overlooking how an agent expresses intent as executable physical actions, namely the robot-use interface (RUI). The authors treat this as a first-order factor in task success and build a benchmark to quantify how interface design affects performance.",
+            "conclusion": "In simulation, changing only the RUI raises a frontier agent's success rate from 45% to 81% and a fine-tuned 4B model's from 13% to 47%. The analysis shows that effective interfaces cut unnecessary decisions while preserving essential feedback, and that the size of the benefit depends on agent behavior and physical uncertainty. The authors also find that agents often report success despite clear failures, exposing a task-level verification gap. These conclusions are limited to the simulated setting; no real-robot validation is reported.",
+            "method": "RUIKit holds perception and control fixed and crosses six action abstractions with two interaction forms, producing 13 robot-use interfaces so that the interface is the only variable. Agents receive the same perceptual input but express actions and receive feedback through different interfaces, and success rates are compared across the 30 tasks in RUIBench. RUIBench covers five suites: world knowledge, in-context learning, discovery, dynamic interaction, and contact-rich manipulation. The verified gains come from switching interfaces rather than from changes to the model or controller; the authors use this to analyze how reducing redundant decisions and preserving necessary feedback shapes performance.",
+            "takeaways": "Reproducing this on real robots would require a shared perception and control stack that can switch among multiple action abstractions and interaction forms on one platform, plus manipulation data covering the five task suites. An industrial scenario could be a foundation-model-driven robot performing assembly, grasping, or dynamic interaction, where interface choice should be treated as a design variable on par with model selection. Real-robot deployment still lacks physical experiments and a task-level success criterion, since agents were already observed to misreport success in simulation. The reported conclusions apply only to the simulated setting and task scope described in the material."
+          }
+        }
+      },
+      "id": "2611.31115",
+      "original_title": "RUIBench: What Makes a Good Robot-Use Interface?",
+      "original_summary": "Foundation models can reason about complex physical tasks, yet translating this intelligence into reliable robot execution remains challenging. We argue that a critical, often overlooked factor is the robot-use interface (RUI), which determines how agents express and execute physical actions. To systematically study its impact, we introduce RUIBench, comprising 30 manipulation tasks across five suites spanning world knowledge, in-context learning, discovery, dynamic interaction, and contact-rich manipulation. We further develop RUIKit, a unified framework that crosses six action abstractions with two interaction forms, yielding 13 interfaces under shared perception and control. In simulation, changing only the RUI shifts a frontier agent's success rate from 45% to 81%, and that of a fine-tuned 4B model from 13% to 47%. Our analysis reveals that effective interfaces reduce unnecessary decisions while preserving essential feedback, with their benefits shaped by agent behavior and physical uncertainty. We further uncover a verification gap, where agents frequently declare success despite observable failures, revealing the need for task-level verification beyond individual actions. Together, these findings establish RUI design as a critical factor in embodied agent reliability.",
+      "url": "https://arxiv.org/abs/2611.31115v1",
+      "source": "arXiv cs.RO",
+      "published": "2026-11-23T17:52:55+00:00",
+      "authors": [
+        "Yanzhe Chen",
+        "Zhijun Cao",
+        "Zechen Bai",
+        "Wenzheng Zeng",
+        "Kevin Yuchen Ma",
+        "Yiqi Lin",
+        "Guoqiang Liang",
+        "Xiaokang Liu",
+        "Ke Sun",
+        "Kevin Qinghong Lin",
+        "Mike Zheng Shou"
+      ],
+      "score": 4,
+      "versioned_id": "2611.31115v1",
+      "figure": {
+        "path": "./data/2026-11-26/figures/2611.31115.webp",
+        "caption": "Figure 3: Overview of RUIKit. The RUI is the only variable for a fixed agent and task, while the harness, 24 underlying tools, evaluation protocol, and robot backend remain shared. The scorer’s verdict is withheld from the agent."
+      },
+      "attention": {
+        "hf_upvotes": 22,
+        "hf_comments": 3,
+        "github_stars": 18,
+        "github_url": "https://github.com/showlab/ruibench"
+      },
+      "code_url": null,
+      "project_url": null,
+      "pdf_url": "https://arxiv.org/pdf/2611.31115"
+    },
+    {
+      "title": "DexDuet：从人类演示中学习保持接触的双臂灵巧操作",
+      "summary": "DexDuet 提出一个从单次人类演示中学习双臂灵巧操作的框架，通过两项交互奖励保留人手与物体的接触构型，并将双臂策略分解为两个权重共享、互相感知状态的手部策略。在覆盖三个仿真器和五种机器人本体的四个基准上，物体跟踪 ADD-AUC 比对应基线提升 11 至 41 点，同时接触保持更好；在 122 组跟踪精度相当的配对运行中，有 117 组更好地保留了人类接触。",
+      "lede": "DexDuet 不再只盯物体轨迹，而是用接触奖励和双臂协同策略，从单次人类演示中学习更稳定的双手操作。",
+      "tags": [
+        "双臂灵巧操作",
+        "人类演示迁移",
+        "接触保持"
+      ],
+      "sections": {
+        "background": "人类演示是双臂灵巧技能的重要来源，但迁移到机器人手仍然困难。现有方法主要优化物体轨迹跟踪，常忽略人手如何与物体交互；即使跟踪准确，机器人也可能接触错误部位或让手指滑动，导致操作不稳定。",
+        "conclusion": "DexDuet 在四个基准、三个仿真器和五种机器人本体上，将物体跟踪 ADD-AUC 相对对应基线提升 11 至 41 点，并持续获得更好的接触保持。在 122 组物体跟踪精度相当的配对运行中，有 117 组更好地保留了人类接触。这些结果支持接触保持奖励与双臂策略分解在演示迁移中的作用，但结论限于材料报告的仿真基准与本体设定。",
+        "method": "输入是单次人类演示，提供手与物体的交互轨迹和接触构型。DexDuet 用两项交互奖励来保留人手与物体的相对构型和接触关系，避免只追求物体轨迹跟踪。为协调双臂，策略被分解为两个权重共享的单手策略，并让彼此以对方状态为条件。辅助参考状态初始化（A-RSI）作为自适应课程，按演示片段调整物体辅助和训练起点，以越过困难操作阶段。已验证的改进来自这些设计在四个基准上的对照结果。",
+        "takeaways": "若要在真实双臂机器人上复现，需要能提供手物接触信息的人类演示数据，以及支持接触奖励计算的仿真或感知条件。该方法适合需要稳定抓握和防滑的双臂操作场景，如双手装配或交接；但材料只报告了仿真基准结果，真机部署前仍需验证接触估计精度、跨本体迁移和真实传感器噪声下的稳定性。A-RSI 的课程设计动机是克服困难阶段，其单独贡献仍需在更多设定中检验。"
+      },
+      "i18n": {
+        "zh": {
+          "title": "DexDuet：从人类演示中学习保持接触的双臂灵巧操作",
+          "summary": "DexDuet 提出一个从单次人类演示中学习双臂灵巧操作的框架，通过两项交互奖励保留人手与物体的接触构型，并将双臂策略分解为两个权重共享、互相感知状态的手部策略。在覆盖三个仿真器和五种机器人本体的四个基准上，物体跟踪 ADD-AUC 比对应基线提升 11 至 41 点，同时接触保持更好；在 122 组跟踪精度相当的配对运行中，有 117 组更好地保留了人类接触。",
+          "lede": "DexDuet 不再只盯物体轨迹，而是用接触奖励和双臂协同策略，从单次人类演示中学习更稳定的双手操作。",
+          "tags": [
+            "双臂灵巧操作",
+            "人类演示迁移",
+            "接触保持"
+          ],
+          "sections": {
+            "background": "人类演示是双臂灵巧技能的重要来源，但迁移到机器人手仍然困难。现有方法主要优化物体轨迹跟踪，常忽略人手如何与物体交互；即使跟踪准确，机器人也可能接触错误部位或让手指滑动，导致操作不稳定。",
+            "conclusion": "DexDuet 在四个基准、三个仿真器和五种机器人本体上，将物体跟踪 ADD-AUC 相对对应基线提升 11 至 41 点，并持续获得更好的接触保持。在 122 组物体跟踪精度相当的配对运行中，有 117 组更好地保留了人类接触。这些结果支持接触保持奖励与双臂策略分解在演示迁移中的作用，但结论限于材料报告的仿真基准与本体设定。",
+            "method": "输入是单次人类演示，提供手与物体的交互轨迹和接触构型。DexDuet 用两项交互奖励来保留人手与物体的相对构型和接触关系，避免只追求物体轨迹跟踪。为协调双臂，策略被分解为两个权重共享的单手策略，并让彼此以对方状态为条件。辅助参考状态初始化（A-RSI）作为自适应课程，按演示片段调整物体辅助和训练起点，以越过困难操作阶段。已验证的改进来自这些设计在四个基准上的对照结果。",
+            "takeaways": "若要在真实双臂机器人上复现，需要能提供手物接触信息的人类演示数据，以及支持接触奖励计算的仿真或感知条件。该方法适合需要稳定抓握和防滑的双臂操作场景，如双手装配或交接；但材料只报告了仿真基准结果，真机部署前仍需验证接触估计精度、跨本体迁移和真实传感器噪声下的稳定性。A-RSI 的课程设计动机是克服困难阶段，其单独贡献仍需在更多设定中检验。"
+          }
+        },
+        "en": {
+          "title": "DexDuet: Learning Contact-Preserving Bimanual Dexterity from Human Demonstrations",
+          "summary": "DexDuet is a framework that learns contact-preserving bimanual dexterity from a single human demonstration. It uses two interaction rewards to preserve human hand-object configurations and contacts, and factorizes the bimanual policy into two weight-sharing per-hand policies that condition on each other's states. Across four benchmarks spanning three simulators and five robot embodiments, DexDuet improves object-tracking ADD-AUC by 11 to 41 points over corresponding baselines while consistently achieving better contact preservation; among 122 paired runs with comparable object-tracking accuracy, it preserves human contacts better in 117 cases.",
+          "lede": "DexDuet looks beyond object trajectories, using contact rewards and coordinated bimanual policies to learn more stable two-handed manipulation from a single human demonstration.",
+          "tags": [
+            "bimanual dexterous manipulation",
+            "human demonstration transfer",
+            "contact preservation"
+          ],
+          "sections": {
+            "background": "Human demonstrations are a rich source of bimanual dexterous skills, but transferring them to robot hands remains challenging. Existing methods mainly optimize object trajectory tracking and often overlook how human hands interact with the object. Even with accurate tracking, robots may contact incorrect object parts or slide their fingers, resulting in unstable manipulation.",
+            "conclusion": "On four benchmarks spanning three simulators and five robot embodiments, DexDuet improves object-tracking ADD-AUC by 11 to 41 points over corresponding baselines and consistently achieves better contact preservation. Among 122 paired runs with comparable object-tracking accuracy, it preserves human contacts better in 117 cases. These results support the roles of contact-preserving rewards and bimanual policy factorization in demonstration transfer, but the conclusions are limited to the simulated benchmarks and embodiments reported in the material.",
+            "method": "The input is a single human demonstration that provides hand-object interaction trajectories and contact configurations. DexDuet uses two interaction rewards to preserve the human hand-object configuration and contact relations, rather than optimizing object trajectory tracking alone. To coordinate the two arms, the policy is factorized into two weight-sharing per-hand policies that condition on each other's states. Assisted reference-state initialization (A-RSI), an adaptive curriculum, adjusts object assistance and training starts across demonstration segments to overcome difficult manipulation phases. The verified improvements come from controlled results of these designs across four benchmarks.",
+            "takeaways": "Reproducing this on a real bimanual robot would require human demonstration data with hand-object contact information and simulation or perception conditions that support contact-reward computation. The method is relevant to bimanual tasks needing stable grasp and slip prevention, such as two-handed assembly or handover; however, the material reports only simulated benchmark results, so real-robot deployment still needs validation of contact-estimation accuracy, cross-embodiment transfer, and stability under real sensor noise. The curriculum design of A-RSI is motivated by overcoming difficult phases, and its individual contribution still needs testing in more settings."
+          }
+        }
+      },
+      "id": "2611.30495",
+      "original_title": "DexDuet: Learning Contact-Preserving Bimanual Dexterity from Human Demonstrations",
+      "original_summary": "Human demonstrations provide a rich source of bimanual dexterous skills, yet transferring them to robot hands remains challenging. Existing methods primarily optimize object trajectory tracking, often overlooking how human hands interact with the object. Even with accurate tracking, robots may contact incorrect object parts or slide their fingers, resulting in unstable manipulation. We present DexDuet, a framework that learns contact-preserving bimanual dexterity from a single human demonstration. DexDuet employs two interaction rewards to preserve human hand-object configurations and contacts. To enable coordinated manipulation, we factorize the bimanual policy into two weight-sharing per-hand policies that condition on each other's states. We further propose assisted reference-state initialization (A-RSI), an adaptive curriculum that adjusts object assistance and training starts across demonstration segments to overcome difficult manipulation phases. Across four benchmarks spanning three simulators and five robot embodiments, DexDuet improves object-tracking ADD-AUC by 11 to 41 points over the corresponding baselines while consistently achieving better contact preservation. Notably, among 122 paired runs with comparable object-tracking accuracy, DexDuet preserves the human's contacts better in 117 cases. Code and videos are available at https://rcl-robotics.github.io/Dexduet.io/",
+      "url": "https://arxiv.org/abs/2611.30495v1",
+      "source": "arXiv cs.RO",
+      "published": "2026-11-23T11:13:23+00:00",
+      "authors": [
+        "Haoran Zhang",
+        "Haokai Ding",
+        "Han Zhou",
+        "Zuxing Lu",
+        "Heng Zhang",
+        "Xingxing Zuo"
+      ],
+      "score": 4,
+      "versioned_id": "2611.30495v1",
+      "figure": {
+        "path": "./data/2026-11-26/figures/2611.30495.webp",
+        "caption": "Figure S7: Real-world replays on the Unitree G1 with Inspire hands. (a) The robot lowers a box from chest height, places it on the floor and stands up. (b) It carries a bag and puts it down on the floor. (c) It pushes an office chair while walking."
+      },
+      "attention": {
+        "hf_upvotes": 14,
+        "hf_comments": 2,
+        "github_stars": 15,
+        "github_url": "https://github.com/haoranzhangumich/dexduet"
+      },
+      "code_url": null,
+      "project_url": "https://rcl-robotics.github.io/Dexduet.io/",
+      "pdf_url": "https://arxiv.org/pdf/2611.30495"
+    }
+  ]
+}

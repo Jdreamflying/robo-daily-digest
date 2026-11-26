@@ -1,0 +1,318 @@
+{
+  "date": "2026-11-26",
+  "total_scanned": 3127,
+  "total_unique": 60,
+  "window_count": 262,
+  "window_hours": 48,
+  "cutoff": "2026-11-24T05:25:33.916994+00:00",
+  "window_end": "2026-11-26T05:25:33.916994+00:00",
+  "scored_count": 60,
+  "qualified_count": 8,
+  "event_duplicate_count": 7,
+  "mode": "api",
+  "items": [
+    {
+      "title": "乌克兰首次用作战激光击落俄罗斯喷气动力无人机",
+      "summary": "乌克兰方面称，其作战激光首次击落了一架俄罗斯喷气动力无人机。",
+      "lede": "乌克兰称首次用作战激光击落俄罗斯喷气动力无人机。",
+      "tags": [
+        "乌克兰",
+        "激光武器",
+        "无人机"
+      ],
+      "analysis": [
+        "乌克兰宣布首次用作战激光击落一架俄罗斯喷气动力无人机。",
+        "此前报道没有提到激光拦截成功，这次新增的是实战击落这一结果。",
+        "目前没有公布激光型号、击落高度或拦截距离等具体数据。"
+      ],
+      "i18n": {
+        "zh": {
+          "title": "乌克兰首次用作战激光击落俄罗斯喷气动力无人机",
+          "summary": "乌克兰方面称，其作战激光首次击落了一架俄罗斯喷气动力无人机。",
+          "lede": "乌克兰称首次用作战激光击落俄罗斯喷气动力无人机。",
+          "tags": [
+            "乌克兰",
+            "激光武器",
+            "无人机"
+          ],
+          "analysis": [
+            "乌克兰宣布首次用作战激光击落一架俄罗斯喷气动力无人机。",
+            "此前报道没有提到激光拦截成功，这次新增的是实战击落这一结果。",
+            "目前没有公布激光型号、击落高度或拦截距离等具体数据。"
+          ]
+        },
+        "en": {
+          "title": "Ukraine shoots down Russian jet-powered drone with combat laser for first time",
+          "summary": "Ukraine says it has shot down a Russian jet-powered drone using a combat laser for the first time.",
+          "lede": "Ukraine says it has downed a Russian jet-powered drone with a combat laser for the first time.",
+          "tags": [
+            "Ukraine",
+            "laser weapon",
+            "drone"
+          ],
+          "analysis": [
+            "Ukraine announced that it shot down a Russian jet-powered drone with a combat laser for the first time.",
+            "Earlier reports did not mention a successful laser intercept; the new element is the combat shootdown itself.",
+            "No details were given on the laser model, interception altitude or range."
+          ]
+        }
+      },
+      "id": "2a618dcd246b39fd44df6598",
+      "original_title": "Ukraine shoots down Russian jet-powered drone with combat laser for first time",
+      "original_summary": "",
+      "url": "https://www.pravda.com.ua/eng/news/2026/11/25/8064653",
+      "source": "Hacker News",
+      "published": "2026-11-25T17:57:46+00:00",
+      "authors": [],
+      "score": 3,
+      "category": "robotics",
+      "engagement": {
+        "points": 32,
+        "comments": 1
+      },
+      "discussion_url": "https://news.ycombinator.com/item?id=50645241",
+      "image": {
+        "path": "./data/2026-11-26/news_images/2a618dcd246b39fd44df6598.webp",
+        "width": 900,
+        "height": 507,
+        "source_url": "https://www.pravda.com.ua/eng/news/2026/11/25/8064653/",
+        "image_url": "https://uimg.pravda.com.ua/buckets/upstatic/images/doc/a/8/964435/a8ddad346c3c9db633f1f65a770686cd.jpeg?w=900&q=90",
+        "alt": "Ukraine shoots down Russian jet-powered Geran drone with combat laser for first time – video"
+      }
+    },
+    {
+      "title": "FCC批准SpaceX最多部署100万颗数据中心卫星",
+      "summary": "美国联邦通信委员会（FCC）周三宣布，已授权SpaceX部署最多100万颗搭载AI芯片的卫星，作为马斯克旗下公司“Starmind”计划的一部分。谷歌和蓝色起源等也在探索太空AI数据中心，这是该机构首次批准此类项目。",
+      "lede": "FCC首次批准太空AI数据中心项目，SpaceX获准部署最多100万颗搭载AI芯片的卫星。",
+      "tags": [
+        "AI",
+        "SpaceX",
+        "卫星"
+      ],
+      "analysis": [
+        "FCC周三宣布授权SpaceX部署最多100万颗搭载AI芯片的卫星，属于“Starmind”计划。",
+        "这是FCC首次批准太空AI数据中心项目，谷歌和蓝色起源等也在探索类似想法。"
+      ],
+      "i18n": {
+        "zh": {
+          "title": "FCC批准SpaceX最多部署100万颗数据中心卫星",
+          "summary": "美国联邦通信委员会（FCC）周三宣布，已授权SpaceX部署最多100万颗搭载AI芯片的卫星，作为马斯克旗下公司“Starmind”计划的一部分。谷歌和蓝色起源等也在探索太空AI数据中心，这是该机构首次批准此类项目。",
+          "lede": "FCC首次批准太空AI数据中心项目，SpaceX获准部署最多100万颗搭载AI芯片的卫星。",
+          "tags": [
+            "AI",
+            "SpaceX",
+            "卫星"
+          ],
+          "analysis": [
+            "FCC周三宣布授权SpaceX部署最多100万颗搭载AI芯片的卫星，属于“Starmind”计划。",
+            "这是FCC首次批准太空AI数据中心项目，谷歌和蓝色起源等也在探索类似想法。"
+          ]
+        },
+        "en": {
+          "title": "FCC approves SpaceX plan to deploy up to 1 million data center satellites",
+          "summary": "The FCC announced Wednesday that it has authorized SpaceX to deploy up to 1 million satellites equipped with AI chips as part of the Elon Musk-owned company's \"Starmind\" initiative. Google and Blue Origin are also exploring the idea of AI data centers in space; this is the agency's first approval of such a project.",
+          "lede": "The FCC has approved its first space-based AI data center project, allowing SpaceX to deploy up to 1 million satellites equipped with AI chips.",
+          "tags": [
+            "AI",
+            "SpaceX",
+            "Satellites"
+          ],
+          "analysis": [
+            "The FCC announced Wednesday that it authorized SpaceX to deploy up to 1 million satellites equipped with AI chips under its \"Starmind\" initiative.",
+            "This is the FCC's first approval of a space-based AI data center project, with Google and Blue Origin also exploring similar ideas."
+          ]
+        }
+      },
+      "id": "17929128d139e3d01b22009c",
+      "original_title": "FCC signs off on SpaceX’s plan to put up to 1 million data center satellites into space",
+      "original_summary": "In an announcement on Wednesday, the FCC says it authorized SpaceX to deploy up to 1 million AI chip-equipped satellites as part of the Elon Musk-owned company's \"Starmind\" initiative. With several others also pursuing the idea of putting AI data centers in space, including Google and Blue Origin, this is the first approval the agency […]",
+      "url": "https://www.theverge.com/science/1042278/spacex-fcc-starmind-ai-space-data-centers",
+      "source": "The Verge AI",
+      "published": "2026-11-25T17:44:51+00:00",
+      "authors": [],
+      "score": 3,
+      "category": "ai_frontier",
+      "image": {
+        "path": "./data/2026-11-26/news_images/17929128d139e3d01b22009c.webp",
+        "width": 512,
+        "height": 512,
+        "source_url": "https://www.theverge.com/science/1042278/spacex-fcc-starmind-ai-space-data-centers",
+        "image_url": "https://platform.theverge.com/wp-content/uploads/sites/2/chorus/author_profile_images/195810/EMMA_ROTH.0.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100&w=2400",
+        "alt": "Emma Roth"
+      }
+    },
+    {
+      "title": "新测试显示：最强AI助手也难可靠完成日常事务",
+      "summary": "一项新测试发现，即便最先进的AI模型，在完成日常任务时也难以做到可靠、安全，还可能带来新问题。",
+      "lede": "一项新测试显示，最先进的AI助手在日常事务上仍不够可靠。",
+      "tags": [
+        "AI助手",
+        "日常任务",
+        "安全测试"
+      ],
+      "analysis": [
+        "研究团队发布了一项新测试，用来衡量AI助手处理日常事务的能力。",
+        "结果显示，即使最先进的模型也难以稳定、安全地完成任务，有时还会引入新问题。",
+        "这提醒用户，把日常事务交给个人AI助手时仍需谨慎。"
+      ],
+      "i18n": {
+        "zh": {
+          "title": "新测试显示：最强AI助手也难可靠完成日常事务",
+          "summary": "一项新测试发现，即便最先进的AI模型，在完成日常任务时也难以做到可靠、安全，还可能带来新问题。",
+          "lede": "一项新测试显示，最先进的AI助手在日常事务上仍不够可靠。",
+          "tags": [
+            "AI助手",
+            "日常任务",
+            "安全测试"
+          ],
+          "analysis": [
+            "研究团队发布了一项新测试，用来衡量AI助手处理日常事务的能力。",
+            "结果显示，即使最先进的模型也难以稳定、安全地完成任务，有时还会引入新问题。",
+            "这提醒用户，把日常事务交给个人AI助手时仍需谨慎。"
+          ]
+        },
+        "en": {
+          "title": "New benchmark: even top AI agents struggle with everyday tasks",
+          "summary": "A new benchmark finds that even the most advanced AI models struggle to complete everyday tasks reliably and safely, and can introduce new problems.",
+          "lede": "A new benchmark shows top AI assistants are still unreliable at everyday tasks.",
+          "tags": [
+            "AI agents",
+            "everyday tasks",
+            "safety benchmark"
+          ],
+          "analysis": [
+            "Researchers released a new benchmark that measures how well AI assistants handle everyday tasks.",
+            "Even the most advanced models struggled to finish tasks reliably and safely, and sometimes introduced new problems.",
+            "The findings suggest users should still be cautious about handing daily chores to personal AI assistants."
+          ]
+        }
+      },
+      "id": "86266e890e18a6d47c920ed1",
+      "original_title": "Even the best AI agents struggle with everyday life",
+      "original_summary": "As millions embrace personal AI assistants, a new benchmark reveals that even the most advanced AI models struggle to complete everyday tasks reliably and safely without introducing potential new problems.",
+      "url": "https://techcrunch.com/2026/11/24/even-the-best-ai-agents-struggle-with-everyday-life",
+      "source": "TechCrunch AI",
+      "published": "2026-11-24T21:33:29+00:00",
+      "authors": [],
+      "score": 3,
+      "category": "ai_frontier",
+      "image": {
+        "path": "./data/2026-11-26/news_images/86266e890e18a6d47c920ed1.webp",
+        "width": 1024,
+        "height": 683,
+        "source_url": "https://techcrunch.com/2026/11/24/even-the-best-ai-agents-struggle-with-everyday-life/",
+        "image_url": "https://techcrunch.com/wp-content/uploads/2026/11/GettyImages-2296543552.jpg?w=1024",
+        "alt": ""
+      }
+    },
+    {
+      "title": "AI辅助证明让黎曼猜想研究出现新进展，但结论意义尚不明确",
+      "summary": "一项新的AI辅助证明看起来成立，但研究者还不确定它究竟说明了什么。",
+      "lede": "一项AI辅助的数学证明据称成立，但它对黎曼猜想意味着什么还不清楚。",
+      "tags": [
+        "AI",
+        "数学证明",
+        "黎曼猜想"
+      ],
+      "analysis": [
+        "有研究者发布了一项借助AI完成的数学证明，声称与黎曼猜想有关。",
+        "该证明目前看来是可靠的，但材料没有给出可核实的数字或验证细节。",
+        "它是否真正推进了对黎曼猜想的理解，仍有待数学界判断。"
+      ],
+      "i18n": {
+        "zh": {
+          "title": "AI辅助证明让黎曼猜想研究出现新进展，但结论意义尚不明确",
+          "summary": "一项新的AI辅助证明看起来成立，但研究者还不确定它究竟说明了什么。",
+          "lede": "一项AI辅助的数学证明据称成立，但它对黎曼猜想意味着什么还不清楚。",
+          "tags": [
+            "AI",
+            "数学证明",
+            "黎曼猜想"
+          ],
+          "analysis": [
+            "有研究者发布了一项借助AI完成的数学证明，声称与黎曼猜想有关。",
+            "该证明目前看来是可靠的，但材料没有给出可核实的数字或验证细节。",
+            "它是否真正推进了对黎曼猜想的理解，仍有待数学界判断。"
+          ]
+        },
+        "en": {
+          "title": "AI-assisted proof appears valid, but its meaning for the Riemann hypothesis is unclear",
+          "summary": "A new AI-assisted proof seems to hold up, but researchers are not sure what it actually tells them.",
+          "lede": "An AI-assisted math proof is reported to hold up, but what it means for the Riemann hypothesis remains unclear.",
+          "tags": [
+            "AI",
+            "math proofs",
+            "Riemann hypothesis"
+          ],
+          "analysis": [
+            "Researchers have released a math proof built with AI help that is said to bear on the Riemann hypothesis.",
+            "The proof appears solid so far, but the material gives no verifiable figures or validation details.",
+            "Whether it truly advances understanding of the Riemann hypothesis is still for mathematicians to judge."
+          ]
+        }
+      },
+      "id": "ea655aef5669054dfec31f7c",
+      "original_title": "What's going on with the Riemann hypothesis?",
+      "original_summary": "A new AI-assisted proof seems to be solid, but we're not sure what it tells us.",
+      "url": "https://arstechnica.com/ai/2026/11/whats-going-on-with-the-riemann-hypothesis",
+      "source": "Ars Technica AI",
+      "published": "2026-11-24T20:34:53+00:00",
+      "authors": [],
+      "score": 3,
+      "category": "ai_frontier"
+    },
+    {
+      "title": "Anthropic 股价跌破 IPO 发行价，AI 初创公司估值承压",
+      "summary": "Anthropic 上市后股价走低，可能给 AI 初创公司的估值带来压力。",
+      "lede": "Anthropic 上市后股价跌破发行价，引发对 AI 初创公司估值的担忧。",
+      "tags": [
+        "人工智能",
+        "初创公司",
+        "风险投资"
+      ],
+      "analysis": [
+        "Anthropic 在上市后股价跌破 IPO 发行价。",
+        "这一走势可能让投资者重新评估 AI 初创公司的估值。"
+      ],
+      "i18n": {
+        "zh": {
+          "title": "Anthropic 股价跌破 IPO 发行价，AI 初创公司估值承压",
+          "summary": "Anthropic 上市后股价走低，可能给 AI 初创公司的估值带来压力。",
+          "lede": "Anthropic 上市后股价跌破发行价，引发对 AI 初创公司估值的担忧。",
+          "tags": [
+            "人工智能",
+            "初创公司",
+            "风险投资"
+          ],
+          "analysis": [
+            "Anthropic 在上市后股价跌破 IPO 发行价。",
+            "这一走势可能让投资者重新评估 AI 初创公司的估值。"
+          ]
+        },
+        "en": {
+          "title": "Anthropic shares fall below IPO price, pressuring AI startup valuations",
+          "summary": "Anthropic's post-IPO slump could weigh on valuations of AI startups.",
+          "lede": "Anthropic's shares have slipped below their IPO price, raising concerns about valuations of AI startups.",
+          "tags": [
+            "AI",
+            "Startups",
+            "Venture Capital"
+          ],
+          "analysis": [
+            "Anthropic's shares have fallen below their IPO price after the company went public.",
+            "The decline could prompt investors to reassess valuations of AI startups."
+          ]
+        }
+      },
+      "id": "7992bf690613aecdb58171dd",
+      "original_title": "Anthropic shares fall below IPO price, a worrying sign for AI startups",
+      "original_summary": "Anthropic’s post-IPO slump could put pressure on AI startup valuations.",
+      "url": "https://techcrunch.com/2026/11/24/anthropic-shares-fall-below-ipo-price-a-worrying-sign-for-ai-startups",
+      "source": "TechCrunch AI",
+      "published": "2026-11-24T18:30:42+00:00",
+      "authors": [],
+      "score": 3,
+      "category": "ai_frontier"
+    }
+  ]
+}
