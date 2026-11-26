@@ -1,0 +1,257 @@
+{
+  "date": "2026-11-27",
+  "total_scanned": 3107,
+  "total_unique": 38,
+  "window_count": 213,
+  "window_hours": 48,
+  "cutoff": "2026-11-24T23:02:37.877702+00:00",
+  "window_end": "2026-11-26T23:02:37.877702+00:00",
+  "scored_count": 38,
+  "qualified_count": 5,
+  "event_duplicate_count": 2,
+  "mode": "api",
+  "items": [
+    {
+      "title": "AMD 推出 llama.cpp 基准测试面板，覆盖锐龙和 Radeon",
+      "summary": "AMD 发布了 llama.cpp 基准测试面板，用于展示锐龙处理器和 Radeon 显卡运行该推理框架的性能数据。",
+      "lede": "AMD 上线 llama.cpp 基准测试面板，集中展示锐龙和 Radeon 硬件的推理性能。",
+      "tags": [
+        "AMD",
+        "llama.cpp",
+        "基准测试"
+      ],
+      "analysis": [
+        "AMD 发布了 llama.cpp 基准测试面板，覆盖锐龙处理器和 Radeon 显卡。",
+        "面板汇总这两类硬件运行 llama.cpp 的测试结果，方便读者对比不同配置的表现。"
+      ],
+      "i18n": {
+        "zh": {
+          "title": "AMD 推出 llama.cpp 基准测试面板，覆盖锐龙和 Radeon",
+          "summary": "AMD 发布了 llama.cpp 基准测试面板，用于展示锐龙处理器和 Radeon 显卡运行该推理框架的性能数据。",
+          "lede": "AMD 上线 llama.cpp 基准测试面板，集中展示锐龙和 Radeon 硬件的推理性能。",
+          "tags": [
+            "AMD",
+            "llama.cpp",
+            "基准测试"
+          ],
+          "analysis": [
+            "AMD 发布了 llama.cpp 基准测试面板，覆盖锐龙处理器和 Radeon 显卡。",
+            "面板汇总这两类硬件运行 llama.cpp 的测试结果，方便读者对比不同配置的表现。"
+          ]
+        },
+        "en": {
+          "title": "AMD launches llama.cpp benchmark dashboard for Ryzen and Radeon",
+          "summary": "AMD has released a llama.cpp benchmark dashboard showing performance data for Ryzen processors and Radeon graphics cards running the inference framework.",
+          "lede": "AMD has launched a llama.cpp benchmark dashboard that gathers inference performance results for Ryzen and Radeon hardware.",
+          "tags": [
+            "AMD",
+            "llama.cpp",
+            "benchmark"
+          ],
+          "analysis": [
+            "AMD released a llama.cpp benchmark dashboard covering Ryzen processors and Radeon graphics cards.",
+            "The dashboard collects test results for running llama.cpp on these two hardware lines, making it easier to compare different configurations."
+          ]
+        }
+      },
+      "id": "a734da9d3a1d876054f86e6e",
+      "original_title": "Introducing the llama.cpp benchmark dashboard for AMD Ryzen and Radeon",
+      "original_summary": "",
+      "url": "https://huggingface.co/blog/ggml-org/llamacpp-amd-bench",
+      "source": "Hugging Face Blog",
+      "published": "2026-11-26T11:37:17+00:00",
+      "authors": [],
+      "score": 3,
+      "category": "ai_frontier",
+      "image": {
+        "path": "./data/2026-11-27/news_images/a734da9d3a1d876054f86e6e.webp",
+        "width": 1200,
+        "height": 600,
+        "source_url": "https://huggingface.co/blog/ggml-org/llamacpp-amd-bench",
+        "image_url": "https://cdn-uploads.huggingface.co/production/uploads/67289c93ff90038d9a6e5675/tbIvyMSISXCm64WYP3atl.png",
+        "alt": ""
+      }
+    },
+    {
+      "title": "Nemotron 3.5 Parse 推出开放数据、微调与更快推理三项更新",
+      "summary": "围绕 Nemotron 3.5 Parse 的新进展包括开放数据、微调支持和更快的推理。",
+      "lede": "Nemotron 3.5 Parse 迎来开放数据、微调和更快推理三项更新。",
+      "tags": [
+        "Nemotron",
+        "开放数据",
+        "模型微调"
+      ],
+      "analysis": [
+        "发布方公布了 Nemotron 3.5 Parse 的三项更新：开放数据、微调支持和更快的推理。",
+        "材料没有给出具体数字或实际影响依据，因此这些更新的效果尚待验证。"
+      ],
+      "i18n": {
+        "zh": {
+          "title": "Nemotron 3.5 Parse 推出开放数据、微调与更快推理三项更新",
+          "summary": "围绕 Nemotron 3.5 Parse 的新进展包括开放数据、微调支持和更快的推理。",
+          "lede": "Nemotron 3.5 Parse 迎来开放数据、微调和更快推理三项更新。",
+          "tags": [
+            "Nemotron",
+            "开放数据",
+            "模型微调"
+          ],
+          "analysis": [
+            "发布方公布了 Nemotron 3.5 Parse 的三项更新：开放数据、微调支持和更快的推理。",
+            "材料没有给出具体数字或实际影响依据，因此这些更新的效果尚待验证。"
+          ]
+        },
+        "en": {
+          "title": "Nemotron 3.5 Parse adds open data, fine-tuning and faster inference",
+          "summary": "New work around Nemotron 3.5 Parse covers open data, fine-tuning support and faster inference.",
+          "lede": "Nemotron 3.5 Parse gains open data, fine-tuning and faster inference.",
+          "tags": [
+            "Nemotron",
+            "open data",
+            "fine-tuning"
+          ],
+          "analysis": [
+            "The release announces three updates for Nemotron 3.5 Parse: open data, fine-tuning support and faster inference.",
+            "The material gives no specific figures or evidence of real-world impact, so the effect of these updates remains to be verified."
+          ]
+        }
+      },
+      "id": "3d2697b636d74b834fc0e734",
+      "original_title": "Building on Nemotron 3.5 Parse: Open Data, Fine-Tuning, and Faster Inference",
+      "original_summary": "",
+      "url": "https://huggingface.co/blog/nvidia/building-on-nemotron-35-parse-open-data-fine-tunin",
+      "source": "Hugging Face Blog",
+      "published": "2026-11-26T05:05:36+00:00",
+      "authors": [],
+      "score": 3,
+      "category": "ai_frontier",
+      "image": {
+        "path": "./data/2026-11-27/news_images/3d2697b636d74b834fc0e734.webp",
+        "width": 1200,
+        "height": 643,
+        "source_url": "https://huggingface.co/blog/nvidia/building-on-nemotron-35-parse-open-data-fine-tunin",
+        "image_url": "https://cdn-uploads.huggingface.co/production/uploads/6365c3f398da81987e2753f2/zArpuP9uLsLz9luMW0K2g.png",
+        "alt": ""
+      }
+    },
+    {
+      "title": "英伟达暂停向东南亚四国发货AI芯片服务器",
+      "summary": "英伟达已要求制造合作伙伴暂停向马来西亚、新加坡、泰国和印度尼西亚发运服务器，原因是美国正加大力度阻止AI芯片流入中国。",
+      "lede": "英伟达暂停向东南亚四国发运服务器，配合美国收紧AI芯片出口限制。",
+      "tags": [
+        "AI芯片",
+        "出口管制",
+        "英伟达"
+      ],
+      "analysis": [
+        "英伟达要求制造合作伙伴暂停向马来西亚、新加坡、泰国和印度尼西亚发运服务器。",
+        "这一暂停发生在美方收紧限制、防止AI芯片经东南亚转运至中国之际。",
+        "目前尚不清楚暂停将持续多久，也不清楚涉及哪些具体芯片型号。"
+      ],
+      "i18n": {
+        "zh": {
+          "title": "英伟达暂停向东南亚四国发货AI芯片服务器",
+          "summary": "英伟达已要求制造合作伙伴暂停向马来西亚、新加坡、泰国和印度尼西亚发运服务器，原因是美国正加大力度阻止AI芯片流入中国。",
+          "lede": "英伟达暂停向东南亚四国发运服务器，配合美国收紧AI芯片出口限制。",
+          "tags": [
+            "AI芯片",
+            "出口管制",
+            "英伟达"
+          ],
+          "analysis": [
+            "英伟达要求制造合作伙伴暂停向马来西亚、新加坡、泰国和印度尼西亚发运服务器。",
+            "这一暂停发生在美方收紧限制、防止AI芯片经东南亚转运至中国之际。",
+            "目前尚不清楚暂停将持续多久，也不清楚涉及哪些具体芯片型号。"
+          ]
+        },
+        "en": {
+          "title": "Nvidia pauses server shipments to four Southeast Asian countries",
+          "summary": "Nvidia has told manufacturing partners to pause server shipments to Malaysia, Singapore, Thailand and Indonesia as the U.S. tightens efforts to keep AI chips out of China.",
+          "lede": "Nvidia has paused server shipments to four Southeast Asian countries as the U.S. tightens AI chip export limits.",
+          "tags": [
+            "AI chips",
+            "export controls",
+            "Nvidia"
+          ],
+          "analysis": [
+            "Nvidia asked its manufacturing partners to pause server shipments to Malaysia, Singapore, Thailand and Indonesia.",
+            "The pause comes as Washington tightens restrictions aimed at stopping AI chips from reaching China through Southeast Asia.",
+            "It is not yet clear how long the pause will last or which specific chip models are affected."
+          ]
+        }
+      },
+      "id": "33b3d08d99aeb285e8bea951",
+      "original_title": "Nvidia hits pause on chip shipments to Southeast Asia",
+      "original_summary": "Nvidia has told manufacturing partners to pause server shipments to Malaysia, Singapore, Thailand and Indonesia as the U.S. tightens its push to keep AI chips out of China.",
+      "url": "https://techcrunch.com/2026/11/26/nvidia-hits-pause-on-chip-shipments-to-southeast-asia",
+      "source": "TechCrunch AI",
+      "published": "2026-11-26T20:03:54+00:00",
+      "authors": [],
+      "score": 3,
+      "category": "ai_frontier",
+      "image": {
+        "path": "./data/2026-11-27/news_images/33b3d08d99aeb285e8bea951.webp",
+        "width": 1024,
+        "height": 683,
+        "source_url": "https://techcrunch.com/2026/11/26/nvidia-hits-pause-on-chip-shipments-to-southeast-asia/",
+        "image_url": "https://techcrunch.com/wp-content/uploads/2026/11/Taiwan-Nvidia.jpg?w=1024",
+        "alt": ""
+      }
+    },
+    {
+      "title": "纽约州禁止AI聊天机器人玩具五年",
+      "summary": "纽约州对AI聊天机器人玩具实施五年禁令。Common Sense Media的新研究显示，这类玩具存在安全隐患，包括让孩子接触不当内容，以及影响情感发育的风险。",
+      "lede": "纽约州禁止AI聊天机器人玩具五年，新研究指出安全与情感发育风险。",
+      "tags": [
+        "AI",
+        "政策",
+        "儿童安全"
+      ],
+      "analysis": [
+        "纽约州政府发布了针对AI聊天机器人玩具的五年禁令。",
+        "Common Sense Media的新研究记录了这类玩具的安全问题，包括不当内容暴露和情感发育风险。",
+        "禁令意味着纽约州家长在五年内无法合法购买这类AI玩具。"
+      ],
+      "i18n": {
+        "zh": {
+          "title": "纽约州禁止AI聊天机器人玩具五年",
+          "summary": "纽约州对AI聊天机器人玩具实施五年禁令。Common Sense Media的新研究显示，这类玩具存在安全隐患，包括让孩子接触不当内容，以及影响情感发育的风险。",
+          "lede": "纽约州禁止AI聊天机器人玩具五年，新研究指出安全与情感发育风险。",
+          "tags": [
+            "AI",
+            "政策",
+            "儿童安全"
+          ],
+          "analysis": [
+            "纽约州政府发布了针对AI聊天机器人玩具的五年禁令。",
+            "Common Sense Media的新研究记录了这类玩具的安全问题，包括不当内容暴露和情感发育风险。",
+            "禁令意味着纽约州家长在五年内无法合法购买这类AI玩具。"
+          ]
+        },
+        "en": {
+          "title": "New York bans AI chatbot toys for five years",
+          "summary": "New York has banned AI chatbot toys for five years. New research from Common Sense Media found safety failures, including exposure to inappropriate content and risks to emotional development.",
+          "lede": "New York bans AI chatbot toys for five years, citing safety and emotional development risks.",
+          "tags": [
+            "AI",
+            "Policy",
+            "Child Safety"
+          ],
+          "analysis": [
+            "The New York state government issued a five-year ban on AI chatbot toys.",
+            "New research from Common Sense Media documented safety problems with these toys, including inappropriate content exposure and risks to emotional development.",
+            "The ban means parents in New York cannot legally buy these AI toys for five years."
+          ]
+        }
+      },
+      "id": "fd3eea6ab732b7250509de61",
+      "original_title": "Want to buy your kid an AI toy this Christmas? Not in New York",
+      "original_summary": "New York has banned AI chatbot toys for five years as new research from Common Sense Media reveals troubling safety failures, including exposure to inappropriate content and risks to emotional development.",
+      "url": "https://techcrunch.com/2026/11/25/want-to-buy-your-kid-an-ai-toy-this-christmas-not-in-new-york",
+      "source": "TechCrunch AI",
+      "published": "2026-11-25T18:11:46+00:00",
+      "authors": [],
+      "score": 3,
+      "category": "ai_frontier"
+    }
+  ]
+}

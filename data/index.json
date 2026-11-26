@@ -1,6 +1,23 @@
 {
   "editions": [
     {
+      "date": "2026-11-27",
+      "papers": {
+        "path": "./data/2026-11-27/papers.json",
+        "count": 8,
+        "total_scanned": 105,
+        "lead": "G0.7：以长上下文扩展快速世界动作模型"
+      },
+      "news": {
+        "path": "./data/2026-11-27/news.json",
+        "count": 4,
+        "total_scanned": 213,
+        "lead": "AMD 推出 llama.cpp 基准测试面板，覆盖锐龙和 Radeon"
+      },
+      "infographic": "./data/2026-11-27/infographic.png",
+      "infographic_en": "./data/2026-11-27/infographic.en.png"
+    },
+    {
       "date": "2026-11-26",
       "papers": {
         "path": "./data/2026-11-26/papers.json",

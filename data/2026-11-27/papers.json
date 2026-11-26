@@ -1,0 +1,655 @@
+{
+  "date": "2026-11-27",
+  "total_scanned": 105,
+  "total_new": 105,
+  "total_unique": 105,
+  "paper_target_date": "2026-11-24",
+  "paper_source_date": "2026-11-24",
+  "paper_category": "cs.RO",
+  "previously_published": 0,
+  "scored_count": 105,
+  "qualified_count": 105,
+  "mode": "api",
+  "items": [
+    {
+      "title": "G0.7：以长上下文扩展快速世界动作模型",
+      "summary": "G0.7 是一个通用世界动作模型（WAM，即用视频生成器联合预测未来画面与动作的机器人策略），在 Fast-WAM 基础上沿两条轴扩展：把观测上下文从单帧延长到最长五分钟历史，并把预训练规模扩大到大规模机器人遥操作与人类第一视角（ego）视频语料。实验显示，直接解码动作的 Fast 模式与同一检查点的“先想象再行动”（IDM）推理效果相当，但在单张 RTX 5090 上每 16 步动作块仅需 60 ms，比 IDM 快 7.6 倍，并支持无停顿的实时分块。性能随预训练数据稳定提升，人类第一视角视频对分布外泛化贡献最大：在五个仿真基准套件上平均得分 70.8，在 Galaxea R1 Pro 与 R1 Lite 上零样本抓放成功率分别为 48% 和 54%，视频条件上下文学习任务中分布内成功率 96.7%、分布外 93.3%，七个真实世界后训练任务（含数分钟折箱、饮品制备、商品装袋）平均任务进度 86.9%。",
+      "lede": "G0.7 把世界动作模型的观测上下文延长到五分钟，并用大规模机器人遥操作与人类第一视角视频预训练；部署时跳过未来帧生成，在单张 RTX 5090 上以 60 ms 输出 16 步动作块。",
+      "tags": [
+        "世界动作模型",
+        "长上下文",
+        "机器人操作"
+      ],
+      "sections": {
+        "background": "世界动作模型把预训练视频生成器改造成机器人控制器，通过同时预测未来相机画面和动作，把视频中学到的物理先验迁移到操作策略中。但若每次动作前都先生成未来帧，测试时推理过慢，难以支撑闭环控制；同时多数现有策略只能利用很短的观测历史，难以应对需要长时记忆的任务。Fast-WAM 已表明视频预测主要在训练阶段塑造策略表征，部署时可以跳过未来帧合成，G0.7 在此基础上继续扩大上下文与预训练规模。",
+        "conclusion": "在公开仿真套件和真机部署中，同一检查点下 Fast 模式（直接解码动作）与 IDM 模式（先想象再行动）表现相当，而每 16 步动作块仅需 60 ms，比 IDM 快 7.6 倍，并支持无停顿实时分块。性能随预训练数据一致提升，人类第一视角视频带来最大的分布外泛化增益。具体结果为：五个仿真基准套件平均得分 70.8；Galaxea R1 Pro 与 R1 Lite 零样本抓放成功率 48% 与 54%；视频条件上下文学习任务分布内 96.7%、分布外 93.3%；七个真实世界后训练任务平均任务进度 86.9%，包括数分钟折箱、饮品制备和商品装袋。",
+        "method": "输入是机器人观测序列，上下文窗口从单帧扩展到最长五分钟历史，用于支撑需要长时记忆的操作。模型以预训练视频生成器为骨干，联合预测未来相机帧与动作，从而在训练中把视频里的物理先验注入策略表征。部署时采用 Fast 模式直接解码动作，跳过未来帧合成，因此每 16 步动作块只需 60 ms，并支持无停顿的实时分块控制。预训练数据覆盖大规模机器人遥操作与人类第一视角视频，材料报告性能随数据规模一致提升，其中人类第一视角视频对分布外泛化贡献最大。",
+        "takeaways": "在需要长时记忆的真机场景中，例如数分钟折箱、饮品制备和商品装袋，G0.7 已报告 86.9% 的平均任务进度，但这一结论限于材料所述的后训练设定。若要部署到 Galaxea R1 Pro 或 R1 Lite 这类平台，需要具备相应遥操作数据与第一视角视频用于预训练，并验证零样本抓放能否在目标环境中复现 48% 与 54% 的成功率。单张 RTX 5090 上 60 ms 的动作块推理为实时闭环提供了条件，但实际部署还需验证长上下文在真实延迟与传感器噪声下的稳定性。人类第一视角视频带来的分布外增益提示可优先扩充此类数据，不过其适用范围仍以材料报告的基准与任务为限。"
+      },
+      "i18n": {
+        "zh": {
+          "title": "G0.7：以长上下文扩展快速世界动作模型",
+          "summary": "G0.7 是一个通用世界动作模型（WAM，即用视频生成器联合预测未来画面与动作的机器人策略），在 Fast-WAM 基础上沿两条轴扩展：把观测上下文从单帧延长到最长五分钟历史，并把预训练规模扩大到大规模机器人遥操作与人类第一视角（ego）视频语料。实验显示，直接解码动作的 Fast 模式与同一检查点的“先想象再行动”（IDM）推理效果相当，但在单张 RTX 5090 上每 16 步动作块仅需 60 ms，比 IDM 快 7.6 倍，并支持无停顿的实时分块。性能随预训练数据稳定提升，人类第一视角视频对分布外泛化贡献最大：在五个仿真基准套件上平均得分 70.8，在 Galaxea R1 Pro 与 R1 Lite 上零样本抓放成功率分别为 48% 和 54%，视频条件上下文学习任务中分布内成功率 96.7%、分布外 93.3%，七个真实世界后训练任务（含数分钟折箱、饮品制备、商品装袋）平均任务进度 86.9%。",
+          "lede": "G0.7 把世界动作模型的观测上下文延长到五分钟，并用大规模机器人遥操作与人类第一视角视频预训练；部署时跳过未来帧生成，在单张 RTX 5090 上以 60 ms 输出 16 步动作块。",
+          "tags": [
+            "世界动作模型",
+            "长上下文",
+            "机器人操作"
+          ],
+          "sections": {
+            "background": "世界动作模型把预训练视频生成器改造成机器人控制器，通过同时预测未来相机画面和动作，把视频中学到的物理先验迁移到操作策略中。但若每次动作前都先生成未来帧，测试时推理过慢，难以支撑闭环控制；同时多数现有策略只能利用很短的观测历史，难以应对需要长时记忆的任务。Fast-WAM 已表明视频预测主要在训练阶段塑造策略表征，部署时可以跳过未来帧合成，G0.7 在此基础上继续扩大上下文与预训练规模。",
+            "conclusion": "在公开仿真套件和真机部署中，同一检查点下 Fast 模式（直接解码动作）与 IDM 模式（先想象再行动）表现相当，而每 16 步动作块仅需 60 ms，比 IDM 快 7.6 倍，并支持无停顿实时分块。性能随预训练数据一致提升，人类第一视角视频带来最大的分布外泛化增益。具体结果为：五个仿真基准套件平均得分 70.8；Galaxea R1 Pro 与 R1 Lite 零样本抓放成功率 48% 与 54%；视频条件上下文学习任务分布内 96.7%、分布外 93.3%；七个真实世界后训练任务平均任务进度 86.9%，包括数分钟折箱、饮品制备和商品装袋。",
+            "method": "输入是机器人观测序列，上下文窗口从单帧扩展到最长五分钟历史，用于支撑需要长时记忆的操作。模型以预训练视频生成器为骨干，联合预测未来相机帧与动作，从而在训练中把视频里的物理先验注入策略表征。部署时采用 Fast 模式直接解码动作，跳过未来帧合成，因此每 16 步动作块只需 60 ms，并支持无停顿的实时分块控制。预训练数据覆盖大规模机器人遥操作与人类第一视角视频，材料报告性能随数据规模一致提升，其中人类第一视角视频对分布外泛化贡献最大。",
+            "takeaways": "在需要长时记忆的真机场景中，例如数分钟折箱、饮品制备和商品装袋，G0.7 已报告 86.9% 的平均任务进度，但这一结论限于材料所述的后训练设定。若要部署到 Galaxea R1 Pro 或 R1 Lite 这类平台，需要具备相应遥操作数据与第一视角视频用于预训练，并验证零样本抓放能否在目标环境中复现 48% 与 54% 的成功率。单张 RTX 5090 上 60 ms 的动作块推理为实时闭环提供了条件，但实际部署还需验证长上下文在真实延迟与传感器噪声下的稳定性。人类第一视角视频带来的分布外增益提示可优先扩充此类数据，不过其适用范围仍以材料报告的基准与任务为限。"
+          }
+        },
+        "en": {
+          "title": "G0.7: Scaling Up a Fast World Action Model with Long Context",
+          "summary": "G0.7 is a generalist world action model (WAM, a robot policy that jointly predicts future camera frames and actions using a pretrained video generator) built on Fast-WAM and scaled along two axes: extending the observation context from a single frame to up to five minutes of history, and scaling pretraining to a large corpus of robot teleoperation and human egocentric (ego) video. Experiments show that direct action decoding (Fast mode) matches imagine-then-act (IDM) inference from the same checkpoint while running in 60 ms per 16-step action chunk on a single RTX 5090 (7.6x faster than IDM) and supporting pause-free real-time chunking. Performance scales consistently with pretraining data, with human ego video driving the largest gains in out-of-distribution generalization: G0.7 achieves a 70.8 mean score across five simulation benchmark suites, 48% and 54% zero-shot pick-and-place success on Galaxea R1 Pro and R1 Lite, 96.7% in-distribution and 93.3% out-of-distribution success on video-conditioned in-context learning tasks, and 86.9% mean task progress across seven real-world post-training tasks including multi-minute box folding, drink preparation, and product bagging.",
+          "lede": "G0.7 extends a world action model's observation context to five minutes and pretrains it on large-scale robot teleoperation and human ego video; at deployment it skips future frame generation and outputs a 16-step action chunk in 60 ms on a single RTX 5090.",
+          "tags": [
+            "world action model",
+            "long context",
+            "robot manipulation"
+          ],
+          "sections": {
+            "background": "World action models adapt pretrained video generators into robot controllers by jointly predicting future camera frames and actions, transferring physical priors learned from video into manipulation policies. However, generating future frames before every action makes test-time inference too slow for closed-loop control, and most existing policies remain restricted to short observation histories, which limits tasks that require long-horizon memory. Fast-WAM showed that video prediction mainly shapes policy representations during training so that future frame synthesis can be skipped at deployment; G0.7 builds on this by scaling both context and pretraining.",
+            "conclusion": "Across public simulation suites and real-robot deployments, Fast mode (direct action decoding) matches IDM mode (imagine-then-act) from the same checkpoint while running in 60 ms per 16-step action chunk, 7.6x faster than IDM, and supporting pause-free real-time chunking. Performance scales consistently with pretraining data, and human ego video drives the largest out-of-distribution gains. Reported results: 70.8 mean score across five simulation benchmark suites; 48% and 54% zero-shot pick-and-place success on Galaxea R1 Pro and R1 Lite; 96.7% in-distribution and 93.3% out-of-distribution success on video-conditioned in-context learning tasks; and 86.9% mean task progress across seven real-world post-training tasks, including multi-minute box folding, drink preparation, and product bagging.",
+            "method": "The input is a sequence of robot observations, with the context window extended from a single frame to up to five minutes of history to support manipulation that needs long-horizon memory. The model uses a pretrained video generator as its backbone and jointly predicts future camera frames and actions, so physical priors from video are injected into the policy representation during training. At deployment, Fast mode decodes actions directly and skips future frame synthesis, so a 16-step action chunk takes only 60 ms and pause-free real-time chunked control is supported. Pretraining covers large-scale robot teleoperation and human ego video; the material reports consistent gains with data scale, with human ego video contributing most to out-of-distribution generalization.",
+            "takeaways": "For real-world tasks that need long-horizon memory, such as multi-minute box folding, drink preparation, and product bagging, G0.7 reports 86.9% mean task progress, but this result is limited to the post-training setting described in the material. Deploying on platforms such as Galaxea R1 Pro or R1 Lite would require corresponding teleoperation data and ego video for pretraining, and would need to verify whether the 48% and 54% zero-shot pick-and-place rates reproduce in the target environment. The 60 ms action-chunk inference on a single RTX 5090 provides a basis for real-time closed-loop control, but real deployment still needs validation of long-context stability under real latency and sensor noise. The out-of-distribution gains from human ego video suggest prioritizing such data, though the applicable scope remains limited to the benchmarks and tasks reported in the material."
+          }
+        }
+      },
+      "id": "2611.31822",
+      "original_title": "G0.7: Scaling Up a Fast World Action Model with Long Context",
+      "original_summary": "World action models (WAMs) adapt pretrained video generators for robot control by jointly predicting future camera frames and actions, transferring physical priors learned from video into manipulation policies. However, generating future frames before every action makes test-time inference too slow for closed-loop control, while most existing policies remain restricted to short observation histories. Building on Fast-WAM, which showed that video prediction shapes policy representations during training so that future frame synthesis can be skipped at deployment, we present G0.7, a generalist world action model scaled along two axes: extending the context window from a single observation to up to five minutes of history, and scaling pretraining to a large-scale corpus of robot teleoperation and human egocentric (ego) video. Across public simulation suites and real-robot deployments, direct action decoding (Fast mode) matches imagine-then-act (IDM) inference from the same checkpoint while running in 60 ms per 16-step action chunk on a single RTX 5090 (7.6x faster than IDM) and supporting pause-free real-time chunking. Performance scales consistently with pretraining data, with human ego video driving the largest gains in out-of-distribution generalization: G0.7 achieves a 70.8 mean score across five simulation benchmark suites, 48% and 54% zero-shot pick-and-place success on Galaxea R1 Pro and R1 Lite, 96.7% in-distribution and 93.3% out-of-distribution success on video-conditioned in-context learning tasks, and 86.9% mean task progress across seven real-world post-training tasks including multi-minute box folding, drink preparation, and product bagging. Project page: https://www.galaxea-ai.com/model-g07.html",
+      "url": "https://arxiv.org/abs/2611.31822v2",
+      "source": "arXiv cs.RO",
+      "published": "2026-11-24T02:17:04+00:00",
+      "authors": [
+        "Tianyuan Yuan",
+        "Baijun Ye",
+        "Shicheng Cao",
+        "Xing Nie",
+        "Xiaopeng Yu",
+        "Ke Dong",
+        "Zijie Zhao",
+        "Shenling Qiu",
+        "Yizhao Xu",
+        "Feiyang Xue",
+        "Haonan Liu",
+        "Haoyu Zhang",
+        "Haobo Jia",
+        "Zheng Liu",
+        "Bowen Zhang",
+        "Haodong Yang",
+        "Anqi Yang",
+        "Jiahui Niu",
+        "Yue Sun",
+        "Tailai Cheng",
+        "Jianpeng Yu",
+        "Yang Wen",
+        "Longhao Wei",
+        "Zibin Dong",
+        "Shiduo Zhang",
+        "Yicheng Liu",
+        "Hang Zhao"
+      ],
+      "score": 5,
+      "versioned_id": "2611.31822v2",
+      "figure": {
+        "path": "./data/2026-11-27/figures/2611.31822.webp",
+        "caption": "Figure 1: G0.7 architecture and control loop. The context caches up to five minutes of real camera observations, combining the robot’s own history with an optional demonstration video. Conditioned at every layer by the language expert, the vision/action expert attends over this context to decode the next 16-step action chunk directly in 60 ms (Fast mode), or optionally imagines future frames first (IDM mode). After each chunk executes, the newest frame joins the context and the oldest slides out of the window."
+      },
+      "code_url": null,
+      "project_url": null,
+      "pdf_url": "https://arxiv.org/pdf/2611.31822"
+    },
+    {
+      "title": "具身智能未通过镜像测试：一面简单的镜子如何让机器人策略失效",
+      "summary": "研究团队提出 RoboDojo-Mirror 基准，在保持任务目标、成功判定和策略检查点不变的前提下，对比无镜、单镜、双镜和镜面桌面四种场景。测试覆盖视觉-语言-动作模型（VLA，把视觉输入直接映射为动作的模型）、世界动作模型和智能体策略共五类策略，所有镜面条件都导致总体成功率下降：三种镜面条件平均下降 10.8 至 56.7 个百分点，镜面桌面场景最高下降 62.5 个百分点。由于镜子本身也是物理障碍，研究进一步用几何尺寸匹配的非反射面板作对照，发现 50%–88% 的镜面特有失败并未记录到机器人与面板接触，说明单纯碰撞无法解释性能退化；轨迹与接触分析显示，策略会反复朝镜中倒影抓取，并把真实物体的位置判断错。真机实验使用 π0.5 和 FastWAM，在竖镜与镜面桌面条件下总体成功率同样下降。",
+      "lede": "一面镜子就能让多种机器人操作策略的成功率大幅下降：新基准 RoboDojo-Mirror 显示，镜面条件下成功率最多下降 62.5 个百分点，而失败主要不是撞到镜子，而是策略朝倒影抓取、把真实物体位置判断错。",
+      "tags": [
+        "具身智能评测",
+        "机器人操作策略",
+        "镜面反射鲁棒性"
+      ],
+      "sections": {
+        "background": "机器人操作策略通常在无镜面的仿真或实验室环境中训练和评测，但真实场景中玻璃幕墙、镜面家具和抛光桌面十分常见。动物认知研究用镜像自我识别测试考察个体能否区分自身与倒影，本文把类似问题引入具身智能：当场景中出现物体倒影时，策略能否仍然可靠地操作真实物体？现有基准缺少对反射环境的系统评测，因此需要一套保持任务与判定不变、只改变镜面条件的对照基准。",
+        "conclusion": "在五类策略上，单镜、双镜和镜面桌面三种条件都降低了总体成功率，平均降幅为 10.8 至 56.7 个百分点，镜面桌面最高下降 62.5 个百分点。几何匹配的非反射面板对照显示，50%–88% 的镜面特有失败没有记录到机器人接触面板，因此碰撞不是主因。轨迹与接触分析指向两类反复出现的行为：朝倒影中的物体抓取（幻影目标），以及把真实物体的空间位置判断错。真机实验中 π0.5 与 FastWAM 在竖镜和镜面桌面条件下总体成功率也下降。结论适用于本文设定的任务、策略检查点和镜面布局，尚不能外推到所有反射材质或所有机器人形态。",
+        "method": "输入是机器人相机观测与任务指令，策略在 RoboDojo 仿真中执行操作任务；基准保持任务目标、成功判定和策略检查点不变，只把场景替换为无镜、单镜、双镜或镜面桌面。为区分“镜子作为障碍物”与“镜子作为反射源”，研究加入几何尺寸匹配的非反射面板作为对照，并记录机器人与面板的接触。随后对失败回合做轨迹与接触分析，识别幻影抓取和真实物体定位错误等行为模式，并补充抓取靠近倒影、推动进度随策略变化、主相机被遮挡时与真实目标交互等定向诊断。真机部分在竖镜与镜面桌面条件下测试 π0.5 和 FastWAM。已验证的退化来自镜面条件本身，而非仅由碰撞造成；这些结论限于所测策略与场景设定。",
+        "takeaways": "若机器人要在有玻璃幕墙、镜面家具或抛光桌面的家庭、零售或实验室环境中部署，需要把反射感知纳入训练与评测，例如在仿真中加入镜面条件做数据增强，或增加倒影检测与真实目标消歧模块。所需条件是带镜面渲染的仿真环境、可复现的策略检查点，以及能记录接触与轨迹的评测管线；真机侧还需要覆盖竖镜和镜面桌面的测试场地。距离真机部署仍缺的验证包括：更多反射材质与光照条件、动态镜面或部分反射表面、不同机器人形态与相机布局，以及反射感知改进是否在真机上稳定提升成功率。上述应用均为条件性设想，实测结论仅限本文报告的任务、策略与镜面设定。"
+      },
+      "i18n": {
+        "zh": {
+          "title": "具身智能未通过镜像测试：一面简单的镜子如何让机器人策略失效",
+          "summary": "研究团队提出 RoboDojo-Mirror 基准，在保持任务目标、成功判定和策略检查点不变的前提下，对比无镜、单镜、双镜和镜面桌面四种场景。测试覆盖视觉-语言-动作模型（VLA，把视觉输入直接映射为动作的模型）、世界动作模型和智能体策略共五类策略，所有镜面条件都导致总体成功率下降：三种镜面条件平均下降 10.8 至 56.7 个百分点，镜面桌面场景最高下降 62.5 个百分点。由于镜子本身也是物理障碍，研究进一步用几何尺寸匹配的非反射面板作对照，发现 50%–88% 的镜面特有失败并未记录到机器人与面板接触，说明单纯碰撞无法解释性能退化；轨迹与接触分析显示，策略会反复朝镜中倒影抓取，并把真实物体的位置判断错。真机实验使用 π0.5 和 FastWAM，在竖镜与镜面桌面条件下总体成功率同样下降。",
+          "lede": "一面镜子就能让多种机器人操作策略的成功率大幅下降：新基准 RoboDojo-Mirror 显示，镜面条件下成功率最多下降 62.5 个百分点，而失败主要不是撞到镜子，而是策略朝倒影抓取、把真实物体位置判断错。",
+          "tags": [
+            "具身智能评测",
+            "机器人操作策略",
+            "镜面反射鲁棒性"
+          ],
+          "sections": {
+            "background": "机器人操作策略通常在无镜面的仿真或实验室环境中训练和评测，但真实场景中玻璃幕墙、镜面家具和抛光桌面十分常见。动物认知研究用镜像自我识别测试考察个体能否区分自身与倒影，本文把类似问题引入具身智能：当场景中出现物体倒影时，策略能否仍然可靠地操作真实物体？现有基准缺少对反射环境的系统评测，因此需要一套保持任务与判定不变、只改变镜面条件的对照基准。",
+            "conclusion": "在五类策略上，单镜、双镜和镜面桌面三种条件都降低了总体成功率，平均降幅为 10.8 至 56.7 个百分点，镜面桌面最高下降 62.5 个百分点。几何匹配的非反射面板对照显示，50%–88% 的镜面特有失败没有记录到机器人接触面板，因此碰撞不是主因。轨迹与接触分析指向两类反复出现的行为：朝倒影中的物体抓取（幻影目标），以及把真实物体的空间位置判断错。真机实验中 π0.5 与 FastWAM 在竖镜和镜面桌面条件下总体成功率也下降。结论适用于本文设定的任务、策略检查点和镜面布局，尚不能外推到所有反射材质或所有机器人形态。",
+            "method": "输入是机器人相机观测与任务指令，策略在 RoboDojo 仿真中执行操作任务；基准保持任务目标、成功判定和策略检查点不变，只把场景替换为无镜、单镜、双镜或镜面桌面。为区分“镜子作为障碍物”与“镜子作为反射源”，研究加入几何尺寸匹配的非反射面板作为对照，并记录机器人与面板的接触。随后对失败回合做轨迹与接触分析，识别幻影抓取和真实物体定位错误等行为模式，并补充抓取靠近倒影、推动进度随策略变化、主相机被遮挡时与真实目标交互等定向诊断。真机部分在竖镜与镜面桌面条件下测试 π0.5 和 FastWAM。已验证的退化来自镜面条件本身，而非仅由碰撞造成；这些结论限于所测策略与场景设定。",
+            "takeaways": "若机器人要在有玻璃幕墙、镜面家具或抛光桌面的家庭、零售或实验室环境中部署，需要把反射感知纳入训练与评测，例如在仿真中加入镜面条件做数据增强，或增加倒影检测与真实目标消歧模块。所需条件是带镜面渲染的仿真环境、可复现的策略检查点，以及能记录接触与轨迹的评测管线；真机侧还需要覆盖竖镜和镜面桌面的测试场地。距离真机部署仍缺的验证包括：更多反射材质与光照条件、动态镜面或部分反射表面、不同机器人形态与相机布局，以及反射感知改进是否在真机上稳定提升成功率。上述应用均为条件性设想，实测结论仅限本文报告的任务、策略与镜面设定。"
+          }
+        },
+        "en": {
+          "title": "Embodied AI Fails the Mirror Test: How a Simple Mirror Breaks Robot Policies",
+          "summary": "The authors introduce RoboDojo-Mirror, a benchmark built on RoboDojo that keeps task objectives, success criteria, and policy checkpoints fixed while comparing a mirror-free baseline with single-mirror, dual-mirror, and mirrored-tabletop conditions. Across five policies spanning Vision-Language-Action models (VLAs, which map visual input directly to actions), World Action Models, and agentic policies, every mirror condition lowers aggregate success rates: averaged over the three conditions, the drop ranges from 10.8 to 56.7 percentage points, reaching 62.5 points on the mirrored tabletop. Because a mirror is also a physical obstacle, the study compares it against geometrically matched non-reflective panels; 50–88% of mirror-specific failures occur without recorded robot–panel contact, so collisions alone do not explain the degradation. Trajectory and contact analyses instead reveal phantom targeting of reflected objects and spatial mislocalization of real ones. Real-robot experiments with π0.5 and FastWAM also show lower overall success rates under the upright-mirror and mirrored-tabletop conditions.",
+          "lede": "A simple mirror can sharply reduce the success of diverse robot manipulation policies: the new RoboDojo-Mirror benchmark shows drops of up to 62.5 percentage points under mirror conditions, with failures driven mainly by grasping toward reflections and mislocalizing real objects rather than by hitting the mirror.",
+          "tags": [
+            "embodied AI evaluation",
+            "robot manipulation policies",
+            "mirror reflection robustness"
+          ],
+          "sections": {
+            "background": "Robot manipulation policies are typically trained and evaluated in mirror-free simulation or laboratory settings, yet reflective surfaces such as glass walls, mirrored furniture, and polished tabletops are common in real environments. Inspired by the mirror self-recognition test in animal cognition, this work asks whether robot policies can reliably manipulate physical objects when their reflections appear in the scene. Existing benchmarks lack a systematic evaluation of reflective environments, motivating a controlled benchmark that changes only the mirror condition while holding tasks and success criteria fixed.",
+            "conclusion": "Across five policies, single-mirror, dual-mirror, and mirrored-tabletop conditions all reduce aggregate success rates, with average drops of 10.8 to 56.7 percentage points and a maximum drop of 62.5 points on the mirrored tabletop. Geometrically matched non-reflective panels show that 50–88% of mirror-specific failures occur without recorded robot–panel contact, so collisions are not the main cause. Trajectory and contact analyses point to two recurring behaviors: grasping toward reflected objects (phantom targeting) and mislocalizing real objects in space. Real-robot experiments with π0.5 and FastWAM also show lower overall success rates under the upright-mirror and mirrored-tabletop conditions. These conclusions apply to the tasks, policy checkpoints, and mirror layouts tested here and do not yet generalize to all reflective materials or robot embodiments.",
+            "method": "The input is the robot's camera observations and task instruction, and policies execute manipulation tasks in the RoboDojo simulator; the benchmark holds task objectives, success criteria, and policy checkpoints fixed while swapping the scene among mirror-free, single-mirror, dual-mirror, and mirrored-tabletop conditions. To separate the mirror as an obstacle from the mirror as a reflection source, the study adds geometrically matched non-reflective panels as a control and records robot–panel contact. Failure episodes are then analyzed through trajectories and contacts to identify behaviors such as phantom grasping and mislocalization of real objects, supplemented by targeted diagnostics on grasping near reflections, policy-dependent pushing progress, and interaction with the physical target under main-camera occlusion. Real-robot tests evaluate π0.5 and FastWAM under upright-mirror and mirrored-tabletop conditions. The verified degradation stems from the mirror condition itself rather than collisions alone, and these findings are limited to the policies and settings tested.",
+            "takeaways": "If robots are to be deployed in homes, retail spaces, or laboratories with glass walls, mirrored furniture, or polished tabletops, reflection awareness should enter both training and evaluation, for example through mirror-condition data augmentation in simulation or modules that detect reflections and disambiguate the real target. Required conditions include a simulator with mirror rendering, reproducible policy checkpoints, and an evaluation pipeline that logs contacts and trajectories; real-robot testing also needs sites covering upright mirrors and mirrored tabletops. Validation still missing before real-world deployment includes more reflective materials and lighting conditions, dynamic or partially reflective surfaces, different robot embodiments and camera layouts, and evidence that reflection-aware improvements raise success rates consistently on real hardware. These applications are conditional scenarios, and the measured conclusions are limited to the tasks, policies, and mirror settings reported here."
+          }
+        }
+      },
+      "id": "2611.33010",
+      "original_title": "Embodied AI Fails the Mirror Test: How a Simple Mirror Breaks Robot Policies",
+      "original_summary": "Can a simple mirror expose the limitations of today's robotic manipulation policies? Inspired by the mirror self-recognition test in animal cognition, we investigate whether robot policies can reliably manipulate physical objects in scenes containing their reflections. We introduce RoboDojo-Mirror, a benchmark built on RoboDojo that preserves task objectives, success criteria, and policy checkpoints while comparing a mirror-free baseline with single-mirror, dual-mirror, and mirrored-tabletop conditions. Across five policies spanning Vision-Language-Action models, World Action Models, and agentic policies, every mirror condition reduces aggregate success rates: averaged over the three conditions, the drop ranges from 10.8 to 56.7 percentage points across policies, and it reaches 62.5 points on the mirrored tabletop. Because a mirror is also a physical obstacle, we compare it against geometrically matched non-reflective panels; 50--88\\% of mirror-specific failures occur without recorded robot--panel contact, so direct collisions alone do not explain the degradation. Trajectory and contact analyses instead reveal recurring behaviors consistent with phantom targeting of reflected objects and spatial mislocalization of real ones. Targeted diagnostics further characterize grasping near reflections, policy-dependent pushing progress, and physical-target interaction under main-camera occlusion. Real-robot experiments with $π_{0.5}$ and FastWAM also show lower overall success rates under the upright-mirror and mirrored-tabletop conditions. These findings reveal a shared vulnerability to reflective environments across diverse robot policies and motivate reflection-aware evaluation of embodied intelligence. Code is available at https://github.com/iPPLab/robodojo-mirror.",
+      "url": "https://arxiv.org/abs/2611.33010v1",
+      "source": "arXiv cs.RO",
+      "published": "2026-11-24T17:32:00+00:00",
+      "authors": [
+        "Xuanchen Liu",
+        "Hejun Zhang",
+        "Boxuan Dong",
+        "Ying Wu",
+        "Heshuai Li",
+        "Wen Gao",
+        "Yonghong Tian",
+        "Weihao Yu"
+      ],
+      "score": 4,
+      "versioned_id": "2611.33010v1",
+      "figure": {
+        "path": "./data/2026-11-27/figures/2611.33010.webp",
+        "caption": "Figure 2: Overview of the evaluation protocol in RoboDojo-Mirror. Policies are evaluated on matched task layouts under four scene conditions, with additional non-reflective panel controls for selected policies."
+      },
+      "attention": {
+        "hf_upvotes": 33,
+        "hf_comments": 2,
+        "github_stars": 10,
+        "github_url": "https://github.com/ipplab/robodojo-mirror"
+      },
+      "code_url": "https://github.com/iPPLab/robodojo-mirror",
+      "project_url": null,
+      "pdf_url": "https://arxiv.org/pdf/2611.33010"
+    },
+    {
+      "title": "DiffGR00T：面向人形全身视觉-语言-动作模型的执行感知可微训练",
+      "summary": "现有分层人形视觉-语言-动作（VLA）模型通常把动作生成与物理执行分开，导致跟踪误差和平衡误差无法直接优化 VLA 生成器。DiffGR00T 提出端到端可微训练框架，将 GR00T N1.7 与预训练全身行为基础模型 SONIC 耦合：用学习到的、以动作为条件的世界模型替代不可微仿真器，使多步身体执行损失能穿过冻结的全身控制器和流匹配采样器，直接回传到 VLA 动作头。在四个 HumanoidArena 仿真任务上，平均任务成功率相比监督基线 VLA 从 59.2% 提升到 71.7%，提高 12.5 个百分点。",
+      "lede": "DiffGR00T 用可微世界模型把全身执行误差回传到 VLA 动作头，在四个仿真任务上把平均成功率提高 12.5 个百分点。",
+      "tags": [
+        "人形全身控制",
+        "视觉-语言-动作模型",
+        "可微训练"
+      ],
+      "sections": {
+        "background": "视觉-语言-动作模型在机械臂操作上表现突出，但人形全身控制还需要动态平衡和全身紧密协调。现有分层人形 VLA 往往把动作生成与物理执行解耦，执行中的跟踪误差和平衡误差无法反馈给 VLA 生成器，造成高层意图与闭环全身动力学不匹配。",
+        "conclusion": "在四个 HumanoidArena 仿真任务上，DiffGR00T 的平均任务成功率为 71.7%，比监督基线 VLA 的 59.2% 高 12.5 个百分点。结果说明，执行感知梯度能把高层动作生成与闭环全身动力学对齐；该结论限于材料报告的仿真设定。",
+        "method": "输入是任务指令与视觉观测，由 GR00T N1.7 的 VLA 动作头通过流匹配采样器生成动作。为获得可微的执行反馈，框架用学习到的、以动作为条件的世界模型替代不可微仿真器，预测多步身体执行后果。多步身体执行损失随后穿过冻结的全身控制器 SONIC 和流匹配采样器，直接回传到 VLA 动作头。已验证的改进来自这条执行感知梯度通路，使生成动作在训练中考虑跟踪与平衡误差。",
+        "takeaways": "若要在真实人形机器人上使用，需要能提供视觉观测、全身关节状态并运行 SONIC 类全身控制器的硬件与数据条件。当前验证只在 HumanoidArena 仿真中完成，距离真机部署还缺真实世界执行误差、世界模型偏差和安全性验证。该方法适合需要动态平衡与全身协调的人形任务，但实际收益需在目标平台上重新评估。"
+      },
+      "i18n": {
+        "zh": {
+          "title": "DiffGR00T：面向人形全身视觉-语言-动作模型的执行感知可微训练",
+          "summary": "现有分层人形视觉-语言-动作（VLA）模型通常把动作生成与物理执行分开，导致跟踪误差和平衡误差无法直接优化 VLA 生成器。DiffGR00T 提出端到端可微训练框架，将 GR00T N1.7 与预训练全身行为基础模型 SONIC 耦合：用学习到的、以动作为条件的世界模型替代不可微仿真器，使多步身体执行损失能穿过冻结的全身控制器和流匹配采样器，直接回传到 VLA 动作头。在四个 HumanoidArena 仿真任务上，平均任务成功率相比监督基线 VLA 从 59.2% 提升到 71.7%，提高 12.5 个百分点。",
+          "lede": "DiffGR00T 用可微世界模型把全身执行误差回传到 VLA 动作头，在四个仿真任务上把平均成功率提高 12.5 个百分点。",
+          "tags": [
+            "人形全身控制",
+            "视觉-语言-动作模型",
+            "可微训练"
+          ],
+          "sections": {
+            "background": "视觉-语言-动作模型在机械臂操作上表现突出，但人形全身控制还需要动态平衡和全身紧密协调。现有分层人形 VLA 往往把动作生成与物理执行解耦，执行中的跟踪误差和平衡误差无法反馈给 VLA 生成器，造成高层意图与闭环全身动力学不匹配。",
+            "conclusion": "在四个 HumanoidArena 仿真任务上，DiffGR00T 的平均任务成功率为 71.7%，比监督基线 VLA 的 59.2% 高 12.5 个百分点。结果说明，执行感知梯度能把高层动作生成与闭环全身动力学对齐；该结论限于材料报告的仿真设定。",
+            "method": "输入是任务指令与视觉观测，由 GR00T N1.7 的 VLA 动作头通过流匹配采样器生成动作。为获得可微的执行反馈，框架用学习到的、以动作为条件的世界模型替代不可微仿真器，预测多步身体执行后果。多步身体执行损失随后穿过冻结的全身控制器 SONIC 和流匹配采样器，直接回传到 VLA 动作头。已验证的改进来自这条执行感知梯度通路，使生成动作在训练中考虑跟踪与平衡误差。",
+            "takeaways": "若要在真实人形机器人上使用，需要能提供视觉观测、全身关节状态并运行 SONIC 类全身控制器的硬件与数据条件。当前验证只在 HumanoidArena 仿真中完成，距离真机部署还缺真实世界执行误差、世界模型偏差和安全性验证。该方法适合需要动态平衡与全身协调的人形任务，但实际收益需在目标平台上重新评估。"
+          }
+        },
+        "en": {
+          "title": "DiffGR00T: Execution-Aware Differentiable Training for Humanoid Whole-Body Vision-Language-Action Models",
+          "summary": "Existing hierarchical humanoid vision-language-action (VLA) models typically decouple motion generation from physical execution, so tracking and balance errors cannot directly optimize the VLA generator. DiffGR00T is an end-to-end differentiable training framework that couples GR00T N1.7 with SONIC, a pretrained whole-body behavior foundation model. A learned, action-conditioned world model replaces the non-differentiable simulator, allowing multi-step body-execution losses to backpropagate through the frozen whole-body controller and the flow-matching sampler directly into the VLA action head. On four HumanoidArena simulation tasks, average task success improves from 59.2% to 71.7%, a gain of 12.5 percentage points over the supervised base VLA.",
+          "lede": "DiffGR00T backpropagates whole-body execution errors into the VLA action head via a differentiable world model, raising average success by 12.5 percentage points on four simulated tasks.",
+          "tags": [
+            "humanoid whole-body control",
+            "vision-language-action models",
+            "differentiable training"
+          ],
+          "sections": {
+            "background": "Vision-language-action models perform strongly in arm-centric manipulation, but humanoid whole-body control also requires dynamic balance and tightly coupled full-body coordination. Existing hierarchical humanoid VLAs often decouple motion generation from physical execution, leaving tracking and balance errors unable to optimize the VLA generator, which misaligns high-level intent with closed-loop whole-body dynamics.",
+            "conclusion": "On four HumanoidArena simulation tasks, DiffGR00T reaches 71.7% average task success, 12.5 percentage points above the 59.2% supervised base VLA. The results indicate that execution-aware gradients align high-level motion generation with closed-loop whole-body dynamics; this conclusion is limited to the simulation setting reported in the material.",
+            "method": "The input is a task instruction and visual observation, and the GR00T N1.7 VLA action head generates actions through a flow-matching sampler. To obtain differentiable execution feedback, the framework replaces the non-differentiable simulator with a learned, action-conditioned world model that predicts multi-step body-execution outcomes. Multi-step body-execution losses then pass through the frozen whole-body controller SONIC and the flow-matching sampler directly back to the VLA action head. The validated improvement comes from this execution-aware gradient path, which makes generated actions account for tracking and balance errors during training.",
+            "takeaways": "Deployment on a real humanoid would require hardware and data conditions that provide visual observations, whole-body joint states, and a SONIC-style whole-body controller. Validation is currently limited to HumanoidArena simulation, so real-world deployment still lacks verification of real execution errors, world-model bias, and safety. The method is intended for humanoid tasks requiring dynamic balance and whole-body coordination, but its benefit must be re-evaluated on the target platform."
+          }
+        }
+      },
+      "id": "2611.32665",
+      "original_title": "DiffGR00T: Execution-Aware Differentiable Training for Humanoid Whole-Body Vision-Language-Action Models",
+      "original_summary": "Vision-language-action (VLA) models have achieved strong results in arm-centric manipulation, yet humanoid whole-body control (WBC) requires dynamic balance and tightly coupled full-body coordination. Existing hierarchical humanoid VLAs typically decouple motion generation from physical execution, leaving tracking and balance errors unable to directly optimize the VLA generator. We propose DiffGR00T, an end-to-end differentiable training framework that couples GR00T N1.7 with SONIC, a pretrained whole-body behavior foundation model. To enable execution-aware differentiable training, we replace the non-differentiable simulator with a learned, action-conditioned world model, allowing multi-step body-execution losses to backpropagate through the frozen whole-body controller and the flow-matching sampler directly into the VLA action head. On four HumanoidArena simulation tasks, DiffGR00T improves average task success by 12.5 percentage points over the supervised base VLA (59.2% to 71.7%), demonstrating that execution-aware gradients effectively align high-level motion generation with closed-loop whole-body dynamics.",
+      "url": "https://arxiv.org/abs/2611.32665v2",
+      "source": "arXiv cs.RO",
+      "published": "2026-11-24T14:15:38+00:00",
+      "authors": [
+        "Sichen Wu",
+        "Qian Sun",
+        "Mengfan Liu",
+        "Weikai Qin",
+        "Bike Zhu",
+        "Hesheng Wang"
+      ],
+      "score": 4,
+      "versioned_id": "2611.32665v2",
+      "figure": {
+        "path": "./data/2026-11-27/figures/2611.32665.webp",
+        "caption": "Fig. 6: Real-robot closed-loop inference on a Unitree G1. (a) Bend down and pick up a trash bag. (b) Walk to a pedal-operated bin, press the pedal, and deposit the trash. (c) Kneel, pick up a test tube, and place it on the table. (d) Kick a ball to a target position. Each panel shows the full recorded sequence; frames are illustrative, and no quantitative success rate is claimed."
+      },
+      "code_url": null,
+      "project_url": null,
+      "pdf_url": "https://arxiv.org/pdf/2611.32665"
+    },
+    {
+      "title": "VidForce：通过观察人类预测力感知的关节物体操作",
+      "summary": "VidForce 从第三人称 RGB 视频中同时估计交互轨迹与力曲线，借助学习到的物理原型先验，把少量带力测量的数据用于解释人类演示。在 Hoi! 数据集的留出交互上，该方法取得 6.6 cm 的绝对轨迹误差（ATE），峰值力平均绝对误差（MAE）与均方根误差（RMSE）分别为 4.81 N 和 5.92 N，力曲线 RMSE 为 5.52 N；并在 Spot 机器人上验证了由人类演示估计的轨迹与力曲线可驱动机器人操作关节物体。",
+      "lede": "VidForce 用少量带力测量的数据学习物理原型先验，从第三人称视频中同时预测交互轨迹与力曲线，并在 Spot 机器人上验证了由人类演示驱动机器人操作关节物体。",
+      "tags": [
+        "力感知操作",
+        "视频学习",
+        "机器人操作"
+      ],
+      "sections": {
+        "background": "人类能通过观看他人操作，预判物体如何运动以及交互需要多大力气。要让具身智能体（能感知并行动的机器人）也具备这种能力，力测量是最直接的监督信号，但力传感器需要专门设备、数据量有限；仅靠视频又缺少力的标注。因此问题在于：如何利用少量带力测量的数据，从普通第三人称视频中推断人与物体的交互轨迹和所需力。",
+        "conclusion": "在 Hoi! 数据集留出的交互子集上，VidForce 的轨迹绝对轨迹误差为 6.6 cm，峰值力 MAE 与 RMSE 分别为 4.81 N 和 5.92 N，力曲线 RMSE 为 5.52 N。在真实世界视频中，尽管人类执行方式存在差异，方法仍能稳定推断运动与力。作者还将从人类演示估计的轨迹和力曲线部署到 Spot 机器人上，驱动机器人操作关节物体，并报告了重复试验的成功率。",
+        "method": "输入是一段第三人称 RGB 视频，可选地加入 2D 接触点点击和文本形式的物体-动作提示。方法先用学习到的物理原型作为先验：这些原型在力度相近的交互之间共享力水平和时间曲线，再由视觉与语义线索决定每个原型对当前观测的贡献。几何特征和视觉-语言特征把这个先验适配到具体交互上，最后用一个联合条件流模型同时细化初始跟踪轨迹和力曲线。配对的人类视频与带力传感器的夹爪记录提供了监督人类视频所需的实测力参考；另外训练的力矩模型表明该形式可扩展到其他传感量。",
+        "takeaways": "若具备少量带力测量的演示数据，VidForce 可用于从人类视频中提取操作轨迹与力曲线，为关节物体（如抽屉、柜门）的机器人操作提供参考。部署到真机需要机器人平台（如 Spot）以及可执行轨迹与力跟踪的控制接口；材料已在 Spot 上做了重复试验，但未给出具体成功率数值。当前结论限于 Hoi! 数据集的留出交互和所报告的真实视频设定，跨物体类别、跨视角和更大力度范围的泛化仍需验证。"
+      },
+      "i18n": {
+        "zh": {
+          "title": "VidForce：通过观察人类预测力感知的关节物体操作",
+          "summary": "VidForce 从第三人称 RGB 视频中同时估计交互轨迹与力曲线，借助学习到的物理原型先验，把少量带力测量的数据用于解释人类演示。在 Hoi! 数据集的留出交互上，该方法取得 6.6 cm 的绝对轨迹误差（ATE），峰值力平均绝对误差（MAE）与均方根误差（RMSE）分别为 4.81 N 和 5.92 N，力曲线 RMSE 为 5.52 N；并在 Spot 机器人上验证了由人类演示估计的轨迹与力曲线可驱动机器人操作关节物体。",
+          "lede": "VidForce 用少量带力测量的数据学习物理原型先验，从第三人称视频中同时预测交互轨迹与力曲线，并在 Spot 机器人上验证了由人类演示驱动机器人操作关节物体。",
+          "tags": [
+            "力感知操作",
+            "视频学习",
+            "机器人操作"
+          ],
+          "sections": {
+            "background": "人类能通过观看他人操作，预判物体如何运动以及交互需要多大力气。要让具身智能体（能感知并行动的机器人）也具备这种能力，力测量是最直接的监督信号，但力传感器需要专门设备、数据量有限；仅靠视频又缺少力的标注。因此问题在于：如何利用少量带力测量的数据，从普通第三人称视频中推断人与物体的交互轨迹和所需力。",
+            "conclusion": "在 Hoi! 数据集留出的交互子集上，VidForce 的轨迹绝对轨迹误差为 6.6 cm，峰值力 MAE 与 RMSE 分别为 4.81 N 和 5.92 N，力曲线 RMSE 为 5.52 N。在真实世界视频中，尽管人类执行方式存在差异，方法仍能稳定推断运动与力。作者还将从人类演示估计的轨迹和力曲线部署到 Spot 机器人上，驱动机器人操作关节物体，并报告了重复试验的成功率。",
+            "method": "输入是一段第三人称 RGB 视频，可选地加入 2D 接触点点击和文本形式的物体-动作提示。方法先用学习到的物理原型作为先验：这些原型在力度相近的交互之间共享力水平和时间曲线，再由视觉与语义线索决定每个原型对当前观测的贡献。几何特征和视觉-语言特征把这个先验适配到具体交互上，最后用一个联合条件流模型同时细化初始跟踪轨迹和力曲线。配对的人类视频与带力传感器的夹爪记录提供了监督人类视频所需的实测力参考；另外训练的力矩模型表明该形式可扩展到其他传感量。",
+            "takeaways": "若具备少量带力测量的演示数据，VidForce 可用于从人类视频中提取操作轨迹与力曲线，为关节物体（如抽屉、柜门）的机器人操作提供参考。部署到真机需要机器人平台（如 Spot）以及可执行轨迹与力跟踪的控制接口；材料已在 Spot 上做了重复试验，但未给出具体成功率数值。当前结论限于 Hoi! 数据集的留出交互和所报告的真实视频设定，跨物体类别、跨视角和更大力度范围的泛化仍需验证。"
+          }
+        },
+        "en": {
+          "title": "VidForce: Predicting Force-Aware Articulation by Observing Humans",
+          "summary": "VidForce estimates an interaction trajectory and a force profile jointly from third-person RGB video, using learned physical prototypes as a prior so that limited instrumented measurements can help interpret human demonstrations. On held-out interactions from the Hoi! dataset, it achieves 6.6 cm ATE, peak-force MAE and RMSE of 4.81 N and 5.92 N, and force-profile RMSE of 5.52 N; trajectories and force profiles estimated from human demonstrations were also deployed on a Spot robot to drive articulated-object manipulation.",
+          "lede": "VidForce learns a physical-prototype prior from limited instrumented data to predict interaction trajectories and force profiles from third-person video, and was deployed on a Spot robot to drive articulated-object manipulation from human demonstrations.",
+          "tags": [
+            "force-aware manipulation",
+            "learning from video",
+            "robot manipulation"
+          ],
+          "sections": {
+            "background": "People can anticipate how an object will move and how much effort an interaction may require by watching others. For embodied agents to acquire this understanding, force measurements offer direct sensory supervision, but they require specialized equipment and remain limited in quantity, while video alone lacks force labels. The problem is therefore how to infer interaction trajectories and required force from ordinary third-person video using only a small amount of instrumented data.",
+            "conclusion": "On held-out interactions from the Hoi! dataset, VidForce reaches 6.6 cm ATE, peak-force MAE and RMSE of 4.81 N and 5.92 N, and force-profile RMSE of 5.52 N. On real-world videos, it infers motion and force reliably and consistently despite variability in human execution. The authors further deploy trajectories and force profiles estimated from human demonstrations on a Spot robot to drive articulated-object manipulation and report success rates across repeated trials.",
+            "method": "The input is a third-person RGB video, optionally with 2D contact clicks and textual object-action prompts. The method first uses learned physical prototypes as a prior: prototypes share learned force levels and temporal profiles across interactions of comparable effort, and visual and semantic cues determine their contribution to each observation. Geometric and vision-language features adapt this prior to the observed interaction, and a joint conditional flow refines an initial tracked trajectory together with the force profile. Paired human and instrumented-gripper recordings provide measured force references for supervising human video, and a separately trained torque model shows the formulation extends to other sensory quantities.",
+            "takeaways": "Given a small set of instrumented demonstrations, VidForce could extract manipulation trajectories and force profiles from human video to inform robot manipulation of articulated objects such as drawers and cabinet doors. Real-world deployment requires a robot platform such as Spot and a control interface that can execute and track trajectories and forces; the material reports repeated trials on Spot but does not give specific success-rate numbers. The reported conclusions are limited to held-out interactions from the Hoi! dataset and the reported real-video setting; generalization across object categories, viewpoints, and wider force ranges still needs verification."
+          }
+        }
+      },
+      "id": "2611.32967",
+      "original_title": "VidForce: Predicting Force-Aware Articulation by Observing Humans",
+      "original_summary": "People can anticipate how an object moves and the effort an interaction may require by watching others. How can embodied agents acquire this understanding from video? Force measurements provide direct sensory supervision, but require specialized equipment and remain limited in quantity. We introduce VidForce, which estimates an interaction trajectory together with a force profile from a third-person RGB video; 2D contact clicks and textual object-action prompts are optional. Our approach makes limited instrumented measurements useful for interpreting human interactions through learned physical prototypes as a prior. The prototypes share learned force levels and temporal profiles across interactions of comparable effort, with visual and semantic cues determining their contribution to each observation. Geometric and vision-language features adapt this prior to the observed interaction, while a joint conditional flow refines an initial tracked trajectory together with the force profile. Paired human and instrumented-gripper recordings provide measured force references for supervising human video, and a separately trained torque model demonstrates that the formulation extends to other sensory quantities. We evaluate trajectory recovery and force estimation through baseline comparisons and controlled ablations on held-out interactions from the Hoi! dataset. On this evaluation subset, VidForce achieves 6.6 cm ATE, peak-force MAE and RMSE of 4.81 N and 5.92 N, respectively, and force-profile RMSE of 5.52 N. On real-world videos, VidForce infers motion and force reliably and consistently despite the variability in human execution. We further deploy VidForce on a Spot robot, where trajectories and force profiles estimated from human demonstrations drive real-world articulated-object manipulation, and report success rates across repeated trials. Project page: https://rafaymhddn.github.io/vidforce",
+      "url": "https://arxiv.org/abs/2611.32967v1",
+      "source": "arXiv cs.RO",
+      "published": "2026-11-24T17:03:47+00:00",
+      "authors": [
+        "Rafay Mohiuddin",
+        "Jiaqi Chen",
+        "Marc Pollefeys",
+        "Hermann Blum"
+      ],
+      "score": 4,
+      "versioned_id": "2611.32967v1",
+      "figure": {
+        "path": "./data/2026-11-27/figures/2611.32967.webp",
+        "caption": "Figure 3: Real-world videos. (a) Predicted trajectories under the four input combinations; plus signs mark the contact used. (b) Predicted peak forces with self-click and self-prompt; medians exclude misread prompts. : opening force measured with a luggage scale; †: the scale was unable to capture a reading due to limited settling time."
+      },
+      "attention": {
+        "github_stars": 5359,
+        "github_url": "https://github.com/eliahuhorwitz/academic-project-page-template"
+      },
+      "code_url": null,
+      "project_url": "https://rafaymhddn.github.io/vidforce",
+      "pdf_url": "https://arxiv.org/pdf/2611.32967"
+    },
+    {
+      "title": "超越基准：将已发布的自动驾驶模型本地化到真实车辆",
+      "summary": "已发布的自动驾驶模型在基准测试中表现优异，但部署到新真实车辆上仍很困难。作者研究这一部署差距，发现即使经过常规适配，已发布模型仍可能与其源传感、数据和执行过程的假设耦合。为此提出 Released-to-Real（R2R）部署本地化方法，识别这种源系统耦合，只修正受影响组件并保留已发布模型。在数据与行为适配方面，发现轨迹级优化与滚动时域执行之间的不匹配通过自车状态而非观测进入，并提出 Human-Anchored Reinforcement Learning（HA-RL），在记录的目标驾驶数据上修正该问题，无需生成式闭环强化学习（RL）的高成本 rollout。在物理传感器适配方面，R2R 在冻结感知权重下定位并修正依赖源的空间与时间表示，无需目标标注或重训练。HA-RL 将已发布扩散规划器的闭环成功率从 82.2% 提升到 95.2%；跨多个已发布检测器和三个真实传感器支架的传感器适配，将已发布多相机检测器在五相机目标支架上的车辆平均精度均值（mAP）从 0.041 提升到 0.420。这些结果为在新真实车辆部署前准备已发布模型提供了实用路径。",
+      "lede": "已发布自动驾驶模型换车就失灵？R2R 主张先找出模型与源系统的耦合点，再只修受影响组件，实测将规划成功率从 82.2% 提到 95.2%。",
+      "tags": [
+        "自动驾驶部署",
+        "传感器适配",
+        "强化学习规划"
+      ],
+      "sections": {
+        "background": "已发布的自动驾驶模型在公开基准上成绩亮眼，但换到新真实车辆上往往性能骤降。作者指出，问题不只是常规域适配不足：模型仍与源系统的传感配置、数据分布和执行方式深度耦合，导致部署差距难以靠简单微调消除。",
+        "conclusion": "HA-RL 将已发布扩散规划器的闭环成功率从 82.2% 提升到 95.2%。传感器适配在多个已发布检测器和三个真实传感器支架上验证，使已发布多相机检测器在五相机目标支架上的车辆 mAP 从 0.041 提升到 0.420。结论表明，只修正受源系统耦合影响的组件，可在保留已发布模型的同时显著缩小部署差距。",
+        "method": "输入是已发布模型及其源系统假设，以及目标车辆上记录的驾驶数据和真实传感器数据。R2R 先定位哪些组件与源传感、数据或执行过程耦合，再只修正这些受影响部分。数据与行为适配中，HA-RL 针对轨迹级优化与滚动时域执行的不匹配，从自车状态入手，在记录的目标驾驶数据上修正，避免生成式闭环 RL 的高成本 rollout。物理传感器适配则在冻结感知权重下修正依赖源的空间与时间表示，无需目标标注或重训练。已验证的改进来自对耦合来源的定位与针对性修正，而非替换整个模型。",
+        "takeaways": "对希望把开源或已发布自动驾驶模型迁移到自家车辆队的团队，R2R 提供了一条先定位源系统耦合、再局部修正的部署前准备路径。落地需要目标车辆的真实传感器数据和记录驾驶数据，传感器适配还需对应相机支架配置；若缺少这些条件，方法效果无法保证。当前结果限于材料报告的扩散规划器和多相机检测器设定，距离大规模真车部署仍需更多车型、传感器布局和长期闭环验证。"
+      },
+      "i18n": {
+        "zh": {
+          "title": "超越基准：将已发布的自动驾驶模型本地化到真实车辆",
+          "summary": "已发布的自动驾驶模型在基准测试中表现优异，但部署到新真实车辆上仍很困难。作者研究这一部署差距，发现即使经过常规适配，已发布模型仍可能与其源传感、数据和执行过程的假设耦合。为此提出 Released-to-Real（R2R）部署本地化方法，识别这种源系统耦合，只修正受影响组件并保留已发布模型。在数据与行为适配方面，发现轨迹级优化与滚动时域执行之间的不匹配通过自车状态而非观测进入，并提出 Human-Anchored Reinforcement Learning（HA-RL），在记录的目标驾驶数据上修正该问题，无需生成式闭环强化学习（RL）的高成本 rollout。在物理传感器适配方面，R2R 在冻结感知权重下定位并修正依赖源的空间与时间表示，无需目标标注或重训练。HA-RL 将已发布扩散规划器的闭环成功率从 82.2% 提升到 95.2%；跨多个已发布检测器和三个真实传感器支架的传感器适配，将已发布多相机检测器在五相机目标支架上的车辆平均精度均值（mAP）从 0.041 提升到 0.420。这些结果为在新真实车辆部署前准备已发布模型提供了实用路径。",
+          "lede": "已发布自动驾驶模型换车就失灵？R2R 主张先找出模型与源系统的耦合点，再只修受影响组件，实测将规划成功率从 82.2% 提到 95.2%。",
+          "tags": [
+            "自动驾驶部署",
+            "传感器适配",
+            "强化学习规划"
+          ],
+          "sections": {
+            "background": "已发布的自动驾驶模型在公开基准上成绩亮眼，但换到新真实车辆上往往性能骤降。作者指出，问题不只是常规域适配不足：模型仍与源系统的传感配置、数据分布和执行方式深度耦合，导致部署差距难以靠简单微调消除。",
+            "conclusion": "HA-RL 将已发布扩散规划器的闭环成功率从 82.2% 提升到 95.2%。传感器适配在多个已发布检测器和三个真实传感器支架上验证，使已发布多相机检测器在五相机目标支架上的车辆 mAP 从 0.041 提升到 0.420。结论表明，只修正受源系统耦合影响的组件，可在保留已发布模型的同时显著缩小部署差距。",
+            "method": "输入是已发布模型及其源系统假设，以及目标车辆上记录的驾驶数据和真实传感器数据。R2R 先定位哪些组件与源传感、数据或执行过程耦合，再只修正这些受影响部分。数据与行为适配中，HA-RL 针对轨迹级优化与滚动时域执行的不匹配，从自车状态入手，在记录的目标驾驶数据上修正，避免生成式闭环 RL 的高成本 rollout。物理传感器适配则在冻结感知权重下修正依赖源的空间与时间表示，无需目标标注或重训练。已验证的改进来自对耦合来源的定位与针对性修正，而非替换整个模型。",
+            "takeaways": "对希望把开源或已发布自动驾驶模型迁移到自家车辆队的团队，R2R 提供了一条先定位源系统耦合、再局部修正的部署前准备路径。落地需要目标车辆的真实传感器数据和记录驾驶数据，传感器适配还需对应相机支架配置；若缺少这些条件，方法效果无法保证。当前结果限于材料报告的扩散规划器和多相机检测器设定，距离大规模真车部署仍需更多车型、传感器布局和长期闭环验证。"
+          }
+        },
+        "en": {
+          "title": "Beyond the Benchmark: Localizing Released Autonomous Driving Models to Real Vehicles",
+          "summary": "Released autonomous-driving models achieve strong benchmark performance, yet deploying them on a new real vehicle remains challenging. The authors study this deployment gap and find that released models can remain coupled to assumptions from their source sensing, data, and execution processes even after conventional adaptation. They introduce Released-to-Real (R2R), a deployment-localization methodology that identifies such source-system coupling and corrects only the affected components while preserving the released model. For data and behavior adaptation, they find that the mismatch between trajectory-level optimization and receding-horizon execution enters through the ego state rather than the observation, and introduce Human-Anchored Reinforcement Learning (HA-RL), which corrects it on recorded target driving without the costly rollouts of generative closed-loop reinforcement learning (RL). For physical sensor adaptation, R2R localizes and corrects source-dependent spatial and temporal representations with frozen perception weights, requiring neither target annotations nor retraining. HA-RL improves the closed-loop success rate of a released diffusion-based planner from 82.2% to 95.2%, while sensor adaptation across multiple released detectors and three real sensor rigs improves the vehicle mean average precision (mAP) of a released multi-camera detector from 0.041 to 0.420 on a five-camera target rig. These results provide a practical path for preparing released models before deployment on new real vehicles.",
+          "lede": "Released autonomous-driving models can fail when moved to a new car. R2R first finds where the model is coupled to its source system, then fixes only those parts, raising planner success from 82.2% to 95.2% in the reported tests.",
+          "tags": [
+            "autonomous driving deployment",
+            "sensor adaptation",
+            "reinforcement learning planning"
+          ],
+          "sections": {
+            "background": "Released autonomous-driving models score well on public benchmarks, but their performance often drops sharply when moved to a new real vehicle. The authors argue the problem is not merely insufficient conventional domain adaptation: the models remain tightly coupled to the sensing setup, data distribution, and execution process of their source system, so the deployment gap cannot be closed by simple fine-tuning.",
+            "conclusion": "HA-RL raises the closed-loop success rate of a released diffusion-based planner from 82.2% to 95.2%. Sensor adaptation is validated across multiple released detectors and three real sensor rigs, improving the vehicle mAP of a released multi-camera detector from 0.041 to 0.420 on a five-camera target rig. The results indicate that correcting only the components affected by source-system coupling can substantially narrow the deployment gap while preserving the released model.",
+            "method": "The inputs are the released model and its source-system assumptions, together with recorded driving data and real sensor data from the target vehicle. R2R first localizes which components are coupled to source sensing, data, or execution, then corrects only those affected parts. For data and behavior adaptation, HA-RL targets the mismatch between trajectory-level optimization and receding-horizon execution through the ego state, correcting it on recorded target driving and avoiding the costly rollouts of generative closed-loop RL. For physical sensor adaptation, it corrects source-dependent spatial and temporal representations with frozen perception weights, requiring neither target annotations nor retraining. The verified gains come from localizing the coupling source and applying targeted corrections rather than replacing the whole model.",
+            "takeaways": "For teams seeking to migrate open-source or released autonomous-driving models to their own vehicle fleets, R2R offers a pre-deployment preparation path that first localizes source-system coupling and then applies local corrections. Deployment requires real sensor data and recorded driving data from the target vehicle, and sensor adaptation additionally needs the corresponding camera rig configuration; without these conditions, the method's effect cannot be guaranteed. The reported results are limited to the diffusion planner and multi-camera detector settings in the material, and broader vehicle models, sensor layouts, and long-term closed-loop validation are still needed before large-scale real-vehicle deployment."
+          }
+        }
+      },
+      "id": "2611.31814",
+      "original_title": "Beyond the Benchmark: Localizing Released Autonomous Driving Models to Real Vehicles",
+      "original_summary": "Released autonomous-driving models achieve strong benchmark performance, yet deploying them on a new real vehicle remains challenging. We study this deployment gap and find that released models can remain coupled to assumptions from their source sensing, data, and execution processes even after conventional adaptation. We introduce Released-to-Real (R2R), a deployment-localization methodology that identifies such source-system coupling and corrects only the affected components while preserving the released model. For data and behavior adaptation, we find that the mismatch between trajectory-level optimization and receding-horizon execution enters through the ego state rather than the observation, and introduce Human-Anchored Reinforcement Learning (HA-RL), which corrects it on recorded target driving without the costly rollouts of generative closed-loop reinforcement learning (RL). For physical sensor adaptation, R2R localizes and corrects source-dependent spatial and temporal representations with frozen perception weights, requiring neither target annotations nor retraining. HA-RL improves the closed-loop success rate of a released diffusion-based planner from 82.2% to 95.2%, while sensor adaptation across multiple released detectors and three real sensor rigs improves the vehicle mean average precision (mAP) of a released multi-camera detector from 0.041 to 0.420 on a five-camera target rig. These results provide a practical path for preparing released models before deployment on new real vehicles. Our project page is publicly available at https://released-to-real.github.io.",
+      "url": "https://arxiv.org/abs/2611.31814v1",
+      "source": "arXiv cs.RO",
+      "published": "2026-11-24T02:06:37+00:00",
+      "authors": [
+        "Morui Zhu",
+        "Deyuan Qu",
+        "Qi Chen",
+        "Qing Yang"
+      ],
+      "score": 4,
+      "versioned_id": "2611.31814v1",
+      "figure": {
+        "path": "./data/2026-11-27/figures/2611.31814.webp",
+        "caption": "Figure 2: Qualitative results after post-training in three scenes: construction, roundabout, and right turn at an intersection. Each row shows the predicted trajectory on the generated frames of the closed loop and the top view at the end of the event."
+      },
+      "attention": {
+        "github_stars": 660,
+        "github_url": "https://github.com/microsoft/microsoft-rocketbox"
+      },
+      "code_url": null,
+      "project_url": "https://released-to-real.github.io",
+      "pdf_url": "https://arxiv.org/pdf/2611.31814"
+    },
+    {
+      "title": "ReFocus：面向长程机器人操作强化学习的进度引导自适应练习",
+      "summary": "ReFocus 是一个进度引导的多轮强化学习框架，通过交替进行全局与局部强化学习，识别长程操作任务中的瓶颈并对其分配额外练习。在 LIBERO-Long 和 RoboCasa365 上，成功率分别为 97.8% 和 51.3%，基线 π0.5 为 90.6% 和 39.3%；在真实机器人 BreadBaker 任务上达到 95%，基线为 30%。",
+      "lede": "ReFocus 用子任务有向无环图诊断长程任务瓶颈，并把额外练习集中到瓶颈片段，在仿真与真机长程操作任务上明显超过 π0.5 基线。",
+      "tags": [
+        "长程机器人操作",
+        "强化学习",
+        "视觉-语言-动作策略"
+      ],
+      "sections": {
+        "background": "在线强化学习让视觉-语言-动作（VLA）策略能通过环境交互持续改进，但长程操作中稀疏的成功/失败信号几乎不告诉策略瓶颈在哪里；反复执行完整任务又使这些瓶颈得不到充分分析与练习，学习效率低。",
+        "conclusion": "ReFocus 在 LIBERO-Long 上成功率达 97.8%（π0.5 为 90.6%），在 RoboCasa365 上为 51.3%（π0.5 为 39.3%）；真实机器人三个长程任务中，BreadBaker 上达 95%，而 π0.5 仅 30%。这些结果说明按瓶颈分配练习能显著提升长程任务成功率，但结论限于材料报告的仿真基准与三个真机任务设定。",
+        "method": "输入是长程操作任务及视觉-语言-动作策略与环境交互产生的轨迹。全局强化学习阶段把每个任务分解为子任务的有向无环图（DAG，表示子任务先后依赖），并用基于 DAG 的进度奖励同时训练策略和诊断瓶颈。根据诊断出的瓶颈，ReFocus 选取“自适应练习窗口”，即从入口阶段到目标阶段的任务片段，在局部强化学习阶段对这些片段分配额外交互，同时更新整个策略。之后评估策略完成完整任务的表现，进入下一轮全局与局部强化学习的迭代。已验证的改进来自瓶颈定位与针对性练习的结合，而非单纯增加交互量。",
+        "takeaways": "该方法适合多阶段、反馈稀疏的长程操作场景，如厨房备餐、装配和桌面整理；需要能提供子任务进度信号的任务分解，以及可大量采样的仿真或真机交互环境。若要在产线或家庭部署，还需验证在任务分解不准确、物体与场景变化时的鲁棒性，以及真机交互成本下的样本效率。材料仅在 LIBERO-Long、RoboCasa365 和三个真机任务上报告结果，跨任务与跨平台的泛化仍待验证。"
+      },
+      "i18n": {
+        "zh": {
+          "title": "ReFocus：面向长程机器人操作强化学习的进度引导自适应练习",
+          "summary": "ReFocus 是一个进度引导的多轮强化学习框架，通过交替进行全局与局部强化学习，识别长程操作任务中的瓶颈并对其分配额外练习。在 LIBERO-Long 和 RoboCasa365 上，成功率分别为 97.8% 和 51.3%，基线 π0.5 为 90.6% 和 39.3%；在真实机器人 BreadBaker 任务上达到 95%，基线为 30%。",
+          "lede": "ReFocus 用子任务有向无环图诊断长程任务瓶颈，并把额外练习集中到瓶颈片段，在仿真与真机长程操作任务上明显超过 π0.5 基线。",
+          "tags": [
+            "长程机器人操作",
+            "强化学习",
+            "视觉-语言-动作策略"
+          ],
+          "sections": {
+            "background": "在线强化学习让视觉-语言-动作（VLA）策略能通过环境交互持续改进，但长程操作中稀疏的成功/失败信号几乎不告诉策略瓶颈在哪里；反复执行完整任务又使这些瓶颈得不到充分分析与练习，学习效率低。",
+            "conclusion": "ReFocus 在 LIBERO-Long 上成功率达 97.8%（π0.5 为 90.6%），在 RoboCasa365 上为 51.3%（π0.5 为 39.3%）；真实机器人三个长程任务中，BreadBaker 上达 95%，而 π0.5 仅 30%。这些结果说明按瓶颈分配练习能显著提升长程任务成功率，但结论限于材料报告的仿真基准与三个真机任务设定。",
+            "method": "输入是长程操作任务及视觉-语言-动作策略与环境交互产生的轨迹。全局强化学习阶段把每个任务分解为子任务的有向无环图（DAG，表示子任务先后依赖），并用基于 DAG 的进度奖励同时训练策略和诊断瓶颈。根据诊断出的瓶颈，ReFocus 选取“自适应练习窗口”，即从入口阶段到目标阶段的任务片段，在局部强化学习阶段对这些片段分配额外交互，同时更新整个策略。之后评估策略完成完整任务的表现，进入下一轮全局与局部强化学习的迭代。已验证的改进来自瓶颈定位与针对性练习的结合，而非单纯增加交互量。",
+            "takeaways": "该方法适合多阶段、反馈稀疏的长程操作场景，如厨房备餐、装配和桌面整理；需要能提供子任务进度信号的任务分解，以及可大量采样的仿真或真机交互环境。若要在产线或家庭部署，还需验证在任务分解不准确、物体与场景变化时的鲁棒性，以及真机交互成本下的样本效率。材料仅在 LIBERO-Long、RoboCasa365 和三个真机任务上报告结果，跨任务与跨平台的泛化仍待验证。"
+          }
+        },
+        "en": {
+          "title": "ReFocus: Progress-Guided Adaptive Practice for Long-Horizon Robotic Manipulation Reinforcement Learning",
+          "summary": "ReFocus is a progress-guided multi-round reinforcement learning framework that alternates global and local RL to identify bottlenecks in long-horizon manipulation and allocate extra practice to them. It reaches 97.8% and 51.3% success on LIBERO-Long and RoboCasa365 versus 90.6% and 39.3% for the π0.5 baseline, and 95% versus 30% on the real-world BreadBaker task.",
+          "lede": "ReFocus diagnoses bottlenecks in long-horizon tasks using a subtask DAG and concentrates extra practice on those segments, clearly outperforming the π0.5 baseline in simulated and real-robot manipulation.",
+          "tags": [
+            "long-horizon robotic manipulation",
+            "reinforcement learning",
+            "vision-language-action policies"
+          ],
+          "sections": {
+            "background": "Online reinforcement learning lets vision-language-action (VLA) policies improve through environment interaction, but in long-horizon manipulation sparse success/failure feedback gives little information about where a policy is stuck. Repeated full-task rollouts also leave these bottlenecks weakly analyzed and insufficiently practiced, which limits learning efficiency.",
+            "conclusion": "ReFocus achieves 97.8% success on LIBERO-Long versus 90.6% for π0.5, and 51.3% on RoboCasa365 versus 39.3%. On three real-world long-horizon tasks it reaches 95% on BreadBaker versus 30% for π0.5. These results show that allocating practice to diagnosed bottlenecks substantially improves long-horizon success, though the conclusions are limited to the reported simulated benchmarks and the three real-robot task settings.",
+            "method": "The input is a long-horizon manipulation task and trajectories from a vision-language-action policy interacting with the environment. In the global RL stage, each task is decomposed into a directed acyclic graph (DAG) of subtasks that encodes their ordering dependencies, and a DAG-based progress reward is used both for policy training and for bottleneck diagnosis. From the diagnosed bottlenecks, ReFocus selects Adaptive Practice Windows, task segments running from an entry stage to a target stage, and allocates additional interaction to these segments during local RL while updating the entire policy. The policy is then evaluated on the full task to start the next round, forming an iteration between global and local RL. The verified gains come from combining bottleneck localization with targeted practice rather than from more interaction alone.",
+            "takeaways": "The approach suits multi-stage manipulation with sparse feedback, such as meal preparation, assembly, and tabletop rearrangement; it requires a task decomposition that yields subtask progress signals and an environment, simulated or real, that can supply many interactions. For factory or home deployment, robustness to inaccurate decompositions and to object and scene variation still needs testing, as does sample efficiency under real-robot interaction costs. Results are reported only on LIBERO-Long, RoboCasa365, and three real-robot tasks, so cross-task and cross-platform generalization remains unverified."
+          }
+        }
+      },
+      "id": "2611.32639",
+      "original_title": "ReFocus: Progress-Guided Adaptive Practice for Long-Horizon Robotic Manipulation Reinforcement Learning",
+      "original_summary": "Online reinforcement learning (RL) enables vision-language-action policies to improve through environmental interaction. However, in long-horizon manipulation, sparse success/failure feedback provides little information about where policies encounter bottlenecks. Moreover, repeated full-task rollouts also leave these bottlenecks weakly analyzed and insufficiently practiced. To this end, we introduce ReFocus, a progress-guided multi-round RL framework that alternates between Global and Local RL to identify task-specific bottlenecks and allocate additional practice to them. Specifically, during Global RL, we decompose each task into a Directed Acyclic Graph (DAG) of subtasks. Then a DAG-based Progress Reward is leveraged for both policy training and bottleneck diagnosis. Based on the identified bottlenecks, ReFocus selects Adaptive Practice Windows, defining task segments from an entry stage to a target stage. It allocates additional interaction to these segments during Local RL while updating the entire policy. After that, it evaluates the policy to perform the full task for the next round of RL, forming an iteration between Global and Local RL. Experiments on LIBERO-Long and RoboCasa365 show that ReFocus achieves success rates of 97.8% and 51.3%, respectively, compared with 90.6% and 39.3% for the $π_{0.5}$ baseline. Furthermore, we evaluate a real-world adaptation on three long-horizon tasks. On BreadBaker, ReFocus achieves 95% success, compared with 30% for the $π_{0.5}$. Project page: https://refocus-robotics.github.io.",
+      "url": "https://arxiv.org/abs/2611.32639v1",
+      "source": "arXiv cs.RO",
+      "published": "2026-11-24T14:00:18+00:00",
+      "authors": [
+        "Haoyuan Li",
+        "Wei Huang",
+        "Jiehong Lin",
+        "Shengrong Zhang",
+        "Chenzhi Liu",
+        "Shengchao Zhou",
+        "Hehe Fan",
+        "Xiaojuan Qi",
+        "Yi Yang"
+      ],
+      "score": 4,
+      "versioned_id": "2611.32639v1",
+      "figure": {
+        "path": "./data/2026-11-27/figures/2611.32639.webp",
+        "caption": "Figure 1: Motivation and overview of ReFocus. (a) Sparse terminal rewards reveal little about partial progress or task-specific bottlenecks. (b) ReFocus uses progress feedback to guide targeted practice through alternation of Global RL and Local RL. (c) ReFocus achieves success rates of 98.3% on three real-world long-horizon tasks, compared with 81.7% for RECAP [1]. (d) ReFocus raises the success rates of π0.5 [5] from 90.6% to 97.8% on LIBERO-Long and from 39.3% to 51.3% on RoboCasa365."
+      },
+      "attention": {
+        "github_stars": 2,
+        "github_url": "https://github.com/refocus-robotics/refocus"
+      },
+      "code_url": null,
+      "project_url": "https://refocus-robotics.github.io",
+      "pdf_url": "https://arxiv.org/pdf/2611.32639"
+    },
+    {
+      "title": "AirLeg：稳健且精确的自监督视觉-惯性-腿部 SLAM 系统",
+      "summary": "AirLeg 是一套自监督视觉-惯性-腿部（VIL）SLAM 系统，让视觉与腿部本体感知在训练和部署阶段互相促进。腿部里程计网络先在仿真中预训练，再通过“命令式学习”在真机上无真值自适应：多传感器光束法平差用腿部里程计精化视觉地图，视觉地图反过来监督网络。部署时，融合估计在线更新网络。双窗口估计器融合视觉、惯性测量单元（IMU）与腿部里程计，用形变感知约束把受载足端与视觉重建地形关联，并用方差分量估计为各约束加权。在 GrandTour 全部 17 个序列上，AirLeg 以 0.19 m 的平均误差在 19 种方法中最低；在低成本四足机器人上，仅用 0.5 小时无标签数据即达到 0.6% 的最低漂移，并在嵌入式计算机上实时运行。",
+      "lede": "AirLeg 让视觉与腿部里程计在训练和部署中互相监督，在 GrandTour 全部 17 个序列上取得 0.19 m 平均误差，并在低成本四足机器人上用 0.5 小时无标签数据实现 0.6% 漂移。",
+      "tags": [
+        "视觉-惯性-腿部 SLAM",
+        "自监督学习",
+        "四足机器人定位"
+      ],
+      "sections": {
+        "background": "足式机器人若只靠机载 IMU 和关节编码器定位，成本低但精度有限；加一台相机可构成视觉-惯性-腿部（VIL）状态估计。难点在于腿部里程计的学习监督：仿真训练的网络存在仿真到现实的差距，真实标签又依赖昂贵传感器，或继承视觉估计自身的误差。",
+        "conclusion": "在 GrandTour 全部 17 个序列上，AirLeg 的平均误差为 0.19 m，在 19 种方法中最低。在低成本四足机器人上，仅用 0.5 小时无标签数据，漂移为 0.6%，为所比较方法中最低，并在嵌入式计算机上实时运行。这些结果限于材料报告的设定。",
+        "method": "输入是相机图像、IMU 测量和关节编码器提供的腿部本体感知。腿部里程计网络先在仿真中预训练，再通过命令式学习在真机上无真值自适应：多传感器光束法平差用腿部里程计精化视觉地图，精化后的地图反过来监督网络。部署时，融合估计在线调整网络。双窗口估计器融合视觉、IMU 与腿部里程计，用形变感知约束把受载足端与视觉重建地形关联，并以方差分量估计为约束加权。已验证的改进来自这套视觉与腿部互相监督的闭环，以及融合估计对监督质量的提升。",
+        "takeaways": "对配备相机、IMU 和关节编码器的四足机器人，AirLeg 提供了一条低成本定位路径；若只有 0.5 小时无标签真机数据，材料显示可在嵌入式平台实时达到 0.6% 漂移。走向真机部署仍需在更多机型、地形和长时间运行中验证稳健性，并确认无标签自适应不会在视觉退化场景中累积漂移。上述性能仅适用于材料报告的 GrandTour 序列和低成本四足平台设定。"
+      },
+      "i18n": {
+        "zh": {
+          "title": "AirLeg：稳健且精确的自监督视觉-惯性-腿部 SLAM 系统",
+          "summary": "AirLeg 是一套自监督视觉-惯性-腿部（VIL）SLAM 系统，让视觉与腿部本体感知在训练和部署阶段互相促进。腿部里程计网络先在仿真中预训练，再通过“命令式学习”在真机上无真值自适应：多传感器光束法平差用腿部里程计精化视觉地图，视觉地图反过来监督网络。部署时，融合估计在线更新网络。双窗口估计器融合视觉、惯性测量单元（IMU）与腿部里程计，用形变感知约束把受载足端与视觉重建地形关联，并用方差分量估计为各约束加权。在 GrandTour 全部 17 个序列上，AirLeg 以 0.19 m 的平均误差在 19 种方法中最低；在低成本四足机器人上，仅用 0.5 小时无标签数据即达到 0.6% 的最低漂移，并在嵌入式计算机上实时运行。",
+          "lede": "AirLeg 让视觉与腿部里程计在训练和部署中互相监督，在 GrandTour 全部 17 个序列上取得 0.19 m 平均误差，并在低成本四足机器人上用 0.5 小时无标签数据实现 0.6% 漂移。",
+          "tags": [
+            "视觉-惯性-腿部 SLAM",
+            "自监督学习",
+            "四足机器人定位"
+          ],
+          "sections": {
+            "background": "足式机器人若只靠机载 IMU 和关节编码器定位，成本低但精度有限；加一台相机可构成视觉-惯性-腿部（VIL）状态估计。难点在于腿部里程计的学习监督：仿真训练的网络存在仿真到现实的差距，真实标签又依赖昂贵传感器，或继承视觉估计自身的误差。",
+            "conclusion": "在 GrandTour 全部 17 个序列上，AirLeg 的平均误差为 0.19 m，在 19 种方法中最低。在低成本四足机器人上，仅用 0.5 小时无标签数据，漂移为 0.6%，为所比较方法中最低，并在嵌入式计算机上实时运行。这些结果限于材料报告的设定。",
+            "method": "输入是相机图像、IMU 测量和关节编码器提供的腿部本体感知。腿部里程计网络先在仿真中预训练，再通过命令式学习在真机上无真值自适应：多传感器光束法平差用腿部里程计精化视觉地图，精化后的地图反过来监督网络。部署时，融合估计在线调整网络。双窗口估计器融合视觉、IMU 与腿部里程计，用形变感知约束把受载足端与视觉重建地形关联，并以方差分量估计为约束加权。已验证的改进来自这套视觉与腿部互相监督的闭环，以及融合估计对监督质量的提升。",
+            "takeaways": "对配备相机、IMU 和关节编码器的四足机器人，AirLeg 提供了一条低成本定位路径；若只有 0.5 小时无标签真机数据，材料显示可在嵌入式平台实时达到 0.6% 漂移。走向真机部署仍需在更多机型、地形和长时间运行中验证稳健性，并确认无标签自适应不会在视觉退化场景中累积漂移。上述性能仅适用于材料报告的 GrandTour 序列和低成本四足平台设定。"
+          }
+        },
+        "en": {
+          "title": "AirLeg: A Robust and Accurate Self-Supervised Visual-Inertial-Leg SLAM System",
+          "summary": "AirLeg is a self-supervised visual-inertial-leg (VIL) SLAM system in which vision and leg proprioception improve each other from training to deployment. The leg odometry network is pre-trained in simulation and adapted to the robot without ground truth through imperative learning: multi-sensor bundle adjustment uses leg odometry to refine the visual map, which in turn supervises the network. During deployment, the fused estimates adapt the network online. A dual-window estimator fuses vision, inertial measurement unit (IMU), and leg odometry, relates loaded feet to the visually reconstructed terrain through a deformation-aware constraint, and weights constraints by variance component estimation. AirLeg completes all 17 GrandTour sequences with the lowest average error (0.19 m) among 19 methods. On a low-cost quadruped, it achieves the lowest drift (0.6%) with only 0.5 h of unlabeled data, running in real time on an embedded computer.",
+          "lede": "AirLeg lets vision and leg odometry supervise each other during training and deployment, achieving 0.19 m average error across all 17 GrandTour sequences and 0.6% drift on a low-cost quadruped with 0.5 h of unlabeled data.",
+          "tags": [
+            "visual-inertial-leg SLAM",
+            "self-supervised learning",
+            "quadruped robot localization"
+          ],
+          "sections": {
+            "background": "For legged robots, localization using only the onboard IMU and joint encoders is cheap but limited in accuracy; adding a camera yields visual-inertial-leg (VIL) state estimation. The difficulty lies in supervision for learned leg odometry: networks trained in simulation suffer from the sim-to-real gap, while real-world labels require costly sensors or inherit errors from visual estimates.",
+            "conclusion": "Across all 17 GrandTour sequences, AirLeg achieves an average error of 0.19 m, the lowest among 19 methods. On a low-cost quadruped, using only 0.5 h of unlabeled data, it reaches 0.6% drift, the lowest among the compared methods, and runs in real time on an embedded computer. These results are limited to the settings reported in the material.",
+            "method": "The inputs are camera images, IMU measurements, and leg proprioception from joint encoders. The leg odometry network is pre-trained in simulation and then adapted to the robot without ground truth through imperative learning: multi-sensor bundle adjustment uses leg odometry to refine the visual map, and the refined map in turn supervises the network. During deployment, the fused estimates adapt the network online. A dual-window estimator fuses vision, IMU, and leg odometry, relates loaded feet to the visually reconstructed terrain through a deformation-aware constraint, and weights constraints by variance component estimation. The verified gains come from this closed loop of mutual supervision between vision and legs, and from fusion estimates improving supervision quality.",
+            "takeaways": "For quadrupeds equipped with a camera, IMU, and joint encoders, AirLeg offers a low-cost localization path; with only 0.5 h of unlabeled real-robot data, the material reports 0.6% drift in real time on an embedded platform. Deployment still requires validation of robustness across more robot types, terrains, and long runs, and confirmation that unlabeled adaptation does not accumulate drift in visually degraded scenes. The reported performance applies only to the GrandTour sequences and low-cost quadruped setting in the material."
+          }
+        }
+      },
+      "id": "2611.32523",
+      "original_title": "AirLeg: A Robust and Accurate Self-Supervised Visual-Inertial-Leg SLAM System",
+      "original_summary": "Visual-inertial-leg (VIL) state estimation offers cost-effective localization for legged robots, adding only a camera to the onboard IMU and joint encoders. However, learning-based leg odometry is limited by its supervision: networks trained in simulation suffer from the sim-to-real gap, while real-world labels require costly sensors or inherit the errors of visual estimates. To address this, we present AirLeg, a self-supervised VIL SLAM system in which vision and leg proprioception improve each other from training to deployment. We pre-train the leg odometry network in simulation and adapt it to the robot without ground truth through imperative learning, where multi-sensor bundle adjustment uses the leg odometry to refine the visual map, which in turn supervises the network. During deployment, the fused estimates adapt the network online. To improve both localization and this supervision, a dual-window estimator fuses vision, IMU, and leg odometry, relates loaded feet to the visually reconstructed terrain through a deformation-aware constraint, and weights the constraints by variance component estimation. AirLeg completes all 17 GrandTour sequences with the lowest average error (0.19 m) among 19 methods. On a low-cost quadruped, it achieves the lowest drift (0.6%) with only 0.5 h of unlabeled data, in real time on an embedded computer.",
+      "url": "https://arxiv.org/abs/2611.32523v1",
+      "source": "arXiv cs.RO",
+      "published": "2026-11-24T12:50:38+00:00",
+      "authors": [
+        "Kuan Xu",
+        "Tianxin Hu",
+        "Ruofei Bai",
+        "Ruimeng Liu",
+        "Yuefan Hao",
+        "Zeyu Jiang",
+        "Zitong Zhan",
+        "Shenghai Yuan",
+        "Chen Wang",
+        "Lihua Xie"
+      ],
+      "score": 4,
+      "versioned_id": "2611.32523v1",
+      "figure": {
+        "path": "./data/2026-11-27/figures/2611.32523.webp",
+        "caption": "Fig. 6: Low-cost quadruped platform and real-world test environments. (a) Unitree Go2 equipped with an Intel RealSense D455 camera and an NVIDIA Jetson AGX Orin. (b) Test scenes, including dense vegetation, stairs, grass, slopes, a textureless corridor, pebbles, a walkway at night, and a multi-lap route."
+      },
+      "code_url": null,
+      "project_url": null,
+      "pdf_url": "https://arxiv.org/pdf/2611.32523"
+    },
+    {
+      "title": "ViTacLab：面向机器人操作的物理一致视触觉仿真、基准测试与表征学习",
+      "summary": "ViTacLab 是一套集仿真、基准测试与策略学习于一体的视触觉框架，包含 ViTacSim、ViTacBench 和 ViTacPolicy 三部分。ViTacSim 以 PhysX 接触求解器输出为锚点，用全局稀疏接触力格点、局部稠密力阵列和触觉图像三种触觉原语，在保持 GPU 并行的情况下修正法向不一致并重建切向力；在受控赫兹参考压入与真实传感器滑动测试中，法向和切向力 RMSE 分别从 2.31 N 和 1.85 N 降至 0.42 N 和 0.53 N，256 个并行环境下触觉管线吞吐达 2,482.9 FPS。ViTacBench 覆盖平行夹爪、灵巧手和双臂系统，任务从视觉主导延伸到触觉主导；ViTacPolicy 用空间位姿嵌入和 Transformer 聚合数量可变的异构触觉输入，并以共享码本的双流 VQ-VAE 对齐力阵列与触觉图像。仿真和真机实验在若干接触密集任务上取得提升，但触觉主导任务的绝对成功率仍然偏低，说明纯触觉控制仍有困难。",
+      "lede": "ViTacLab 把物理一致的视触觉仿真、跨夹爪与灵巧手的基准测试和异构触觉表征学习整合到一个框架中，并用赫兹压入与真实滑动测试量化了力重建精度。",
+      "tags": [
+        "视触觉仿真",
+        "机器人操作基准",
+        "触觉表征学习"
+      ],
+      "sections": {
+        "background": "接触密集的机器人操作依赖触觉感知，但现有视触觉仿真器往往在物理保真度与可扩展性之间取舍，且基准多集中于两指夹爪，难以覆盖灵巧手和双臂系统。触觉主导任务上策略表现不佳，也缺少统一的仿真、评测与表征学习框架来定位问题。",
+        "conclusion": "在受控赫兹参考压入和真实传感器滑动测试中，ViTacSim 将法向力 RMSE 从 2.31 N 降到 0.42 N，切向力 RMSE 从 1.85 N 降到 0.53 N；256 个并行环境下触觉管线吞吐达到 2,482.9 FPS。仿真与真机实验在多个接触密集任务上显示增益，但触觉主导任务的绝对成功率仍然较低，表明纯触觉控制依旧困难。",
+        "method": "输入是 PhysX 接触求解器输出的接触信息，ViTacSim 将其组织为全局稀疏接触力格点、局部稠密力阵列和触觉图像三种触觉原语。它通过局部刚度对齐修正法向不一致，在解耦的滑移—黏着机制下重建切向力，并用联合投影保留稀疏力旋量、施加局部摩擦锥约束，同时保持 GPU 并行。ViTacPolicy 用空间位姿嵌入和 Transformer 聚合数量可变的异构触觉输入，再用共享码本的双流 VQ-VAE 对齐力阵列与触觉图像两种模态。已验证的改进来自赫兹参考压入和真实滑动测试中对法向、切向力的误差降低，而非与旧方法的直接对照。",
+        "takeaways": "若要在灵巧手或双臂平台上做接触密集操作，ViTacBench 提供了从视觉主导到触觉主导的任务谱系，可作为仿真预训练和评测的起点。使用该框架需要 GPU 并行仿真环境以及可提供力阵列或触觉图像的真实传感器，才能把仿真中学到的表征迁移到真机。距离真机部署仍缺触觉主导任务的成功率验证，当前低绝对成功率说明纯触觉闭环控制尚不可靠，实测结论仅限材料报告的设定。"
+      },
+      "i18n": {
+        "zh": {
+          "title": "ViTacLab：面向机器人操作的物理一致视触觉仿真、基准测试与表征学习",
+          "summary": "ViTacLab 是一套集仿真、基准测试与策略学习于一体的视触觉框架，包含 ViTacSim、ViTacBench 和 ViTacPolicy 三部分。ViTacSim 以 PhysX 接触求解器输出为锚点，用全局稀疏接触力格点、局部稠密力阵列和触觉图像三种触觉原语，在保持 GPU 并行的情况下修正法向不一致并重建切向力；在受控赫兹参考压入与真实传感器滑动测试中，法向和切向力 RMSE 分别从 2.31 N 和 1.85 N 降至 0.42 N 和 0.53 N，256 个并行环境下触觉管线吞吐达 2,482.9 FPS。ViTacBench 覆盖平行夹爪、灵巧手和双臂系统，任务从视觉主导延伸到触觉主导；ViTacPolicy 用空间位姿嵌入和 Transformer 聚合数量可变的异构触觉输入，并以共享码本的双流 VQ-VAE 对齐力阵列与触觉图像。仿真和真机实验在若干接触密集任务上取得提升，但触觉主导任务的绝对成功率仍然偏低，说明纯触觉控制仍有困难。",
+          "lede": "ViTacLab 把物理一致的视触觉仿真、跨夹爪与灵巧手的基准测试和异构触觉表征学习整合到一个框架中，并用赫兹压入与真实滑动测试量化了力重建精度。",
+          "tags": [
+            "视触觉仿真",
+            "机器人操作基准",
+            "触觉表征学习"
+          ],
+          "sections": {
+            "background": "接触密集的机器人操作依赖触觉感知，但现有视触觉仿真器往往在物理保真度与可扩展性之间取舍，且基准多集中于两指夹爪，难以覆盖灵巧手和双臂系统。触觉主导任务上策略表现不佳，也缺少统一的仿真、评测与表征学习框架来定位问题。",
+            "conclusion": "在受控赫兹参考压入和真实传感器滑动测试中，ViTacSim 将法向力 RMSE 从 2.31 N 降到 0.42 N，切向力 RMSE 从 1.85 N 降到 0.53 N；256 个并行环境下触觉管线吞吐达到 2,482.9 FPS。仿真与真机实验在多个接触密集任务上显示增益，但触觉主导任务的绝对成功率仍然较低，表明纯触觉控制依旧困难。",
+            "method": "输入是 PhysX 接触求解器输出的接触信息，ViTacSim 将其组织为全局稀疏接触力格点、局部稠密力阵列和触觉图像三种触觉原语。它通过局部刚度对齐修正法向不一致，在解耦的滑移—黏着机制下重建切向力，并用联合投影保留稀疏力旋量、施加局部摩擦锥约束，同时保持 GPU 并行。ViTacPolicy 用空间位姿嵌入和 Transformer 聚合数量可变的异构触觉输入，再用共享码本的双流 VQ-VAE 对齐力阵列与触觉图像两种模态。已验证的改进来自赫兹参考压入和真实滑动测试中对法向、切向力的误差降低，而非与旧方法的直接对照。",
+            "takeaways": "若要在灵巧手或双臂平台上做接触密集操作，ViTacBench 提供了从视觉主导到触觉主导的任务谱系，可作为仿真预训练和评测的起点。使用该框架需要 GPU 并行仿真环境以及可提供力阵列或触觉图像的真实传感器，才能把仿真中学到的表征迁移到真机。距离真机部署仍缺触觉主导任务的成功率验证，当前低绝对成功率说明纯触觉闭环控制尚不可靠，实测结论仅限材料报告的设定。"
+          }
+        },
+        "en": {
+          "title": "ViTacLab: Physically Consistent Visuo-Tactile Simulation, Benchmarking, and Representation Learning for Robotic Manipulation",
+          "summary": "ViTacLab is a visuo-tactile framework combining ViTacSim, ViTacBench, and ViTacPolicy. ViTacSim anchors on PhysX contact-solver outputs and uses a tri-modal tactile primitive—a global sparse contact-force lattice, a local dense force array, and tactile images—to correct normal inconsistency and reconstruct tangential forces while preserving GPU parallelism. In controlled Hertzian-reference indentation and real-sensor sliding tests, normal and tangential force RMSE drop from 2.31 and 1.85 N to 0.42 and 0.53 N, and the tactile pipeline reaches 2,482.9 FPS at 256 parallel environments. ViTacBench spans parallel grippers, dexterous hands, and bimanual systems across vision-dominant to tactile-dominant tasks, while ViTacPolicy aggregates variable numbers of heterogeneous tactile inputs via spatial-pose embeddings and a Transformer and aligns force-array and tactile-image modalities with a two-stream VQ-VAE sharing one codebook. Simulation and real-world experiments show gains on several contact-rich tasks, but low absolute success on tactile-dominant tasks highlights the remaining difficulty of purely tactile control.",
+          "lede": "ViTacLab integrates physically consistent visuo-tactile simulation, benchmarks spanning grippers and dexterous hands, and heterogeneous tactile representation learning, quantifying force-reconstruction accuracy with Hertzian indentation and real sliding tests.",
+          "tags": [
+            "visuo-tactile simulation",
+            "robotic manipulation benchmark",
+            "tactile representation learning"
+          ],
+          "sections": {
+            "background": "Contact-rich robotic manipulation depends on tactile sensing, yet existing visuo-tactile simulators trade physical fidelity for scalability, and benchmarks largely focus on two-finger grippers rather than dexterous hands and bimanual systems. Weak policy performance on tactile-dominant tasks also calls for a unified framework for simulation, benchmarking, and representation learning.",
+            "conclusion": "In controlled Hertzian-reference indentation and real-sensor sliding tests, ViTacSim reduces normal-force RMSE from 2.31 to 0.42 N and tangential-force RMSE from 1.85 to 0.53 N, reaching 2,482.9 tactile-pipeline FPS at 256 parallel environments. Simulation and real-world experiments show gains on several contact-rich tasks, but low absolute success on tactile-dominant tasks indicates that purely tactile control remains difficult.",
+            "method": "The input is contact information from the PhysX contact solver, which ViTacSim organizes into three tactile primitives: a global sparse contact-force lattice, a local dense force array, and tactile images. It corrects normal inconsistency through local stiffness alignment, reconstructs tangential forces under decoupled slip-stick regimes, and applies a joint projection that preserves the sparse wrench and enforces local friction cones while keeping GPU parallelism. ViTacPolicy aggregates variable numbers of heterogeneous tactile inputs with spatial-pose embeddings and a Transformer, then aligns force-array and tactile-image modalities through a two-stream VQ-VAE with a shared codebook. The verified improvements come from reduced normal and tangential force errors in Hertzian-reference indentation and real sliding tests, not from a direct comparison against prior methods.",
+            "takeaways": "For contact-rich manipulation on dexterous or bimanual platforms, ViTacBench offers a task spectrum from vision-dominant to tactile-dominant regimes that can serve as a starting point for simulated pretraining and evaluation. Using the framework requires a GPU-parallel simulation environment and real sensors that provide force arrays or tactile images so that learned representations can transfer to hardware. Deployment still lacks validation of success rates on tactile-dominant tasks; the low absolute success reported suggests purely tactile closed-loop control is not yet reliable, and the measured conclusions are limited to the reported settings."
+          }
+        }
+      },
+      "id": "2611.32476",
+      "original_title": "ViTacLab: Physically Consistent Visuo-Tactile Simulation, Benchmarking, and Representation Learning for Robotic Manipulation",
+      "original_summary": "Tactile sensing is essential for contact-rich robotic manipulation, but existing visuo-tactile simulators trade physical fidelity for scalability, and benchmarks largely focus on two-finger grippers. We present ViTacLab, a framework comprising ViTacSim, ViTacBench, and ViTacPolicy. ViTacSim uses a tri-modal tactile primitive: a global sparse contact-force lattice, a local dense force array, and tactile images. Anchored to PhysX contact-solver outputs, it corrects normal inconsistency through local stiffness alignment and reconstructs tangential forces under decoupled slip-stick regimes while preserving GPU parallelism. A joint projection preserves the sparse wrench and enforces local friction cones. ViTacBench spans parallel grippers, dexterous hands, and bimanual systems, with tasks ranging from vision-dominant to tactile-dominant regimes. ViTacPolicy aggregates variable numbers of heterogeneous tactile inputs using spatial-pose embeddings and a Transformer, and aligns force-array and tactile-image modalities through a two-stream VQ-VAE with a shared codebook. Controlled Hertzian-reference indentation and real-sensor sliding tests reduce normal and tangential force RMSE from 2.31 and 1.85 N to 0.42 and 0.53 N, respectively. Throughput reaches 2,482.9 tactile-pipeline FPS at 256 parallel environments. Simulation and real-world experiments show gains on several contact-rich tasks, while low absolute success on tactile-dominant tasks highlights the remaining difficulty of purely tactile control.",
+      "url": "https://arxiv.org/abs/2611.32476v1",
+      "source": "arXiv cs.RO",
+      "published": "2026-11-24T12:06:34+00:00",
+      "authors": [
+        "Linjing You",
+        "Zeming Yang",
+        "Zhenhao Shen",
+        "Shengqiang Xu",
+        "Guanda Li",
+        "Wenxuan Li",
+        "Jiyu Guo",
+        "Jasper Lu",
+        "Kyle Xu",
+        "Shawn Xie",
+        "Junjie Zhu",
+        "Siyu Wu",
+        "Jian Liu",
+        "Changhao Zhang",
+        "Rongchong Li",
+        "Zeyi Li",
+        "Hengshuang Zhao",
+        "Ruihai Wu"
+      ],
+      "score": 4,
+      "versioned_id": "2611.32476v1",
+      "figure": {
+        "path": "./data/2026-11-27/figures/2611.32476.webp",
+        "caption": "Fig. 1: Overview of ViTacLab. ViTacLab unifies three components: ViTacSim, a contact-solver-anchored, GPU-parallel tactile simulator; ViTacBench, a hierarchical benchmark spanning parallel grippers, dexterous hands, and bimanual systems across vision-to-touch regimes; and ViTacPolicy, a sensor-agnostic policy that fuses heterogeneous tactile inputs and aligns dense force array and tactile image modalities via shared-codebook VQ-VAE pretraining."
+      },
+      "code_url": null,
+      "project_url": null,
+      "pdf_url": "https://arxiv.org/pdf/2611.32476"
+    }
+  ]
+}
