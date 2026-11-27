@@ -1,6 +1,9 @@
+import random
 import re
+import sys
 import time
-from datetime import date, timedelta
+from datetime import date, datetime, timedelta, timezone
+from email.utils import parsedate_to_datetime
 
 import feedparser
 import requests
@@ -10,6 +13,10 @@ from feed_utils import feed_date, feed_tags, plain_text, safe_link
 from community_signals import paper_attention
 
 ARXIV_ID = re.compile(r"(?:/abs/|oai:arXiv\.org:)([\w./-]+)", re.IGNORECASE)
+USER_AGENT = "robo-daily-digest/1.0 (+https://github.com/Jdreamflying/robo-daily-digest)"
+RETRYABLE_STATUS_CODES = {429, 500, 502, 503, 504}
+MAX_RETRIES = 5
+BACKOFF_SECONDS = (5, 15, 30, 60, 60)
 
 
 def unversioned(identifier):
@@ -49,17 +56,59 @@ def normalize(entry, source):
     }
 
 
+def retry_delay(response, retry_number):
+    retry_after = response.headers.get("Retry-After") if response is not None else None
+    if retry_after:
+        try:
+            return max(0.0, float(retry_after))
+        except ValueError:
+            try:
+                retry_at = parsedate_to_datetime(retry_after)
+                if retry_at.tzinfo is None:
+                    retry_at = retry_at.replace(tzinfo=timezone.utc)
+                return max(0.0, (retry_at - datetime.now(timezone.utc)).total_seconds())
+            except (TypeError, ValueError, OverflowError):
+                pass
+    backoff = BACKOFF_SECONDS[min(retry_number - 1, len(BACKOFF_SECONDS) - 1)]
+    return backoff + random.uniform(0, 1)
+
+
 def query_day(feed, day, session):
     stamp = day.strftime("%Y%m%d")
     query = f"cat:{feed['category']} AND submittedDate:[{stamp}0000 TO {stamp}2359]"
     start, page_size = 0, 100
     entries = []
     while True:
-        response = session.get(feed["url"], params={
+        params = {
             "search_query": query, "start": start, "max_results": page_size,
             "sortBy": "submittedDate", "sortOrder": "descending",
-        }, timeout=(8, 25))
-        response.raise_for_status()
+        }
+        for retry_number in range(MAX_RETRIES + 1):
+            response = None
+            try:
+                response = session.get(feed["url"], params=params, timeout=(8, 25))
+                if response.status_code in RETRYABLE_STATUS_CODES and retry_number < MAX_RETRIES:
+                    delay = retry_delay(response, retry_number + 1)
+                    response.close()
+                    print(
+                        f"arXiv HTTP {response.status_code} for {day} (start={start}); "
+                        f"retry {retry_number + 1}/{MAX_RETRIES} in {delay:.1f}s",
+                        file=sys.stderr,
+                    )
+                    time.sleep(delay)
+                    continue
+                response.raise_for_status()
+                break
+            except (requests.Timeout, requests.ConnectionError) as exc:
+                if retry_number >= MAX_RETRIES:
+                    raise
+                delay = retry_delay(None, retry_number + 1)
+                print(
+                    f"arXiv connection error for {day} (start={start}): {exc}; "
+                    f"retry {retry_number + 1}/{MAX_RETRIES} in {delay:.1f}s",
+                    file=sys.stderr,
+                )
+                time.sleep(delay)
         result = feedparser.parse(response.content)
         total = result.feed.get("opensearch_totalresults")
         if total is None or (not result.entries and int(total) > start):
@@ -98,7 +147,7 @@ def main():
     target = date.fromisoformat(args.date) - timedelta(days=feed.get("lag_days", 3))
     published = published_ids(args.date)
     with requests.Session() as session:
-        session.headers["User-Agent"] = "robo-daily-digest/1.0 (arXiv news reader)"
+        session.headers["User-Agent"] = USER_AGENT
         day, rows, scanned = find_source_day(feed, target, session, already_published=published)
     papers = {}
     for row in rows:
