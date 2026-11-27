@@ -1,6 +1,23 @@
 {
   "editions": [
     {
+      "date": "2026-11-28",
+      "papers": {
+        "path": "./data/2026-11-28/papers.json",
+        "count": 8,
+        "total_scanned": 98,
+        "lead": "乘浪而行：弹性地形上的仿真到真实人形机器人控制"
+      },
+      "news": {
+        "path": "./data/2026-11-28/news.json",
+        "count": 3,
+        "total_scanned": 170,
+        "lead": "LTX-2.5 在 Trainium3 芯片上生成视频"
+      },
+      "infographic": "./data/2026-11-28/infographic.png",
+      "infographic_en": "./data/2026-11-28/infographic.en.png"
+    },
+    {
       "date": "2026-11-27",
       "papers": {
         "path": "./data/2026-11-27/papers.json",

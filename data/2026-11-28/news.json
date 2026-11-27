@@ -1,0 +1,217 @@
+{
+  "date": "2026-11-28",
+  "total_scanned": 3090,
+  "total_unique": 17,
+  "window_count": 170,
+  "window_hours": 48,
+  "cutoff": "2026-11-25T23:02:44.348177+00:00",
+  "window_end": "2026-11-27T23:02:44.348177+00:00",
+  "scored_count": 17,
+  "qualified_count": 3,
+  "event_duplicate_count": 1,
+  "mode": "api",
+  "items": [
+    {
+      "title": "LTX-2.5 在 Trainium3 芯片上生成视频",
+      "summary": "LTX-2.5 视频生成模型已能在亚马逊 Trainium3 芯片上运行，用于生成视频。",
+      "lede": "LTX-2.5 视频生成模型已能在亚马逊 Trainium3 芯片上运行。",
+      "tags": [
+        "视频生成",
+        "Trainium3",
+        "AI芯片"
+      ],
+      "analysis": [
+        "LTX-2.5 视频生成模型已在亚马逊 Trainium3 芯片上运行。",
+        "目前没有公布生成速度、画质或成本方面的具体数字。",
+        "这意味着视频生成可以改用非英伟达的芯片来跑。"
+      ],
+      "i18n": {
+        "zh": {
+          "title": "LTX-2.5 在 Trainium3 芯片上生成视频",
+          "summary": "LTX-2.5 视频生成模型已能在亚马逊 Trainium3 芯片上运行，用于生成视频。",
+          "lede": "LTX-2.5 视频生成模型已能在亚马逊 Trainium3 芯片上运行。",
+          "tags": [
+            "视频生成",
+            "Trainium3",
+            "AI芯片"
+          ],
+          "analysis": [
+            "LTX-2.5 视频生成模型已在亚马逊 Trainium3 芯片上运行。",
+            "目前没有公布生成速度、画质或成本方面的具体数字。",
+            "这意味着视频生成可以改用非英伟达的芯片来跑。"
+          ]
+        },
+        "en": {
+          "title": "LTX-2.5 Generates Videos on Trainium3 Chips",
+          "summary": "The LTX-2.5 video generation model can now run on Amazon's Trainium3 chips to produce videos.",
+          "lede": "The LTX-2.5 video generation model can now run on Amazon's Trainium3 chips.",
+          "tags": [
+            "video generation",
+            "Trainium3",
+            "AI chips"
+          ],
+          "analysis": [
+            "The LTX-2.5 video generation model is now running on Amazon's Trainium3 chips.",
+            "No specific figures on generation speed, video quality or cost were released.",
+            "This means video generation can run on chips other than Nvidia's."
+          ]
+        }
+      },
+      "id": "c2bd7953104652e48b060cb8",
+      "original_title": "Taking Trainium3 to the Track: Generating Videos with LTX-2.5",
+      "original_summary": "",
+      "url": "https://huggingface.co/blog/video-trainium3",
+      "source": "Hugging Face Blog",
+      "published": "2026-11-27T00:00:00+00:00",
+      "authors": [],
+      "score": 3,
+      "category": "ai_frontier",
+      "image": {
+        "path": "./data/2026-11-28/news_images/c2bd7953104652e48b060cb8.webp",
+        "width": 1200,
+        "height": 600,
+        "source_url": "https://huggingface.co/blog/video-trainium3",
+        "image_url": "https://huggingface.co/blog/assets/video-trainium3/thumbnail.jpg",
+        "alt": ""
+      }
+    },
+    {
+      "title": "AI智能体已接管DeepMind部分算力，用于Gemini实验",
+      "summary": "DeepMind让AI智能体参与管理部分计算资源，用于Gemini模型的实验。",
+      "lede": "DeepMind表示，AI智能体已接管部分算力，用于Gemini实验。",
+      "tags": [
+        "AI智能体",
+        "DeepMind",
+        "Gemini"
+      ],
+      "analysis": [
+        "DeepMind发布消息称，AI智能体已开始控制其部分算力，用于Gemini相关实验。",
+        "目前公开的信息没有给出具体算力比例或效率变化数据。",
+        "这意味着部分实验的资源调度可能由AI自行完成，而非全部由人工安排。"
+      ],
+      "i18n": {
+        "zh": {
+          "title": "AI智能体已接管DeepMind部分算力，用于Gemini实验",
+          "summary": "DeepMind让AI智能体参与管理部分计算资源，用于Gemini模型的实验。",
+          "lede": "DeepMind表示，AI智能体已接管部分算力，用于Gemini实验。",
+          "tags": [
+            "AI智能体",
+            "DeepMind",
+            "Gemini"
+          ],
+          "analysis": [
+            "DeepMind发布消息称，AI智能体已开始控制其部分算力，用于Gemini相关实验。",
+            "目前公开的信息没有给出具体算力比例或效率变化数据。",
+            "这意味着部分实验的资源调度可能由AI自行完成，而非全部由人工安排。"
+          ]
+        },
+        "en": {
+          "title": "AI agents now control part of DeepMind's compute for Gemini experiments",
+          "summary": "DeepMind has let AI agents manage some of its computing resources for experiments on the Gemini model.",
+          "lede": "DeepMind says AI agents now control part of its compute for Gemini experiments.",
+          "tags": [
+            "AI agents",
+            "DeepMind",
+            "Gemini"
+          ],
+          "analysis": [
+            "DeepMind said AI agents have begun controlling part of its compute for Gemini-related experiments.",
+            "The public information does not give a specific share of compute or any change in efficiency.",
+            "This means some experiment scheduling may be handled by AI itself rather than entirely by people."
+          ]
+        }
+      },
+      "id": "305e62040e8a734e17a1846a",
+      "original_title": "AI agents now control part of DeepMind's compute for Gemini experiments",
+      "original_summary": "",
+      "url": "https://the-decoder.com/ai-agents-now-control-part-of-deepminds-compute-for-gemini-experiments-but-recursive-self-improvement-remains-distant",
+      "source": "Hacker News",
+      "published": "2026-11-27T00:03:18+00:00",
+      "authors": [],
+      "score": 3,
+      "category": "ai_frontier",
+      "engagement": {
+        "points": 56,
+        "comments": 28
+      },
+      "discussion_url": "https://news.ycombinator.com/item?id=50661218",
+      "image": {
+        "path": "./data/2026-11-28/news_images/305e62040e8a734e17a1846a.webp",
+        "width": 1200,
+        "height": 670,
+        "source_url": "https://the-decoder.com/ai-agents-now-control-part-of-deepminds-compute-for-gemini-experiments-but-recursive-self-improvement-remains-distant/",
+        "image_url": "https://the-decoder.com/wp-content/uploads/2026/11/gemini-4-neon__blog-header__sm.width-1600.format-webp.webp",
+        "alt": ""
+      }
+    },
+    {
+      "title": "英国首次：AI代理不用银行卡完成购物",
+      "summary": "一个AI代理在英国首次不用银行卡完成了一笔购买。",
+      "lede": "英国首次出现AI代理不用银行卡完成购物。",
+      "tags": [
+        "AI代理",
+        "无卡支付",
+        "英国"
+      ],
+      "analysis": [
+        "英国出现首例由AI代理完成的免银行卡购物。",
+        "这次购买没有使用实体卡或卡号，具体金额和参与方未披露。",
+        "如果这种支付方式推广，AI代理可以替人下单，但安全和授权问题仍需解决。"
+      ],
+      "i18n": {
+        "zh": {
+          "title": "英国首次：AI代理不用银行卡完成购物",
+          "summary": "一个AI代理在英国首次不用银行卡完成了一笔购买。",
+          "lede": "英国首次出现AI代理不用银行卡完成购物。",
+          "tags": [
+            "AI代理",
+            "无卡支付",
+            "英国"
+          ],
+          "analysis": [
+            "英国出现首例由AI代理完成的免银行卡购物。",
+            "这次购买没有使用实体卡或卡号，具体金额和参与方未披露。",
+            "如果这种支付方式推广，AI代理可以替人下单，但安全和授权问题仍需解决。"
+          ]
+        },
+        "en": {
+          "title": "UK first: AI agent completes purchase without a bank card",
+          "summary": "An AI agent has made a purchase in the UK without using a bank card, a first for the country.",
+          "lede": "An AI agent in the UK has completed a purchase without a bank card, a first for the country.",
+          "tags": [
+            "AI agents",
+            "cardless payment",
+            "UK"
+          ],
+          "analysis": [
+            "The UK has seen its first purchase completed by an AI agent without a bank card.",
+            "The purchase involved no physical card or card number; the amount and parties involved were not disclosed.",
+            "If the payment method spreads, AI agents could order on people's behalf, but security and authorization questions remain."
+          ]
+        }
+      },
+      "id": "d7a5446727907e74c9b266d8",
+      "original_title": "Pizza history: AI agent's cardless purchase is a first for UK",
+      "original_summary": "",
+      "url": "https://www.theguardian.com/business/2026/nov/27/ai-agent-cardless-transaction-pizza-papa-john-uk-fca-truelayer",
+      "source": "Hacker News",
+      "published": "2026-11-27T11:41:11+00:00",
+      "authors": [],
+      "score": 3,
+      "category": "ai_frontier",
+      "engagement": {
+        "points": 20,
+        "comments": 41
+      },
+      "discussion_url": "https://news.ycombinator.com/item?id=50665732",
+      "image": {
+        "path": "./data/2026-11-28/news_images/d7a5446727907e74c9b266d8.webp",
+        "width": 465,
+        "height": 372,
+        "source_url": "https://www.theguardian.com/business/2026/nov/27/ai-agent-cardless-transaction-pizza-papa-john-uk-fca-truelayer",
+        "image_url": "https://i.guim.co.uk/img/media/bf6bce003fbe74cd0f36f89414dd7b2fb6f3888f/996_0_5020_4016/master/5020.jpg?width=465&dpr=1&s=none&crop=none",
+        "alt": "A cheesy slice of pizza is lifted up, stretching long melted cheese strands from the rest"
+      }
+    }
+  ]
+}

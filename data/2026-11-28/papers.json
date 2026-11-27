@@ -1,0 +1,653 @@
+{
+  "date": "2026-11-28",
+  "total_scanned": 98,
+  "total_new": 98,
+  "total_unique": 98,
+  "paper_target_date": "2026-11-25",
+  "paper_source_date": "2026-11-25",
+  "paper_category": "cs.RO",
+  "previously_published": 0,
+  "scored_count": 98,
+  "qualified_count": 98,
+  "mode": "api",
+  "items": [
+    {
+      "title": "乘浪而行：弹性地形上的仿真到真实人形机器人控制",
+      "summary": "人形机器人在可变形弹性地形上行走时，支撑面的位置与运动在空间和时间上相互耦合：形变与回弹会在两次接触之间持续存在，一个落脚点的载荷还会改变其他落脚点的支撑状态，因此训练必须捕捉每次接触如何改变后续支撑。作者提出 RIPPLE（基于本体感知策略的大形变弹性地形鲁棒交互），一个面向此类地形的人形机器人仿真到真实学习框架。RIPPLE 将 ElasticMembrane（一种预张紧的质量-弹簧网格，用于建模空间耦合形变、能量存储与回弹）与可变形接触一起集成到 MJLab 中，以支持 GPU 并行策略学习。随后通过分阶段训练，把刚性地面技能迁移到这些地形上的平衡与跳跃任务，且仅使用本体感知，不用视觉或力传感。策略零样本部署后，使 MagicBot Z1 人形机器人能够平衡、连续跳跃，并从刚性平台进入蹦床。仿真中，在 0.3 m/s 扰动下，ElasticMembrane 训练在 ElasticMembrane、IndependentSprings 和 BouncyPlate 三种地形上保持至少 98.7% 的站立成功率（三个随机种子的均值），而刚性地面训练或接触柔顺性训练向其中前两种地形的迁移效果较差。一个固定策略可容忍训练值 0.35 至 2.8 倍的刚度、最宽 7 m 的床面，以及另外七种仿真支撑场景，因此迁移无需针对蹦床刚度进行标定。作者计划近期发布代码。交互式浏览器演示、视频和场景配置见项目页面。",
+      "lede": "RIPPLE 用预张紧弹簧网格模拟弹性膜面，让仅靠本体感知的人形机器人策略零样本在蹦床上平衡和连续跳跃。",
+      "tags": [
+        "人形机器人控制",
+        "仿真到真实迁移",
+        "弹性地形"
+      ],
+      "sections": {
+        "background": "弹性地形上的支撑面不是固定平面：踩下去会凹陷并储存能量，抬脚后回弹，而且一处受力会通过膜面影响邻近落脚点。这种空间与时间上的耦合使刚性地面训练出的控制策略难以直接迁移，而依赖视觉或力传感又会增加真机部署的硬件负担。",
+        "conclusion": "在仿真中，使用 ElasticMembrane 训练的策略在 0.3 m/s 扰动下，于 ElasticMembrane、IndependentSprings 和 BouncyPlate 三种地形上均保持至少 98.7% 的站立成功率（三个种子均值）；刚性地面训练和接触柔顺性训练向 ElasticMembrane 与 IndependentSprings 的迁移较差。单个固定策略可容忍训练刚度 0.35 至 2.8 倍的变化、最宽 7 m 的床面及另外七种仿真支撑场景。零样本部署到 MagicBot Z1 后，机器人实现了平衡、连续跳跃以及从刚性平台进入蹦床。",
+        "method": "输入是机器人本体感知状态（如关节角度与惯性测量），不依赖视觉或力传感器。核心模块 ElasticMembrane 用预张紧的质量-弹簧网格表示弹性膜面，建模空间耦合的凹陷、能量存储与回弹，并与可变形接触一起集成进 MJLab，以 GPU 并行方式训练策略。训练采用分阶段流程，先把刚性地面上的平衡与跳跃技能迁移到弹性地形。已验证的改进来自弹性膜面建模与分阶段迁移的组合：仿真中该训练对多种弹性支撑的站立成功率显著高于刚性地面或接触柔顺性训练，但这一比较仅限材料报告的仿真设定。",
+        "takeaways": "若要在蹦床、软垫或弹性地板等场景部署人形机器人，可考虑用可变形膜面仿真加本体感知策略，减少对视觉和力传感器的依赖。所需条件是能进行 GPU 并行仿真的训练环境，以及可零样本部署的 MagicBot Z1 级硬件平台。距离更广泛的真机部署，仍需验证材料未覆盖的刚度范围、真实膜面参数辨识，以及除平衡和跳跃外的更多任务。实测结论仅适用于文中报告的仿真扰动与真机演示设定。"
+      },
+      "i18n": {
+        "zh": {
+          "title": "乘浪而行：弹性地形上的仿真到真实人形机器人控制",
+          "summary": "人形机器人在可变形弹性地形上行走时，支撑面的位置与运动在空间和时间上相互耦合：形变与回弹会在两次接触之间持续存在，一个落脚点的载荷还会改变其他落脚点的支撑状态，因此训练必须捕捉每次接触如何改变后续支撑。作者提出 RIPPLE（基于本体感知策略的大形变弹性地形鲁棒交互），一个面向此类地形的人形机器人仿真到真实学习框架。RIPPLE 将 ElasticMembrane（一种预张紧的质量-弹簧网格，用于建模空间耦合形变、能量存储与回弹）与可变形接触一起集成到 MJLab 中，以支持 GPU 并行策略学习。随后通过分阶段训练，把刚性地面技能迁移到这些地形上的平衡与跳跃任务，且仅使用本体感知，不用视觉或力传感。策略零样本部署后，使 MagicBot Z1 人形机器人能够平衡、连续跳跃，并从刚性平台进入蹦床。仿真中，在 0.3 m/s 扰动下，ElasticMembrane 训练在 ElasticMembrane、IndependentSprings 和 BouncyPlate 三种地形上保持至少 98.7% 的站立成功率（三个随机种子的均值），而刚性地面训练或接触柔顺性训练向其中前两种地形的迁移效果较差。一个固定策略可容忍训练值 0.35 至 2.8 倍的刚度、最宽 7 m 的床面，以及另外七种仿真支撑场景，因此迁移无需针对蹦床刚度进行标定。作者计划近期发布代码。交互式浏览器演示、视频和场景配置见项目页面。",
+          "lede": "RIPPLE 用预张紧弹簧网格模拟弹性膜面，让仅靠本体感知的人形机器人策略零样本在蹦床上平衡和连续跳跃。",
+          "tags": [
+            "人形机器人控制",
+            "仿真到真实迁移",
+            "弹性地形"
+          ],
+          "sections": {
+            "background": "弹性地形上的支撑面不是固定平面：踩下去会凹陷并储存能量，抬脚后回弹，而且一处受力会通过膜面影响邻近落脚点。这种空间与时间上的耦合使刚性地面训练出的控制策略难以直接迁移，而依赖视觉或力传感又会增加真机部署的硬件负担。",
+            "conclusion": "在仿真中，使用 ElasticMembrane 训练的策略在 0.3 m/s 扰动下，于 ElasticMembrane、IndependentSprings 和 BouncyPlate 三种地形上均保持至少 98.7% 的站立成功率（三个种子均值）；刚性地面训练和接触柔顺性训练向 ElasticMembrane 与 IndependentSprings 的迁移较差。单个固定策略可容忍训练刚度 0.35 至 2.8 倍的变化、最宽 7 m 的床面及另外七种仿真支撑场景。零样本部署到 MagicBot Z1 后，机器人实现了平衡、连续跳跃以及从刚性平台进入蹦床。",
+            "method": "输入是机器人本体感知状态（如关节角度与惯性测量），不依赖视觉或力传感器。核心模块 ElasticMembrane 用预张紧的质量-弹簧网格表示弹性膜面，建模空间耦合的凹陷、能量存储与回弹，并与可变形接触一起集成进 MJLab，以 GPU 并行方式训练策略。训练采用分阶段流程，先把刚性地面上的平衡与跳跃技能迁移到弹性地形。已验证的改进来自弹性膜面建模与分阶段迁移的组合：仿真中该训练对多种弹性支撑的站立成功率显著高于刚性地面或接触柔顺性训练，但这一比较仅限材料报告的仿真设定。",
+            "takeaways": "若要在蹦床、软垫或弹性地板等场景部署人形机器人，可考虑用可变形膜面仿真加本体感知策略，减少对视觉和力传感器的依赖。所需条件是能进行 GPU 并行仿真的训练环境，以及可零样本部署的 MagicBot Z1 级硬件平台。距离更广泛的真机部署，仍需验证材料未覆盖的刚度范围、真实膜面参数辨识，以及除平衡和跳跃外的更多任务。实测结论仅适用于文中报告的仿真扰动与真机演示设定。"
+          }
+        },
+        "en": {
+          "title": "Riding the Wave: Sim-to-Real Humanoid Control on Elastic Terrain",
+          "summary": "Humanoid robots on deformable elastic terrain face a surface whose position and motion are coupled in space and time: deflection and rebound persist between contacts, and load at one foothold alters support at others, so training must capture how each contact changes the support that follows. The authors present RIPPLE (Robust Interaction via Proprioceptive Policies on Large-deformation Elastic terrain), a sim-to-real learning framework for humanoid control on such terrain. RIPPLE integrates ElasticMembrane, a pretensioned mass-spring mesh that models spatially coupled deflection, energy storage, and rebound, together with deformable contact into MJLab for GPU-parallel policy learning. Staged training then transfers rigid-ground skills to balancing and jumping on these terrains using only proprioception, without vision or force sensing. Deployed zero-shot, the policies enable a MagicBot Z1 humanoid to balance, jump consecutively, and enter a trampoline from a rigid platform. In simulation, ElasticMembrane training holds standing success of at least 98.7% (mean over three seeds) on ElasticMembrane, IndependentSprings, and BouncyPlate under 0.3 m/s perturbations, whereas rigid-ground or contact-compliance training transfers poorly to the first two. A fixed policy tolerates stiffness from 0.35 to 2.8 times the training value, beds up to 7 m wide, and seven further simulated support scenarios, so transfer needs no calibration to the trampoline's stiffness. The authors plan to release the code soon. The interactive browser demo, videos, and scene configurations are available on the project page.",
+          "lede": "RIPPLE simulates elastic membranes with a pretensioned spring mesh, letting a proprioception-only humanoid policy balance and jump consecutively on a trampoline zero-shot.",
+          "tags": [
+            "humanoid robot control",
+            "sim-to-real transfer",
+            "elastic terrain"
+          ],
+          "sections": {
+            "background": "Support on elastic terrain is not a fixed plane: stepping down creates a depression that stores energy, lifting the foot releases rebound, and load at one point affects neighboring footholds through the membrane. This spatial and temporal coupling makes policies trained on rigid ground hard to transfer directly, while relying on vision or force sensing adds hardware burden for real deployment.",
+            "conclusion": "In simulation, policies trained with ElasticMembrane hold standing success of at least 98.7% (mean over three seeds) on ElasticMembrane, IndependentSprings, and BouncyPlate under 0.3 m/s perturbations; rigid-ground and contact-compliance training transfer poorly to ElasticMembrane and IndependentSprings. A single fixed policy tolerates stiffness from 0.35 to 2.8 times the training value, beds up to 7 m wide, and seven further simulated support scenarios. Deployed zero-shot on a MagicBot Z1, the policies achieve balancing, consecutive jumping, and entering a trampoline from a rigid platform.",
+            "method": "The input is the robot's proprioceptive state, such as joint angles and inertial measurements, with no vision or force sensing. The core module, ElasticMembrane, represents the elastic surface as a pretensioned mass-spring mesh that models spatially coupled deflection, energy storage, and rebound, and is integrated with deformable contact into MJLab for GPU-parallel policy training. Training is staged, first transferring balancing and jumping skills from rigid ground to elastic terrain. The verified improvement comes from combining elastic membrane modeling with staged transfer: in simulation, standing success on several elastic supports is substantially higher than with rigid-ground or contact-compliance training, but this comparison is limited to the simulation settings reported.",
+            "takeaways": "For deployment on trampolines, soft mats, or elastic floors, a humanoid robot could use deformable membrane simulation plus proprioceptive policies to reduce reliance on vision and force sensors. The required conditions are a GPU-parallel simulation training environment and a hardware platform such as the MagicBot Z1 that supports zero-shot deployment. Broader real-world deployment still needs validation of stiffness ranges not covered, identification of real membrane parameters, and tasks beyond balancing and jumping. The measured conclusions apply only to the simulation perturbations and real-robot demonstrations reported."
+          }
+        }
+      },
+      "id": "2611.34569",
+      "original_title": "Riding the Wave: Sim-to-Real Humanoid Control on Elastic Terrain",
+      "original_summary": "Humanoid robots on deformable elastic terrains face a surface whose position and motion are coupled in space and time: deflection and rebound persist between contacts, and load at one foothold alters the support at others, so training must capture how each contact changes the support that follows. We present RIPPLE (Robust Interaction via Proprioceptive Policies on Large-deformation Elastic terrain), a simulation-to-real learning framework for humanoid control on such terrains. RIPPLE integrates ElasticMembrane, a pretensioned mass-spring mesh that models spatially coupled deflection, energy storage, and rebound, together with deformable contact into MJLab for GPU-parallel policy learning. Staged training then transfers rigid-ground skills to balance and jumping on these terrains using only proprioception, without vision or force sensing. Deployed zero-shot, the policies enable a MagicBot Z1 humanoid to balance, jump consecutively, and enter a trampoline from a rigid platform. In simulation, ElasticMembrane training holds standing success of at least 98.7% (mean over three seeds) on ElasticMembrane, IndependentSprings, and BouncyPlate under 0.3 m/s perturbations, whereas rigid-ground or contact-compliance training transfers poorly to the first two. A fixed policy tolerates stiffness from 0.35 to 2.8 times the training value, beds up to 7 m wide, and seven further simulated support scenarios, so transfer needs no calibration to the trampoline's stiffness. We plan to release the code soon. The interactive browser demo, videos, and scene configurations are available on the project page: https://fly-pigTH.github.io/wave_rider/",
+      "url": "https://arxiv.org/abs/2611.34569v1",
+      "source": "arXiv cs.RO",
+      "published": "2026-11-25T15:36:13+00:00",
+      "authors": [
+        "Yinglei Zhu",
+        "Qin Li",
+        "Honghao Pan",
+        "Bozhao Wang",
+        "Binghui Xu",
+        "Jie Lu",
+        "Wentao Song",
+        "Xiyu Wang",
+        "Xinyu Zhu",
+        "Wei Liu",
+        "Xinjun Liu",
+        "Kai Lu",
+        "Huichan Zhao"
+      ],
+      "score": 5,
+      "versioned_id": "2611.34569v1",
+      "figure": {
+        "path": "./data/2026-11-28/figures/2611.34569.webp",
+        "caption": "Fig. 4: Experimental perturbations during zero-shot hardware deployment. Top row, applied to the robot: (a) pulling its hand, (b) kicking the robot, and (c) pushing its torso. Bottom row, applied to the trampoline: (a) stepping on the bed, (b) kicking the bed laterally, and (c) lifting its edge."
+      },
+      "attention": {
+        "github_stars": 18540,
+        "github_url": "https://github.com/google-deepmind/mujoco"
+      },
+      "code_url": null,
+      "project_url": "https://fly-pigTH.github.io/wave_rider/",
+      "pdf_url": "https://arxiv.org/pdf/2611.34569"
+    },
+    {
+      "title": "Cairn：以物体为中心的3D轨迹先验引导冻结的VLA",
+      "summary": "Cairn 在测试时保持视觉-语言-动作模型（VLA）冻结，用一个小的3D轨迹先验读取场景与夹持物体的点云、抓取位姿和指令，采样物体从抓取到释放的SE(3)轨迹，并通过双向反馈的分层规划引导VLA去噪，使冻结的π0.5在1,941个含物体位移与障碍的LIBERO场景上成功率从24.5%升至95.1%，在LIBERO-PRO上从27.3%升至38.0%，并在真实Franka上以纯仿真训练的先验引导冻结的DROID π0.5绕过障碍完成接近臂展极限的放置。",
+      "lede": "Cairn 不微调VLA，而是用物体级3D轨迹先验在测试时“扶正”冻结模型的动作，让它在物体被移动或遇障碍时仍能绕行并放对位置。",
+      "tags": [
+        "视觉-语言-动作模型",
+        "3D轨迹先验",
+        "机器人操作"
+      ],
+      "sections": {
+        "background": "VLA 是能力不错的底层控制器，但它们把物体该去哪里与训练时见过的布局绑定在一起：物体被移动或路径被障碍挡住时，模型会把物体带到错误位置或撞上障碍。针对新布局做微调需要为每种布局采集机器人数据，还会侵蚀模型已有的技能。因此需要一种不更新VLA权重、在测试时纠正物体级运动路径的办法。",
+        "conclusion": "在1,941个含物体位移和障碍的留出LIBERO场景上，Cairn 把冻结的π0.5成功率从24.5%提升到95.1%，高于在同一训练布局上微调过的π0.5，且不损害标准LIBERO表现。在第三方LIBERO-PRO基准上，成功率从27.3%升至38.0%；在它实际引导的回合中从54.4%升至81.1%。在真实Franka上，仅用仿真训练的先验引导冻结的DROID π0.5绕过障碍，并完成接近机械臂伸展极限的放置，而基线在此失败。",
+        "method": "输入是场景点云、夹持物体的点云、抓取时的物体位姿以及语言指令。一个小的先验网络据此采样物体从被抓取到被释放的SE(3)轨迹，使物体绕开障碍并调整朝向以穿过狭窄间隙。先验与冻结的VLA构成两层分层规划器，反馈双向流动：VLA 意图的运动用于选择和重塑候选轨迹，选中的轨迹再引导VLA的去噪过程。VLA 预测的动作经抓取关系映射为物体位姿，并被拉向下一路点，而VLA权重始终不变。已验证的改进来自这种测试时轨迹引导，而非对VLA的再训练。",
+        "takeaways": "在物体被挪动、路径有障碍的桌面操作场景中，若已有场景与夹持物体的点云、抓取位姿和语言指令，Cairn 可在不重训VLA的前提下改善物体级路径。它已在LIBERO仿真和真实Franka上验证，但真机实验只覆盖单一障碍绕行与极限放置任务，先验也仅在仿真中训练。要走向更广泛的真机部署，还需验证在真实感知噪声、多样物体与复杂障碍布局下的轨迹先验可靠性，以及引导失败时的回退机制。"
+      },
+      "i18n": {
+        "zh": {
+          "title": "Cairn：以物体为中心的3D轨迹先验引导冻结的VLA",
+          "summary": "Cairn 在测试时保持视觉-语言-动作模型（VLA）冻结，用一个小的3D轨迹先验读取场景与夹持物体的点云、抓取位姿和指令，采样物体从抓取到释放的SE(3)轨迹，并通过双向反馈的分层规划引导VLA去噪，使冻结的π0.5在1,941个含物体位移与障碍的LIBERO场景上成功率从24.5%升至95.1%，在LIBERO-PRO上从27.3%升至38.0%，并在真实Franka上以纯仿真训练的先验引导冻结的DROID π0.5绕过障碍完成接近臂展极限的放置。",
+          "lede": "Cairn 不微调VLA，而是用物体级3D轨迹先验在测试时“扶正”冻结模型的动作，让它在物体被移动或遇障碍时仍能绕行并放对位置。",
+          "tags": [
+            "视觉-语言-动作模型",
+            "3D轨迹先验",
+            "机器人操作"
+          ],
+          "sections": {
+            "background": "VLA 是能力不错的底层控制器，但它们把物体该去哪里与训练时见过的布局绑定在一起：物体被移动或路径被障碍挡住时，模型会把物体带到错误位置或撞上障碍。针对新布局做微调需要为每种布局采集机器人数据，还会侵蚀模型已有的技能。因此需要一种不更新VLA权重、在测试时纠正物体级运动路径的办法。",
+            "conclusion": "在1,941个含物体位移和障碍的留出LIBERO场景上，Cairn 把冻结的π0.5成功率从24.5%提升到95.1%，高于在同一训练布局上微调过的π0.5，且不损害标准LIBERO表现。在第三方LIBERO-PRO基准上，成功率从27.3%升至38.0%；在它实际引导的回合中从54.4%升至81.1%。在真实Franka上，仅用仿真训练的先验引导冻结的DROID π0.5绕过障碍，并完成接近机械臂伸展极限的放置，而基线在此失败。",
+            "method": "输入是场景点云、夹持物体的点云、抓取时的物体位姿以及语言指令。一个小的先验网络据此采样物体从被抓取到被释放的SE(3)轨迹，使物体绕开障碍并调整朝向以穿过狭窄间隙。先验与冻结的VLA构成两层分层规划器，反馈双向流动：VLA 意图的运动用于选择和重塑候选轨迹，选中的轨迹再引导VLA的去噪过程。VLA 预测的动作经抓取关系映射为物体位姿，并被拉向下一路点，而VLA权重始终不变。已验证的改进来自这种测试时轨迹引导，而非对VLA的再训练。",
+            "takeaways": "在物体被挪动、路径有障碍的桌面操作场景中，若已有场景与夹持物体的点云、抓取位姿和语言指令，Cairn 可在不重训VLA的前提下改善物体级路径。它已在LIBERO仿真和真实Franka上验证，但真机实验只覆盖单一障碍绕行与极限放置任务，先验也仅在仿真中训练。要走向更广泛的真机部署，还需验证在真实感知噪声、多样物体与复杂障碍布局下的轨迹先验可靠性，以及引导失败时的回退机制。"
+          }
+        },
+        "en": {
+          "title": "Cairn: Object-Centric 3D Trajectory Priors for Steering Frozen VLAs",
+          "summary": "Cairn keeps a vision-language-action model (VLA) frozen at test time and uses a small 3D trajectory prior that reads scene and held-object point clouds, the grasp pose, and the instruction to sample SE(3) object trajectories from grasp to release, steering the VLA's denoising through a two-level planner with bidirectional feedback; it raises a frozen π0.5 from 24.5% to 95.1% on 1,941 held-out LIBERO scenes with displaced objects and obstacles, from 27.3% to 38.0% on LIBERO-PRO, and on a real Franka a simulation-trained prior guides a frozen DROID π0.5 around an obstacle to a placement at the arm's reach limit.",
+          "lede": "Cairn does not fine-tune the VLA; it uses an object-level 3D trajectory prior at test time to steer a frozen model's actions so it still detours around obstacles and places objects correctly when layouts change.",
+          "tags": [
+            "vision-language-action models",
+            "3D trajectory priors",
+            "robotic manipulation"
+          ],
+          "sections": {
+            "background": "VLAs are capable low-level controllers, but they tie where objects go to the layouts seen in training: when objects are moved or obstacles block the way, they carry objects to the wrong place or into collisions. Fine-tuning on new layouts requires robot data for each layout and erodes existing skills. A method is needed that corrects object-level motion at test time without updating VLA weights.",
+            "conclusion": "On 1,941 held-out LIBERO scenes with displaced objects and obstacles, Cairn raises the success rate of a frozen π0.5 from 24.5% to 95.1%, above a π0.5 fine-tuned on the training layouts, without hurting standard LIBERO. On the third-party LIBERO-PRO benchmark, success rises from 27.3% to 38.0%, and from 54.4% to 81.1% on the episodes it steers. On a real Franka, a prior trained purely in simulation guides a frozen DROID π0.5 around an obstacle to a placement at the limit of the arm's reach, where the baseline fails.",
+            "method": "The inputs are scene point clouds, the held object's point cloud, the object pose at grasp time, and the language instruction. A small prior network samples SE(3) trajectories of the object from grasp to release that lead it around obstacles and turn it to fit through gaps. The prior and the frozen VLA form a two-level hierarchical planner with feedback in both directions: the VLA's intended motion selects and reshapes candidate trajectories, and the chosen trajectory guides the VLA's denoising. The VLA's predicted actions are mapped to held-object poses through the grasp and pulled toward the next waypoint, while the VLA weights stay untouched. The verified gains come from this test-time trajectory steering rather than VLA retraining.",
+            "takeaways": "In tabletop manipulation where objects are displaced and paths are obstructed, Cairn can improve object-level paths without retraining the VLA, provided scene and held-object point clouds, a grasp pose, and a language instruction are available. It has been validated in LIBERO simulation and on a real Franka, but the real-robot experiment covers only a single obstacle detour and a reach-limit placement, and the prior is trained only in simulation. Broader real-world deployment still requires validating the trajectory prior under real sensing noise, varied objects, and complex obstacle layouts, as well as a fallback when steering fails."
+          }
+        }
+      },
+      "id": "2611.34914",
+      "original_title": "Cairn: Object-Centric 3D Trajectory Priors for Steering Frozen VLAs",
+      "original_summary": "Vision-language-action models (VLAs) are capable low-level controllers, but they tie where objects go to the layouts they were trained on: when objects are moved or obstacles block the way, they carry them to the wrong place or into collisions. Fine-tuning on new layouts needs robot data for each one and erodes skills the model already has. We introduce Cairn, which keeps the VLA frozen and steers it at test time along learned 3D trajectories of the object in its gripper. A small prior reads point clouds of the scene and the held object, along with its pose when grasped and the instruction, and samples SE(3) trajectories up to its release that lead it around obstacles and turn it to fit through gaps. The prior and the VLA form the two levels of a hierarchical planner in which feedback runs both ways: the VLA's intended motion chooses and reshapes the trajectories, and the chosen one guides the VLA's denoising. Its predicted actions, mapped to the held object's poses through the grasp, are pulled toward the next waypoint, while the VLA's weights stay untouched. Across 1,941 held-out LIBERO scenes with displaced objects and obstacles, Cairn raises the success rate of a frozen π0.5 from 24.5% to 95.1%, above that of a π0.5 fine-tuned on our training layouts, without hurting standard LIBERO. On the third-party LIBERO-PRO benchmark, it raises success from 27.3% to 38.0%, and from 54.4% to 81.1% on the episodes it steers. On a real Franka, with a prior trained purely in simulation, it guides the frozen DROID π0.5 around an obstacle and to a placement at the limit of the arm's reach, where it otherwise fails. All code, models and data will be made public.",
+      "url": "https://arxiv.org/abs/2611.34914v1",
+      "source": "arXiv cs.RO",
+      "published": "2026-11-25T18:57:29+00:00",
+      "authors": [
+        "Agelos Kratimenos",
+        "Kostas Daniilidis",
+        "Evangelos Chatzipantazis"
+      ],
+      "score": 5,
+      "versioned_id": "2611.34914v1",
+      "figure": {
+        "path": "./data/2026-11-28/figures/2611.34914.webp",
+        "caption": "Figure 2: Overview. (a) From scene points 𝒮, object points 𝒢 at grasp pose A and instruction ℓ, the prior samples routes of SE⁡(3) waypoints attending to nearby scene tokens (Sec. 3.1). Each track of the plan 𝝃⋆ follows one object point. (b) The prior and frozen π0.5 steer each other (Sec. 3.3): π0.5’s unsteered intent Φ⁡(𝐚π) pulls the routes 𝝃i and moves 𝝃⋆ to its group, and at each denoising step Φ⁡(𝐚^) is pulled toward 𝐰k."
+      },
+      "code_url": null,
+      "project_url": null,
+      "pdf_url": "https://arxiv.org/pdf/2611.34914"
+    },
+    {
+      "title": "面向敏捷四旋翼的端到端图像目标导航：基于循环状态蒸馏",
+      "summary": "该工作提出首个直接输出推力与角速率指令的图像目标导航策略，使四旋翼无需SLAM、VO或SfM等状态估计，也无需独立速度控制器，即可在未见三维环境中飞向目标图像对应视角。方法采用四阶段训练流程，将几何与运动监督、特权教师蒸馏和端到端强化学习微调结合。在未见环境的1000次留出飞行中，成功率82.3%，成功飞行的平均终点位置误差0.10米；在未见室内环境真机零样本部署25次试验，成功率84%。",
+      "lede": "一种仅凭目标照片、直接输出推力与角速率的四旋翼导航策略，在未见环境仿真中成功率82.3%，真机室内零样本试验成功率84%。",
+      "tags": [
+        "图像目标导航",
+        "四旋翼敏捷飞行",
+        "端到端强化学习"
+      ],
+      "sections": {
+        "background": "图像目标导航要求机器人仅凭一张目标照片抵达拍摄该照片的视角，不依赖地图和目标位姿。在三维空间中，这不仅要识别目标，还要估计三维位移并生成连续控制动作以接近并稳定在目标视角。难点在于：当前图像与目标图像的同一视觉差异，会因机器人速度不同而需要完全不同的动作，而单目图像本身既不含度量尺度也不含机体运动信息。因此现有图像目标策略多局限于平面动作空间，并依赖状态估计器进行飞行控制；直接从图像映射到底层控制指令的策略虽已在敏捷飞行中展示，但尚未用于未见环境中的目标图像导航。",
+        "conclusion": "在未见环境的1000次留出飞行中，策略成功率为82.3%，成功飞行的平均终点位置误差为0.10米。零样本部署到真实四旋翼后，在未见室内环境的25次试验中成功率为84%。这些结果支持该策略可在不依赖状态估计和独立速度控制器的情况下，直接以推力和角速率指令完成三维图像目标导航。结论范围限于材料报告的仿真留出飞行与真机室内试验设定。",
+        "method": "输入是单目图像序列与目标图像，输出直接为四旋翼的推力和角速率指令。核心是一个循环视觉策略，利用历史帧隐式推断机体运动与尺度，从而区分相同视觉差异下不同速度所需的动作。训练采用四阶段流水线：先以几何与运动监督提供学习信号，再用特权教师蒸馏把额外信息迁移到仅用单目图像的策略，最后通过端到端强化学习微调。已验证的改进来自该组合训练流程，使策略在未见环境中直接输出底层控制；材料未提供与旧方法的对照，因此不宣称优于既有方法。",
+        "takeaways": "若要在室内巡检、目标点拍摄或搜索救援等场景使用，需要一台可接收推力与角速率指令的四旋翼、单目相机，以及覆盖目标视角的图像采集条件。真机零样本部署前，还需在更多室内外环境、不同光照与动态障碍下验证鲁棒性，并确认长距离飞行中的漂移与安全性。当前84%成功率仅来自25次未见室内试验，82.3%与0.10米误差仅来自仿真留出飞行，实际部署范围应据此限定。"
+      },
+      "i18n": {
+        "zh": {
+          "title": "面向敏捷四旋翼的端到端图像目标导航：基于循环状态蒸馏",
+          "summary": "该工作提出首个直接输出推力与角速率指令的图像目标导航策略，使四旋翼无需SLAM、VO或SfM等状态估计，也无需独立速度控制器，即可在未见三维环境中飞向目标图像对应视角。方法采用四阶段训练流程，将几何与运动监督、特权教师蒸馏和端到端强化学习微调结合。在未见环境的1000次留出飞行中，成功率82.3%，成功飞行的平均终点位置误差0.10米；在未见室内环境真机零样本部署25次试验，成功率84%。",
+          "lede": "一种仅凭目标照片、直接输出推力与角速率的四旋翼导航策略，在未见环境仿真中成功率82.3%，真机室内零样本试验成功率84%。",
+          "tags": [
+            "图像目标导航",
+            "四旋翼敏捷飞行",
+            "端到端强化学习"
+          ],
+          "sections": {
+            "background": "图像目标导航要求机器人仅凭一张目标照片抵达拍摄该照片的视角，不依赖地图和目标位姿。在三维空间中，这不仅要识别目标，还要估计三维位移并生成连续控制动作以接近并稳定在目标视角。难点在于：当前图像与目标图像的同一视觉差异，会因机器人速度不同而需要完全不同的动作，而单目图像本身既不含度量尺度也不含机体运动信息。因此现有图像目标策略多局限于平面动作空间，并依赖状态估计器进行飞行控制；直接从图像映射到底层控制指令的策略虽已在敏捷飞行中展示，但尚未用于未见环境中的目标图像导航。",
+            "conclusion": "在未见环境的1000次留出飞行中，策略成功率为82.3%，成功飞行的平均终点位置误差为0.10米。零样本部署到真实四旋翼后，在未见室内环境的25次试验中成功率为84%。这些结果支持该策略可在不依赖状态估计和独立速度控制器的情况下，直接以推力和角速率指令完成三维图像目标导航。结论范围限于材料报告的仿真留出飞行与真机室内试验设定。",
+            "method": "输入是单目图像序列与目标图像，输出直接为四旋翼的推力和角速率指令。核心是一个循环视觉策略，利用历史帧隐式推断机体运动与尺度，从而区分相同视觉差异下不同速度所需的动作。训练采用四阶段流水线：先以几何与运动监督提供学习信号，再用特权教师蒸馏把额外信息迁移到仅用单目图像的策略，最后通过端到端强化学习微调。已验证的改进来自该组合训练流程，使策略在未见环境中直接输出底层控制；材料未提供与旧方法的对照，因此不宣称优于既有方法。",
+            "takeaways": "若要在室内巡检、目标点拍摄或搜索救援等场景使用，需要一台可接收推力与角速率指令的四旋翼、单目相机，以及覆盖目标视角的图像采集条件。真机零样本部署前，还需在更多室内外环境、不同光照与动态障碍下验证鲁棒性，并确认长距离飞行中的漂移与安全性。当前84%成功率仅来自25次未见室内试验，82.3%与0.10米误差仅来自仿真留出飞行，实际部署范围应据此限定。"
+          }
+        },
+        "en": {
+          "title": "End-to-End Image-Goal Navigation for Agile Quadrotors via Recurrent State Distillation",
+          "summary": "This work presents the first image-goal navigation policy that directly commands thrust and angular rates for agile quadrotor flight in unseen 3D environments without relying on state estimation such as SLAM, VO, or SfM, or on a separate velocity controller. The policy is trained through a four-stage pipeline combining geometric and motion supervision, privileged-teacher distillation, and end-to-end reinforcement learning fine-tuning. On 1000 held-out flights in unseen environments, it achieves an 82.3% success rate with a mean terminal position error of 0.10 m across successful flights. Deployed zero-shot on a real quadrotor, it reaches an 84% success rate over 25 trials in an unseen indoor environment.",
+          "lede": "A quadrotor navigation policy that uses only a goal photograph and directly commands thrust and angular rates achieves an 82.3% success rate in unseen simulated environments and 84% in zero-shot real indoor trials.",
+          "tags": [
+            "image-goal navigation",
+            "agile quadrotor flight",
+            "end-to-end reinforcement learning"
+          ],
+          "sections": {
+            "background": "Image-goal navigation asks a robot to reach the viewpoint of a target photograph without a map or goal pose. In three dimensions, this requires not only recognizing the goal but also estimating 3D displacement and generating continuous control actions to approach and settle at the target view. This is difficult because the same visual difference between the current and goal image can require very different actions depending on the robot's velocity, while monocular images alone reveal neither metric scale nor body motion. As a result, existing image-goal policies are limited to planar action spaces and rely on a state estimator for flight control. Policies that map directly from images to low-level control commands have been demonstrated for agile flight, but not toward goal images in unseen environments.",
+            "conclusion": "On 1000 held-out flights in unseen environments, the policy achieves an 82.3% success rate with a mean terminal position error of 0.10 m across successful flights. Deployed zero-shot on a real quadrotor, it reaches an 84% success rate over 25 trials in an unseen indoor environment. These results support that the policy can perform 3D image-goal navigation by directly commanding thrust and angular rates without state estimation or a separate velocity controller. The conclusions are limited to the reported simulated held-out flights and real indoor trials.",
+            "method": "The input is a sequence of monocular images together with a goal image, and the output is direct thrust and angular-rate commands for a quadrotor. The core is a recurrent vision-based policy that uses past frames to implicitly infer body motion and scale, so that the same visual difference can be mapped to different actions under different velocities. Training follows a four-stage pipeline: geometric and motion supervision first provides learning signals, privileged-teacher distillation then transfers extra information into the monocular-image-only policy, and end-to-end reinforcement learning fine-tuning completes training. The verified improvement comes from this combined training pipeline, which enables direct low-level control in unseen environments; the material provides no comparison against prior methods, so no claim of superiority is made.",
+            "takeaways": "For uses such as indoor inspection, target-view photography, or search and rescue, a quadrotor that accepts thrust and angular-rate commands, a monocular camera, and image collection covering the target viewpoints would be required. Before real-world zero-shot deployment, robustness must be validated across more indoor and outdoor environments, varying lighting, and dynamic obstacles, and drift and safety over long flights must be confirmed. The 84% success rate comes only from 25 unseen indoor trials, while the 82.3% rate and 0.10 m error come only from simulated held-out flights, so deployment claims should be limited accordingly."
+          }
+        }
+      },
+      "id": "2611.34046",
+      "original_title": "End-to-End Image-Goal Navigation for Agile Quadrotors via Recurrent State Distillation",
+      "original_summary": "Image-goal navigation asks a robot to reach the viewpoint of a target photograph without a map or goal pose. In three dimensions, this requires not only recognizing the goal but also estimating 3D displacement and generating continuous control actions to approach and settle at the target view. This is difficult because the same visual difference between current and goal image can require very different actions depending on the robot's velocity, yet monocular images alone reveal neither metric scale nor body motion. As a result, existing image-goal policies are limited to planar action spaces and rely on a state estimator for flight control. Policies that map directly from images to low-level control commands have been demonstrated for agile flight, but not toward goal images in unseen environments. We present the first image-goal navigation policy that directly commands thrust and angular rates for agile quadrotor flight in unseen 3D environments, without relying on state estimation (e.g., SLAM, VO, or SfM) or a separate velocity controller. We train a recurrent vision-based policy through a four-stage pipeline that combines geometric and motion supervision with privileged-teacher distillation and end-to-end reinforcement learning fine-tuning. On 1000 held-out flights in unseen environments, the policy achieves an 82.3% success rate with a mean terminal position error of 0.10m across successful flights. Deployed zero-shot on a real quadrotor, the policy reaches an 84% success rate over 25 trials in an unseen indoor environment.",
+      "url": "https://arxiv.org/abs/2611.34046v1",
+      "source": "arXiv cs.RO",
+      "published": "2026-11-25T09:23:33+00:00",
+      "authors": [
+        "Simone Nascivera",
+        "Ismail Geles",
+        "Davide Scaramuzza"
+      ],
+      "score": 5,
+      "versioned_id": "2611.34046v1",
+      "figure": {
+        "path": "./data/2026-11-28/figures/2611.34046.webp",
+        "caption": "Figure 3: Three examples of the 25 start and goal viewpoints used during the real world experiments in the indoor flying arena."
+      },
+      "code_url": null,
+      "project_url": null,
+      "pdf_url": "https://arxiv.org/pdf/2611.34046"
+    },
+    {
+      "title": "超越理想路径：从仿真失败中泛化机器人世界模型",
+      "summary": "机器人世界模型常用于评估和规划策略，但训练数据以成功演示为主。当抓取位置偏移或时机不当，物体被推、倾斜或滑落时，这类模型的预测会失效。在五个预训练的动作条件模型上，物体运动误差最多只比直接复制首帧的静态基线低10.4%，其中两个模型甚至不如该基线。为此提出 WorldReforge：通过扰动参考抓取的位置、朝向和闭合时机，构建包含6.2万条仿真轨迹的 Reforge 数据集，记录每次推挤、滑落或抓取失败及真值物体位姿、接触和表面点。WorldReforge 将真值转为两种无额外推理成本的训练信号：交互对齐把重建重点放在全局损失低估的小物体与接触区域，表面对应则训练骨干特征跨帧跟踪同一物理表面点。在 Cosmos3 Nano 上，WorldReforge 将物体轨迹误差整体降低28.2%，未见物体上降低35.0%，两动作结果差异预测误差降低43.3%。仅在仿真中训练，却在 DROID 和真实失败视频上改善重建。受控数据研究表明，失败接触与成功持握教给模型互补的物理规律。",
+      "lede": "现有机器人世界模型在成功演示上表现尚可，一旦抓取失败就预测失准；WorldReforge 用仿真失败数据补上这一课，在 Cosmos3 Nano 上把物体轨迹误差降低28.2%。",
+      "tags": [
+        "机器人世界模型",
+        "仿真失败数据",
+        "动作条件预测"
+      ],
+      "sections": {
+        "background": "机器人世界模型被用于评估和规划策略，但训练数据几乎都是成功演示。一旦抓取错位或时机不对，物体被推、倾斜或滑落，模型预测就会明显失准。作者在五个预训练动作条件模型上验证了这一痛点：物体运动误差最多只比复制首帧的静态基线低10.4%，两个模型甚至更差，说明现有模型在失败场景下几乎没有学到有效物理。",
+        "conclusion": "作者构建 Reforge 数据集，用6.2万条仿真轨迹覆盖推挤、滑落和抓取失败，并提出 WorldReforge 训练方法。在 Cosmos3 Nano 上，物体轨迹误差整体降低28.2%，未见物体上降低35.0%，两动作结果差异预测误差降低43.3%。仅在仿真中训练，方法仍在 DROID 和真实失败视频上改善重建。受控数据研究显示，失败接触教模型物体如何响应，成功持握教模型抓取状态如何保持，两者互补。",
+        "method": "输入是动作条件世界模型的多帧观测与动作，以及 Reforge 数据集中每条轨迹的真值物体位姿、接触和表面点。交互对齐把重建损失集中到小物体和接触区域，避免全局损失对这些关键区域权重不足。表面对应则训练骨干特征在不同帧中跟踪同一物理表面点，使特征随物体运动保持一致。两种信号都直接由真值构造，不增加推理成本。已验证的改进来自这两类监督在 Cosmos3 Nano 上的轨迹与动作结果差异预测误差下降。",
+        "takeaways": "若要在真实抓取或装配场景中部署，需要能采集物体位姿、接触和表面点真值的仿真或标定环境，并具备可微渲染或特征跟踪的训练管线。当前结论限于仿真训练设定，真机部署前还需在真实失败数据上验证闭环规划中的稳定性与安全性。对产业而言，可设想用于抓取失败检测和恢复策略评估，但前提是补齐真实接触标注与跨域泛化验证。"
+      },
+      "i18n": {
+        "zh": {
+          "title": "超越理想路径：从仿真失败中泛化机器人世界模型",
+          "summary": "机器人世界模型常用于评估和规划策略，但训练数据以成功演示为主。当抓取位置偏移或时机不当，物体被推、倾斜或滑落时，这类模型的预测会失效。在五个预训练的动作条件模型上，物体运动误差最多只比直接复制首帧的静态基线低10.4%，其中两个模型甚至不如该基线。为此提出 WorldReforge：通过扰动参考抓取的位置、朝向和闭合时机，构建包含6.2万条仿真轨迹的 Reforge 数据集，记录每次推挤、滑落或抓取失败及真值物体位姿、接触和表面点。WorldReforge 将真值转为两种无额外推理成本的训练信号：交互对齐把重建重点放在全局损失低估的小物体与接触区域，表面对应则训练骨干特征跨帧跟踪同一物理表面点。在 Cosmos3 Nano 上，WorldReforge 将物体轨迹误差整体降低28.2%，未见物体上降低35.0%，两动作结果差异预测误差降低43.3%。仅在仿真中训练，却在 DROID 和真实失败视频上改善重建。受控数据研究表明，失败接触与成功持握教给模型互补的物理规律。",
+          "lede": "现有机器人世界模型在成功演示上表现尚可，一旦抓取失败就预测失准；WorldReforge 用仿真失败数据补上这一课，在 Cosmos3 Nano 上把物体轨迹误差降低28.2%。",
+          "tags": [
+            "机器人世界模型",
+            "仿真失败数据",
+            "动作条件预测"
+          ],
+          "sections": {
+            "background": "机器人世界模型被用于评估和规划策略，但训练数据几乎都是成功演示。一旦抓取错位或时机不对，物体被推、倾斜或滑落，模型预测就会明显失准。作者在五个预训练动作条件模型上验证了这一痛点：物体运动误差最多只比复制首帧的静态基线低10.4%，两个模型甚至更差，说明现有模型在失败场景下几乎没有学到有效物理。",
+            "conclusion": "作者构建 Reforge 数据集，用6.2万条仿真轨迹覆盖推挤、滑落和抓取失败，并提出 WorldReforge 训练方法。在 Cosmos3 Nano 上，物体轨迹误差整体降低28.2%，未见物体上降低35.0%，两动作结果差异预测误差降低43.3%。仅在仿真中训练，方法仍在 DROID 和真实失败视频上改善重建。受控数据研究显示，失败接触教模型物体如何响应，成功持握教模型抓取状态如何保持，两者互补。",
+            "method": "输入是动作条件世界模型的多帧观测与动作，以及 Reforge 数据集中每条轨迹的真值物体位姿、接触和表面点。交互对齐把重建损失集中到小物体和接触区域，避免全局损失对这些关键区域权重不足。表面对应则训练骨干特征在不同帧中跟踪同一物理表面点，使特征随物体运动保持一致。两种信号都直接由真值构造，不增加推理成本。已验证的改进来自这两类监督在 Cosmos3 Nano 上的轨迹与动作结果差异预测误差下降。",
+            "takeaways": "若要在真实抓取或装配场景中部署，需要能采集物体位姿、接触和表面点真值的仿真或标定环境，并具备可微渲染或特征跟踪的训练管线。当前结论限于仿真训练设定，真机部署前还需在真实失败数据上验证闭环规划中的稳定性与安全性。对产业而言，可设想用于抓取失败检测和恢复策略评估，但前提是补齐真实接触标注与跨域泛化验证。"
+          }
+        },
+        "en": {
+          "title": "Beyond the Happy Path: Generalizing Robot World Models from Simulated Failures",
+          "summary": "Robot world models are increasingly used to evaluate and plan policies, yet robot training data are dominated by successful demonstrations. Off the happy path, when a grasp is misaligned or mistimed and the object is pushed, tilted, or slips, their predictions break down. Across five pretrained action-conditioned models, object-motion error is at most 10.4% lower than that of a static baseline that copies the first frame, and two models are worse than this baseline. We present WorldReforge, which teaches world models what happens when manipulation goes wrong. We construct the Reforge dataset of 62k simulated trajectories by perturbing reference grasps in position, orientation, and closure timing, recording each resulting push, slip, or failed pickup with ground-truth object pose, contact, and surface points. WorldReforge turns this ground truth into two training signals without additional inference cost. Interaction Alignment focuses reconstruction on the small object and contact regions that a global loss underweights, and Surface Correspondence trains backbone features to follow the same physical surface points across frames. On Cosmos3 Nano, WorldReforge reduces object trajectory error by 28.2% overall and by 35.0% on unseen objects, and it lowers the error in predicting how two actions' outcomes diverge by 43.3%. Although trained only in simulation, it also improves reconstruction on DROID and on real failure videos. Controlled data studies show that failed contact and successful holding teach complementary physics: failed contact teaches how objects respond, and holding teaches how a grasped state persists.",
+          "lede": "Robot world models do well on successful demonstrations but break down when grasps fail; WorldReforge adds simulated failure data and cuts object trajectory error by 28.2% on Cosmos3 Nano.",
+          "tags": [
+            "robot world models",
+            "simulated failure data",
+            "action-conditioned prediction"
+          ],
+          "sections": {
+            "background": "Robot world models are used to evaluate and plan policies, but their training data consist almost entirely of successful demonstrations. When a grasp is misaligned or mistimed and the object is pushed, tilted, or slips, predictions degrade sharply. The authors show this on five pretrained action-conditioned models: object-motion error is at most 10.4% lower than a static baseline that copies the first frame, and two models are worse than that baseline, indicating that current models learn little useful physics from failure scenarios.",
+            "conclusion": "The authors build the Reforge dataset of 62k simulated trajectories covering pushes, slips, and failed pickups, and propose WorldReforge as a training method. On Cosmos3 Nano, object trajectory error drops by 28.2% overall and by 35.0% on unseen objects, while error in predicting how two actions' outcomes diverge drops by 43.3%. Although trained only in simulation, the method also improves reconstruction on DROID and on real failure videos. Controlled data studies show that failed contact teaches how objects respond and successful holding teaches how a grasped state persists, making the two complementary.",
+            "method": "The input is multi-frame observations and actions for an action-conditioned world model, together with ground-truth object pose, contact, and surface points for each Reforge trajectory. Interaction Alignment concentrates reconstruction loss on small objects and contact regions that a global loss underweights. Surface Correspondence trains backbone features to track the same physical surface points across frames so that features stay consistent with object motion. Both signals are built directly from ground truth and add no inference cost. The verified gains come from these two supervision signals on Cosmos3 Nano, measured as lower trajectory error and lower error in predicting action-outcome divergence.",
+            "takeaways": "Deployment in real grasping or assembly would require a simulation or calibrated environment that provides ground-truth object pose, contact, and surface points, plus a training pipeline for differentiable rendering or feature tracking. The reported conclusions are limited to the simulation-trained setting; before real-robot deployment, closed-loop planning stability and safety still need validation on real failure data. For industry, the method could be considered for grasp-failure detection and recovery-policy evaluation, conditional on obtaining real contact annotations and verifying cross-domain generalization."
+          }
+        }
+      },
+      "id": "2611.33925",
+      "original_title": "Beyond the Happy Path: Generalizing Robot World Models from Simulated Failures",
+      "original_summary": "Robot world models are increasingly used to evaluate and plan policies, yet robot training data are dominated by successful demonstrations. Off the happy path, when a grasp is misaligned or mistimed and the object is pushed, tilted, or slips, their predictions break down. Across five pretrained action-conditioned models, object-motion error is at most 10.4% lower than that of a static baseline that copies the first frame, and two models are worse than this baseline. We present WorldReforge, which teaches world models what happens when manipulation goes wrong. We construct the Reforge dataset of 62k simulated trajectories by perturbing reference grasps in position, orientation, and closure timing, recording each resulting push, slip, or failed pickup with ground-truth object pose, contact, and surface points. WorldReforge turns this ground truth into two training signals without additional inference cost. Interaction Alignment focuses reconstruction on the small object and contact regions that a global loss underweights, and Surface Correspondence trains backbone features to follow the same physical surface points across frames. On Cosmos3 Nano, WorldReforge reduces object trajectory error by 28.2% overall and by 35.0% on unseen objects, and it lowers the error in predicting how two actions' outcomes diverge by 43.3%. Although trained only in simulation, it also improves reconstruction on DROID and on real failure videos. Controlled data studies show that failed contact and successful holding teach complementary physics: failed contact teaches how objects respond, and holding teaches how a grasped state persists. Our code, data, and models are available at aim-uofa.github.io/WorldReforge/.",
+      "url": "https://arxiv.org/abs/2611.33925v1",
+      "source": "arXiv cs.RO",
+      "published": "2026-11-25T07:45:51+00:00",
+      "authors": [
+        "Zhiyue Zhao",
+        "Mingyu Liu",
+        "Bolin Zhang",
+        "Liyang Li",
+        "Guangyu Huang",
+        "Canyu Zhao",
+        "Jinchuan Shi",
+        "Haokai Zhang",
+        "Hao Chen",
+        "Chunhua Shen"
+      ],
+      "score": 4,
+      "versioned_id": "2611.33925v1",
+      "figure": {
+        "path": "./data/2026-11-28/figures/2611.33925.webp",
+        "caption": "Fig. S5: Three-view predictions of real-world interactions. The upper two examples show a funnel and orange from DROID; the lower two show contact-induced strawberry displacement and beverage-bottle rotation from Reforge-Real. Each example presents GT, Pretrained, and WorldReforge over seven columns spanning frames 0–16. WorldReforge better follows these objects’ changes in position and orientation."
+      },
+      "attention": {
+        "hf_upvotes": 13,
+        "hf_comments": 3,
+        "github_stars": 13,
+        "github_url": "https://github.com/aim-uofa/worldreforge"
+      },
+      "code_url": null,
+      "project_url": "https://aim-uofa.github.io/WorldReforge/",
+      "pdf_url": "https://arxiv.org/pdf/2611.33925"
+    },
+    {
+      "title": "DexEngine：将人类演示扩展为可物理执行的全机器人数据",
+      "summary": "DexEngine 是一个仿真流水线，把人类手-物操作演示转换为可直接用于训练的手臂-灵巧手轨迹。它先将每段手-物运动放到机械臂可达范围内，求解跟随人手的臂运动，再用残差强化学习在物理仿真中修正。基于九个手-物数据集，为四种灵巧手各生成约 5,200 段片段，扩充为 65,000 条轨迹（116 小时）和 325,000 个回合（578 小时）。带臂情况下，其物体跟踪精度优于此前的悬浮手方法，运行速度比基于强化学习的方法快 10 倍以上。用该数据训练的策略明显优于用未做物理修正的同一批片段、或先做悬浮手修正再装臂训练的策略，说明微调数据需要物理修正；在相同微调预算下，用该数据做中期训练还能进一步提升，仿真和真机均如此。",
+      "lede": "DexEngine 用仿真把人类手-物演示批量转成带臂灵巧手的可执行轨迹，并证明物理修正对下游策略训练不可或缺。",
+      "tags": [
+        "灵巧操作",
+        "数据生成",
+        "仿真到真机"
+      ],
+      "sections": {
+        "background": "把人类手-物演示迁移到机器人手的工作越来越多，但要训练全机器人策略，迁移后的运动必须运动学可行、物理可执行，并且能大规模高效生成。现有悬浮手方法只处理手部，忽略机械臂可达性与物理接触；基于强化学习的方法虽能修正物理可行性，但速度慢，难以支撑大规模数据生产。",
+        "conclusion": "从九个手-物数据集出发，DexEngine 为四种灵巧手各生成约 5,200 段片段，总计扩充为 65,000 条轨迹（116 小时）和 325,000 个回合（578 小时）。带臂时物体跟踪精度优于此前的悬浮手方法，运行速度比基于强化学习的方法快 10 倍以上。用该数据训练的策略明显优于用未做物理修正的同一批片段、或先做悬浮手修正再装臂训练的策略；在相同微调预算下，用该数据做中期训练还能在仿真和真机上进一步提升。",
+        "method": "输入是来自九个人类手-物数据集的每段手-物运动片段。流水线先把该片段放到机械臂可达的位置，再求解一条跟随人手的臂运动，使手-物轨迹与机械臂运动学匹配。随后在物理仿真中用残差强化学习修正整条手臂-手轨迹，补偿接触与动力学误差，得到可执行数据。已验证的改进来自物理修正这一步：去掉它或改用悬浮手修正后再装臂，训练出的策略都更差；速度优势则来自残差修正相对完整强化学习求解的开销更低。",
+        "takeaways": "若拥有成规模的人类手-物演示和对应灵巧手模型，该流水线可用于批量生产机械臂加灵巧手的训练数据，服务于操作策略的预训练与中期训练。落地需要仿真中的机械臂与灵巧手模型、可用的物理引擎，以及足够的人类演示片段。距离真机部署仍缺更多真实机器人任务上的系统验证；当前真机结果只覆盖材料报告的设定，跨本体、跨任务的泛化尚未证实。"
+      },
+      "i18n": {
+        "zh": {
+          "title": "DexEngine：将人类演示扩展为可物理执行的全机器人数据",
+          "summary": "DexEngine 是一个仿真流水线，把人类手-物操作演示转换为可直接用于训练的手臂-灵巧手轨迹。它先将每段手-物运动放到机械臂可达范围内，求解跟随人手的臂运动，再用残差强化学习在物理仿真中修正。基于九个手-物数据集，为四种灵巧手各生成约 5,200 段片段，扩充为 65,000 条轨迹（116 小时）和 325,000 个回合（578 小时）。带臂情况下，其物体跟踪精度优于此前的悬浮手方法，运行速度比基于强化学习的方法快 10 倍以上。用该数据训练的策略明显优于用未做物理修正的同一批片段、或先做悬浮手修正再装臂训练的策略，说明微调数据需要物理修正；在相同微调预算下，用该数据做中期训练还能进一步提升，仿真和真机均如此。",
+          "lede": "DexEngine 用仿真把人类手-物演示批量转成带臂灵巧手的可执行轨迹，并证明物理修正对下游策略训练不可或缺。",
+          "tags": [
+            "灵巧操作",
+            "数据生成",
+            "仿真到真机"
+          ],
+          "sections": {
+            "background": "把人类手-物演示迁移到机器人手的工作越来越多，但要训练全机器人策略，迁移后的运动必须运动学可行、物理可执行，并且能大规模高效生成。现有悬浮手方法只处理手部，忽略机械臂可达性与物理接触；基于强化学习的方法虽能修正物理可行性，但速度慢，难以支撑大规模数据生产。",
+            "conclusion": "从九个手-物数据集出发，DexEngine 为四种灵巧手各生成约 5,200 段片段，总计扩充为 65,000 条轨迹（116 小时）和 325,000 个回合（578 小时）。带臂时物体跟踪精度优于此前的悬浮手方法，运行速度比基于强化学习的方法快 10 倍以上。用该数据训练的策略明显优于用未做物理修正的同一批片段、或先做悬浮手修正再装臂训练的策略；在相同微调预算下，用该数据做中期训练还能在仿真和真机上进一步提升。",
+            "method": "输入是来自九个人类手-物数据集的每段手-物运动片段。流水线先把该片段放到机械臂可达的位置，再求解一条跟随人手的臂运动，使手-物轨迹与机械臂运动学匹配。随后在物理仿真中用残差强化学习修正整条手臂-手轨迹，补偿接触与动力学误差，得到可执行数据。已验证的改进来自物理修正这一步：去掉它或改用悬浮手修正后再装臂，训练出的策略都更差；速度优势则来自残差修正相对完整强化学习求解的开销更低。",
+            "takeaways": "若拥有成规模的人类手-物演示和对应灵巧手模型，该流水线可用于批量生产机械臂加灵巧手的训练数据，服务于操作策略的预训练与中期训练。落地需要仿真中的机械臂与灵巧手模型、可用的物理引擎，以及足够的人类演示片段。距离真机部署仍缺更多真实机器人任务上的系统验证；当前真机结果只覆盖材料报告的设定，跨本体、跨任务的泛化尚未证实。"
+          }
+        },
+        "en": {
+          "title": "DexEngine: Scaling Human Demonstrations into Physically Executable Whole-Robot Data",
+          "summary": "DexEngine is a simulation pipeline that converts human hand-object demonstrations into train-ready arm-hand trajectories. It first places each clip's hand-object motion within arm reach, solves an arm motion that follows the human hands, and then corrects the motion in physics simulation with residual reinforcement learning. From nine human hand-object datasets, it generates about 5,200 clips for each of four dexterous hands, augmented into 65,000 trajectories (116 h) and 325,000 episodes (578 h) in total. With arms attached, it tracks objects more accurately than prior floating-hand methods and runs over 10x faster than RL-based ones. Policies trained on this data far outperform those trained on the same clips without physics correction or with arms attached after a floating-hand correction, showing that fine-tuning data need physics correction; mid-training on this data further improves them at equal fine-tuning budget, in simulation and on a real robot.",
+          "lede": "DexEngine uses simulation to turn human hand-object demonstrations into executable arm-hand trajectories at scale, and shows that physics correction is essential for downstream policy training.",
+          "tags": [
+            "dexterous manipulation",
+            "data generation",
+            "sim-to-real"
+          ],
+          "sections": {
+            "background": "A growing body of work retargets human hand-object demonstrations to robotic hands. Training whole-robot policies, however, requires the retargeted motions to be kinematically feasible and physically executable, and to be produced efficiently at scale. Prior floating-hand methods handle only the hand and ignore arm reachability and physical contact, while RL-based methods can enforce physical feasibility but are slow and hard to scale for data production.",
+            "conclusion": "Starting from nine hand-object datasets, DexEngine generates about 5,200 clips for each of four dexterous hands, augmented into 65,000 trajectories (116 h) and 325,000 episodes (578 h) in total. With arms attached, it tracks objects more accurately than prior floating-hand methods and runs over 10x faster than RL-based ones. Policies trained on this data far outperform those trained on the same clips without physics correction or with arms attached after a floating-hand correction; mid-training on this data further improves them at equal fine-tuning budget, in simulation and on a real robot.",
+            "method": "The input is each hand-object motion clip from nine human hand-object datasets. The pipeline first places the clip where the arms can reach it, then solves an arm motion that follows the human hands so the hand-object trajectory matches arm kinematics. It then corrects the whole arm-hand trajectory in physics simulation with residual reinforcement learning, compensating for contact and dynamics errors to yield executable data. The verified gains come from this physics-correction step: removing it, or attaching arms after a floating-hand correction, yields worse policies, while the speed advantage comes from residual correction being cheaper than solving the full problem with reinforcement learning.",
+            "takeaways": "Given human hand-object demonstrations at scale and a dexterous hand model, the pipeline can mass-produce training data for arm-plus-dexterous-hand manipulation, serving policy pretraining and mid-training. Deployment requires simulated arm and hand models, a physics engine, and enough human demonstration clips. Before real-robot deployment, more systematic validation on real robot tasks is still missing; the current real-robot results cover only the settings reported in the material, and cross-embodiment or cross-task generalization is not yet established."
+          }
+        }
+      },
+      "id": "2611.33579",
+      "original_title": "DexEngine: Scaling Human Demonstrations into Physically Executable Whole-Robot Data",
+      "original_summary": "A growing body of recent work addresses the retargeting of human hand-object demonstrations to robotic hands. To train whole-robot policies, however, the retargeted motions must be kinematically feasible and physically executable, and be produced efficiently at scale. We present DexEngine, a simulation pipeline that turns human manipulation data into train-ready, physically executable arm-hand trajectories. DexEngine first places each clip's hand-object motion where the arms can reach it, finds an arm motion that follows the human hands, and then corrects the motion in physics simulation with residual reinforcement learning. From nine human hand-object datasets, we generate about 5,200 clips for each of four dexterous hands, augmented into 65,000 trajectories (116 h) and 325,000 episodes (578 h) in total. Even with arms attached, DexEngine tracks objects more accurately than prior floating-hand methods and runs over 10x faster than RL-based ones. Policies trained on our data far outperform those trained on the same clips without physics correction or with the arms attached after a floating-hand correction, showing that fine-tuning data need physics correction. Mid-training on our data further improves them at equal fine-tuning budget, in simulation and on a real robot.",
+      "url": "https://arxiv.org/abs/2611.33579v1",
+      "source": "arXiv cs.RO",
+      "published": "2026-11-25T00:46:23+00:00",
+      "authors": [
+        "Wongyun Yu",
+        "Honggeun Kim",
+        "Donguk Lee",
+        "Minchan Kim",
+        "Kyoung Whan Choe",
+        "Minsu Cho"
+      ],
+      "score": 4,
+      "versioned_id": "2611.33579v1",
+      "figure": null,
+      "attention": {
+        "hf_upvotes": 4,
+        "hf_comments": 2,
+        "github_stars": 7,
+        "github_url": "https://github.com/wongyun-yu/dexengine"
+      },
+      "code_url": "https://github.com/wongyun-yu/DexEngine",
+      "project_url": "https://wongyun-yu.github.io/dexengine",
+      "pdf_url": "https://arxiv.org/pdf/2611.33579"
+    },
+    {
+      "title": "SEEK：通过执行知识实现自我进化，用于智能体式机器人操作",
+      "summary": "SEEK 是一个智能体框架，让机器人在底层模型保持不变的情况下，跨多次尝试保留并复用执行知识。它用可执行程序编码操作流程，并把动作的实测效果（包括失败尝试）存入持久库。在 RoboDojo 的 42 项任务上，经过十次尝试，平均任务分从 27.0 升至 54.4，成功率从 19.7% 升至 48.0%；其中 34 项任务使用 GPT-6.2 Astra 时，五次尝试后达到 80.1，而同一模型直接执行仅为 49.6，模型请求数减少 77.6%。",
+      "lede": "SEEK 让机器人在模型不变的情况下，把每次尝试学到的操作程序与动作效果保留下来，下次遇到相同或相近条件时直接复用，遇到新条件时再用实测证据修订。",
+      "tags": [
+        "机器人操作",
+        "智能体框架",
+        "执行知识复用"
+      ],
+      "sections": {
+        "background": "通用多模态基础模型让机器人无需任务专用演示或训练，就能在部署中根据观察和执行反馈进行调整。但机器人只在模型的工作上下文中保留所学内容，任务一结束就丢失执行知识，例如如何在两个夹爪之间搬运碗；下次尝试可能耗时相同并重复同样错误。仅回放过去动作也不够，因为动作效果取决于当前条件。",
+        "conclusion": "在 RoboDojo 全部 42 项任务上，跨十次尝试保留知识使 SEEK 的平均任务分从 27.0 提高到 54.4，成功率从 19.7% 提高到 48.0%。在 34 项任务上使用 GPT-6.2 Astra 时，SEEK 五次尝试后达到 80.1，而同一模型直接执行仅为 49.6，且模型请求数减少 77.6%。这些结果限于材料报告的 RoboDojo 设定。",
+        "method": "SEEK 的输入是当前场景观察和此前保留的执行知识。它采用自进化程序化策略（SEPP），把操作编码为可执行程序，并根据当前观察决定每一步动作，而不是回放旧动作。执行过程中，SEEK 把动作的实测效果（包括失败尝试）记录到持久动作-效果库（PAEB）。当保留的程序适用时，它无需请求模型即可行动；当遇到未覆盖的条件时，这些效果证据用于指导程序修订。底层模型保持固定，改进来自保留和修订知识。",
+        "takeaways": "在需要多次尝试同一操作任务的机器人场景中，若底层多模态模型固定且能提供执行反馈，SEEK 的程序化知识保留方式可能减少重复试错和模型调用。它需要能记录动作实测效果并维护持久知识库的软硬件条件。距离真机部署，还需验证在真实机器人平台、真实传感器噪声和更长任务序列下的效果；现有结论仅限 RoboDojo 的 42 项任务及所报告模型设定。"
+      },
+      "i18n": {
+        "zh": {
+          "title": "SEEK：通过执行知识实现自我进化，用于智能体式机器人操作",
+          "summary": "SEEK 是一个智能体框架，让机器人在底层模型保持不变的情况下，跨多次尝试保留并复用执行知识。它用可执行程序编码操作流程，并把动作的实测效果（包括失败尝试）存入持久库。在 RoboDojo 的 42 项任务上，经过十次尝试，平均任务分从 27.0 升至 54.4，成功率从 19.7% 升至 48.0%；其中 34 项任务使用 GPT-6.2 Astra 时，五次尝试后达到 80.1，而同一模型直接执行仅为 49.6，模型请求数减少 77.6%。",
+          "lede": "SEEK 让机器人在模型不变的情况下，把每次尝试学到的操作程序与动作效果保留下来，下次遇到相同或相近条件时直接复用，遇到新条件时再用实测证据修订。",
+          "tags": [
+            "机器人操作",
+            "智能体框架",
+            "执行知识复用"
+          ],
+          "sections": {
+            "background": "通用多模态基础模型让机器人无需任务专用演示或训练，就能在部署中根据观察和执行反馈进行调整。但机器人只在模型的工作上下文中保留所学内容，任务一结束就丢失执行知识，例如如何在两个夹爪之间搬运碗；下次尝试可能耗时相同并重复同样错误。仅回放过去动作也不够，因为动作效果取决于当前条件。",
+            "conclusion": "在 RoboDojo 全部 42 项任务上，跨十次尝试保留知识使 SEEK 的平均任务分从 27.0 提高到 54.4，成功率从 19.7% 提高到 48.0%。在 34 项任务上使用 GPT-6.2 Astra 时，SEEK 五次尝试后达到 80.1，而同一模型直接执行仅为 49.6，且模型请求数减少 77.6%。这些结果限于材料报告的 RoboDojo 设定。",
+            "method": "SEEK 的输入是当前场景观察和此前保留的执行知识。它采用自进化程序化策略（SEPP），把操作编码为可执行程序，并根据当前观察决定每一步动作，而不是回放旧动作。执行过程中，SEEK 把动作的实测效果（包括失败尝试）记录到持久动作-效果库（PAEB）。当保留的程序适用时，它无需请求模型即可行动；当遇到未覆盖的条件时，这些效果证据用于指导程序修订。底层模型保持固定，改进来自保留和修订知识。",
+            "takeaways": "在需要多次尝试同一操作任务的机器人场景中，若底层多模态模型固定且能提供执行反馈，SEEK 的程序化知识保留方式可能减少重复试错和模型调用。它需要能记录动作实测效果并维护持久知识库的软硬件条件。距离真机部署，还需验证在真实机器人平台、真实传感器噪声和更长任务序列下的效果；现有结论仅限 RoboDojo 的 42 项任务及所报告模型设定。"
+          }
+        },
+        "en": {
+          "title": "SEEK: Self-Evolution through Execution Knowledge for Agentic Robot Manipulation",
+          "summary": "SEEK is an agentic framework that lets robots retain and reuse execution knowledge across attempts while keeping the underlying model fixed. It encodes manipulation as executable procedures and stores measured action effects, including those from failed attempts, in a persistent bank. On all 42 RoboDojo tasks, ten attempts raise the average task score from 27.0 to 54.4 and success rate from 19.7% to 48.0%; on 34 tasks with GPT-6.2 Astra, SEEK reaches 80.1 after five attempts versus 49.6 for direct model execution, using 77.6% fewer model requests.",
+          "lede": "SEEK lets a robot retain the manipulation procedures and action effects learned from each attempt while keeping the model fixed, reusing them under matching conditions and revising them with measured evidence when new conditions arise.",
+          "tags": [
+            "robot manipulation",
+            "agentic framework",
+            "execution knowledge reuse"
+          ],
+          "sections": {
+            "background": "General-purpose multimodal foundation models let robots adapt during deployment from observations and execution feedback without task-specific demonstrations or training. However, the robot retains what it learns only in the model's working context; once the task ends, it loses execution knowledge such as how to carry a bowl between two grippers, and the next attempt may take just as long and repeat the same mistakes. Replaying past actions is insufficient because their effects depend on current conditions.",
+            "conclusion": "Across all 42 RoboDojo tasks, retaining knowledge over ten attempts raises SEEK's average task score from 27.0 to 54.4 and its success rate from 19.7% to 48.0%. On 34 of these tasks with GPT-6.2 Astra, SEEK reaches 80.1 after five attempts, against 49.6 for the same model acting directly, and uses 77.6% fewer model requests. These results are limited to the RoboDojo setting reported in the material.",
+            "method": "SEEK takes current scene observations and previously retained execution knowledge as input. It uses a Self-Evolving Programmatic Policy (SEPP) that encodes manipulation as executable procedures and determines each action from current observations rather than replaying past actions. During execution, SEEK records the measured effects of its actions, including those from failed attempts, in a Persistent Action-Effect Bank (PAEB). Where a retained procedure applies, it acts without a model request; where it meets an uncovered condition, this effect evidence guides revision. The underlying model stays fixed, and improvement comes from retaining and revising knowledge.",
+            "takeaways": "In robot scenarios that require repeated attempts at the same manipulation task, with a fixed multimodal model and execution feedback available, SEEK's procedural knowledge retention may reduce repeated trial and error and model calls. It requires software and hardware conditions that can record measured action effects and maintain a persistent knowledge bank. Before real-robot deployment, its effectiveness still needs validation on physical robot platforms, with real sensor noise and longer task sequences; current conclusions are limited to the 42 RoboDojo tasks and model settings reported."
+          }
+        }
+      },
+      "id": "2611.33915",
+      "original_title": "SEEK: Self-Evolution through Execution Knowledge for Agentic Robot Manipulation",
+      "original_summary": "General-purpose multimodal foundation models enable robots to adapt during deployment from observations and execution feedback, without task-specific demonstrations or training. However, the robot retains what it learns only in the model's working context. Once the task ends, it loses this execution knowledge, such as how to carry a bowl between two grippers. On the next attempt at the task, the robot may take just as long and repeat the same mistakes. To avoid this repetition, robots must retain execution knowledge across attempts. Yet replaying past actions is insufficient, because their effects depend on the current conditions. Procedures that determine actions from the current scene address this, but when they meet conditions that earlier attempts did not cover, revising them requires the measured effects of earlier actions. We therefore propose SEEK, an agentic framework that retains both, enabling robots to improve across attempts while keeping the underlying model fixed. To adapt retained knowledge to the current scene, SEEK adopts a Self-Evolving Programmatic Policy (SEPP) that encodes manipulation as executable procedures and determines each action from current observations. As the robot executes these procedures, SEEK records the measured effects of its actions, including those from failed attempts, in a Persistent Action-Effect Bank (PAEB). Where a retained procedure applies, it acts without a model request; where it meets a condition it does not cover, this evidence guides its revision. On RoboDojo, knowledge retained over ten attempts raises SEEK's average task score from 27.0 to 54.4 and its success rate from 19.7% to 48.0% across all 42 tasks. On 34 of these tasks with GPT-6.2 Astra, SEEK reaches 80.1 after five attempts, against 49.6 for the same model acting directly, and uses 77.6% fewer model requests. https://zeyangguan.github.io/SEEK-Agentic-Robot-Manipulation/",
+      "url": "https://arxiv.org/abs/2611.33915v1",
+      "source": "arXiv cs.RO",
+      "published": "2026-11-25T07:37:06+00:00",
+      "authors": [
+        "Zeyang Guan",
+        "Qihao Zhao",
+        "Rui Gong",
+        "Zhang Haitian",
+        "Yalun Dai",
+        "Yangyu Huang",
+        "Lingao Xiao",
+        "Haozhe Du",
+        "Xuehui Yu",
+        "Ye Lu",
+        "Jianjun Gao",
+        "Ruoyu Wang",
+        "Haowen Bai",
+        "Hao Li",
+        "Scarlett Li",
+        "Kim-Hui Yap"
+      ],
+      "score": 4,
+      "versioned_id": "2611.33915v1",
+      "figure": {
+        "path": "./data/2026-11-28/figures/2611.33915.webp",
+        "caption": "Figure 1: Motivation and central idea of SEEK. Top: GPT-6 Astra [29] acting directly keeps what the robot learns only in its working context and loses it once the task ends, so the next attempt may repeat the same mistakes; on a real robot, the last cube of a square is again grasped and set down, leaving a gap. Bottom: SEEK retains this execution knowledge across attempts as action-effect evidence (PAEB), including that of failed attempts, and reusable procedures (SEPP), while the model remains fixed; its next attempt pushes the cube in. Right: with GPT-6.2 Astra on 34 RoboDojo tasks, task score by category and model requests per episode of SEEK after 5 attempts and of the model acting directly [38]."
+      },
+      "attention": {
+        "hf_upvotes": 12,
+        "hf_comments": 2,
+        "github_stars": 9,
+        "github_url": "https://github.com/zeyangguan/seek-agentic-robot-manipulation"
+      },
+      "code_url": "https://github.com/ZeyangGuan/SEEK-Agentic-Robot-Manipulation",
+      "project_url": "https://zeyangguan.github.io/SEEK-Agentic-Robot-Manipulation/",
+      "pdf_url": "https://arxiv.org/pdf/2611.33915"
+    },
+    {
+      "title": "RoboEvo$^2$：通过执行框架与策略协同进化的递归机器人自我提升",
+      "summary": "RoboEvo$^2$ 提出一种无需额外人类演示的递归协同进化框架：策略失败驱动编码智能体搜索并固化可复用技能与经验记忆，验证过的轨迹再用于训练策略，并通过反事实偏好蒸馏让策略偏好成功修正。在 LIBERO-PRO 上，独立成功率从 11.0% 提升到 84.1%，混合成功率从 30.4% 提升到 90.5%；在 RoboTwin C2R 上取得类似增益并降低智能体开销；在 Unitree G1-D 上混合成功率达到 95.0%。",
+      "lede": "机器人能否不靠新增人类演示，仅凭失败与练习就递归变强？RoboEvo$^2$ 用执行框架与策略的双向协同进化给出肯定答案，并在仿真基准与 Unitree G1-D 真机上报告显著成功率提升。",
+      "tags": [
+        "机器人自我提升",
+        "视觉-语言-动作策略",
+        "执行框架与策略协同进化"
+      ],
+      "sections": {
+        "background": "视觉-语言-动作（VLA）策略控制高效，但面对陌生环境往往需要额外人类演示；基于推理的智能体虽能利用先验知识和机器人控制接口发现解法，却因反复推理与修复而代价高昂。如何让机器人在没有新增人类演示的情况下，通过交互自主适应环境并高效掌握新技能，是核心痛点。",
+        "conclusion": "在 LIBERO-PRO 上，独立成功率从 11.0% 提升到 84.1%，混合成功率从 30.4% 提升到 90.5%；在 RoboTwin C2R 上获得类似增益并减少智能体开销；在 Unitree G1-D 真机平台上混合成功率达到 95.0%。实验还展示了自主任务获取和跨本体执行框架迁移能力。上述结论限于材料报告的设定与基准。",
+        "method": "输入是策略执行失败与已验证轨迹：失败案例被交给编码智能体，在纯代码、代码加示例学习（ICL）、代码加策略三条路线中搜索互补解法，并把验证通过的方案固化为可复用技能、路由策略和经验记忆。反向阶段用验证轨迹做监督训练，并以反事实偏好蒸馏（CPD）让策略在同一初始状态下更偏好成功修正而非失败轨迹。改进后的策略为后续搜索提供更强运动技能，剩余失败又反过来引导执行框架进化，形成闭环。已验证的改进来自这种双向协同与无需额外人类演示的递归迭代。",
+        "takeaways": "在需要机器人自主适应新环境、复用技能并降低推理开销的场景（如家庭操作、柔性产线换线），该框架有直接应用潜力，但前提是具备可调用的机器人控制接口、失败轨迹采集与验证机制。真机部署还需在 Unitree G1-D 之外的更多本体上验证执行框架迁移的稳定性，并确认长期递归迭代不会积累错误记忆。材料中的成功率提升应限定在 LIBERO-PRO、RoboTwin C2R 和 Unitree G1-D 的实验设定内理解。"
+      },
+      "i18n": {
+        "zh": {
+          "title": "RoboEvo$^2$：通过执行框架与策略协同进化的递归机器人自我提升",
+          "summary": "RoboEvo$^2$ 提出一种无需额外人类演示的递归协同进化框架：策略失败驱动编码智能体搜索并固化可复用技能与经验记忆，验证过的轨迹再用于训练策略，并通过反事实偏好蒸馏让策略偏好成功修正。在 LIBERO-PRO 上，独立成功率从 11.0% 提升到 84.1%，混合成功率从 30.4% 提升到 90.5%；在 RoboTwin C2R 上取得类似增益并降低智能体开销；在 Unitree G1-D 上混合成功率达到 95.0%。",
+          "lede": "机器人能否不靠新增人类演示，仅凭失败与练习就递归变强？RoboEvo$^2$ 用执行框架与策略的双向协同进化给出肯定答案，并在仿真基准与 Unitree G1-D 真机上报告显著成功率提升。",
+          "tags": [
+            "机器人自我提升",
+            "视觉-语言-动作策略",
+            "执行框架与策略协同进化"
+          ],
+          "sections": {
+            "background": "视觉-语言-动作（VLA）策略控制高效，但面对陌生环境往往需要额外人类演示；基于推理的智能体虽能利用先验知识和机器人控制接口发现解法，却因反复推理与修复而代价高昂。如何让机器人在没有新增人类演示的情况下，通过交互自主适应环境并高效掌握新技能，是核心痛点。",
+            "conclusion": "在 LIBERO-PRO 上，独立成功率从 11.0% 提升到 84.1%，混合成功率从 30.4% 提升到 90.5%；在 RoboTwin C2R 上获得类似增益并减少智能体开销；在 Unitree G1-D 真机平台上混合成功率达到 95.0%。实验还展示了自主任务获取和跨本体执行框架迁移能力。上述结论限于材料报告的设定与基准。",
+            "method": "输入是策略执行失败与已验证轨迹：失败案例被交给编码智能体，在纯代码、代码加示例学习（ICL）、代码加策略三条路线中搜索互补解法，并把验证通过的方案固化为可复用技能、路由策略和经验记忆。反向阶段用验证轨迹做监督训练，并以反事实偏好蒸馏（CPD）让策略在同一初始状态下更偏好成功修正而非失败轨迹。改进后的策略为后续搜索提供更强运动技能，剩余失败又反过来引导执行框架进化，形成闭环。已验证的改进来自这种双向协同与无需额外人类演示的递归迭代。",
+            "takeaways": "在需要机器人自主适应新环境、复用技能并降低推理开销的场景（如家庭操作、柔性产线换线），该框架有直接应用潜力，但前提是具备可调用的机器人控制接口、失败轨迹采集与验证机制。真机部署还需在 Unitree G1-D 之外的更多本体上验证执行框架迁移的稳定性，并确认长期递归迭代不会积累错误记忆。材料中的成功率提升应限定在 LIBERO-PRO、RoboTwin C2R 和 Unitree G1-D 的实验设定内理解。"
+          }
+        },
+        "en": {
+          "title": "RoboEvo$^2$: Recursive Robot Self-Improvement via Harness-Policy Co-Evolution",
+          "summary": "RoboEvo$^2$ presents a recursive co-evolution framework that requires no additional human demonstrations: policy failures drive a coding agent to search for and consolidate reusable skills and experience memory, verified trajectories are then used to train the policy, and Counterfactual Preference Distillation teaches the policy to prefer successful corrections. On LIBERO-PRO, standalone success rises from 11.0% to 84.1% and hybrid success from 30.4% to 90.5%; RoboTwin C2R shows similar gains with reduced agentic costs; hybrid success reaches 95.0% on the Unitree G1-D.",
+          "lede": "Can a robot improve recursively from failures and practice without new human demonstrations? RoboEvo$^2$ answers with bidirectional co-evolution of harness and policy, reporting substantial success gains on simulation benchmarks and the Unitree G1-D real robot.",
+          "tags": [
+            "robot self-improvement",
+            "vision-language-action policy",
+            "harness-policy co-evolution"
+          ],
+          "sections": {
+            "background": "Vision-language-action (VLA) policies offer efficient control but often need additional human demonstrations in unfamiliar settings, while reasoning agents can discover solutions using broad prior knowledge and robot-control APIs at the cost of repeated deliberation and repair. The core pain point is enabling robots to adapt autonomously through interaction and acquire new skills efficiently without new human demonstrations.",
+            "conclusion": "On LIBERO-PRO, standalone success improves from 11.0% to 84.1% and hybrid success from 30.4% to 90.5%; RoboTwin C2R shows similar gains with reduced agentic costs; hybrid success reaches 95.0% on the Unitree G1-D real-robot platform. Experiments also demonstrate autonomous task acquisition and cross-embodiment harness transfer. These conclusions are limited to the settings and benchmarks reported in the material.",
+            "method": "The inputs are policy failures and verified trajectories: failures are passed to a coding agent that searches complementary routes across pure Code, Code+ICL (in-context learning), and Code+Policy, consolidating verified solutions into reusable skills, routing strategies, and experience memory. The reverse stage uses verified trajectories for supervised training and applies Counterfactual Preference Distillation (CPD) so the policy favors successful corrections over failures from the same starting state. The improved policy supplies stronger motor skills for subsequent search, while remaining failures redirect harness evolution, closing the reciprocal loop. The validated gains come from this bidirectional co-evolution and recursive iteration without additional human demonstrations.",
+            "takeaways": "The framework is directly applicable to scenarios requiring autonomous adaptation, skill reuse, and reduced reasoning cost, such as household manipulation and reconfigurable production lines, provided robot-control APIs and failure-trajectory collection with verification are available. Real-world deployment still needs validation of harness-transfer stability on embodiments beyond the Unitree G1-D and confirmation that long-term recursive iteration does not accumulate erroneous memory. The reported success gains should be understood within the LIBERO-PRO, RoboTwin C2R, and Unitree G1-D experimental settings."
+          }
+        }
+      },
+      "id": "2611.34675",
+      "original_title": "RoboEvo$^2$: Recursive Robot Self-Improvement via Harness-Policy Co-Evolution",
+      "original_summary": "Robots should adapt to unfamiliar environments and acquire new skills through interaction, then execute those skills efficiently with practice. Vision-language-action policies provide efficient control, but often need additional human demonstrations to handle unfamiliar settings; reasoning agents can discover solutions using broad prior knowledge and robot-control APIs, but repeated deliberation and repair are costly. Inspired by human learning through reasoning and practice, we propose RoboEvo$^2$, a framework for recursive harness-policy co-evolution. In Policy-to-Harness (P2H) evolution, policy failures guide a coding agent to search complementary Code, Code+ICL, and Code+Policy routes, consolidating verified solutions into reusable skills, routing strategies, and experience memory. In Harness-to-Policy (H2P) evolution, verified trajectories provide supervised training, while Counterfactual Preference Distillation (CPD) teaches the policy to favor successful corrections over failures from the same starting state. The improved policy provides stronger motor skills for subsequent search, while its remaining failures redirect harness evolution, closing the reciprocal loop. Through recursive co-evolution without additional human demonstrations, RoboEvo$^2$ improves standalone success from 11.0% to 84.1% and hybrid success from 30.4% to 90.5% on LIBERO-PRO, with similar gains and reduced agentic costs on RoboTwin C2R. Further experiments demonstrate autonomous task acquisition, cross-embodiment harness transfer, and 95.0% hybrid success on the Unitree G1-D. Our models and code will be publicly released.",
+      "url": "https://arxiv.org/abs/2611.34675v1",
+      "source": "arXiv cs.RO",
+      "published": "2026-11-25T16:39:10+00:00",
+      "authors": [
+        "Chenzhi Liu",
+        "Jiehong Lin",
+        "Wei Huang",
+        "Xuzhao Huang",
+        "Haoyuan Li",
+        "Yang Zhang",
+        "Junchao Huang",
+        "Chenyeyang Cai",
+        "Bo Wang",
+        "Kazuhiro Kosuge",
+        "Zhongrui Wang",
+        "Xiaojuan Qi"
+      ],
+      "score": 4,
+      "versioned_id": "2611.34675v1",
+      "figure": {
+        "path": "./data/2026-11-28/figures/2611.34675.webp",
+        "caption": "Figure 4: Real-world executions on the Unitree G1-D."
+      },
+      "attention": {
+        "hf_upvotes": 10,
+        "hf_comments": 2,
+        "github_stars": 5,
+        "github_url": "https://github.com/kaiknower/roboevo2"
+      },
+      "code_url": "https://github.com/kaiknower/RoboEvo2",
+      "project_url": "https://kaiknower.github.io/RoboEvo2/",
+      "pdf_url": "https://arxiv.org/pdf/2611.34675"
+    },
+    {
+      "title": "Nav4Manip：通过协同进化实现从导航到灵巧移动操作",
+      "summary": "Nav4Manip 是一个面向长时程灵巧移动操作的双向耦合协同进化系统，包含负责长时程导航的 Nav4Manip-N 和负责下游灵巧操作的 Nav4Manip-M（世界-动作模型，WAM）。Nav4Manip-N 采用三阶段训练：多任务联合微调、拒绝采样微调（RFT）和基于 AI 反馈的强化学习（RLAIF）。作者建立了 Nav-N-Manip 基准，并从基准 rollout 构建 Nav4Manip-Pairs 配对数据。在公开视觉语言导航（VLN）基准和 Nav-N-Manip 上取得当前最优性能，真机实验完成多种灵巧移动操作任务。",
+      "lede": "Nav4Manip 让导航与灵巧操作双向反馈、共同进化，并在公开 VLN 基准与真机上验证长时程移动操作任务。",
+      "tags": [
+        "灵巧移动操作",
+        "视觉语言导航",
+        "协同进化"
+      ],
+      "sections": {
+        "background": "灵巧移动操作要求机器人在复杂非结构化环境中完成有用任务，但现有系统存在两个问题：一是导航粒度太粗，下游操作往往需要精确的基座位置和接近朝向，而不仅是到达米级目标区域；二是导航与操作通常分开训练，缺少让两者互相反馈、共同进化的闭环。这导致现有系统难以在真实环境中可靠执行长时程灵巧移动操作任务。",
+        "conclusion": "论文报告在公开视觉语言导航（VLN）基准和自建的 Nav-N-Manip 基准上取得当前最优性能；真机评估显示 Nav4Manip 能完成多种灵巧移动操作任务。材料未给出具体数值或百分点提升，因此不在此推测。结论适用范围限于论文报告的基准设定与真机任务配置。",
+        "method": "输入是长时程导航任务与下游灵巧操作需求：Nav4Manip-N 学习长时程导航，并通过操作反馈修正策略；Nav4Manip-M 训练世界-动作模型（WAM）负责下游灵巧操作。Nav4Manip-N 分三阶段训练：多任务联合微调同时学习导航行为和操作感知的可供性预测；拒绝采样微调（RFT）剔除策略生成的低质量路径，并在保留轨迹上微调；基于 AI 反馈的强化学习（RLAIF）利用反事实偏好进一步改进导航决策。为支撑该框架，作者建立 Nav-N-Manip 基准，并从基准 rollout 构建 Nav4Manip-Pairs，提供大规模导航—操作配对轨迹和可供性监督。已验证的改进来自上述三阶段训练与配对数据监督，材料未提供与旧方法的逐项对照，因此不宣称全面优于旧方法。",
+        "takeaways": "若要在仓储拣选、家庭服务等场景部署，需要机器人具备移动基座与灵巧末端，并采集导航—操作配对轨迹和可供性标注数据。Nav4Manip-Pairs 与 Nav-N-Manip 基准为这类训练提供了数据条件，但真机部署前仍需验证在未见环境中的长时程成功率与安全性。论文的真机结论仅限其报告的任务设定，跨场景泛化尚需额外实验确认。"
+      },
+      "i18n": {
+        "zh": {
+          "title": "Nav4Manip：通过协同进化实现从导航到灵巧移动操作",
+          "summary": "Nav4Manip 是一个面向长时程灵巧移动操作的双向耦合协同进化系统，包含负责长时程导航的 Nav4Manip-N 和负责下游灵巧操作的 Nav4Manip-M（世界-动作模型，WAM）。Nav4Manip-N 采用三阶段训练：多任务联合微调、拒绝采样微调（RFT）和基于 AI 反馈的强化学习（RLAIF）。作者建立了 Nav-N-Manip 基准，并从基准 rollout 构建 Nav4Manip-Pairs 配对数据。在公开视觉语言导航（VLN）基准和 Nav-N-Manip 上取得当前最优性能，真机实验完成多种灵巧移动操作任务。",
+          "lede": "Nav4Manip 让导航与灵巧操作双向反馈、共同进化，并在公开 VLN 基准与真机上验证长时程移动操作任务。",
+          "tags": [
+            "灵巧移动操作",
+            "视觉语言导航",
+            "协同进化"
+          ],
+          "sections": {
+            "background": "灵巧移动操作要求机器人在复杂非结构化环境中完成有用任务，但现有系统存在两个问题：一是导航粒度太粗，下游操作往往需要精确的基座位置和接近朝向，而不仅是到达米级目标区域；二是导航与操作通常分开训练，缺少让两者互相反馈、共同进化的闭环。这导致现有系统难以在真实环境中可靠执行长时程灵巧移动操作任务。",
+            "conclusion": "论文报告在公开视觉语言导航（VLN）基准和自建的 Nav-N-Manip 基准上取得当前最优性能；真机评估显示 Nav4Manip 能完成多种灵巧移动操作任务。材料未给出具体数值或百分点提升，因此不在此推测。结论适用范围限于论文报告的基准设定与真机任务配置。",
+            "method": "输入是长时程导航任务与下游灵巧操作需求：Nav4Manip-N 学习长时程导航，并通过操作反馈修正策略；Nav4Manip-M 训练世界-动作模型（WAM）负责下游灵巧操作。Nav4Manip-N 分三阶段训练：多任务联合微调同时学习导航行为和操作感知的可供性预测；拒绝采样微调（RFT）剔除策略生成的低质量路径，并在保留轨迹上微调；基于 AI 反馈的强化学习（RLAIF）利用反事实偏好进一步改进导航决策。为支撑该框架，作者建立 Nav-N-Manip 基准，并从基准 rollout 构建 Nav4Manip-Pairs，提供大规模导航—操作配对轨迹和可供性监督。已验证的改进来自上述三阶段训练与配对数据监督，材料未提供与旧方法的逐项对照，因此不宣称全面优于旧方法。",
+            "takeaways": "若要在仓储拣选、家庭服务等场景部署，需要机器人具备移动基座与灵巧末端，并采集导航—操作配对轨迹和可供性标注数据。Nav4Manip-Pairs 与 Nav-N-Manip 基准为这类训练提供了数据条件，但真机部署前仍需验证在未见环境中的长时程成功率与安全性。论文的真机结论仅限其报告的任务设定，跨场景泛化尚需额外实验确认。"
+          }
+        },
+        "en": {
+          "title": "Nav4Manip: From Navigation to Dexterous Mobile Manipulation through Co-Evolution",
+          "summary": "Nav4Manip is a bidirectionally coupled co-evolution system for long-horizon dexterous mobile manipulation, comprising Nav4Manip-N for long-horizon navigation and Nav4Manip-M, a world-action model (WAM) for downstream dexterous manipulation. Nav4Manip-N is trained in three stages: multi-task co-tuning, rejection sampling fine-tuning (RFT), and reinforcement learning from AI feedback (RLAIF). The authors establish the Nav-N-Manip benchmark and build Nav4Manip-Pairs from benchmark rollouts. Experiments report state-of-the-art performance on public vision-language navigation (VLN) benchmarks and Nav-N-Manip, and real-world evaluations complete diverse dexterous mobile-manipulation tasks.",
+          "lede": "Nav4Manip couples navigation and dexterous manipulation in a bidirectional co-evolution loop, validated on public VLN benchmarks and real-world long-horizon tasks.",
+          "tags": [
+            "dexterous mobile manipulation",
+            "vision-language navigation",
+            "co-evolution"
+          ],
+          "sections": {
+            "background": "Dexterous mobile manipulation is needed for robots to perform useful tasks in complex, unstructured environments, but existing systems face two challenges. First, navigation is too coarse for downstream manipulation, which often requires a precise base position and approach orientation rather than merely reaching a meter-scale goal region. Second, navigation and manipulation are commonly trained in isolation, lacking a feedback loop that lets the two capabilities co-evolve. These limitations prevent reliable execution of long-horizon dexterous mobile-manipulation tasks in real-world environments.",
+            "conclusion": "The paper reports state-of-the-art performance on public vision-language navigation (VLN) benchmarks and on the self-built Nav-N-Manip benchmark, and real-world evaluations show Nav4Manip completes diverse dexterous mobile-manipulation tasks. The material provides no specific numbers or percentage-point gains, so none are inferred here. The conclusions are limited to the benchmark settings and real-world task configurations reported in the paper.",
+            "method": "The input is a long-horizon navigation task together with downstream dexterous manipulation requirements: Nav4Manip-N learns long-horizon navigation and refines its policy through manipulation feedback, while Nav4Manip-M trains a world-action model (WAM) for downstream dexterous manipulation. Nav4Manip-N is trained in three stages: multi-task co-tuning jointly learns navigation behavior and manipulation-aware affordance prediction; rejection sampling fine-tuning (RFT) rejects low-quality policy-generated paths and fine-tunes on retained trajectories; and reinforcement learning from AI feedback (RLAIF) uses counterfactual preferences to further improve navigation decisions. To support the framework, the authors establish the Nav-N-Manip benchmark and construct Nav4Manip-Pairs from benchmark rollouts, providing large-scale paired navigation-manipulation trajectories and affordance supervision. The verified improvements come from this three-stage training and paired-data supervision; the material provides no item-by-item comparison against prior methods, so no claim of general superiority is made.",
+            "takeaways": "Deployment in scenarios such as warehouse picking or home service would require a mobile base with a dexterous end effector, plus paired navigation-manipulation trajectories and affordance annotations. Nav4Manip-Pairs and the Nav-N-Manip benchmark supply such data conditions, but before real-world deployment, long-horizon success rates and safety in unseen environments still need validation. The real-world conclusions are limited to the task settings reported in the paper, and cross-scenario generalization requires additional experiments."
+          }
+        }
+      },
+      "id": "2611.34655",
+      "original_title": "Nav4Manip: From Navigation to Dexterous Mobile Manipulation through Co-Evolution",
+      "original_summary": "Dexterous mobile manipulation is essential for robots to perform useful tasks in complex, unstructured environments. However, existing systems face two challenges. First, navigation remains too coarse for downstream manipulation, which often requires a precise base position and approach orientation rather than merely reaching a meter-scale goal region. Second, navigation and manipulation are commonly trained in isolation, lacking a feedback loop that enables the two capabilities to co-evolve. These limitations prevent current systems from reliably executing long-horizon dexterous mobile-manipulation tasks in real-world environments. To address them, we introduce Nav4Manip, a bidirectionally coupled co-evolution system for long-horizon dexterous mobile manipulation. It comprises two complementary architectures: Nav4Manip-N learns long-horizon navigation and refines its policy through manipulation feedback, while Nav4Manip-M trains a world-action model (WAM) for downstream dexterous manipulation. We train Nav4Manip-N in three stages: multi-task co-tuning learns navigation behavior and manipulation-aware affordance prediction; rejection sampling fine-tuning (RFT) rejects low-quality policy-generated paths and fine-tunes the model on retained trajectories; and reinforcement learning from AI feedback (RLAIF) uses counterfactual preferences to further improve navigation decisions. To support this framework, we establish the Nav-N-Manip benchmark and construct Nav4Manip-Pairs from benchmark rollouts, providing large-scale paired navigation--manipulation trajectories and affordance supervision. Extensive experiments on public vision-language navigation (VLN) benchmarks and Nav-N-Manip demonstrate state-of-the-art performance, while real-world evaluations show that Nav4Manip completes diverse dexterous mobile-manipulation tasks. Project website: https://nav4manip.github.io/.",
+      "url": "https://arxiv.org/abs/2611.34655v1",
+      "source": "arXiv cs.RO",
+      "published": "2026-11-25T16:29:17+00:00",
+      "authors": [
+        "Yusen Feng",
+        "Zixi Kang",
+        "Zhijun Yin",
+        "Changxiao Liu",
+        "Tianhong Gao",
+        "Jiazhao Zhang",
+        "Jiahang Liu",
+        "Libin Liu",
+        "Zhizheng Zhang",
+        "He Wang"
+      ],
+      "score": 4,
+      "versioned_id": "2611.34655v1",
+      "figure": {
+        "path": "./data/2026-11-28/figures/2611.34655.webp",
+        "caption": "Figure 1: Overview of Nav4Manip and its distinction from prior mobile-manipulation paradigms. (a) The Nav-N-Manip benchmark provides generated navigation and manipulation data, alongside real-world demonstrations of long-horizon dexterous mobile manipulation. See Appendix E.1, Appendix E.2, and Appendix E.4 for more results. (b) Nav4Manip couples Nav4Manip-N and Nav4Manip-M through manipulation feedback, enabling navigation and manipulation to co-evolve. (c) Comparison of three optimization strategies: navigation-only SFT, alternating optimization, and our co-evolution approach. By combining multi-task co-tuning, RFT, and RLAIF, our approach jointly improves navigation and manipulation with fewer optimization updates. See Appendix A for details."
+      },
+      "attention": {
+        "github_stars": 4451,
+        "github_url": "https://github.com/nerfies/nerfies.github.io"
+      },
+      "code_url": null,
+      "project_url": "https://nav4manip.github.io/",
+      "pdf_url": "https://arxiv.org/pdf/2611.34655"
+    }
+  ]
+}
